@@ -1,0 +1,18 @@
+{
+  "name": "pareto-targets",
+  "version": "0.0.0",
+  "description": "A library that generates all kinds of target formats from pareto schemas",
+  "main": "./dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "exupery-core-alg": "^0.1.4",
+    "exupery-core-data": "^0.1.1",
+    "exupery-core-dev": "^0.1.1",
+    "exupery-core-resources": "^0.2.1",
+    "pareto": "^0.76.4",
+    "pareto-json": "^0.1.0"
+  }
+}
