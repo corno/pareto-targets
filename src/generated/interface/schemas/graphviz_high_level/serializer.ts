@@ -5,66 +5,129 @@ import * as _i_out from "../../core/astn_target"
 
 // **** TYPES
 
-export type _T_Attribute_Value = (
+export type _T_Value_Serializers = {
+    readonly 'boolean': (
+        $$_: boolean,
+        $$_p: null,
+    ) => string
+    readonly 'custom numbers': null
+    readonly 'default number': (
+        $$_: number,
+        $$_p: null,
+    ) => string
+}
+
+export type _T_s_Attribute_Value = (
     $$_: _i_in._T_Attribute_Value,
-    $$_p: null,
+    $$_p: {
+        readonly 'value serializers': _T_Value_Serializers
+    },
 ) => _i_out._T_Value
 
-export type _T_Edge_Attributes = (
+export type _T_s_Edge_Attributes = (
     $$_: _i_in._T_Edge_Attributes,
-    $$_p: null,
+    $$_p: {
+        readonly 'value serializers': _T_Value_Serializers
+    },
 ) => _i_out._T_Value
 
-export type _T_End_Point_Specification = (
+export type _T_s_End_Point_Specification = (
     $$_: _i_in._T_End_Point_Specification,
-    $$_p: null,
+    $$_p: {
+        readonly 'value serializers': _T_Value_Serializers
+    },
 ) => _i_out._T_Value
 
-export type _T_Graph = (
+export type _T_s_Graph = (
     $$_: _i_in._T_Graph,
-    $$_p: null,
+    $$_p: {
+        readonly 'value serializers': _T_Value_Serializers
+    },
 ) => _i_out._T_Value
 
-export type _T_Graph_Attributes = (
+export type _T_s_Graph_Attributes = (
     $$_: _i_in._T_Graph_Attributes,
-    $$_p: null,
+    $$_p: {
+        readonly 'value serializers': _T_Value_Serializers
+    },
 ) => _i_out._T_Value
 
-export type _T_Node_Attributes = (
+export type _T_s_Node_Attributes = (
     $$_: _i_in._T_Node_Attributes,
-    $$_p: null,
+    $$_p: {
+        readonly 'value serializers': _T_Value_Serializers
+    },
 ) => _i_out._T_Value
 
-export type _T_Tree = (
+export type _T_s_Tree = (
     $$_: _i_in._T_Tree,
-    $$_p: null,
+    $$_p: {
+        readonly 'value serializers': _T_Value_Serializers
+    },
 ) => _i_out._T_Value
 
 // **** FRIENDLY NAMES FOR THE GLOBAL TYPES
 
-export type Attribute_Value = _T_Attribute_Value
+export type Value_Serializers = _T_Value_Serializers
 
-export type Edge_Attributes = _T_Edge_Attributes
+export type s_Attribute_Value = _T_s_Attribute_Value
 
-export type End_Point_Specification = _T_End_Point_Specification
+export type s_Edge_Attributes = _T_s_Edge_Attributes
 
-export type Graph = _T_Graph
+export type s_End_Point_Specification = _T_s_End_Point_Specification
 
-export type Graph_Attributes = _T_Graph_Attributes
+export type s_Graph = _T_s_Graph
 
-export type Node_Attributes = _T_Node_Attributes
+export type s_Graph_Attributes = _T_s_Graph_Attributes
 
-export type Tree = _T_Tree
+export type s_Node_Attributes = _T_s_Node_Attributes
+
+export type s_Tree = _T_s_Tree
 
 // **** ALIASES FOR NESTED TYPE WITH PREFIXED ROOT NAMES
 
-export namespace _T_Attribute_Value {
+export namespace _T_Value_Serializers {
+    
+    export namespace _boolean {
+        export type CONTEXT = boolean
+        
+        export namespace PARAMS {
+        }
+        export type RESULT = string
+    }
+    export type _boolean = (
+        $$_: boolean,
+        $$_p: null,
+    ) => string
+    
+    export namespace custom_numbers {
+    }
+    export type custom_numbers = null
+    
+    export namespace default_number {
+        export type CONTEXT = number
+        
+        export namespace PARAMS {
+        }
+        export type RESULT = string
+    }
+    export type default_number = (
+        $$_: number,
+        $$_p: null,
+    ) => string
+}
+
+export namespace _T_s_Attribute_Value {
     
     export namespace CONTEXT {
     }
     export type CONTEXT = _i_in._T_Attribute_Value
     
     export namespace PARAMS {
+        
+        export namespace value_serializers {
+        }
+        export type value_serializers = _T_Value_Serializers
     }
     
     export namespace RESULT {
@@ -72,13 +135,17 @@ export namespace _T_Attribute_Value {
     export type RESULT = _i_out._T_Value
 }
 
-export namespace _T_Edge_Attributes {
+export namespace _T_s_Edge_Attributes {
     
     export namespace CONTEXT {
     }
     export type CONTEXT = _i_in._T_Edge_Attributes
     
     export namespace PARAMS {
+        
+        export namespace value_serializers {
+        }
+        export type value_serializers = _T_Value_Serializers
     }
     
     export namespace RESULT {
@@ -86,13 +153,17 @@ export namespace _T_Edge_Attributes {
     export type RESULT = _i_out._T_Value
 }
 
-export namespace _T_End_Point_Specification {
+export namespace _T_s_End_Point_Specification {
     
     export namespace CONTEXT {
     }
     export type CONTEXT = _i_in._T_End_Point_Specification
     
     export namespace PARAMS {
+        
+        export namespace value_serializers {
+        }
+        export type value_serializers = _T_Value_Serializers
     }
     
     export namespace RESULT {
@@ -100,13 +171,17 @@ export namespace _T_End_Point_Specification {
     export type RESULT = _i_out._T_Value
 }
 
-export namespace _T_Graph {
+export namespace _T_s_Graph {
     
     export namespace CONTEXT {
     }
     export type CONTEXT = _i_in._T_Graph
     
     export namespace PARAMS {
+        
+        export namespace value_serializers {
+        }
+        export type value_serializers = _T_Value_Serializers
     }
     
     export namespace RESULT {
@@ -114,13 +189,17 @@ export namespace _T_Graph {
     export type RESULT = _i_out._T_Value
 }
 
-export namespace _T_Graph_Attributes {
+export namespace _T_s_Graph_Attributes {
     
     export namespace CONTEXT {
     }
     export type CONTEXT = _i_in._T_Graph_Attributes
     
     export namespace PARAMS {
+        
+        export namespace value_serializers {
+        }
+        export type value_serializers = _T_Value_Serializers
     }
     
     export namespace RESULT {
@@ -128,13 +207,17 @@ export namespace _T_Graph_Attributes {
     export type RESULT = _i_out._T_Value
 }
 
-export namespace _T_Node_Attributes {
+export namespace _T_s_Node_Attributes {
     
     export namespace CONTEXT {
     }
     export type CONTEXT = _i_in._T_Node_Attributes
     
     export namespace PARAMS {
+        
+        export namespace value_serializers {
+        }
+        export type value_serializers = _T_Value_Serializers
     }
     
     export namespace RESULT {
@@ -142,13 +225,17 @@ export namespace _T_Node_Attributes {
     export type RESULT = _i_out._T_Value
 }
 
-export namespace _T_Tree {
+export namespace _T_s_Tree {
     
     export namespace CONTEXT {
     }
     export type CONTEXT = _i_in._T_Tree
     
     export namespace PARAMS {
+        
+        export namespace value_serializers {
+        }
+        export type value_serializers = _T_Value_Serializers
     }
     
     export namespace RESULT {
@@ -158,13 +245,48 @@ export namespace _T_Tree {
 
 // *** ALIASES FOR NESTED TYPES
 
-export namespace Attribute_Value {
+export namespace Value_Serializers {
+    
+    export namespace _boolean {
+        export type CONTEXT = boolean
+        
+        export namespace PARAMS {
+        }
+        export type RESULT = string
+    }
+    export type _boolean = (
+        $$_: boolean,
+        $$_p: null,
+    ) => string
+    
+    export namespace custom_numbers {
+    }
+    export type custom_numbers = null
+    
+    export namespace default_number {
+        export type CONTEXT = number
+        
+        export namespace PARAMS {
+        }
+        export type RESULT = string
+    }
+    export type default_number = (
+        $$_: number,
+        $$_p: null,
+    ) => string
+}
+
+export namespace s_Attribute_Value {
     
     export namespace CONTEXT {
     }
     export type CONTEXT = _i_in._T_Attribute_Value
     
     export namespace PARAMS {
+        
+        export namespace value_serializers {
+        }
+        export type value_serializers = _T_Value_Serializers
     }
     
     export namespace RESULT {
@@ -172,13 +294,17 @@ export namespace Attribute_Value {
     export type RESULT = _i_out._T_Value
 }
 
-export namespace Edge_Attributes {
+export namespace s_Edge_Attributes {
     
     export namespace CONTEXT {
     }
     export type CONTEXT = _i_in._T_Edge_Attributes
     
     export namespace PARAMS {
+        
+        export namespace value_serializers {
+        }
+        export type value_serializers = _T_Value_Serializers
     }
     
     export namespace RESULT {
@@ -186,13 +312,17 @@ export namespace Edge_Attributes {
     export type RESULT = _i_out._T_Value
 }
 
-export namespace End_Point_Specification {
+export namespace s_End_Point_Specification {
     
     export namespace CONTEXT {
     }
     export type CONTEXT = _i_in._T_End_Point_Specification
     
     export namespace PARAMS {
+        
+        export namespace value_serializers {
+        }
+        export type value_serializers = _T_Value_Serializers
     }
     
     export namespace RESULT {
@@ -200,13 +330,17 @@ export namespace End_Point_Specification {
     export type RESULT = _i_out._T_Value
 }
 
-export namespace Graph {
+export namespace s_Graph {
     
     export namespace CONTEXT {
     }
     export type CONTEXT = _i_in._T_Graph
     
     export namespace PARAMS {
+        
+        export namespace value_serializers {
+        }
+        export type value_serializers = _T_Value_Serializers
     }
     
     export namespace RESULT {
@@ -214,13 +348,17 @@ export namespace Graph {
     export type RESULT = _i_out._T_Value
 }
 
-export namespace Graph_Attributes {
+export namespace s_Graph_Attributes {
     
     export namespace CONTEXT {
     }
     export type CONTEXT = _i_in._T_Graph_Attributes
     
     export namespace PARAMS {
+        
+        export namespace value_serializers {
+        }
+        export type value_serializers = _T_Value_Serializers
     }
     
     export namespace RESULT {
@@ -228,13 +366,17 @@ export namespace Graph_Attributes {
     export type RESULT = _i_out._T_Value
 }
 
-export namespace Node_Attributes {
+export namespace s_Node_Attributes {
     
     export namespace CONTEXT {
     }
     export type CONTEXT = _i_in._T_Node_Attributes
     
     export namespace PARAMS {
+        
+        export namespace value_serializers {
+        }
+        export type value_serializers = _T_Value_Serializers
     }
     
     export namespace RESULT {
@@ -242,13 +384,17 @@ export namespace Node_Attributes {
     export type RESULT = _i_out._T_Value
 }
 
-export namespace Tree {
+export namespace s_Tree {
     
     export namespace CONTEXT {
     }
     export type CONTEXT = _i_in._T_Tree
     
     export namespace PARAMS {
+        
+        export namespace value_serializers {
+        }
+        export type value_serializers = _T_Value_Serializers
     }
     
     export namespace RESULT {
