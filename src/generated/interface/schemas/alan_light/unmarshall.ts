@@ -1,27 +1,27 @@
 import * as _pt from 'exupery-core-types'
 
-import * as _i_in from "./unconstrained"
+import * as _i_in from "../../core/astn_source"
 import * as _i_out from "./unconstrained"
 
 // **** TYPES
 
 export type _T_Identifier = (
-    $$_: _i_in._T_Identifier,
+    $$_: _i_in._T_Value,
     $$_p: null,
 ) => _i_out._T_Identifier
 
 export type _T_Node = (
-    $$_: _i_in._T_Node,
+    $$_: _i_in._T_Value,
     $$_p: null,
 ) => _i_out._T_Node
 
 export type _T_Path = (
-    $$_: _i_in._T_Path,
+    $$_: _i_in._T_Value,
     $$_p: null,
 ) => _i_out._T_Path
 
 export type _T_Root = (
-    $$_: _i_in._T_Root,
+    $$_: _i_in._T_Value,
     $$_p: null,
 ) => _i_out._T_Root
 
@@ -41,7 +41,7 @@ export namespace _T_Identifier {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Identifier
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -55,7 +55,7 @@ export namespace _T_Node {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Node
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -69,7 +69,7 @@ export namespace _T_Path {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Path
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -83,7 +83,7 @@ export namespace _T_Root {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Root
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -99,7 +99,7 @@ export namespace Identifier {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Identifier
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -113,7 +113,7 @@ export namespace Node {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Node
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -127,7 +127,7 @@ export namespace Path {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Path
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -141,7 +141,7 @@ export namespace Root {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Root
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }

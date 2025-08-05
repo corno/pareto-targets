@@ -1,42 +1,42 @@
 import * as _pt from 'exupery-core-types'
 
-import * as _i_in from "./unconstrained"
+import * as _i_in from "../../core/astn_source"
 import * as _i_out from "./unconstrained"
 
 // **** TYPES
 
 export type _T_Attribute_Value = (
-    $$_: _i_in._T_Attribute_Value,
+    $$_: _i_in._T_Value,
     $$_p: null,
 ) => _i_out._T_Attribute_Value
 
 export type _T_Edge_Attributes = (
-    $$_: _i_in._T_Edge_Attributes,
+    $$_: _i_in._T_Value,
     $$_p: null,
 ) => _i_out._T_Edge_Attributes
 
 export type _T_End_Point_Specification = (
-    $$_: _i_in._T_End_Point_Specification,
+    $$_: _i_in._T_Value,
     $$_p: null,
 ) => _i_out._T_End_Point_Specification
 
 export type _T_Graph = (
-    $$_: _i_in._T_Graph,
+    $$_: _i_in._T_Value,
     $$_p: null,
 ) => _i_out._T_Graph
 
 export type _T_Graph_Attributes = (
-    $$_: _i_in._T_Graph_Attributes,
+    $$_: _i_in._T_Value,
     $$_p: null,
 ) => _i_out._T_Graph_Attributes
 
 export type _T_Node_Attributes = (
-    $$_: _i_in._T_Node_Attributes,
+    $$_: _i_in._T_Value,
     $$_p: null,
 ) => _i_out._T_Node_Attributes
 
 export type _T_Tree = (
-    $$_: _i_in._T_Tree,
+    $$_: _i_in._T_Value,
     $$_p: null,
 ) => _i_out._T_Tree
 
@@ -62,7 +62,7 @@ export namespace _T_Attribute_Value {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Attribute_Value
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -76,7 +76,7 @@ export namespace _T_Edge_Attributes {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Edge_Attributes
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -90,7 +90,7 @@ export namespace _T_End_Point_Specification {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_End_Point_Specification
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -104,7 +104,7 @@ export namespace _T_Graph {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Graph
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -118,7 +118,7 @@ export namespace _T_Graph_Attributes {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Graph_Attributes
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -132,7 +132,7 @@ export namespace _T_Node_Attributes {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Node_Attributes
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -146,7 +146,7 @@ export namespace _T_Tree {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Tree
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -162,7 +162,7 @@ export namespace Attribute_Value {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Attribute_Value
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -176,7 +176,7 @@ export namespace Edge_Attributes {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Edge_Attributes
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -190,7 +190,7 @@ export namespace End_Point_Specification {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_End_Point_Specification
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -204,7 +204,7 @@ export namespace Graph {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Graph
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -218,7 +218,7 @@ export namespace Graph_Attributes {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Graph_Attributes
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -232,7 +232,7 @@ export namespace Node_Attributes {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Node_Attributes
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -246,7 +246,7 @@ export namespace Tree {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Tree
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }

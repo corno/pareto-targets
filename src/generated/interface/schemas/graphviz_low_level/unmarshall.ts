@@ -1,37 +1,37 @@
 import * as _pt from 'exupery-core-types'
 
-import * as _i_in from "./unconstrained"
+import * as _i_in from "../../core/astn_source"
 import * as _i_out from "./unconstrained"
 
 // **** TYPES
 
 export type _T_Attribute_List = (
-    $$_: _i_in._T_Attribute_List,
+    $$_: _i_in._T_Value,
     $$_p: null,
 ) => _i_out._T_Attribute_List
 
 export type _T_Graph = (
-    $$_: _i_in._T_Graph,
+    $$_: _i_in._T_Value,
     $$_p: null,
 ) => _i_out._T_Graph
 
 export type _T_ID = (
-    $$_: _i_in._T_ID,
+    $$_: _i_in._T_Value,
     $$_p: null,
 ) => _i_out._T_ID
 
 export type _T_Node_ID = (
-    $$_: _i_in._T_Node_ID,
+    $$_: _i_in._T_Value,
     $$_p: null,
 ) => _i_out._T_Node_ID
 
 export type _T_Statement_List = (
-    $$_: _i_in._T_Statement_List,
+    $$_: _i_in._T_Value,
     $$_p: null,
 ) => _i_out._T_Statement_List
 
 export type _T_Subgraph = (
-    $$_: _i_in._T_Subgraph,
+    $$_: _i_in._T_Value,
     $$_p: null,
 ) => _i_out._T_Subgraph
 
@@ -55,7 +55,7 @@ export namespace _T_Attribute_List {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Attribute_List
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -69,7 +69,7 @@ export namespace _T_Graph {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Graph
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -83,7 +83,7 @@ export namespace _T_ID {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_ID
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -97,7 +97,7 @@ export namespace _T_Node_ID {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Node_ID
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -111,7 +111,7 @@ export namespace _T_Statement_List {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Statement_List
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -125,7 +125,7 @@ export namespace _T_Subgraph {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Subgraph
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -141,7 +141,7 @@ export namespace Attribute_List {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Attribute_List
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -155,7 +155,7 @@ export namespace Graph {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Graph
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -169,7 +169,7 @@ export namespace ID {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_ID
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -183,7 +183,7 @@ export namespace Node_ID {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Node_ID
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -197,7 +197,7 @@ export namespace Statement_List {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Statement_List
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }
@@ -211,7 +211,7 @@ export namespace Subgraph {
     
     export namespace CONTEXT {
     }
-    export type CONTEXT = _i_in._T_Subgraph
+    export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
     }

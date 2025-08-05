@@ -1,0 +1,381 @@
+import * as _pa from 'exupery-core-alg'
+import * as _pd from 'exupery-core-dev'
+
+import * as _i_generic from "../../generic/unmarshall"
+import * as _i_out from "../../../interface/schemas/alan_light/unconstrained"
+import * as _i_signatures from "../../../interface/schemas/alan_light/unmarshall"
+
+
+export const Identifier: _i_signatures._T_Identifier = ($) => _i_generic.process_text(
+    $,
+    null
+)
+export const Node: _i_signatures._T_Node = ($) => _i_generic.process_group(
+    $,
+    {
+        'properties': ($) => ({
+            'properties': _pa.cc(_i_generic.get_entry(
+                $,
+                {
+                    'key': "properties",
+                }
+            ), ($) => _i_generic.process_unconstrained_dictionary(
+                $,
+                {
+                    'value': ($) => _i_generic.process_group(
+                        $,
+                        {
+                            'properties': ($) => ({
+                                'type': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "type",
+                                    }
+                                ), ($) => _i_generic.process_state_group(
+                                    $,
+                                    {
+                                        'states': _pa.dictionary_literal({
+                                            'collection': ($): _i_out._T_Node.properties.D._type => _i_generic.wrap_unconstrained_state_group(
+                                                ['collection', _i_generic.process_group(
+                                                    $,
+                                                    {
+                                                        'properties': ($) => ({
+                                                            'key': _pa.cc(_i_generic.get_entry(
+                                                                $,
+                                                                {
+                                                                    'key': "key",
+                                                                }
+                                                            ), ($) => Identifier(
+                                                                $,
+                                                                null
+                                                            )),
+                                                            'node': _pa.cc(_i_generic.get_entry(
+                                                                $,
+                                                                {
+                                                                    'key': "node",
+                                                                }
+                                                            ), ($) => Node(
+                                                                $,
+                                                                null
+                                                            )),
+                                                        }),
+                                                    }
+                                                )],
+                                                null
+                                            ),
+                                            'group': ($): _i_out._T_Node.properties.D._type => _i_generic.wrap_unconstrained_state_group(
+                                                ['group', _i_generic.process_group(
+                                                    $,
+                                                    {
+                                                        'properties': ($) => ({
+                                                            'node': _pa.cc(_i_generic.get_entry(
+                                                                $,
+                                                                {
+                                                                    'key': "node",
+                                                                }
+                                                            ), ($) => Node(
+                                                                $,
+                                                                null
+                                                            )),
+                                                        }),
+                                                    }
+                                                )],
+                                                null
+                                            ),
+                                            'state group': ($): _i_out._T_Node.properties.D._type => _i_generic.wrap_unconstrained_state_group(
+                                                ['state group', _i_generic.process_group(
+                                                    $,
+                                                    {
+                                                        'properties': ($) => ({
+                                                            'states': _pa.cc(_i_generic.get_entry(
+                                                                $,
+                                                                {
+                                                                    'key': "states",
+                                                                }
+                                                            ), ($) => _i_generic.process_unconstrained_dictionary(
+                                                                $,
+                                                                {
+                                                                    'value': ($) => _i_generic.process_group(
+                                                                        $,
+                                                                        {
+                                                                            'properties': ($) => ({
+                                                                                'constraints': _pa.cc(_i_generic.get_entry(
+                                                                                    $,
+                                                                                    {
+                                                                                        'key': "constraints",
+                                                                                    }
+                                                                                ), ($) => _i_generic.process_unconstrained_dictionary(
+                                                                                    $,
+                                                                                    {
+                                                                                        'value': ($) => _i_generic.process_group(
+                                                                                            $,
+                                                                                            {
+                                                                                                'properties': ($) => ({
+                                                                                                    'path': _pa.cc(_i_generic.get_entry(
+                                                                                                        $,
+                                                                                                        {
+                                                                                                            'key': "path",
+                                                                                                        }
+                                                                                                    ), ($) => Path(
+                                                                                                        $,
+                                                                                                        null
+                                                                                                    )),
+                                                                                                }),
+                                                                                            }
+                                                                                        ),
+                                                                                    }
+                                                                                )),
+                                                                                'node': _pa.cc(_i_generic.get_entry(
+                                                                                    $,
+                                                                                    {
+                                                                                        'key': "node",
+                                                                                    }
+                                                                                ), ($) => Node(
+                                                                                    $,
+                                                                                    null
+                                                                                )),
+                                                                            }),
+                                                                        }
+                                                                    ),
+                                                                }
+                                                            )),
+                                                        }),
+                                                    }
+                                                )],
+                                                null
+                                            ),
+                                            'text': ($): _i_out._T_Node.properties.D._type => _i_generic.wrap_unconstrained_state_group(
+                                                ['text', _i_generic.process_group(
+                                                    $,
+                                                    {
+                                                        'properties': ($) => ({
+                                                            'constraint': _pa.cc(_i_generic.get_entry(
+                                                                $,
+                                                                {
+                                                                    'key': "constraint",
+                                                                }
+                                                            ), ($) => _i_generic.process_optional(
+                                                                $,
+                                                                {
+                                                                    'value': ($) => _i_generic.process_group(
+                                                                        $,
+                                                                        {
+                                                                            'properties': ($) => ({
+                                                                                'dictionary': _pa.cc(_i_generic.get_entry(
+                                                                                    $,
+                                                                                    {
+                                                                                        'key': "dictionary",
+                                                                                    }
+                                                                                ), ($) => Identifier(
+                                                                                    $,
+                                                                                    null
+                                                                                )),
+                                                                                'path': _pa.cc(_i_generic.get_entry(
+                                                                                    $,
+                                                                                    {
+                                                                                        'key': "path",
+                                                                                    }
+                                                                                ), ($) => Path(
+                                                                                    $,
+                                                                                    null
+                                                                                )),
+                                                                            }),
+                                                                        }
+                                                                    ),
+                                                                }
+                                                            )),
+                                                        }),
+                                                    }
+                                                )],
+                                                null
+                                            ),
+                                        }),
+                                    }
+                                )),
+                            }),
+                        }
+                    ),
+                }
+            )),
+        }),
+    }
+)
+export const Path: _i_signatures._T_Path = ($) => _i_generic.process_group(
+    $,
+    {
+        'properties': ($) => ({
+            'context': _pa.cc(_i_generic.get_entry(
+                $,
+                {
+                    'key': "context",
+                }
+            ), ($) => _i_generic.process_group(
+                $,
+                {
+                    'properties': ($) => ({
+                        'sibling': _pa.cc(_i_generic.get_entry(
+                            $,
+                            {
+                                'key': "sibling",
+                            }
+                        ), ($) => _i_generic.process_group(
+                            $,
+                            {
+                                'properties': ($) => null,
+                            }
+                        )),
+                        'state constraint': _pa.cc(_i_generic.get_entry(
+                            $,
+                            {
+                                'key': "state constraint",
+                            }
+                        ), ($) => _i_generic.process_group(
+                            $,
+                            {
+                                'properties': ($) => ({
+                                    'name': _pa.cc(_i_generic.get_entry(
+                                        $,
+                                        {
+                                            'key': "name",
+                                        }
+                                    ), ($) => Identifier(
+                                        $,
+                                        null
+                                    )),
+                                }),
+                            }
+                        )),
+                    }),
+                }
+            )),
+            'selection steps': _pa.cc(_i_generic.get_entry(
+                $,
+                {
+                    'key': "selection steps",
+                }
+            ), ($) => _i_generic.process_unconstrained_list(
+                $,
+                {
+                    'value': ($) => _i_generic.process_group(
+                        $,
+                        {
+                            'properties': ($) => ({
+                                'group': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "group",
+                                    }
+                                ), ($) => _i_generic.process_group(
+                                    $,
+                                    {
+                                        'properties': ($) => ({
+                                            'name': _pa.cc(_i_generic.get_entry(
+                                                $,
+                                                {
+                                                    'key': "name",
+                                                }
+                                            ), ($) => Identifier(
+                                                $,
+                                                null
+                                            )),
+                                        }),
+                                    }
+                                )),
+                                'reference': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "reference",
+                                    }
+                                ), ($) => _i_generic.process_group(
+                                    $,
+                                    {
+                                        'properties': ($) => ({
+                                            'name': _pa.cc(_i_generic.get_entry(
+                                                $,
+                                                {
+                                                    'key': "name",
+                                                }
+                                            ), ($) => Identifier(
+                                                $,
+                                                null
+                                            )),
+                                        }),
+                                    }
+                                )),
+                                'state constraint': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "state constraint",
+                                    }
+                                ), ($) => _i_generic.process_group(
+                                    $,
+                                    {
+                                        'properties': ($) => ({
+                                            'name': _pa.cc(_i_generic.get_entry(
+                                                $,
+                                                {
+                                                    'key': "name",
+                                                }
+                                            ), ($) => Identifier(
+                                                $,
+                                                null
+                                            )),
+                                        }),
+                                    }
+                                )),
+                            }),
+                        }
+                    ),
+                }
+            )),
+            'up steps': _pa.cc(_i_generic.get_entry(
+                $,
+                {
+                    'key': "up steps",
+                }
+            ), ($) => _i_generic.process_unconstrained_list(
+                $,
+                {
+                    'value': ($) => _i_generic.process_group(
+                        $,
+                        {
+                            'properties': ($) => null,
+                        }
+                    ),
+                }
+            )),
+        }),
+    }
+)
+export const Root: _i_signatures._T_Root = ($) => _i_generic.process_group(
+    $,
+    {
+        'properties': ($) => ({
+            'numerical types': _pa.cc(_i_generic.get_entry(
+                $,
+                {
+                    'key': "numerical types",
+                }
+            ), ($) => _i_generic.process_unconstrained_dictionary(
+                $,
+                {
+                    'value': ($) => _i_generic.process_group(
+                        $,
+                        {
+                            'properties': ($) => null,
+                        }
+                    ),
+                }
+            )),
+            'root': _pa.cc(_i_generic.get_entry(
+                $,
+                {
+                    'key': "root",
+                }
+            ), ($) => Node(
+                $,
+                null
+            )),
+        }),
+    }
+)
