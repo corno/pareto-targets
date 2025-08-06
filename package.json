@@ -9,10 +9,10 @@
   ],
   "dependencies": {
     "exupery-core-alg": "^0.1.4",
-    "exupery-core-data": "^0.1.4",
+    "exupery-core-data": "^0.1.5",
     "exupery-core-dev": "^0.1.1",
     "exupery-core-resources": "^0.2.1",
-    "pareto": "^0.76.27",
+    "pareto": "^0.76.28",
     "pareto-json": "^0.1.1"
   }
 }

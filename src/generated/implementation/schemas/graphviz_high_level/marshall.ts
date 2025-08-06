@@ -85,7 +85,7 @@ export const Edge_Attributes: _i_signatures._T_s_Edge_Attributes = ($, $p) => ['
         case 'constraint': return _pa.ss($, ($) => ({
             'state': "constraint",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -95,7 +95,7 @@ export const Edge_Attributes: _i_signatures._T_s_Edge_Attributes = ($, $p) => ['
         case 'decorate': return _pa.ss($, ($) => ({
             'state': "decorate",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -164,7 +164,7 @@ export const Edge_Attributes: _i_signatures._T_s_Edge_Attributes = ($, $p) => ['
         case 'headclip': return _pa.ss($, ($) => ({
             'state': "headclip",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -223,7 +223,7 @@ export const Edge_Attributes: _i_signatures._T_s_Edge_Attributes = ($, $p) => ['
         case 'label float': return _pa.ss($, ($) => ({
             'state': "label float",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -240,7 +240,7 @@ export const Edge_Attributes: _i_signatures._T_s_Edge_Attributes = ($, $p) => ['
         case 'labelfloat': return _pa.ss($, ($) => ({
             'state': "labelfloat",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -313,7 +313,7 @@ export const Edge_Attributes: _i_signatures._T_s_Edge_Attributes = ($, $p) => ['
         case 'same head': return _pa.ss($, ($) => ({
             'state': "same head",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -323,7 +323,7 @@ export const Edge_Attributes: _i_signatures._T_s_Edge_Attributes = ($, $p) => ['
         case 'same tail': return _pa.ss($, ($) => ({
             'state': "same tail",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -333,7 +333,7 @@ export const Edge_Attributes: _i_signatures._T_s_Edge_Attributes = ($, $p) => ['
         case 'showboxes': return _pa.ss($, ($) => ({
             'state': "showboxes",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -357,7 +357,7 @@ export const Edge_Attributes: _i_signatures._T_s_Edge_Attributes = ($, $p) => ['
         case 'tailclip': return _pa.ss($, ($) => ({
             'state': "tailclip",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -558,7 +558,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
         case 'compound': return _pa.ss($, ($) => ({
             'state': "compound",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -568,7 +568,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
         case 'concentrate': return _pa.ss($, ($) => ({
             'state': "concentrate",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -650,7 +650,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
         case 'landscape': return _pa.ss($, ($) => ({
             'state': "landscape",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -733,7 +733,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
         case 'newrank': return _pa.ss($, ($) => ({
             'state': "newrank",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -743,7 +743,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
         case 'no loop': return _pa.ss($, ($) => ({
             'state': "no loop",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -753,7 +753,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
         case 'normalize': return _pa.ss($, ($) => ({
             'state': "normalize",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -829,7 +829,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
         case 'pack': return _pa.ss($, ($) => ({
             'state': "pack",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -869,7 +869,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
         case 'quadtree': return _pa.ss($, ($) => ({
             'state': "quadtree",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -924,7 +924,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
         case 'remincross': return _pa.ss($, ($) => ({
             'state': "remincross",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -962,7 +962,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
         case 'showboxes': return _pa.ss($, ($) => ({
             'state': "showboxes",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -999,7 +999,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
         case 'sortv': return _pa.ss($, ($) => ({
             'state': "sortv",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -1051,7 +1051,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
         case 'truecolor': return _pa.ss($, ($) => ({
             'state': "truecolor",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -1115,7 +1115,7 @@ export const Node_Attributes: _i_signatures._T_s_Node_Attributes = ($, $p) => ['
         case 'concentrate': return _pa.ss($, ($) => ({
             'state': "concentrate",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -1132,7 +1132,7 @@ export const Node_Attributes: _i_signatures._T_s_Node_Attributes = ($, $p) => ['
         case 'fixed size': return _pa.ss($, ($) => ({
             'state': "fixed size",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -1225,7 +1225,7 @@ export const Node_Attributes: _i_signatures._T_s_Node_Attributes = ($, $p) => ['
         case 'nojustify': return _pa.ss($, ($) => ({
             'state': "nojustify",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -1270,7 +1270,7 @@ export const Node_Attributes: _i_signatures._T_s_Node_Attributes = ($, $p) => ['
         case 'regular': return _pa.ss($, ($) => ({
             'state': "regular",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -1280,7 +1280,7 @@ export const Node_Attributes: _i_signatures._T_s_Node_Attributes = ($, $p) => ['
         case 'root': return _pa.ss($, ($) => ({
             'state': "root",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null
@@ -1297,7 +1297,7 @@ export const Node_Attributes: _i_signatures._T_s_Node_Attributes = ($, $p) => ['
         case 'showboxes': return _pa.ss($, ($) => ({
             'state': "showboxes",
             'value': ['text', ({
-                'delimiter': ['quote', null],
+                'delimiter': ['backtick', null],
                 'value': $p['value serializers']['boolean'](
                     $,
                     null

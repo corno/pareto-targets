@@ -36,7 +36,7 @@ export const Graph: _i_signatures._T_s_Graph = ($, $p) => ['verbose group', _pa.
         }
     )),
     'strict': _pa.cc($['strict'], ($) => ['text', ({
-        'delimiter': ['quote', null],
+        'delimiter': ['backtick', null],
         'value': $p['value serializers']['boolean'](
             $,
             null

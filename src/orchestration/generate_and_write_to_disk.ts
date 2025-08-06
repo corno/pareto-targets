@@ -38,14 +38,11 @@ export const $$ = (
         }
     )
     wtd.Directory(
-        t_fountain_pen_block_to_fountain_pen_lines.Directory(
-            x,
-            {
-                'indentation': "    "
-            }
-        ),
+        x,
         {
-            'path': $p.path
+            'path': $p.path,
+            'indentation': "    ",
+            'newline': "\n"
         }
     )
 }
