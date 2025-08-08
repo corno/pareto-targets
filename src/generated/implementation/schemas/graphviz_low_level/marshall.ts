@@ -5,7 +5,7 @@ import * as _i_out from "../../../interface/core/astn_target"
 import * as _i_signatures from "../../../interface/schemas/graphviz_low_level/marshall"
 
 
-export const Attribute_List: _i_signatures._T_s_Attribute_List = ($, $p) => ['list', $.map(($) => ['verbose group', _pa.dictionary_literal({
+export const Attribute_List: _i_signatures._T_Attribute_List = ($, $p) => ['list', $.map(($) => ['verbose group', _pa.dictionary_literal({
     'name': _pa.cc($['name'], ($) => ID(
         $,
         {
@@ -19,7 +19,7 @@ export const Attribute_List: _i_signatures._T_s_Attribute_List = ($, $p) => ['li
         }
     )),
 })])]
-export const Graph: _i_signatures._T_s_Graph = ($, $p) => ['verbose group', _pa.dictionary_literal({
+export const Graph: _i_signatures._T_Graph = ($, $p) => ['verbose group', _pa.dictionary_literal({
     'name': _pa.cc($['name'], ($) => ['optional', $.transform(
         ($): _i_out._T_Value.SG.optional => ['set', ID(
             $,
@@ -56,7 +56,7 @@ export const Graph: _i_signatures._T_s_Graph = ($, $p) => ['verbose group', _pa.
         }
     })]),
 })]
-export const ID: _i_signatures._T_s_ID = ($, $p) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
+export const ID: _i_signatures._T_ID = ($, $p) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
     switch ($[0]) {
         case 'html': return _pa.ss($, ($) => ({
             'state': "html",
@@ -89,7 +89,7 @@ export const ID: _i_signatures._T_s_ID = ($, $p) => ['state', _pa.cc($, ($): _i_
         default: return _pa.au($[0])
     }
 })]
-export const Node_ID: _i_signatures._T_s_Node_ID = ($, $p) => ['verbose group', _pa.dictionary_literal({
+export const Node_ID: _i_signatures._T_Node_ID = ($, $p) => ['verbose group', _pa.dictionary_literal({
     'id': _pa.cc($['id'], ($) => ID(
         $,
         {
@@ -117,7 +117,7 @@ export const Node_ID: _i_signatures._T_s_Node_ID = ($, $p) => ['verbose group', 
         () => ['not set', null]
     )]),
 })]
-export const Statement_List: _i_signatures._T_s_Statement_List = ($, $p) => ['list', $.map(($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
+export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list', $.map(($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
     switch ($[0]) {
         case 'attribute assignment': return _pa.ss($, ($) => ({
             'state': "attribute assignment",
@@ -250,7 +250,7 @@ export const Statement_List: _i_signatures._T_s_Statement_List = ($, $p) => ['li
         default: return _pa.au($[0])
     }
 })])]
-export const Subgraph: _i_signatures._T_s_Subgraph = ($, $p) => ['verbose group', _pa.dictionary_literal({
+export const Subgraph: _i_signatures._T_Subgraph = ($, $p) => ['verbose group', _pa.dictionary_literal({
     'statements': _pa.cc($['statements'], ($) => Statement_List(
         $,
         {

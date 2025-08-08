@@ -6,7 +6,7 @@ import * as _i_out from "../../../interface/schemas/lionweb/data_types/unconstra
 import * as _i_signatures from "../../../interface/schemas/lionweb/unmarshall"
 
 
-export const MetaPointer: _i_signatures._T_MetaPointer = ($) => _i_generic.process_group(
+export const MetaPointer: _i_signatures._T_MetaPointer = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
@@ -40,7 +40,7 @@ export const MetaPointer: _i_signatures._T_MetaPointer = ($) => _i_generic.proce
         }),
     }
 )
-export const SerializationChunk: _i_signatures._T_SerializationChunk = ($) => _i_generic.process_group(
+export const SerializationChunk: _i_signatures._T_SerializationChunk = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
@@ -112,7 +112,9 @@ export const SerializationChunk: _i_signatures._T_SerializationChunk = ($) => _i
                                     }
                                 ), ($) => MetaPointer(
                                     $,
-                                    null
+                                    {
+                                        'value deserializers': $p['value deserializers'],
+                                    }
                                 )),
                                 'containments': _pa.cc(_i_generic.get_entry(
                                     $,
@@ -147,7 +149,9 @@ export const SerializationChunk: _i_signatures._T_SerializationChunk = ($) => _i
                                                         }
                                                     ), ($) => MetaPointer(
                                                         $,
-                                                        null
+                                                        {
+                                                            'value deserializers': $p['value deserializers'],
+                                                        }
                                                     )),
                                                 }),
                                             }
@@ -196,7 +200,9 @@ export const SerializationChunk: _i_signatures._T_SerializationChunk = ($) => _i
                                                         }
                                                     ), ($) => MetaPointer(
                                                         $,
-                                                        null
+                                                        {
+                                                            'value deserializers': $p['value deserializers'],
+                                                        }
                                                     )),
                                                     'value': _pa.cc(_i_generic.get_entry(
                                                         $,
@@ -231,7 +237,9 @@ export const SerializationChunk: _i_signatures._T_SerializationChunk = ($) => _i
                                                         }
                                                     ), ($) => MetaPointer(
                                                         $,
-                                                        null
+                                                        {
+                                                            'value deserializers': $p['value deserializers'],
+                                                        }
                                                     )),
                                                     'targets': _pa.cc(_i_generic.get_entry(
                                                         $,
@@ -290,12 +298,14 @@ export const SerializationChunk: _i_signatures._T_SerializationChunk = ($) => _i
         }),
     }
 )
-export const SerializationChunks: _i_signatures._T_SerializationChunks = ($) => _i_generic.process_unconstrained_dictionary(
+export const SerializationChunks: _i_signatures._T_SerializationChunks = ($, $p) => _i_generic.process_unconstrained_dictionary(
     $,
     {
         'value': ($) => SerializationChunk(
             $,
-            null
+            {
+                'value deserializers': $p['value deserializers'],
+            }
         ),
     }
 )

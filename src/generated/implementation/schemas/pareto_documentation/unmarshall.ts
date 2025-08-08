@@ -7,7 +7,7 @@ import * as _i_r_graphviz from "../graphviz_high_level/unmarshall"
 import * as _i_signatures from "../../../interface/schemas/pareto_documentation/unmarshall"
 
 
-export const Graphviz_Directory: _i_signatures._T_Graphviz_Directory = ($) => _i_generic.process_unconstrained_dictionary(
+export const Graphviz_Directory: _i_signatures._T_Graphviz_Directory = ($, $p) => _i_generic.process_unconstrained_dictionary(
     $,
     {
         'value': ($) => _i_generic.process_state_group(
@@ -17,14 +17,18 @@ export const Graphviz_Directory: _i_signatures._T_Graphviz_Directory = ($) => _i
                     'directory': ($): _i_out._T_Graphviz_Directory.D => _i_generic.wrap_unconstrained_state_group(
                         ['directory', Graphviz_Directory(
                             $,
-                            null
+                            {
+                                'value deserializers': $p['value deserializers'],
+                            }
                         )],
                         null
                     ),
                     'file': ($): _i_out._T_Graphviz_Directory.D => _i_generic.wrap_unconstrained_state_group(
                         ['file', _i_r_graphviz.Graph(
                             $,
-                            null
+                            {
+                                'value deserializers': $p['value deserializers'],
+                            }
                         )],
                         null
                     ),

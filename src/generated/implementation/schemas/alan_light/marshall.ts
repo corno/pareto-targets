@@ -5,11 +5,11 @@ import * as _i_out from "../../../interface/core/astn_target"
 import * as _i_signatures from "../../../interface/schemas/alan_light/marshall"
 
 
-export const Identifier: _i_signatures._T_s_Identifier = ($, $p) => ['text', ({
+export const Identifier: _i_signatures._T_Identifier = ($, $p) => ['text', ({
     'delimiter': ['quote', null],
     'value': $,
 })]
-export const Node: _i_signatures._T_s_Node = ($, $p) => ['verbose group', _pa.dictionary_literal({
+export const Node: _i_signatures._T_Node = ($, $p) => ['verbose group', _pa.dictionary_literal({
     'properties': _pa.cc($['properties'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
         'type': _pa.cc($['type'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
             switch ($[0]) {
@@ -89,7 +89,7 @@ export const Node: _i_signatures._T_s_Node = ($, $p) => ['verbose group', _pa.di
         })]),
     })])]),
 })]
-export const Path: _i_signatures._T_s_Path = ($, $p) => ['verbose group', _pa.dictionary_literal({
+export const Path: _i_signatures._T_Path = ($, $p) => ['verbose group', _pa.dictionary_literal({
     'context': _pa.cc($['context'], ($) => ['verbose group', _pa.dictionary_literal({
         'sibling': _pa.cc($['sibling'], ($) => ['verbose group', _pa.dictionary_literal({
         })]),
@@ -131,7 +131,7 @@ export const Path: _i_signatures._T_s_Path = ($, $p) => ['verbose group', _pa.di
     'up steps': _pa.cc($['up steps'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary_literal({
     })])]),
 })]
-export const Root: _i_signatures._T_s_Root = ($, $p) => ['verbose group', _pa.dictionary_literal({
+export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dictionary_literal({
     'numerical types': _pa.cc($['numerical types'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
     })])]),
     'root': _pa.cc($['root'], ($) => Node(

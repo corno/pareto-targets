@@ -2,37 +2,50 @@ import * as _pt from 'exupery-core-types'
 
 import * as _i_in from "../../core/astn_source"
 import * as _i_out from "./data_types/unconstrained"
+import * as _i_vd from "./value_deserializers"
 
 // **** TYPES
 
 export type _T_Attribute_List = (
     $$_: _i_in._T_Value,
-    $$_p: null,
+    $$_p: {
+        readonly 'value deserializers': _i_vd._T_Value_Deserializers
+    },
 ) => _i_out._T_Attribute_List
 
 export type _T_Graph = (
     $$_: _i_in._T_Value,
-    $$_p: null,
+    $$_p: {
+        readonly 'value deserializers': _i_vd._T_Value_Deserializers
+    },
 ) => _i_out._T_Graph
 
 export type _T_ID = (
     $$_: _i_in._T_Value,
-    $$_p: null,
+    $$_p: {
+        readonly 'value deserializers': _i_vd._T_Value_Deserializers
+    },
 ) => _i_out._T_ID
 
 export type _T_Node_ID = (
     $$_: _i_in._T_Value,
-    $$_p: null,
+    $$_p: {
+        readonly 'value deserializers': _i_vd._T_Value_Deserializers
+    },
 ) => _i_out._T_Node_ID
 
 export type _T_Statement_List = (
     $$_: _i_in._T_Value,
-    $$_p: null,
+    $$_p: {
+        readonly 'value deserializers': _i_vd._T_Value_Deserializers
+    },
 ) => _i_out._T_Statement_List
 
 export type _T_Subgraph = (
     $$_: _i_in._T_Value,
-    $$_p: null,
+    $$_p: {
+        readonly 'value deserializers': _i_vd._T_Value_Deserializers
+    },
 ) => _i_out._T_Subgraph
 
 // **** FRIENDLY NAMES FOR THE GLOBAL TYPES
@@ -58,6 +71,10 @@ export namespace _T_Attribute_List {
     export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
+        
+        export namespace value_deserializers {
+        }
+        export type value_deserializers = _i_vd._T_Value_Deserializers
     }
     
     export namespace RESULT {
@@ -72,6 +89,10 @@ export namespace _T_Graph {
     export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
+        
+        export namespace value_deserializers {
+        }
+        export type value_deserializers = _i_vd._T_Value_Deserializers
     }
     
     export namespace RESULT {
@@ -86,6 +107,10 @@ export namespace _T_ID {
     export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
+        
+        export namespace value_deserializers {
+        }
+        export type value_deserializers = _i_vd._T_Value_Deserializers
     }
     
     export namespace RESULT {
@@ -100,6 +125,10 @@ export namespace _T_Node_ID {
     export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
+        
+        export namespace value_deserializers {
+        }
+        export type value_deserializers = _i_vd._T_Value_Deserializers
     }
     
     export namespace RESULT {
@@ -114,6 +143,10 @@ export namespace _T_Statement_List {
     export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
+        
+        export namespace value_deserializers {
+        }
+        export type value_deserializers = _i_vd._T_Value_Deserializers
     }
     
     export namespace RESULT {
@@ -128,6 +161,10 @@ export namespace _T_Subgraph {
     export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
+        
+        export namespace value_deserializers {
+        }
+        export type value_deserializers = _i_vd._T_Value_Deserializers
     }
     
     export namespace RESULT {
@@ -144,6 +181,10 @@ export namespace Attribute_List {
     export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
+        
+        export namespace value_deserializers {
+        }
+        export type value_deserializers = _i_vd._T_Value_Deserializers
     }
     
     export namespace RESULT {
@@ -158,6 +199,10 @@ export namespace Graph {
     export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
+        
+        export namespace value_deserializers {
+        }
+        export type value_deserializers = _i_vd._T_Value_Deserializers
     }
     
     export namespace RESULT {
@@ -172,6 +217,10 @@ export namespace ID {
     export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
+        
+        export namespace value_deserializers {
+        }
+        export type value_deserializers = _i_vd._T_Value_Deserializers
     }
     
     export namespace RESULT {
@@ -186,6 +235,10 @@ export namespace Node_ID {
     export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
+        
+        export namespace value_deserializers {
+        }
+        export type value_deserializers = _i_vd._T_Value_Deserializers
     }
     
     export namespace RESULT {
@@ -200,6 +253,10 @@ export namespace Statement_List {
     export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
+        
+        export namespace value_deserializers {
+        }
+        export type value_deserializers = _i_vd._T_Value_Deserializers
     }
     
     export namespace RESULT {
@@ -214,6 +271,10 @@ export namespace Subgraph {
     export type CONTEXT = _i_in._T_Value
     
     export namespace PARAMS {
+        
+        export namespace value_deserializers {
+        }
+        export type value_deserializers = _i_vd._T_Value_Deserializers
     }
     
     export namespace RESULT {

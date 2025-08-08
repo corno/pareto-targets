@@ -6,11 +6,11 @@ import * as _i_out from "../../../interface/schemas/alan_light/data_types/uncons
 import * as _i_signatures from "../../../interface/schemas/alan_light/unmarshall"
 
 
-export const Identifier: _i_signatures._T_Identifier = ($) => _i_generic.process_text(
+export const Identifier: _i_signatures._T_Identifier = ($, $p) => _i_generic.process_text(
     $,
     null
 )
-export const Node: _i_signatures._T_Node = ($) => _i_generic.process_group(
+export const Node: _i_signatures._T_Node = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
@@ -47,7 +47,9 @@ export const Node: _i_signatures._T_Node = ($) => _i_generic.process_group(
                                                                 }
                                                             ), ($) => Identifier(
                                                                 $,
-                                                                null
+                                                                {
+                                                                    'value deserializers': $p['value deserializers'],
+                                                                }
                                                             )),
                                                             'node': _pa.cc(_i_generic.get_entry(
                                                                 $,
@@ -56,7 +58,9 @@ export const Node: _i_signatures._T_Node = ($) => _i_generic.process_group(
                                                                 }
                                                             ), ($) => Node(
                                                                 $,
-                                                                null
+                                                                {
+                                                                    'value deserializers': $p['value deserializers'],
+                                                                }
                                                             )),
                                                         }),
                                                     }
@@ -75,7 +79,9 @@ export const Node: _i_signatures._T_Node = ($) => _i_generic.process_group(
                                                                 }
                                                             ), ($) => Node(
                                                                 $,
-                                                                null
+                                                                {
+                                                                    'value deserializers': $p['value deserializers'],
+                                                                }
                                                             )),
                                                         }),
                                                     }
@@ -118,7 +124,9 @@ export const Node: _i_signatures._T_Node = ($) => _i_generic.process_group(
                                                                                                         }
                                                                                                     ), ($) => Path(
                                                                                                         $,
-                                                                                                        null
+                                                                                                        {
+                                                                                                            'value deserializers': $p['value deserializers'],
+                                                                                                        }
                                                                                                     )),
                                                                                                 }),
                                                                                             }
@@ -132,7 +140,9 @@ export const Node: _i_signatures._T_Node = ($) => _i_generic.process_group(
                                                                                     }
                                                                                 ), ($) => Node(
                                                                                     $,
-                                                                                    null
+                                                                                    {
+                                                                                        'value deserializers': $p['value deserializers'],
+                                                                                    }
                                                                                 )),
                                                                             }),
                                                                         }
@@ -168,7 +178,9 @@ export const Node: _i_signatures._T_Node = ($) => _i_generic.process_group(
                                                                                     }
                                                                                 ), ($) => Identifier(
                                                                                     $,
-                                                                                    null
+                                                                                    {
+                                                                                        'value deserializers': $p['value deserializers'],
+                                                                                    }
                                                                                 )),
                                                                                 'path': _pa.cc(_i_generic.get_entry(
                                                                                     $,
@@ -177,7 +189,9 @@ export const Node: _i_signatures._T_Node = ($) => _i_generic.process_group(
                                                                                     }
                                                                                 ), ($) => Path(
                                                                                     $,
-                                                                                    null
+                                                                                    {
+                                                                                        'value deserializers': $p['value deserializers'],
+                                                                                    }
                                                                                 )),
                                                                             }),
                                                                         }
@@ -200,7 +214,7 @@ export const Node: _i_signatures._T_Node = ($) => _i_generic.process_group(
         }),
     }
 )
-export const Path: _i_signatures._T_Path = ($) => _i_generic.process_group(
+export const Path: _i_signatures._T_Path = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
@@ -240,7 +254,9 @@ export const Path: _i_signatures._T_Path = ($) => _i_generic.process_group(
                                         }
                                     ), ($) => Identifier(
                                         $,
-                                        null
+                                        {
+                                            'value deserializers': $p['value deserializers'],
+                                        }
                                     )),
                                 }),
                             }
@@ -276,7 +292,9 @@ export const Path: _i_signatures._T_Path = ($) => _i_generic.process_group(
                                                 }
                                             ), ($) => Identifier(
                                                 $,
-                                                null
+                                                {
+                                                    'value deserializers': $p['value deserializers'],
+                                                }
                                             )),
                                         }),
                                     }
@@ -297,7 +315,9 @@ export const Path: _i_signatures._T_Path = ($) => _i_generic.process_group(
                                                 }
                                             ), ($) => Identifier(
                                                 $,
-                                                null
+                                                {
+                                                    'value deserializers': $p['value deserializers'],
+                                                }
                                             )),
                                         }),
                                     }
@@ -318,7 +338,9 @@ export const Path: _i_signatures._T_Path = ($) => _i_generic.process_group(
                                                 }
                                             ), ($) => Identifier(
                                                 $,
-                                                null
+                                                {
+                                                    'value deserializers': $p['value deserializers'],
+                                                }
                                             )),
                                         }),
                                     }
@@ -347,7 +369,7 @@ export const Path: _i_signatures._T_Path = ($) => _i_generic.process_group(
         }),
     }
 )
-export const Root: _i_signatures._T_Root = ($) => _i_generic.process_group(
+export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
@@ -374,7 +396,9 @@ export const Root: _i_signatures._T_Root = ($) => _i_generic.process_group(
                 }
             ), ($) => Node(
                 $,
-                null
+                {
+                    'value deserializers': $p['value deserializers'],
+                }
             )),
         }),
     }

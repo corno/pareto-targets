@@ -6,7 +6,7 @@ import * as _i_r_graphviz from "../graphviz_high_level/marshall"
 import * as _i_signatures from "../../../interface/schemas/pareto_documentation/marshall"
 
 
-export const Graphviz_Directory: _i_signatures._T_s_Graphviz_Directory = ($, $p) => ['dictionary', $.map(($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
+export const Graphviz_Directory: _i_signatures._T_Graphviz_Directory = ($, $p) => ['dictionary', $.map(($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
     switch ($[0]) {
         case 'directory': return _pa.ss($, ($) => ({
             'state': "directory",

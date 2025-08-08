@@ -5,7 +5,7 @@ import * as _i_out from "../../../interface/core/astn_target"
 import * as _i_signatures from "../../../interface/schemas/graphviz_high_level/marshall"
 
 
-export const Attribute_Value: _i_signatures._T_s_Attribute_Value = ($, $p) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
+export const Attribute_Value: _i_signatures._T_Attribute_Value = ($, $p) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
     switch ($[0]) {
         case 'html string': return _pa.ss($, ($) => ({
             'state': "html string",
@@ -31,7 +31,7 @@ export const Attribute_Value: _i_signatures._T_s_Attribute_Value = ($, $p) => ['
         default: return _pa.au($[0])
     }
 })]
-export const Edge_Attributes: _i_signatures._T_s_Edge_Attributes = ($, $p) => ['list', $.map(($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
+export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($, $p) => ['list', $.map(($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
     switch ($[0]) {
         case 'arrowhead': return _pa.ss($, ($) => ({
             'state': "arrowhead",
@@ -409,7 +409,7 @@ export const Edge_Attributes: _i_signatures._T_s_Edge_Attributes = ($, $p) => ['
         default: return _pa.au($[0])
     }
 })])]
-export const End_Point_Specification: _i_signatures._T_s_End_Point_Specification = ($, $p) => ['verbose group', _pa.dictionary_literal({
+export const End_Point_Specification: _i_signatures._T_End_Point_Specification = ($, $p) => ['verbose group', _pa.dictionary_literal({
     'port data': _pa.cc($['port data'], ($) => ['optional', $.transform(
         ($): _i_out._T_Value.SG.optional => ['set', ['verbose group', _pa.dictionary_literal({
             'compass direction': _pa.cc($['compass direction'], ($) => ['optional', $.transform(
@@ -435,7 +435,7 @@ export const End_Point_Specification: _i_signatures._T_s_End_Point_Specification
         'value': $,
     })])]),
 })]
-export const Graph: _i_signatures._T_s_Graph = ($, $p) => ['verbose group', _pa.dictionary_literal({
+export const Graph: _i_signatures._T_Graph = ($, $p) => ['verbose group', _pa.dictionary_literal({
     'name': _pa.cc($['name'], ($) => ['optional', $.transform(
         ($): _i_out._T_Value.SG.optional => ['set', ['text', ({
             'delimiter': ['quote', null],
@@ -505,7 +505,7 @@ export const Graph: _i_signatures._T_s_Graph = ($, $p) => ['verbose group', _pa.
         }
     })]),
 })]
-export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => ['list', $.map(($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
+export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => ['list', $.map(($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
     switch ($[0]) {
         case 'charset': return _pa.ss($, ($) => ({
             'state': "charset",
@@ -1089,7 +1089,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
         default: return _pa.au($[0])
     }
 })])]
-export const Node_Attributes: _i_signatures._T_s_Node_Attributes = ($, $p) => ['list', $.map(($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
+export const Node_Attributes: _i_signatures._T_Node_Attributes = ($, $p) => ['list', $.map(($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
     switch ($[0]) {
         case 'color': return _pa.ss($, ($) => ({
             'state': "color",
@@ -1363,7 +1363,7 @@ export const Node_Attributes: _i_signatures._T_s_Node_Attributes = ($, $p) => ['
         default: return _pa.au($[0])
     }
 })])]
-export const Tree: _i_signatures._T_s_Tree = ($, $p) => ['verbose group', _pa.dictionary_literal({
+export const Tree: _i_signatures._T_Tree = ($, $p) => ['verbose group', _pa.dictionary_literal({
     'attributes': _pa.cc($['attributes'], ($) => Graph_Attributes(
         $,
         {

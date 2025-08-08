@@ -6,7 +6,7 @@ import * as _i_out from "../../../interface/schemas/graphviz_low_level/data_type
 import * as _i_signatures from "../../../interface/schemas/graphviz_low_level/unmarshall"
 
 
-export const Attribute_List: _i_signatures._T_Attribute_List = ($) => _i_generic.process_unconstrained_list(
+export const Attribute_List: _i_signatures._T_Attribute_List = ($, $p) => _i_generic.process_unconstrained_list(
     $,
     {
         'value': ($) => _i_generic.process_group(
@@ -20,7 +20,9 @@ export const Attribute_List: _i_signatures._T_Attribute_List = ($) => _i_generic
                         }
                     ), ($) => ID(
                         $,
-                        null
+                        {
+                            'value deserializers': $p['value deserializers'],
+                        }
                     )),
                     'value': _pa.cc(_i_generic.get_entry(
                         $,
@@ -29,14 +31,16 @@ export const Attribute_List: _i_signatures._T_Attribute_List = ($) => _i_generic
                         }
                     ), ($) => ID(
                         $,
-                        null
+                        {
+                            'value deserializers': $p['value deserializers'],
+                        }
                     )),
                 }),
             }
         ),
     }
 )
-export const Graph: _i_signatures._T_Graph = ($) => _i_generic.process_group(
+export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
@@ -50,7 +54,9 @@ export const Graph: _i_signatures._T_Graph = ($) => _i_generic.process_group(
                 {
                     'value': ($) => ID(
                         $,
-                        null
+                        {
+                            'value deserializers': $p['value deserializers'],
+                        }
                     ),
                 }
             )),
@@ -61,7 +67,9 @@ export const Graph: _i_signatures._T_Graph = ($) => _i_generic.process_group(
                 }
             ), ($) => Statement_List(
                 $,
-                null
+                {
+                    'value deserializers': $p['value deserializers'],
+                }
             )),
             'strict': _pa.cc(_i_generic.get_entry(
                 $,
@@ -70,7 +78,9 @@ export const Graph: _i_signatures._T_Graph = ($) => _i_generic.process_group(
                 }
             ), ($) => _i_generic.process_boolean(
                 $,
-                null
+                {
+                    'deserializer': $p['value deserializers']['boolean'],
+                }
             )),
             'type': _pa.cc(_i_generic.get_entry(
                 $,
@@ -101,7 +111,7 @@ export const Graph: _i_signatures._T_Graph = ($) => _i_generic.process_group(
         }),
     }
 )
-export const ID: _i_signatures._T_ID = ($) => _i_generic.process_state_group(
+export const ID: _i_signatures._T_ID = ($, $p) => _i_generic.process_state_group(
     $,
     {
         'states': _pa.dictionary_literal({
@@ -122,7 +132,9 @@ export const ID: _i_signatures._T_ID = ($) => _i_generic.process_state_group(
             'number': ($): _i_out._T_ID => _i_generic.wrap_unconstrained_state_group(
                 ['number', _i_generic.process_number(
                     $,
-                    null
+                    {
+                        'deserializer': $p['value deserializers']['default number'],
+                    }
                 )],
                 null
             ),
@@ -136,7 +148,7 @@ export const ID: _i_signatures._T_ID = ($) => _i_generic.process_state_group(
         }),
     }
 )
-export const Node_ID: _i_signatures._T_Node_ID = ($) => _i_generic.process_group(
+export const Node_ID: _i_signatures._T_Node_ID = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
@@ -147,7 +159,9 @@ export const Node_ID: _i_signatures._T_Node_ID = ($) => _i_generic.process_group
                 }
             ), ($) => ID(
                 $,
-                null
+                {
+                    'value deserializers': $p['value deserializers'],
+                }
             )),
             'port': _pa.cc(_i_generic.get_entry(
                 $,
@@ -171,7 +185,9 @@ export const Node_ID: _i_signatures._T_Node_ID = ($) => _i_generic.process_group
                                     {
                                         'value': ($) => ID(
                                             $,
-                                            null
+                                            {
+                                                'value deserializers': $p['value deserializers'],
+                                            }
                                         ),
                                     }
                                 )),
@@ -182,7 +198,9 @@ export const Node_ID: _i_signatures._T_Node_ID = ($) => _i_generic.process_group
                                     }
                                 ), ($) => ID(
                                     $,
-                                    null
+                                    {
+                                        'value deserializers': $p['value deserializers'],
+                                    }
                                 )),
                             }),
                         }
@@ -192,7 +210,7 @@ export const Node_ID: _i_signatures._T_Node_ID = ($) => _i_generic.process_group
         }),
     }
 )
-export const Statement_List: _i_signatures._T_Statement_List = ($) => _i_generic.process_unconstrained_list(
+export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => _i_generic.process_unconstrained_list(
     $,
     {
         'value': ($) => _i_generic.process_state_group(
@@ -211,7 +229,9 @@ export const Statement_List: _i_signatures._T_Statement_List = ($) => _i_generic
                                         }
                                     ), ($) => ID(
                                         $,
-                                        null
+                                        {
+                                            'value deserializers': $p['value deserializers'],
+                                        }
                                     )),
                                     'value': _pa.cc(_i_generic.get_entry(
                                         $,
@@ -220,7 +240,9 @@ export const Statement_List: _i_signatures._T_Statement_List = ($) => _i_generic
                                         }
                                     ), ($) => ID(
                                         $,
-                                        null
+                                        {
+                                            'value deserializers': $p['value deserializers'],
+                                        }
                                     )),
                                 }),
                             }
@@ -239,7 +261,9 @@ export const Statement_List: _i_signatures._T_Statement_List = ($) => _i_generic
                                         }
                                     ), ($) => Attribute_List(
                                         $,
-                                        null
+                                        {
+                                            'value deserializers': $p['value deserializers'],
+                                        }
                                     )),
                                     'type': _pa.cc(_i_generic.get_entry(
                                         $,
@@ -291,7 +315,9 @@ export const Statement_List: _i_signatures._T_Statement_List = ($) => _i_generic
                                         }
                                     ), ($) => Attribute_List(
                                         $,
-                                        null
+                                        {
+                                            'value deserializers': $p['value deserializers'],
+                                        }
                                     )),
                                     'left': _pa.cc(_i_generic.get_entry(
                                         $,
@@ -305,14 +331,18 @@ export const Statement_List: _i_signatures._T_Statement_List = ($) => _i_generic
                                                 'node': ($): _i_out._T_Statement_List.L.SG.edge.left => _i_generic.wrap_unconstrained_state_group(
                                                     ['node', Node_ID(
                                                         $,
-                                                        null
+                                                        {
+                                                            'value deserializers': $p['value deserializers'],
+                                                        }
                                                     )],
                                                     null
                                                 ),
                                                 'subgraph': ($): _i_out._T_Statement_List.L.SG.edge.left => _i_generic.wrap_unconstrained_state_group(
                                                     ['subgraph', Subgraph(
                                                         $,
-                                                        null
+                                                        {
+                                                            'value deserializers': $p['value deserializers'],
+                                                        }
                                                     )],
                                                     null
                                                 ),
@@ -334,14 +364,18 @@ export const Statement_List: _i_signatures._T_Statement_List = ($) => _i_generic
                                                         'node': ($): _i_out._T_Statement_List.L.SG.edge.right.L => _i_generic.wrap_unconstrained_state_group(
                                                             ['node', Node_ID(
                                                                 $,
-                                                                null
+                                                                {
+                                                                    'value deserializers': $p['value deserializers'],
+                                                                }
                                                             )],
                                                             null
                                                         ),
                                                         'subgraph': ($): _i_out._T_Statement_List.L.SG.edge.right.L => _i_generic.wrap_unconstrained_state_group(
                                                             ['subgraph', Subgraph(
                                                                 $,
-                                                                null
+                                                                {
+                                                                    'value deserializers': $p['value deserializers'],
+                                                                }
                                                             )],
                                                             null
                                                         ),
@@ -367,7 +401,9 @@ export const Statement_List: _i_signatures._T_Statement_List = ($) => _i_generic
                                         }
                                     ), ($) => Attribute_List(
                                         $,
-                                        null
+                                        {
+                                            'value deserializers': $p['value deserializers'],
+                                        }
                                     )),
                                     'node': _pa.cc(_i_generic.get_entry(
                                         $,
@@ -376,7 +412,9 @@ export const Statement_List: _i_signatures._T_Statement_List = ($) => _i_generic
                                         }
                                     ), ($) => Node_ID(
                                         $,
-                                        null
+                                        {
+                                            'value deserializers': $p['value deserializers'],
+                                        }
                                     )),
                                 }),
                             }
@@ -386,7 +424,9 @@ export const Statement_List: _i_signatures._T_Statement_List = ($) => _i_generic
                     'subgraph': ($): _i_out._T_Statement_List.L => _i_generic.wrap_unconstrained_state_group(
                         ['subgraph', Subgraph(
                             $,
-                            null
+                            {
+                                'value deserializers': $p['value deserializers'],
+                            }
                         )],
                         null
                     ),
@@ -395,7 +435,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($) => _i_generic
         ),
     }
 )
-export const Subgraph: _i_signatures._T_Subgraph = ($) => _i_generic.process_group(
+export const Subgraph: _i_signatures._T_Subgraph = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
@@ -406,7 +446,9 @@ export const Subgraph: _i_signatures._T_Subgraph = ($) => _i_generic.process_gro
                 }
             ), ($) => Statement_List(
                 $,
-                null
+                {
+                    'value deserializers': $p['value deserializers'],
+                }
             )),
             'subgraph': _pa.cc(_i_generic.get_entry(
                 $,
@@ -421,7 +463,9 @@ export const Subgraph: _i_signatures._T_Subgraph = ($) => _i_generic.process_gro
                         {
                             'value': ($) => ID(
                                 $,
-                                null
+                                {
+                                    'value deserializers': $p['value deserializers'],
+                                }
                             ),
                         }
                     ),

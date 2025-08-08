@@ -6,7 +6,7 @@ import * as _i_out from "../../../interface/schemas/graphviz_high_level/data_typ
 import * as _i_signatures from "../../../interface/schemas/graphviz_high_level/unmarshall"
 
 
-export const Attribute_Value: _i_signatures._T_Attribute_Value = ($) => _i_generic.process_state_group(
+export const Attribute_Value: _i_signatures._T_Attribute_Value = ($, $p) => _i_generic.process_state_group(
     $,
     {
         'states': _pa.dictionary_literal({
@@ -34,7 +34,7 @@ export const Attribute_Value: _i_signatures._T_Attribute_Value = ($) => _i_gener
         }),
     }
 )
-export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($) => _i_generic.process_unconstrained_list(
+export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($, $p) => _i_generic.process_unconstrained_list(
     $,
     {
         'value': ($) => _i_generic.process_state_group(
@@ -51,7 +51,9 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($) => _i_gener
                     'arrowsize': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['arrowsize', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -93,14 +95,18 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($) => _i_gener
                     'constraint': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['constraint', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
                     'decorate': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['decorate', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
@@ -180,7 +186,9 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($) => _i_gener
                     'headclip': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['headclip', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
@@ -201,7 +209,9 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($) => _i_gener
                     'height': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['height', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -222,21 +232,27 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($) => _i_gener
                     'label angle': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['label angle', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
                     'label distance': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['label distance', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
                     'label float': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['label float', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
@@ -250,7 +266,9 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($) => _i_gener
                     'labelfloat': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['labelfloat', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
@@ -271,7 +289,9 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($) => _i_gener
                     'len': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['len', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -299,14 +319,18 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($) => _i_gener
                     'minlen': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['minlen', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
                     'pen width': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['pen width', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -320,21 +344,27 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($) => _i_gener
                     'same head': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['same head', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
                     'same tail': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['same tail', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
                     'showboxes': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['showboxes', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
@@ -355,7 +385,9 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($) => _i_gener
                     'tailclip': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['tailclip', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
@@ -383,7 +415,9 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($) => _i_gener
                     'weight': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['weight', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -406,7 +440,7 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($) => _i_gener
         ),
     }
 )
-export const End_Point_Specification: _i_signatures._T_End_Point_Specification = ($) => _i_generic.process_group(
+export const End_Point_Specification: _i_signatures._T_End_Point_Specification = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
@@ -476,7 +510,7 @@ export const End_Point_Specification: _i_signatures._T_End_Point_Specification =
         }),
     }
 )
-export const Graph: _i_signatures._T_Graph = ($) => _i_generic.process_group(
+export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
@@ -501,7 +535,9 @@ export const Graph: _i_signatures._T_Graph = ($) => _i_generic.process_group(
                 }
             ), ($) => Tree(
                 $,
-                null
+                {
+                    'value deserializers': $p['value deserializers'],
+                }
             )),
             'type': _pa.cc(_i_generic.get_entry(
                 $,
@@ -536,7 +572,9 @@ export const Graph: _i_signatures._T_Graph = ($) => _i_generic.process_group(
                                                                 }
                                                             ), ($) => Edge_Attributes(
                                                                 $,
-                                                                null
+                                                                {
+                                                                    'value deserializers': $p['value deserializers'],
+                                                                }
                                                             )),
                                                             'from': _pa.cc(_i_generic.get_entry(
                                                                 $,
@@ -545,7 +583,9 @@ export const Graph: _i_signatures._T_Graph = ($) => _i_generic.process_group(
                                                                 }
                                                             ), ($) => End_Point_Specification(
                                                                 $,
-                                                                null
+                                                                {
+                                                                    'value deserializers': $p['value deserializers'],
+                                                                }
                                                             )),
                                                             'to': _pa.cc(_i_generic.get_entry(
                                                                 $,
@@ -554,7 +594,9 @@ export const Graph: _i_signatures._T_Graph = ($) => _i_generic.process_group(
                                                                 }
                                                             ), ($) => End_Point_Specification(
                                                                 $,
-                                                                null
+                                                                {
+                                                                    'value deserializers': $p['value deserializers'],
+                                                                }
                                                             )),
                                                         }),
                                                     }
@@ -590,7 +632,9 @@ export const Graph: _i_signatures._T_Graph = ($) => _i_generic.process_group(
                                                                 }
                                                             ), ($) => Edge_Attributes(
                                                                 $,
-                                                                null
+                                                                {
+                                                                    'value deserializers': $p['value deserializers'],
+                                                                }
                                                             )),
                                                             'yang': _pa.cc(_i_generic.get_entry(
                                                                 $,
@@ -599,7 +643,9 @@ export const Graph: _i_signatures._T_Graph = ($) => _i_generic.process_group(
                                                                 }
                                                             ), ($) => End_Point_Specification(
                                                                 $,
-                                                                null
+                                                                {
+                                                                    'value deserializers': $p['value deserializers'],
+                                                                }
                                                             )),
                                                             'yin': _pa.cc(_i_generic.get_entry(
                                                                 $,
@@ -608,7 +654,9 @@ export const Graph: _i_signatures._T_Graph = ($) => _i_generic.process_group(
                                                                 }
                                                             ), ($) => End_Point_Specification(
                                                                 $,
-                                                                null
+                                                                {
+                                                                    'value deserializers': $p['value deserializers'],
+                                                                }
                                                             )),
                                                         }),
                                                     }
@@ -626,7 +674,7 @@ export const Graph: _i_signatures._T_Graph = ($) => _i_generic.process_group(
         }),
     }
 )
-export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_generic.process_unconstrained_list(
+export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i_generic.process_unconstrained_list(
     $,
     {
         'value': ($) => _i_generic.process_state_group(
@@ -695,21 +743,27 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_gen
                     'compound': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['compound', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
                     'concentrate': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['concentrate', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
                     'dpi': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['dpi', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -737,7 +791,9 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_gen
                     'font size': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['font size', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -751,7 +807,9 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_gen
                     'label distance': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['label distance', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -782,14 +840,18 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_gen
                     'label scheme': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['label scheme', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
                     'landscape': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['landscape', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
@@ -824,21 +886,27 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_gen
                     'max iteration': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['max iteration', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
                     'mclimit': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['mclimit', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
                     'mindist': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['mindist', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -883,21 +951,27 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_gen
                     'newrank': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['newrank', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
                     'no loop': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['no loop', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
                     'normalize': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['normalize', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
@@ -935,7 +1009,9 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_gen
                     'orientation': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['orientation', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -997,7 +1073,9 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_gen
                     'pack': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['pack', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
@@ -1028,7 +1106,9 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_gen
                     'pad': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['pad', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -1042,14 +1122,18 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_gen
                     'quadtree': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['quadtree', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
                     'quantum': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['quantum', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -1108,14 +1192,18 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_gen
                     'remincross': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['remincross', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
                     'rotate': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['rotate', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -1129,7 +1217,9 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_gen
                     'searchsize': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['searchsize', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -1143,7 +1233,9 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_gen
                     'showboxes': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['showboxes', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
@@ -1188,7 +1280,9 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_gen
                     'sortv': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['sortv', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
@@ -1202,7 +1296,9 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_gen
                     'start': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['start', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -1237,7 +1333,9 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_gen
                     'truecolor': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['truecolor', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
@@ -1251,14 +1349,18 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_gen
                     'width': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['width', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
                     'xdotversion': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['xdotversion', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -1274,7 +1376,7 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($) => _i_gen
         ),
     }
 )
-export const Node_Attributes: _i_signatures._T_Node_Attributes = ($) => _i_generic.process_unconstrained_list(
+export const Node_Attributes: _i_signatures._T_Node_Attributes = ($, $p) => _i_generic.process_unconstrained_list(
     $,
     {
         'value': ($) => _i_generic.process_state_group(
@@ -1305,7 +1407,9 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($) => _i_gener
                     'concentrate': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['concentrate', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
@@ -1319,7 +1423,9 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($) => _i_gener
                     'fixed size': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['fixed size', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
@@ -1340,7 +1446,9 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($) => _i_gener
                     'font size': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['font size', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -1354,7 +1462,9 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($) => _i_gener
                     'height': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['height', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -1420,28 +1530,36 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($) => _i_gener
                     'nojustify': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['nojustify', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
                     'orientation': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['orientation', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
                     'pen width': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['pen width', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
                     'peripheries': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['peripheries', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -1462,14 +1580,18 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($) => _i_gener
                     'regular': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['regular', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
                     'root': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['root', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
@@ -1483,21 +1605,27 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($) => _i_gener
                     'showboxes': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['showboxes', _i_generic.process_boolean(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['boolean'],
+                            }
                         )],
                         null
                     ),
                     'sides': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['sides', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
                     'skew': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['skew', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -1525,7 +1653,9 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($) => _i_gener
                     'width': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
                         ['width', _i_generic.process_number(
                             $,
-                            null
+                            {
+                                'deserializer': $p['value deserializers']['default number'],
+                            }
                         )],
                         null
                     ),
@@ -1548,7 +1678,7 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($) => _i_gener
         ),
     }
 )
-export const Tree: _i_signatures._T_Tree = ($) => _i_generic.process_group(
+export const Tree: _i_signatures._T_Tree = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
@@ -1559,7 +1689,9 @@ export const Tree: _i_signatures._T_Tree = ($) => _i_generic.process_group(
                 }
             ), ($) => Graph_Attributes(
                 $,
-                null
+                {
+                    'value deserializers': $p['value deserializers'],
+                }
             )),
             'elements': _pa.cc(_i_generic.get_entry(
                 $,
@@ -1585,7 +1717,9 @@ export const Tree: _i_signatures._T_Tree = ($) => _i_generic.process_group(
                                                     }
                                                 ), ($) => Node_Attributes(
                                                     $,
-                                                    null
+                                                    {
+                                                        'value deserializers': $p['value deserializers'],
+                                                    }
                                                 )),
                                             }),
                                         }
@@ -1604,7 +1738,9 @@ export const Tree: _i_signatures._T_Tree = ($) => _i_generic.process_group(
                                                     }
                                                 ), ($) => Tree(
                                                     $,
-                                                    null
+                                                    {
+                                                        'value deserializers': $p['value deserializers'],
+                                                    }
                                                 )),
                                                 'type': _pa.cc(_i_generic.get_entry(
                                                     $,

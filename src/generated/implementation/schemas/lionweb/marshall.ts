@@ -5,7 +5,7 @@ import * as _i_out from "../../../interface/core/astn_target"
 import * as _i_signatures from "../../../interface/schemas/lionweb/marshall"
 
 
-export const MetaPointer: _i_signatures._T_s_MetaPointer = ($, $p) => ['verbose group', _pa.dictionary_literal({
+export const MetaPointer: _i_signatures._T_MetaPointer = ($, $p) => ['verbose group', _pa.dictionary_literal({
     'key': _pa.cc($['key'], ($) => ['text', ({
         'delimiter': ['quote', null],
         'value': $,
@@ -19,7 +19,7 @@ export const MetaPointer: _i_signatures._T_s_MetaPointer = ($, $p) => ['verbose 
         'value': $,
     })]),
 })]
-export const SerializationChunk: _i_signatures._T_s_SerializationChunk = ($, $p) => ['verbose group', _pa.dictionary_literal({
+export const SerializationChunk: _i_signatures._T_SerializationChunk = ($, $p) => ['verbose group', _pa.dictionary_literal({
     'languages': _pa.cc($['languages'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary_literal({
         'key': _pa.cc($['key'], ($) => ['text', ({
             'delimiter': ['quote', null],
@@ -100,7 +100,7 @@ export const SerializationChunk: _i_signatures._T_s_SerializationChunk = ($, $p)
         'value': $,
     })]),
 })]
-export const SerializationChunks: _i_signatures._T_s_SerializationChunks = ($, $p) => ['dictionary', $.map(($) => SerializationChunk(
+export const SerializationChunks: _i_signatures._T_SerializationChunks = ($, $p) => ['dictionary', $.map(($) => SerializationChunk(
     $,
     {
         'value serializers': $p['value serializers'],
