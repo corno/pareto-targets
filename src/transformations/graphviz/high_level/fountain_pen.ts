@@ -1,5 +1,5 @@
 
-import * as s_in from "../../../generated/interface/schemas/graphviz_high_level/unconstrained"
+import * as s_in from "../../../generated/interface/schemas/graphviz_high_level/data_types/unconstrained"
 import * as s_out from "pareto-fountain-pen/dist/generated/interface/schemas/block/unconstrained"
 
 import * as t_1 from "../low_level/fountain_pen"

@@ -2,8 +2,8 @@ import * as pa from 'exupery-core-alg'
 import * as pd from 'exupery-core-dev'
 import * as pt from 'exupery-core-types'
 
-import * as s_in from "../../../generated/interface/schemas/graphviz_high_level/unconstrained"
-import * as s_out from "../../../generated/interface/schemas/graphviz_low_level/unconstrained"
+import * as s_in from "../../../generated/interface/schemas/graphviz_high_level/data_types/unconstrained"
+import * as s_out from "../../../generated/interface/schemas/graphviz_low_level/data_types/unconstrained"
 
 // import {
 //     b, l, block,

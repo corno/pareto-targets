@@ -44,7 +44,7 @@ export const Edge_Attributes: _i_signatures._T_s_Edge_Attributes = ($, $p) => ['
             'state': "arrowsize",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'arrowtail': return _pa.ss($, ($) => ({
@@ -189,7 +189,7 @@ export const Edge_Attributes: _i_signatures._T_s_Edge_Attributes = ($, $p) => ['
             'state': "height",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'id': return _pa.ss($, ($) => ({
@@ -210,14 +210,14 @@ export const Edge_Attributes: _i_signatures._T_s_Edge_Attributes = ($, $p) => ['
             'state': "label angle",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'label distance': return _pa.ss($, ($) => ({
             'state': "label distance",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'label float': return _pa.ss($, ($) => ({
@@ -265,7 +265,7 @@ export const Edge_Attributes: _i_signatures._T_s_Edge_Attributes = ($, $p) => ['
             'state': "len",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'lhead': return _pa.ss($, ($) => ({
@@ -293,14 +293,14 @@ export const Edge_Attributes: _i_signatures._T_s_Edge_Attributes = ($, $p) => ['
             'state': "minlen",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'pen width': return _pa.ss($, ($) => ({
             'state': "pen width",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'pos': return _pa.ss($, ($) => ({
@@ -389,7 +389,7 @@ export const Edge_Attributes: _i_signatures._T_s_Edge_Attributes = ($, $p) => ['
             'state': "weight",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'xlabel': return _pa.ss($, ($) => ({
@@ -579,7 +579,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
             'state': "dpi",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'font color': return _pa.ss($, ($) => ({
@@ -607,7 +607,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
             'state': "font size",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'label': return _pa.ss($, ($) => ({
@@ -621,7 +621,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
             'state': "label distance",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'label location': return _pa.ss($, ($) => ({
@@ -644,7 +644,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
             'state': "label scheme",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'landscape': return _pa.ss($, ($) => ({
@@ -689,21 +689,21 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
             'state': "max iteration",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'mclimit': return _pa.ss($, ($) => ({
             'state': "mclimit",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'mindist': return _pa.ss($, ($) => ({
             'state': "mindist",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'mode': return _pa.ss($, ($) => ({
@@ -784,7 +784,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
             'state': "orientation",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'output mode': return _pa.ss($, ($) => ({
@@ -856,7 +856,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
             'state': "pad",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'page': return _pa.ss($, ($) => ({
@@ -880,7 +880,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
             'state': "quantum",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'rankdir': return _pa.ss($, ($) => ({
@@ -935,7 +935,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
             'state': "rotate",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'scale': return _pa.ss($, ($) => ({
@@ -949,7 +949,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
             'state': "searchsize",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'sep': return _pa.ss($, ($) => ({
@@ -1017,7 +1017,7 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
             'state': "start",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'style': return _pa.ss($, ($) => ({
@@ -1069,14 +1069,14 @@ export const Graph_Attributes: _i_signatures._T_s_Graph_Attributes = ($, $p) => 
             'state': "width",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'xdotversion': return _pa.ss($, ($) => ({
             'state': "xdotversion",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'xlabel': return _pa.ss($, ($) => ({
@@ -1157,7 +1157,7 @@ export const Node_Attributes: _i_signatures._T_s_Node_Attributes = ($, $p) => ['
             'state': "font size",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'group': return _pa.ss($, ($) => ({
@@ -1171,7 +1171,7 @@ export const Node_Attributes: _i_signatures._T_s_Node_Attributes = ($, $p) => ['
             'state': "height",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'image': return _pa.ss($, ($) => ({
@@ -1236,21 +1236,21 @@ export const Node_Attributes: _i_signatures._T_s_Node_Attributes = ($, $p) => ['
             'state': "orientation",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'pen width': return _pa.ss($, ($) => ({
             'state': "pen width",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'peripheries': return _pa.ss($, ($) => ({
             'state': "peripheries",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'pos': return _pa.ss($, ($) => ({
@@ -1308,14 +1308,14 @@ export const Node_Attributes: _i_signatures._T_s_Node_Attributes = ($, $p) => ['
             'state': "sides",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'skew': return _pa.ss($, ($) => ({
             'state': "skew",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'style': return _pa.ss($, ($) => ({
@@ -1343,7 +1343,7 @@ export const Node_Attributes: _i_signatures._T_s_Node_Attributes = ($, $p) => ['
             'state': "width",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': "FIXME NUMBER",
+                'value': _pd.implement_me(),
             })],
         }))
         case 'xlabel': return _pa.ss($, ($) => ({

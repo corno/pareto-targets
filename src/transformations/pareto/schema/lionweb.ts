@@ -3,7 +3,7 @@ import * as pa from 'exupery-core-alg'
 
 import * as _in from "pareto/dist/generated/interface/schemas/schema/resolved"
 import * as _in_m from "pareto/dist/generated/interface/schemas/module/resolved"
-import * as _out from "../../../generated/interface/schemas/lionweb/unconstrained"
+import * as _out from "../../../generated/interface/schemas/lionweb/data_types/unconstrained"
 
 
 import { pure, impure } from "pareto-standard-operations"

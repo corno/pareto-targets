@@ -1,7 +1,7 @@
 import * as pd from 'exupery-core-data'
 import * as pa from 'exupery-core-alg'
 
-import * as _in from "../../generated/interface/schemas/lionweb/unconstrained"
+import * as _in from "../../generated/interface/schemas/lionweb/data_types/unconstrained"
 import * as _out from "pareto-json/dist/generated/interface/schemas/json/unconstrained"
 
 import { v } from "pareto-json/dist/shorthands/json"
