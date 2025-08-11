@@ -76,7 +76,10 @@ export const ID: _i_signatures._T_ID = ($, $p) => ['state', _pa.cc($, ($): _i_ou
             'state': "number",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'string': return _pa.ss($, ($) => ({

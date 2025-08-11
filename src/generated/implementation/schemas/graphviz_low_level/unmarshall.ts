@@ -2,6 +2,7 @@ import * as _pa from 'exupery-core-alg'
 import * as _pd from 'exupery-core-dev'
 
 import * as _i_generic from "../../generic/unmarshall"
+import * as _i_in from "../../../interface/core/astn_source"
 import * as _i_out from "../../../interface/schemas/graphviz_low_level/data_types/unconstrained"
 import * as _i_signatures from "../../../interface/schemas/graphviz_low_level/unmarshall"
 
@@ -87,64 +88,46 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
                 {
                     'key': "type",
                 }
-            ), ($) => _i_generic.process_state_group(
+            ), ($) => _i_generic.process_unconstrained_state_group(
                 $,
                 {
                     'states': _pa.dictionary_literal({
-                        'digraph': ($): _i_out._T_Graph._type => _i_generic.wrap_unconstrained_state_group(
-                            ['digraph', _i_generic.process_nothing(
-                                $,
-                                null
-                            )],
+                        'digraph': ($): _i_out._T_Graph._type.SG => ['digraph', _i_generic.process_nothing(
+                            $,
                             null
-                        ),
-                        'graph': ($): _i_out._T_Graph._type => _i_generic.wrap_unconstrained_state_group(
-                            ['graph', _i_generic.process_nothing(
-                                $,
-                                null
-                            )],
+                        )],
+                        'graph': ($): _i_out._T_Graph._type.SG => ['graph', _i_generic.process_nothing(
+                            $,
                             null
-                        ),
+                        )],
                     }),
                 }
             )),
         }),
     }
 )
-export const ID: _i_signatures._T_ID = ($, $p) => _i_generic.process_state_group(
+export const ID: _i_signatures._T_ID = ($, $p) => _i_generic.process_unconstrained_state_group(
     $,
     {
         'states': _pa.dictionary_literal({
-            'html': ($): _i_out._T_ID => _i_generic.wrap_unconstrained_state_group(
-                ['html', _i_generic.process_text(
-                    $,
-                    null
-                )],
+            'html': ($): _i_out._T_ID.SG => ['html', _i_generic.process_text(
+                $,
                 null
-            ),
-            'id': ($): _i_out._T_ID => _i_generic.wrap_unconstrained_state_group(
-                ['id', _i_generic.process_text(
-                    $,
-                    null
-                )],
+            )],
+            'id': ($): _i_out._T_ID.SG => ['id', _i_generic.process_text(
+                $,
                 null
-            ),
-            'number': ($): _i_out._T_ID => _i_generic.wrap_unconstrained_state_group(
-                ['number', _i_generic.process_number(
-                    $,
-                    {
-                        'deserializer': $p['value deserializers']['default number'],
-                    }
-                )],
+            )],
+            'number': ($): _i_out._T_ID.SG => ['number', _i_generic.process_number(
+                $,
+                {
+                    'deserializer': $p['value deserializers']['default number'],
+                }
+            )],
+            'string': ($): _i_out._T_ID.SG => ['string', _i_generic.process_text(
+                $,
                 null
-            ),
-            'string': ($): _i_out._T_ID => _i_generic.wrap_unconstrained_state_group(
-                ['string', _i_generic.process_text(
-                    $,
-                    null
-                )],
-                null
-            ),
+            )],
         }),
     }
 )
@@ -213,223 +196,187 @@ export const Node_ID: _i_signatures._T_Node_ID = ($, $p) => _i_generic.process_g
 export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => _i_generic.process_unconstrained_list(
     $,
     {
-        'value': ($) => _i_generic.process_state_group(
+        'value': ($) => _i_generic.process_unconstrained_state_group(
             $,
             {
                 'states': _pa.dictionary_literal({
-                    'attribute assignment': ($): _i_out._T_Statement_List.L => _i_generic.wrap_unconstrained_state_group(
-                        ['attribute assignment', _i_generic.process_group(
-                            $,
-                            {
-                                'properties': ($) => ({
-                                    'name': _pa.cc(_i_generic.get_entry(
-                                        $,
-                                        {
-                                            'key': "name",
-                                        }
-                                    ), ($) => ID(
-                                        $,
-                                        {
-                                            'value deserializers': $p['value deserializers'],
-                                        }
-                                    )),
-                                    'value': _pa.cc(_i_generic.get_entry(
-                                        $,
-                                        {
-                                            'key': "value",
-                                        }
-                                    ), ($) => ID(
-                                        $,
-                                        {
-                                            'value deserializers': $p['value deserializers'],
-                                        }
-                                    )),
-                                }),
-                            }
-                        )],
-                        null
-                    ),
-                    'attribute list': ($): _i_out._T_Statement_List.L => _i_generic.wrap_unconstrained_state_group(
-                        ['attribute list', _i_generic.process_group(
-                            $,
-                            {
-                                'properties': ($) => ({
-                                    'attributes': _pa.cc(_i_generic.get_entry(
-                                        $,
-                                        {
-                                            'key': "attributes",
-                                        }
-                                    ), ($) => Attribute_List(
-                                        $,
-                                        {
-                                            'value deserializers': $p['value deserializers'],
-                                        }
-                                    )),
-                                    'type': _pa.cc(_i_generic.get_entry(
-                                        $,
-                                        {
-                                            'key': "type",
-                                        }
-                                    ), ($) => _i_generic.process_state_group(
-                                        $,
-                                        {
-                                            'states': _pa.dictionary_literal({
-                                                'edge': ($): _i_out._T_Statement_List.L.SG.attribute_list._type => _i_generic.wrap_unconstrained_state_group(
-                                                    ['edge', _i_generic.process_nothing(
-                                                        $,
-                                                        null
-                                                    )],
-                                                    null
-                                                ),
-                                                'graph': ($): _i_out._T_Statement_List.L.SG.attribute_list._type => _i_generic.wrap_unconstrained_state_group(
-                                                    ['graph', _i_generic.process_nothing(
-                                                        $,
-                                                        null
-                                                    )],
-                                                    null
-                                                ),
-                                                'node': ($): _i_out._T_Statement_List.L.SG.attribute_list._type => _i_generic.wrap_unconstrained_state_group(
-                                                    ['node', _i_generic.process_nothing(
-                                                        $,
-                                                        null
-                                                    )],
-                                                    null
-                                                ),
-                                            }),
-                                        }
-                                    )),
-                                }),
-                            }
-                        )],
-                        null
-                    ),
-                    'edge': ($): _i_out._T_Statement_List.L => _i_generic.wrap_unconstrained_state_group(
-                        ['edge', _i_generic.process_group(
-                            $,
-                            {
-                                'properties': ($) => ({
-                                    'attributes': _pa.cc(_i_generic.get_entry(
-                                        $,
-                                        {
-                                            'key': "attributes",
-                                        }
-                                    ), ($) => Attribute_List(
-                                        $,
-                                        {
-                                            'value deserializers': $p['value deserializers'],
-                                        }
-                                    )),
-                                    'left': _pa.cc(_i_generic.get_entry(
-                                        $,
-                                        {
-                                            'key': "left",
-                                        }
-                                    ), ($) => _i_generic.process_state_group(
-                                        $,
-                                        {
-                                            'states': _pa.dictionary_literal({
-                                                'node': ($): _i_out._T_Statement_List.L.SG.edge.left => _i_generic.wrap_unconstrained_state_group(
-                                                    ['node', Node_ID(
-                                                        $,
-                                                        {
-                                                            'value deserializers': $p['value deserializers'],
-                                                        }
-                                                    )],
-                                                    null
-                                                ),
-                                                'subgraph': ($): _i_out._T_Statement_List.L.SG.edge.left => _i_generic.wrap_unconstrained_state_group(
-                                                    ['subgraph', Subgraph(
-                                                        $,
-                                                        {
-                                                            'value deserializers': $p['value deserializers'],
-                                                        }
-                                                    )],
-                                                    null
-                                                ),
-                                            }),
-                                        }
-                                    )),
-                                    'right': _pa.cc(_i_generic.get_entry(
-                                        $,
-                                        {
-                                            'key': "right",
-                                        }
-                                    ), ($) => _i_generic.process_unconstrained_list(
-                                        $,
-                                        {
-                                            'value': ($) => _i_generic.process_state_group(
+                    'attribute assignment': ($): _i_out._T_Statement_List.L.SG => ['attribute assignment', _i_generic.process_group(
+                        $,
+                        {
+                            'properties': ($) => ({
+                                'name': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "name",
+                                    }
+                                ), ($) => ID(
+                                    $,
+                                    {
+                                        'value deserializers': $p['value deserializers'],
+                                    }
+                                )),
+                                'value': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "value",
+                                    }
+                                ), ($) => ID(
+                                    $,
+                                    {
+                                        'value deserializers': $p['value deserializers'],
+                                    }
+                                )),
+                            }),
+                        }
+                    )],
+                    'attribute list': ($): _i_out._T_Statement_List.L.SG => ['attribute list', _i_generic.process_group(
+                        $,
+                        {
+                            'properties': ($) => ({
+                                'attributes': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "attributes",
+                                    }
+                                ), ($) => Attribute_List(
+                                    $,
+                                    {
+                                        'value deserializers': $p['value deserializers'],
+                                    }
+                                )),
+                                'type': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "type",
+                                    }
+                                ), ($) => _i_generic.process_unconstrained_state_group(
+                                    $,
+                                    {
+                                        'states': _pa.dictionary_literal({
+                                            'edge': ($): _i_out._T_Statement_List.L.SG.attribute_list._type.SG => ['edge', _i_generic.process_nothing(
+                                                $,
+                                                null
+                                            )],
+                                            'graph': ($): _i_out._T_Statement_List.L.SG.attribute_list._type.SG => ['graph', _i_generic.process_nothing(
+                                                $,
+                                                null
+                                            )],
+                                            'node': ($): _i_out._T_Statement_List.L.SG.attribute_list._type.SG => ['node', _i_generic.process_nothing(
+                                                $,
+                                                null
+                                            )],
+                                        }),
+                                    }
+                                )),
+                            }),
+                        }
+                    )],
+                    'edge': ($): _i_out._T_Statement_List.L.SG => ['edge', _i_generic.process_group(
+                        $,
+                        {
+                            'properties': ($) => ({
+                                'attributes': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "attributes",
+                                    }
+                                ), ($) => Attribute_List(
+                                    $,
+                                    {
+                                        'value deserializers': $p['value deserializers'],
+                                    }
+                                )),
+                                'left': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "left",
+                                    }
+                                ), ($) => _i_generic.process_unconstrained_state_group(
+                                    $,
+                                    {
+                                        'states': _pa.dictionary_literal({
+                                            'node': ($): _i_out._T_Statement_List.L.SG.edge.left.SG => ['node', Node_ID(
                                                 $,
                                                 {
-                                                    'states': _pa.dictionary_literal({
-                                                        'node': ($): _i_out._T_Statement_List.L.SG.edge.right.L => _i_generic.wrap_unconstrained_state_group(
-                                                            ['node', Node_ID(
-                                                                $,
-                                                                {
-                                                                    'value deserializers': $p['value deserializers'],
-                                                                }
-                                                            )],
-                                                            null
-                                                        ),
-                                                        'subgraph': ($): _i_out._T_Statement_List.L.SG.edge.right.L => _i_generic.wrap_unconstrained_state_group(
-                                                            ['subgraph', Subgraph(
-                                                                $,
-                                                                {
-                                                                    'value deserializers': $p['value deserializers'],
-                                                                }
-                                                            )],
-                                                            null
-                                                        ),
-                                                    }),
+                                                    'value deserializers': $p['value deserializers'],
                                                 }
-                                            ),
-                                        }
-                                    )),
-                                }),
-                            }
-                        )],
-                        null
-                    ),
-                    'node': ($): _i_out._T_Statement_List.L => _i_generic.wrap_unconstrained_state_group(
-                        ['node', _i_generic.process_group(
-                            $,
-                            {
-                                'properties': ($) => ({
-                                    'attribute list': _pa.cc(_i_generic.get_entry(
-                                        $,
-                                        {
-                                            'key': "attribute list",
-                                        }
-                                    ), ($) => Attribute_List(
-                                        $,
-                                        {
-                                            'value deserializers': $p['value deserializers'],
-                                        }
-                                    )),
-                                    'node': _pa.cc(_i_generic.get_entry(
-                                        $,
-                                        {
-                                            'key': "node",
-                                        }
-                                    ), ($) => Node_ID(
-                                        $,
-                                        {
-                                            'value deserializers': $p['value deserializers'],
-                                        }
-                                    )),
-                                }),
-                            }
-                        )],
-                        null
-                    ),
-                    'subgraph': ($): _i_out._T_Statement_List.L => _i_generic.wrap_unconstrained_state_group(
-                        ['subgraph', Subgraph(
-                            $,
-                            {
-                                'value deserializers': $p['value deserializers'],
-                            }
-                        )],
-                        null
-                    ),
+                                            )],
+                                            'subgraph': ($): _i_out._T_Statement_List.L.SG.edge.left.SG => ['subgraph', Subgraph(
+                                                $,
+                                                {
+                                                    'value deserializers': $p['value deserializers'],
+                                                }
+                                            )],
+                                        }),
+                                    }
+                                )),
+                                'right': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "right",
+                                    }
+                                ), ($) => _i_generic.process_unconstrained_list(
+                                    $,
+                                    {
+                                        'value': ($) => _i_generic.process_unconstrained_state_group(
+                                            $,
+                                            {
+                                                'states': _pa.dictionary_literal({
+                                                    'node': ($): _i_out._T_Statement_List.L.SG.edge.right.L.SG => ['node', Node_ID(
+                                                        $,
+                                                        {
+                                                            'value deserializers': $p['value deserializers'],
+                                                        }
+                                                    )],
+                                                    'subgraph': ($): _i_out._T_Statement_List.L.SG.edge.right.L.SG => ['subgraph', Subgraph(
+                                                        $,
+                                                        {
+                                                            'value deserializers': $p['value deserializers'],
+                                                        }
+                                                    )],
+                                                }),
+                                            }
+                                        ),
+                                    }
+                                )),
+                            }),
+                        }
+                    )],
+                    'node': ($): _i_out._T_Statement_List.L.SG => ['node', _i_generic.process_group(
+                        $,
+                        {
+                            'properties': ($) => ({
+                                'attribute list': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "attribute list",
+                                    }
+                                ), ($) => Attribute_List(
+                                    $,
+                                    {
+                                        'value deserializers': $p['value deserializers'],
+                                    }
+                                )),
+                                'node': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "node",
+                                    }
+                                ), ($) => Node_ID(
+                                    $,
+                                    {
+                                        'value deserializers': $p['value deserializers'],
+                                    }
+                                )),
+                            }),
+                        }
+                    )],
+                    'subgraph': ($): _i_out._T_Statement_List.L.SG => ['subgraph', Subgraph(
+                        $,
+                        {
+                            'value deserializers': $p['value deserializers'],
+                        }
+                    )],
                 }),
             }
         ),

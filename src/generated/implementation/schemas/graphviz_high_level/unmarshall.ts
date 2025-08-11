@@ -2,439 +2,278 @@ import * as _pa from 'exupery-core-alg'
 import * as _pd from 'exupery-core-dev'
 
 import * as _i_generic from "../../generic/unmarshall"
+import * as _i_in from "../../../interface/core/astn_source"
 import * as _i_out from "../../../interface/schemas/graphviz_high_level/data_types/unconstrained"
 import * as _i_signatures from "../../../interface/schemas/graphviz_high_level/unmarshall"
 
 
-export const Attribute_Value: _i_signatures._T_Attribute_Value = ($, $p) => _i_generic.process_state_group(
+export const Attribute_Value: _i_signatures._T_Attribute_Value = ($, $p) => _i_generic.process_unconstrained_state_group(
     $,
     {
         'states': _pa.dictionary_literal({
-            'html string': ($): _i_out._T_Attribute_Value => _i_generic.wrap_unconstrained_state_group(
-                ['html string', _i_generic.process_text(
-                    $,
-                    null
-                )],
+            'html string': ($): _i_out._T_Attribute_Value.SG => ['html string', _i_generic.process_text(
+                $,
                 null
-            ),
-            'number': ($): _i_out._T_Attribute_Value => _i_generic.wrap_unconstrained_state_group(
-                ['number', _i_generic.process_text(
-                    $,
-                    null
-                )],
+            )],
+            'number': ($): _i_out._T_Attribute_Value.SG => ['number', _i_generic.process_text(
+                $,
                 null
-            ),
-            'string': ($): _i_out._T_Attribute_Value => _i_generic.wrap_unconstrained_state_group(
-                ['string', _i_generic.process_text(
-                    $,
-                    null
-                )],
+            )],
+            'string': ($): _i_out._T_Attribute_Value.SG => ['string', _i_generic.process_text(
+                $,
                 null
-            ),
+            )],
         }),
     }
 )
 export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($, $p) => _i_generic.process_unconstrained_list(
     $,
     {
-        'value': ($) => _i_generic.process_state_group(
+        'value': ($) => _i_generic.process_unconstrained_state_group(
             $,
             {
                 'states': _pa.dictionary_literal({
-                    'arrowhead': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['arrowhead', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    'arrowhead': ($): _i_out._T_Edge_Attributes.L.SG => ['arrowhead', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'arrowsize': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['arrowsize', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
+                    )],
+                    'arrowsize': ($): _i_out._T_Edge_Attributes.L.SG => ['arrowsize', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'arrowtail': ($): _i_out._T_Edge_Attributes.L.SG => ['arrowtail', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'arrowtail': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['arrowtail', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'bgcolor': ($): _i_out._T_Edge_Attributes.L.SG => ['bgcolor', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'bgcolor': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['bgcolor', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'color': ($): _i_out._T_Edge_Attributes.L.SG => ['color', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'color': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['color', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'colorscheme': ($): _i_out._T_Edge_Attributes.L.SG => ['colorscheme', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'colorscheme': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['colorscheme', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'comment': ($): _i_out._T_Edge_Attributes.L.SG => ['comment', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'comment': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['comment', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'constraint': ($): _i_out._T_Edge_Attributes.L.SG => ['constraint', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'decorate': ($): _i_out._T_Edge_Attributes.L.SG => ['decorate', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'dir': ($): _i_out._T_Edge_Attributes.L.SG => ['dir', _i_generic.process_unconstrained_state_group(
+                        $,
+                        {
+                            'states': _pa.dictionary_literal({
+                                'back': ($): _i_out._T_Edge_Attributes.L.SG.dir.SG => ['back', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'both': ($): _i_out._T_Edge_Attributes.L.SG.dir.SG => ['both', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'forward': ($): _i_out._T_Edge_Attributes.L.SG.dir.SG => ['forward', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'none': ($): _i_out._T_Edge_Attributes.L.SG.dir.SG => ['none', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                            }),
+                        }
+                    )],
+                    'edge lp': ($): _i_out._T_Edge_Attributes.L.SG => ['edge lp', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'constraint': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['constraint', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
+                    )],
+                    'edge target': ($): _i_out._T_Edge_Attributes.L.SG => ['edge target', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'decorate': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['decorate', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
+                    )],
+                    'edge tooltip': ($): _i_out._T_Edge_Attributes.L.SG => ['edge tooltip', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'dir': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['dir', _i_generic.process_state_group(
-                            $,
-                            {
-                                'states': _pa.dictionary_literal({
-                                    'back': ($): _i_out._T_Edge_Attributes.L.SG.dir => _i_generic.wrap_unconstrained_state_group(
-                                        ['back', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'both': ($): _i_out._T_Edge_Attributes.L.SG.dir => _i_generic.wrap_unconstrained_state_group(
-                                        ['both', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'forward': ($): _i_out._T_Edge_Attributes.L.SG.dir => _i_generic.wrap_unconstrained_state_group(
-                                        ['forward', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'none': ($): _i_out._T_Edge_Attributes.L.SG.dir => _i_generic.wrap_unconstrained_state_group(
-                                        ['none', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                }),
-                            }
-                        )],
+                    )],
+                    'edge url': ($): _i_out._T_Edge_Attributes.L.SG => ['edge url', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'edge lp': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['edge lp', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'head lp': ($): _i_out._T_Edge_Attributes.L.SG => ['head lp', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'edge target': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['edge target', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'headclip': ($): _i_out._T_Edge_Attributes.L.SG => ['headclip', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'headlabel': ($): _i_out._T_Edge_Attributes.L.SG => ['headlabel', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'edge tooltip': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['edge tooltip', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'headport': ($): _i_out._T_Edge_Attributes.L.SG => ['headport', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'edge url': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['edge url', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'height': ($): _i_out._T_Edge_Attributes.L.SG => ['height', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'id': ($): _i_out._T_Edge_Attributes.L.SG => ['id', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'head lp': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['head lp', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'label': ($): _i_out._T_Edge_Attributes.L.SG => ['label', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'headclip': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['headclip', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
+                    )],
+                    'label angle': ($): _i_out._T_Edge_Attributes.L.SG => ['label angle', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'label distance': ($): _i_out._T_Edge_Attributes.L.SG => ['label distance', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'label float': ($): _i_out._T_Edge_Attributes.L.SG => ['label float', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'label lp': ($): _i_out._T_Edge_Attributes.L.SG => ['label lp', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'headlabel': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['headlabel', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'labelfloat': ($): _i_out._T_Edge_Attributes.L.SG => ['labelfloat', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'labelhref': ($): _i_out._T_Edge_Attributes.L.SG => ['labelhref', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'headport': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['headport', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'layer': ($): _i_out._T_Edge_Attributes.L.SG => ['layer', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'height': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['height', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
+                    )],
+                    'len': ($): _i_out._T_Edge_Attributes.L.SG => ['len', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'lhead': ($): _i_out._T_Edge_Attributes.L.SG => ['lhead', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'id': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['id', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'lp': ($): _i_out._T_Edge_Attributes.L.SG => ['lp', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'label': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['label', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'ltail': ($): _i_out._T_Edge_Attributes.L.SG => ['ltail', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'label angle': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['label angle', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
+                    )],
+                    'minlen': ($): _i_out._T_Edge_Attributes.L.SG => ['minlen', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'pen width': ($): _i_out._T_Edge_Attributes.L.SG => ['pen width', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'pos': ($): _i_out._T_Edge_Attributes.L.SG => ['pos', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'label distance': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['label distance', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
+                    )],
+                    'same head': ($): _i_out._T_Edge_Attributes.L.SG => ['same head', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'same tail': ($): _i_out._T_Edge_Attributes.L.SG => ['same tail', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'showboxes': ($): _i_out._T_Edge_Attributes.L.SG => ['showboxes', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'style': ($): _i_out._T_Edge_Attributes.L.SG => ['style', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'label float': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['label float', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
+                    )],
+                    'tail lp': ($): _i_out._T_Edge_Attributes.L.SG => ['tail lp', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'label lp': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['label lp', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'tailclip': ($): _i_out._T_Edge_Attributes.L.SG => ['tailclip', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'taillabel': ($): _i_out._T_Edge_Attributes.L.SG => ['taillabel', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'labelfloat': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['labelfloat', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
+                    )],
+                    'tailport': ($): _i_out._T_Edge_Attributes.L.SG => ['tailport', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'labelhref': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['labelhref', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'tooltip': ($): _i_out._T_Edge_Attributes.L.SG => ['tooltip', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'layer': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['layer', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'weight': ($): _i_out._T_Edge_Attributes.L.SG => ['weight', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'xlabel': ($): _i_out._T_Edge_Attributes.L.SG => ['xlabel', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'len': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['len', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
+                    )],
+                    'xlp': ($): _i_out._T_Edge_Attributes.L.SG => ['xlp', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'lhead': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['lhead', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'lp': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['lp', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'ltail': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['ltail', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'minlen': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['minlen', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
-                        null
-                    ),
-                    'pen width': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['pen width', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
-                        null
-                    ),
-                    'pos': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['pos', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'same head': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['same head', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
-                        null
-                    ),
-                    'same tail': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['same tail', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
-                        null
-                    ),
-                    'showboxes': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['showboxes', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
-                        null
-                    ),
-                    'style': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['style', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'tail lp': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['tail lp', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'tailclip': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['tailclip', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
-                        null
-                    ),
-                    'taillabel': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['taillabel', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'tailport': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['tailport', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'tooltip': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['tooltip', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'weight': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['weight', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
-                        null
-                    ),
-                    'xlabel': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['xlabel', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'xlp': ($): _i_out._T_Edge_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['xlp', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
+                    )],
                 }),
             }
         ),
@@ -544,130 +383,124 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
                 {
                     'key': "type",
                 }
-            ), ($) => _i_generic.process_state_group(
+            ), ($) => _i_generic.process_unconstrained_state_group(
                 $,
                 {
                     'states': _pa.dictionary_literal({
-                        'directed': ($): _i_out._T_Graph._type => _i_generic.wrap_unconstrained_state_group(
-                            ['directed', _i_generic.process_group(
-                                $,
-                                {
-                                    'properties': ($) => ({
-                                        'edges': _pa.cc(_i_generic.get_entry(
-                                            $,
-                                            {
-                                                'key': "edges",
-                                            }
-                                        ), ($) => _i_generic.process_unconstrained_list(
-                                            $,
-                                            {
-                                                'value': ($) => _i_generic.process_group(
-                                                    $,
-                                                    {
-                                                        'properties': ($) => ({
-                                                            'attributes': _pa.cc(_i_generic.get_entry(
-                                                                $,
-                                                                {
-                                                                    'key': "attributes",
-                                                                }
-                                                            ), ($) => Edge_Attributes(
-                                                                $,
-                                                                {
-                                                                    'value deserializers': $p['value deserializers'],
-                                                                }
-                                                            )),
-                                                            'from': _pa.cc(_i_generic.get_entry(
-                                                                $,
-                                                                {
-                                                                    'key': "from",
-                                                                }
-                                                            ), ($) => End_Point_Specification(
-                                                                $,
-                                                                {
-                                                                    'value deserializers': $p['value deserializers'],
-                                                                }
-                                                            )),
-                                                            'to': _pa.cc(_i_generic.get_entry(
-                                                                $,
-                                                                {
-                                                                    'key': "to",
-                                                                }
-                                                            ), ($) => End_Point_Specification(
-                                                                $,
-                                                                {
-                                                                    'value deserializers': $p['value deserializers'],
-                                                                }
-                                                            )),
-                                                        }),
-                                                    }
-                                                ),
-                                            }
-                                        )),
-                                    }),
-                                }
-                            )],
-                            null
-                        ),
-                        'undirected': ($): _i_out._T_Graph._type => _i_generic.wrap_unconstrained_state_group(
-                            ['undirected', _i_generic.process_group(
-                                $,
-                                {
-                                    'properties': ($) => ({
-                                        'edges': _pa.cc(_i_generic.get_entry(
-                                            $,
-                                            {
-                                                'key': "edges",
-                                            }
-                                        ), ($) => _i_generic.process_unconstrained_list(
-                                            $,
-                                            {
-                                                'value': ($) => _i_generic.process_group(
-                                                    $,
-                                                    {
-                                                        'properties': ($) => ({
-                                                            'attributes': _pa.cc(_i_generic.get_entry(
-                                                                $,
-                                                                {
-                                                                    'key': "attributes",
-                                                                }
-                                                            ), ($) => Edge_Attributes(
-                                                                $,
-                                                                {
-                                                                    'value deserializers': $p['value deserializers'],
-                                                                }
-                                                            )),
-                                                            'yang': _pa.cc(_i_generic.get_entry(
-                                                                $,
-                                                                {
-                                                                    'key': "yang",
-                                                                }
-                                                            ), ($) => End_Point_Specification(
-                                                                $,
-                                                                {
-                                                                    'value deserializers': $p['value deserializers'],
-                                                                }
-                                                            )),
-                                                            'yin': _pa.cc(_i_generic.get_entry(
-                                                                $,
-                                                                {
-                                                                    'key': "yin",
-                                                                }
-                                                            ), ($) => End_Point_Specification(
-                                                                $,
-                                                                {
-                                                                    'value deserializers': $p['value deserializers'],
-                                                                }
-                                                            )),
-                                                        }),
-                                                    }
-                                                ),
-                                            }
-                                        )),
-                                    }),
-                                }
-                            )],
-                            null
-                        ),
+                        'directed': ($): _i_out._T_Graph._type.SG => ['directed', _i_generic.process_group(
+                            $,
+                            {
+                                'properties': ($) => ({
+                                    'edges': _pa.cc(_i_generic.get_entry(
+                                        $,
+                                        {
+                                            'key': "edges",
+                                        }
+                                    ), ($) => _i_generic.process_unconstrained_list(
+                                        $,
+                                        {
+                                            'value': ($) => _i_generic.process_group(
+                                                $,
+                                                {
+                                                    'properties': ($) => ({
+                                                        'attributes': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "attributes",
+                                                            }
+                                                        ), ($) => Edge_Attributes(
+                                                            $,
+                                                            {
+                                                                'value deserializers': $p['value deserializers'],
+                                                            }
+                                                        )),
+                                                        'from': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "from",
+                                                            }
+                                                        ), ($) => End_Point_Specification(
+                                                            $,
+                                                            {
+                                                                'value deserializers': $p['value deserializers'],
+                                                            }
+                                                        )),
+                                                        'to': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "to",
+                                                            }
+                                                        ), ($) => End_Point_Specification(
+                                                            $,
+                                                            {
+                                                                'value deserializers': $p['value deserializers'],
+                                                            }
+                                                        )),
+                                                    }),
+                                                }
+                                            ),
+                                        }
+                                    )),
+                                }),
+                            }
+                        )],
+                        'undirected': ($): _i_out._T_Graph._type.SG => ['undirected', _i_generic.process_group(
+                            $,
+                            {
+                                'properties': ($) => ({
+                                    'edges': _pa.cc(_i_generic.get_entry(
+                                        $,
+                                        {
+                                            'key': "edges",
+                                        }
+                                    ), ($) => _i_generic.process_unconstrained_list(
+                                        $,
+                                        {
+                                            'value': ($) => _i_generic.process_group(
+                                                $,
+                                                {
+                                                    'properties': ($) => ({
+                                                        'attributes': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "attributes",
+                                                            }
+                                                        ), ($) => Edge_Attributes(
+                                                            $,
+                                                            {
+                                                                'value deserializers': $p['value deserializers'],
+                                                            }
+                                                        )),
+                                                        'yang': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "yang",
+                                                            }
+                                                        ), ($) => End_Point_Specification(
+                                                            $,
+                                                            {
+                                                                'value deserializers': $p['value deserializers'],
+                                                            }
+                                                        )),
+                                                        'yin': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "yin",
+                                                            }
+                                                        ), ($) => End_Point_Specification(
+                                                            $,
+                                                            {
+                                                                'value deserializers': $p['value deserializers'],
+                                                            }
+                                                        )),
+                                                    }),
+                                                }
+                                            ),
+                                        }
+                                    )),
+                                }),
+                            }
+                        )],
                     }),
                 }
             )),
@@ -677,700 +510,439 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
 export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i_generic.process_unconstrained_list(
     $,
     {
-        'value': ($) => _i_generic.process_state_group(
+        'value': ($) => _i_generic.process_unconstrained_state_group(
             $,
             {
                 'states': _pa.dictionary_literal({
-                    'charset': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['charset', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    'charset': ($): _i_out._T_Graph_Attributes.L.SG => ['charset', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'clusterrank': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['clusterrank', _i_generic.process_state_group(
-                            $,
-                            {
-                                'states': _pa.dictionary_literal({
-                                    'global': ($): _i_out._T_Graph_Attributes.L.SG.clusterrank => _i_generic.wrap_unconstrained_state_group(
-                                        ['global', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'local': ($): _i_out._T_Graph_Attributes.L.SG.clusterrank => _i_generic.wrap_unconstrained_state_group(
-                                        ['local', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'none': ($): _i_out._T_Graph_Attributes.L.SG.clusterrank => _i_generic.wrap_unconstrained_state_group(
-                                        ['none', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                }),
-                            }
-                        )],
+                    )],
+                    'clusterrank': ($): _i_out._T_Graph_Attributes.L.SG => ['clusterrank', _i_generic.process_unconstrained_state_group(
+                        $,
+                        {
+                            'states': _pa.dictionary_literal({
+                                'global': ($): _i_out._T_Graph_Attributes.L.SG.clusterrank.SG => ['global', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'local': ($): _i_out._T_Graph_Attributes.L.SG.clusterrank.SG => ['local', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'none': ($): _i_out._T_Graph_Attributes.L.SG.clusterrank.SG => ['none', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                            }),
+                        }
+                    )],
+                    'color': ($): _i_out._T_Graph_Attributes.L.SG => ['color', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'color': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['color', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'color scheme': ($): _i_out._T_Graph_Attributes.L.SG => ['color scheme', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'color scheme': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['color scheme', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'comment': ($): _i_out._T_Graph_Attributes.L.SG => ['comment', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'comment': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['comment', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'compound': ($): _i_out._T_Graph_Attributes.L.SG => ['compound', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'concentrate': ($): _i_out._T_Graph_Attributes.L.SG => ['concentrate', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'dpi': ($): _i_out._T_Graph_Attributes.L.SG => ['dpi', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'font color': ($): _i_out._T_Graph_Attributes.L.SG => ['font color', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'compound': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['compound', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
+                    )],
+                    'font name': ($): _i_out._T_Graph_Attributes.L.SG => ['font name', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'concentrate': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['concentrate', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
+                    )],
+                    'font path': ($): _i_out._T_Graph_Attributes.L.SG => ['font path', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'dpi': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['dpi', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
+                    )],
+                    'font size': ($): _i_out._T_Graph_Attributes.L.SG => ['font size', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'label': ($): _i_out._T_Graph_Attributes.L.SG => ['label', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'font color': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['font color', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'label distance': ($): _i_out._T_Graph_Attributes.L.SG => ['label distance', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'label location': ($): _i_out._T_Graph_Attributes.L.SG => ['label location', _i_generic.process_unconstrained_state_group(
+                        $,
+                        {
+                            'states': _pa.dictionary_literal({
+                                'bottom': ($): _i_out._T_Graph_Attributes.L.SG.label_location.SG => ['bottom', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'top': ($): _i_out._T_Graph_Attributes.L.SG.label_location.SG => ['top', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                            }),
+                        }
+                    )],
+                    'label scheme': ($): _i_out._T_Graph_Attributes.L.SG => ['label scheme', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'landscape': ($): _i_out._T_Graph_Attributes.L.SG => ['landscape', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'layer list': ($): _i_out._T_Graph_Attributes.L.SG => ['layer list', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'font name': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['font name', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'layer separator': ($): _i_out._T_Graph_Attributes.L.SG => ['layer separator', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'font path': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['font path', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'layers': ($): _i_out._T_Graph_Attributes.L.SG => ['layers', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'font size': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['font size', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
+                    )],
+                    'margin': ($): _i_out._T_Graph_Attributes.L.SG => ['margin', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'label': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['label', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'max iteration': ($): _i_out._T_Graph_Attributes.L.SG => ['max iteration', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'mclimit': ($): _i_out._T_Graph_Attributes.L.SG => ['mclimit', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'mindist': ($): _i_out._T_Graph_Attributes.L.SG => ['mindist', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'mode': ($): _i_out._T_Graph_Attributes.L.SG => ['mode', _i_generic.process_unconstrained_state_group(
+                        $,
+                        {
+                            'states': _pa.dictionary_literal({
+                                'in': ($): _i_out._T_Graph_Attributes.L.SG.mode.SG => ['in', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'in out': ($): _i_out._T_Graph_Attributes.L.SG.mode.SG => ['in out', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'no output': ($): _i_out._T_Graph_Attributes.L.SG.mode.SG => ['no output', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'out': ($): _i_out._T_Graph_Attributes.L.SG.mode.SG => ['out', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                            }),
+                        }
+                    )],
+                    'newrank': ($): _i_out._T_Graph_Attributes.L.SG => ['newrank', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'no loop': ($): _i_out._T_Graph_Attributes.L.SG => ['no loop', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'normalize': ($): _i_out._T_Graph_Attributes.L.SG => ['normalize', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'ordering': ($): _i_out._T_Graph_Attributes.L.SG => ['ordering', _i_generic.process_unconstrained_state_group(
+                        $,
+                        {
+                            'states': _pa.dictionary_literal({
+                                'in': ($): _i_out._T_Graph_Attributes.L.SG.ordering.SG => ['in', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'in out': ($): _i_out._T_Graph_Attributes.L.SG.ordering.SG => ['in out', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'out': ($): _i_out._T_Graph_Attributes.L.SG.ordering.SG => ['out', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                            }),
+                        }
+                    )],
+                    'orientation': ($): _i_out._T_Graph_Attributes.L.SG => ['orientation', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'output mode': ($): _i_out._T_Graph_Attributes.L.SG => ['output mode', _i_generic.process_unconstrained_state_group(
+                        $,
+                        {
+                            'states': _pa.dictionary_literal({
+                                'edges first': ($): _i_out._T_Graph_Attributes.L.SG.output_mode.SG => ['edges first', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'nodes first': ($): _i_out._T_Graph_Attributes.L.SG.output_mode.SG => ['nodes first', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                            }),
+                        }
+                    )],
+                    'output order': ($): _i_out._T_Graph_Attributes.L.SG => ['output order', _i_generic.process_unconstrained_state_group(
+                        $,
+                        {
+                            'states': _pa.dictionary_literal({
+                                'breadth first': ($): _i_out._T_Graph_Attributes.L.SG.output_order.SG => ['breadth first', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'dfs': ($): _i_out._T_Graph_Attributes.L.SG.output_order.SG => ['dfs', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                            }),
+                        }
+                    )],
+                    'overlap': ($): _i_out._T_Graph_Attributes.L.SG => ['overlap', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'label distance': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['label distance', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
+                    )],
+                    'pack': ($): _i_out._T_Graph_Attributes.L.SG => ['pack', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'pack mode': ($): _i_out._T_Graph_Attributes.L.SG => ['pack mode', _i_generic.process_unconstrained_state_group(
+                        $,
+                        {
+                            'states': _pa.dictionary_literal({
+                                'graph': ($): _i_out._T_Graph_Attributes.L.SG.pack_mode.SG => ['graph', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'node': ($): _i_out._T_Graph_Attributes.L.SG.pack_mode.SG => ['node', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                            }),
+                        }
+                    )],
+                    'pad': ($): _i_out._T_Graph_Attributes.L.SG => ['pad', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'page': ($): _i_out._T_Graph_Attributes.L.SG => ['page', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'label location': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['label location', _i_generic.process_state_group(
-                            $,
-                            {
-                                'states': _pa.dictionary_literal({
-                                    'bottom': ($): _i_out._T_Graph_Attributes.L.SG.label_location => _i_generic.wrap_unconstrained_state_group(
-                                        ['bottom', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'top': ($): _i_out._T_Graph_Attributes.L.SG.label_location => _i_generic.wrap_unconstrained_state_group(
-                                        ['top', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                }),
-                            }
-                        )],
+                    )],
+                    'quadtree': ($): _i_out._T_Graph_Attributes.L.SG => ['quadtree', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'quantum': ($): _i_out._T_Graph_Attributes.L.SG => ['quantum', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'rankdir': ($): _i_out._T_Graph_Attributes.L.SG => ['rankdir', _i_generic.process_unconstrained_state_group(
+                        $,
+                        {
+                            'states': _pa.dictionary_literal({
+                                'bottom top': ($): _i_out._T_Graph_Attributes.L.SG.rankdir.SG => ['bottom top', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'left right': ($): _i_out._T_Graph_Attributes.L.SG.rankdir.SG => ['left right', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'right left': ($): _i_out._T_Graph_Attributes.L.SG.rankdir.SG => ['right left', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'top bottom': ($): _i_out._T_Graph_Attributes.L.SG.rankdir.SG => ['top bottom', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                            }),
+                        }
+                    )],
+                    'ranksep': ($): _i_out._T_Graph_Attributes.L.SG => ['ranksep', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'label scheme': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['label scheme', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
+                    )],
+                    'ratio': ($): _i_out._T_Graph_Attributes.L.SG => ['ratio', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'landscape': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['landscape', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
+                    )],
+                    'remincross': ($): _i_out._T_Graph_Attributes.L.SG => ['remincross', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'rotate': ($): _i_out._T_Graph_Attributes.L.SG => ['rotate', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'scale': ($): _i_out._T_Graph_Attributes.L.SG => ['scale', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'layer list': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['layer list', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'searchsize': ($): _i_out._T_Graph_Attributes.L.SG => ['searchsize', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'sep': ($): _i_out._T_Graph_Attributes.L.SG => ['sep', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'layer separator': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['layer separator', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'showboxes': ($): _i_out._T_Graph_Attributes.L.SG => ['showboxes', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'size': ($): _i_out._T_Graph_Attributes.L.SG => ['size', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'layers': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['layers', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'smoothing': ($): _i_out._T_Graph_Attributes.L.SG => ['smoothing', _i_generic.process_unconstrained_state_group(
+                        $,
+                        {
+                            'states': _pa.dictionary_literal({
+                                'none': ($): _i_out._T_Graph_Attributes.L.SG.smoothing.SG => ['none', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'spring': ($): _i_out._T_Graph_Attributes.L.SG.smoothing.SG => ['spring', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'triangle': ($): _i_out._T_Graph_Attributes.L.SG.smoothing.SG => ['triangle', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                            }),
+                        }
+                    )],
+                    'sortv': ($): _i_out._T_Graph_Attributes.L.SG => ['sortv', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'splines': ($): _i_out._T_Graph_Attributes.L.SG => ['splines', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'margin': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['margin', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'start': ($): _i_out._T_Graph_Attributes.L.SG => ['start', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'style': ($): _i_out._T_Graph_Attributes.L.SG => ['style', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'max iteration': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['max iteration', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
+                    )],
+                    'stylesheet': ($): _i_out._T_Graph_Attributes.L.SG => ['stylesheet', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'mclimit': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['mclimit', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
+                    )],
+                    'target': ($): _i_out._T_Graph_Attributes.L.SG => ['target', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'mindist': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['mindist', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
+                    )],
+                    'tooltip': ($): _i_out._T_Graph_Attributes.L.SG => ['tooltip', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'mode': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['mode', _i_generic.process_state_group(
-                            $,
-                            {
-                                'states': _pa.dictionary_literal({
-                                    'in': ($): _i_out._T_Graph_Attributes.L.SG.mode => _i_generic.wrap_unconstrained_state_group(
-                                        ['in', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'in out': ($): _i_out._T_Graph_Attributes.L.SG.mode => _i_generic.wrap_unconstrained_state_group(
-                                        ['in out', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'no output': ($): _i_out._T_Graph_Attributes.L.SG.mode => _i_generic.wrap_unconstrained_state_group(
-                                        ['no output', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'out': ($): _i_out._T_Graph_Attributes.L.SG.mode => _i_generic.wrap_unconstrained_state_group(
-                                        ['out', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                }),
-                            }
-                        )],
+                    )],
+                    'truecolor': ($): _i_out._T_Graph_Attributes.L.SG => ['truecolor', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'viewport': ($): _i_out._T_Graph_Attributes.L.SG => ['viewport', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'newrank': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['newrank', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
+                    )],
+                    'width': ($): _i_out._T_Graph_Attributes.L.SG => ['width', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'xdotversion': ($): _i_out._T_Graph_Attributes.L.SG => ['xdotversion', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'xlabel': ($): _i_out._T_Graph_Attributes.L.SG => ['xlabel', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'no loop': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['no loop', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
-                        null
-                    ),
-                    'normalize': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['normalize', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
-                        null
-                    ),
-                    'ordering': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['ordering', _i_generic.process_state_group(
-                            $,
-                            {
-                                'states': _pa.dictionary_literal({
-                                    'in': ($): _i_out._T_Graph_Attributes.L.SG.ordering => _i_generic.wrap_unconstrained_state_group(
-                                        ['in', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'in out': ($): _i_out._T_Graph_Attributes.L.SG.ordering => _i_generic.wrap_unconstrained_state_group(
-                                        ['in out', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'out': ($): _i_out._T_Graph_Attributes.L.SG.ordering => _i_generic.wrap_unconstrained_state_group(
-                                        ['out', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                }),
-                            }
-                        )],
-                        null
-                    ),
-                    'orientation': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['orientation', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
-                        null
-                    ),
-                    'output mode': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['output mode', _i_generic.process_state_group(
-                            $,
-                            {
-                                'states': _pa.dictionary_literal({
-                                    'edges first': ($): _i_out._T_Graph_Attributes.L.SG.output_mode => _i_generic.wrap_unconstrained_state_group(
-                                        ['edges first', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'nodes first': ($): _i_out._T_Graph_Attributes.L.SG.output_mode => _i_generic.wrap_unconstrained_state_group(
-                                        ['nodes first', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                }),
-                            }
-                        )],
-                        null
-                    ),
-                    'output order': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['output order', _i_generic.process_state_group(
-                            $,
-                            {
-                                'states': _pa.dictionary_literal({
-                                    'breadth first': ($): _i_out._T_Graph_Attributes.L.SG.output_order => _i_generic.wrap_unconstrained_state_group(
-                                        ['breadth first', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'dfs': ($): _i_out._T_Graph_Attributes.L.SG.output_order => _i_generic.wrap_unconstrained_state_group(
-                                        ['dfs', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                }),
-                            }
-                        )],
-                        null
-                    ),
-                    'overlap': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['overlap', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'pack': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['pack', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
-                        null
-                    ),
-                    'pack mode': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['pack mode', _i_generic.process_state_group(
-                            $,
-                            {
-                                'states': _pa.dictionary_literal({
-                                    'graph': ($): _i_out._T_Graph_Attributes.L.SG.pack_mode => _i_generic.wrap_unconstrained_state_group(
-                                        ['graph', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'node': ($): _i_out._T_Graph_Attributes.L.SG.pack_mode => _i_generic.wrap_unconstrained_state_group(
-                                        ['node', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                }),
-                            }
-                        )],
-                        null
-                    ),
-                    'pad': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['pad', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
-                        null
-                    ),
-                    'page': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['page', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'quadtree': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['quadtree', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
-                        null
-                    ),
-                    'quantum': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['quantum', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
-                        null
-                    ),
-                    'rankdir': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['rankdir', _i_generic.process_state_group(
-                            $,
-                            {
-                                'states': _pa.dictionary_literal({
-                                    'bottom top': ($): _i_out._T_Graph_Attributes.L.SG.rankdir => _i_generic.wrap_unconstrained_state_group(
-                                        ['bottom top', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'left right': ($): _i_out._T_Graph_Attributes.L.SG.rankdir => _i_generic.wrap_unconstrained_state_group(
-                                        ['left right', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'right left': ($): _i_out._T_Graph_Attributes.L.SG.rankdir => _i_generic.wrap_unconstrained_state_group(
-                                        ['right left', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'top bottom': ($): _i_out._T_Graph_Attributes.L.SG.rankdir => _i_generic.wrap_unconstrained_state_group(
-                                        ['top bottom', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                }),
-                            }
-                        )],
-                        null
-                    ),
-                    'ranksep': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['ranksep', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'ratio': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['ratio', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'remincross': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['remincross', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
-                        null
-                    ),
-                    'rotate': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['rotate', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
-                        null
-                    ),
-                    'scale': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['scale', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'searchsize': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['searchsize', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
-                        null
-                    ),
-                    'sep': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['sep', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'showboxes': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['showboxes', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
-                        null
-                    ),
-                    'size': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['size', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'smoothing': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['smoothing', _i_generic.process_state_group(
-                            $,
-                            {
-                                'states': _pa.dictionary_literal({
-                                    'none': ($): _i_out._T_Graph_Attributes.L.SG.smoothing => _i_generic.wrap_unconstrained_state_group(
-                                        ['none', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'spring': ($): _i_out._T_Graph_Attributes.L.SG.smoothing => _i_generic.wrap_unconstrained_state_group(
-                                        ['spring', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'triangle': ($): _i_out._T_Graph_Attributes.L.SG.smoothing => _i_generic.wrap_unconstrained_state_group(
-                                        ['triangle', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                }),
-                            }
-                        )],
-                        null
-                    ),
-                    'sortv': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['sortv', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
-                        null
-                    ),
-                    'splines': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['splines', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'start': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['start', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
-                        null
-                    ),
-                    'style': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['style', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'stylesheet': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['stylesheet', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'target': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['target', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'tooltip': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['tooltip', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'truecolor': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['truecolor', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
-                        null
-                    ),
-                    'viewport': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['viewport', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'width': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['width', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
-                        null
-                    ),
-                    'xdotversion': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['xdotversion', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
-                        null
-                    ),
-                    'xlabel': ($): _i_out._T_Graph_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['xlabel', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
+                    )],
                 }),
             }
         ),
@@ -1379,300 +951,189 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
 export const Node_Attributes: _i_signatures._T_Node_Attributes = ($, $p) => _i_generic.process_unconstrained_list(
     $,
     {
-        'value': ($) => _i_generic.process_state_group(
+        'value': ($) => _i_generic.process_unconstrained_state_group(
             $,
             {
                 'states': _pa.dictionary_literal({
-                    'color': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['color', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    'color': ($): _i_out._T_Node_Attributes.L.SG => ['color', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'colorscheme': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['colorscheme', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'colorscheme': ($): _i_out._T_Node_Attributes.L.SG => ['colorscheme', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'comment': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['comment', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'comment': ($): _i_out._T_Node_Attributes.L.SG => ['comment', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'concentrate': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['concentrate', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
+                    )],
+                    'concentrate': ($): _i_out._T_Node_Attributes.L.SG => ['concentrate', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'fill color': ($): _i_out._T_Node_Attributes.L.SG => ['fill color', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'fill color': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['fill color', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'fixed size': ($): _i_out._T_Node_Attributes.L.SG => ['fixed size', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'font color': ($): _i_out._T_Node_Attributes.L.SG => ['font color', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'fixed size': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['fixed size', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
+                    )],
+                    'font name': ($): _i_out._T_Node_Attributes.L.SG => ['font name', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'font color': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['font color', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'font size': ($): _i_out._T_Node_Attributes.L.SG => ['font size', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'group': ($): _i_out._T_Node_Attributes.L.SG => ['group', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'font name': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['font name', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'height': ($): _i_out._T_Node_Attributes.L.SG => ['height', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'image': ($): _i_out._T_Node_Attributes.L.SG => ['image', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'font size': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['font size', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
+                    )],
+                    'label': ($): _i_out._T_Node_Attributes.L.SG => ['label', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'group': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['group', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'labelloc': ($): _i_out._T_Node_Attributes.L.SG => ['labelloc', _i_generic.process_unconstrained_state_group(
+                        $,
+                        {
+                            'states': _pa.dictionary_literal({
+                                'bottom': ($): _i_out._T_Node_Attributes.L.SG.labelloc.SG => ['bottom', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'center': ($): _i_out._T_Node_Attributes.L.SG.labelloc.SG => ['center', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'top': ($): _i_out._T_Node_Attributes.L.SG.labelloc.SG => ['top', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                            }),
+                        }
+                    )],
+                    'layers': ($): _i_out._T_Node_Attributes.L.SG => ['layers', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'height': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['height', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
+                    )],
+                    'margin': ($): _i_out._T_Node_Attributes.L.SG => ['margin', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'image': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['image', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'nojustify': ($): _i_out._T_Node_Attributes.L.SG => ['nojustify', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'orientation': ($): _i_out._T_Node_Attributes.L.SG => ['orientation', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'pen width': ($): _i_out._T_Node_Attributes.L.SG => ['pen width', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'peripheries': ($): _i_out._T_Node_Attributes.L.SG => ['peripheries', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'pos': ($): _i_out._T_Node_Attributes.L.SG => ['pos', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'label': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['label', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'rects': ($): _i_out._T_Node_Attributes.L.SG => ['rects', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'labelloc': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['labelloc', _i_generic.process_state_group(
-                            $,
-                            {
-                                'states': _pa.dictionary_literal({
-                                    'bottom': ($): _i_out._T_Node_Attributes.L.SG.labelloc => _i_generic.wrap_unconstrained_state_group(
-                                        ['bottom', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'center': ($): _i_out._T_Node_Attributes.L.SG.labelloc => _i_generic.wrap_unconstrained_state_group(
-                                        ['center', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                    'top': ($): _i_out._T_Node_Attributes.L.SG.labelloc => _i_generic.wrap_unconstrained_state_group(
-                                        ['top', _i_generic.process_nothing(
-                                            $,
-                                            null
-                                        )],
-                                        null
-                                    ),
-                                }),
-                            }
-                        )],
+                    )],
+                    'regular': ($): _i_out._T_Node_Attributes.L.SG => ['regular', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'root': ($): _i_out._T_Node_Attributes.L.SG => ['root', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'shape': ($): _i_out._T_Node_Attributes.L.SG => ['shape', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'layers': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['layers', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'showboxes': ($): _i_out._T_Node_Attributes.L.SG => ['showboxes', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'sides': ($): _i_out._T_Node_Attributes.L.SG => ['sides', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'skew': ($): _i_out._T_Node_Attributes.L.SG => ['skew', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'style': ($): _i_out._T_Node_Attributes.L.SG => ['style', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'margin': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['margin', _i_generic.process_text(
-                            $,
-                            null
-                        )],
+                    )],
+                    'target': ($): _i_out._T_Node_Attributes.L.SG => ['target', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'nojustify': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['nojustify', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
+                    )],
+                    'tooltip': ($): _i_out._T_Node_Attributes.L.SG => ['tooltip', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'orientation': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['orientation', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
+                    )],
+                    'width': ($): _i_out._T_Node_Attributes.L.SG => ['width', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'xlabel': ($): _i_out._T_Node_Attributes.L.SG => ['xlabel', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'pen width': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['pen width', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
+                    )],
+                    'xlp': ($): _i_out._T_Node_Attributes.L.SG => ['xlp', _i_generic.process_text(
+                        $,
                         null
-                    ),
-                    'peripheries': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['peripheries', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
-                        null
-                    ),
-                    'pos': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['pos', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'rects': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['rects', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'regular': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['regular', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
-                        null
-                    ),
-                    'root': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['root', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
-                        null
-                    ),
-                    'shape': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['shape', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'showboxes': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['showboxes', _i_generic.process_boolean(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['boolean'],
-                            }
-                        )],
-                        null
-                    ),
-                    'sides': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['sides', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
-                        null
-                    ),
-                    'skew': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['skew', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
-                        null
-                    ),
-                    'style': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['style', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'target': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['target', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'tooltip': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['tooltip', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'width': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['width', _i_generic.process_number(
-                            $,
-                            {
-                                'deserializer': $p['value deserializers']['default number'],
-                            }
-                        )],
-                        null
-                    ),
-                    'xlabel': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['xlabel', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
-                    'xlp': ($): _i_out._T_Node_Attributes.L => _i_generic.wrap_unconstrained_state_group(
-                        ['xlp', _i_generic.process_text(
-                            $,
-                            null
-                        )],
-                        null
-                    ),
+                    )],
                 }),
             }
         ),
@@ -1701,85 +1162,70 @@ export const Tree: _i_signatures._T_Tree = ($, $p) => _i_generic.process_group(
             ), ($) => _i_generic.process_unconstrained_dictionary(
                 $,
                 {
-                    'value': ($) => _i_generic.process_state_group(
+                    'value': ($) => _i_generic.process_unconstrained_state_group(
                         $,
                         {
                             'states': _pa.dictionary_literal({
-                                'node': ($): _i_out._T_Tree.elements.D => _i_generic.wrap_unconstrained_state_group(
-                                    ['node', _i_generic.process_group(
-                                        $,
-                                        {
-                                            'properties': ($) => ({
-                                                'attributes': _pa.cc(_i_generic.get_entry(
-                                                    $,
-                                                    {
-                                                        'key': "attributes",
-                                                    }
-                                                ), ($) => Node_Attributes(
-                                                    $,
-                                                    {
-                                                        'value deserializers': $p['value deserializers'],
-                                                    }
-                                                )),
-                                            }),
-                                        }
-                                    )],
-                                    null
-                                ),
-                                'sub': ($): _i_out._T_Tree.elements.D => _i_generic.wrap_unconstrained_state_group(
-                                    ['sub', _i_generic.process_group(
-                                        $,
-                                        {
-                                            'properties': ($) => ({
-                                                'tree': _pa.cc(_i_generic.get_entry(
-                                                    $,
-                                                    {
-                                                        'key': "tree",
-                                                    }
-                                                ), ($) => Tree(
-                                                    $,
-                                                    {
-                                                        'value deserializers': $p['value deserializers'],
-                                                    }
-                                                )),
-                                                'type': _pa.cc(_i_generic.get_entry(
-                                                    $,
-                                                    {
-                                                        'key': "type",
-                                                    }
-                                                ), ($) => _i_generic.process_state_group(
-                                                    $,
-                                                    {
-                                                        'states': _pa.dictionary_literal({
-                                                            'cluster': ($): _i_out._T_Tree.elements.D.SG.sub._type => _i_generic.wrap_unconstrained_state_group(
-                                                                ['cluster', _i_generic.process_nothing(
-                                                                    $,
-                                                                    null
-                                                                )],
-                                                                null
-                                                            ),
-                                                            'group': ($): _i_out._T_Tree.elements.D.SG.sub._type => _i_generic.wrap_unconstrained_state_group(
-                                                                ['group', _i_generic.process_nothing(
-                                                                    $,
-                                                                    null
-                                                                )],
-                                                                null
-                                                            ),
-                                                            'subgraph': ($): _i_out._T_Tree.elements.D.SG.sub._type => _i_generic.wrap_unconstrained_state_group(
-                                                                ['subgraph', _i_generic.process_nothing(
-                                                                    $,
-                                                                    null
-                                                                )],
-                                                                null
-                                                            ),
-                                                        }),
-                                                    }
-                                                )),
-                                            }),
-                                        }
-                                    )],
-                                    null
-                                ),
+                                'node': ($): _i_out._T_Tree.elements.D.SG => ['node', _i_generic.process_group(
+                                    $,
+                                    {
+                                        'properties': ($) => ({
+                                            'attributes': _pa.cc(_i_generic.get_entry(
+                                                $,
+                                                {
+                                                    'key': "attributes",
+                                                }
+                                            ), ($) => Node_Attributes(
+                                                $,
+                                                {
+                                                    'value deserializers': $p['value deserializers'],
+                                                }
+                                            )),
+                                        }),
+                                    }
+                                )],
+                                'sub': ($): _i_out._T_Tree.elements.D.SG => ['sub', _i_generic.process_group(
+                                    $,
+                                    {
+                                        'properties': ($) => ({
+                                            'tree': _pa.cc(_i_generic.get_entry(
+                                                $,
+                                                {
+                                                    'key': "tree",
+                                                }
+                                            ), ($) => Tree(
+                                                $,
+                                                {
+                                                    'value deserializers': $p['value deserializers'],
+                                                }
+                                            )),
+                                            'type': _pa.cc(_i_generic.get_entry(
+                                                $,
+                                                {
+                                                    'key': "type",
+                                                }
+                                            ), ($) => _i_generic.process_unconstrained_state_group(
+                                                $,
+                                                {
+                                                    'states': _pa.dictionary_literal({
+                                                        'cluster': ($): _i_out._T_Tree.elements.D.SG.sub._type.SG => ['cluster', _i_generic.process_nothing(
+                                                            $,
+                                                            null
+                                                        )],
+                                                        'group': ($): _i_out._T_Tree.elements.D.SG.sub._type.SG => ['group', _i_generic.process_nothing(
+                                                            $,
+                                                            null
+                                                        )],
+                                                        'subgraph': ($): _i_out._T_Tree.elements.D.SG.sub._type.SG => ['subgraph', _i_generic.process_nothing(
+                                                            $,
+                                                            null
+                                                        )],
+                                                    }),
+                                                }
+                                            )),
+                                        }),
+                                    }
+                                )],
                             }),
                         }
                     ),

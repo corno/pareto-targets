@@ -44,7 +44,10 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($, $p) => ['li
             'state': "arrowsize",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'arrowtail': return _pa.ss($, ($) => ({
@@ -189,7 +192,10 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($, $p) => ['li
             'state': "height",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'id': return _pa.ss($, ($) => ({
@@ -210,14 +216,20 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($, $p) => ['li
             'state': "label angle",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'label distance': return _pa.ss($, ($) => ({
             'state': "label distance",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'label float': return _pa.ss($, ($) => ({
@@ -265,7 +277,10 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($, $p) => ['li
             'state': "len",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'lhead': return _pa.ss($, ($) => ({
@@ -293,14 +308,20 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($, $p) => ['li
             'state': "minlen",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'pen width': return _pa.ss($, ($) => ({
             'state': "pen width",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'pos': return _pa.ss($, ($) => ({
@@ -389,7 +410,10 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($, $p) => ['li
             'state': "weight",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'xlabel': return _pa.ss($, ($) => ({
@@ -579,7 +603,10 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => ['
             'state': "dpi",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'font color': return _pa.ss($, ($) => ({
@@ -607,7 +634,10 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => ['
             'state': "font size",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'label': return _pa.ss($, ($) => ({
@@ -621,7 +651,10 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => ['
             'state': "label distance",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'label location': return _pa.ss($, ($) => ({
@@ -644,7 +677,10 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => ['
             'state': "label scheme",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'landscape': return _pa.ss($, ($) => ({
@@ -689,21 +725,30 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => ['
             'state': "max iteration",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'mclimit': return _pa.ss($, ($) => ({
             'state': "mclimit",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'mindist': return _pa.ss($, ($) => ({
             'state': "mindist",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'mode': return _pa.ss($, ($) => ({
@@ -784,7 +829,10 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => ['
             'state': "orientation",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'output mode': return _pa.ss($, ($) => ({
@@ -856,7 +904,10 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => ['
             'state': "pad",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'page': return _pa.ss($, ($) => ({
@@ -880,7 +931,10 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => ['
             'state': "quantum",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'rankdir': return _pa.ss($, ($) => ({
@@ -935,7 +989,10 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => ['
             'state': "rotate",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'scale': return _pa.ss($, ($) => ({
@@ -949,7 +1006,10 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => ['
             'state': "searchsize",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'sep': return _pa.ss($, ($) => ({
@@ -1017,7 +1077,10 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => ['
             'state': "start",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'style': return _pa.ss($, ($) => ({
@@ -1069,14 +1132,20 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => ['
             'state': "width",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'xdotversion': return _pa.ss($, ($) => ({
             'state': "xdotversion",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'xlabel': return _pa.ss($, ($) => ({
@@ -1157,7 +1226,10 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($, $p) => ['li
             'state': "font size",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'group': return _pa.ss($, ($) => ({
@@ -1171,7 +1243,10 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($, $p) => ['li
             'state': "height",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'image': return _pa.ss($, ($) => ({
@@ -1236,21 +1311,30 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($, $p) => ['li
             'state': "orientation",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'pen width': return _pa.ss($, ($) => ({
             'state': "pen width",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'peripheries': return _pa.ss($, ($) => ({
             'state': "peripheries",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'pos': return _pa.ss($, ($) => ({
@@ -1308,14 +1392,20 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($, $p) => ['li
             'state': "sides",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'skew': return _pa.ss($, ($) => ({
             'state': "skew",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'style': return _pa.ss($, ($) => ({
@@ -1343,7 +1433,10 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($, $p) => ['li
             'state': "width",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
-                'value': _pd.implement_me(),
+                'value': $p['value serializers']['default number'](
+                    $,
+                    null
+                ),
             })],
         }))
         case 'xlabel': return _pa.ss($, ($) => ({
