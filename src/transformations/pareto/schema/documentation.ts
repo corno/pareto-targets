@@ -1,5 +1,4 @@
-import * as pd from 'exupery-core-data'
-import * as pa from 'exupery-core-alg'
+import * as _ea from 'exupery-core-alg'
 
 import * as _in from "pareto/dist/generated/interface/schemas/schema/resolved"
 import * as _in_m from "pareto/dist/generated/interface/schemas/module/resolved"
@@ -12,9 +11,9 @@ export const Schemas = ($: _in.Schemas): _out.Block_Part => {
         b.simple_line($.key),
         b.nested_line([
             l.indent([
-                pa.cc($.value, ($) => {
+                _ea.cc($.value, ($) => {
                     switch ($[0]) {
-                        case 'schema': return pa.ss($, ($) => b.sub([
+                        case 'schema': return _ea.ss($, ($) => b.sub([
                             b.simple_line(`types:`),
                             b.nested_line([
                                 l.indent([
@@ -25,7 +24,7 @@ export const Schemas = ($: _in.Schemas): _out.Block_Part => {
                             ]),
                             b.simple_line(``),
                         ]))
-                        case 'set': return pa.ss($, ($) => b.sub([
+                        case 'set': return _ea.ss($, ($) => b.sub([
                             b.simple_line(`schemas:`),
                             b.nested_line([
                                 l.indent([
@@ -34,7 +33,7 @@ export const Schemas = ($: _in.Schemas): _out.Block_Part => {
                             ]),
                             b.simple_line(``),
                         ]))
-                        default: return pa.au($[0])
+                        default: return _ea.au($[0])
                     }
                 })
 
