@@ -1,9 +1,9 @@
 import * as pd from 'exupery-core-data'
-import * as pa from 'exupery-core-alg'
+import * as _ea from 'exupery-core-alg'
 
-import * as _in_s from "pareto/dist/generated/interface/schemas/schema/resolved"
-import * as _in from "pareto/dist/generated/interface/schemas/module/resolved"
-import * as _out from "pareto-fountain-pen/dist/generated/interface/schemas/block/unconstrained"
+import * as _in_s from "pareto/dist/generated/interface/schemas/schema/data_types/resolved"
+import * as _in from "pareto/dist/generated/interface/schemas/module/data_types/resolved"
+import * as _out from "pareto-fountain-pen/dist/generated/interface/schemas/block/data_types/unconstrained"
 
 
 //transformations
@@ -15,26 +15,38 @@ import * as t_graphviz_to_fountain_pen from "../../graphviz/high_level/fountain_
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
 
-export const Schemas = ($: _in_s.Schemas): _out.Directory => {
-    return $.dictionary.map<_out.Directory.D>(($, key) => {
-        return pa.cc($, ($) => {
-            switch ($[0]) {
-                case 'schema': return pa.ss($, ($) => sh.d.directory({
-                    "graphviz.dot": sh.d.file(
-                        t_graphviz_to_fountain_pen.Graph(
-                            t_schema_to_graphviz.Schema($, {
-                                'name': key
-                            })
-                        ),
-                    )
-                }))
-                case 'set': return pa.ss($, ($) => sh.d.directory(Schemas($)))
-                default: return pa.au($[0])
-            }
-        })
+export const Schema_Tree = (
+    $: _in_s.Schema_Tree,
+    $p: {
+        'graph name': string
+    }
+): _out.Directory => {
+    return _ea.cc($, ($) => {
+        switch ($[0]) {
+            case 'schema': return _ea.ss($, ($) => _ea.dictionary_literal({
+                "graphviz.dot": sh.n.file(
+                    t_graphviz_to_fountain_pen.Graph(
+                        t_schema_to_graphviz.Schema($, {
+                            'graph name': $p['graph name']
+                        })
+                    ),
+                )
+            }))
+            case 'set': return _ea.ss($, ($) => Schemas($))
+            default: return _ea.au($[0])
+        }
     })
 }
 
-export const Module = ($: _in.Module): _out.Directory => {
-    return Schemas($.schemas)
+export const Schemas = ($: _in_s.Schemas): _out.Directory => {
+    return $.dictionary.map<_out.Directory.D>(($, key) => sh.n.directory(Schema_Tree($, { 'graph name': key })))
+}
+
+export const Module = (
+    $: _in.Module,
+    $p: {
+        'graph name': string
+    }
+): _out.Directory => {
+    return Schema_Tree($['schema tree'], { 'graph name': $p['graph name'] })
 }

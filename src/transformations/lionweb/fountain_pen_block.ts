@@ -2,7 +2,7 @@ import * as pd from 'exupery-core-data'
 import * as pa from 'exupery-core-alg'
 
 import * as _in from "../../generated/interface/schemas/lionweb/data_types/unconstrained"
-import * as _out from "pareto-fountain-pen/dist/generated/interface/schemas/block/unconstrained"
+import * as _out from "pareto-fountain-pen/dist/generated/interface/schemas/block/data_types/unconstrained"
 
 import * as t_json_to_fountain_pen_block from "pareto-json/dist/transformations/json/fountain_pen_block"
 import * as t_lionweb_to_json from "./json"

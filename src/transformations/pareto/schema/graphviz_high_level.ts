@@ -1,8 +1,8 @@
 import * as pd from 'exupery-core-data'
 import * as pa from 'exupery-core-alg'
 
-import * as _in from "pareto/dist/generated/interface/schemas/schema/resolved"
-import * as _in_m from "pareto/dist/generated/interface/schemas/module/resolved"
+import * as _in from "pareto/dist/generated/interface/schemas/schema/data_types/resolved"
+import * as _in_m from "pareto/dist/generated/interface/schemas/module/data_types/resolved"
 import * as _out from "../../../generated/interface/schemas/graphviz_high_level/data_types/unconstrained"
 
 import { impure, pure } from "pareto-standard-operations"
@@ -71,14 +71,14 @@ export const Type_Node = (
 }
 
 export const Schema = (
-    $: _in.Schemas.D.SG.schema,
+    $: _in.Schema,
     $p: {
-        'name': string,
+        'graph name': string,
     }
 
 ): _out.Graph => {
     return {
-        'name': pa.set($p.name),
+        'name': pa.set($p['graph name']),
         'tree': {
             'attributes': pa.array_literal([]),
             'elements': $.types.dictionary.map<_out.Tree.elements.D>(($) => {

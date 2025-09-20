@@ -1,8 +1,8 @@
 import * as pd from 'exupery-core-data'
 import * as pa from 'exupery-core-alg'
 
-import * as _in from "pareto/dist/generated/interface/schemas/schema/resolved"
-import * as _in_m from "pareto/dist/generated/interface/schemas/module/resolved"
+import * as _in from "pareto/dist/generated/interface/schemas/schema/data_types/resolved"
+import * as _in_m from "pareto/dist/generated/interface/schemas/module/data_types/resolved"
 import * as _out from "../../../generated/interface/schemas/lionweb/data_types/unconstrained"
 
 
@@ -191,7 +191,7 @@ export const Type_Node_2_Document_nodes = (
 
 
 export const Schema = (
-    $: _in.Schemas.D.SG.schema,
+    $: _in.Schema,
 ): _out.SerializationChunk => {
     return {
         'serializationFormatVersion': "2023.1",
