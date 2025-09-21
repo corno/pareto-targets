@@ -1,6 +1,6 @@
 import * as pa from 'exupery-core-alg'
 
-import * as s_in from "../generated/interface/schemas/graphviz_high_level/data_types/unconstrained"
+import * as s_in from "../generated/interface/schemas/graphviz_high_level/data_types/target"
 
 import * as t_graphviz_to_fountain_pen from "../transformations/graphviz/high_level/fountain_pen"
 

@@ -1,8 +1,8 @@
 import * as _ea from 'exupery-core-alg'
 
-import * as _in from "pareto/dist/generated/interface/schemas/schema/data_types/resolved"
-import * as _in_m from "pareto/dist/generated/interface/schemas/module/data_types/resolved"
-import * as _out from "pareto-fountain-pen/dist/generated/interface/schemas/block/data_types/unconstrained"
+import * as _in from "pareto/dist/generated/interface/schemas/schema/data_types/source"
+import * as _in_m from "pareto/dist/generated/interface/schemas/module/data_types/source"
+import * as _out from "pareto-fountain-pen/dist/generated/interface/schemas/block/data_types/target"
 
 import { b, l } from "pareto-fountain-pen/dist/shorthands/block"
 

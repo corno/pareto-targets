@@ -1,6 +1,6 @@
 import * as _ed from 'exupery-core-data'
 
-import * as s_pm from "pareto/dist/generated/interface/schemas/module/data_types/unresolved"
+import * as s_pm from "pareto/dist/generated/interface/schemas/module/data_types/target"
 
 import * as r_pareto_module from "pareto/dist/resolvers/module"
 

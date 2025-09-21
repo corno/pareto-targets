@@ -1,7 +1,7 @@
 import * as _pt from 'exupery-core-types'
 
-import * as _i_core from "../../../core/unconstrained"
-import * as _i_imports_graphviz from "../../graphviz_high_level/data_types/unconstrained"
+import * as _i_core from "../../../core/resolved"
+import * as _i_imports_graphviz from "../../graphviz_high_level/data_types/source"
 
 // **** TYPES
 

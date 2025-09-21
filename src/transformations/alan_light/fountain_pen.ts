@@ -1,7 +1,7 @@
 import * as pa from 'exupery-core-alg'
 
-import * as _in from "../../generated/interface/schemas/alan_light/data_types/unconstrained"
-import * as _out from "pareto-fountain-pen/dist/generated/interface/schemas/block/data_types/unconstrained"
+import * as _in from "../../generated/interface/schemas/alan_light/data_types/target"
+import * as _out from "pareto-fountain-pen/dist/generated/interface/schemas/block/data_types/target"
 
 import {
     b, l, block

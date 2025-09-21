@@ -1,9 +1,9 @@
 import * as pd from 'exupery-core-data'
 import * as pa from 'exupery-core-alg'
 
-import * as _in_s from "pareto/dist/generated/interface/schemas/schema/data_types/resolved"
-import * as _in from "pareto/dist/generated/interface/schemas/module/data_types/resolved"
-import * as _out from "pareto-fountain-pen/dist/generated/interface/schemas/block/data_types/unconstrained"
+import * as _in_s from "pareto/dist/generated/interface/schemas/schema/data_types/source"
+import * as _in from "pareto/dist/generated/interface/schemas/module/data_types/source"
+import * as _out from "pareto-fountain-pen/dist/generated/interface/schemas/block/data_types/target"
 
 //transformations
 import * as t_schema_to_documentation from "../schema/documentation"
