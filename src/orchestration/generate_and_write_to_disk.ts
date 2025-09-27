@@ -6,7 +6,7 @@ import * as r_pareto_module from "pareto/dist/resolvers/module"
 
 import * as t_pareto_module_to_fountain_pen_block from "../transformations/pareto/module/fountain_pen_block"
 
-import * as wtd from "pareto-fountain-pen/dist/other/write_to_disk"
+import * as wtd from "pareto-fountain-pen/dist/commands/write_to_disk"
 
 export const $$ = (
     $: s_pm.Module<_ed.Source_Location>,
