@@ -7,16 +7,9 @@ import {
     b, l, block,
 } from "pareto-fountain-pen/dist/shorthands/block"
 
-import { impure, pure } from "pareto-standard-operations"
-
-const op = {
-    'enrich list elements with position information': impure.list['enrich with position information'],
-    'dictionary to list, sorted by code point': impure.dictionary['to list, sorted by code point'],
-    'filter': pure.dictionary.filter,
-    'serialize with quote delimiter': impure.text['serialize with quote delimiter'],
-    'is equal to': pure.list['is equal to'],
-    'is empty': impure.list['is empty'],
-}
+import { $$ as op_serialize_with_quote_delimiter } from "pareto-standard-operations/dist/impure/text/serialize_with_quote_delimiter"
+import { $$ as op_is_empty } from "pareto-standard-operations/dist/impure/list/is_empty"
+import { $$ as op_enrich_list_elements_with_position_information } from "pareto-standard-operations/dist/impure/list/enrich_with_position_information"
 
 export const Graph = ($: s_in.Graph): s_out.Block => {
     return block([
@@ -91,7 +84,7 @@ export const Statement_List = (
                                         default: return pa.au($[0])
                                     }
                                 }),
-                                l.sub_decorated(op['enrich list elements with position information']($.right).map(($) => {
+                                l.sub_decorated(op_enrich_list_elements_with_position_information($.right).map(($) => {
                                     return l.sub([
                                         pa.cc($.value, ($) => {
                                             switch ($[0]) {
@@ -109,7 +102,7 @@ export const Statement_List = (
                             ]))
                             case 'node': return pa.ss($, ($) => l.sub([
                                 Node_ID($.node),
-                                op['is empty']($['attribute list'])
+                                op_is_empty($['attribute list'])
                                     ? l.nothing()
                                     : Attribute_List($['attribute list']),
                                 l.snippet(";"),
@@ -129,7 +122,7 @@ export const ID = ($: s_in.ID): s_out.Line_Part => {
     return pa.cc($, ($) => {
         switch ($[0]) {
             case 'id': return pa.ss($, ($) => l.snippet($)) //FIX escaping
-            case 'string': return pa.ss($, ($) => l.snippet(op['serialize with quote delimiter']($)))
+            case 'string': return pa.ss($, ($) => l.snippet(op_serialize_with_quote_delimiter($)))
             case 'html': return pa.ss($, ($) => l.snippet($))
             case 'number': return pa.ss($, ($) => l.snippet("FIXME NUMBER"))
             default: return pa.au($[0])

@@ -5,13 +5,8 @@ import * as _in from "pareto/dist/generated/interface/schemas/schema/data_types/
 import * as _in_m from "pareto/dist/generated/interface/schemas/module/data_types/source"
 import * as _out from "../../../generated/interface/schemas/graphviz_high_level/data_types/target"
 
-import { impure, pure } from "pareto-standard-operations"
-
-const op = {
-    'dictionary to list, sorted by code point': impure.dictionary['to list, sorted by code point'],
-    'flatten': pure.list.flatten
-
-}
+import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/impure/dictionary/to_list_sorted_by_code_point"
+import { $$ as op_flatten_list } from "pareto-standard-operations/dist/pure/list/flatten"
 
 export const Type_Node = (
     $: _in.Type_Node,
@@ -59,10 +54,10 @@ export const Type_Node = (
 
             ]))
             case 'dictionary': return pa.ss($, ($) => Type_Node($.node, $p))
-            case 'group': return pa.ss($, ($) => op.flatten(op['dictionary to list, sorted by code point']($.map(($) => Type_Node($, $p))).map(($) => $.value)))
+            case 'group': return pa.ss($, ($) => op_flatten_list(op_dictionary_to_list($.map(($) => Type_Node($, $p))).map(($) => $.value)))
             case 'identifier value pair': return pa.ss($, ($) => Type_Node($, $p))
             case 'optional': return pa.ss($, ($) => Type_Node($, $p))
-            case 'state group': return pa.ss($, ($) => op.flatten(op['dictionary to list, sorted by code point']($.map(($) => Type_Node($, $p))).map(($) => $.value)))
+            case 'state group': return pa.ss($, ($) => op_flatten_list(op_dictionary_to_list($.map(($) => Type_Node($, $p))).map(($) => $.value)))
             case 'text': return pa.ss($, ($) => pa.array_literal([]))
             case 'type parameter': return pa.ss($, ($) => pa.array_literal([]))
             default: return pa.au($[0])
@@ -89,7 +84,7 @@ export const Schema = (
             }),
         },
         'type': ['directed', {
-            'edges': op.flatten($.types['ordered list'].map(($) => {
+            'edges': op_flatten_list($.types['ordered list'].map(($) => {
                 return Type_Node($.value.node, { 'type name': $.key })
             })),
         }],

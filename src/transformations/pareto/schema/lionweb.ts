@@ -5,13 +5,8 @@ import * as _in from "pareto/dist/generated/interface/schemas/schema/data_types/
 import * as _in_m from "pareto/dist/generated/interface/schemas/module/data_types/source"
 import * as _out from "../../../generated/interface/schemas/lionweb/data_types/target"
 
-
-import { pure, impure } from "pareto-standard-operations"
-
-const op = {
-    'flatten list': pure.list.flatten,
-    'dictionary to list': impure.dictionary['to list, sorted by code point']
-}
+import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/impure/dictionary/to_list_sorted_by_code_point"
+import { $$ as op_flatten_list } from "pareto-standard-operations/dist/pure/list/flatten"
 
 export const MetaPointer = (
     $: string,
@@ -38,7 +33,7 @@ export const Type_Node_2_Document_nodes = (
 ): _out.SerializationChunk.nodes => {
     return pa.cc($, ($) => {
         switch ($[0]) {
-            case 'dictionary': return pa.ss($, ($): _out.SerializationChunk.nodes => op['flatten list'](pa.array_literal([
+            case 'dictionary': return pa.ss($, ($): _out.SerializationChunk.nodes => op_flatten_list(pa.array_literal([
                 pa.array_literal([
                     {
                         'id': $p.path,
@@ -76,7 +71,7 @@ export const Type_Node_2_Document_nodes = (
                     }
                 ),
             ])))
-            case 'group': return pa.ss($, ($): _out.SerializationChunk.nodes => op['flatten list'](pa.array_literal([
+            case 'group': return pa.ss($, ($): _out.SerializationChunk.nodes => op_flatten_list(pa.array_literal([
                 pa.array_literal([
                     {
                         'id': $p.path,
@@ -86,20 +81,20 @@ export const Type_Node_2_Document_nodes = (
                         'containments': pa.array_literal([
                             {
                                 'containment': MetaPointer("properties"),
-                                'children': op['dictionary to list']($).map(($) => $p.path + "." + $.key),
+                                'children': op_dictionary_to_list($).map(($) => $p.path + "." + $.key),
                             },
                         ]),
                         'properties': pa.array_literal([]),
                         'references': pa.array_literal([])
                     }]),
-                op['flatten list'](op['dictionary to list']($).map(($) => Type_Node_2_Document_nodes(
+                op_flatten_list(op_dictionary_to_list($).map(($) => Type_Node_2_Document_nodes(
                     $.value,
                     {
                         'path': $p.path + "." + $.key,
                     }
                 ))),
             ])))
-            case 'list': return pa.ss($, ($): _out.SerializationChunk.nodes => op['flatten list'](pa.array_literal([
+            case 'list': return pa.ss($, ($): _out.SerializationChunk.nodes => op_flatten_list(pa.array_literal([
                 pa.array_literal([{
                     'id': $p.path,
                     'parent': pa.not_set(),
@@ -121,7 +116,7 @@ export const Type_Node_2_Document_nodes = (
                     }
                 ),
             ])))
-            case 'optional': return pa.ss($, ($): _out.SerializationChunk.nodes => op['flatten list'](pa.array_literal([
+            case 'optional': return pa.ss($, ($): _out.SerializationChunk.nodes => op_flatten_list(pa.array_literal([
                 pa.array_literal([{
                     'id': $p.path,
                     'parent': pa.not_set(),
@@ -143,7 +138,7 @@ export const Type_Node_2_Document_nodes = (
                     }
                 ),
             ])))
-            case 'state group': return pa.ss($, ($): _out.SerializationChunk.nodes => op['flatten list'](pa.array_literal([
+            case 'state group': return pa.ss($, ($): _out.SerializationChunk.nodes => op_flatten_list(pa.array_literal([
                 pa.array_literal([{
                     'id': $p.path,
                     'parent': pa.not_set(),
@@ -152,13 +147,13 @@ export const Type_Node_2_Document_nodes = (
                     'containments': pa.array_literal([
                         {
                             'containment': MetaPointer("states"),
-                            'children': op['dictionary to list']($).map(($) => $p.path + "." + $.key),
+                            'children': op_dictionary_to_list($).map(($) => $p.path + "." + $.key),
                         },
                     ]),
                     'properties': pa.array_literal([]),
                     'references': pa.array_literal([])
                 }]),
-                op['dictionary to list']($).map(($) => ({
+                op_dictionary_to_list($).map(($) => ({
                     'id': $p.path,
                     'parent': pa.not_set(),
                     'annotations': pa.array_literal([]),
@@ -177,7 +172,7 @@ export const Type_Node_2_Document_nodes = (
                     ]),
                     'references': pa.array_literal([])
                 })),
-                op['flatten list'](op['dictionary to list']($).map(($) => Type_Node_2_Document_nodes(
+                op_flatten_list(op_dictionary_to_list($).map(($) => Type_Node_2_Document_nodes(
                     $.value,
                     {
                         'path': $p.path + "." + $.key,
@@ -205,7 +200,7 @@ export const Schema = (
                 'version': "2023.1",
             }
         ]),
-        'nodes': op['flatten list']($.types['ordered list'].map(($) => Type_Node_2_Document_nodes(
+        'nodes': op_flatten_list($.types['ordered list'].map(($) => Type_Node_2_Document_nodes(
             $.value.node,
             {
                 'path': $.key,

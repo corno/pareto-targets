@@ -7,13 +7,11 @@ import {
     b, l, block
 } from "pareto-fountain-pen/dist/shorthands/block"
 
-import { impure } from "pareto-standard-operations"
 
-const op = {
-    'dictionary to list, sorted by code point': impure.dictionary['to list, sorted by code point'],
-    'dictionary is empty': impure.dictionary['is empty'],
-    'serialize with apostrophe delimiter': impure.text['serialize with apostrophe delimiter'],
-}
+import { $$ as op_serialize_with_apostrophe_delimiter } from "pareto-standard-operations/dist/impure/text/serialize_with_apostrophe_delimiter"
+import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/impure/dictionary/to_list_sorted_by_code_point"
+import { $$ as op_dictionary_is_empty } from "pareto-standard-operations/dist/impure/dictionary/is_empty"
+
 
 export const Root = (
     $: _in.Root
@@ -44,7 +42,7 @@ export const Root = (
 
 export const Identifier = (
     $: _in.Identifier
-): _out.Line_Part => l.snippet(op['serialize with apostrophe delimiter']($))
+): _out.Line_Part => l.snippet(op_serialize_with_apostrophe_delimiter($))
 
 export const Node = (
     $: _in.Node
@@ -52,7 +50,7 @@ export const Node = (
     return l.sub([
         l.snippet("{"),
         l.indent([
-            b.sub_decorated(op['dictionary to list, sorted by code point']($.properties).map(($) => {
+            b.sub_decorated(op_dictionary_to_list($.properties).map(($) => {
                 return b.nested_line([
                     Identifier($.key),
                     l.snippet(": "),
@@ -68,12 +66,12 @@ export const Node = (
                                 l.snippet("group "),
                                 Node($.node)
                             ]))
-                            case 'state group': return pa.ss($, ($) => op['dictionary is empty']($.states)
+                            case 'state group': return pa.ss($, ($) => op_dictionary_is_empty($.states)
                                 ? l.snippet("group { }")
                                 : l.sub([
                                     l.snippet("stategroup ("),
                                     l.indent([
-                                        b.sub_decorated(op['dictionary to list, sorted by code point']($.states).map(($) => {
+                                        b.sub_decorated(op_dictionary_to_list($.states).map(($) => {
                                             return b.nested_line([
                                                 Identifier($.key),
                                                 l.snippet(" "),

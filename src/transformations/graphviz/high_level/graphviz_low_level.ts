@@ -5,23 +5,11 @@ import * as pt from 'exupery-core-types'
 import * as s_in from "../../../generated/interface/schemas/graphviz_high_level/data_types/target"
 import * as s_out from "../../../generated/interface/schemas/graphviz_low_level/data_types/target"
 
-// import {
-//     b, l, block,
-// } from "../../../shorthands/transformations/graphviz_low_level"
-
-import { impure, pure } from "pareto-standard-operations"
-
-const op = {
-    'enrich list elements with position information': impure.list['enrich with position information'],
-    'dictionary to list, sorted by code point': impure.dictionary['to list, sorted by code point'],
-    'append element': pure.list['append element'],
-    'prepend element': pure.list['prepend element'],
-    'filter': pure.dictionary.filter,
-    'is equal to': pure.list['is equal to'],
-    'is empty': impure.dictionary['is empty'],
-    'flatten': pure.list.flatten,
-    'join': impure.text['join list of texts with separator'],
-}
+import { $$ as op_join } from "pareto-standard-operations/dist/impure/text/join_list_of_texts_with_separator"
+import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/impure/dictionary/to_list_sorted_by_code_point"
+import { $$ as op_append_element } from "pareto-standard-operations/dist/pure/list/append_element"
+import { $$ as op_prepend_element } from "pareto-standard-operations/dist/pure/list/prepend_element"
+import { $$ as op_flatten } from "pareto-standard-operations/dist/pure/list/flatten"
 
 export const Graph = ($: s_in.Graph): s_out.Graph => {
     return {
@@ -34,7 +22,7 @@ export const Graph = ($: s_in.Graph): s_out.Graph => {
             }
         }),
         'name': $.name.map(($) => ['string', $]),
-        'statements': op.flatten(pa.array_literal([
+        'statements': op_flatten(pa.array_literal([
             Tree($.tree, { 'path': pa.array_literal([]) }),
             pa.cc($.type, ($): s_out.Graph.statements => {
                 switch ($[0]) {
@@ -133,18 +121,18 @@ export const Tree = (
         'path': pt.Array<string>
     }
 ): s_out.Statement_List => {
-    return op.flatten(op['dictionary to list, sorted by code point']($.elements).map(($) => {
-        const path = op['append element']($p.path, { 'element': $.key })
+    return op_flatten(op_dictionary_to_list($.elements).map(($) => {
+        const path = op_append_element($p.path, { 'element': $.key })
         const key = $.key
         return pa.cc($.value, ($) => {
             switch ($[0]) {
                 case 'node': return pa.ss($, ($) => pa.array_literal<s_out.Statement_List.L>([
                     ['node', {
                         'node': {
-                            'id': ['string', op.join(path, { 'separator': '>' })],
+                            'id': ['string', op_join(path, { 'separator': '>' })],
                             'port': pa.not_set()
                         },
-                        'attribute list': op['prepend element'](
+                        'attribute list': op_prepend_element(
                             $.attributes.map(($) => pa.cc($, ($) => {
                                 switch ($[0]) {
                                     case 'color': return pa.ss($, ($) => ({ "name": ['id', "color"], "value": ['string', $] }))
