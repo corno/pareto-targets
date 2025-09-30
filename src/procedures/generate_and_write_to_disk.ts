@@ -6,7 +6,7 @@ import * as r_pareto_module from "pareto/dist/resolvers/module"
 
 import * as t_pareto_module_to_fountain_pen_block from "../transformations/pareto/module/fountain_pen_block"
 
-import * as wtfs from "pareto-fountain-pen/dist/commands/write_to_file_system"
+import * as wtfs from "pareto-fountain-pen/dist/actions/write_to_file_system"
 
 export const $$ = (
     $: s_pm.Module<_ed.Source_Location>,
@@ -19,24 +19,23 @@ export const $$ = (
         | ['typescript', null]
     }
 ) => {
-    const x =  t_pareto_module_to_fountain_pen_block.Module(
-        r_pareto_module.Module(
-            $,
+    return wtfs.Directory(
+        t_pareto_module_to_fountain_pen_block.Module(
+            r_pareto_module.Module(
+                $,
+                {
+                    'parameters': {
+                        'lookups': null,
+                        'values': null,
+                    },
+                    'location 2 string': _ed.location_to_string
+                }
+            ),
             {
-                'parameters': {
-                    'lookups': null,
-                    'values': null,
-                },
-                'location 2 string': _ed.location_to_string
+
+                'target': $p.target
             }
         ),
-        {
-
-            'target': $p.target
-        }
-    )
-    wtfs.Directory(
-        x,
         {
             'path': $p.path,
             'indentation': "    ",
