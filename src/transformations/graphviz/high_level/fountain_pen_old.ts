@@ -2,8 +2,8 @@
 // import * as pd from 'exupery-core-dev'
 // import * as pt from 'exupery-core-types'
 
-// import * as s_in from "../../../../generated/interface/schemas/graphviz_high_level/resolved"
-// import * as s_out from "pareto-fountain-pen/dist/generated/interface/schemas/block/unresolved"
+// import * as d_in from "../../../../generated/interface/schemas/graphviz_high_level/resolved"
+// import * as d_out from "pareto-fountain-pen/dist/generated/interface/schemas/block/unresolved"
 
 // import {
 //     b, l, block,
@@ -21,7 +21,7 @@
 //     'is empty': impure.dictionary['is empty'],
 // }
 
-// export const Graph = ($: s_in.Graph): s_out.Block => {
+// export const Graph = ($: d_in.Graph): d_out.Block => {
 //     return block([
 //         b.nested_line([
 //             l.snippet("strict "),
@@ -81,7 +81,7 @@
 //     ])
 // }
 
-// export const Edge_Attributes = ($: s_in.Edge_Attributes): s_out.Line_Part => {
+// export const Edge_Attributes = ($: d_in.Edge_Attributes): d_out.Line_Part => {
 //     return op['is empty']($)
 //         ? l.nothing()
 //         : l.sub([
@@ -98,7 +98,7 @@
 //         ])
 // }
 
-// export const Attribute_Value = ($: s_in.Attribute_Value): s_out.Line_Part => {
+// export const Attribute_Value = ($: d_in.Attribute_Value): d_out.Line_Part => {
 //     return pa.cc($, ($) => {
 //         switch ($[0]) {
 //             case 'string':return pa.ss($, ($) => l.snippet(op['serialize with quote delimiter']($)))
@@ -109,7 +109,7 @@
 //     })
 // }
 
-// export const End_Point_Specification = ($: s_in.End_Point_Specification): s_out.Line_Part => {
+// export const End_Point_Specification = ($: d_in.End_Point_Specification): d_out.Line_Part => {
 //     return l.sub([
 //         pa.cc($, ($) => {
 //             switch ($[0]) {
@@ -130,12 +130,12 @@
 // }
 
 // export const Graph_Tree = (
-//     $: s_in.Node_Tree,
+//     $: d_in.Node_Tree,
 //     $p: {
-//         'nodes': s_in.Graph.nodes,
+//         'nodes': d_in.Graph.nodes,
 //         'path': pt.Array<string>
 //     }
-// ): s_out.Block_Part => {
+// ): d_out.Block_Part => {
 //     return b.sub_decorated(op['dictionary to list, sorted by code point']($.subgraphs).map(($) => {
 //         return b.nested_line([
 //             l.snippet("subgraph "),

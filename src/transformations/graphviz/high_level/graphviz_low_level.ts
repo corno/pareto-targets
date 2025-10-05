@@ -2,8 +2,8 @@ import * as pa from 'exupery-core-alg'
 import * as pd from 'exupery-core-dev'
 import * as pt from 'exupery-core-types'
 
-import * as s_in from "../../../generated/interface/schemas/graphviz_high_level/data_types/target"
-import * as s_out from "../../../generated/interface/schemas/graphviz_low_level/data_types/target"
+import * as d_in from "../../../generated/interface/schemas/graphviz_high_level/data_types/target"
+import * as d_out from "../../../generated/interface/schemas/graphviz_low_level/data_types/target"
 
 import { $$ as op_join } from "pareto-standard-operations/dist/impure/text/join_list_of_texts_with_separator"
 import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/impure/dictionary/to_list_sorted_by_code_point"
@@ -11,7 +11,7 @@ import { $$ as op_append_element } from "pareto-standard-operations/dist/pure/li
 import { $$ as op_prepend_element } from "pareto-standard-operations/dist/pure/list/prepend_element"
 import { $$ as op_flatten } from "pareto-standard-operations/dist/pure/list/flatten"
 
-export const Graph = ($: s_in.Graph): s_out.Graph => {
+export const Graph = ($: d_in.Graph): d_out.Graph => {
     return {
         'strict': true,
         'type': pa.cc($.type, ($) => {
@@ -24,21 +24,21 @@ export const Graph = ($: s_in.Graph): s_out.Graph => {
         'name': $.name.map(($) => ['string', $]),
         'statements': op_flatten(pa.array_literal([
             Tree($.tree, { 'path': pa.array_literal([]) }),
-            pa.cc($.type, ($): s_out.Graph.statements => {
+            pa.cc($.type, ($): d_out.Graph.statements => {
                 switch ($[0]) {
-                    case 'directed': return pa.ss($, ($) => $.edges.map(($): s_out.Statement_List.L => {
+                    case 'directed': return pa.ss($, ($) => $.edges.map(($): d_out.Statement_List.L => {
                         return ['edge', {
                             "left": ['node', {
                                 'id': ['string', $.from.start],
                                 'port': pa.not_set()
                             }],
-                            "right": pa.array_literal<s_out.Statement_List.L.SG.edge.right.L>([
+                            "right": pa.array_literal<d_out.Statement_List.L.SG.edge.right.L>([
                                 ['node', {
                                     'id': ['string', $.to.start],
                                     'port': pa.not_set()
                                 }]
                             ]),
-                            "attributes": $.attributes.map(($) => pa.cc($, ($): s_out.Attribute_List.L => {
+                            "attributes": $.attributes.map(($) => pa.cc($, ($): d_out.Attribute_List.L => {
                                 switch ($[0]) {
                                     case 'arrowhead': return pa.ss($, ($) => ({ "name": ['id', "arrowhead"], "value": ['string', $] }))
                                     case 'arrowsize': return pa.ss($, ($) => ({ "name": ['id', "arrowsize"], "value": ['number', $] }))
@@ -92,13 +92,13 @@ export const Graph = ($: s_in.Graph): s_out.Graph => {
                             }))
                         }]
                     }))
-                    case 'undirected': return pa.ss($, ($) => $.edges.map(($): s_out.Statement_List.L => {
+                    case 'undirected': return pa.ss($, ($) => $.edges.map(($): d_out.Statement_List.L => {
                         return ['edge', {
                             "left": ['node', {
                                 'id': ['string', $.yin.start],
                                 'port': pa.not_set()
                             }],
-                            "right": pa.array_literal<s_out.Statement_List.L.SG.edge.right.L>([
+                            "right": pa.array_literal<d_out.Statement_List.L.SG.edge.right.L>([
                                 ['node', {
                                     'id': ['string', $.yang.start],
                                     'port': pa.not_set()
@@ -116,17 +116,17 @@ export const Graph = ($: s_in.Graph): s_out.Graph => {
 }
 
 export const Tree = (
-    $: s_in.Tree,
+    $: d_in.Tree,
     $p: {
         'path': pt.Array<string>
     }
-): s_out.Statement_List => {
+): d_out.Statement_List => {
     return op_flatten(op_dictionary_to_list($.elements).map(($) => {
         const path = op_append_element($p.path, { 'element': $.key })
         const key = $.key
         return pa.cc($.value, ($) => {
             switch ($[0]) {
-                case 'node': return pa.ss($, ($) => pa.array_literal<s_out.Statement_List.L>([
+                case 'node': return pa.ss($, ($) => pa.array_literal<d_out.Statement_List.L>([
                     ['node', {
                         'node': {
                             'id': ['string', op_join(path, { 'separator': '>' })],

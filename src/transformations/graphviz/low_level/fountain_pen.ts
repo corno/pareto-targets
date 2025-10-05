@@ -1,17 +1,17 @@
 import * as pa from 'exupery-core-alg'
 
-import * as s_in from "../../../generated/interface/schemas/graphviz_low_level/data_types/target"
-import * as s_out from "pareto-fountain-pen/dist/generated/interface/schemas/block/data_types/target"
+import * as d_in from "../../../generated/interface/schemas/graphviz_low_level/data_types/target"
+import * as d_out from "pareto-fountain-pen/dist/generated/interface/schemas/block/data_types/target"
 
 import {
     b, l, block,
 } from "pareto-fountain-pen/dist/shorthands/block"
 
-import { $$ as op_serialize_with_quote_delimiter } from "pareto-standard-operations/dist/impure/text/serialize_with_quote_delimiter"
+import { $$ as op_serialize_with_quote_delimiter } from "../../../operations/impure/serialize_quoted_string"
 import { $$ as op_is_empty } from "pareto-standard-operations/dist/impure/list/is_empty"
 import { $$ as op_enrich_list_elements_with_position_information } from "pareto-standard-operations/dist/impure/list/enrich_with_position_information"
 
-export const Graph = ($: s_in.Graph): s_out.Block => {
+export const Graph = ($: d_in.Graph): d_out.Block => {
     return block([
         b.nested_line([
             $.strict
@@ -39,11 +39,11 @@ export const Graph = ($: s_in.Graph): s_out.Block => {
 }
 
 export const Statement_List = (
-    $: s_in.Statement_List,
+    $: d_in.Statement_List,
     $p: {
-        'graph type': s_in.Graph._type
+        'graph type': d_in.Graph._type
     }
-): s_out.Line_Part => {
+): d_out.Line_Part => {
     return l.sub([
         l.snippet("{"),
         l.indent([
@@ -118,7 +118,7 @@ export const Statement_List = (
     ])
 }
 
-export const ID = ($: s_in.ID): s_out.Line_Part => {
+export const ID = ($: d_in.ID): d_out.Line_Part => {
     return pa.cc($, ($) => {
         switch ($[0]) {
             case 'id': return pa.ss($, ($) => l.snippet($)) //FIX escaping
@@ -130,7 +130,7 @@ export const ID = ($: s_in.ID): s_out.Line_Part => {
     })
 }
 
-export const Attribute_List = ($: s_in.Attribute_List): s_out.Line_Part => {
+export const Attribute_List = ($: d_in.Attribute_List): d_out.Line_Part => {
     return l.sub([
         l.snippet(" [ "),
             l.sub_decorated($.map(($) => {
@@ -145,7 +145,7 @@ export const Attribute_List = ($: s_in.Attribute_List): s_out.Line_Part => {
     ])
 }
 
-export const Node_ID = ($: s_in.Node_ID): s_out.Line_Part => {
+export const Node_ID = ($: d_in.Node_ID): d_out.Line_Part => {
     return l.sub([
         ID($.id),
         $.port.transform(
@@ -166,11 +166,11 @@ export const Node_ID = ($: s_in.Node_ID): s_out.Line_Part => {
 }
 
 export const Subgraph = (
-    $: s_in.Subgraph,
+    $: d_in.Subgraph,
     $p: {
-        'graph type': s_in.Graph._type
+        'graph type': d_in.Graph._type
     }
-): s_out.Line_Part => {
+): d_out.Line_Part => {
     return l.sub([
         $.subgraph.transform(
             ($) => l.sub([
