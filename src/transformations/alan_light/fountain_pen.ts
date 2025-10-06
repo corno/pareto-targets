@@ -50,7 +50,7 @@ export const Node = (
     return l.sub([
         l.snippet("{"),
         l.indent([
-            b.sub_decorated(op_dictionary_to_list($.properties).map(($) => {
+            b.sub(op_dictionary_to_list($.properties).map(($) => {
                 return b.nested_line([
                     Identifier($.key),
                     l.snippet(": "),
@@ -71,7 +71,7 @@ export const Node = (
                                 : l.sub([
                                     l.snippet("stategroup ("),
                                     l.indent([
-                                        b.sub_decorated(op_dictionary_to_list($.states).map(($) => {
+                                        b.sub(op_dictionary_to_list($.states).map(($) => {
                                             return b.nested_line([
                                                 Identifier($.key),
                                                 l.snippet(" "),

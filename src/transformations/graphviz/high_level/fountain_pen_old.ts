@@ -45,16 +45,16 @@
 //                     'nodes': $.nodes,
 //                     'path': pa.array_literal([]),
 //                 }),
-//                 b.sub_decorated(op['dictionary to list, sorted by code point']($.nodes).map(($) => {
+//                 b.sub(op['dictionary to list, sorted by code point']($.nodes).map(($) => {
 //                     return b.nested_line([
 //                         l.snippet(op['serialize with quote delimiter']($.key)),
 //                     ])
 //                 })),
 //                 pa.cc($.type, ($) => {
 //                     switch ($[0]) {
-//                         case 'directed': return pa.ss($, ($) => b.sub_decorated(op['dictionary to list, sorted by code point']($['edge specifications']['start nodes']).map(($) => {
+//                         case 'directed': return pa.ss($, ($) => b.sub(op['dictionary to list, sorted by code point']($['edge specifications']['start nodes']).map(($) => {
 //                             const key = $.key
-//                             return b.sub_decorated($.value.edges.map(($) => {
+//                             return b.sub($.value.edges.map(($) => {
 //                                 return b.nested_line([
 //                                     l.snippet(op['serialize with quote delimiter'](key)),
 //                                     l.snippet(" -> "),
@@ -64,7 +64,7 @@
 //                                 ])
 //                             }))
 //                         })))
-//                         case 'undirected': return pa.ss($, ($) => b.sub_decorated($.edges.map(($) => {
+//                         case 'undirected': return pa.ss($, ($) => b.sub($.edges.map(($) => {
 //                             return b.nested_line([
 //                                 End_Point_Specification($.yin),
 //                                 l.snippet(" -- "),
@@ -86,7 +86,7 @@
 //         ? l.nothing()
 //         : l.sub([
 //             l.snippet(" ["),
-//             l.sub_decorated(op['dictionary to list, sorted by code point']($).map(($) => {
+//             l.sub(op['dictionary to list, sorted by code point']($).map(($) => {
 //                 return l.sub([
 //                     l.snippet(" "),
 //                     l.snippet(op['serialize with quote delimiter']($.key)),
@@ -136,7 +136,7 @@
 //         'path': pt.Array<string>
 //     }
 // ): d_out.Block_Part => {
-//     return b.sub_decorated(op['dictionary to list, sorted by code point']($.subgraphs).map(($) => {
+//     return b.sub(op['dictionary to list, sorted by code point']($.subgraphs).map(($) => {
 //         return b.nested_line([
 //             l.snippet("subgraph "),
 //             l.snippet($.key),
@@ -146,7 +146,7 @@
 //                     'nodes': $p.nodes,
 //                     'path': op['add element']($p.path, { element: $.key, where: ['end', null] }),
 //                 }),
-//                 b.sub_decorated(op['dictionary to list, sorted by code point'](op.filter($p.nodes.map(($) => {
+//                 b.sub(op['dictionary to list, sorted by code point'](op.filter($p.nodes.map(($) => {
 //                     return op['is equal to']($['subgraph path'], { 'other': $p.path })
 //                         ? pa.set($)
 //                         : pa.not_set()

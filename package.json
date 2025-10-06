@@ -13,6 +13,6 @@
     "exupery-core-dev": "^0.1.2",
     "exupery-standard-library": "^0.1.9",
     "pareto": "^0.76.54",
-    "pareto-json": "^0.1.7"
+    "pareto-json": "^0.1.8"
   }
 }

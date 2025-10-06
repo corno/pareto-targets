@@ -47,7 +47,7 @@ export const Statement_List = (
     return l.sub([
         l.snippet("{"),
         l.indent([
-            b.sub_decorated($.map(($) => {
+            b.sub($.map(($) => {
                 return b.nested_line([
                     pa.cc($, ($) => {
                         switch ($[0]) {
@@ -84,7 +84,7 @@ export const Statement_List = (
                                         default: return pa.au($[0])
                                     }
                                 }),
-                                l.sub_decorated(op_enrich_list_elements_with_position_information($.right).map(($) => {
+                                l.sub(op_enrich_list_elements_with_position_information($.right).map(($) => {
                                     return l.sub([
                                         pa.cc($.value, ($) => {
                                             switch ($[0]) {
@@ -133,7 +133,7 @@ export const ID = ($: d_in.ID): d_out.Line_Part => {
 export const Attribute_List = ($: d_in.Attribute_List): d_out.Line_Part => {
     return l.sub([
         l.snippet(" [ "),
-            l.sub_decorated($.map(($) => {
+            l.sub($.map(($) => {
                 return l.sub([
                     ID($.name),
                     l.snippet("="),

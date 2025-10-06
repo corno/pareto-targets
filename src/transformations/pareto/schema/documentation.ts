@@ -13,7 +13,7 @@ export const Schema_Tree = ($: _in.Schema_Tree): _out.Block_Part => {
                 b.simple_line(`types:`),
                 b.nested_line([
                     l.indent([
-                        b.sub_decorated($.types['ordered list'].map(($) => b.sub([
+                        b.sub($.types['ordered list'].map(($) => b.sub([
                             b.simple_line($.key)
                         ])))
                     ])
@@ -35,7 +35,7 @@ export const Schema_Tree = ($: _in.Schema_Tree): _out.Block_Part => {
 }
 
 export const Schemas = ($: _in.Schemas): _out.Block_Part => {
-    return b.sub_decorated($['ordered list'].map(($) => b.sub([
+    return b.sub($['ordered list'].map(($) => b.sub([
         b.simple_line($.key),
         b.nested_line([
             l.indent([
