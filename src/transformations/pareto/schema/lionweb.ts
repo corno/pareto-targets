@@ -81,13 +81,13 @@ export const Type_Node_2_Document_nodes = (
                         'containments': pa.array_literal([
                             {
                                 'containment': MetaPointer("properties"),
-                                'children': op_dictionary_to_list($).map(($) => $p.path + "." + $.key),
+                                'children': $['ordered list'].map(($) => $p.path + "." + $.key),
                             },
                         ]),
                         'properties': pa.array_literal([]),
                         'references': pa.array_literal([])
                     }]),
-                op_flatten_list(op_dictionary_to_list($).map(($) => Type_Node_2_Document_nodes(
+                op_flatten_list($['ordered list'].map(($) => Type_Node_2_Document_nodes(
                     $.value,
                     {
                         'path': $p.path + "." + $.key,

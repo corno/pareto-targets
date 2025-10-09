@@ -11,8 +11,8 @@
     "exupery-core-alg": "^0.1.12",
     "exupery-core-data": "^0.1.10",
     "exupery-core-dev": "^0.1.2",
-    "exupery-standard-library": "^0.1.9",
-    "pareto": "^0.76.61",
-    "pareto-json": "^0.1.9"
+    "exupery-standard-library": "^0.1.10",
+    "pareto": "^0.76.62",
+    "pareto-json": "^0.1.10"
   }
 }
