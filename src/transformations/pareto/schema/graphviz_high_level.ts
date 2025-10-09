@@ -55,11 +55,10 @@ export const Type_Node = (
             ]))
             case 'dictionary': return pa.ss($, ($) => Type_Node($.node, $p))
             case 'group': return pa.ss($, ($) => op_flatten_list(op_dictionary_to_list($.map(($) => Type_Node($, $p))).map(($) => $.value)))
-            case 'identifier value pair': return pa.ss($, ($) => Type_Node($, $p))
             case 'optional': return pa.ss($, ($) => Type_Node($, $p))
             case 'state group': return pa.ss($, ($) => op_flatten_list(op_dictionary_to_list($.map(($) => Type_Node($, $p))).map(($) => $.value)))
             case 'text': return pa.ss($, ($) => pa.array_literal([]))
-            case 'type parameter': return pa.ss($, ($) => pa.array_literal([]))
+            // case 'type parameter': return pa.ss($, ($) => pa.array_literal([]))
             default: return pa.au($[0])
         }
     })
