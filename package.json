@@ -1,6 +1,6 @@
 {
   "name": "pareto-targets",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A library that generates all kinds of target formats from pareto schemas",
   "main": "./dist/index.js",
   "types": "dist/index.d.ts",
