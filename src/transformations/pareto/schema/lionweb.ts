@@ -88,7 +88,7 @@ export const Type_Node_2_Document_nodes = (
                         'references': pa.array_literal([])
                     }]),
                 op_flatten_list($['ordered list'].map(($) => Type_Node_2_Document_nodes(
-                    $.value,
+                    $.value.node,
                     {
                         'path': $p.path + "." + $.key,
                     }

@@ -54,7 +54,7 @@ export const Type_Node = (
 
             ]))
             case 'dictionary': return pa.ss($, ($) => Type_Node($.node, $p))
-            case 'group': return pa.ss($, ($) => op_flatten_list($['ordered list'].map(($) => Type_Node($.value, $p))))
+            case 'group': return pa.ss($, ($) => op_flatten_list($['ordered list'].map(($) => Type_Node($.value.node, $p))))
             case 'optional': return pa.ss($, ($) => Type_Node($, $p))
             case 'state group': return pa.ss($, ($) => op_flatten_list(op_dictionary_to_list($.map(($) => Type_Node($, $p))).map(($) => $.value)))
             case 'text': return pa.ss($, ($) => pa.array_literal([]))
