@@ -5,11 +5,11 @@ import * as pt from 'exupery-core-types'
 import * as d_in from "../../../generated/interface/schemas/graphviz_high_level/data_types/target"
 import * as d_out from "../../../generated/interface/schemas/graphviz_low_level/data_types/target"
 
-import { $$ as op_join } from "pareto-standard-operations/dist/impure/text/join_list_of_texts_with_separator"
-import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/impure/dictionary/to_list_sorted_by_code_point"
-import { $$ as op_append_element } from "pareto-standard-operations/dist/pure/list/append_element"
-import { $$ as op_prepend_element } from "pareto-standard-operations/dist/pure/list/prepend_element"
-import { $$ as op_flatten } from "pareto-standard-operations/dist/pure/list/flatten"
+import { $$ as op_join } from "pareto-standard-operations/dist/operations/impure/text/join_list_of_texts_with_separator"
+import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/operations/impure/dictionary/to_list_sorted_by_code_point"
+import { $$ as op_append_element } from "pareto-standard-operations/dist/operations/pure/list/append_element"
+import { $$ as op_prepend_element } from "pareto-standard-operations/dist/operations/pure/list/prepend_element"
+import { $$ as op_flatten } from "pareto-standard-operations/dist/operations/pure/list/flatten"
 
 export const Graph = ($: d_in.Graph): d_out.Graph => {
     return {

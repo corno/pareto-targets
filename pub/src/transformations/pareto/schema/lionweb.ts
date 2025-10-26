@@ -5,8 +5,8 @@ import * as _in from "pareto/dist/generated/interface/schemas/schema/data_types/
 import * as _in_m from "pareto/dist/generated/interface/schemas/module/data_types/source"
 import * as _out from "../../../generated/interface/schemas/lionweb/data_types/target"
 
-import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/impure/dictionary/to_list_sorted_by_code_point"
-import { $$ as op_flatten_list } from "pareto-standard-operations/dist/pure/list/flatten"
+import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/operations/impure/dictionary/to_list_sorted_by_code_point"
+import { $$ as op_flatten_list } from "pareto-standard-operations/dist/operations/pure/list/flatten"
 
 export const MetaPointer = (
     $: string,
@@ -173,7 +173,7 @@ export const Type_Node_2_Document_nodes = (
                     'references': pa.array_literal([])
                 })),
                 op_flatten_list(op_dictionary_to_list($).map(($) => Type_Node_2_Document_nodes(
-                    $.value,
+                    $.value.node,
                     {
                         'path': $p.path + "." + $.key,
                     }

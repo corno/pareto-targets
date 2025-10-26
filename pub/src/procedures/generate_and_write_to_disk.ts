@@ -4,7 +4,7 @@ import * as _easync from 'exupery-core-async'
 import * as s_pm from "pareto/dist/generated/interface/schemas/module/data_types/target"
 import * as d_fp_temp from "pareto-fountain-pen/dist/procedures/temp_types"
 
-import * as r_pareto_module from "pareto/dist/resolvers/module"
+import * as r_pareto_module from "pareto/dist/temp/resolvers/module"
 
 import * as t_pareto_module_to_fountain_pen_block from "../transformations/pareto/module/fountain_pen_block"
 
