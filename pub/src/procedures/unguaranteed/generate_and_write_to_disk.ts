@@ -6,7 +6,7 @@ import * as d_fp_temp from "pareto-fountain-pen/dist/temp/temp_types"
 
 import * as r_pareto_module from "pareto/dist/temp/resolvers/module"
 
-import * as t_pareto_module_to_fountain_pen_block from "../transformations/pareto/module/fountain_pen_block"
+import * as t_pareto_module_to_fountain_pen_block from "../../transformations/pareto/module/fountain_pen_block"
 
 import { $$ as a_write_to_directory } from "pareto-fountain-pen/dist/procedures/unguaranteed/write_to_directory"
 
