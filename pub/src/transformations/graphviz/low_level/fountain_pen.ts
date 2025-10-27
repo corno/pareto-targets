@@ -11,23 +11,23 @@ import { $$ as op_enrich_list_elements_with_position_information } from "pareto-
 
 export const Graph = ($: d_in.Graph): d_out.Group => {
     return sh.group([
-        sh.g.nested_line([
+        sh.g.nested_block([
             $.strict
-                ? sh.l.snippet("strict ")
-                : sh.l.nothing(),
+                ? sh.b.snippet("strict ")
+                : sh.b.nothing(),
             pa.cc($.type, ($) => {
                 switch ($[0]) {
-                    case 'digraph': return pa.ss($, () => sh.l.snippet("digraph "))
-                    case 'graph': return pa.ss($, () => sh.l.snippet("graph "))
+                    case 'digraph': return pa.ss($, () => sh.b.snippet("digraph "))
+                    case 'graph': return pa.ss($, () => sh.b.snippet("graph "))
                     default: return pa.au($[0])
                 }
             }),
             $.name.transform(
-                ($) => sh.l.sub([
+                ($) => sh.b.sub([
                     ID($),
-                    sh.l.snippet(" "),
+                    sh.b.snippet(" "),
                 ]),
-                () => sh.l.nothing()
+                () => sh.b.nothing()
             ),
             Statement_List($.statements, {
                 'graph type': $.type
@@ -41,33 +41,33 @@ export const Statement_List = (
     $p: {
         'graph type': d_in.Graph._type
     }
-): d_out.Line_Part => {
-    return sh.l.sub([
-        sh.l.snippet("{"),
-        sh.l.indent([
+): d_out.Block_Part => {
+    return sh.b.sub([
+        sh.b.snippet("{"),
+        sh.b.indent([
             sh.g.sub($.map(($) => {
-                return sh.g.nested_line([
+                return sh.g.nested_block([
                     pa.cc($, ($) => {
                         switch ($[0]) {
-                            case 'attribute assignment': return pa.ss($, ($) => sh.l.sub([
+                            case 'attribute assignment': return pa.ss($, ($) => sh.b.sub([
                                 ID($.name),
-                                sh.l.snippet(" = "),
+                                sh.b.snippet(" = "),
                                 ID($.value),
-                                sh.l.snippet(";"),
+                                sh.b.snippet(";"),
                             ]))
-                            case 'attribute list': return pa.ss($, ($) => sh.l.sub([
+                            case 'attribute list': return pa.ss($, ($) => sh.b.sub([
                                 pa.cc($.type, ($) => {
                                     switch ($[0]) {
-                                        case 'edge': return pa.ss($, () => sh.l.snippet("edge "))
-                                        case 'node': return pa.ss($, () => sh.l.snippet("node "))
-                                        case 'graph': return pa.ss($, () => sh.l.snippet("graph "))
+                                        case 'edge': return pa.ss($, () => sh.b.snippet("edge "))
+                                        case 'node': return pa.ss($, () => sh.b.snippet("node "))
+                                        case 'graph': return pa.ss($, () => sh.b.snippet("graph "))
                                         default: return pa.au($[0])
                                     }
                                 }),
                                 Attribute_List($.attributes),
-                                sh.l.snippet(";"),
+                                sh.b.snippet(";"),
                             ]))
-                            case 'edge': return pa.ss($, ($) => sh.l.sub([
+                            case 'edge': return pa.ss($, ($) => sh.b.sub([
                                 pa.cc($.left, ($) => {
                                     switch ($[0]) {
                                         case 'node': return pa.ss($, ($) => Node_ID($))
@@ -77,13 +77,13 @@ export const Statement_List = (
                                 }),
                                 pa.cc($p['graph type'], ($) => {
                                     switch ($[0]) {
-                                        case 'digraph': return pa.ss($, () => sh.l.snippet(" -> "))
-                                        case 'graph': return pa.ss($, () => sh.l.snippet(" -- "))
+                                        case 'digraph': return pa.ss($, () => sh.b.snippet(" -> "))
+                                        case 'graph': return pa.ss($, () => sh.b.snippet(" -- "))
                                         default: return pa.au($[0])
                                     }
                                 }),
-                               sh.l.sub(op_enrich_list_elements_with_position_information($.right).map(($) => {
-                                    return sh.l.sub([
+                               sh.b.sub(op_enrich_list_elements_with_position_information($.right).map(($) => {
+                                    return sh.b.sub([
                                         pa.cc($.value, ($) => {
                                             switch ($[0]) {
                                                 case 'node': return pa.ss($, ($) => Node_ID($))
@@ -92,18 +92,18 @@ export const Statement_List = (
                                             }
                                         }),
                                         $['is last']
-                                            ? sh.l.nothing()
-                                            : sh.l.snippet(", "),
+                                            ? sh.b.nothing()
+                                            : sh.b.snippet(", "),
                                     ])
                                 })),
                                 Attribute_List($.attributes),
                             ]))
-                            case 'node': return pa.ss($, ($) => sh.l.sub([
+                            case 'node': return pa.ss($, ($) => sh.b.sub([
                                 Node_ID($.node),
                                 op_is_empty($['attribute list'])
-                                    ? sh.l.nothing()
+                                    ? sh.b.nothing()
                                     : Attribute_List($['attribute list']),
-                                sh.l.snippet(";"),
+                                sh.b.snippet(";"),
                             ]))
                             case 'subgraph': return pa.ss($, ($) => Subgraph($, $p))
                             default: return pa.au($[0])
@@ -112,53 +112,53 @@ export const Statement_List = (
                 ])
             })),
         ]),
-        sh.l.snippet("}"),
+        sh.b.snippet("}"),
     ])
 }
 
-export const ID = ($: d_in.ID): d_out.Line_Part => {
+export const ID = ($: d_in.ID): d_out.Block_Part => {
     return pa.cc($, ($) => {
         switch ($[0]) {
-            case 'id': return pa.ss($, ($) => sh.l.snippet($)) //FIX escaping
-            case 'string': return pa.ss($, ($) => sh.l.snippet(op_serialize_with_quote_delimiter($)))
-            case 'html': return pa.ss($, ($) => sh.l.snippet($))
-            case 'number': return pa.ss($, ($) => sh.l.snippet("FIXME NUMBER"))
+            case 'id': return pa.ss($, ($) => sh.b.snippet($)) //FIX escaping
+            case 'string': return pa.ss($, ($) => sh.b.snippet(op_serialize_with_quote_delimiter($)))
+            case 'html': return pa.ss($, ($) => sh.b.snippet($))
+            case 'number': return pa.ss($, ($) => sh.b.snippet("FIXME NUMBER"))
             default: return pa.au($[0])
         }
     })
 }
 
-export const Attribute_List = ($: d_in.Attribute_List): d_out.Line_Part => {
-    return sh.l.sub([
-        sh.l.snippet(" [ "),
-           sh.l.sub($.map(($) => {
-                return sh.l.sub([
+export const Attribute_List = ($: d_in.Attribute_List): d_out.Block_Part => {
+    return sh.b.sub([
+        sh.b.snippet(" [ "),
+           sh.b.sub($.map(($) => {
+                return sh.b.sub([
                     ID($.name),
-                    sh.l.snippet("="),
+                    sh.b.snippet("="),
                     ID($.value),
-                    sh.l.snippet(" "),
+                    sh.b.snippet(" "),
                 ])
             })),
-        sh.l.snippet("]"),
+        sh.b.snippet("]"),
     ])
 }
 
-export const Node_ID = ($: d_in.Node_ID): d_out.Line_Part => {
-    return sh.l.sub([
+export const Node_ID = ($: d_in.Node_ID): d_out.Block_Part => {
+    return sh.b.sub([
         ID($.id),
         $.port.transform(
-            ($) => sh.l.sub([
-                sh.l.snippet(":"),
+            ($) => sh.b.sub([
+                sh.b.snippet(":"),
                 ID($.port),
                 $['compass point'].transform(
-                    ($) => sh.l.sub([
-                        sh.l.snippet(":"),
+                    ($) => sh.b.sub([
+                        sh.b.snippet(":"),
                         ID($),
                     ]),
-                    () => sh.l.nothing()
+                    () => sh.b.nothing()
                 ),
             ]),
-            () => sh.l.nothing()
+            () => sh.b.nothing()
         ),
     ])
 }
@@ -168,20 +168,20 @@ export const Subgraph = (
     $p: {
         'graph type': d_in.Graph._type
     }
-): d_out.Line_Part => {
-    return sh.l.sub([
+): d_out.Block_Part => {
+    return sh.b.sub([
         $.subgraph.transform(
-            ($) => sh.l.sub([
-                sh.l.snippet("subgraph "),
+            ($) => sh.b.sub([
+                sh.b.snippet("subgraph "),
                 $.transform(
-                    ($) => sh.l.sub([
+                    ($) => sh.b.sub([
                         ID($),
-                        sh.l.snippet(" "),
+                        sh.b.snippet(" "),
                     ]),
-                    () => sh.l.nothing()
+                    () => sh.b.nothing()
                 ),
             ]),
-            () => sh.l.nothing()
+            () => sh.b.nothing()
         ),
         Statement_List($.statements, {
             'graph type': $p['graph type']

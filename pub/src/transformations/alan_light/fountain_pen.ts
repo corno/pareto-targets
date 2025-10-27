@@ -14,23 +14,23 @@ export const Root = (
     $: _in.Root
 ): _out.Group => {
     return sh.group([
-        sh.g.nested_line([
-            sh.l.snippet("users"),
-            sh.l.indent([
+        sh.g.nested_block([
+            sh.b.snippet("users"),
+            sh.b.indent([
                 sh.g.simple_line("anonymous")
             ]),
         ]),
         sh.g.simple_line(""),
         sh.g.simple_line("interfaces"),
         sh.g.simple_line(""),
-        sh.g.nested_line([
-            sh.l.snippet("root "),
+        sh.g.nested_block([
+            sh.b.snippet("root "),
             Node($.root)
         ]),
         sh.g.simple_line(""),
-        sh.g.nested_line([
-            sh.l.snippet("numerical-types "),
-            sh.l.indent([
+        sh.g.nested_block([
+            sh.b.snippet("numerical-types "),
+            sh.b.indent([
             ]),
         ]),
 
@@ -39,46 +39,46 @@ export const Root = (
 
 export const Identifier = (
     $: _in.Identifier
-): _out.Line_Part => sh.l.snippet(op_serialize_with_apostrophe_delimiter($))
+): _out.Block_Part => sh.b.snippet(op_serialize_with_apostrophe_delimiter($))
 
 export const Node = (
     $: _in.Node
-): _out.Line_Part => {
-    return sh.l.sub([
-        sh.l.snippet("{"),
-        sh.l.indent([
+): _out.Block_Part => {
+    return sh.b.sub([
+        sh.b.snippet("{"),
+        sh.b.indent([
             sh.g.sub(op_dictionary_to_list($.properties).map(($) => {
-                return sh.g.nested_line([
+                return sh.g.nested_block([
                     Identifier($.key),
-                    sh.l.snippet(": "),
+                    sh.b.snippet(": "),
                     pa.cc($.value.type, ($) => {
                         switch ($[0]) {
-                            case 'collection': return pa.ss($, ($) => sh.l.sub([
-                                sh.l.snippet("collection ["),
+                            case 'collection': return pa.ss($, ($) => sh.b.sub([
+                                sh.b.snippet("collection ["),
                                 Identifier($.key),
-                                sh.l.snippet("] "),
+                                sh.b.snippet("] "),
                                 Node($.node)
                             ]))
-                            case 'group': return pa.ss($, ($) => sh.l.sub([
-                                sh.l.snippet("group "),
+                            case 'group': return pa.ss($, ($) => sh.b.sub([
+                                sh.b.snippet("group "),
                                 Node($.node)
                             ]))
                             case 'state group': return pa.ss($, ($) => op_dictionary_is_empty($.states)
-                                ? sh.l.snippet("group { }")
-                                : sh.l.sub([
-                                    sh.l.snippet("stategroup ("),
-                                    sh.l.indent([
+                                ? sh.b.snippet("group { }")
+                                : sh.b.sub([
+                                    sh.b.snippet("stategroup ("),
+                                    sh.b.indent([
                                         sh.g.sub(op_dictionary_to_list($.states).map(($) => {
-                                            return sh.g.nested_line([
+                                            return sh.g.nested_block([
                                                 Identifier($.key),
-                                                sh.l.snippet(" "),
+                                                sh.b.snippet(" "),
                                                 Node($.value.node)
                                             ])
                                         }))
                                     ]),
-                                    sh.l.snippet(")")
+                                    sh.b.snippet(")")
                                 ]))
-                            case 'text': return pa.ss($, ($) => sh.l.snippet("text"))
+                            case 'text': return pa.ss($, ($) => sh.b.snippet("text"))
                             default: return pa.au($[0])
                         }
                     })
@@ -86,6 +86,6 @@ export const Node = (
             })),
 
         ]),
-        sh.l.snippet("}"),
+        sh.b.snippet("}"),
     ])
 }

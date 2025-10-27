@@ -11,8 +11,8 @@ export const Schema_Tree = ($: _in.Schema_Tree): _out.Group_Part => {
         switch ($[0]) {
             case 'schema': return _ea.ss($, ($) => sh.g.sub([
                 sh.g.simple_line(`types:`),
-                sh.g.nested_line([
-                    sh.l.indent([
+                sh.g.nested_block([
+                    sh.b.indent([
                         sh.g.sub($.types['ordered list'].map(($) => sh.g.sub([
                             sh.g.simple_line($.key)
                         ])))
@@ -22,8 +22,8 @@ export const Schema_Tree = ($: _in.Schema_Tree): _out.Group_Part => {
             ]))
             case 'set': return _ea.ss($, ($) => sh.g.sub([
                 sh.g.simple_line(`schemas:`),
-                sh.g.nested_line([
-                    sh.l.indent([
+                sh.g.nested_block([
+                    sh.b.indent([
                         Schemas($)
                     ])
                 ]),
@@ -37,8 +37,8 @@ export const Schema_Tree = ($: _in.Schema_Tree): _out.Group_Part => {
 export const Schemas = ($: _in.Schemas): _out.Group_Part => {
     return sh.g.sub($['ordered list'].map(($) => sh.g.sub([
         sh.g.simple_line($.key),
-        sh.g.nested_line([
-            sh.l.indent([
+        sh.g.nested_block([
+            sh.b.indent([
                 Schema_Tree($['value']),
             ]),
         ]),
