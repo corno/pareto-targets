@@ -11,7 +11,7 @@
     "exupery-core-alg": "^0.1.12",
     "exupery-core-data": "^0.1.11",
     "exupery-core-dev": "^0.1.3",
-    "pareto": "^0.76.66",
-    "pareto-json": "^0.1.12"
+    "pareto": "^0.76.67",
+    "pareto-json": "^0.1.13"
   }
 }

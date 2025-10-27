@@ -13,7 +13,7 @@ import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
 export const Module = ($: _in.Module): _out.Directory => {
     return pa.dictionary_literal({
-        "doc.txt": sh.n.file(sh.block([
+        "doc.txt": sh.n.file( sh.group([
             t_schema_to_documentation.Schema_Tree($['schema tree'])
         ]))
     })

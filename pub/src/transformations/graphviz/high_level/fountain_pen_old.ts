@@ -23,106 +23,106 @@
 
 // export const Graph = ($: d_in.Graph): d_out.Block => {
 //     return block([
-//         b.nested_line([
-//             l.snippet("strict "),
+//         sh.g.nested_line([
+//             sh.l.snippet("strict "),
 //             pa.cc($.type, ($) => {
 //                 switch ($[0]) {
-//                     case 'directed': return pa.ss($, () => l.snippet("digraph "))
-//                     case 'undirected': return pa.ss($, () => l.snippet("graph "))
+//                     case 'directed': return pa.ss($, () => sh.l.snippet("digraph "))
+//                     case 'undirected': return pa.ss($, () => sh.l.snippet("graph "))
 //                     default: return pa.au($[0])
 //                 }
 //             }),
 //             $.name.transform(
-//                 ($) => l.sub([
-//                     l.snippet(op['serialize with quote delimiter']($)),
-//                     l.snippet(" "),
+//                 ($) => sh.l.sub([
+//                     sh.l.snippet(op['serialize with quote delimiter']($)),
+//                     sh.l.snippet(" "),
 //                 ]),
-//                 () => l.nothing()
+//                 () => sh.l.nothing()
 //             ),
-//             l.snippet("{"),
-//             l.indent([
+//             sh.l.snippet("{"),
+//             sh.l.indent([
 //                 Graph_Tree($['node tree'], {
 //                     'nodes': $.nodes,
 //                     'path': pa.array_literal([]),
 //                 }),
-//                 b.sub(op['dictionary to list, sorted by code point']($.nodes).map(($) => {
-//                     return b.nested_line([
-//                         l.snippet(op['serialize with quote delimiter']($.key)),
+//                 sh.g.sub(op['dictionary to list, sorted by code point']($.nodes).map(($) => {
+//                     return sh.g.nested_line([
+//                         sh.l.snippet(op['serialize with quote delimiter']($.key)),
 //                     ])
 //                 })),
 //                 pa.cc($.type, ($) => {
 //                     switch ($[0]) {
-//                         case 'directed': return pa.ss($, ($) => b.sub(op['dictionary to list, sorted by code point']($['edge specifications']['start nodes']).map(($) => {
+//                         case 'directed': return pa.ss($, ($) => sh.g.sub(op['dictionary to list, sorted by code point']($['edge specifications']['start nodes']).map(($) => {
 //                             const key = $.key
-//                             return b.sub($.value.edges.map(($) => {
-//                                 return b.nested_line([
-//                                     l.snippet(op['serialize with quote delimiter'](key)),
-//                                     l.snippet(" -> "),
+//                             return sh.g.sub($.value.edges.map(($) => {
+//                                 return sh.g.nested_line([
+//                                     sh.l.snippet(op['serialize with quote delimiter'](key)),
+//                                     sh.l.snippet(" -> "),
 //                                     End_Point_Specification($.to),
 //                                     Edge_Attributes($.attributes),
-//                                     l.snippet(";"),
+//                                     sh.l.snippet(";"),
 //                                 ])
 //                             }))
 //                         })))
-//                         case 'undirected': return pa.ss($, ($) => b.sub($.edges.map(($) => {
-//                             return b.nested_line([
+//                         case 'undirected': return pa.ss($, ($) => sh.g.sub($.edges.map(($) => {
+//                             return sh.g.nested_line([
 //                                 End_Point_Specification($.yin),
-//                                 l.snippet(" -- "),
+//                                 sh.l.snippet(" -- "),
 //                                 End_Point_Specification($.yang),
-//                                 l.snippet(";"),
+//                                 sh.l.snippet(";"),
 //                             ])
 //                         })),)
 //                         default: return pa.au($[0])
 //                     }
 //                 })
 //             ]),
-//             l.snippet("}"),
+//             sh.l.snippet("}"),
 //         ]),
 //     ])
 // }
 
 // export const Edge_Attributes = ($: d_in.Edge_Attributes): d_out.Line_Part => {
 //     return op['is empty']($)
-//         ? l.nothing()
-//         : l.sub([
-//             l.snippet(" ["),
-//             l.sub(op['dictionary to list, sorted by code point']($).map(($) => {
-//                 return l.sub([
-//                     l.snippet(" "),
-//                     l.snippet(op['serialize with quote delimiter']($.key)),
-//                     l.snippet("="),
+//         ? sh.l.nothing()
+//         : sh.l.sub([
+//             sh.l.snippet(" ["),
+//            sh.l.sub(op['dictionary to list, sorted by code point']($).map(($) => {
+//                 return sh.l.sub([
+//                     sh.l.snippet(" "),
+//                     sh.l.snippet(op['serialize with quote delimiter']($.key)),
+//                     sh.l.snippet("="),
 //                     Attribute_Value($.value),
 //                 ])
 //             })),
-//             l.snippet(" ]"),
+//             sh.l.snippet(" ]"),
 //         ])
 // }
 
 // export const Attribute_Value = ($: d_in.Attribute_Value): d_out.Line_Part => {
 //     return pa.cc($, ($) => {
 //         switch ($[0]) {
-//             case 'string':return pa.ss($, ($) => l.snippet(op['serialize with quote delimiter']($)))
-//             case 'number': return pa.ss($, ($) => l.snippet("FIXME NUMBER"))
-//             case 'html string': return pa.ss($, ($) => l.snippet($))
+//             case 'string':return pa.ss($, ($) => sh.l.snippet(op['serialize with quote delimiter']($)))
+//             case 'number': return pa.ss($, ($) => sh.l.snippet("FIXME NUMBER"))
+//             case 'html string': return pa.ss($, ($) => sh.l.snippet($))
 //             default: return pa.au($[0])
 //         }
 //     })
 // }
 
 // export const End_Point_Specification = ($: d_in.End_Point_Specification): d_out.Line_Part => {
-//     return l.sub([
+//     return sh.l.sub([
 //         pa.cc($, ($) => {
 //             switch ($[0]) {
 //                 case 'node': return pa.ss($, ($) => {
-//                     return l.sub([
-//                         l.snippet(op['serialize with quote delimiter']($.node)),
+//                     return sh.l.sub([
+//                         sh.l.snippet(op['serialize with quote delimiter']($.node)),
 //                         $['port data'].transform(
-//                             ($) => l.snippet("FIXME"),
-//                             () => l.nothing()
+//                             ($) => sh.l.snippet("FIXME"),
+//                             () => sh.l.nothing()
 //                         )
 //                     ])
 //                 })
-//                 case 'subgraph': return pa.ss($, ($) => l.snippet("subgraph " + "FIXME"))
+//                 case 'subgraph': return pa.ss($, ($) => sh.l.snippet("subgraph " + "FIXME"))
 //                 default: return pa.au($[0])
 //             }
 //         })
@@ -135,31 +135,31 @@
 //         'nodes': d_in.Graph.nodes,
 //         'path': pt.Array<string>
 //     }
-// ): d_out.Block_Part => {
-//     return b.sub(op['dictionary to list, sorted by code point']($.subgraphs).map(($) => {
-//         return b.nested_line([
-//             l.snippet("subgraph "),
-//             l.snippet($.key),
-//             l.snippet(" {"),
-//             l.indent([
+// ): d_out.Group_Part => {
+//     return sh.g.sub(op['dictionary to list, sorted by code point']($.subgraphs).map(($) => {
+//         return sh.g.nested_line([
+//             sh.l.snippet("subgraph "),
+//             sh.l.snippet($.key),
+//             sh.l.snippet(" {"),
+//             sh.l.indent([
 //                 Graph_Tree($.value.tree, {
 //                     'nodes': $p.nodes,
 //                     'path': op['add element']($p.path, { element: $.key, where: ['end', null] }),
 //                 }),
-//                 b.sub(op['dictionary to list, sorted by code point'](op.filter($p.nodes.map(($) => {
+//                 sh.g.sub(op['dictionary to list, sorted by code point'](op.filter($p.nodes.map(($) => {
 //                     return op['is equal to']($['subgraph path'], { 'other': $p.path })
 //                         ? pa.set($)
 //                         : pa.not_set()
 //                 }))).map(($) => {
-//                     return b.nested_line([
-//                         l.snippet($.key),
-//                         l.snippet(" ["),
-//                         l.snippet("FIXME"), //FIXME: attributes
-//                         l.snippet("];"),
+//                     return sh.g.nested_line([
+//                         sh.l.snippet($.key),
+//                         sh.l.snippet(" ["),
+//                         sh.l.snippet("FIXME"), //FIXME: attributes
+//                         sh.l.snippet("];"),
 //                     ])
 //                 })),
 //             ]),
-//             l.snippet("}"),
+//             sh.l.snippet("}"),
 //         ])
 //     }))
 // }

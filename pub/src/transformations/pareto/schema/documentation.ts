@@ -4,41 +4,41 @@ import * as _in from "pareto/dist/generated/interface/schemas/schema/data_types/
 import * as _in_m from "pareto/dist/generated/interface/schemas/module/data_types/source"
 import * as _out from "pareto-fountain-pen/dist/generated/interface/schemas/block/data_types/target"
 
-import { b, l } from "pareto-fountain-pen/dist/shorthands/block"
+import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
-export const Schema_Tree = ($: _in.Schema_Tree): _out.Block_Part => {
+export const Schema_Tree = ($: _in.Schema_Tree): _out.Group_Part => {
     return _ea.cc($, ($) => {
         switch ($[0]) {
-            case 'schema': return _ea.ss($, ($) => b.sub([
-                b.simple_line(`types:`),
-                b.nested_line([
-                    l.indent([
-                        b.sub($.types['ordered list'].map(($) => b.sub([
-                            b.simple_line($.key)
+            case 'schema': return _ea.ss($, ($) => sh.g.sub([
+                sh.g.simple_line(`types:`),
+                sh.g.nested_line([
+                    sh.l.indent([
+                        sh.g.sub($.types['ordered list'].map(($) => sh.g.sub([
+                            sh.g.simple_line($.key)
                         ])))
                     ])
                 ]),
-                b.simple_line(``),
+                sh.g.simple_line(``),
             ]))
-            case 'set': return _ea.ss($, ($) => b.sub([
-                b.simple_line(`schemas:`),
-                b.nested_line([
-                    l.indent([
+            case 'set': return _ea.ss($, ($) => sh.g.sub([
+                sh.g.simple_line(`schemas:`),
+                sh.g.nested_line([
+                    sh.l.indent([
                         Schemas($)
                     ])
                 ]),
-                b.simple_line(``),
+                sh.g.simple_line(``),
             ]))
             default: return _ea.au($[0])
         }
     })
 }
 
-export const Schemas = ($: _in.Schemas): _out.Block_Part => {
-    return b.sub($['ordered list'].map(($) => b.sub([
-        b.simple_line($.key),
-        b.nested_line([
-            l.indent([
+export const Schemas = ($: _in.Schemas): _out.Group_Part => {
+    return sh.g.sub($['ordered list'].map(($) => sh.g.sub([
+        sh.g.simple_line($.key),
+        sh.g.nested_line([
+            sh.l.indent([
                 Schema_Tree($['value']),
             ]),
         ]),
