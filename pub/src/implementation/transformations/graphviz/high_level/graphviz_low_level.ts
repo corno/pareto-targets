@@ -10,6 +10,8 @@ import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/imp
 import { $$ as op_append_element } from "pareto-standard-operations/dist/implementation/operations/pure/list/append_element"
 import { $$ as op_prepend_element } from "pareto-standard-operations/dist/implementation/operations/pure/list/prepend_element"
 import { $$ as op_flatten } from "pareto-standard-operations/dist/implementation/operations/pure/list/flatten"
+import { Signature } from "../../../../interface/algorithms/transformations/graphviz/high_level/graphviz_low_level"
+
 
 export const Graph = ($: d_in.Graph): d_out.Graph => {
     return {

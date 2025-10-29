@@ -8,6 +8,8 @@ import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 import { $$ as op_serialize_with_quote_delimiter } from "../../../../implementation/operations/impure/text/serialize_quoted_string"
 import { $$ as op_is_empty } from "pareto-standard-operations/dist/implementation/operations/impure/list/is_empty"
 import { $$ as op_enrich_list_elements_with_position_information } from "pareto-standard-operations/dist/implementation/operations/impure/list/enrich_with_position_information"
+import { Signature } from "../../../../interface/algorithms/transformations/graphviz/low_level/fountain_pen"
+
 
 export const Graph = ($: d_in.Graph): d_out.Group => {
     return sh.group([

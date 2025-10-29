@@ -13,6 +13,8 @@ import * as t_graphviz_to_fountain_pen from "../../graphviz/high_level/fountain_
 
 //shorthands
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
+import { Signature } from "../../../../interface/algorithms/transformations/pareto/module/graphviz"
+
 
 
 export const Schema_Tree = (

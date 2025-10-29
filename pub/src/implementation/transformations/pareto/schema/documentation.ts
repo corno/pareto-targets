@@ -5,6 +5,8 @@ import * as _in_m from "pareto/dist/interface/generated/pareto/schemas/module/da
 import * as _out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
 
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
+import { Signature } from "../../../../interface/algorithms/transformations/pareto/schema/documentation"
+
 
 export const Schema_Tree = ($: _in.Schema_Tree): _out.Group_Part => {
     return _ea.cc($, ($) => {

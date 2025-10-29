@@ -11,6 +11,8 @@ import * as t_json_to_fountain_pen_block from "pareto-json/dist/implementation/t
 
 //shorthands
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
+import { Signature } from "../../../../interface/algorithms/transformations/pareto/module/lionweb"
+
 
 export const Schema_Tree = ($: _in_s.Schema_Tree): _out.Directory => {
     return _ea.cc($, ($) => {

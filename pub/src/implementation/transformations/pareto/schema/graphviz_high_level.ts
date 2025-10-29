@@ -7,6 +7,8 @@ import * as _out from "../../../../interface/generated/pareto/schemas/graphviz_h
 
 import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/implementation/operations/impure/dictionary/to_list_sorted_by_code_point"
 import { $$ as op_flatten_list } from "pareto-standard-operations/dist/implementation/operations/pure/list/flatten"
+import { Signature } from "../../../../interface/algorithms/transformations/pareto/schema/graphviz_high_level"
+
 
 export const Type_Node = (
     $: _in.Type_Node,

@@ -16,6 +16,8 @@ import * as r_exupery_implementation from "exupery/dist/implementation/generated
 
 //shorthands
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
+import { Signature } from "../../../../interface/algorithms/transformations/pareto/module/typescript"
+
 
 export const Module = ($: _in.Module): _out.Directory => {
 

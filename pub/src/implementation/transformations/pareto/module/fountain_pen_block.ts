@@ -11,6 +11,8 @@ import * as t_pareto_module_to_documentation from "./documentation"
 import * as t_pareto_module_to_graphvix from "./graphviz"
 import * as t_pareto_module_to_lionweb from "./lionweb"
 import * as t_pareto_module_to_typescript from "./typescript"
+import { Signature } from "../../../../interface/algorithms/transformations/pareto/module/fountain_pen_block"
+
 
 export const Module = (
     $: _in.Module,

@@ -10,6 +10,8 @@ import * as t_schema_to_documentation from "../schema/documentation"
 
 //shorthands
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
+import { Signature } from "../../../../interface/algorithms/transformations/pareto/module/documentation"
+
 
 export const Module = ($: _in.Module): _out.Directory => {
     return pa.dictionary_literal({

@@ -5,6 +5,8 @@ import * as _in from "../../../interface/generated/pareto/schemas/lionweb/data_t
 import * as _out from "pareto-json/dist/interface/generated/pareto/schemas/json/data_types/target"
 
 import { v } from "pareto-json/dist/shorthands/json"
+import { Signature } from "../../../interface/algorithms/transformations/lionweb/json"
+
 
 export const MetaPointer = ($: _in.MetaPointer): _out.Value => {
     return v.object({

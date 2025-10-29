@@ -9,6 +9,8 @@ import * as r_pareto_module from "pareto/dist/temp/resolvers/module"
 import * as t_pareto_module_to_fountain_pen_block from "../../transformations/pareto/module/fountain_pen_block"
 
 import { $$ as a_write_to_directory } from "pareto-fountain-pen/dist/implementation/procedures/unguaranteed/write_to_directory"
+import { Signature } from "../../../interface/algorithms/procedures/unguaranteed/generate_and_write_to_disk"
+
 
 export type Parameters = {
     'module': s_pm.Module<_ed.Source_Location>
