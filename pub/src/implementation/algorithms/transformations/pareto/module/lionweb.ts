@@ -7,7 +7,7 @@ import * as _out from "pareto-fountain-pen/dist/interface/generated/pareto/schem
 //transformations
 import * as t_schema_to_lionweb from "../schema/lionweb"
 import * as t_lionweb_to_json from "../../lionweb/json"
-import * as t_json_to_fountain_pen_block from "pareto-json/dist/implementation/transformations/json/fountain_pen_block"
+import * as t_json_to_fountain_pen_block from "pareto-json/dist/implementation/algorithms/transformations/json/fountain_pen_block"
 
 //shorthands
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
