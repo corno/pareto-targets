@@ -1,6 +1,3 @@
-import * as pd from 'exupery-core-data'
-import * as pa from 'exupery-core-alg'
-
 import * as _in from "../../../../interface/generated/pareto/schemas/lionweb/data_types/target"
 import * as _out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
 

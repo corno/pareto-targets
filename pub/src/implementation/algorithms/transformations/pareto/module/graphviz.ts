@@ -1,4 +1,3 @@
-import * as pd from 'exupery-core-data'
 import * as _ea from 'exupery-core-alg'
 
 import * as _in_s from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"

@@ -1,8 +1,7 @@
-import * as pd from 'exupery-core-data'
 import * as _ea from 'exupery-core-alg'
 
-import * as _in from "pareto/dist/interface/generated/pareto/schemas/module/data_types/source"
-import * as _out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
+import * as d_in from "pareto/dist/interface/generated/pareto/schemas/module/data_types/source"
+import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
 
 
 //transformations
@@ -15,7 +14,7 @@ import { Signature } from "../../../../../interface/algorithms/transformations/p
 
 
 export const Module = (
-    $: _in.Module,
+    $: d_in.Module,
     $p: {
         'target':
         | ['documentation', null]
@@ -24,9 +23,9 @@ export const Module = (
         | ['typescript', null]
     }
 
-): _out.Directory => {
+): d_out.Directory => {
     const module = $
-    return _ea.cc($p.target, ($): _out.Directory => {
+    return _ea.cc($p.target, ($): d_out.Directory => {
         switch ($[0]) {
             case 'documentation': return _ea.ss($, ($) => t_pareto_module_to_documentation.Module(module))
             case 'graphviz': return _ea.ss($, ($) => t_pareto_module_to_graphvix.Module(module, { 'graph name': "schema" }))

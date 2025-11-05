@@ -1,8 +1,8 @@
 import { Signature } from "../../../../../interface/algorithms/transformations/graphviz/high_level/fountain_pen_old"
 
-// import * as pa from 'exupery-core-alg'
-// import * as pd from 'exupery-core-dev'
-// import * as pt from 'exupery-core-types'
+// import * as _ea from 'exupery-core-alg'
+// import * as _edev from 'exupery-core-dev'
+// import * as _et from 'exupery-core-types'
 
 // import * as d_in from "../../../../../interface/generated/pareto/schemas/graphviz_high_level/resolved"
 // import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/unresolved"

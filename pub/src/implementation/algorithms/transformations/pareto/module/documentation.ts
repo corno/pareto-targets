@@ -1,5 +1,4 @@
-import * as pd from 'exupery-core-data'
-import * as pa from 'exupery-core-alg'
+import * as _ea from 'exupery-core-alg'
 
 import * as _in_s from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"
 import * as _in from "pareto/dist/interface/generated/pareto/schemas/module/data_types/source"
@@ -14,7 +13,7 @@ import { Signature } from "../../../../../interface/algorithms/transformations/p
 
 
 export const Module = ($: _in.Module): _out.Directory => {
-    return pa.dictionary_literal({
+    return _ea.dictionary_literal({
         "doc.txt": sh.n.file( sh.group([
             t_schema_to_documentation.Schema_Tree($['schema tree'])
         ]))

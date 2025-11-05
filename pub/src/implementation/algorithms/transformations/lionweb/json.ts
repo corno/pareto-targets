@@ -1,5 +1,3 @@
-import * as pd from 'exupery-core-data'
-import * as pa from 'exupery-core-alg'
 
 import * as _in from "../../../../interface/generated/pareto/schemas/lionweb/data_types/target"
 import * as _out from "pareto-json/dist/interface/generated/pareto/schemas/json/data_types/target"
