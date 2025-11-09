@@ -22,7 +22,7 @@ export type Parameters = {
     | ['typescript', null]
 }
 
-export const $$: _easync.Unguaranteed_Procedure_Initializer<Parameters, d_fp_temp.Directory_Error> = (
+export const $$: _easync.Unguaranteed_Procedure<Parameters, d_fp_temp.Directory_Error, null> = (
     $p
 ) => {
     return a_write_to_directory(
@@ -47,6 +47,7 @@ export const $$: _easync.Unguaranteed_Procedure_Initializer<Parameters, d_fp_tem
             'indentation': "    ",
             'newline': "\n",
             'remove before creating': true,
-        }
+        },
+        null,
     )
 }
