@@ -2,24 +2,15 @@ import * as _pa from 'exupery-core-alg'
 import * as _pd from 'exupery-core-dev'
 
 import * as _i_generic from "../../generic/unmarshall"
+import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/lionweb/unmarshall"
 import * as _i_in from "../../../../../interface/generated/pareto/core/astn_source"
 import * as _i_out from "../../../../../interface/generated/pareto/schemas/lionweb/data_types/target"
-import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/lionweb/unmarshall"
 
 
 export const MetaPointer: _i_signatures._T_MetaPointer = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
-            'key': _pa.cc(_i_generic.get_entry(
-                $,
-                {
-                    'key': "key",
-                }
-            ), ($) => _i_generic.process_text(
-                $,
-                null
-            )),
             'language': _pa.cc(_i_generic.get_entry(
                 $,
                 {
@@ -38,6 +29,15 @@ export const MetaPointer: _i_signatures._T_MetaPointer = ($, $p) => _i_generic.p
                 $,
                 null
             )),
+            'key': _pa.cc(_i_generic.get_entry(
+                $,
+                {
+                    'key': "key",
+                }
+            ), ($) => _i_generic.process_text(
+                $,
+                null
+            )),
         }),
     }
 )
@@ -45,6 +45,15 @@ export const SerializationChunk: _i_signatures._T_SerializationChunk = ($, $p) =
     $,
     {
         'properties': ($) => ({
+            'serializationFormatVersion': _pa.cc(_i_generic.get_entry(
+                $,
+                {
+                    'key': "serializationFormatVersion",
+                }
+            ), ($) => _i_generic.process_text(
+                $,
+                null
+            )),
             'languages': _pa.cc(_i_generic.get_entry(
                 $,
                 {
@@ -92,6 +101,29 @@ export const SerializationChunk: _i_signatures._T_SerializationChunk = ($, $p) =
                         $,
                         {
                             'properties': ($) => ({
+                                'id': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "id",
+                                    }
+                                ), ($) => _i_generic.process_text(
+                                    $,
+                                    null
+                                )),
+                                'parent': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "parent",
+                                    }
+                                ), ($) => _i_generic.process_optional(
+                                    $,
+                                    {
+                                        'value': ($) => _i_generic.process_text(
+                                            $,
+                                            null
+                                        ),
+                                    }
+                                )),
                                 'annotations': _pa.cc(_i_generic.get_entry(
                                     $,
                                     {
@@ -129,6 +161,17 @@ export const SerializationChunk: _i_signatures._T_SerializationChunk = ($, $p) =
                                             $,
                                             {
                                                 'properties': ($) => ({
+                                                    'containment': _pa.cc(_i_generic.get_entry(
+                                                        $,
+                                                        {
+                                                            'key': "containment",
+                                                        }
+                                                    ), ($) => MetaPointer(
+                                                        $,
+                                                        {
+                                                            'value deserializers': $p['value deserializers'],
+                                                        }
+                                                    )),
                                                     'children': _pa.cc(_i_generic.get_entry(
                                                         $,
                                                         {
@@ -143,42 +186,8 @@ export const SerializationChunk: _i_signatures._T_SerializationChunk = ($, $p) =
                                                             ),
                                                         }
                                                     )),
-                                                    'containment': _pa.cc(_i_generic.get_entry(
-                                                        $,
-                                                        {
-                                                            'key': "containment",
-                                                        }
-                                                    ), ($) => MetaPointer(
-                                                        $,
-                                                        {
-                                                            'value deserializers': $p['value deserializers'],
-                                                        }
-                                                    )),
                                                 }),
                                             }
-                                        ),
-                                    }
-                                )),
-                                'id': _pa.cc(_i_generic.get_entry(
-                                    $,
-                                    {
-                                        'key': "id",
-                                    }
-                                ), ($) => _i_generic.process_text(
-                                    $,
-                                    null
-                                )),
-                                'parent': _pa.cc(_i_generic.get_entry(
-                                    $,
-                                    {
-                                        'key': "parent",
-                                    }
-                                ), ($) => _i_generic.process_optional(
-                                    $,
-                                    {
-                                        'value': ($) => _i_generic.process_text(
-                                            $,
-                                            null
                                         ),
                                     }
                                 )),
@@ -194,6 +203,15 @@ export const SerializationChunk: _i_signatures._T_SerializationChunk = ($, $p) =
                                             $,
                                             {
                                                 'properties': ($) => ({
+                                                    'value': _pa.cc(_i_generic.get_entry(
+                                                        $,
+                                                        {
+                                                            'key': "value",
+                                                        }
+                                                    ), ($) => _i_generic.process_text(
+                                                        $,
+                                                        null
+                                                    )),
                                                     'property': _pa.cc(_i_generic.get_entry(
                                                         $,
                                                         {
@@ -204,15 +222,6 @@ export const SerializationChunk: _i_signatures._T_SerializationChunk = ($, $p) =
                                                         {
                                                             'value deserializers': $p['value deserializers'],
                                                         }
-                                                    )),
-                                                    'value': _pa.cc(_i_generic.get_entry(
-                                                        $,
-                                                        {
-                                                            'key': "value",
-                                                        }
-                                                    ), ($) => _i_generic.process_text(
-                                                        $,
-                                                        null
                                                     )),
                                                 }),
                                             }
@@ -231,17 +240,6 @@ export const SerializationChunk: _i_signatures._T_SerializationChunk = ($, $p) =
                                             $,
                                             {
                                                 'properties': ($) => ({
-                                                    'reference': _pa.cc(_i_generic.get_entry(
-                                                        $,
-                                                        {
-                                                            'key': "reference",
-                                                        }
-                                                    ), ($) => MetaPointer(
-                                                        $,
-                                                        {
-                                                            'value deserializers': $p['value deserializers'],
-                                                        }
-                                                    )),
                                                     'targets': _pa.cc(_i_generic.get_entry(
                                                         $,
                                                         {
@@ -277,6 +275,17 @@ export const SerializationChunk: _i_signatures._T_SerializationChunk = ($, $p) =
                                                             ),
                                                         }
                                                     )),
+                                                    'reference': _pa.cc(_i_generic.get_entry(
+                                                        $,
+                                                        {
+                                                            'key': "reference",
+                                                        }
+                                                    ), ($) => MetaPointer(
+                                                        $,
+                                                        {
+                                                            'value deserializers': $p['value deserializers'],
+                                                        }
+                                                    )),
                                                 }),
                                             }
                                         ),
@@ -286,15 +295,6 @@ export const SerializationChunk: _i_signatures._T_SerializationChunk = ($, $p) =
                         }
                     ),
                 }
-            )),
-            'serializationFormatVersion': _pa.cc(_i_generic.get_entry(
-                $,
-                {
-                    'key': "serializationFormatVersion",
-                }
-            ), ($) => _i_generic.process_text(
-                $,
-                null
             )),
         }),
     }

@@ -4,51 +4,37 @@ import * as _i_core from "../../../core/unconstrained"
 
 // **** TYPES
 
-export type _T_Attribute_List = _i_core._T_List<null, {
-    readonly 'name': _T_ID
-    readonly 'value': _T_ID
-}>
-
-export type _T_Graph = {
-    readonly 'name': _pt.Optional_Value<_T_ID>
-    readonly 'statements': _T_Statement_List
-    readonly 'strict': boolean
-    readonly 'type': _i_core._T_State_Group<null, 
-        | readonly ['digraph', null]
-        | readonly ['graph', null]
-    >
-}
-
 export type _T_ID = _i_core._T_State_Group<null, 
-    | readonly ['html', string]
     | readonly ['id', string]
-    | readonly ['number', number]
     | readonly ['string', string]
+    | readonly ['html', string]
+    | readonly ['number', number]
 >
 
 export type _T_Node_ID = {
     readonly 'id': _T_ID
     readonly 'port': _pt.Optional_Value<{
-        readonly 'compass point': _pt.Optional_Value<_T_ID>
         readonly 'port': _T_ID
+        readonly 'compass point': _pt.Optional_Value<_T_ID>
     }>
 }
 
+export type _T_Attribute_List = _i_core._T_List<null, {
+    readonly 'name': _T_ID
+    readonly 'value': _T_ID
+}>
+
+export type _T_Subgraph = {
+    readonly 'subgraph': _pt.Optional_Value<_pt.Optional_Value<_T_ID>>
+    readonly 'statements': _T_Statement_List
+}
+
 export type _T_Statement_List = _i_core._T_List<null, _i_core._T_State_Group<null, 
-    | readonly ['attribute assignment', {
-        readonly 'name': _T_ID
-        readonly 'value': _T_ID
-    }]
-    | readonly ['attribute list', {
-        readonly 'attributes': _T_Attribute_List
-        readonly 'type': _i_core._T_State_Group<null, 
-            | readonly ['edge', null]
-            | readonly ['graph', null]
-            | readonly ['node', null]
-        >
+    | readonly ['node', {
+        readonly 'node': _T_Node_ID
+        readonly 'attribute list': _T_Attribute_List
     }]
     | readonly ['edge', {
-        readonly 'attributes': _T_Attribute_List
         readonly 'left': _i_core._T_State_Group<null, 
             | readonly ['node', _T_Node_ID]
             | readonly ['subgraph', _T_Subgraph]
@@ -57,34 +43,96 @@ export type _T_Statement_List = _i_core._T_List<null, _i_core._T_State_Group<nul
             | readonly ['node', _T_Node_ID]
             | readonly ['subgraph', _T_Subgraph]
         >>
+        readonly 'attributes': _T_Attribute_List
     }]
-    | readonly ['node', {
-        readonly 'attribute list': _T_Attribute_List
-        readonly 'node': _T_Node_ID
+    | readonly ['attribute list', {
+        readonly 'type': _i_core._T_State_Group<null, 
+            | readonly ['graph', null]
+            | readonly ['node', null]
+            | readonly ['edge', null]
+        >
+        readonly 'attributes': _T_Attribute_List
+    }]
+    | readonly ['attribute assignment', {
+        readonly 'name': _T_ID
+        readonly 'value': _T_ID
     }]
     | readonly ['subgraph', _T_Subgraph]
 >>
 
-export type _T_Subgraph = {
+export type _T_Graph = {
+    readonly 'strict': boolean
+    readonly 'type': _i_core._T_State_Group<null, 
+        | readonly ['graph', null]
+        | readonly ['digraph', null]
+    >
+    readonly 'name': _pt.Optional_Value<_T_ID>
     readonly 'statements': _T_Statement_List
-    readonly 'subgraph': _pt.Optional_Value<_pt.Optional_Value<_T_ID>>
 }
 
 // **** FRIENDLY NAMES FOR THE GLOBAL TYPES
-
-export type Attribute_List = _T_Attribute_List
-
-export type Graph = _T_Graph
 
 export type ID = _T_ID
 
 export type Node_ID = _T_Node_ID
 
-export type Statement_List = _T_Statement_List
+export type Attribute_List = _T_Attribute_List
 
 export type Subgraph = _T_Subgraph
 
+export type Statement_List = _T_Statement_List
+
+export type Graph = _T_Graph
+
 // **** ALIASES FOR NESTED TYPE WITH PREFIXED ROOT NAMES
+
+export namespace _T_ID {
+    
+    export namespace SG {
+        export type id = string
+        export type _string = string
+        export type html = string
+        export type _number = number
+    }
+    export type SG = 
+        | readonly ['id', string]
+        | readonly ['string', string]
+        | readonly ['html', string]
+        | readonly ['number', number]
+}
+
+export namespace _T_Node_ID {
+    
+    export namespace id {
+    }
+    export type id = _T_ID
+    
+    export namespace port {
+        
+        export namespace O {
+            
+            export namespace port {
+            }
+            export type port = _T_ID
+            
+            export namespace compass_point {
+                
+                export namespace O {
+                }
+                export type O = _T_ID
+            }
+            export type compass_point = _pt.Optional_Value<_T_ID>
+        }
+        export type O = {
+            readonly 'port': _T_ID
+            readonly 'compass point': _pt.Optional_Value<_T_ID>
+        }
+    }
+    export type port = _pt.Optional_Value<{
+        readonly 'port': _T_ID
+        readonly 'compass point': _pt.Optional_Value<_T_ID>
+    }>
+}
 
 export namespace _T_Attribute_List {
     
@@ -104,83 +152,23 @@ export namespace _T_Attribute_List {
     }
 }
 
-export namespace _T_Graph {
+export namespace _T_Subgraph {
     
-    export namespace name {
+    export namespace subgraph {
         
         export namespace O {
+            
+            export namespace O {
+            }
+            export type O = _T_ID
         }
-        export type O = _T_ID
+        export type O = _pt.Optional_Value<_T_ID>
     }
-    export type name = _pt.Optional_Value<_T_ID>
+    export type subgraph = _pt.Optional_Value<_pt.Optional_Value<_T_ID>>
     
     export namespace statements {
     }
     export type statements = _T_Statement_List
-    export type strict = boolean
-    
-    export namespace _type {
-        
-        export namespace SG {
-            export type digraph = null
-            export type graph = null
-        }
-        export type SG = 
-            | readonly ['digraph', null]
-            | readonly ['graph', null]
-    }
-    export type _type = _i_core._T_State_Group<null, 
-        | readonly ['digraph', null]
-        | readonly ['graph', null]
-    >
-}
-
-export namespace _T_ID {
-    
-    export namespace SG {
-        export type html = string
-        export type id = string
-        export type _number = number
-        export type _string = string
-    }
-    export type SG = 
-        | readonly ['html', string]
-        | readonly ['id', string]
-        | readonly ['number', number]
-        | readonly ['string', string]
-}
-
-export namespace _T_Node_ID {
-    
-    export namespace id {
-    }
-    export type id = _T_ID
-    
-    export namespace port {
-        
-        export namespace O {
-            
-            export namespace compass_point {
-                
-                export namespace O {
-                }
-                export type O = _T_ID
-            }
-            export type compass_point = _pt.Optional_Value<_T_ID>
-            
-            export namespace port {
-            }
-            export type port = _T_ID
-        }
-        export type O = {
-            readonly 'compass point': _pt.Optional_Value<_T_ID>
-            readonly 'port': _T_ID
-        }
-    }
-    export type port = _pt.Optional_Value<{
-        readonly 'compass point': _pt.Optional_Value<_T_ID>
-        readonly 'port': _T_ID
-    }>
 }
 
 export namespace _T_Statement_List {
@@ -189,59 +177,22 @@ export namespace _T_Statement_List {
         
         export namespace SG {
             
-            export namespace attribute_assignment {
+            export namespace node {
                 
-                export namespace name {
+                export namespace node {
                 }
-                export type name = _T_ID
+                export type node = _T_Node_ID
                 
-                export namespace value {
+                export namespace attribute_list {
                 }
-                export type value = _T_ID
+                export type attribute_list = _T_Attribute_List
             }
-            export type attribute_assignment = {
-                readonly 'name': _T_ID
-                readonly 'value': _T_ID
-            }
-            
-            export namespace attribute_list {
-                
-                export namespace attributes {
-                }
-                export type attributes = _T_Attribute_List
-                
-                export namespace _type {
-                    
-                    export namespace SG {
-                        export type edge = null
-                        export type graph = null
-                        export type node = null
-                    }
-                    export type SG = 
-                        | readonly ['edge', null]
-                        | readonly ['graph', null]
-                        | readonly ['node', null]
-                }
-                export type _type = _i_core._T_State_Group<null, 
-                    | readonly ['edge', null]
-                    | readonly ['graph', null]
-                    | readonly ['node', null]
-                >
-            }
-            export type attribute_list = {
-                readonly 'attributes': _T_Attribute_List
-                readonly 'type': _i_core._T_State_Group<null, 
-                    | readonly ['edge', null]
-                    | readonly ['graph', null]
-                    | readonly ['node', null]
-                >
+            export type node = {
+                readonly 'node': _T_Node_ID
+                readonly 'attribute list': _T_Attribute_List
             }
             
             export namespace edge {
-                
-                export namespace attributes {
-                }
-                export type attributes = _T_Attribute_List
                 
                 export namespace left {
                     
@@ -291,9 +242,12 @@ export namespace _T_Statement_List {
                     | readonly ['node', _T_Node_ID]
                     | readonly ['subgraph', _T_Subgraph]
                 >>
+                
+                export namespace attributes {
+                }
+                export type attributes = _T_Attribute_List
             }
             export type edge = {
-                readonly 'attributes': _T_Attribute_List
                 readonly 'left': _i_core._T_State_Group<null, 
                     | readonly ['node', _T_Node_ID]
                     | readonly ['subgraph', _T_Subgraph]
@@ -302,21 +256,55 @@ export namespace _T_Statement_List {
                     | readonly ['node', _T_Node_ID]
                     | readonly ['subgraph', _T_Subgraph]
                 >>
+                readonly 'attributes': _T_Attribute_List
             }
             
-            export namespace node {
+            export namespace attribute_list {
                 
-                export namespace attribute_list {
+                export namespace _type {
+                    
+                    export namespace SG {
+                        export type graph = null
+                        export type node = null
+                        export type edge = null
+                    }
+                    export type SG = 
+                        | readonly ['graph', null]
+                        | readonly ['node', null]
+                        | readonly ['edge', null]
                 }
-                export type attribute_list = _T_Attribute_List
+                export type _type = _i_core._T_State_Group<null, 
+                    | readonly ['graph', null]
+                    | readonly ['node', null]
+                    | readonly ['edge', null]
+                >
                 
-                export namespace node {
+                export namespace attributes {
                 }
-                export type node = _T_Node_ID
+                export type attributes = _T_Attribute_List
             }
-            export type node = {
-                readonly 'attribute list': _T_Attribute_List
-                readonly 'node': _T_Node_ID
+            export type attribute_list = {
+                readonly 'type': _i_core._T_State_Group<null, 
+                    | readonly ['graph', null]
+                    | readonly ['node', null]
+                    | readonly ['edge', null]
+                >
+                readonly 'attributes': _T_Attribute_List
+            }
+            
+            export namespace attribute_assignment {
+                
+                export namespace name {
+                }
+                export type name = _T_ID
+                
+                export namespace value {
+                }
+                export type value = _T_ID
+            }
+            export type attribute_assignment = {
+                readonly 'name': _T_ID
+                readonly 'value': _T_ID
             }
             
             export namespace subgraph {
@@ -324,20 +312,11 @@ export namespace _T_Statement_List {
             export type subgraph = _T_Subgraph
         }
         export type SG = 
-            | readonly ['attribute assignment', {
-                readonly 'name': _T_ID
-                readonly 'value': _T_ID
-            }]
-            | readonly ['attribute list', {
-                readonly 'attributes': _T_Attribute_List
-                readonly 'type': _i_core._T_State_Group<null, 
-                    | readonly ['edge', null]
-                    | readonly ['graph', null]
-                    | readonly ['node', null]
-                >
+            | readonly ['node', {
+                readonly 'node': _T_Node_ID
+                readonly 'attribute list': _T_Attribute_List
             }]
             | readonly ['edge', {
-                readonly 'attributes': _T_Attribute_List
                 readonly 'left': _i_core._T_State_Group<null, 
                     | readonly ['node', _T_Node_ID]
                     | readonly ['subgraph', _T_Subgraph]
@@ -346,28 +325,28 @@ export namespace _T_Statement_List {
                     | readonly ['node', _T_Node_ID]
                     | readonly ['subgraph', _T_Subgraph]
                 >>
+                readonly 'attributes': _T_Attribute_List
             }]
-            | readonly ['node', {
-                readonly 'attribute list': _T_Attribute_List
-                readonly 'node': _T_Node_ID
+            | readonly ['attribute list', {
+                readonly 'type': _i_core._T_State_Group<null, 
+                    | readonly ['graph', null]
+                    | readonly ['node', null]
+                    | readonly ['edge', null]
+                >
+                readonly 'attributes': _T_Attribute_List
+            }]
+            | readonly ['attribute assignment', {
+                readonly 'name': _T_ID
+                readonly 'value': _T_ID
             }]
             | readonly ['subgraph', _T_Subgraph]
     }
     export type L = _i_core._T_State_Group<null, 
-        | readonly ['attribute assignment', {
-            readonly 'name': _T_ID
-            readonly 'value': _T_ID
-        }]
-        | readonly ['attribute list', {
-            readonly 'attributes': _T_Attribute_List
-            readonly 'type': _i_core._T_State_Group<null, 
-                | readonly ['edge', null]
-                | readonly ['graph', null]
-                | readonly ['node', null]
-            >
+        | readonly ['node', {
+            readonly 'node': _T_Node_ID
+            readonly 'attribute list': _T_Attribute_List
         }]
         | readonly ['edge', {
-            readonly 'attributes': _T_Attribute_List
             readonly 'left': _i_core._T_State_Group<null, 
                 | readonly ['node', _T_Node_ID]
                 | readonly ['subgraph', _T_Subgraph]
@@ -376,35 +355,104 @@ export namespace _T_Statement_List {
                 | readonly ['node', _T_Node_ID]
                 | readonly ['subgraph', _T_Subgraph]
             >>
+            readonly 'attributes': _T_Attribute_List
         }]
-        | readonly ['node', {
-            readonly 'attribute list': _T_Attribute_List
-            readonly 'node': _T_Node_ID
+        | readonly ['attribute list', {
+            readonly 'type': _i_core._T_State_Group<null, 
+                | readonly ['graph', null]
+                | readonly ['node', null]
+                | readonly ['edge', null]
+            >
+            readonly 'attributes': _T_Attribute_List
+        }]
+        | readonly ['attribute assignment', {
+            readonly 'name': _T_ID
+            readonly 'value': _T_ID
         }]
         | readonly ['subgraph', _T_Subgraph]
     >
 }
 
-export namespace _T_Subgraph {
+export namespace _T_Graph {
+    export type strict = boolean
+    
+    export namespace _type {
+        
+        export namespace SG {
+            export type graph = null
+            export type digraph = null
+        }
+        export type SG = 
+            | readonly ['graph', null]
+            | readonly ['digraph', null]
+    }
+    export type _type = _i_core._T_State_Group<null, 
+        | readonly ['graph', null]
+        | readonly ['digraph', null]
+    >
+    
+    export namespace name {
+        
+        export namespace O {
+        }
+        export type O = _T_ID
+    }
+    export type name = _pt.Optional_Value<_T_ID>
     
     export namespace statements {
     }
     export type statements = _T_Statement_List
-    
-    export namespace subgraph {
-        
-        export namespace O {
-            
-            export namespace O {
-            }
-            export type O = _T_ID
-        }
-        export type O = _pt.Optional_Value<_T_ID>
-    }
-    export type subgraph = _pt.Optional_Value<_pt.Optional_Value<_T_ID>>
 }
 
 // *** ALIASES FOR NESTED TYPES
+
+export namespace ID {
+    
+    export namespace SG {
+        export type id = string
+        export type _string = string
+        export type html = string
+        export type _number = number
+    }
+    export type SG = 
+        | readonly ['id', string]
+        | readonly ['string', string]
+        | readonly ['html', string]
+        | readonly ['number', number]
+}
+
+export namespace Node_ID {
+    
+    export namespace id {
+    }
+    export type id = _T_ID
+    
+    export namespace port {
+        
+        export namespace O {
+            
+            export namespace port {
+            }
+            export type port = _T_ID
+            
+            export namespace compass_point {
+                
+                export namespace O {
+                }
+                export type O = _T_ID
+            }
+            export type compass_point = _pt.Optional_Value<_T_ID>
+        }
+        export type O = {
+            readonly 'port': _T_ID
+            readonly 'compass point': _pt.Optional_Value<_T_ID>
+        }
+    }
+    export type port = _pt.Optional_Value<{
+        readonly 'port': _T_ID
+        readonly 'compass point': _pt.Optional_Value<_T_ID>
+    }>
+}
 
 export namespace Attribute_List {
     
@@ -424,83 +472,23 @@ export namespace Attribute_List {
     }
 }
 
-export namespace Graph {
+export namespace Subgraph {
     
-    export namespace name {
+    export namespace subgraph {
         
         export namespace O {
+            
+            export namespace O {
+            }
+            export type O = _T_ID
         }
-        export type O = _T_ID
+        export type O = _pt.Optional_Value<_T_ID>
     }
-    export type name = _pt.Optional_Value<_T_ID>
+    export type subgraph = _pt.Optional_Value<_pt.Optional_Value<_T_ID>>
     
     export namespace statements {
     }
     export type statements = _T_Statement_List
-    export type strict = boolean
-    
-    export namespace _type {
-        
-        export namespace SG {
-            export type digraph = null
-            export type graph = null
-        }
-        export type SG = 
-            | readonly ['digraph', null]
-            | readonly ['graph', null]
-    }
-    export type _type = _i_core._T_State_Group<null, 
-        | readonly ['digraph', null]
-        | readonly ['graph', null]
-    >
-}
-
-export namespace ID {
-    
-    export namespace SG {
-        export type html = string
-        export type id = string
-        export type _number = number
-        export type _string = string
-    }
-    export type SG = 
-        | readonly ['html', string]
-        | readonly ['id', string]
-        | readonly ['number', number]
-        | readonly ['string', string]
-}
-
-export namespace Node_ID {
-    
-    export namespace id {
-    }
-    export type id = _T_ID
-    
-    export namespace port {
-        
-        export namespace O {
-            
-            export namespace compass_point {
-                
-                export namespace O {
-                }
-                export type O = _T_ID
-            }
-            export type compass_point = _pt.Optional_Value<_T_ID>
-            
-            export namespace port {
-            }
-            export type port = _T_ID
-        }
-        export type O = {
-            readonly 'compass point': _pt.Optional_Value<_T_ID>
-            readonly 'port': _T_ID
-        }
-    }
-    export type port = _pt.Optional_Value<{
-        readonly 'compass point': _pt.Optional_Value<_T_ID>
-        readonly 'port': _T_ID
-    }>
 }
 
 export namespace Statement_List {
@@ -509,59 +497,22 @@ export namespace Statement_List {
         
         export namespace SG {
             
-            export namespace attribute_assignment {
+            export namespace node {
                 
-                export namespace name {
+                export namespace node {
                 }
-                export type name = _T_ID
+                export type node = _T_Node_ID
                 
-                export namespace value {
+                export namespace attribute_list {
                 }
-                export type value = _T_ID
+                export type attribute_list = _T_Attribute_List
             }
-            export type attribute_assignment = {
-                readonly 'name': _T_ID
-                readonly 'value': _T_ID
-            }
-            
-            export namespace attribute_list {
-                
-                export namespace attributes {
-                }
-                export type attributes = _T_Attribute_List
-                
-                export namespace _type {
-                    
-                    export namespace SG {
-                        export type edge = null
-                        export type graph = null
-                        export type node = null
-                    }
-                    export type SG = 
-                        | readonly ['edge', null]
-                        | readonly ['graph', null]
-                        | readonly ['node', null]
-                }
-                export type _type = _i_core._T_State_Group<null, 
-                    | readonly ['edge', null]
-                    | readonly ['graph', null]
-                    | readonly ['node', null]
-                >
-            }
-            export type attribute_list = {
-                readonly 'attributes': _T_Attribute_List
-                readonly 'type': _i_core._T_State_Group<null, 
-                    | readonly ['edge', null]
-                    | readonly ['graph', null]
-                    | readonly ['node', null]
-                >
+            export type node = {
+                readonly 'node': _T_Node_ID
+                readonly 'attribute list': _T_Attribute_List
             }
             
             export namespace edge {
-                
-                export namespace attributes {
-                }
-                export type attributes = _T_Attribute_List
                 
                 export namespace left {
                     
@@ -611,9 +562,12 @@ export namespace Statement_List {
                     | readonly ['node', _T_Node_ID]
                     | readonly ['subgraph', _T_Subgraph]
                 >>
+                
+                export namespace attributes {
+                }
+                export type attributes = _T_Attribute_List
             }
             export type edge = {
-                readonly 'attributes': _T_Attribute_List
                 readonly 'left': _i_core._T_State_Group<null, 
                     | readonly ['node', _T_Node_ID]
                     | readonly ['subgraph', _T_Subgraph]
@@ -622,21 +576,55 @@ export namespace Statement_List {
                     | readonly ['node', _T_Node_ID]
                     | readonly ['subgraph', _T_Subgraph]
                 >>
+                readonly 'attributes': _T_Attribute_List
             }
             
-            export namespace node {
+            export namespace attribute_list {
                 
-                export namespace attribute_list {
+                export namespace _type {
+                    
+                    export namespace SG {
+                        export type graph = null
+                        export type node = null
+                        export type edge = null
+                    }
+                    export type SG = 
+                        | readonly ['graph', null]
+                        | readonly ['node', null]
+                        | readonly ['edge', null]
                 }
-                export type attribute_list = _T_Attribute_List
+                export type _type = _i_core._T_State_Group<null, 
+                    | readonly ['graph', null]
+                    | readonly ['node', null]
+                    | readonly ['edge', null]
+                >
                 
-                export namespace node {
+                export namespace attributes {
                 }
-                export type node = _T_Node_ID
+                export type attributes = _T_Attribute_List
             }
-            export type node = {
-                readonly 'attribute list': _T_Attribute_List
-                readonly 'node': _T_Node_ID
+            export type attribute_list = {
+                readonly 'type': _i_core._T_State_Group<null, 
+                    | readonly ['graph', null]
+                    | readonly ['node', null]
+                    | readonly ['edge', null]
+                >
+                readonly 'attributes': _T_Attribute_List
+            }
+            
+            export namespace attribute_assignment {
+                
+                export namespace name {
+                }
+                export type name = _T_ID
+                
+                export namespace value {
+                }
+                export type value = _T_ID
+            }
+            export type attribute_assignment = {
+                readonly 'name': _T_ID
+                readonly 'value': _T_ID
             }
             
             export namespace subgraph {
@@ -644,20 +632,11 @@ export namespace Statement_List {
             export type subgraph = _T_Subgraph
         }
         export type SG = 
-            | readonly ['attribute assignment', {
-                readonly 'name': _T_ID
-                readonly 'value': _T_ID
-            }]
-            | readonly ['attribute list', {
-                readonly 'attributes': _T_Attribute_List
-                readonly 'type': _i_core._T_State_Group<null, 
-                    | readonly ['edge', null]
-                    | readonly ['graph', null]
-                    | readonly ['node', null]
-                >
+            | readonly ['node', {
+                readonly 'node': _T_Node_ID
+                readonly 'attribute list': _T_Attribute_List
             }]
             | readonly ['edge', {
-                readonly 'attributes': _T_Attribute_List
                 readonly 'left': _i_core._T_State_Group<null, 
                     | readonly ['node', _T_Node_ID]
                     | readonly ['subgraph', _T_Subgraph]
@@ -666,28 +645,28 @@ export namespace Statement_List {
                     | readonly ['node', _T_Node_ID]
                     | readonly ['subgraph', _T_Subgraph]
                 >>
+                readonly 'attributes': _T_Attribute_List
             }]
-            | readonly ['node', {
-                readonly 'attribute list': _T_Attribute_List
-                readonly 'node': _T_Node_ID
+            | readonly ['attribute list', {
+                readonly 'type': _i_core._T_State_Group<null, 
+                    | readonly ['graph', null]
+                    | readonly ['node', null]
+                    | readonly ['edge', null]
+                >
+                readonly 'attributes': _T_Attribute_List
+            }]
+            | readonly ['attribute assignment', {
+                readonly 'name': _T_ID
+                readonly 'value': _T_ID
             }]
             | readonly ['subgraph', _T_Subgraph]
     }
     export type L = _i_core._T_State_Group<null, 
-        | readonly ['attribute assignment', {
-            readonly 'name': _T_ID
-            readonly 'value': _T_ID
-        }]
-        | readonly ['attribute list', {
-            readonly 'attributes': _T_Attribute_List
-            readonly 'type': _i_core._T_State_Group<null, 
-                | readonly ['edge', null]
-                | readonly ['graph', null]
-                | readonly ['node', null]
-            >
+        | readonly ['node', {
+            readonly 'node': _T_Node_ID
+            readonly 'attribute list': _T_Attribute_List
         }]
         | readonly ['edge', {
-            readonly 'attributes': _T_Attribute_List
             readonly 'left': _i_core._T_State_Group<null, 
                 | readonly ['node', _T_Node_ID]
                 | readonly ['subgraph', _T_Subgraph]
@@ -696,30 +675,51 @@ export namespace Statement_List {
                 | readonly ['node', _T_Node_ID]
                 | readonly ['subgraph', _T_Subgraph]
             >>
+            readonly 'attributes': _T_Attribute_List
         }]
-        | readonly ['node', {
-            readonly 'attribute list': _T_Attribute_List
-            readonly 'node': _T_Node_ID
+        | readonly ['attribute list', {
+            readonly 'type': _i_core._T_State_Group<null, 
+                | readonly ['graph', null]
+                | readonly ['node', null]
+                | readonly ['edge', null]
+            >
+            readonly 'attributes': _T_Attribute_List
+        }]
+        | readonly ['attribute assignment', {
+            readonly 'name': _T_ID
+            readonly 'value': _T_ID
         }]
         | readonly ['subgraph', _T_Subgraph]
     >
 }
 
-export namespace Subgraph {
+export namespace Graph {
+    export type strict = boolean
+    
+    export namespace _type {
+        
+        export namespace SG {
+            export type graph = null
+            export type digraph = null
+        }
+        export type SG = 
+            | readonly ['graph', null]
+            | readonly ['digraph', null]
+    }
+    export type _type = _i_core._T_State_Group<null, 
+        | readonly ['graph', null]
+        | readonly ['digraph', null]
+    >
+    
+    export namespace name {
+        
+        export namespace O {
+        }
+        export type O = _T_ID
+    }
+    export type name = _pt.Optional_Value<_T_ID>
     
     export namespace statements {
     }
     export type statements = _T_Statement_List
-    
-    export namespace subgraph {
-        
-        export namespace O {
-            
-            export namespace O {
-            }
-            export type O = _T_ID
-        }
-        export type O = _pt.Optional_Value<_T_ID>
-    }
-    export type subgraph = _pt.Optional_Value<_pt.Optional_Value<_T_ID>>
 }

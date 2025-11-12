@@ -12,19 +12,19 @@ export type _T_Identifier = (
     },
 ) => _i_out._T_Identifier
 
-export type _T_Node = (
-    $$_: string,
-    $$_p: {
-        readonly 'value deserializers': _i_vd._T_Value_Deserializers
-    },
-) => _i_out._T_Node
-
 export type _T_Path = (
     $$_: string,
     $$_p: {
         readonly 'value deserializers': _i_vd._T_Value_Deserializers
     },
 ) => _i_out._T_Path
+
+export type _T_Node = (
+    $$_: string,
+    $$_p: {
+        readonly 'value deserializers': _i_vd._T_Value_Deserializers
+    },
+) => _i_out._T_Node
 
 export type _T_Root = (
     $$_: string,
@@ -37,9 +37,9 @@ export type _T_Root = (
 
 export type Identifier = _T_Identifier
 
-export type Node = _T_Node
-
 export type Path = _T_Path
+
+export type Node = _T_Node
 
 export type Root = _T_Root
 
@@ -60,21 +60,6 @@ export namespace _T_Identifier {
     export type RESULT = _i_out._T_Identifier
 }
 
-export namespace _T_Node {
-    export type CONTEXT = string
-    
-    export namespace PARAMS {
-        
-        export namespace value_deserializers {
-        }
-        export type value_deserializers = _i_vd._T_Value_Deserializers
-    }
-    
-    export namespace RESULT {
-    }
-    export type RESULT = _i_out._T_Node
-}
-
 export namespace _T_Path {
     export type CONTEXT = string
     
@@ -88,6 +73,21 @@ export namespace _T_Path {
     export namespace RESULT {
     }
     export type RESULT = _i_out._T_Path
+}
+
+export namespace _T_Node {
+    export type CONTEXT = string
+    
+    export namespace PARAMS {
+        
+        export namespace value_deserializers {
+        }
+        export type value_deserializers = _i_vd._T_Value_Deserializers
+    }
+    
+    export namespace RESULT {
+    }
+    export type RESULT = _i_out._T_Node
 }
 
 export namespace _T_Root {
@@ -122,21 +122,6 @@ export namespace Identifier {
     export type RESULT = _i_out._T_Identifier
 }
 
-export namespace Node {
-    export type CONTEXT = string
-    
-    export namespace PARAMS {
-        
-        export namespace value_deserializers {
-        }
-        export type value_deserializers = _i_vd._T_Value_Deserializers
-    }
-    
-    export namespace RESULT {
-    }
-    export type RESULT = _i_out._T_Node
-}
-
 export namespace Path {
     export type CONTEXT = string
     
@@ -150,6 +135,21 @@ export namespace Path {
     export namespace RESULT {
     }
     export type RESULT = _i_out._T_Path
+}
+
+export namespace Node {
+    export type CONTEXT = string
+    
+    export namespace PARAMS {
+        
+        export namespace value_deserializers {
+        }
+        export type value_deserializers = _i_vd._T_Value_Deserializers
+    }
+    
+    export namespace RESULT {
+    }
+    export type RESULT = _i_out._T_Node
 }
 
 export namespace Root {

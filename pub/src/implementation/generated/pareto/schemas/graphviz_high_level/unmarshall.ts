@@ -2,511 +2,11 @@ import * as _pa from 'exupery-core-alg'
 import * as _pd from 'exupery-core-dev'
 
 import * as _i_generic from "../../generic/unmarshall"
+import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/graphviz_high_level/unmarshall"
 import * as _i_in from "../../../../../interface/generated/pareto/core/astn_source"
 import * as _i_out from "../../../../../interface/generated/pareto/schemas/graphviz_high_level/data_types/target"
-import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/graphviz_high_level/unmarshall"
 
 
-export const Attribute_Value: _i_signatures._T_Attribute_Value = ($, $p) => _i_generic.process_unconstrained_state_group(
-    $,
-    {
-        'states': _pa.dictionary_literal({
-            'html string': ($): _i_out._T_Attribute_Value.SG => ['html string', _i_generic.process_text(
-                $,
-                null
-            )],
-            'number': ($): _i_out._T_Attribute_Value.SG => ['number', _i_generic.process_text(
-                $,
-                null
-            )],
-            'string': ($): _i_out._T_Attribute_Value.SG => ['string', _i_generic.process_text(
-                $,
-                null
-            )],
-        }),
-    }
-)
-export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($, $p) => _i_generic.process_unconstrained_list(
-    $,
-    {
-        'value': ($) => _i_generic.process_unconstrained_state_group(
-            $,
-            {
-                'states': _pa.dictionary_literal({
-                    'arrowhead': ($): _i_out._T_Edge_Attributes.L.SG => ['arrowhead', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'arrowsize': ($): _i_out._T_Edge_Attributes.L.SG => ['arrowsize', _i_generic.process_number(
-                        $,
-                        {
-                            'deserializer': $p['value deserializers']['default number'],
-                        }
-                    )],
-                    'arrowtail': ($): _i_out._T_Edge_Attributes.L.SG => ['arrowtail', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'bgcolor': ($): _i_out._T_Edge_Attributes.L.SG => ['bgcolor', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'color': ($): _i_out._T_Edge_Attributes.L.SG => ['color', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'colorscheme': ($): _i_out._T_Edge_Attributes.L.SG => ['colorscheme', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'comment': ($): _i_out._T_Edge_Attributes.L.SG => ['comment', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'constraint': ($): _i_out._T_Edge_Attributes.L.SG => ['constraint', _i_generic.process_boolean(
-                        $,
-                        {
-                            'deserializer': $p['value deserializers']['boolean'],
-                        }
-                    )],
-                    'decorate': ($): _i_out._T_Edge_Attributes.L.SG => ['decorate', _i_generic.process_boolean(
-                        $,
-                        {
-                            'deserializer': $p['value deserializers']['boolean'],
-                        }
-                    )],
-                    'dir': ($): _i_out._T_Edge_Attributes.L.SG => ['dir', _i_generic.process_unconstrained_state_group(
-                        $,
-                        {
-                            'states': _pa.dictionary_literal({
-                                'back': ($): _i_out._T_Edge_Attributes.L.SG.dir.SG => ['back', _i_generic.process_nothing(
-                                    $,
-                                    null
-                                )],
-                                'both': ($): _i_out._T_Edge_Attributes.L.SG.dir.SG => ['both', _i_generic.process_nothing(
-                                    $,
-                                    null
-                                )],
-                                'forward': ($): _i_out._T_Edge_Attributes.L.SG.dir.SG => ['forward', _i_generic.process_nothing(
-                                    $,
-                                    null
-                                )],
-                                'none': ($): _i_out._T_Edge_Attributes.L.SG.dir.SG => ['none', _i_generic.process_nothing(
-                                    $,
-                                    null
-                                )],
-                            }),
-                        }
-                    )],
-                    'edge lp': ($): _i_out._T_Edge_Attributes.L.SG => ['edge lp', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'edge target': ($): _i_out._T_Edge_Attributes.L.SG => ['edge target', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'edge tooltip': ($): _i_out._T_Edge_Attributes.L.SG => ['edge tooltip', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'edge url': ($): _i_out._T_Edge_Attributes.L.SG => ['edge url', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'head lp': ($): _i_out._T_Edge_Attributes.L.SG => ['head lp', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'headclip': ($): _i_out._T_Edge_Attributes.L.SG => ['headclip', _i_generic.process_boolean(
-                        $,
-                        {
-                            'deserializer': $p['value deserializers']['boolean'],
-                        }
-                    )],
-                    'headlabel': ($): _i_out._T_Edge_Attributes.L.SG => ['headlabel', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'headport': ($): _i_out._T_Edge_Attributes.L.SG => ['headport', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'height': ($): _i_out._T_Edge_Attributes.L.SG => ['height', _i_generic.process_number(
-                        $,
-                        {
-                            'deserializer': $p['value deserializers']['default number'],
-                        }
-                    )],
-                    'id': ($): _i_out._T_Edge_Attributes.L.SG => ['id', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'label': ($): _i_out._T_Edge_Attributes.L.SG => ['label', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'label angle': ($): _i_out._T_Edge_Attributes.L.SG => ['label angle', _i_generic.process_number(
-                        $,
-                        {
-                            'deserializer': $p['value deserializers']['default number'],
-                        }
-                    )],
-                    'label distance': ($): _i_out._T_Edge_Attributes.L.SG => ['label distance', _i_generic.process_number(
-                        $,
-                        {
-                            'deserializer': $p['value deserializers']['default number'],
-                        }
-                    )],
-                    'label float': ($): _i_out._T_Edge_Attributes.L.SG => ['label float', _i_generic.process_boolean(
-                        $,
-                        {
-                            'deserializer': $p['value deserializers']['boolean'],
-                        }
-                    )],
-                    'label lp': ($): _i_out._T_Edge_Attributes.L.SG => ['label lp', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'labelfloat': ($): _i_out._T_Edge_Attributes.L.SG => ['labelfloat', _i_generic.process_boolean(
-                        $,
-                        {
-                            'deserializer': $p['value deserializers']['boolean'],
-                        }
-                    )],
-                    'labelhref': ($): _i_out._T_Edge_Attributes.L.SG => ['labelhref', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'layer': ($): _i_out._T_Edge_Attributes.L.SG => ['layer', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'len': ($): _i_out._T_Edge_Attributes.L.SG => ['len', _i_generic.process_number(
-                        $,
-                        {
-                            'deserializer': $p['value deserializers']['default number'],
-                        }
-                    )],
-                    'lhead': ($): _i_out._T_Edge_Attributes.L.SG => ['lhead', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'lp': ($): _i_out._T_Edge_Attributes.L.SG => ['lp', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'ltail': ($): _i_out._T_Edge_Attributes.L.SG => ['ltail', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'minlen': ($): _i_out._T_Edge_Attributes.L.SG => ['minlen', _i_generic.process_number(
-                        $,
-                        {
-                            'deserializer': $p['value deserializers']['default number'],
-                        }
-                    )],
-                    'pen width': ($): _i_out._T_Edge_Attributes.L.SG => ['pen width', _i_generic.process_number(
-                        $,
-                        {
-                            'deserializer': $p['value deserializers']['default number'],
-                        }
-                    )],
-                    'pos': ($): _i_out._T_Edge_Attributes.L.SG => ['pos', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'same head': ($): _i_out._T_Edge_Attributes.L.SG => ['same head', _i_generic.process_boolean(
-                        $,
-                        {
-                            'deserializer': $p['value deserializers']['boolean'],
-                        }
-                    )],
-                    'same tail': ($): _i_out._T_Edge_Attributes.L.SG => ['same tail', _i_generic.process_boolean(
-                        $,
-                        {
-                            'deserializer': $p['value deserializers']['boolean'],
-                        }
-                    )],
-                    'showboxes': ($): _i_out._T_Edge_Attributes.L.SG => ['showboxes', _i_generic.process_boolean(
-                        $,
-                        {
-                            'deserializer': $p['value deserializers']['boolean'],
-                        }
-                    )],
-                    'style': ($): _i_out._T_Edge_Attributes.L.SG => ['style', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'tail lp': ($): _i_out._T_Edge_Attributes.L.SG => ['tail lp', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'tailclip': ($): _i_out._T_Edge_Attributes.L.SG => ['tailclip', _i_generic.process_boolean(
-                        $,
-                        {
-                            'deserializer': $p['value deserializers']['boolean'],
-                        }
-                    )],
-                    'taillabel': ($): _i_out._T_Edge_Attributes.L.SG => ['taillabel', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'tailport': ($): _i_out._T_Edge_Attributes.L.SG => ['tailport', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'tooltip': ($): _i_out._T_Edge_Attributes.L.SG => ['tooltip', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'weight': ($): _i_out._T_Edge_Attributes.L.SG => ['weight', _i_generic.process_number(
-                        $,
-                        {
-                            'deserializer': $p['value deserializers']['default number'],
-                        }
-                    )],
-                    'xlabel': ($): _i_out._T_Edge_Attributes.L.SG => ['xlabel', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                    'xlp': ($): _i_out._T_Edge_Attributes.L.SG => ['xlp', _i_generic.process_text(
-                        $,
-                        null
-                    )],
-                }),
-            }
-        ),
-    }
-)
-export const End_Point_Specification: _i_signatures._T_End_Point_Specification = ($, $p) => _i_generic.process_group(
-    $,
-    {
-        'properties': ($) => ({
-            'port data': _pa.cc(_i_generic.get_entry(
-                $,
-                {
-                    'key': "port data",
-                }
-            ), ($) => _i_generic.process_optional(
-                $,
-                {
-                    'value': ($) => _i_generic.process_group(
-                        $,
-                        {
-                            'properties': ($) => ({
-                                'compass direction': _pa.cc(_i_generic.get_entry(
-                                    $,
-                                    {
-                                        'key': "compass direction",
-                                    }
-                                ), ($) => _i_generic.process_optional(
-                                    $,
-                                    {
-                                        'value': ($) => _i_generic.process_text(
-                                            $,
-                                            null
-                                        ),
-                                    }
-                                )),
-                                'port': _pa.cc(_i_generic.get_entry(
-                                    $,
-                                    {
-                                        'key': "port",
-                                    }
-                                ), ($) => _i_generic.process_text(
-                                    $,
-                                    null
-                                )),
-                            }),
-                        }
-                    ),
-                }
-            )),
-            'start': _pa.cc(_i_generic.get_entry(
-                $,
-                {
-                    'key': "start",
-                }
-            ), ($) => _i_generic.process_text(
-                $,
-                null
-            )),
-            'tail': _pa.cc(_i_generic.get_entry(
-                $,
-                {
-                    'key': "tail",
-                }
-            ), ($) => _i_generic.process_unconstrained_list(
-                $,
-                {
-                    'value': ($) => _i_generic.process_text(
-                        $,
-                        null
-                    ),
-                }
-            )),
-        }),
-    }
-)
-export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group(
-    $,
-    {
-        'properties': ($) => ({
-            'name': _pa.cc(_i_generic.get_entry(
-                $,
-                {
-                    'key': "name",
-                }
-            ), ($) => _i_generic.process_optional(
-                $,
-                {
-                    'value': ($) => _i_generic.process_text(
-                        $,
-                        null
-                    ),
-                }
-            )),
-            'tree': _pa.cc(_i_generic.get_entry(
-                $,
-                {
-                    'key': "tree",
-                }
-            ), ($) => Tree(
-                $,
-                {
-                    'value deserializers': $p['value deserializers'],
-                }
-            )),
-            'type': _pa.cc(_i_generic.get_entry(
-                $,
-                {
-                    'key': "type",
-                }
-            ), ($) => _i_generic.process_unconstrained_state_group(
-                $,
-                {
-                    'states': _pa.dictionary_literal({
-                        'directed': ($): _i_out._T_Graph._type.SG => ['directed', _i_generic.process_group(
-                            $,
-                            {
-                                'properties': ($) => ({
-                                    'edges': _pa.cc(_i_generic.get_entry(
-                                        $,
-                                        {
-                                            'key': "edges",
-                                        }
-                                    ), ($) => _i_generic.process_unconstrained_list(
-                                        $,
-                                        {
-                                            'value': ($) => _i_generic.process_group(
-                                                $,
-                                                {
-                                                    'properties': ($) => ({
-                                                        'attributes': _pa.cc(_i_generic.get_entry(
-                                                            $,
-                                                            {
-                                                                'key': "attributes",
-                                                            }
-                                                        ), ($) => Edge_Attributes(
-                                                            $,
-                                                            {
-                                                                'value deserializers': $p['value deserializers'],
-                                                            }
-                                                        )),
-                                                        'from': _pa.cc(_i_generic.get_entry(
-                                                            $,
-                                                            {
-                                                                'key': "from",
-                                                            }
-                                                        ), ($) => End_Point_Specification(
-                                                            $,
-                                                            {
-                                                                'value deserializers': $p['value deserializers'],
-                                                            }
-                                                        )),
-                                                        'to': _pa.cc(_i_generic.get_entry(
-                                                            $,
-                                                            {
-                                                                'key': "to",
-                                                            }
-                                                        ), ($) => End_Point_Specification(
-                                                            $,
-                                                            {
-                                                                'value deserializers': $p['value deserializers'],
-                                                            }
-                                                        )),
-                                                    }),
-                                                }
-                                            ),
-                                        }
-                                    )),
-                                }),
-                            }
-                        )],
-                        'undirected': ($): _i_out._T_Graph._type.SG => ['undirected', _i_generic.process_group(
-                            $,
-                            {
-                                'properties': ($) => ({
-                                    'edges': _pa.cc(_i_generic.get_entry(
-                                        $,
-                                        {
-                                            'key': "edges",
-                                        }
-                                    ), ($) => _i_generic.process_unconstrained_list(
-                                        $,
-                                        {
-                                            'value': ($) => _i_generic.process_group(
-                                                $,
-                                                {
-                                                    'properties': ($) => ({
-                                                        'attributes': _pa.cc(_i_generic.get_entry(
-                                                            $,
-                                                            {
-                                                                'key': "attributes",
-                                                            }
-                                                        ), ($) => Edge_Attributes(
-                                                            $,
-                                                            {
-                                                                'value deserializers': $p['value deserializers'],
-                                                            }
-                                                        )),
-                                                        'yang': _pa.cc(_i_generic.get_entry(
-                                                            $,
-                                                            {
-                                                                'key': "yang",
-                                                            }
-                                                        ), ($) => End_Point_Specification(
-                                                            $,
-                                                            {
-                                                                'value deserializers': $p['value deserializers'],
-                                                            }
-                                                        )),
-                                                        'yin': _pa.cc(_i_generic.get_entry(
-                                                            $,
-                                                            {
-                                                                'key': "yin",
-                                                            }
-                                                        ), ($) => End_Point_Specification(
-                                                            $,
-                                                            {
-                                                                'value deserializers': $p['value deserializers'],
-                                                            }
-                                                        )),
-                                                    }),
-                                                }
-                                            ),
-                                        }
-                                    )),
-                                }),
-                            }
-                        )],
-                    }),
-                }
-            )),
-        }),
-    }
-)
 export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i_generic.process_unconstrained_list(
     $,
     {
@@ -514,6 +14,12 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
             $,
             {
                 'states': _pa.dictionary_literal({
+                    'concentrate': ($): _i_out._T_Graph_Attributes.L.SG => ['concentrate', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
                     'charset': ($): _i_out._T_Graph_Attributes.L.SG => ['charset', _i_generic.process_text(
                         $,
                         null
@@ -522,7 +28,7 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                         $,
                         {
                             'states': _pa.dictionary_literal({
-                                'global': ($): _i_out._T_Graph_Attributes.L.SG.clusterrank.SG => ['global', _i_generic.process_nothing(
+                                'none': ($): _i_out._T_Graph_Attributes.L.SG.clusterrank.SG => ['none', _i_generic.process_nothing(
                                     $,
                                     null
                                 )],
@@ -530,7 +36,7 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                                     $,
                                     null
                                 )],
-                                'none': ($): _i_out._T_Graph_Attributes.L.SG.clusterrank.SG => ['none', _i_generic.process_nothing(
+                                'global': ($): _i_out._T_Graph_Attributes.L.SG.clusterrank.SG => ['global', _i_generic.process_nothing(
                                     $,
                                     null
                                 )],
@@ -550,12 +56,6 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                         null
                     )],
                     'compound': ($): _i_out._T_Graph_Attributes.L.SG => ['compound', _i_generic.process_boolean(
-                        $,
-                        {
-                            'deserializer': $p['value deserializers']['boolean'],
-                        }
-                    )],
-                    'concentrate': ($): _i_out._T_Graph_Attributes.L.SG => ['concentrate', _i_generic.process_boolean(
                         $,
                         {
                             'deserializer': $p['value deserializers']['boolean'],
@@ -595,25 +95,25 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                             'deserializer': $p['value deserializers']['default number'],
                         }
                     )],
-                    'label location': ($): _i_out._T_Graph_Attributes.L.SG => ['label location', _i_generic.process_unconstrained_state_group(
-                        $,
-                        {
-                            'states': _pa.dictionary_literal({
-                                'bottom': ($): _i_out._T_Graph_Attributes.L.SG.label_location.SG => ['bottom', _i_generic.process_nothing(
-                                    $,
-                                    null
-                                )],
-                                'top': ($): _i_out._T_Graph_Attributes.L.SG.label_location.SG => ['top', _i_generic.process_nothing(
-                                    $,
-                                    null
-                                )],
-                            }),
-                        }
-                    )],
                     'label scheme': ($): _i_out._T_Graph_Attributes.L.SG => ['label scheme', _i_generic.process_number(
                         $,
                         {
                             'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'label location': ($): _i_out._T_Graph_Attributes.L.SG => ['label location', _i_generic.process_unconstrained_state_group(
+                        $,
+                        {
+                            'states': _pa.dictionary_literal({
+                                'top': ($): _i_out._T_Graph_Attributes.L.SG.label_location.SG => ['top', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'bottom': ($): _i_out._T_Graph_Attributes.L.SG.label_location.SG => ['bottom', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                            }),
                         }
                     )],
                     'landscape': ($): _i_out._T_Graph_Attributes.L.SG => ['landscape', _i_generic.process_boolean(
@@ -660,19 +160,19 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                         $,
                         {
                             'states': _pa.dictionary_literal({
-                                'in': ($): _i_out._T_Graph_Attributes.L.SG.mode.SG => ['in', _i_generic.process_nothing(
-                                    $,
-                                    null
-                                )],
-                                'in out': ($): _i_out._T_Graph_Attributes.L.SG.mode.SG => ['in out', _i_generic.process_nothing(
-                                    $,
-                                    null
-                                )],
                                 'no output': ($): _i_out._T_Graph_Attributes.L.SG.mode.SG => ['no output', _i_generic.process_nothing(
                                     $,
                                     null
                                 )],
                                 'out': ($): _i_out._T_Graph_Attributes.L.SG.mode.SG => ['out', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'in': ($): _i_out._T_Graph_Attributes.L.SG.mode.SG => ['in', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'in out': ($): _i_out._T_Graph_Attributes.L.SG.mode.SG => ['in out', _i_generic.process_nothing(
                                     $,
                                     null
                                 )],
@@ -701,15 +201,15 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                         $,
                         {
                             'states': _pa.dictionary_literal({
+                                'out': ($): _i_out._T_Graph_Attributes.L.SG.ordering.SG => ['out', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
                                 'in': ($): _i_out._T_Graph_Attributes.L.SG.ordering.SG => ['in', _i_generic.process_nothing(
                                     $,
                                     null
                                 )],
                                 'in out': ($): _i_out._T_Graph_Attributes.L.SG.ordering.SG => ['in out', _i_generic.process_nothing(
-                                    $,
-                                    null
-                                )],
-                                'out': ($): _i_out._T_Graph_Attributes.L.SG.ordering.SG => ['out', _i_generic.process_nothing(
                                     $,
                                     null
                                 )],
@@ -720,21 +220,6 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                         $,
                         {
                             'deserializer': $p['value deserializers']['default number'],
-                        }
-                    )],
-                    'output mode': ($): _i_out._T_Graph_Attributes.L.SG => ['output mode', _i_generic.process_unconstrained_state_group(
-                        $,
-                        {
-                            'states': _pa.dictionary_literal({
-                                'edges first': ($): _i_out._T_Graph_Attributes.L.SG.output_mode.SG => ['edges first', _i_generic.process_nothing(
-                                    $,
-                                    null
-                                )],
-                                'nodes first': ($): _i_out._T_Graph_Attributes.L.SG.output_mode.SG => ['nodes first', _i_generic.process_nothing(
-                                    $,
-                                    null
-                                )],
-                            }),
                         }
                     )],
                     'output order': ($): _i_out._T_Graph_Attributes.L.SG => ['output order', _i_generic.process_unconstrained_state_group(
@@ -756,6 +241,21 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                         $,
                         null
                     )],
+                    'output mode': ($): _i_out._T_Graph_Attributes.L.SG => ['output mode', _i_generic.process_unconstrained_state_group(
+                        $,
+                        {
+                            'states': _pa.dictionary_literal({
+                                'edges first': ($): _i_out._T_Graph_Attributes.L.SG.output_mode.SG => ['edges first', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'nodes first': ($): _i_out._T_Graph_Attributes.L.SG.output_mode.SG => ['nodes first', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                            }),
+                        }
+                    )],
                     'pack': ($): _i_out._T_Graph_Attributes.L.SG => ['pack', _i_generic.process_boolean(
                         $,
                         {
@@ -766,11 +266,11 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                         $,
                         {
                             'states': _pa.dictionary_literal({
-                                'graph': ($): _i_out._T_Graph_Attributes.L.SG.pack_mode.SG => ['graph', _i_generic.process_nothing(
+                                'node': ($): _i_out._T_Graph_Attributes.L.SG.pack_mode.SG => ['node', _i_generic.process_nothing(
                                     $,
                                     null
                                 )],
-                                'node': ($): _i_out._T_Graph_Attributes.L.SG.pack_mode.SG => ['node', _i_generic.process_nothing(
+                                'graph': ($): _i_out._T_Graph_Attributes.L.SG.pack_mode.SG => ['graph', _i_generic.process_nothing(
                                     $,
                                     null
                                 )],
@@ -803,6 +303,10 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                         $,
                         {
                             'states': _pa.dictionary_literal({
+                                'top bottom': ($): _i_out._T_Graph_Attributes.L.SG.rankdir.SG => ['top bottom', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
                                 'bottom top': ($): _i_out._T_Graph_Attributes.L.SG.rankdir.SG => ['bottom top', _i_generic.process_nothing(
                                     $,
                                     null
@@ -812,10 +316,6 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                                     null
                                 )],
                                 'right left': ($): _i_out._T_Graph_Attributes.L.SG.rankdir.SG => ['right left', _i_generic.process_nothing(
-                                    $,
-                                    null
-                                )],
-                                'top bottom': ($): _i_out._T_Graph_Attributes.L.SG.rankdir.SG => ['top bottom', _i_generic.process_nothing(
                                     $,
                                     null
                                 )],
@@ -1019,7 +519,7 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($, $p) => _i_g
                         $,
                         {
                             'states': _pa.dictionary_literal({
-                                'bottom': ($): _i_out._T_Node_Attributes.L.SG.labelloc.SG => ['bottom', _i_generic.process_nothing(
+                                'top': ($): _i_out._T_Node_Attributes.L.SG.labelloc.SG => ['top', _i_generic.process_nothing(
                                     $,
                                     null
                                 )],
@@ -1027,7 +527,7 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($, $p) => _i_g
                                     $,
                                     null
                                 )],
-                                'top': ($): _i_out._T_Node_Attributes.L.SG.labelloc.SG => ['top', _i_generic.process_nothing(
+                                'bottom': ($): _i_out._T_Node_Attributes.L.SG.labelloc.SG => ['bottom', _i_generic.process_nothing(
                                     $,
                                     null
                                 )],
@@ -1188,6 +688,30 @@ export const Tree: _i_signatures._T_Tree = ($, $p) => _i_generic.process_group(
                                     $,
                                     {
                                         'properties': ($) => ({
+                                            'type': _pa.cc(_i_generic.get_entry(
+                                                $,
+                                                {
+                                                    'key': "type",
+                                                }
+                                            ), ($) => _i_generic.process_unconstrained_state_group(
+                                                $,
+                                                {
+                                                    'states': _pa.dictionary_literal({
+                                                        'group': ($): _i_out._T_Tree.elements.D.SG.sub._type.SG => ['group', _i_generic.process_nothing(
+                                                            $,
+                                                            null
+                                                        )],
+                                                        'cluster': ($): _i_out._T_Tree.elements.D.SG.sub._type.SG => ['cluster', _i_generic.process_nothing(
+                                                            $,
+                                                            null
+                                                        )],
+                                                        'subgraph': ($): _i_out._T_Tree.elements.D.SG.sub._type.SG => ['subgraph', _i_generic.process_nothing(
+                                                            $,
+                                                            null
+                                                        )],
+                                                    }),
+                                                }
+                                            )),
                                             'tree': _pa.cc(_i_generic.get_entry(
                                                 $,
                                                 {
@@ -1199,30 +723,6 @@ export const Tree: _i_signatures._T_Tree = ($, $p) => _i_generic.process_group(
                                                     'value deserializers': $p['value deserializers'],
                                                 }
                                             )),
-                                            'type': _pa.cc(_i_generic.get_entry(
-                                                $,
-                                                {
-                                                    'key': "type",
-                                                }
-                                            ), ($) => _i_generic.process_unconstrained_state_group(
-                                                $,
-                                                {
-                                                    'states': _pa.dictionary_literal({
-                                                        'cluster': ($): _i_out._T_Tree.elements.D.SG.sub._type.SG => ['cluster', _i_generic.process_nothing(
-                                                            $,
-                                                            null
-                                                        )],
-                                                        'group': ($): _i_out._T_Tree.elements.D.SG.sub._type.SG => ['group', _i_generic.process_nothing(
-                                                            $,
-                                                            null
-                                                        )],
-                                                        'subgraph': ($): _i_out._T_Tree.elements.D.SG.sub._type.SG => ['subgraph', _i_generic.process_nothing(
-                                                            $,
-                                                            null
-                                                        )],
-                                                    }),
-                                                }
-                                            )),
                                         }),
                                     }
                                 )],
@@ -1231,6 +731,506 @@ export const Tree: _i_signatures._T_Tree = ($, $p) => _i_generic.process_group(
                     ),
                 }
             )),
+        }),
+    }
+)
+export const End_Point_Specification: _i_signatures._T_End_Point_Specification = ($, $p) => _i_generic.process_group(
+    $,
+    {
+        'properties': ($) => ({
+            'start': _pa.cc(_i_generic.get_entry(
+                $,
+                {
+                    'key': "start",
+                }
+            ), ($) => _i_generic.process_text(
+                $,
+                null
+            )),
+            'tail': _pa.cc(_i_generic.get_entry(
+                $,
+                {
+                    'key': "tail",
+                }
+            ), ($) => _i_generic.process_unconstrained_list(
+                $,
+                {
+                    'value': ($) => _i_generic.process_text(
+                        $,
+                        null
+                    ),
+                }
+            )),
+            'port data': _pa.cc(_i_generic.get_entry(
+                $,
+                {
+                    'key': "port data",
+                }
+            ), ($) => _i_generic.process_optional(
+                $,
+                {
+                    'value': ($) => _i_generic.process_group(
+                        $,
+                        {
+                            'properties': ($) => ({
+                                'port': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "port",
+                                    }
+                                ), ($) => _i_generic.process_text(
+                                    $,
+                                    null
+                                )),
+                                'compass direction': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "compass direction",
+                                    }
+                                ), ($) => _i_generic.process_optional(
+                                    $,
+                                    {
+                                        'value': ($) => _i_generic.process_text(
+                                            $,
+                                            null
+                                        ),
+                                    }
+                                )),
+                            }),
+                        }
+                    ),
+                }
+            )),
+        }),
+    }
+)
+export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($, $p) => _i_generic.process_unconstrained_list(
+    $,
+    {
+        'value': ($) => _i_generic.process_unconstrained_state_group(
+            $,
+            {
+                'states': _pa.dictionary_literal({
+                    'arrowhead': ($): _i_out._T_Edge_Attributes.L.SG => ['arrowhead', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'arrowsize': ($): _i_out._T_Edge_Attributes.L.SG => ['arrowsize', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'arrowtail': ($): _i_out._T_Edge_Attributes.L.SG => ['arrowtail', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'bgcolor': ($): _i_out._T_Edge_Attributes.L.SG => ['bgcolor', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'color': ($): _i_out._T_Edge_Attributes.L.SG => ['color', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'colorscheme': ($): _i_out._T_Edge_Attributes.L.SG => ['colorscheme', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'comment': ($): _i_out._T_Edge_Attributes.L.SG => ['comment', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'constraint': ($): _i_out._T_Edge_Attributes.L.SG => ['constraint', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'decorate': ($): _i_out._T_Edge_Attributes.L.SG => ['decorate', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'dir': ($): _i_out._T_Edge_Attributes.L.SG => ['dir', _i_generic.process_unconstrained_state_group(
+                        $,
+                        {
+                            'states': _pa.dictionary_literal({
+                                'forward': ($): _i_out._T_Edge_Attributes.L.SG.dir.SG => ['forward', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'back': ($): _i_out._T_Edge_Attributes.L.SG.dir.SG => ['back', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'both': ($): _i_out._T_Edge_Attributes.L.SG.dir.SG => ['both', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                                'none': ($): _i_out._T_Edge_Attributes.L.SG.dir.SG => ['none', _i_generic.process_nothing(
+                                    $,
+                                    null
+                                )],
+                            }),
+                        }
+                    )],
+                    'edge url': ($): _i_out._T_Edge_Attributes.L.SG => ['edge url', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'edge lp': ($): _i_out._T_Edge_Attributes.L.SG => ['edge lp', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'edge target': ($): _i_out._T_Edge_Attributes.L.SG => ['edge target', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'edge tooltip': ($): _i_out._T_Edge_Attributes.L.SG => ['edge tooltip', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'head lp': ($): _i_out._T_Edge_Attributes.L.SG => ['head lp', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'headclip': ($): _i_out._T_Edge_Attributes.L.SG => ['headclip', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'headlabel': ($): _i_out._T_Edge_Attributes.L.SG => ['headlabel', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'headport': ($): _i_out._T_Edge_Attributes.L.SG => ['headport', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'height': ($): _i_out._T_Edge_Attributes.L.SG => ['height', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'id': ($): _i_out._T_Edge_Attributes.L.SG => ['id', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'label': ($): _i_out._T_Edge_Attributes.L.SG => ['label', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'label distance': ($): _i_out._T_Edge_Attributes.L.SG => ['label distance', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'label angle': ($): _i_out._T_Edge_Attributes.L.SG => ['label angle', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'label float': ($): _i_out._T_Edge_Attributes.L.SG => ['label float', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'labelfloat': ($): _i_out._T_Edge_Attributes.L.SG => ['labelfloat', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'labelhref': ($): _i_out._T_Edge_Attributes.L.SG => ['labelhref', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'label lp': ($): _i_out._T_Edge_Attributes.L.SG => ['label lp', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'layer': ($): _i_out._T_Edge_Attributes.L.SG => ['layer', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'len': ($): _i_out._T_Edge_Attributes.L.SG => ['len', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'lhead': ($): _i_out._T_Edge_Attributes.L.SG => ['lhead', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'lp': ($): _i_out._T_Edge_Attributes.L.SG => ['lp', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'ltail': ($): _i_out._T_Edge_Attributes.L.SG => ['ltail', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'minlen': ($): _i_out._T_Edge_Attributes.L.SG => ['minlen', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'pen width': ($): _i_out._T_Edge_Attributes.L.SG => ['pen width', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'pos': ($): _i_out._T_Edge_Attributes.L.SG => ['pos', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'same head': ($): _i_out._T_Edge_Attributes.L.SG => ['same head', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'same tail': ($): _i_out._T_Edge_Attributes.L.SG => ['same tail', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'showboxes': ($): _i_out._T_Edge_Attributes.L.SG => ['showboxes', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'style': ($): _i_out._T_Edge_Attributes.L.SG => ['style', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'tail lp': ($): _i_out._T_Edge_Attributes.L.SG => ['tail lp', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'tailclip': ($): _i_out._T_Edge_Attributes.L.SG => ['tailclip', _i_generic.process_boolean(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['boolean'],
+                        }
+                    )],
+                    'taillabel': ($): _i_out._T_Edge_Attributes.L.SG => ['taillabel', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'tailport': ($): _i_out._T_Edge_Attributes.L.SG => ['tailport', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'tooltip': ($): _i_out._T_Edge_Attributes.L.SG => ['tooltip', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'weight': ($): _i_out._T_Edge_Attributes.L.SG => ['weight', _i_generic.process_number(
+                        $,
+                        {
+                            'deserializer': $p['value deserializers']['default number'],
+                        }
+                    )],
+                    'xlabel': ($): _i_out._T_Edge_Attributes.L.SG => ['xlabel', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                    'xlp': ($): _i_out._T_Edge_Attributes.L.SG => ['xlp', _i_generic.process_text(
+                        $,
+                        null
+                    )],
+                }),
+            }
+        ),
+    }
+)
+export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group(
+    $,
+    {
+        'properties': ($) => ({
+            'name': _pa.cc(_i_generic.get_entry(
+                $,
+                {
+                    'key': "name",
+                }
+            ), ($) => _i_generic.process_optional(
+                $,
+                {
+                    'value': ($) => _i_generic.process_text(
+                        $,
+                        null
+                    ),
+                }
+            )),
+            'tree': _pa.cc(_i_generic.get_entry(
+                $,
+                {
+                    'key': "tree",
+                }
+            ), ($) => Tree(
+                $,
+                {
+                    'value deserializers': $p['value deserializers'],
+                }
+            )),
+            'type': _pa.cc(_i_generic.get_entry(
+                $,
+                {
+                    'key': "type",
+                }
+            ), ($) => _i_generic.process_unconstrained_state_group(
+                $,
+                {
+                    'states': _pa.dictionary_literal({
+                        'undirected': ($): _i_out._T_Graph._type.SG => ['undirected', _i_generic.process_group(
+                            $,
+                            {
+                                'properties': ($) => ({
+                                    'edges': _pa.cc(_i_generic.get_entry(
+                                        $,
+                                        {
+                                            'key': "edges",
+                                        }
+                                    ), ($) => _i_generic.process_unconstrained_list(
+                                        $,
+                                        {
+                                            'value': ($) => _i_generic.process_group(
+                                                $,
+                                                {
+                                                    'properties': ($) => ({
+                                                        'yin': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "yin",
+                                                            }
+                                                        ), ($) => End_Point_Specification(
+                                                            $,
+                                                            {
+                                                                'value deserializers': $p['value deserializers'],
+                                                            }
+                                                        )),
+                                                        'yang': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "yang",
+                                                            }
+                                                        ), ($) => End_Point_Specification(
+                                                            $,
+                                                            {
+                                                                'value deserializers': $p['value deserializers'],
+                                                            }
+                                                        )),
+                                                        'attributes': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "attributes",
+                                                            }
+                                                        ), ($) => Edge_Attributes(
+                                                            $,
+                                                            {
+                                                                'value deserializers': $p['value deserializers'],
+                                                            }
+                                                        )),
+                                                    }),
+                                                }
+                                            ),
+                                        }
+                                    )),
+                                }),
+                            }
+                        )],
+                        'directed': ($): _i_out._T_Graph._type.SG => ['directed', _i_generic.process_group(
+                            $,
+                            {
+                                'properties': ($) => ({
+                                    'edges': _pa.cc(_i_generic.get_entry(
+                                        $,
+                                        {
+                                            'key': "edges",
+                                        }
+                                    ), ($) => _i_generic.process_unconstrained_list(
+                                        $,
+                                        {
+                                            'value': ($) => _i_generic.process_group(
+                                                $,
+                                                {
+                                                    'properties': ($) => ({
+                                                        'from': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "from",
+                                                            }
+                                                        ), ($) => End_Point_Specification(
+                                                            $,
+                                                            {
+                                                                'value deserializers': $p['value deserializers'],
+                                                            }
+                                                        )),
+                                                        'to': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "to",
+                                                            }
+                                                        ), ($) => End_Point_Specification(
+                                                            $,
+                                                            {
+                                                                'value deserializers': $p['value deserializers'],
+                                                            }
+                                                        )),
+                                                        'attributes': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "attributes",
+                                                            }
+                                                        ), ($) => Edge_Attributes(
+                                                            $,
+                                                            {
+                                                                'value deserializers': $p['value deserializers'],
+                                                            }
+                                                        )),
+                                                    }),
+                                                }
+                                            ),
+                                        }
+                                    )),
+                                }),
+                            }
+                        )],
+                    }),
+                }
+            )),
+        }),
+    }
+)
+export const Attribute_Value: _i_signatures._T_Attribute_Value = ($, $p) => _i_generic.process_unconstrained_state_group(
+    $,
+    {
+        'states': _pa.dictionary_literal({
+            'number': ($): _i_out._T_Attribute_Value.SG => ['number', _i_generic.process_text(
+                $,
+                null
+            )],
+            'string': ($): _i_out._T_Attribute_Value.SG => ['string', _i_generic.process_text(
+                $,
+                null
+            )],
+            'html string': ($): _i_out._T_Attribute_Value.SG => ['html string', _i_generic.process_text(
+                $,
+                null
+            )],
         }),
     }
 )

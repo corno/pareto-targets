@@ -2,211 +2,35 @@ import * as _pa from 'exupery-core-alg'
 import * as _pd from 'exupery-core-dev'
 
 import * as _i_generic from "../../generic/unmarshall"
+import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/alan_light/unmarshall"
 import * as _i_in from "../../../../../interface/generated/pareto/core/astn_source"
 import * as _i_out from "../../../../../interface/generated/pareto/schemas/alan_light/data_types/target"
-import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/alan_light/unmarshall"
 
 
 export const Identifier: _i_signatures._T_Identifier = ($, $p) => _i_generic.process_text(
     $,
     null
 )
-export const Node: _i_signatures._T_Node = ($, $p) => _i_generic.process_group(
+export const Path: _i_signatures._T_Path = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
-            'properties': _pa.cc(_i_generic.get_entry(
+            'up steps': _pa.cc(_i_generic.get_entry(
                 $,
                 {
-                    'key': "properties",
+                    'key': "up steps",
                 }
-            ), ($) => _i_generic.process_unconstrained_dictionary(
+            ), ($) => _i_generic.process_unconstrained_list(
                 $,
                 {
                     'value': ($) => _i_generic.process_group(
                         $,
                         {
-                            'properties': ($) => ({
-                                'type': _pa.cc(_i_generic.get_entry(
-                                    $,
-                                    {
-                                        'key': "type",
-                                    }
-                                ), ($) => _i_generic.process_unconstrained_state_group(
-                                    $,
-                                    {
-                                        'states': _pa.dictionary_literal({
-                                            'collection': ($): _i_out._T_Node.properties.D._type.SG => ['collection', _i_generic.process_group(
-                                                $,
-                                                {
-                                                    'properties': ($) => ({
-                                                        'key': _pa.cc(_i_generic.get_entry(
-                                                            $,
-                                                            {
-                                                                'key': "key",
-                                                            }
-                                                        ), ($) => Identifier(
-                                                            $,
-                                                            {
-                                                                'value deserializers': $p['value deserializers'],
-                                                            }
-                                                        )),
-                                                        'node': _pa.cc(_i_generic.get_entry(
-                                                            $,
-                                                            {
-                                                                'key': "node",
-                                                            }
-                                                        ), ($) => Node(
-                                                            $,
-                                                            {
-                                                                'value deserializers': $p['value deserializers'],
-                                                            }
-                                                        )),
-                                                    }),
-                                                }
-                                            )],
-                                            'group': ($): _i_out._T_Node.properties.D._type.SG => ['group', _i_generic.process_group(
-                                                $,
-                                                {
-                                                    'properties': ($) => ({
-                                                        'node': _pa.cc(_i_generic.get_entry(
-                                                            $,
-                                                            {
-                                                                'key': "node",
-                                                            }
-                                                        ), ($) => Node(
-                                                            $,
-                                                            {
-                                                                'value deserializers': $p['value deserializers'],
-                                                            }
-                                                        )),
-                                                    }),
-                                                }
-                                            )],
-                                            'state group': ($): _i_out._T_Node.properties.D._type.SG => ['state group', _i_generic.process_group(
-                                                $,
-                                                {
-                                                    'properties': ($) => ({
-                                                        'states': _pa.cc(_i_generic.get_entry(
-                                                            $,
-                                                            {
-                                                                'key': "states",
-                                                            }
-                                                        ), ($) => _i_generic.process_unconstrained_dictionary(
-                                                            $,
-                                                            {
-                                                                'value': ($) => _i_generic.process_group(
-                                                                    $,
-                                                                    {
-                                                                        'properties': ($) => ({
-                                                                            'constraints': _pa.cc(_i_generic.get_entry(
-                                                                                $,
-                                                                                {
-                                                                                    'key': "constraints",
-                                                                                }
-                                                                            ), ($) => _i_generic.process_unconstrained_dictionary(
-                                                                                $,
-                                                                                {
-                                                                                    'value': ($) => _i_generic.process_group(
-                                                                                        $,
-                                                                                        {
-                                                                                            'properties': ($) => ({
-                                                                                                'path': _pa.cc(_i_generic.get_entry(
-                                                                                                    $,
-                                                                                                    {
-                                                                                                        'key': "path",
-                                                                                                    }
-                                                                                                ), ($) => Path(
-                                                                                                    $,
-                                                                                                    {
-                                                                                                        'value deserializers': $p['value deserializers'],
-                                                                                                    }
-                                                                                                )),
-                                                                                            }),
-                                                                                        }
-                                                                                    ),
-                                                                                }
-                                                                            )),
-                                                                            'node': _pa.cc(_i_generic.get_entry(
-                                                                                $,
-                                                                                {
-                                                                                    'key': "node",
-                                                                                }
-                                                                            ), ($) => Node(
-                                                                                $,
-                                                                                {
-                                                                                    'value deserializers': $p['value deserializers'],
-                                                                                }
-                                                                            )),
-                                                                        }),
-                                                                    }
-                                                                ),
-                                                            }
-                                                        )),
-                                                    }),
-                                                }
-                                            )],
-                                            'text': ($): _i_out._T_Node.properties.D._type.SG => ['text', _i_generic.process_group(
-                                                $,
-                                                {
-                                                    'properties': ($) => ({
-                                                        'constraint': _pa.cc(_i_generic.get_entry(
-                                                            $,
-                                                            {
-                                                                'key': "constraint",
-                                                            }
-                                                        ), ($) => _i_generic.process_optional(
-                                                            $,
-                                                            {
-                                                                'value': ($) => _i_generic.process_group(
-                                                                    $,
-                                                                    {
-                                                                        'properties': ($) => ({
-                                                                            'dictionary': _pa.cc(_i_generic.get_entry(
-                                                                                $,
-                                                                                {
-                                                                                    'key': "dictionary",
-                                                                                }
-                                                                            ), ($) => Identifier(
-                                                                                $,
-                                                                                {
-                                                                                    'value deserializers': $p['value deserializers'],
-                                                                                }
-                                                                            )),
-                                                                            'path': _pa.cc(_i_generic.get_entry(
-                                                                                $,
-                                                                                {
-                                                                                    'key': "path",
-                                                                                }
-                                                                            ), ($) => Path(
-                                                                                $,
-                                                                                {
-                                                                                    'value deserializers': $p['value deserializers'],
-                                                                                }
-                                                                            )),
-                                                                        }),
-                                                                    }
-                                                                ),
-                                                            }
-                                                        )),
-                                                    }),
-                                                }
-                                            )],
-                                        }),
-                                    }
-                                )),
-                            }),
+                            'properties': ($) => null,
                         }
                     ),
                 }
             )),
-        }),
-    }
-)
-export const Path: _i_signatures._T_Path = ($, $p) => _i_generic.process_group(
-    $,
-    {
-        'properties': ($) => ({
             'context': _pa.cc(_i_generic.get_entry(
                 $,
                 {
@@ -288,10 +112,10 @@ export const Path: _i_signatures._T_Path = ($, $p) => _i_generic.process_group(
                                         }),
                                     }
                                 )),
-                                'reference': _pa.cc(_i_generic.get_entry(
+                                'state constraint': _pa.cc(_i_generic.get_entry(
                                     $,
                                     {
-                                        'key': "reference",
+                                        'key': "state constraint",
                                     }
                                 ), ($) => _i_generic.process_group(
                                     $,
@@ -311,10 +135,10 @@ export const Path: _i_signatures._T_Path = ($, $p) => _i_generic.process_group(
                                         }),
                                     }
                                 )),
-                                'state constraint': _pa.cc(_i_generic.get_entry(
+                                'reference': _pa.cc(_i_generic.get_entry(
                                     $,
                                     {
-                                        'key': "state constraint",
+                                        'key': "reference",
                                     }
                                 ), ($) => _i_generic.process_group(
                                     $,
@@ -339,18 +163,194 @@ export const Path: _i_signatures._T_Path = ($, $p) => _i_generic.process_group(
                     ),
                 }
             )),
-            'up steps': _pa.cc(_i_generic.get_entry(
+        }),
+    }
+)
+export const Node: _i_signatures._T_Node = ($, $p) => _i_generic.process_group(
+    $,
+    {
+        'properties': ($) => ({
+            'properties': _pa.cc(_i_generic.get_entry(
                 $,
                 {
-                    'key': "up steps",
+                    'key': "properties",
                 }
-            ), ($) => _i_generic.process_unconstrained_list(
+            ), ($) => _i_generic.process_unconstrained_dictionary(
                 $,
                 {
                     'value': ($) => _i_generic.process_group(
                         $,
                         {
-                            'properties': ($) => null,
+                            'properties': ($) => ({
+                                'type': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "type",
+                                    }
+                                ), ($) => _i_generic.process_unconstrained_state_group(
+                                    $,
+                                    {
+                                        'states': _pa.dictionary_literal({
+                                            'collection': ($): _i_out._T_Node.properties.D._type.SG => ['collection', _i_generic.process_group(
+                                                $,
+                                                {
+                                                    'properties': ($) => ({
+                                                        'node': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "node",
+                                                            }
+                                                        ), ($) => Node(
+                                                            $,
+                                                            {
+                                                                'value deserializers': $p['value deserializers'],
+                                                            }
+                                                        )),
+                                                        'key': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "key",
+                                                            }
+                                                        ), ($) => Identifier(
+                                                            $,
+                                                            {
+                                                                'value deserializers': $p['value deserializers'],
+                                                            }
+                                                        )),
+                                                    }),
+                                                }
+                                            )],
+                                            'group': ($): _i_out._T_Node.properties.D._type.SG => ['group', _i_generic.process_group(
+                                                $,
+                                                {
+                                                    'properties': ($) => ({
+                                                        'node': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "node",
+                                                            }
+                                                        ), ($) => Node(
+                                                            $,
+                                                            {
+                                                                'value deserializers': $p['value deserializers'],
+                                                            }
+                                                        )),
+                                                    }),
+                                                }
+                                            )],
+                                            'text': ($): _i_out._T_Node.properties.D._type.SG => ['text', _i_generic.process_group(
+                                                $,
+                                                {
+                                                    'properties': ($) => ({
+                                                        'constraint': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "constraint",
+                                                            }
+                                                        ), ($) => _i_generic.process_optional(
+                                                            $,
+                                                            {
+                                                                'value': ($) => _i_generic.process_group(
+                                                                    $,
+                                                                    {
+                                                                        'properties': ($) => ({
+                                                                            'path': _pa.cc(_i_generic.get_entry(
+                                                                                $,
+                                                                                {
+                                                                                    'key': "path",
+                                                                                }
+                                                                            ), ($) => Path(
+                                                                                $,
+                                                                                {
+                                                                                    'value deserializers': $p['value deserializers'],
+                                                                                }
+                                                                            )),
+                                                                            'dictionary': _pa.cc(_i_generic.get_entry(
+                                                                                $,
+                                                                                {
+                                                                                    'key': "dictionary",
+                                                                                }
+                                                                            ), ($) => Identifier(
+                                                                                $,
+                                                                                {
+                                                                                    'value deserializers': $p['value deserializers'],
+                                                                                }
+                                                                            )),
+                                                                        }),
+                                                                    }
+                                                                ),
+                                                            }
+                                                        )),
+                                                    }),
+                                                }
+                                            )],
+                                            'state group': ($): _i_out._T_Node.properties.D._type.SG => ['state group', _i_generic.process_group(
+                                                $,
+                                                {
+                                                    'properties': ($) => ({
+                                                        'states': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "states",
+                                                            }
+                                                        ), ($) => _i_generic.process_unconstrained_dictionary(
+                                                            $,
+                                                            {
+                                                                'value': ($) => _i_generic.process_group(
+                                                                    $,
+                                                                    {
+                                                                        'properties': ($) => ({
+                                                                            'constraints': _pa.cc(_i_generic.get_entry(
+                                                                                $,
+                                                                                {
+                                                                                    'key': "constraints",
+                                                                                }
+                                                                            ), ($) => _i_generic.process_unconstrained_dictionary(
+                                                                                $,
+                                                                                {
+                                                                                    'value': ($) => _i_generic.process_group(
+                                                                                        $,
+                                                                                        {
+                                                                                            'properties': ($) => ({
+                                                                                                'path': _pa.cc(_i_generic.get_entry(
+                                                                                                    $,
+                                                                                                    {
+                                                                                                        'key': "path",
+                                                                                                    }
+                                                                                                ), ($) => Path(
+                                                                                                    $,
+                                                                                                    {
+                                                                                                        'value deserializers': $p['value deserializers'],
+                                                                                                    }
+                                                                                                )),
+                                                                                            }),
+                                                                                        }
+                                                                                    ),
+                                                                                }
+                                                                            )),
+                                                                            'node': _pa.cc(_i_generic.get_entry(
+                                                                                $,
+                                                                                {
+                                                                                    'key': "node",
+                                                                                }
+                                                                            ), ($) => Node(
+                                                                                $,
+                                                                                {
+                                                                                    'value deserializers': $p['value deserializers'],
+                                                                                }
+                                                                            )),
+                                                                        }),
+                                                                    }
+                                                                ),
+                                                            }
+                                                        )),
+                                                    }),
+                                                }
+                                            )],
+                                        }),
+                                    }
+                                )),
+                            }),
                         }
                     ),
                 }

@@ -6,35 +6,8 @@ import * as _i_core from "../../../core/unconstrained"
 
 export type _T_Identifier = string
 
-export type _T_Node = {
-    readonly 'properties': _i_core._T_Dictionary<null, {
-        readonly 'type': _i_core._T_State_Group<null, 
-            | readonly ['collection', {
-                readonly 'key': _T_Identifier
-                readonly 'node': _T_Node
-            }]
-            | readonly ['group', {
-                readonly 'node': _T_Node
-            }]
-            | readonly ['state group', {
-                readonly 'states': _i_core._T_Dictionary<null, {
-                    readonly 'constraints': _i_core._T_Dictionary<null, {
-                        readonly 'path': _T_Path
-                    }>
-                    readonly 'node': _T_Node
-                }>
-            }]
-            | readonly ['text', {
-                readonly 'constraint': _pt.Optional_Value<{
-                    readonly 'dictionary': _T_Identifier
-                    readonly 'path': _T_Path
-                }>
-            }]
-        >
-    }>
-}
-
 export type _T_Path = {
+    readonly 'up steps': _i_core._T_List<null, null>
     readonly 'context': {
         readonly 'sibling': null
         readonly 'state constraint': {
@@ -45,14 +18,41 @@ export type _T_Path = {
         readonly 'group': {
             readonly 'name': _T_Identifier
         }
-        readonly 'reference': {
-            readonly 'name': _T_Identifier
-        }
         readonly 'state constraint': {
             readonly 'name': _T_Identifier
         }
+        readonly 'reference': {
+            readonly 'name': _T_Identifier
+        }
     }>
-    readonly 'up steps': _i_core._T_List<null, null>
+}
+
+export type _T_Node = {
+    readonly 'properties': _i_core._T_Dictionary<null, {
+        readonly 'type': _i_core._T_State_Group<null, 
+            | readonly ['collection', {
+                readonly 'node': _T_Node
+                readonly 'key': _T_Identifier
+            }]
+            | readonly ['group', {
+                readonly 'node': _T_Node
+            }]
+            | readonly ['text', {
+                readonly 'constraint': _pt.Optional_Value<{
+                    readonly 'path': _T_Path
+                    readonly 'dictionary': _T_Identifier
+                }>
+            }]
+            | readonly ['state group', {
+                readonly 'states': _i_core._T_Dictionary<null, {
+                    readonly 'constraints': _i_core._T_Dictionary<null, {
+                        readonly 'path': _T_Path
+                    }>
+                    readonly 'node': _T_Node
+                }>
+            }]
+        >
+    }>
 }
 
 export type _T_Root = {
@@ -64,13 +64,105 @@ export type _T_Root = {
 
 export type Identifier = _T_Identifier
 
-export type Node = _T_Node
-
 export type Path = _T_Path
+
+export type Node = _T_Node
 
 export type Root = _T_Root
 
 // **** ALIASES FOR NESTED TYPE WITH PREFIXED ROOT NAMES
+
+export namespace _T_Path {
+    
+    export namespace up_steps {
+        
+        export namespace L {
+        }
+        export type L = null
+    }
+    export type up_steps = _i_core._T_List<null, null>
+    
+    export namespace context {
+        
+        export namespace sibling {
+        }
+        export type sibling = null
+        
+        export namespace state_constraint {
+            
+            export namespace name {
+            }
+            export type name = _T_Identifier
+        }
+        export type state_constraint = {
+            readonly 'name': _T_Identifier
+        }
+    }
+    export type context = {
+        readonly 'sibling': null
+        readonly 'state constraint': {
+            readonly 'name': _T_Identifier
+        }
+    }
+    
+    export namespace selection_steps {
+        
+        export namespace L {
+            
+            export namespace group {
+                
+                export namespace name {
+                }
+                export type name = _T_Identifier
+            }
+            export type group = {
+                readonly 'name': _T_Identifier
+            }
+            
+            export namespace state_constraint {
+                
+                export namespace name {
+                }
+                export type name = _T_Identifier
+            }
+            export type state_constraint = {
+                readonly 'name': _T_Identifier
+            }
+            
+            export namespace reference {
+                
+                export namespace name {
+                }
+                export type name = _T_Identifier
+            }
+            export type reference = {
+                readonly 'name': _T_Identifier
+            }
+        }
+        export type L = {
+            readonly 'group': {
+                readonly 'name': _T_Identifier
+            }
+            readonly 'state constraint': {
+                readonly 'name': _T_Identifier
+            }
+            readonly 'reference': {
+                readonly 'name': _T_Identifier
+            }
+        }
+    }
+    export type selection_steps = _i_core._T_List<null, {
+        readonly 'group': {
+            readonly 'name': _T_Identifier
+        }
+        readonly 'state constraint': {
+            readonly 'name': _T_Identifier
+        }
+        readonly 'reference': {
+            readonly 'name': _T_Identifier
+        }
+    }>
+}
 
 export namespace _T_Node {
     
@@ -84,17 +176,17 @@ export namespace _T_Node {
                     
                     export namespace collection {
                         
-                        export namespace key {
-                        }
-                        export type key = _T_Identifier
-                        
                         export namespace node {
                         }
                         export type node = _T_Node
+                        
+                        export namespace key {
+                        }
+                        export type key = _T_Identifier
                     }
                     export type collection = {
-                        readonly 'key': _T_Identifier
                         readonly 'node': _T_Node
+                        readonly 'key': _T_Identifier
                     }
                     
                     export namespace group {
@@ -105,6 +197,37 @@ export namespace _T_Node {
                     }
                     export type group = {
                         readonly 'node': _T_Node
+                    }
+                    
+                    export namespace text {
+                        
+                        export namespace constraint {
+                            
+                            export namespace O {
+                                
+                                export namespace path {
+                                }
+                                export type path = _T_Path
+                                
+                                export namespace dictionary {
+                                }
+                                export type dictionary = _T_Identifier
+                            }
+                            export type O = {
+                                readonly 'path': _T_Path
+                                readonly 'dictionary': _T_Identifier
+                            }
+                        }
+                        export type constraint = _pt.Optional_Value<{
+                            readonly 'path': _T_Path
+                            readonly 'dictionary': _T_Identifier
+                        }>
+                    }
+                    export type text = {
+                        readonly 'constraint': _pt.Optional_Value<{
+                            readonly 'path': _T_Path
+                            readonly 'dictionary': _T_Identifier
+                        }>
                     }
                     
                     export namespace state_group {
@@ -155,45 +278,20 @@ export namespace _T_Node {
                             readonly 'node': _T_Node
                         }>
                     }
-                    
-                    export namespace text {
-                        
-                        export namespace constraint {
-                            
-                            export namespace O {
-                                
-                                export namespace dictionary {
-                                }
-                                export type dictionary = _T_Identifier
-                                
-                                export namespace path {
-                                }
-                                export type path = _T_Path
-                            }
-                            export type O = {
-                                readonly 'dictionary': _T_Identifier
-                                readonly 'path': _T_Path
-                            }
-                        }
-                        export type constraint = _pt.Optional_Value<{
-                            readonly 'dictionary': _T_Identifier
-                            readonly 'path': _T_Path
-                        }>
-                    }
-                    export type text = {
-                        readonly 'constraint': _pt.Optional_Value<{
-                            readonly 'dictionary': _T_Identifier
-                            readonly 'path': _T_Path
-                        }>
-                    }
                 }
                 export type SG = 
                     | readonly ['collection', {
-                        readonly 'key': _T_Identifier
                         readonly 'node': _T_Node
+                        readonly 'key': _T_Identifier
                     }]
                     | readonly ['group', {
                         readonly 'node': _T_Node
+                    }]
+                    | readonly ['text', {
+                        readonly 'constraint': _pt.Optional_Value<{
+                            readonly 'path': _T_Path
+                            readonly 'dictionary': _T_Identifier
+                        }>
                     }]
                     | readonly ['state group', {
                         readonly 'states': _i_core._T_Dictionary<null, {
@@ -203,20 +301,20 @@ export namespace _T_Node {
                             readonly 'node': _T_Node
                         }>
                     }]
-                    | readonly ['text', {
-                        readonly 'constraint': _pt.Optional_Value<{
-                            readonly 'dictionary': _T_Identifier
-                            readonly 'path': _T_Path
-                        }>
-                    }]
             }
             export type _type = _i_core._T_State_Group<null, 
                 | readonly ['collection', {
-                    readonly 'key': _T_Identifier
                     readonly 'node': _T_Node
+                    readonly 'key': _T_Identifier
                 }]
                 | readonly ['group', {
                     readonly 'node': _T_Node
+                }]
+                | readonly ['text', {
+                    readonly 'constraint': _pt.Optional_Value<{
+                        readonly 'path': _T_Path
+                        readonly 'dictionary': _T_Identifier
+                    }>
                 }]
                 | readonly ['state group', {
                     readonly 'states': _i_core._T_Dictionary<null, {
@@ -224,12 +322,6 @@ export namespace _T_Node {
                             readonly 'path': _T_Path
                         }>
                         readonly 'node': _T_Node
-                    }>
-                }]
-                | readonly ['text', {
-                    readonly 'constraint': _pt.Optional_Value<{
-                        readonly 'dictionary': _T_Identifier
-                        readonly 'path': _T_Path
                     }>
                 }]
             >
@@ -237,11 +329,17 @@ export namespace _T_Node {
         export type D = {
             readonly 'type': _i_core._T_State_Group<null, 
                 | readonly ['collection', {
-                    readonly 'key': _T_Identifier
                     readonly 'node': _T_Node
+                    readonly 'key': _T_Identifier
                 }]
                 | readonly ['group', {
                     readonly 'node': _T_Node
+                }]
+                | readonly ['text', {
+                    readonly 'constraint': _pt.Optional_Value<{
+                        readonly 'path': _T_Path
+                        readonly 'dictionary': _T_Identifier
+                    }>
                 }]
                 | readonly ['state group', {
                     readonly 'states': _i_core._T_Dictionary<null, {
@@ -249,12 +347,6 @@ export namespace _T_Node {
                             readonly 'path': _T_Path
                         }>
                         readonly 'node': _T_Node
-                    }>
-                }]
-                | readonly ['text', {
-                    readonly 'constraint': _pt.Optional_Value<{
-                        readonly 'dictionary': _T_Identifier
-                        readonly 'path': _T_Path
                     }>
                 }]
             >
@@ -263,11 +355,17 @@ export namespace _T_Node {
     export type properties = _i_core._T_Dictionary<null, {
         readonly 'type': _i_core._T_State_Group<null, 
             | readonly ['collection', {
-                readonly 'key': _T_Identifier
                 readonly 'node': _T_Node
+                readonly 'key': _T_Identifier
             }]
             | readonly ['group', {
                 readonly 'node': _T_Node
+            }]
+            | readonly ['text', {
+                readonly 'constraint': _pt.Optional_Value<{
+                    readonly 'path': _T_Path
+                    readonly 'dictionary': _T_Identifier
+                }>
             }]
             | readonly ['state group', {
                 readonly 'states': _i_core._T_Dictionary<null, {
@@ -277,106 +375,8 @@ export namespace _T_Node {
                     readonly 'node': _T_Node
                 }>
             }]
-            | readonly ['text', {
-                readonly 'constraint': _pt.Optional_Value<{
-                    readonly 'dictionary': _T_Identifier
-                    readonly 'path': _T_Path
-                }>
-            }]
         >
     }>
-}
-
-export namespace _T_Path {
-    
-    export namespace context {
-        
-        export namespace sibling {
-        }
-        export type sibling = null
-        
-        export namespace state_constraint {
-            
-            export namespace name {
-            }
-            export type name = _T_Identifier
-        }
-        export type state_constraint = {
-            readonly 'name': _T_Identifier
-        }
-    }
-    export type context = {
-        readonly 'sibling': null
-        readonly 'state constraint': {
-            readonly 'name': _T_Identifier
-        }
-    }
-    
-    export namespace selection_steps {
-        
-        export namespace L {
-            
-            export namespace group {
-                
-                export namespace name {
-                }
-                export type name = _T_Identifier
-            }
-            export type group = {
-                readonly 'name': _T_Identifier
-            }
-            
-            export namespace reference {
-                
-                export namespace name {
-                }
-                export type name = _T_Identifier
-            }
-            export type reference = {
-                readonly 'name': _T_Identifier
-            }
-            
-            export namespace state_constraint {
-                
-                export namespace name {
-                }
-                export type name = _T_Identifier
-            }
-            export type state_constraint = {
-                readonly 'name': _T_Identifier
-            }
-        }
-        export type L = {
-            readonly 'group': {
-                readonly 'name': _T_Identifier
-            }
-            readonly 'reference': {
-                readonly 'name': _T_Identifier
-            }
-            readonly 'state constraint': {
-                readonly 'name': _T_Identifier
-            }
-        }
-    }
-    export type selection_steps = _i_core._T_List<null, {
-        readonly 'group': {
-            readonly 'name': _T_Identifier
-        }
-        readonly 'reference': {
-            readonly 'name': _T_Identifier
-        }
-        readonly 'state constraint': {
-            readonly 'name': _T_Identifier
-        }
-    }>
-    
-    export namespace up_steps {
-        
-        export namespace L {
-        }
-        export type L = null
-    }
-    export type up_steps = _i_core._T_List<null, null>
 }
 
 export namespace _T_Root {
@@ -396,6 +396,98 @@ export namespace _T_Root {
 
 // *** ALIASES FOR NESTED TYPES
 
+export namespace Path {
+    
+    export namespace up_steps {
+        
+        export namespace L {
+        }
+        export type L = null
+    }
+    export type up_steps = _i_core._T_List<null, null>
+    
+    export namespace context {
+        
+        export namespace sibling {
+        }
+        export type sibling = null
+        
+        export namespace state_constraint {
+            
+            export namespace name {
+            }
+            export type name = _T_Identifier
+        }
+        export type state_constraint = {
+            readonly 'name': _T_Identifier
+        }
+    }
+    export type context = {
+        readonly 'sibling': null
+        readonly 'state constraint': {
+            readonly 'name': _T_Identifier
+        }
+    }
+    
+    export namespace selection_steps {
+        
+        export namespace L {
+            
+            export namespace group {
+                
+                export namespace name {
+                }
+                export type name = _T_Identifier
+            }
+            export type group = {
+                readonly 'name': _T_Identifier
+            }
+            
+            export namespace state_constraint {
+                
+                export namespace name {
+                }
+                export type name = _T_Identifier
+            }
+            export type state_constraint = {
+                readonly 'name': _T_Identifier
+            }
+            
+            export namespace reference {
+                
+                export namespace name {
+                }
+                export type name = _T_Identifier
+            }
+            export type reference = {
+                readonly 'name': _T_Identifier
+            }
+        }
+        export type L = {
+            readonly 'group': {
+                readonly 'name': _T_Identifier
+            }
+            readonly 'state constraint': {
+                readonly 'name': _T_Identifier
+            }
+            readonly 'reference': {
+                readonly 'name': _T_Identifier
+            }
+        }
+    }
+    export type selection_steps = _i_core._T_List<null, {
+        readonly 'group': {
+            readonly 'name': _T_Identifier
+        }
+        readonly 'state constraint': {
+            readonly 'name': _T_Identifier
+        }
+        readonly 'reference': {
+            readonly 'name': _T_Identifier
+        }
+    }>
+}
+
 export namespace Node {
     
     export namespace properties {
@@ -408,17 +500,17 @@ export namespace Node {
                     
                     export namespace collection {
                         
-                        export namespace key {
-                        }
-                        export type key = _T_Identifier
-                        
                         export namespace node {
                         }
                         export type node = _T_Node
+                        
+                        export namespace key {
+                        }
+                        export type key = _T_Identifier
                     }
                     export type collection = {
-                        readonly 'key': _T_Identifier
                         readonly 'node': _T_Node
+                        readonly 'key': _T_Identifier
                     }
                     
                     export namespace group {
@@ -429,6 +521,37 @@ export namespace Node {
                     }
                     export type group = {
                         readonly 'node': _T_Node
+                    }
+                    
+                    export namespace text {
+                        
+                        export namespace constraint {
+                            
+                            export namespace O {
+                                
+                                export namespace path {
+                                }
+                                export type path = _T_Path
+                                
+                                export namespace dictionary {
+                                }
+                                export type dictionary = _T_Identifier
+                            }
+                            export type O = {
+                                readonly 'path': _T_Path
+                                readonly 'dictionary': _T_Identifier
+                            }
+                        }
+                        export type constraint = _pt.Optional_Value<{
+                            readonly 'path': _T_Path
+                            readonly 'dictionary': _T_Identifier
+                        }>
+                    }
+                    export type text = {
+                        readonly 'constraint': _pt.Optional_Value<{
+                            readonly 'path': _T_Path
+                            readonly 'dictionary': _T_Identifier
+                        }>
                     }
                     
                     export namespace state_group {
@@ -479,45 +602,20 @@ export namespace Node {
                             readonly 'node': _T_Node
                         }>
                     }
-                    
-                    export namespace text {
-                        
-                        export namespace constraint {
-                            
-                            export namespace O {
-                                
-                                export namespace dictionary {
-                                }
-                                export type dictionary = _T_Identifier
-                                
-                                export namespace path {
-                                }
-                                export type path = _T_Path
-                            }
-                            export type O = {
-                                readonly 'dictionary': _T_Identifier
-                                readonly 'path': _T_Path
-                            }
-                        }
-                        export type constraint = _pt.Optional_Value<{
-                            readonly 'dictionary': _T_Identifier
-                            readonly 'path': _T_Path
-                        }>
-                    }
-                    export type text = {
-                        readonly 'constraint': _pt.Optional_Value<{
-                            readonly 'dictionary': _T_Identifier
-                            readonly 'path': _T_Path
-                        }>
-                    }
                 }
                 export type SG = 
                     | readonly ['collection', {
-                        readonly 'key': _T_Identifier
                         readonly 'node': _T_Node
+                        readonly 'key': _T_Identifier
                     }]
                     | readonly ['group', {
                         readonly 'node': _T_Node
+                    }]
+                    | readonly ['text', {
+                        readonly 'constraint': _pt.Optional_Value<{
+                            readonly 'path': _T_Path
+                            readonly 'dictionary': _T_Identifier
+                        }>
                     }]
                     | readonly ['state group', {
                         readonly 'states': _i_core._T_Dictionary<null, {
@@ -527,20 +625,20 @@ export namespace Node {
                             readonly 'node': _T_Node
                         }>
                     }]
-                    | readonly ['text', {
-                        readonly 'constraint': _pt.Optional_Value<{
-                            readonly 'dictionary': _T_Identifier
-                            readonly 'path': _T_Path
-                        }>
-                    }]
             }
             export type _type = _i_core._T_State_Group<null, 
                 | readonly ['collection', {
-                    readonly 'key': _T_Identifier
                     readonly 'node': _T_Node
+                    readonly 'key': _T_Identifier
                 }]
                 | readonly ['group', {
                     readonly 'node': _T_Node
+                }]
+                | readonly ['text', {
+                    readonly 'constraint': _pt.Optional_Value<{
+                        readonly 'path': _T_Path
+                        readonly 'dictionary': _T_Identifier
+                    }>
                 }]
                 | readonly ['state group', {
                     readonly 'states': _i_core._T_Dictionary<null, {
@@ -548,12 +646,6 @@ export namespace Node {
                             readonly 'path': _T_Path
                         }>
                         readonly 'node': _T_Node
-                    }>
-                }]
-                | readonly ['text', {
-                    readonly 'constraint': _pt.Optional_Value<{
-                        readonly 'dictionary': _T_Identifier
-                        readonly 'path': _T_Path
                     }>
                 }]
             >
@@ -561,11 +653,17 @@ export namespace Node {
         export type D = {
             readonly 'type': _i_core._T_State_Group<null, 
                 | readonly ['collection', {
-                    readonly 'key': _T_Identifier
                     readonly 'node': _T_Node
+                    readonly 'key': _T_Identifier
                 }]
                 | readonly ['group', {
                     readonly 'node': _T_Node
+                }]
+                | readonly ['text', {
+                    readonly 'constraint': _pt.Optional_Value<{
+                        readonly 'path': _T_Path
+                        readonly 'dictionary': _T_Identifier
+                    }>
                 }]
                 | readonly ['state group', {
                     readonly 'states': _i_core._T_Dictionary<null, {
@@ -573,12 +671,6 @@ export namespace Node {
                             readonly 'path': _T_Path
                         }>
                         readonly 'node': _T_Node
-                    }>
-                }]
-                | readonly ['text', {
-                    readonly 'constraint': _pt.Optional_Value<{
-                        readonly 'dictionary': _T_Identifier
-                        readonly 'path': _T_Path
                     }>
                 }]
             >
@@ -587,11 +679,17 @@ export namespace Node {
     export type properties = _i_core._T_Dictionary<null, {
         readonly 'type': _i_core._T_State_Group<null, 
             | readonly ['collection', {
-                readonly 'key': _T_Identifier
                 readonly 'node': _T_Node
+                readonly 'key': _T_Identifier
             }]
             | readonly ['group', {
                 readonly 'node': _T_Node
+            }]
+            | readonly ['text', {
+                readonly 'constraint': _pt.Optional_Value<{
+                    readonly 'path': _T_Path
+                    readonly 'dictionary': _T_Identifier
+                }>
             }]
             | readonly ['state group', {
                 readonly 'states': _i_core._T_Dictionary<null, {
@@ -601,106 +699,8 @@ export namespace Node {
                     readonly 'node': _T_Node
                 }>
             }]
-            | readonly ['text', {
-                readonly 'constraint': _pt.Optional_Value<{
-                    readonly 'dictionary': _T_Identifier
-                    readonly 'path': _T_Path
-                }>
-            }]
         >
     }>
-}
-
-export namespace Path {
-    
-    export namespace context {
-        
-        export namespace sibling {
-        }
-        export type sibling = null
-        
-        export namespace state_constraint {
-            
-            export namespace name {
-            }
-            export type name = _T_Identifier
-        }
-        export type state_constraint = {
-            readonly 'name': _T_Identifier
-        }
-    }
-    export type context = {
-        readonly 'sibling': null
-        readonly 'state constraint': {
-            readonly 'name': _T_Identifier
-        }
-    }
-    
-    export namespace selection_steps {
-        
-        export namespace L {
-            
-            export namespace group {
-                
-                export namespace name {
-                }
-                export type name = _T_Identifier
-            }
-            export type group = {
-                readonly 'name': _T_Identifier
-            }
-            
-            export namespace reference {
-                
-                export namespace name {
-                }
-                export type name = _T_Identifier
-            }
-            export type reference = {
-                readonly 'name': _T_Identifier
-            }
-            
-            export namespace state_constraint {
-                
-                export namespace name {
-                }
-                export type name = _T_Identifier
-            }
-            export type state_constraint = {
-                readonly 'name': _T_Identifier
-            }
-        }
-        export type L = {
-            readonly 'group': {
-                readonly 'name': _T_Identifier
-            }
-            readonly 'reference': {
-                readonly 'name': _T_Identifier
-            }
-            readonly 'state constraint': {
-                readonly 'name': _T_Identifier
-            }
-        }
-    }
-    export type selection_steps = _i_core._T_List<null, {
-        readonly 'group': {
-            readonly 'name': _T_Identifier
-        }
-        readonly 'reference': {
-            readonly 'name': _T_Identifier
-        }
-        readonly 'state constraint': {
-            readonly 'name': _T_Identifier
-        }
-    }>
-    
-    export namespace up_steps {
-        
-        export namespace L {
-        }
-        export type L = null
-    }
-    export type up_steps = _i_core._T_List<null, null>
 }
 
 export namespace Root {

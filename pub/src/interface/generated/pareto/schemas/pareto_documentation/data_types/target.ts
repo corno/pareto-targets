@@ -6,8 +6,8 @@ import * as _i_imports_graphviz from "../../graphviz_high_level/data_types/targe
 // **** TYPES
 
 export type _T_Graphviz_Directory = _i_core._T_Dictionary<null, _i_core._T_State_Group<null, 
-    | readonly ['directory', _T_Graphviz_Directory]
     | readonly ['file', _i_imports_graphviz._T_Graph]
+    | readonly ['directory', _T_Graphviz_Directory]
 >>
 
 // **** FRIENDLY NAMES FOR THE GLOBAL TYPES
@@ -22,21 +22,21 @@ export namespace _T_Graphviz_Directory {
         
         export namespace SG {
             
-            export namespace directory {
-            }
-            export type directory = _T_Graphviz_Directory
-            
             export namespace file {
             }
             export type file = _i_imports_graphviz._T_Graph
+            
+            export namespace directory {
+            }
+            export type directory = _T_Graphviz_Directory
         }
         export type SG = 
-            | readonly ['directory', _T_Graphviz_Directory]
             | readonly ['file', _i_imports_graphviz._T_Graph]
+            | readonly ['directory', _T_Graphviz_Directory]
     }
     export type D = _i_core._T_State_Group<null, 
-        | readonly ['directory', _T_Graphviz_Directory]
         | readonly ['file', _i_imports_graphviz._T_Graph]
+        | readonly ['directory', _T_Graphviz_Directory]
     >
 }
 
@@ -48,20 +48,20 @@ export namespace Graphviz_Directory {
         
         export namespace SG {
             
-            export namespace directory {
-            }
-            export type directory = _T_Graphviz_Directory
-            
             export namespace file {
             }
             export type file = _i_imports_graphviz._T_Graph
+            
+            export namespace directory {
+            }
+            export type directory = _T_Graphviz_Directory
         }
         export type SG = 
-            | readonly ['directory', _T_Graphviz_Directory]
             | readonly ['file', _i_imports_graphviz._T_Graph]
+            | readonly ['directory', _T_Graphviz_Directory]
     }
     export type D = _i_core._T_State_Group<null, 
-        | readonly ['directory', _T_Graphviz_Directory]
         | readonly ['file', _i_imports_graphviz._T_Graph]
+        | readonly ['directory', _T_Graphviz_Directory]
     >
 }

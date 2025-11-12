@@ -4,109 +4,18 @@ import * as _i_core from "../../../core/resolved"
 
 // **** TYPES
 
-export type _T_Attribute_Value = _i_core._T_State_Group<null, 
-    | readonly ['html string', string]
-    | readonly ['number', string]
-    | readonly ['string', string]
->
-
-export type _T_Edge_Attributes = _i_core._T_List<null, _i_core._T_State_Group<null, 
-    | readonly ['arrowhead', string]
-    | readonly ['arrowsize', number]
-    | readonly ['arrowtail', string]
-    | readonly ['bgcolor', string]
-    | readonly ['color', string]
-    | readonly ['colorscheme', string]
-    | readonly ['comment', string]
-    | readonly ['constraint', boolean]
-    | readonly ['decorate', boolean]
-    | readonly ['dir', _i_core._T_State_Group<null, 
-        | readonly ['back', null]
-        | readonly ['both', null]
-        | readonly ['forward', null]
-        | readonly ['none', null]
-    >]
-    | readonly ['edge lp', string]
-    | readonly ['edge target', string]
-    | readonly ['edge tooltip', string]
-    | readonly ['edge url', string]
-    | readonly ['head lp', string]
-    | readonly ['headclip', boolean]
-    | readonly ['headlabel', string]
-    | readonly ['headport', string]
-    | readonly ['height', number]
-    | readonly ['id', string]
-    | readonly ['label', string]
-    | readonly ['label angle', number]
-    | readonly ['label distance', number]
-    | readonly ['label float', boolean]
-    | readonly ['label lp', string]
-    | readonly ['labelfloat', boolean]
-    | readonly ['labelhref', string]
-    | readonly ['layer', string]
-    | readonly ['len', number]
-    | readonly ['lhead', string]
-    | readonly ['lp', string]
-    | readonly ['ltail', string]
-    | readonly ['minlen', number]
-    | readonly ['pen width', number]
-    | readonly ['pos', string]
-    | readonly ['same head', boolean]
-    | readonly ['same tail', boolean]
-    | readonly ['showboxes', boolean]
-    | readonly ['style', string]
-    | readonly ['tail lp', string]
-    | readonly ['tailclip', boolean]
-    | readonly ['taillabel', string]
-    | readonly ['tailport', string]
-    | readonly ['tooltip', string]
-    | readonly ['weight', number]
-    | readonly ['xlabel', string]
-    | readonly ['xlp', string]
->>
-
-export type _T_End_Point_Specification = {
-    readonly 'port data': _pt.Optional_Value<{
-        readonly 'compass direction': _pt.Optional_Value<string>
-        readonly 'port': string
-    }>
-    readonly 'start': string
-    readonly 'tail': _i_core._T_List<null, string>
-}
-
-export type _T_Graph = {
-    readonly 'name': _pt.Optional_Value<string>
-    readonly 'tree': _T_Tree
-    readonly 'type': _i_core._T_State_Group<null, 
-        | readonly ['directed', {
-            readonly 'edges': _i_core._T_List<null, {
-                readonly 'attributes': _T_Edge_Attributes
-                readonly 'from': _T_End_Point_Specification
-                readonly 'to': _T_End_Point_Specification
-            }>
-        }]
-        | readonly ['undirected', {
-            readonly 'edges': _i_core._T_List<null, {
-                readonly 'attributes': _T_Edge_Attributes
-                readonly 'yang': _T_End_Point_Specification
-                readonly 'yin': _T_End_Point_Specification
-            }>
-        }]
-    >
-}
-
 export type _T_Graph_Attributes = _i_core._T_List<null, _i_core._T_State_Group<null, 
+    | readonly ['concentrate', boolean]
     | readonly ['charset', string]
     | readonly ['clusterrank', _i_core._T_State_Group<null, 
-        | readonly ['global', null]
-        | readonly ['local', null]
         | readonly ['none', null]
+        | readonly ['local', null]
+        | readonly ['global', null]
     >]
     | readonly ['color', string]
     | readonly ['color scheme', string]
     | readonly ['comment', string]
     | readonly ['compound', boolean]
-    | readonly ['concentrate', boolean]
     | readonly ['dpi', number]
     | readonly ['font color', string]
     | readonly ['font name', string]
@@ -114,11 +23,11 @@ export type _T_Graph_Attributes = _i_core._T_List<null, _i_core._T_State_Group<n
     | readonly ['font size', number]
     | readonly ['label', string]
     | readonly ['label distance', number]
-    | readonly ['label location', _i_core._T_State_Group<null, 
-        | readonly ['bottom', null]
-        | readonly ['top', null]
-    >]
     | readonly ['label scheme', number]
+    | readonly ['label location', _i_core._T_State_Group<null, 
+        | readonly ['top', null]
+        | readonly ['bottom', null]
+    >]
     | readonly ['landscape', boolean]
     | readonly ['layer list', string]
     | readonly ['layer separator', string]
@@ -128,43 +37,43 @@ export type _T_Graph_Attributes = _i_core._T_List<null, _i_core._T_State_Group<n
     | readonly ['mclimit', number]
     | readonly ['mindist', number]
     | readonly ['mode', _i_core._T_State_Group<null, 
-        | readonly ['in', null]
-        | readonly ['in out', null]
         | readonly ['no output', null]
         | readonly ['out', null]
+        | readonly ['in', null]
+        | readonly ['in out', null]
     >]
     | readonly ['newrank', boolean]
     | readonly ['no loop', boolean]
     | readonly ['normalize', boolean]
     | readonly ['ordering', _i_core._T_State_Group<null, 
+        | readonly ['out', null]
         | readonly ['in', null]
         | readonly ['in out', null]
-        | readonly ['out', null]
     >]
     | readonly ['orientation', number]
-    | readonly ['output mode', _i_core._T_State_Group<null, 
-        | readonly ['edges first', null]
-        | readonly ['nodes first', null]
-    >]
     | readonly ['output order', _i_core._T_State_Group<null, 
         | readonly ['breadth first', null]
         | readonly ['dfs', null]
     >]
     | readonly ['overlap', string]
+    | readonly ['output mode', _i_core._T_State_Group<null, 
+        | readonly ['edges first', null]
+        | readonly ['nodes first', null]
+    >]
     | readonly ['pack', boolean]
     | readonly ['pack mode', _i_core._T_State_Group<null, 
-        | readonly ['graph', null]
         | readonly ['node', null]
+        | readonly ['graph', null]
     >]
     | readonly ['pad', number]
     | readonly ['page', string]
     | readonly ['quadtree', boolean]
     | readonly ['quantum', number]
     | readonly ['rankdir', _i_core._T_State_Group<null, 
+        | readonly ['top bottom', null]
         | readonly ['bottom top', null]
         | readonly ['left right', null]
         | readonly ['right left', null]
-        | readonly ['top bottom', null]
     >]
     | readonly ['ranksep', string]
     | readonly ['ratio', string]
@@ -209,9 +118,9 @@ export type _T_Node_Attributes = _i_core._T_List<null, _i_core._T_State_Group<nu
     | readonly ['image', string]
     | readonly ['label', string]
     | readonly ['labelloc', _i_core._T_State_Group<null, 
-        | readonly ['bottom', null]
-        | readonly ['center', null]
         | readonly ['top', null]
+        | readonly ['center', null]
+        | readonly ['bottom', null]
     >]
     | readonly ['layers', string]
     | readonly ['margin', string]
@@ -242,25 +151,108 @@ export type _T_Tree = {
             readonly 'attributes': _T_Node_Attributes
         }]
         | readonly ['sub', {
-            readonly 'tree': _T_Tree
             readonly 'type': _i_core._T_State_Group<null, 
-                | readonly ['cluster', null]
                 | readonly ['group', null]
+                | readonly ['cluster', null]
                 | readonly ['subgraph', null]
             >
+            readonly 'tree': _T_Tree
         }]
     >>
 }
 
+export type _T_End_Point_Specification = {
+    readonly 'start': string
+    readonly 'tail': _i_core._T_List<null, string>
+    readonly 'port data': _pt.Optional_Value<{
+        readonly 'port': string
+        readonly 'compass direction': _pt.Optional_Value<string>
+    }>
+}
+
+export type _T_Edge_Attributes = _i_core._T_List<null, _i_core._T_State_Group<null, 
+    | readonly ['arrowhead', string]
+    | readonly ['arrowsize', number]
+    | readonly ['arrowtail', string]
+    | readonly ['bgcolor', string]
+    | readonly ['color', string]
+    | readonly ['colorscheme', string]
+    | readonly ['comment', string]
+    | readonly ['constraint', boolean]
+    | readonly ['decorate', boolean]
+    | readonly ['dir', _i_core._T_State_Group<null, 
+        | readonly ['forward', null]
+        | readonly ['back', null]
+        | readonly ['both', null]
+        | readonly ['none', null]
+    >]
+    | readonly ['edge url', string]
+    | readonly ['edge lp', string]
+    | readonly ['edge target', string]
+    | readonly ['edge tooltip', string]
+    | readonly ['head lp', string]
+    | readonly ['headclip', boolean]
+    | readonly ['headlabel', string]
+    | readonly ['headport', string]
+    | readonly ['height', number]
+    | readonly ['id', string]
+    | readonly ['label', string]
+    | readonly ['label distance', number]
+    | readonly ['label angle', number]
+    | readonly ['label float', boolean]
+    | readonly ['labelfloat', boolean]
+    | readonly ['labelhref', string]
+    | readonly ['label lp', string]
+    | readonly ['layer', string]
+    | readonly ['len', number]
+    | readonly ['lhead', string]
+    | readonly ['lp', string]
+    | readonly ['ltail', string]
+    | readonly ['minlen', number]
+    | readonly ['pen width', number]
+    | readonly ['pos', string]
+    | readonly ['same head', boolean]
+    | readonly ['same tail', boolean]
+    | readonly ['showboxes', boolean]
+    | readonly ['style', string]
+    | readonly ['tail lp', string]
+    | readonly ['tailclip', boolean]
+    | readonly ['taillabel', string]
+    | readonly ['tailport', string]
+    | readonly ['tooltip', string]
+    | readonly ['weight', number]
+    | readonly ['xlabel', string]
+    | readonly ['xlp', string]
+>>
+
+export type _T_Graph = {
+    readonly 'name': _pt.Optional_Value<string>
+    readonly 'tree': _T_Tree
+    readonly 'type': _i_core._T_State_Group<null, 
+        | readonly ['undirected', {
+            readonly 'edges': _i_core._T_List<null, {
+                readonly 'yin': _T_End_Point_Specification
+                readonly 'yang': _T_End_Point_Specification
+                readonly 'attributes': _T_Edge_Attributes
+            }>
+        }]
+        | readonly ['directed', {
+            readonly 'edges': _i_core._T_List<null, {
+                readonly 'from': _T_End_Point_Specification
+                readonly 'to': _T_End_Point_Specification
+                readonly 'attributes': _T_Edge_Attributes
+            }>
+        }]
+    >
+}
+
+export type _T_Attribute_Value = _i_core._T_State_Group<null, 
+    | readonly ['number', string]
+    | readonly ['string', string]
+    | readonly ['html string', string]
+>
+
 // **** FRIENDLY NAMES FOR THE GLOBAL TYPES
-
-export type Attribute_Value = _T_Attribute_Value
-
-export type Edge_Attributes = _T_Edge_Attributes
-
-export type End_Point_Specification = _T_End_Point_Specification
-
-export type Graph = _T_Graph
 
 export type Graph_Attributes = _T_Graph_Attributes
 
@@ -268,387 +260,45 @@ export type Node_Attributes = _T_Node_Attributes
 
 export type Tree = _T_Tree
 
+export type End_Point_Specification = _T_End_Point_Specification
+
+export type Edge_Attributes = _T_Edge_Attributes
+
+export type Graph = _T_Graph
+
+export type Attribute_Value = _T_Attribute_Value
+
 // **** ALIASES FOR NESTED TYPE WITH PREFIXED ROOT NAMES
-
-export namespace _T_Attribute_Value {
-    
-    export namespace SG {
-        export type html_string = string
-        export type _number = string
-        export type _string = string
-    }
-    export type SG = 
-        | readonly ['html string', string]
-        | readonly ['number', string]
-        | readonly ['string', string]
-}
-
-export namespace _T_Edge_Attributes {
-    
-    export namespace L {
-        
-        export namespace SG {
-            export type arrowhead = string
-            export type arrowsize = number
-            export type arrowtail = string
-            export type bgcolor = string
-            export type color = string
-            export type colorscheme = string
-            export type comment = string
-            export type constraint = boolean
-            export type decorate = boolean
-            
-            export namespace dir {
-                
-                export namespace SG {
-                    export type back = null
-                    export type both = null
-                    export type forward = null
-                    export type none = null
-                }
-                export type SG = 
-                    | readonly ['back', null]
-                    | readonly ['both', null]
-                    | readonly ['forward', null]
-                    | readonly ['none', null]
-            }
-            export type dir = _i_core._T_State_Group<null, 
-                | readonly ['back', null]
-                | readonly ['both', null]
-                | readonly ['forward', null]
-                | readonly ['none', null]
-            >
-            export type edge_lp = string
-            export type edge_target = string
-            export type edge_tooltip = string
-            export type edge_url = string
-            export type head_lp = string
-            export type headclip = boolean
-            export type headlabel = string
-            export type headport = string
-            export type height = number
-            export type id = string
-            export type label = string
-            export type label_angle = number
-            export type label_distance = number
-            export type label_float = boolean
-            export type label_lp = string
-            export type labelfloat = boolean
-            export type labelhref = string
-            export type layer = string
-            export type len = number
-            export type lhead = string
-            export type lp = string
-            export type ltail = string
-            export type minlen = number
-            export type pen_width = number
-            export type pos = string
-            export type same_head = boolean
-            export type same_tail = boolean
-            export type showboxes = boolean
-            export type style = string
-            export type tail_lp = string
-            export type tailclip = boolean
-            export type taillabel = string
-            export type tailport = string
-            export type tooltip = string
-            export type weight = number
-            export type xlabel = string
-            export type xlp = string
-        }
-        export type SG = 
-            | readonly ['arrowhead', string]
-            | readonly ['arrowsize', number]
-            | readonly ['arrowtail', string]
-            | readonly ['bgcolor', string]
-            | readonly ['color', string]
-            | readonly ['colorscheme', string]
-            | readonly ['comment', string]
-            | readonly ['constraint', boolean]
-            | readonly ['decorate', boolean]
-            | readonly ['dir', _i_core._T_State_Group<null, 
-                | readonly ['back', null]
-                | readonly ['both', null]
-                | readonly ['forward', null]
-                | readonly ['none', null]
-            >]
-            | readonly ['edge lp', string]
-            | readonly ['edge target', string]
-            | readonly ['edge tooltip', string]
-            | readonly ['edge url', string]
-            | readonly ['head lp', string]
-            | readonly ['headclip', boolean]
-            | readonly ['headlabel', string]
-            | readonly ['headport', string]
-            | readonly ['height', number]
-            | readonly ['id', string]
-            | readonly ['label', string]
-            | readonly ['label angle', number]
-            | readonly ['label distance', number]
-            | readonly ['label float', boolean]
-            | readonly ['label lp', string]
-            | readonly ['labelfloat', boolean]
-            | readonly ['labelhref', string]
-            | readonly ['layer', string]
-            | readonly ['len', number]
-            | readonly ['lhead', string]
-            | readonly ['lp', string]
-            | readonly ['ltail', string]
-            | readonly ['minlen', number]
-            | readonly ['pen width', number]
-            | readonly ['pos', string]
-            | readonly ['same head', boolean]
-            | readonly ['same tail', boolean]
-            | readonly ['showboxes', boolean]
-            | readonly ['style', string]
-            | readonly ['tail lp', string]
-            | readonly ['tailclip', boolean]
-            | readonly ['taillabel', string]
-            | readonly ['tailport', string]
-            | readonly ['tooltip', string]
-            | readonly ['weight', number]
-            | readonly ['xlabel', string]
-            | readonly ['xlp', string]
-    }
-    export type L = _i_core._T_State_Group<null, 
-        | readonly ['arrowhead', string]
-        | readonly ['arrowsize', number]
-        | readonly ['arrowtail', string]
-        | readonly ['bgcolor', string]
-        | readonly ['color', string]
-        | readonly ['colorscheme', string]
-        | readonly ['comment', string]
-        | readonly ['constraint', boolean]
-        | readonly ['decorate', boolean]
-        | readonly ['dir', _i_core._T_State_Group<null, 
-            | readonly ['back', null]
-            | readonly ['both', null]
-            | readonly ['forward', null]
-            | readonly ['none', null]
-        >]
-        | readonly ['edge lp', string]
-        | readonly ['edge target', string]
-        | readonly ['edge tooltip', string]
-        | readonly ['edge url', string]
-        | readonly ['head lp', string]
-        | readonly ['headclip', boolean]
-        | readonly ['headlabel', string]
-        | readonly ['headport', string]
-        | readonly ['height', number]
-        | readonly ['id', string]
-        | readonly ['label', string]
-        | readonly ['label angle', number]
-        | readonly ['label distance', number]
-        | readonly ['label float', boolean]
-        | readonly ['label lp', string]
-        | readonly ['labelfloat', boolean]
-        | readonly ['labelhref', string]
-        | readonly ['layer', string]
-        | readonly ['len', number]
-        | readonly ['lhead', string]
-        | readonly ['lp', string]
-        | readonly ['ltail', string]
-        | readonly ['minlen', number]
-        | readonly ['pen width', number]
-        | readonly ['pos', string]
-        | readonly ['same head', boolean]
-        | readonly ['same tail', boolean]
-        | readonly ['showboxes', boolean]
-        | readonly ['style', string]
-        | readonly ['tail lp', string]
-        | readonly ['tailclip', boolean]
-        | readonly ['taillabel', string]
-        | readonly ['tailport', string]
-        | readonly ['tooltip', string]
-        | readonly ['weight', number]
-        | readonly ['xlabel', string]
-        | readonly ['xlp', string]
-    >
-}
-
-export namespace _T_End_Point_Specification {
-    
-    export namespace port_data {
-        
-        export namespace O {
-            
-            export namespace compass_direction {
-                export type O = string
-            }
-            export type compass_direction = _pt.Optional_Value<string>
-            export type port = string
-        }
-        export type O = {
-            readonly 'compass direction': _pt.Optional_Value<string>
-            readonly 'port': string
-        }
-    }
-    export type port_data = _pt.Optional_Value<{
-        readonly 'compass direction': _pt.Optional_Value<string>
-        readonly 'port': string
-    }>
-    export type start = string
-    
-    export namespace tail {
-        export type L = string
-    }
-    export type tail = _i_core._T_List<null, string>
-}
-
-export namespace _T_Graph {
-    
-    export namespace name {
-        export type O = string
-    }
-    export type name = _pt.Optional_Value<string>
-    
-    export namespace tree {
-    }
-    export type tree = _T_Tree
-    
-    export namespace _type {
-        
-        export namespace SG {
-            
-            export namespace directed {
-                
-                export namespace edges {
-                    
-                    export namespace L {
-                        
-                        export namespace attributes {
-                        }
-                        export type attributes = _T_Edge_Attributes
-                        
-                        export namespace _from {
-                        }
-                        export type _from = _T_End_Point_Specification
-                        
-                        export namespace to {
-                        }
-                        export type to = _T_End_Point_Specification
-                    }
-                    export type L = {
-                        readonly 'attributes': _T_Edge_Attributes
-                        readonly 'from': _T_End_Point_Specification
-                        readonly 'to': _T_End_Point_Specification
-                    }
-                }
-                export type edges = _i_core._T_List<null, {
-                    readonly 'attributes': _T_Edge_Attributes
-                    readonly 'from': _T_End_Point_Specification
-                    readonly 'to': _T_End_Point_Specification
-                }>
-            }
-            export type directed = {
-                readonly 'edges': _i_core._T_List<null, {
-                    readonly 'attributes': _T_Edge_Attributes
-                    readonly 'from': _T_End_Point_Specification
-                    readonly 'to': _T_End_Point_Specification
-                }>
-            }
-            
-            export namespace undirected {
-                
-                export namespace edges {
-                    
-                    export namespace L {
-                        
-                        export namespace attributes {
-                        }
-                        export type attributes = _T_Edge_Attributes
-                        
-                        export namespace yang {
-                        }
-                        export type yang = _T_End_Point_Specification
-                        
-                        export namespace yin {
-                        }
-                        export type yin = _T_End_Point_Specification
-                    }
-                    export type L = {
-                        readonly 'attributes': _T_Edge_Attributes
-                        readonly 'yang': _T_End_Point_Specification
-                        readonly 'yin': _T_End_Point_Specification
-                    }
-                }
-                export type edges = _i_core._T_List<null, {
-                    readonly 'attributes': _T_Edge_Attributes
-                    readonly 'yang': _T_End_Point_Specification
-                    readonly 'yin': _T_End_Point_Specification
-                }>
-            }
-            export type undirected = {
-                readonly 'edges': _i_core._T_List<null, {
-                    readonly 'attributes': _T_Edge_Attributes
-                    readonly 'yang': _T_End_Point_Specification
-                    readonly 'yin': _T_End_Point_Specification
-                }>
-            }
-        }
-        export type SG = 
-            | readonly ['directed', {
-                readonly 'edges': _i_core._T_List<null, {
-                    readonly 'attributes': _T_Edge_Attributes
-                    readonly 'from': _T_End_Point_Specification
-                    readonly 'to': _T_End_Point_Specification
-                }>
-            }]
-            | readonly ['undirected', {
-                readonly 'edges': _i_core._T_List<null, {
-                    readonly 'attributes': _T_Edge_Attributes
-                    readonly 'yang': _T_End_Point_Specification
-                    readonly 'yin': _T_End_Point_Specification
-                }>
-            }]
-    }
-    export type _type = _i_core._T_State_Group<null, 
-        | readonly ['directed', {
-            readonly 'edges': _i_core._T_List<null, {
-                readonly 'attributes': _T_Edge_Attributes
-                readonly 'from': _T_End_Point_Specification
-                readonly 'to': _T_End_Point_Specification
-            }>
-        }]
-        | readonly ['undirected', {
-            readonly 'edges': _i_core._T_List<null, {
-                readonly 'attributes': _T_Edge_Attributes
-                readonly 'yang': _T_End_Point_Specification
-                readonly 'yin': _T_End_Point_Specification
-            }>
-        }]
-    >
-}
 
 export namespace _T_Graph_Attributes {
     
     export namespace L {
         
         export namespace SG {
+            export type concentrate = boolean
             export type charset = string
             
             export namespace clusterrank {
                 
                 export namespace SG {
-                    export type global = null
-                    export type local = null
                     export type none = null
+                    export type local = null
+                    export type global = null
                 }
                 export type SG = 
-                    | readonly ['global', null]
-                    | readonly ['local', null]
                     | readonly ['none', null]
+                    | readonly ['local', null]
+                    | readonly ['global', null]
             }
             export type clusterrank = _i_core._T_State_Group<null, 
-                | readonly ['global', null]
-                | readonly ['local', null]
                 | readonly ['none', null]
+                | readonly ['local', null]
+                | readonly ['global', null]
             >
             export type color = string
             export type color_scheme = string
             export type comment = string
             export type compound = boolean
-            export type concentrate = boolean
             export type dpi = number
             export type font_color = string
             export type font_name = string
@@ -656,22 +306,22 @@ export namespace _T_Graph_Attributes {
             export type font_size = number
             export type label = string
             export type label_distance = number
+            export type label_scheme = number
             
             export namespace label_location {
                 
                 export namespace SG {
-                    export type bottom = null
                     export type top = null
+                    export type bottom = null
                 }
                 export type SG = 
-                    | readonly ['bottom', null]
                     | readonly ['top', null]
+                    | readonly ['bottom', null]
             }
             export type label_location = _i_core._T_State_Group<null, 
-                | readonly ['bottom', null]
                 | readonly ['top', null]
+                | readonly ['bottom', null]
             >
-            export type label_scheme = number
             export type landscape = boolean
             export type layer_list = string
             export type layer_separator = string
@@ -684,22 +334,22 @@ export namespace _T_Graph_Attributes {
             export namespace mode {
                 
                 export namespace SG {
-                    export type _in = null
-                    export type in_out = null
                     export type no_output = null
                     export type out = null
+                    export type _in = null
+                    export type in_out = null
                 }
                 export type SG = 
-                    | readonly ['in', null]
-                    | readonly ['in out', null]
                     | readonly ['no output', null]
                     | readonly ['out', null]
+                    | readonly ['in', null]
+                    | readonly ['in out', null]
             }
             export type mode = _i_core._T_State_Group<null, 
-                | readonly ['in', null]
-                | readonly ['in out', null]
                 | readonly ['no output', null]
                 | readonly ['out', null]
+                | readonly ['in', null]
+                | readonly ['in out', null]
             >
             export type newrank = boolean
             export type no_loop = boolean
@@ -708,36 +358,21 @@ export namespace _T_Graph_Attributes {
             export namespace ordering {
                 
                 export namespace SG {
+                    export type out = null
                     export type _in = null
                     export type in_out = null
-                    export type out = null
                 }
                 export type SG = 
+                    | readonly ['out', null]
                     | readonly ['in', null]
                     | readonly ['in out', null]
-                    | readonly ['out', null]
             }
             export type ordering = _i_core._T_State_Group<null, 
+                | readonly ['out', null]
                 | readonly ['in', null]
                 | readonly ['in out', null]
-                | readonly ['out', null]
             >
             export type orientation = number
-            
-            export namespace output_mode {
-                
-                export namespace SG {
-                    export type edges_first = null
-                    export type nodes_first = null
-                }
-                export type SG = 
-                    | readonly ['edges first', null]
-                    | readonly ['nodes first', null]
-            }
-            export type output_mode = _i_core._T_State_Group<null, 
-                | readonly ['edges first', null]
-                | readonly ['nodes first', null]
-            >
             
             export namespace output_order {
                 
@@ -754,21 +389,36 @@ export namespace _T_Graph_Attributes {
                 | readonly ['dfs', null]
             >
             export type overlap = string
+            
+            export namespace output_mode {
+                
+                export namespace SG {
+                    export type edges_first = null
+                    export type nodes_first = null
+                }
+                export type SG = 
+                    | readonly ['edges first', null]
+                    | readonly ['nodes first', null]
+            }
+            export type output_mode = _i_core._T_State_Group<null, 
+                | readonly ['edges first', null]
+                | readonly ['nodes first', null]
+            >
             export type pack = boolean
             
             export namespace pack_mode {
                 
                 export namespace SG {
-                    export type graph = null
                     export type node = null
+                    export type graph = null
                 }
                 export type SG = 
-                    | readonly ['graph', null]
                     | readonly ['node', null]
+                    | readonly ['graph', null]
             }
             export type pack_mode = _i_core._T_State_Group<null, 
-                | readonly ['graph', null]
                 | readonly ['node', null]
+                | readonly ['graph', null]
             >
             export type pad = number
             export type page = string
@@ -778,22 +428,22 @@ export namespace _T_Graph_Attributes {
             export namespace rankdir {
                 
                 export namespace SG {
+                    export type top_bottom = null
                     export type bottom_top = null
                     export type left_right = null
                     export type right_left = null
-                    export type top_bottom = null
                 }
                 export type SG = 
+                    | readonly ['top bottom', null]
                     | readonly ['bottom top', null]
                     | readonly ['left right', null]
                     | readonly ['right left', null]
-                    | readonly ['top bottom', null]
             }
             export type rankdir = _i_core._T_State_Group<null, 
+                | readonly ['top bottom', null]
                 | readonly ['bottom top', null]
                 | readonly ['left right', null]
                 | readonly ['right left', null]
-                | readonly ['top bottom', null]
             >
             export type ranksep = string
             export type ratio = string
@@ -836,17 +486,17 @@ export namespace _T_Graph_Attributes {
             export type xlabel = string
         }
         export type SG = 
+            | readonly ['concentrate', boolean]
             | readonly ['charset', string]
             | readonly ['clusterrank', _i_core._T_State_Group<null, 
-                | readonly ['global', null]
-                | readonly ['local', null]
                 | readonly ['none', null]
+                | readonly ['local', null]
+                | readonly ['global', null]
             >]
             | readonly ['color', string]
             | readonly ['color scheme', string]
             | readonly ['comment', string]
             | readonly ['compound', boolean]
-            | readonly ['concentrate', boolean]
             | readonly ['dpi', number]
             | readonly ['font color', string]
             | readonly ['font name', string]
@@ -854,11 +504,11 @@ export namespace _T_Graph_Attributes {
             | readonly ['font size', number]
             | readonly ['label', string]
             | readonly ['label distance', number]
-            | readonly ['label location', _i_core._T_State_Group<null, 
-                | readonly ['bottom', null]
-                | readonly ['top', null]
-            >]
             | readonly ['label scheme', number]
+            | readonly ['label location', _i_core._T_State_Group<null, 
+                | readonly ['top', null]
+                | readonly ['bottom', null]
+            >]
             | readonly ['landscape', boolean]
             | readonly ['layer list', string]
             | readonly ['layer separator', string]
@@ -868,43 +518,43 @@ export namespace _T_Graph_Attributes {
             | readonly ['mclimit', number]
             | readonly ['mindist', number]
             | readonly ['mode', _i_core._T_State_Group<null, 
-                | readonly ['in', null]
-                | readonly ['in out', null]
                 | readonly ['no output', null]
                 | readonly ['out', null]
+                | readonly ['in', null]
+                | readonly ['in out', null]
             >]
             | readonly ['newrank', boolean]
             | readonly ['no loop', boolean]
             | readonly ['normalize', boolean]
             | readonly ['ordering', _i_core._T_State_Group<null, 
+                | readonly ['out', null]
                 | readonly ['in', null]
                 | readonly ['in out', null]
-                | readonly ['out', null]
             >]
             | readonly ['orientation', number]
-            | readonly ['output mode', _i_core._T_State_Group<null, 
-                | readonly ['edges first', null]
-                | readonly ['nodes first', null]
-            >]
             | readonly ['output order', _i_core._T_State_Group<null, 
                 | readonly ['breadth first', null]
                 | readonly ['dfs', null]
             >]
             | readonly ['overlap', string]
+            | readonly ['output mode', _i_core._T_State_Group<null, 
+                | readonly ['edges first', null]
+                | readonly ['nodes first', null]
+            >]
             | readonly ['pack', boolean]
             | readonly ['pack mode', _i_core._T_State_Group<null, 
-                | readonly ['graph', null]
                 | readonly ['node', null]
+                | readonly ['graph', null]
             >]
             | readonly ['pad', number]
             | readonly ['page', string]
             | readonly ['quadtree', boolean]
             | readonly ['quantum', number]
             | readonly ['rankdir', _i_core._T_State_Group<null, 
+                | readonly ['top bottom', null]
                 | readonly ['bottom top', null]
                 | readonly ['left right', null]
                 | readonly ['right left', null]
-                | readonly ['top bottom', null]
             >]
             | readonly ['ranksep', string]
             | readonly ['ratio', string]
@@ -934,17 +584,17 @@ export namespace _T_Graph_Attributes {
             | readonly ['xlabel', string]
     }
     export type L = _i_core._T_State_Group<null, 
+        | readonly ['concentrate', boolean]
         | readonly ['charset', string]
         | readonly ['clusterrank', _i_core._T_State_Group<null, 
-            | readonly ['global', null]
-            | readonly ['local', null]
             | readonly ['none', null]
+            | readonly ['local', null]
+            | readonly ['global', null]
         >]
         | readonly ['color', string]
         | readonly ['color scheme', string]
         | readonly ['comment', string]
         | readonly ['compound', boolean]
-        | readonly ['concentrate', boolean]
         | readonly ['dpi', number]
         | readonly ['font color', string]
         | readonly ['font name', string]
@@ -952,11 +602,11 @@ export namespace _T_Graph_Attributes {
         | readonly ['font size', number]
         | readonly ['label', string]
         | readonly ['label distance', number]
-        | readonly ['label location', _i_core._T_State_Group<null, 
-            | readonly ['bottom', null]
-            | readonly ['top', null]
-        >]
         | readonly ['label scheme', number]
+        | readonly ['label location', _i_core._T_State_Group<null, 
+            | readonly ['top', null]
+            | readonly ['bottom', null]
+        >]
         | readonly ['landscape', boolean]
         | readonly ['layer list', string]
         | readonly ['layer separator', string]
@@ -966,43 +616,43 @@ export namespace _T_Graph_Attributes {
         | readonly ['mclimit', number]
         | readonly ['mindist', number]
         | readonly ['mode', _i_core._T_State_Group<null, 
-            | readonly ['in', null]
-            | readonly ['in out', null]
             | readonly ['no output', null]
             | readonly ['out', null]
+            | readonly ['in', null]
+            | readonly ['in out', null]
         >]
         | readonly ['newrank', boolean]
         | readonly ['no loop', boolean]
         | readonly ['normalize', boolean]
         | readonly ['ordering', _i_core._T_State_Group<null, 
+            | readonly ['out', null]
             | readonly ['in', null]
             | readonly ['in out', null]
-            | readonly ['out', null]
         >]
         | readonly ['orientation', number]
-        | readonly ['output mode', _i_core._T_State_Group<null, 
-            | readonly ['edges first', null]
-            | readonly ['nodes first', null]
-        >]
         | readonly ['output order', _i_core._T_State_Group<null, 
             | readonly ['breadth first', null]
             | readonly ['dfs', null]
         >]
         | readonly ['overlap', string]
+        | readonly ['output mode', _i_core._T_State_Group<null, 
+            | readonly ['edges first', null]
+            | readonly ['nodes first', null]
+        >]
         | readonly ['pack', boolean]
         | readonly ['pack mode', _i_core._T_State_Group<null, 
-            | readonly ['graph', null]
             | readonly ['node', null]
+            | readonly ['graph', null]
         >]
         | readonly ['pad', number]
         | readonly ['page', string]
         | readonly ['quadtree', boolean]
         | readonly ['quantum', number]
         | readonly ['rankdir', _i_core._T_State_Group<null, 
+            | readonly ['top bottom', null]
             | readonly ['bottom top', null]
             | readonly ['left right', null]
             | readonly ['right left', null]
-            | readonly ['top bottom', null]
         >]
         | readonly ['ranksep', string]
         | readonly ['ratio', string]
@@ -1055,19 +705,19 @@ export namespace _T_Node_Attributes {
             export namespace labelloc {
                 
                 export namespace SG {
-                    export type bottom = null
-                    export type center = null
                     export type top = null
+                    export type center = null
+                    export type bottom = null
                 }
                 export type SG = 
-                    | readonly ['bottom', null]
-                    | readonly ['center', null]
                     | readonly ['top', null]
+                    | readonly ['center', null]
+                    | readonly ['bottom', null]
             }
             export type labelloc = _i_core._T_State_Group<null, 
-                | readonly ['bottom', null]
-                | readonly ['center', null]
                 | readonly ['top', null]
+                | readonly ['center', null]
+                | readonly ['bottom', null]
             >
             export type layers = string
             export type margin = string
@@ -1105,9 +755,9 @@ export namespace _T_Node_Attributes {
             | readonly ['image', string]
             | readonly ['label', string]
             | readonly ['labelloc', _i_core._T_State_Group<null, 
-                | readonly ['bottom', null]
-                | readonly ['center', null]
                 | readonly ['top', null]
+                | readonly ['center', null]
+                | readonly ['bottom', null]
             >]
             | readonly ['layers', string]
             | readonly ['margin', string]
@@ -1145,9 +795,9 @@ export namespace _T_Node_Attributes {
         | readonly ['image', string]
         | readonly ['label', string]
         | readonly ['labelloc', _i_core._T_State_Group<null, 
-            | readonly ['bottom', null]
-            | readonly ['center', null]
             | readonly ['top', null]
+            | readonly ['center', null]
+            | readonly ['bottom', null]
         >]
         | readonly ['layers', string]
         | readonly ['margin', string]
@@ -1196,35 +846,35 @@ export namespace _T_Tree {
                 
                 export namespace sub {
                     
-                    export namespace tree {
-                    }
-                    export type tree = _T_Tree
-                    
                     export namespace _type {
                         
                         export namespace SG {
-                            export type cluster = null
                             export type group = null
+                            export type cluster = null
                             export type subgraph = null
                         }
                         export type SG = 
-                            | readonly ['cluster', null]
                             | readonly ['group', null]
+                            | readonly ['cluster', null]
                             | readonly ['subgraph', null]
                     }
                     export type _type = _i_core._T_State_Group<null, 
-                        | readonly ['cluster', null]
                         | readonly ['group', null]
+                        | readonly ['cluster', null]
                         | readonly ['subgraph', null]
                     >
+                    
+                    export namespace tree {
+                    }
+                    export type tree = _T_Tree
                 }
                 export type sub = {
-                    readonly 'tree': _T_Tree
                     readonly 'type': _i_core._T_State_Group<null, 
-                        | readonly ['cluster', null]
                         | readonly ['group', null]
+                        | readonly ['cluster', null]
                         | readonly ['subgraph', null]
                     >
+                    readonly 'tree': _T_Tree
                 }
             }
             export type SG = 
@@ -1232,12 +882,12 @@ export namespace _T_Tree {
                     readonly 'attributes': _T_Node_Attributes
                 }]
                 | readonly ['sub', {
-                    readonly 'tree': _T_Tree
                     readonly 'type': _i_core._T_State_Group<null, 
-                        | readonly ['cluster', null]
                         | readonly ['group', null]
+                        | readonly ['cluster', null]
                         | readonly ['subgraph', null]
                     >
+                    readonly 'tree': _T_Tree
                 }]
         }
         export type D = _i_core._T_State_Group<null, 
@@ -1245,12 +895,12 @@ export namespace _T_Tree {
                 readonly 'attributes': _T_Node_Attributes
             }]
             | readonly ['sub', {
-                readonly 'tree': _T_Tree
                 readonly 'type': _i_core._T_State_Group<null, 
-                    | readonly ['cluster', null]
                     | readonly ['group', null]
+                    | readonly ['cluster', null]
                     | readonly ['subgraph', null]
                 >
+                readonly 'tree': _T_Tree
             }]
         >
     }
@@ -1259,32 +909,46 @@ export namespace _T_Tree {
             readonly 'attributes': _T_Node_Attributes
         }]
         | readonly ['sub', {
-            readonly 'tree': _T_Tree
             readonly 'type': _i_core._T_State_Group<null, 
-                | readonly ['cluster', null]
                 | readonly ['group', null]
+                | readonly ['cluster', null]
                 | readonly ['subgraph', null]
             >
+            readonly 'tree': _T_Tree
         }]
     >>
 }
 
-// *** ALIASES FOR NESTED TYPES
-
-export namespace Attribute_Value {
+export namespace _T_End_Point_Specification {
+    export type start = string
     
-    export namespace SG {
-        export type html_string = string
-        export type _number = string
-        export type _string = string
+    export namespace tail {
+        export type L = string
     }
-    export type SG = 
-        | readonly ['html string', string]
-        | readonly ['number', string]
-        | readonly ['string', string]
+    export type tail = _i_core._T_List<null, string>
+    
+    export namespace port_data {
+        
+        export namespace O {
+            export type port = string
+            
+            export namespace compass_direction {
+                export type O = string
+            }
+            export type compass_direction = _pt.Optional_Value<string>
+        }
+        export type O = {
+            readonly 'port': string
+            readonly 'compass direction': _pt.Optional_Value<string>
+        }
+    }
+    export type port_data = _pt.Optional_Value<{
+        readonly 'port': string
+        readonly 'compass direction': _pt.Optional_Value<string>
+    }>
 }
 
-export namespace Edge_Attributes {
+export namespace _T_Edge_Attributes {
     
     export namespace L {
         
@@ -1302,27 +966,27 @@ export namespace Edge_Attributes {
             export namespace dir {
                 
                 export namespace SG {
+                    export type forward = null
                     export type back = null
                     export type both = null
-                    export type forward = null
                     export type none = null
                 }
                 export type SG = 
+                    | readonly ['forward', null]
                     | readonly ['back', null]
                     | readonly ['both', null]
-                    | readonly ['forward', null]
                     | readonly ['none', null]
             }
             export type dir = _i_core._T_State_Group<null, 
+                | readonly ['forward', null]
                 | readonly ['back', null]
                 | readonly ['both', null]
-                | readonly ['forward', null]
                 | readonly ['none', null]
             >
+            export type edge_url = string
             export type edge_lp = string
             export type edge_target = string
             export type edge_tooltip = string
-            export type edge_url = string
             export type head_lp = string
             export type headclip = boolean
             export type headlabel = string
@@ -1330,12 +994,12 @@ export namespace Edge_Attributes {
             export type height = number
             export type id = string
             export type label = string
-            export type label_angle = number
             export type label_distance = number
+            export type label_angle = number
             export type label_float = boolean
-            export type label_lp = string
             export type labelfloat = boolean
             export type labelhref = string
+            export type label_lp = string
             export type layer = string
             export type len = number
             export type lhead = string
@@ -1368,15 +1032,15 @@ export namespace Edge_Attributes {
             | readonly ['constraint', boolean]
             | readonly ['decorate', boolean]
             | readonly ['dir', _i_core._T_State_Group<null, 
+                | readonly ['forward', null]
                 | readonly ['back', null]
                 | readonly ['both', null]
-                | readonly ['forward', null]
                 | readonly ['none', null]
             >]
+            | readonly ['edge url', string]
             | readonly ['edge lp', string]
             | readonly ['edge target', string]
             | readonly ['edge tooltip', string]
-            | readonly ['edge url', string]
             | readonly ['head lp', string]
             | readonly ['headclip', boolean]
             | readonly ['headlabel', string]
@@ -1384,12 +1048,12 @@ export namespace Edge_Attributes {
             | readonly ['height', number]
             | readonly ['id', string]
             | readonly ['label', string]
-            | readonly ['label angle', number]
             | readonly ['label distance', number]
+            | readonly ['label angle', number]
             | readonly ['label float', boolean]
-            | readonly ['label lp', string]
             | readonly ['labelfloat', boolean]
             | readonly ['labelhref', string]
+            | readonly ['label lp', string]
             | readonly ['layer', string]
             | readonly ['len', number]
             | readonly ['lhead', string]
@@ -1422,15 +1086,15 @@ export namespace Edge_Attributes {
         | readonly ['constraint', boolean]
         | readonly ['decorate', boolean]
         | readonly ['dir', _i_core._T_State_Group<null, 
+            | readonly ['forward', null]
             | readonly ['back', null]
             | readonly ['both', null]
-            | readonly ['forward', null]
             | readonly ['none', null]
         >]
+        | readonly ['edge url', string]
         | readonly ['edge lp', string]
         | readonly ['edge target', string]
         | readonly ['edge tooltip', string]
-        | readonly ['edge url', string]
         | readonly ['head lp', string]
         | readonly ['headclip', boolean]
         | readonly ['headlabel', string]
@@ -1438,12 +1102,12 @@ export namespace Edge_Attributes {
         | readonly ['height', number]
         | readonly ['id', string]
         | readonly ['label', string]
-        | readonly ['label angle', number]
         | readonly ['label distance', number]
+        | readonly ['label angle', number]
         | readonly ['label float', boolean]
-        | readonly ['label lp', string]
         | readonly ['labelfloat', boolean]
         | readonly ['labelhref', string]
+        | readonly ['label lp', string]
         | readonly ['layer', string]
         | readonly ['len', number]
         | readonly ['lhead', string]
@@ -1467,36 +1131,7 @@ export namespace Edge_Attributes {
     >
 }
 
-export namespace End_Point_Specification {
-    
-    export namespace port_data {
-        
-        export namespace O {
-            
-            export namespace compass_direction {
-                export type O = string
-            }
-            export type compass_direction = _pt.Optional_Value<string>
-            export type port = string
-        }
-        export type O = {
-            readonly 'compass direction': _pt.Optional_Value<string>
-            readonly 'port': string
-        }
-    }
-    export type port_data = _pt.Optional_Value<{
-        readonly 'compass direction': _pt.Optional_Value<string>
-        readonly 'port': string
-    }>
-    export type start = string
-    
-    export namespace tail {
-        export type L = string
-    }
-    export type tail = _i_core._T_List<null, string>
-}
-
-export namespace Graph {
+export namespace _T_Graph {
     
     export namespace name {
         export type O = string
@@ -1511,15 +1146,49 @@ export namespace Graph {
         
         export namespace SG {
             
-            export namespace directed {
+            export namespace undirected {
                 
                 export namespace edges {
                     
                     export namespace L {
                         
+                        export namespace yin {
+                        }
+                        export type yin = _T_End_Point_Specification
+                        
+                        export namespace yang {
+                        }
+                        export type yang = _T_End_Point_Specification
+                        
                         export namespace attributes {
                         }
                         export type attributes = _T_Edge_Attributes
+                    }
+                    export type L = {
+                        readonly 'yin': _T_End_Point_Specification
+                        readonly 'yang': _T_End_Point_Specification
+                        readonly 'attributes': _T_Edge_Attributes
+                    }
+                }
+                export type edges = _i_core._T_List<null, {
+                    readonly 'yin': _T_End_Point_Specification
+                    readonly 'yang': _T_End_Point_Specification
+                    readonly 'attributes': _T_Edge_Attributes
+                }>
+            }
+            export type undirected = {
+                readonly 'edges': _i_core._T_List<null, {
+                    readonly 'yin': _T_End_Point_Specification
+                    readonly 'yang': _T_End_Point_Specification
+                    readonly 'attributes': _T_Edge_Attributes
+                }>
+            }
+            
+            export namespace directed {
+                
+                export namespace edges {
+                    
+                    export namespace L {
                         
                         export namespace _from {
                         }
@@ -1528,128 +1197,109 @@ export namespace Graph {
                         export namespace to {
                         }
                         export type to = _T_End_Point_Specification
-                    }
-                    export type L = {
-                        readonly 'attributes': _T_Edge_Attributes
-                        readonly 'from': _T_End_Point_Specification
-                        readonly 'to': _T_End_Point_Specification
-                    }
-                }
-                export type edges = _i_core._T_List<null, {
-                    readonly 'attributes': _T_Edge_Attributes
-                    readonly 'from': _T_End_Point_Specification
-                    readonly 'to': _T_End_Point_Specification
-                }>
-            }
-            export type directed = {
-                readonly 'edges': _i_core._T_List<null, {
-                    readonly 'attributes': _T_Edge_Attributes
-                    readonly 'from': _T_End_Point_Specification
-                    readonly 'to': _T_End_Point_Specification
-                }>
-            }
-            
-            export namespace undirected {
-                
-                export namespace edges {
-                    
-                    export namespace L {
                         
                         export namespace attributes {
                         }
                         export type attributes = _T_Edge_Attributes
-                        
-                        export namespace yang {
-                        }
-                        export type yang = _T_End_Point_Specification
-                        
-                        export namespace yin {
-                        }
-                        export type yin = _T_End_Point_Specification
                     }
                     export type L = {
+                        readonly 'from': _T_End_Point_Specification
+                        readonly 'to': _T_End_Point_Specification
                         readonly 'attributes': _T_Edge_Attributes
-                        readonly 'yang': _T_End_Point_Specification
-                        readonly 'yin': _T_End_Point_Specification
                     }
                 }
                 export type edges = _i_core._T_List<null, {
+                    readonly 'from': _T_End_Point_Specification
+                    readonly 'to': _T_End_Point_Specification
                     readonly 'attributes': _T_Edge_Attributes
-                    readonly 'yang': _T_End_Point_Specification
-                    readonly 'yin': _T_End_Point_Specification
                 }>
             }
-            export type undirected = {
+            export type directed = {
                 readonly 'edges': _i_core._T_List<null, {
+                    readonly 'from': _T_End_Point_Specification
+                    readonly 'to': _T_End_Point_Specification
                     readonly 'attributes': _T_Edge_Attributes
-                    readonly 'yang': _T_End_Point_Specification
-                    readonly 'yin': _T_End_Point_Specification
                 }>
             }
         }
         export type SG = 
-            | readonly ['directed', {
-                readonly 'edges': _i_core._T_List<null, {
-                    readonly 'attributes': _T_Edge_Attributes
-                    readonly 'from': _T_End_Point_Specification
-                    readonly 'to': _T_End_Point_Specification
-                }>
-            }]
             | readonly ['undirected', {
                 readonly 'edges': _i_core._T_List<null, {
-                    readonly 'attributes': _T_Edge_Attributes
-                    readonly 'yang': _T_End_Point_Specification
                     readonly 'yin': _T_End_Point_Specification
+                    readonly 'yang': _T_End_Point_Specification
+                    readonly 'attributes': _T_Edge_Attributes
+                }>
+            }]
+            | readonly ['directed', {
+                readonly 'edges': _i_core._T_List<null, {
+                    readonly 'from': _T_End_Point_Specification
+                    readonly 'to': _T_End_Point_Specification
+                    readonly 'attributes': _T_Edge_Attributes
                 }>
             }]
     }
     export type _type = _i_core._T_State_Group<null, 
-        | readonly ['directed', {
-            readonly 'edges': _i_core._T_List<null, {
-                readonly 'attributes': _T_Edge_Attributes
-                readonly 'from': _T_End_Point_Specification
-                readonly 'to': _T_End_Point_Specification
-            }>
-        }]
         | readonly ['undirected', {
             readonly 'edges': _i_core._T_List<null, {
-                readonly 'attributes': _T_Edge_Attributes
-                readonly 'yang': _T_End_Point_Specification
                 readonly 'yin': _T_End_Point_Specification
+                readonly 'yang': _T_End_Point_Specification
+                readonly 'attributes': _T_Edge_Attributes
+            }>
+        }]
+        | readonly ['directed', {
+            readonly 'edges': _i_core._T_List<null, {
+                readonly 'from': _T_End_Point_Specification
+                readonly 'to': _T_End_Point_Specification
+                readonly 'attributes': _T_Edge_Attributes
             }>
         }]
     >
 }
+
+export namespace _T_Attribute_Value {
+    
+    export namespace SG {
+        export type _number = string
+        export type _string = string
+        export type html_string = string
+    }
+    export type SG = 
+        | readonly ['number', string]
+        | readonly ['string', string]
+        | readonly ['html string', string]
+}
+
+// *** ALIASES FOR NESTED TYPES
 
 export namespace Graph_Attributes {
     
     export namespace L {
         
         export namespace SG {
+            export type concentrate = boolean
             export type charset = string
             
             export namespace clusterrank {
                 
                 export namespace SG {
-                    export type global = null
-                    export type local = null
                     export type none = null
+                    export type local = null
+                    export type global = null
                 }
                 export type SG = 
-                    | readonly ['global', null]
-                    | readonly ['local', null]
                     | readonly ['none', null]
+                    | readonly ['local', null]
+                    | readonly ['global', null]
             }
             export type clusterrank = _i_core._T_State_Group<null, 
-                | readonly ['global', null]
-                | readonly ['local', null]
                 | readonly ['none', null]
+                | readonly ['local', null]
+                | readonly ['global', null]
             >
             export type color = string
             export type color_scheme = string
             export type comment = string
             export type compound = boolean
-            export type concentrate = boolean
             export type dpi = number
             export type font_color = string
             export type font_name = string
@@ -1657,22 +1307,22 @@ export namespace Graph_Attributes {
             export type font_size = number
             export type label = string
             export type label_distance = number
+            export type label_scheme = number
             
             export namespace label_location {
                 
                 export namespace SG {
-                    export type bottom = null
                     export type top = null
+                    export type bottom = null
                 }
                 export type SG = 
-                    | readonly ['bottom', null]
                     | readonly ['top', null]
+                    | readonly ['bottom', null]
             }
             export type label_location = _i_core._T_State_Group<null, 
-                | readonly ['bottom', null]
                 | readonly ['top', null]
+                | readonly ['bottom', null]
             >
-            export type label_scheme = number
             export type landscape = boolean
             export type layer_list = string
             export type layer_separator = string
@@ -1685,22 +1335,22 @@ export namespace Graph_Attributes {
             export namespace mode {
                 
                 export namespace SG {
-                    export type _in = null
-                    export type in_out = null
                     export type no_output = null
                     export type out = null
+                    export type _in = null
+                    export type in_out = null
                 }
                 export type SG = 
-                    | readonly ['in', null]
-                    | readonly ['in out', null]
                     | readonly ['no output', null]
                     | readonly ['out', null]
+                    | readonly ['in', null]
+                    | readonly ['in out', null]
             }
             export type mode = _i_core._T_State_Group<null, 
-                | readonly ['in', null]
-                | readonly ['in out', null]
                 | readonly ['no output', null]
                 | readonly ['out', null]
+                | readonly ['in', null]
+                | readonly ['in out', null]
             >
             export type newrank = boolean
             export type no_loop = boolean
@@ -1709,36 +1359,21 @@ export namespace Graph_Attributes {
             export namespace ordering {
                 
                 export namespace SG {
+                    export type out = null
                     export type _in = null
                     export type in_out = null
-                    export type out = null
                 }
                 export type SG = 
+                    | readonly ['out', null]
                     | readonly ['in', null]
                     | readonly ['in out', null]
-                    | readonly ['out', null]
             }
             export type ordering = _i_core._T_State_Group<null, 
+                | readonly ['out', null]
                 | readonly ['in', null]
                 | readonly ['in out', null]
-                | readonly ['out', null]
             >
             export type orientation = number
-            
-            export namespace output_mode {
-                
-                export namespace SG {
-                    export type edges_first = null
-                    export type nodes_first = null
-                }
-                export type SG = 
-                    | readonly ['edges first', null]
-                    | readonly ['nodes first', null]
-            }
-            export type output_mode = _i_core._T_State_Group<null, 
-                | readonly ['edges first', null]
-                | readonly ['nodes first', null]
-            >
             
             export namespace output_order {
                 
@@ -1755,21 +1390,36 @@ export namespace Graph_Attributes {
                 | readonly ['dfs', null]
             >
             export type overlap = string
+            
+            export namespace output_mode {
+                
+                export namespace SG {
+                    export type edges_first = null
+                    export type nodes_first = null
+                }
+                export type SG = 
+                    | readonly ['edges first', null]
+                    | readonly ['nodes first', null]
+            }
+            export type output_mode = _i_core._T_State_Group<null, 
+                | readonly ['edges first', null]
+                | readonly ['nodes first', null]
+            >
             export type pack = boolean
             
             export namespace pack_mode {
                 
                 export namespace SG {
-                    export type graph = null
                     export type node = null
+                    export type graph = null
                 }
                 export type SG = 
-                    | readonly ['graph', null]
                     | readonly ['node', null]
+                    | readonly ['graph', null]
             }
             export type pack_mode = _i_core._T_State_Group<null, 
-                | readonly ['graph', null]
                 | readonly ['node', null]
+                | readonly ['graph', null]
             >
             export type pad = number
             export type page = string
@@ -1779,22 +1429,22 @@ export namespace Graph_Attributes {
             export namespace rankdir {
                 
                 export namespace SG {
+                    export type top_bottom = null
                     export type bottom_top = null
                     export type left_right = null
                     export type right_left = null
-                    export type top_bottom = null
                 }
                 export type SG = 
+                    | readonly ['top bottom', null]
                     | readonly ['bottom top', null]
                     | readonly ['left right', null]
                     | readonly ['right left', null]
-                    | readonly ['top bottom', null]
             }
             export type rankdir = _i_core._T_State_Group<null, 
+                | readonly ['top bottom', null]
                 | readonly ['bottom top', null]
                 | readonly ['left right', null]
                 | readonly ['right left', null]
-                | readonly ['top bottom', null]
             >
             export type ranksep = string
             export type ratio = string
@@ -1837,17 +1487,17 @@ export namespace Graph_Attributes {
             export type xlabel = string
         }
         export type SG = 
+            | readonly ['concentrate', boolean]
             | readonly ['charset', string]
             | readonly ['clusterrank', _i_core._T_State_Group<null, 
-                | readonly ['global', null]
-                | readonly ['local', null]
                 | readonly ['none', null]
+                | readonly ['local', null]
+                | readonly ['global', null]
             >]
             | readonly ['color', string]
             | readonly ['color scheme', string]
             | readonly ['comment', string]
             | readonly ['compound', boolean]
-            | readonly ['concentrate', boolean]
             | readonly ['dpi', number]
             | readonly ['font color', string]
             | readonly ['font name', string]
@@ -1855,11 +1505,11 @@ export namespace Graph_Attributes {
             | readonly ['font size', number]
             | readonly ['label', string]
             | readonly ['label distance', number]
-            | readonly ['label location', _i_core._T_State_Group<null, 
-                | readonly ['bottom', null]
-                | readonly ['top', null]
-            >]
             | readonly ['label scheme', number]
+            | readonly ['label location', _i_core._T_State_Group<null, 
+                | readonly ['top', null]
+                | readonly ['bottom', null]
+            >]
             | readonly ['landscape', boolean]
             | readonly ['layer list', string]
             | readonly ['layer separator', string]
@@ -1869,43 +1519,43 @@ export namespace Graph_Attributes {
             | readonly ['mclimit', number]
             | readonly ['mindist', number]
             | readonly ['mode', _i_core._T_State_Group<null, 
-                | readonly ['in', null]
-                | readonly ['in out', null]
                 | readonly ['no output', null]
                 | readonly ['out', null]
+                | readonly ['in', null]
+                | readonly ['in out', null]
             >]
             | readonly ['newrank', boolean]
             | readonly ['no loop', boolean]
             | readonly ['normalize', boolean]
             | readonly ['ordering', _i_core._T_State_Group<null, 
+                | readonly ['out', null]
                 | readonly ['in', null]
                 | readonly ['in out', null]
-                | readonly ['out', null]
             >]
             | readonly ['orientation', number]
-            | readonly ['output mode', _i_core._T_State_Group<null, 
-                | readonly ['edges first', null]
-                | readonly ['nodes first', null]
-            >]
             | readonly ['output order', _i_core._T_State_Group<null, 
                 | readonly ['breadth first', null]
                 | readonly ['dfs', null]
             >]
             | readonly ['overlap', string]
+            | readonly ['output mode', _i_core._T_State_Group<null, 
+                | readonly ['edges first', null]
+                | readonly ['nodes first', null]
+            >]
             | readonly ['pack', boolean]
             | readonly ['pack mode', _i_core._T_State_Group<null, 
-                | readonly ['graph', null]
                 | readonly ['node', null]
+                | readonly ['graph', null]
             >]
             | readonly ['pad', number]
             | readonly ['page', string]
             | readonly ['quadtree', boolean]
             | readonly ['quantum', number]
             | readonly ['rankdir', _i_core._T_State_Group<null, 
+                | readonly ['top bottom', null]
                 | readonly ['bottom top', null]
                 | readonly ['left right', null]
                 | readonly ['right left', null]
-                | readonly ['top bottom', null]
             >]
             | readonly ['ranksep', string]
             | readonly ['ratio', string]
@@ -1935,17 +1585,17 @@ export namespace Graph_Attributes {
             | readonly ['xlabel', string]
     }
     export type L = _i_core._T_State_Group<null, 
+        | readonly ['concentrate', boolean]
         | readonly ['charset', string]
         | readonly ['clusterrank', _i_core._T_State_Group<null, 
-            | readonly ['global', null]
-            | readonly ['local', null]
             | readonly ['none', null]
+            | readonly ['local', null]
+            | readonly ['global', null]
         >]
         | readonly ['color', string]
         | readonly ['color scheme', string]
         | readonly ['comment', string]
         | readonly ['compound', boolean]
-        | readonly ['concentrate', boolean]
         | readonly ['dpi', number]
         | readonly ['font color', string]
         | readonly ['font name', string]
@@ -1953,11 +1603,11 @@ export namespace Graph_Attributes {
         | readonly ['font size', number]
         | readonly ['label', string]
         | readonly ['label distance', number]
-        | readonly ['label location', _i_core._T_State_Group<null, 
-            | readonly ['bottom', null]
-            | readonly ['top', null]
-        >]
         | readonly ['label scheme', number]
+        | readonly ['label location', _i_core._T_State_Group<null, 
+            | readonly ['top', null]
+            | readonly ['bottom', null]
+        >]
         | readonly ['landscape', boolean]
         | readonly ['layer list', string]
         | readonly ['layer separator', string]
@@ -1967,43 +1617,43 @@ export namespace Graph_Attributes {
         | readonly ['mclimit', number]
         | readonly ['mindist', number]
         | readonly ['mode', _i_core._T_State_Group<null, 
-            | readonly ['in', null]
-            | readonly ['in out', null]
             | readonly ['no output', null]
             | readonly ['out', null]
+            | readonly ['in', null]
+            | readonly ['in out', null]
         >]
         | readonly ['newrank', boolean]
         | readonly ['no loop', boolean]
         | readonly ['normalize', boolean]
         | readonly ['ordering', _i_core._T_State_Group<null, 
+            | readonly ['out', null]
             | readonly ['in', null]
             | readonly ['in out', null]
-            | readonly ['out', null]
         >]
         | readonly ['orientation', number]
-        | readonly ['output mode', _i_core._T_State_Group<null, 
-            | readonly ['edges first', null]
-            | readonly ['nodes first', null]
-        >]
         | readonly ['output order', _i_core._T_State_Group<null, 
             | readonly ['breadth first', null]
             | readonly ['dfs', null]
         >]
         | readonly ['overlap', string]
+        | readonly ['output mode', _i_core._T_State_Group<null, 
+            | readonly ['edges first', null]
+            | readonly ['nodes first', null]
+        >]
         | readonly ['pack', boolean]
         | readonly ['pack mode', _i_core._T_State_Group<null, 
-            | readonly ['graph', null]
             | readonly ['node', null]
+            | readonly ['graph', null]
         >]
         | readonly ['pad', number]
         | readonly ['page', string]
         | readonly ['quadtree', boolean]
         | readonly ['quantum', number]
         | readonly ['rankdir', _i_core._T_State_Group<null, 
+            | readonly ['top bottom', null]
             | readonly ['bottom top', null]
             | readonly ['left right', null]
             | readonly ['right left', null]
-            | readonly ['top bottom', null]
         >]
         | readonly ['ranksep', string]
         | readonly ['ratio', string]
@@ -2056,19 +1706,19 @@ export namespace Node_Attributes {
             export namespace labelloc {
                 
                 export namespace SG {
-                    export type bottom = null
-                    export type center = null
                     export type top = null
+                    export type center = null
+                    export type bottom = null
                 }
                 export type SG = 
-                    | readonly ['bottom', null]
-                    | readonly ['center', null]
                     | readonly ['top', null]
+                    | readonly ['center', null]
+                    | readonly ['bottom', null]
             }
             export type labelloc = _i_core._T_State_Group<null, 
-                | readonly ['bottom', null]
-                | readonly ['center', null]
                 | readonly ['top', null]
+                | readonly ['center', null]
+                | readonly ['bottom', null]
             >
             export type layers = string
             export type margin = string
@@ -2106,9 +1756,9 @@ export namespace Node_Attributes {
             | readonly ['image', string]
             | readonly ['label', string]
             | readonly ['labelloc', _i_core._T_State_Group<null, 
-                | readonly ['bottom', null]
-                | readonly ['center', null]
                 | readonly ['top', null]
+                | readonly ['center', null]
+                | readonly ['bottom', null]
             >]
             | readonly ['layers', string]
             | readonly ['margin', string]
@@ -2146,9 +1796,9 @@ export namespace Node_Attributes {
         | readonly ['image', string]
         | readonly ['label', string]
         | readonly ['labelloc', _i_core._T_State_Group<null, 
-            | readonly ['bottom', null]
-            | readonly ['center', null]
             | readonly ['top', null]
+            | readonly ['center', null]
+            | readonly ['bottom', null]
         >]
         | readonly ['layers', string]
         | readonly ['margin', string]
@@ -2197,35 +1847,35 @@ export namespace Tree {
                 
                 export namespace sub {
                     
-                    export namespace tree {
-                    }
-                    export type tree = _T_Tree
-                    
                     export namespace _type {
                         
                         export namespace SG {
-                            export type cluster = null
                             export type group = null
+                            export type cluster = null
                             export type subgraph = null
                         }
                         export type SG = 
-                            | readonly ['cluster', null]
                             | readonly ['group', null]
+                            | readonly ['cluster', null]
                             | readonly ['subgraph', null]
                     }
                     export type _type = _i_core._T_State_Group<null, 
-                        | readonly ['cluster', null]
                         | readonly ['group', null]
+                        | readonly ['cluster', null]
                         | readonly ['subgraph', null]
                     >
+                    
+                    export namespace tree {
+                    }
+                    export type tree = _T_Tree
                 }
                 export type sub = {
-                    readonly 'tree': _T_Tree
                     readonly 'type': _i_core._T_State_Group<null, 
-                        | readonly ['cluster', null]
                         | readonly ['group', null]
+                        | readonly ['cluster', null]
                         | readonly ['subgraph', null]
                     >
+                    readonly 'tree': _T_Tree
                 }
             }
             export type SG = 
@@ -2233,12 +1883,12 @@ export namespace Tree {
                     readonly 'attributes': _T_Node_Attributes
                 }]
                 | readonly ['sub', {
-                    readonly 'tree': _T_Tree
                     readonly 'type': _i_core._T_State_Group<null, 
-                        | readonly ['cluster', null]
                         | readonly ['group', null]
+                        | readonly ['cluster', null]
                         | readonly ['subgraph', null]
                     >
+                    readonly 'tree': _T_Tree
                 }]
         }
         export type D = _i_core._T_State_Group<null, 
@@ -2246,12 +1896,12 @@ export namespace Tree {
                 readonly 'attributes': _T_Node_Attributes
             }]
             | readonly ['sub', {
-                readonly 'tree': _T_Tree
                 readonly 'type': _i_core._T_State_Group<null, 
-                    | readonly ['cluster', null]
                     | readonly ['group', null]
+                    | readonly ['cluster', null]
                     | readonly ['subgraph', null]
                 >
+                readonly 'tree': _T_Tree
             }]
         >
     }
@@ -2260,12 +1910,362 @@ export namespace Tree {
             readonly 'attributes': _T_Node_Attributes
         }]
         | readonly ['sub', {
-            readonly 'tree': _T_Tree
             readonly 'type': _i_core._T_State_Group<null, 
-                | readonly ['cluster', null]
                 | readonly ['group', null]
+                | readonly ['cluster', null]
                 | readonly ['subgraph', null]
             >
+            readonly 'tree': _T_Tree
         }]
     >>
+}
+
+export namespace End_Point_Specification {
+    export type start = string
+    
+    export namespace tail {
+        export type L = string
+    }
+    export type tail = _i_core._T_List<null, string>
+    
+    export namespace port_data {
+        
+        export namespace O {
+            export type port = string
+            
+            export namespace compass_direction {
+                export type O = string
+            }
+            export type compass_direction = _pt.Optional_Value<string>
+        }
+        export type O = {
+            readonly 'port': string
+            readonly 'compass direction': _pt.Optional_Value<string>
+        }
+    }
+    export type port_data = _pt.Optional_Value<{
+        readonly 'port': string
+        readonly 'compass direction': _pt.Optional_Value<string>
+    }>
+}
+
+export namespace Edge_Attributes {
+    
+    export namespace L {
+        
+        export namespace SG {
+            export type arrowhead = string
+            export type arrowsize = number
+            export type arrowtail = string
+            export type bgcolor = string
+            export type color = string
+            export type colorscheme = string
+            export type comment = string
+            export type constraint = boolean
+            export type decorate = boolean
+            
+            export namespace dir {
+                
+                export namespace SG {
+                    export type forward = null
+                    export type back = null
+                    export type both = null
+                    export type none = null
+                }
+                export type SG = 
+                    | readonly ['forward', null]
+                    | readonly ['back', null]
+                    | readonly ['both', null]
+                    | readonly ['none', null]
+            }
+            export type dir = _i_core._T_State_Group<null, 
+                | readonly ['forward', null]
+                | readonly ['back', null]
+                | readonly ['both', null]
+                | readonly ['none', null]
+            >
+            export type edge_url = string
+            export type edge_lp = string
+            export type edge_target = string
+            export type edge_tooltip = string
+            export type head_lp = string
+            export type headclip = boolean
+            export type headlabel = string
+            export type headport = string
+            export type height = number
+            export type id = string
+            export type label = string
+            export type label_distance = number
+            export type label_angle = number
+            export type label_float = boolean
+            export type labelfloat = boolean
+            export type labelhref = string
+            export type label_lp = string
+            export type layer = string
+            export type len = number
+            export type lhead = string
+            export type lp = string
+            export type ltail = string
+            export type minlen = number
+            export type pen_width = number
+            export type pos = string
+            export type same_head = boolean
+            export type same_tail = boolean
+            export type showboxes = boolean
+            export type style = string
+            export type tail_lp = string
+            export type tailclip = boolean
+            export type taillabel = string
+            export type tailport = string
+            export type tooltip = string
+            export type weight = number
+            export type xlabel = string
+            export type xlp = string
+        }
+        export type SG = 
+            | readonly ['arrowhead', string]
+            | readonly ['arrowsize', number]
+            | readonly ['arrowtail', string]
+            | readonly ['bgcolor', string]
+            | readonly ['color', string]
+            | readonly ['colorscheme', string]
+            | readonly ['comment', string]
+            | readonly ['constraint', boolean]
+            | readonly ['decorate', boolean]
+            | readonly ['dir', _i_core._T_State_Group<null, 
+                | readonly ['forward', null]
+                | readonly ['back', null]
+                | readonly ['both', null]
+                | readonly ['none', null]
+            >]
+            | readonly ['edge url', string]
+            | readonly ['edge lp', string]
+            | readonly ['edge target', string]
+            | readonly ['edge tooltip', string]
+            | readonly ['head lp', string]
+            | readonly ['headclip', boolean]
+            | readonly ['headlabel', string]
+            | readonly ['headport', string]
+            | readonly ['height', number]
+            | readonly ['id', string]
+            | readonly ['label', string]
+            | readonly ['label distance', number]
+            | readonly ['label angle', number]
+            | readonly ['label float', boolean]
+            | readonly ['labelfloat', boolean]
+            | readonly ['labelhref', string]
+            | readonly ['label lp', string]
+            | readonly ['layer', string]
+            | readonly ['len', number]
+            | readonly ['lhead', string]
+            | readonly ['lp', string]
+            | readonly ['ltail', string]
+            | readonly ['minlen', number]
+            | readonly ['pen width', number]
+            | readonly ['pos', string]
+            | readonly ['same head', boolean]
+            | readonly ['same tail', boolean]
+            | readonly ['showboxes', boolean]
+            | readonly ['style', string]
+            | readonly ['tail lp', string]
+            | readonly ['tailclip', boolean]
+            | readonly ['taillabel', string]
+            | readonly ['tailport', string]
+            | readonly ['tooltip', string]
+            | readonly ['weight', number]
+            | readonly ['xlabel', string]
+            | readonly ['xlp', string]
+    }
+    export type L = _i_core._T_State_Group<null, 
+        | readonly ['arrowhead', string]
+        | readonly ['arrowsize', number]
+        | readonly ['arrowtail', string]
+        | readonly ['bgcolor', string]
+        | readonly ['color', string]
+        | readonly ['colorscheme', string]
+        | readonly ['comment', string]
+        | readonly ['constraint', boolean]
+        | readonly ['decorate', boolean]
+        | readonly ['dir', _i_core._T_State_Group<null, 
+            | readonly ['forward', null]
+            | readonly ['back', null]
+            | readonly ['both', null]
+            | readonly ['none', null]
+        >]
+        | readonly ['edge url', string]
+        | readonly ['edge lp', string]
+        | readonly ['edge target', string]
+        | readonly ['edge tooltip', string]
+        | readonly ['head lp', string]
+        | readonly ['headclip', boolean]
+        | readonly ['headlabel', string]
+        | readonly ['headport', string]
+        | readonly ['height', number]
+        | readonly ['id', string]
+        | readonly ['label', string]
+        | readonly ['label distance', number]
+        | readonly ['label angle', number]
+        | readonly ['label float', boolean]
+        | readonly ['labelfloat', boolean]
+        | readonly ['labelhref', string]
+        | readonly ['label lp', string]
+        | readonly ['layer', string]
+        | readonly ['len', number]
+        | readonly ['lhead', string]
+        | readonly ['lp', string]
+        | readonly ['ltail', string]
+        | readonly ['minlen', number]
+        | readonly ['pen width', number]
+        | readonly ['pos', string]
+        | readonly ['same head', boolean]
+        | readonly ['same tail', boolean]
+        | readonly ['showboxes', boolean]
+        | readonly ['style', string]
+        | readonly ['tail lp', string]
+        | readonly ['tailclip', boolean]
+        | readonly ['taillabel', string]
+        | readonly ['tailport', string]
+        | readonly ['tooltip', string]
+        | readonly ['weight', number]
+        | readonly ['xlabel', string]
+        | readonly ['xlp', string]
+    >
+}
+
+export namespace Graph {
+    
+    export namespace name {
+        export type O = string
+    }
+    export type name = _pt.Optional_Value<string>
+    
+    export namespace tree {
+    }
+    export type tree = _T_Tree
+    
+    export namespace _type {
+        
+        export namespace SG {
+            
+            export namespace undirected {
+                
+                export namespace edges {
+                    
+                    export namespace L {
+                        
+                        export namespace yin {
+                        }
+                        export type yin = _T_End_Point_Specification
+                        
+                        export namespace yang {
+                        }
+                        export type yang = _T_End_Point_Specification
+                        
+                        export namespace attributes {
+                        }
+                        export type attributes = _T_Edge_Attributes
+                    }
+                    export type L = {
+                        readonly 'yin': _T_End_Point_Specification
+                        readonly 'yang': _T_End_Point_Specification
+                        readonly 'attributes': _T_Edge_Attributes
+                    }
+                }
+                export type edges = _i_core._T_List<null, {
+                    readonly 'yin': _T_End_Point_Specification
+                    readonly 'yang': _T_End_Point_Specification
+                    readonly 'attributes': _T_Edge_Attributes
+                }>
+            }
+            export type undirected = {
+                readonly 'edges': _i_core._T_List<null, {
+                    readonly 'yin': _T_End_Point_Specification
+                    readonly 'yang': _T_End_Point_Specification
+                    readonly 'attributes': _T_Edge_Attributes
+                }>
+            }
+            
+            export namespace directed {
+                
+                export namespace edges {
+                    
+                    export namespace L {
+                        
+                        export namespace _from {
+                        }
+                        export type _from = _T_End_Point_Specification
+                        
+                        export namespace to {
+                        }
+                        export type to = _T_End_Point_Specification
+                        
+                        export namespace attributes {
+                        }
+                        export type attributes = _T_Edge_Attributes
+                    }
+                    export type L = {
+                        readonly 'from': _T_End_Point_Specification
+                        readonly 'to': _T_End_Point_Specification
+                        readonly 'attributes': _T_Edge_Attributes
+                    }
+                }
+                export type edges = _i_core._T_List<null, {
+                    readonly 'from': _T_End_Point_Specification
+                    readonly 'to': _T_End_Point_Specification
+                    readonly 'attributes': _T_Edge_Attributes
+                }>
+            }
+            export type directed = {
+                readonly 'edges': _i_core._T_List<null, {
+                    readonly 'from': _T_End_Point_Specification
+                    readonly 'to': _T_End_Point_Specification
+                    readonly 'attributes': _T_Edge_Attributes
+                }>
+            }
+        }
+        export type SG = 
+            | readonly ['undirected', {
+                readonly 'edges': _i_core._T_List<null, {
+                    readonly 'yin': _T_End_Point_Specification
+                    readonly 'yang': _T_End_Point_Specification
+                    readonly 'attributes': _T_Edge_Attributes
+                }>
+            }]
+            | readonly ['directed', {
+                readonly 'edges': _i_core._T_List<null, {
+                    readonly 'from': _T_End_Point_Specification
+                    readonly 'to': _T_End_Point_Specification
+                    readonly 'attributes': _T_Edge_Attributes
+                }>
+            }]
+    }
+    export type _type = _i_core._T_State_Group<null, 
+        | readonly ['undirected', {
+            readonly 'edges': _i_core._T_List<null, {
+                readonly 'yin': _T_End_Point_Specification
+                readonly 'yang': _T_End_Point_Specification
+                readonly 'attributes': _T_Edge_Attributes
+            }>
+        }]
+        | readonly ['directed', {
+            readonly 'edges': _i_core._T_List<null, {
+                readonly 'from': _T_End_Point_Specification
+                readonly 'to': _T_End_Point_Specification
+                readonly 'attributes': _T_Edge_Attributes
+            }>
+        }]
+    >
+}
+
+export namespace Attribute_Value {
+    
+    export namespace SG {
+        export type _number = string
+        export type _string = string
+        export type html_string = string
+    }
+    export type SG = 
+        | readonly ['number', string]
+        | readonly ['string', string]
+        | readonly ['html string', string]
 }
