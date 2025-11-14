@@ -5,7 +5,7 @@ import * as _in from "pareto/dist/interface/generated/pareto/schemas/schema/data
 import * as _in_m from "pareto/dist/interface/generated/pareto/schemas/module/data_types/source"
 import * as _out from "../../../../../interface/generated/pareto/schemas/lionweb/data_types/target"
 
-import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/implementation/algorithms/operations/impure/dictionary/to_list_sorted_by_code_point"
+import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/implementation/algorithms/operations/impure/dictionary/to_list_sorted_by_insertion"
 import { $$ as op_flatten_list } from "pareto-standard-operations/dist/implementation/algorithms/operations/pure/list/flatten"
 import { Signature } from "../../../../../interface/algorithms/transformations/pareto/schema/lionweb"
 
