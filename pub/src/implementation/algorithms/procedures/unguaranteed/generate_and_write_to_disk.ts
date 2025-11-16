@@ -20,7 +20,7 @@ import * as d_make_directory from "exupery-resources/dist/interface/generated/pa
 import * as d_write_file from "exupery-resources/dist/interface/generated/pareto/schemas/write_file/data_types/source"
 
 export type Resources = {
-    'procedures': {
+    'commands': {
         'remove': _et.Command<d_remove.Parameters, d_remove.Error>
         'make directory': _et.Command<d_make_directory.Parameters, d_make_directory.Error>
         'write file': _et.Command<d_write_file.Parameters, d_write_file.Error>
@@ -37,10 +37,9 @@ export type Parameters = {
     | ['typescript', null]
 }
 
-export const $$: _et.Command_Procedure<Parameters, d_fp_temp.Directory_Error, Resources> = (
-    $r
-) => {
-    return ($p) => p_write_to_directory($r)(
+export const $$: _et.Command_Procedure<Parameters, d_fp_temp.Directory_Error, Resources> = _easync.create_command_procedure(
+    ($r, $p) => p_write_to_directory($r).execute.direct(
+        ($) => $,
         {
             'directory': t_pareto_module_to_fountain_pen_block.Module(
                 r_pareto_module.Module(
@@ -64,4 +63,4 @@ export const $$: _et.Command_Procedure<Parameters, d_fp_temp.Directory_Error, Re
             'remove before creating': true,
         },
     )
-}
+)
