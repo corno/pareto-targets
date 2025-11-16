@@ -8,7 +8,7 @@
     "dist"
   ],
   "dependencies": {
-    "exupery-core-alg": "^0.5.7",
+    "exupery-core-alg": "^0.5.9",
     "exupery-core-data": "^0.3.1",
     "exupery-core-dev": "^0.3.1",
     "pareto": "^0.78.2",
