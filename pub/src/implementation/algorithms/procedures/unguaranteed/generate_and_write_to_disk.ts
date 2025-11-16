@@ -9,7 +9,7 @@ import * as r_pareto_module from "pareto/dist/temp/resolvers/module"
 
 import * as t_pareto_module_to_fountain_pen_block from "../../transformations/pareto/module/fountain_pen_block"
 
-import { $$ as p_write_to_directory } from "pareto-fountain-pen/dist/implementation/algorithms/procedures/unguaranteed/write_to_directory"
+import { $$ as p_write_to_directory } from "pareto-fountain-pen/dist/implementation/algorithms/procedures/write_to_directory"
 
 
 import { Signature } from "../../../../interface/algorithms/procedures/unguaranteed/generate_and_write_to_disk"
@@ -21,9 +21,9 @@ import * as d_write_file from "exupery-resources/dist/interface/generated/pareto
 
 export type Resources = {
     'procedures': {
-        'remove': _et.Unguaranteed_Procedure<d_remove.Parameters, d_remove.Error, null>
-                'make directory': _et.Unguaranteed_Procedure<d_make_directory.Parameters, d_make_directory.Error, null>
-                'write file': _et.Unguaranteed_Procedure<d_write_file.Parameters, d_write_file.Error, null>
+        'remove': _et.Command<d_remove.Parameters, d_remove.Error>
+        'make directory': _et.Command<d_make_directory.Parameters, d_make_directory.Error>
+        'write file': _et.Command<d_write_file.Parameters, d_write_file.Error>
     }
 }
 
@@ -37,10 +37,10 @@ export type Parameters = {
     | ['typescript', null]
 }
 
-export const $$: _et.Unguaranteed_Procedure<Parameters, d_fp_temp.Directory_Error, Resources> = (
-    $p, $r
+export const $$: _et.Command_Procedure<Parameters, d_fp_temp.Directory_Error, Resources> = (
+    $r
 ) => {
-    return p_write_to_directory(
+    return ($p) => p_write_to_directory($r)(
         {
             'directory': t_pareto_module_to_fountain_pen_block.Module(
                 r_pareto_module.Module(
@@ -63,6 +63,5 @@ export const $$: _et.Unguaranteed_Procedure<Parameters, d_fp_temp.Directory_Erro
             'newline': "\n",
             'remove before creating': true,
         },
-        $r,
     )
 }
