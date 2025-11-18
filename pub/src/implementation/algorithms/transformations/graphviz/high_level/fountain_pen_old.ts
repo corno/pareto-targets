@@ -45,7 +45,7 @@ import { Signature } from "../../../../../interface/algorithms/transformations/g
 //             sh.b.indent([
 //                 Graph_Tree($['node tree'], {
 //                     'nodes': $.nodes,
-//                     'path': pa.array_literal([]),
+//                     'path': pa.list_literal([]),
 //                 }),
 //                 sh.g.sub(op['dictionary to list, sorted by code point']($.nodes).map(($) => {
 //                     return sh.g.nested_block([

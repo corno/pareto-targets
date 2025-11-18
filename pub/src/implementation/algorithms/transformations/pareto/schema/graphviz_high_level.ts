@@ -17,16 +17,16 @@ export const Type_Node = (
 ): _out.Graph._type.SG.directed.edges => {
     return _ea.cc($, ($) => {
         switch ($[0]) {
-            case 'number': return _ea.ss($, ($) => _ea.array_literal([]))
-            case 'boolean': return _ea.ss($, ($) => _ea.array_literal([]))
+            case 'number': return _ea.ss($, ($) => _ea.list_literal([]))
+            case 'boolean': return _ea.ss($, ($) => _ea.list_literal([]))
             case 'list': return _ea.ss($, ($) => Type_Node($.node, $p))
-            case 'nothing': return _ea.ss($, ($) => _ea.array_literal([]))
-            case 'reference': return _ea.ss($, ($) => _ea.array_literal([]))
-            case 'component': return _ea.ss($, ($) => _ea.array_literal<_out.Graph._type.SG.directed.edges.L>([
+            case 'nothing': return _ea.ss($, ($) => _ea.list_literal([]))
+            case 'reference': return _ea.ss($, ($) => _ea.list_literal([]))
+            case 'component': return _ea.ss($, ($) => _ea.list_literal<_out.Graph._type.SG.directed.edges.L>([
                 {
                     'from': {
                         'start': $p['type name'],
-                        'tail': _ea.array_literal([]),
+                        'tail': _ea.list_literal([]),
                         'port data': _ea.not_set()
                     },
                     'to': {
@@ -38,14 +38,14 @@ export const Type_Node = (
                                 default: return _ea.au($[0])
                             }
                         }),
-                        'tail': _ea.array_literal([]),
+                        'tail': _ea.list_literal([]),
                         'port data': _ea.not_set()
                     },
                     'attributes': _ea.cc($, ($) => {
                         switch ($[0]) {
-                            case 'external': return _ea.ss($, ($) => _ea.array_literal([]))
-                            case 'internal': return _ea.ss($, ($) => _ea.array_literal([]))
-                            case 'internal cyclic': return _ea.ss($, ($) => _ea.array_literal([
+                            case 'external': return _ea.ss($, ($) => _ea.list_literal([]))
+                            case 'internal': return _ea.ss($, ($) => _ea.list_literal([]))
+                            case 'internal cyclic': return _ea.ss($, ($) => _ea.list_literal([
                                 ['color', "red"],
                             ]))
                             default: return _ea.au($[0])
@@ -58,8 +58,8 @@ export const Type_Node = (
             case 'group': return _ea.ss($, ($) => op_flatten_list($['ordered list'].map(($) => Type_Node($.value.node, $p))))
             case 'optional': return _ea.ss($, ($) => Type_Node($, $p))
             case 'state group': return _ea.ss($, ($) => op_flatten_list(op_dictionary_to_list($.map(($) => Type_Node($.node, $p))).map(($) => $.value)))
-            case 'text': return _ea.ss($, ($) => _ea.array_literal([]))
-            // case 'type parameter': return pa.ss($, ($) => pa.array_literal([]))
+            case 'text': return _ea.ss($, ($) => _ea.list_literal([]))
+            // case 'type parameter': return pa.ss($, ($) => pa.list_literal([]))
             default: return _ea.au($[0])
         }
     })
@@ -75,11 +75,11 @@ export const Schema = (
     return {
         'name': _ea.set($p['graph name']),
         'tree': {
-            'attributes': _ea.array_literal([]),
+            'attributes': _ea.list_literal([]),
             'elements': $.types.dictionary.map<_out.Tree.elements.D>(($) => {
                 return ['node', {
 
-                    'attributes': _ea.array_literal([]),
+                    'attributes': _ea.list_literal([]),
                 }]
             }),
         },

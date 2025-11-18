@@ -25,8 +25,8 @@ export const Graph = ($: d_in.Graph): d_out.Graph => {
             }
         }),
         'name': $.name.map(($) => ['string', $]),
-        'statements': op_flatten(_ea.array_literal([
-            Tree($.tree, { 'path': _ea.array_literal([]) }),
+        'statements': op_flatten(_ea.list_literal([
+            Tree($.tree, { 'path': _ea.list_literal([]) }),
             _ea.cc($.type, ($): d_out.Graph.statements => {
                 switch ($[0]) {
                     case 'directed': return _ea.ss($, ($) => $.edges.map(($): d_out.Statement_List.L => {
@@ -35,7 +35,7 @@ export const Graph = ($: d_in.Graph): d_out.Graph => {
                                 'id': ['string', $.from.start],
                                 'port': _ea.not_set()
                             }],
-                            "right": _ea.array_literal<d_out.Statement_List.L.SG.edge.right.L>([
+                            "right": _ea.list_literal<d_out.Statement_List.L.SG.edge.right.L>([
                                 ['node', {
                                     'id': ['string', $.to.start],
                                     'port': _ea.not_set()
@@ -101,13 +101,13 @@ export const Graph = ($: d_in.Graph): d_out.Graph => {
                                 'id': ['string', $.yin.start],
                                 'port': _ea.not_set()
                             }],
-                            "right": _ea.array_literal<d_out.Statement_List.L.SG.edge.right.L>([
+                            "right": _ea.list_literal<d_out.Statement_List.L.SG.edge.right.L>([
                                 ['node', {
                                     'id': ['string', $.yang.start],
                                     'port': _ea.not_set()
                                 }]
                             ]),
-                            "attributes": _ea.array_literal([]), //FIXME: attributes
+                            "attributes": _ea.list_literal([]), //FIXME: attributes
                         }]
                     }))
                     default: return _ea.au($[0])
@@ -121,7 +121,7 @@ export const Graph = ($: d_in.Graph): d_out.Graph => {
 export const Tree = (
     $: d_in.Tree,
     $p: {
-        'path': _et.Array<string>
+        'path': _et.List<string>
     }
 ): d_out.Statement_List => {
     return op_flatten(op_dictionary_to_list($.elements).map(($) => {
@@ -129,7 +129,7 @@ export const Tree = (
         const key = $.key
         return _ea.cc($.value, ($) => {
             switch ($[0]) {
-                case 'node': return _ea.ss($, ($) => _ea.array_literal<d_out.Statement_List.L>([
+                case 'node': return _ea.ss($, ($) => _ea.list_literal<d_out.Statement_List.L>([
                     ['node', {
                         'node': {
                             'id': ['string', op_join(path, { 'separator': '>' })],

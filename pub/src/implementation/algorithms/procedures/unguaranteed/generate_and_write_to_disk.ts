@@ -19,12 +19,12 @@ import * as d_remove from "exupery-resources/dist/interface/generated/pareto/sch
 import * as d_make_directory from "exupery-resources/dist/interface/generated/pareto/schemas/make_directory/data_types/source"
 import * as d_write_file from "exupery-resources/dist/interface/generated/pareto/schemas/write_file/data_types/source"
 
-export type Resources = {
-    'commands': {
-        'remove': _et.Command<d_remove.Parameters, d_remove.Error>
-        'make directory': _et.Command<d_make_directory.Parameters, d_make_directory.Error>
-        'write file': _et.Command<d_write_file.Parameters, d_write_file.Error>
-    }
+export type Query_Resources = null
+
+export type Command_Resources = {
+    'remove': _et.Command<d_remove.Error, d_remove.Parameters>
+    'make directory': _et.Command<d_make_directory.Error, d_make_directory.Parameters>
+    'write file': _et.Command<d_write_file.Error, d_write_file.Parameters>
 }
 
 export type Parameters = {
@@ -37,9 +37,8 @@ export type Parameters = {
     | ['typescript', null]
 }
 
-export const $$: _et.Command_Procedure<Parameters, d_fp_temp.Directory_Error, Resources> = _easync.create_command_procedure(
-    ($r, $p) => p_write_to_directory($r).execute.direct(
-        ($) => $,
+export const $$: _et.Command_Procedure<d_fp_temp.Directory_Error, Parameters, Command_Resources, Query_Resources> = _easync.create_command_procedure(
+    ($p, $cr, $qr) => p_write_to_directory($cr, $qr).execute(
         {
             'directory': t_pareto_module_to_fountain_pen_block.Module(
                 r_pareto_module.Module(
@@ -62,5 +61,6 @@ export const $$: _et.Command_Procedure<Parameters, d_fp_temp.Directory_Error, Re
             'newline': "\n",
             'remove before creating': true,
         },
+        ($) => $,
     )
 )
