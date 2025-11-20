@@ -7,12 +7,12 @@ import * as d_fp_temp from "pareto-fountain-pen/dist/temp/temp_types"
 
 import * as r_pareto_module from "pareto/dist/temp/resolvers/module"
 
-import * as t_pareto_module_to_fountain_pen_block from "../../transformations/pareto/module/fountain_pen_block"
+import * as t_pareto_module_to_fountain_pen_block from "../transformations/pareto/module/fountain_pen_block"
 
 import { $$ as p_write_to_directory } from "pareto-fountain-pen/dist/implementation/algorithms/procedures/write_to_directory"
 
 
-import { Signature } from "../../../../interface/algorithms/procedures/unguaranteed/generate_and_write_to_disk"
+import { Signature } from "../../../interface/algorithms/procedures/unguaranteed/generate_and_write_to_disk"
 
 
 import * as d_remove from "exupery-resources/dist/interface/generated/pareto/schemas/remove/data_types/source"
@@ -38,29 +38,31 @@ export type Parameters = {
 }
 
 export const $$: _et.Command_Procedure<d_fp_temp.Directory_Error, Parameters, Command_Resources, Query_Resources> = _easync.create_command_procedure(
-    ($p, $cr, $qr) => p_write_to_directory($cr, $qr).execute(
-        {
-            'directory': t_pareto_module_to_fountain_pen_block.Module(
-                r_pareto_module.Module(
-                    $p.module,
+    ($p, $cr, $qr) => [
+        p_write_to_directory($cr, $qr).execute(
+            {
+                'directory': t_pareto_module_to_fountain_pen_block.Module(
+                    r_pareto_module.Module(
+                        $p.module,
+                        {
+                            'parameters': {
+                                'lookups': null,
+                                'values': null,
+                            },
+                            'location 2 string': _ed.location_to_string
+                        }
+                    ),
                     {
-                        'parameters': {
-                            'lookups': null,
-                            'values': null,
-                        },
-                        'location 2 string': _ed.location_to_string
+
+                        'target': $p.target
                     }
                 ),
-                {
-
-                    'target': $p.target
-                }
-            ),
-            'path': $p.path,
-            'indentation': "    ",
-            'newline': "\n",
-            'remove before creating': true,
-        },
-        ($) => $,
-    )
+                'path': $p.path,
+                'indentation': "    ",
+                'newline': "\n",
+                'remove before creating': true,
+            },
+            ($) => $,
+        )
+    ]
 )
