@@ -1,8 +1,0 @@
-Repository: pareto-targets
-Path: /home/corno/workspace/pareto-canon/packages/pareto-targets
-Last Commit: 2025-11-07 (11f1efd)
-Message: new version
-Branch: main
-Remote: git@github.com:corno/pareto-targets
--------------------------------------------------
-
