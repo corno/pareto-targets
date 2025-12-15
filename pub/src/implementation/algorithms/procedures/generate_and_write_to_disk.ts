@@ -18,6 +18,7 @@ import { Signature } from "../../../interface/algorithms/procedures/unguaranteed
 import * as d_remove from "exupery-resources/dist/interface/generated/pareto/schemas/remove/data_types/source"
 import * as d_make_directory from "exupery-resources/dist/interface/generated/pareto/schemas/make_directory/data_types/source"
 import * as d_write_file from "exupery-resources/dist/interface/generated/pareto/schemas/write_file/data_types/source"
+import * as d_path from "exupery-resources/dist/interface/generated/pareto/schemas/path/data_types/source"
 
 export type Query_Resources = null
 
@@ -29,7 +30,7 @@ export type Command_Resources = {
 
 export type Parameters = {
     'module': s_pm.Module<_ed.Source_Location>
-    'path': string
+    'path': d_path.Node_Path
     'target':
     | ['documentation', null]
     | ['graphviz', null]
