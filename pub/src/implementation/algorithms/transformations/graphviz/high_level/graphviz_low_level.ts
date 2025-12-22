@@ -139,7 +139,7 @@ export const Tree = (
                             $.attributes.map(($) => _ea.cc($, ($) => {
                                 switch ($[0]) {
                                     case 'color': return _ea.ss($, ($) => ({ "name": ['id', "color"], "value": ['string', $] }))
-                                    default: return _ed.implement_me()
+                                    default: return _ed.implement_me("xx")
                                 }
                             })),
                             {
