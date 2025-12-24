@@ -13,12 +13,12 @@ type Parameters = {
 }
 
 namespace signatures {
-    export type Graph = _et.Transformer_New<d_in.Graph, d_out.Group>
-    export type Statement_List = _et.Transformer_New_With_Parameters<d_in.Statement_List, d_out.Block_Part, Parameters>
-    export type ID = _et.Transformer_New<d_in.ID, d_out.Block_Part>
-    export type Attribute_List = _et.Transformer_New<d_in.Attribute_List, d_out.Block_Part>
-    export type Node_ID = _et.Transformer_New<d_in.Node_ID, d_out.Block_Part>
-    export type Subgraph = _et.Transformer_New_With_Parameters<d_in.Subgraph, d_out.Block_Part, Parameters>
+    export type Graph = _et.Transformer<d_in.Graph, d_out.Group>
+    export type Statement_List = _et.Transformer_With_Parameters<d_in.Statement_List, d_out.Block_Part, Parameters>
+    export type ID = _et.Transformer<d_in.ID, d_out.Block_Part>
+    export type Attribute_List = _et.Transformer<d_in.Attribute_List, d_out.Block_Part>
+    export type Node_ID = _et.Transformer<d_in.Node_ID, d_out.Block_Part>
+    export type Subgraph = _et.Transformer_With_Parameters<d_in.Subgraph, d_out.Block_Part, Parameters>
 }
 
 //shorthands
@@ -27,8 +27,8 @@ import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
 //dependencies
 import { $$ as op_serialize_with_quote_delimiter } from "../../../operations/impure/text/serialize_quoted_string"
-import { $$ as op_is_empty } from "pareto-standard-operations/dist/implementation/algorithms/operations/impure/list/is_empty"
-import { $$ as op_enrich_list_elements_with_position_information } from "pareto-standard-operations/dist/implementation/algorithms/operations/impure/list/enrich_with_position_information"
+import { $$ as op_is_empty } from "pareto-standard-operations/dist/implementation/operations/impure/list/is_empty"
+import { $$ as op_enrich_list_elements_with_position_information } from "pareto-standard-operations/dist/implementation/operations/impure/list/enrich_with_position_information"
 
 
 export const Graph: signatures.Graph = ($) => {
