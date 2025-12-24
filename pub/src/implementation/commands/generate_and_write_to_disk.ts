@@ -38,7 +38,7 @@ export type Parameters = {
     | ['typescript', null]
 }
 
-export const $$: _et.Command_Procedure<d_fp_temp.Directory_Error, Parameters, Command_Resources, Query_Resources> = _easync.create_command_procedure(
+export const $$: _et.Command_Procedure<_et.Command<d_fp_temp.Directory_Error, Parameters>, Command_Resources, Query_Resources> = _easync.create_command_procedure(
     ($p, $cr, $qr) => [
         p_write_to_directory($cr, $qr).execute(
             {
