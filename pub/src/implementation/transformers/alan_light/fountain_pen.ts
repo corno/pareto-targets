@@ -1,14 +1,15 @@
 import * as _ea from 'exupery-core-alg'
 
-import * as _in from "../../../../interface/generated/pareto/schemas/alan_light/data_types/target"
+import * as _in from "../../../interface/generated/pareto/schemas/alan_light/data_types/target"
 import * as _out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
+
+import { Signature } from "../../../interface/algorithms/transformations/alan_light/fountain_pen"
 
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
 import { $$ as op_serialize_with_apostrophe_delimiter } from "../../operations/impure/text/serialize_apostrophed_string"
 import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/implementation/algorithms/operations/impure/dictionary/to_list_sorted_by_insertion"
 import { $$ as op_dictionary_is_empty } from "pareto-standard-operations/dist/implementation/algorithms/operations/impure/dictionary/is_empty"
-import { Signature } from "../../../../interface/algorithms/transformations/alan_light/fountain_pen"
 
 
 

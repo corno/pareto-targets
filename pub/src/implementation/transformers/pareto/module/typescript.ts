@@ -5,6 +5,8 @@ import * as _in_s from "pareto/dist/interface/generated/pareto/schemas/schema/da
 import * as _in from "pareto/dist/interface/generated/pareto/schemas/module/data_types/source"
 import * as _out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
 
+import { Signature } from "../../../../interface/algorithms/transformations/pareto/module/typescript"
+
 //transformations
 import * as t_exupery_library_to_typescript_light from "exupery/dist/implementation/algorithms/transformations/library/typescript_light"
 import * as t_pareto_to_exupery_interface from "pareto/dist/implementation/transformations/module/exupery_interface"
@@ -16,7 +18,6 @@ import * as r_exupery_implementation from "exupery/dist/implementation/generated
 
 //shorthands
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
-import { Signature } from "../../../../../interface/algorithms/transformations/pareto/module/typescript"
 
 
 export const Module = ($: _in.Module): _out.Directory => {

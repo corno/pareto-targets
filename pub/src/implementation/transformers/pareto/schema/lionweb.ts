@@ -1,41 +1,45 @@
 import * as _ed from 'exupery-core-data'
 import * as _ea from 'exupery-core-alg'
 
-import * as _in from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"
-import * as _in_m from "pareto/dist/interface/generated/pareto/schemas/module/data_types/source"
-import * as _out from "../../../../../interface/generated/pareto/schemas/lionweb/data_types/target"
+//interface
+
+import * as d_in from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"
+import * as d_out from "../../../../interface/generated/pareto/schemas/lionweb/data_types/target"
+
+import { Signature } from "../../../../interface/algorithms/transformations/pareto/schema/lionweb"
+
+//dependencies
 
 import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/implementation/algorithms/operations/impure/dictionary/to_list_sorted_by_insertion"
 import { $$ as op_flatten_list } from "pareto-standard-operations/dist/implementation/algorithms/operations/pure/list/flatten"
-import { Signature } from "../../../../../interface/algorithms/transformations/pareto/schema/lionweb"
 
 
 export const MetaPointer = (
     $: string,
-): _out.MetaPointer => ({
+): d_out.MetaPointer => ({
     'language': "astn",
     'version': "0.1",
     'key': $,
 })
 
 export const Type_Node_2_properties = (
-    $: _in.Type_Node,
+    $: d_in.Type_Node,
     $p: {
         'path': string,
     }
-): _out.SerializationChunk.nodes.L.properties => {
+): d_out.SerializationChunk.nodes.L.properties => {
     return _ea.list_literal([])
 }
 
 export const Type_Node_2_Document_nodes = (
-    $: _in.Type_Node,
+    $: d_in.Type_Node,
     $p: {
         'path': string,
     }
-): _out.SerializationChunk.nodes => {
+): d_out.SerializationChunk.nodes => {
     return _ea.cc($, ($) => {
         switch ($[0]) {
-            case 'dictionary': return _ea.ss($, ($): _out.SerializationChunk.nodes => op_flatten_list(_ea.list_literal([
+            case 'dictionary': return _ea.ss($, ($): d_out.SerializationChunk.nodes => op_flatten_list(_ea.list_literal([
                 _ea.list_literal([
                     {
                         'id': $p.path,
@@ -73,7 +77,7 @@ export const Type_Node_2_Document_nodes = (
                     }
                 ),
             ])))
-            case 'group': return _ea.ss($, ($): _out.SerializationChunk.nodes => op_flatten_list(_ea.list_literal([
+            case 'group': return _ea.ss($, ($): d_out.SerializationChunk.nodes => op_flatten_list(_ea.list_literal([
                 _ea.list_literal([
                     {
                         'id': $p.path,
@@ -96,7 +100,7 @@ export const Type_Node_2_Document_nodes = (
                     }
                 ))),
             ])))
-            case 'list': return _ea.ss($, ($): _out.SerializationChunk.nodes => op_flatten_list(_ea.list_literal([
+            case 'list': return _ea.ss($, ($): d_out.SerializationChunk.nodes => op_flatten_list(_ea.list_literal([
                 _ea.list_literal([{
                     'id': $p.path,
                     'parent': _ea.not_set(),
@@ -118,7 +122,7 @@ export const Type_Node_2_Document_nodes = (
                     }
                 ),
             ])))
-            case 'optional': return _ea.ss($, ($): _out.SerializationChunk.nodes => op_flatten_list(_ea.list_literal([
+            case 'optional': return _ea.ss($, ($): d_out.SerializationChunk.nodes => op_flatten_list(_ea.list_literal([
                 _ea.list_literal([{
                     'id': $p.path,
                     'parent': _ea.not_set(),
@@ -140,7 +144,7 @@ export const Type_Node_2_Document_nodes = (
                     }
                 ),
             ])))
-            case 'state group': return _ea.ss($, ($): _out.SerializationChunk.nodes => op_flatten_list(_ea.list_literal([
+            case 'state group': return _ea.ss($, ($): d_out.SerializationChunk.nodes => op_flatten_list(_ea.list_literal([
                 _ea.list_literal([{
                     'id': $p.path,
                     'parent': _ea.not_set(),
@@ -188,8 +192,8 @@ export const Type_Node_2_Document_nodes = (
 
 
 export const Schema = (
-    $: _in.Schema,
-): _out.SerializationChunk => {
+    $: d_in.Schema,
+): d_out.SerializationChunk => {
     return {
         'serializationFormatVersion': "2023.1",
         'languages': _ed.a([

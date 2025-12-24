@@ -1,17 +1,37 @@
 import * as _ea from 'exupery-core-alg'
+import * as _et from 'exupery-core-types'
 
-import * as d_in from "../../../../../interface/generated/pareto/schemas/graphviz_low_level/data_types/target"
+import * as d_in from "../../../../interface/generated/pareto/schemas/graphviz_low_level/data_types/target"
 import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
 
+
+
+import * as signatures_x from "../../../../interface/algorithms/transformations/graphviz/low_level/fountain_pen"
+
+type Parameters = {
+    'graph type': d_in.Graph._type
+}
+
+namespace signatures {
+    export type Graph = _et.Transformer_New<d_in.Graph, d_out.Group>
+    export type Statement_List = _et.Transformer_New_With_Parameters<d_in.Statement_List, d_out.Block_Part, Parameters>
+    export type ID = _et.Transformer_New<d_in.ID, d_out.Block_Part>
+    export type Attribute_List = _et.Transformer_New<d_in.Attribute_List, d_out.Block_Part>
+    export type Node_ID = _et.Transformer_New<d_in.Node_ID, d_out.Block_Part>
+    export type Subgraph = _et.Transformer_New_With_Parameters<d_in.Subgraph, d_out.Block_Part, Parameters>
+}
+
+//shorthands
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
+
+//dependencies
 import { $$ as op_serialize_with_quote_delimiter } from "../../../operations/impure/text/serialize_quoted_string"
 import { $$ as op_is_empty } from "pareto-standard-operations/dist/implementation/algorithms/operations/impure/list/is_empty"
 import { $$ as op_enrich_list_elements_with_position_information } from "pareto-standard-operations/dist/implementation/algorithms/operations/impure/list/enrich_with_position_information"
-import { Signature } from "../../../../../interface/algorithms/transformations/graphviz/low_level/fountain_pen"
 
 
-export const Graph = ($: d_in.Graph): d_out.Group => {
+export const Graph: signatures.Graph = ($) => {
     return sh.group([
         sh.g.nested_block([
             $.strict
@@ -38,12 +58,7 @@ export const Graph = ($: d_in.Graph): d_out.Group => {
     ])
 }
 
-export const Statement_List = (
-    $: d_in.Statement_List,
-    $p: {
-        'graph type': d_in.Graph._type
-    }
-): d_out.Block_Part => {
+export const Statement_List: signatures.Statement_List = ($, $p) => {
     return sh.b.sub([
         sh.b.snippet("{"),
         sh.b.indent([
@@ -84,7 +99,7 @@ export const Statement_List = (
                                         default: return _ea.au($[0])
                                     }
                                 }),
-                               sh.b.sub(op_enrich_list_elements_with_position_information($.right).map(($) => {
+                                sh.b.sub(op_enrich_list_elements_with_position_information($.right).map(($) => {
                                     return sh.b.sub([
                                         _ea.cc($.value, ($) => {
                                             switch ($[0]) {
@@ -118,7 +133,7 @@ export const Statement_List = (
     ])
 }
 
-export const ID = ($: d_in.ID): d_out.Block_Part => {
+export const ID: signatures.ID = ($) => {
     return _ea.cc($, ($) => {
         switch ($[0]) {
             case 'id': return _ea.ss($, ($) => sh.b.snippet($)) //FIX escaping
@@ -130,22 +145,22 @@ export const ID = ($: d_in.ID): d_out.Block_Part => {
     })
 }
 
-export const Attribute_List = ($: d_in.Attribute_List): d_out.Block_Part => {
+export const Attribute_List: signatures.Attribute_List = ($) => {
     return sh.b.sub([
         sh.b.snippet(" [ "),
-           sh.b.sub($.map(($) => {
-                return sh.b.sub([
-                    ID($.name),
-                    sh.b.snippet("="),
-                    ID($.value),
-                    sh.b.snippet(" "),
-                ])
-            })),
+        sh.b.sub($.map(($) => {
+            return sh.b.sub([
+                ID($.name),
+                sh.b.snippet("="),
+                ID($.value),
+                sh.b.snippet(" "),
+            ])
+        })),
         sh.b.snippet("]"),
     ])
 }
 
-export const Node_ID = ($: d_in.Node_ID): d_out.Block_Part => {
+export const Node_ID: signatures.Node_ID = ($) => {
     return sh.b.sub([
         ID($.id),
         $.port.transform(
@@ -165,12 +180,7 @@ export const Node_ID = ($: d_in.Node_ID): d_out.Block_Part => {
     ])
 }
 
-export const Subgraph = (
-    $: d_in.Subgraph,
-    $p: {
-        'graph type': d_in.Graph._type
-    }
-): d_out.Block_Part => {
+export const Subgraph: signatures.Subgraph = ($, $p) => {
     return sh.b.sub([
         $.subgraph.transform(
             ($) => sh.b.sub([

@@ -2,11 +2,12 @@ import * as _ea from 'exupery-core-alg'
 
 import * as _in from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"
 import * as _in_m from "pareto/dist/interface/generated/pareto/schemas/module/data_types/source"
-import * as _out from "../../../../../interface/generated/pareto/schemas/graphviz_high_level/data_types/target"
+import * as _out from "../../../../interface/generated/pareto/schemas/graphviz_high_level/data_types/target"
+
+import { Signature } from "../../../../interface/algorithms/transformations/pareto/schema/graphviz_high_level"
 
 import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/implementation/algorithms/operations/impure/dictionary/to_list_sorted_by_insertion"
 import { $$ as op_flatten_list } from "pareto-standard-operations/dist/implementation/algorithms/operations/pure/list/flatten"
-import { Signature } from "../../../../../interface/algorithms/transformations/pareto/schema/graphviz_high_level"
 
 
 export const Type_Node = (

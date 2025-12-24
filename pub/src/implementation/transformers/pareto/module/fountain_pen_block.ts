@@ -3,14 +3,15 @@ import * as _ea from 'exupery-core-alg'
 import * as d_in from "pareto/dist/interface/generated/pareto/schemas/module/data_types/source"
 import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
 
+import { Signature } from "../../../../interface/algorithms/transformations/pareto/module/fountain_pen_block"
 
-//transformations
+
+//dependecies
 
 import * as t_pareto_module_to_documentation from "./documentation"
 import * as t_pareto_module_to_graphvix from "./graphviz"
 import * as t_pareto_module_to_lionweb from "./lionweb"
 import * as t_pareto_module_to_typescript from "./typescript"
-import { Signature } from "../../../../../interface/algorithms/transformations/pareto/module/fountain_pen_block"
 
 
 export const Module = (

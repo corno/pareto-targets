@@ -2,8 +2,10 @@ import * as _ea from 'exupery-core-alg'
 import * as _ed from 'exupery-core-dev'
 import * as _et from 'exupery-core-types'
 
-import * as d_in from "../../../../../interface/generated/pareto/schemas/graphviz_high_level/data_types/target"
-import * as d_out from "../../../../../interface/generated/pareto/schemas/graphviz_low_level/data_types/target"
+import * as d_in from "../../../../interface/generated/pareto/schemas/graphviz_high_level/data_types/target"
+import * as d_out from "../../../../interface/generated/pareto/schemas/graphviz_low_level/data_types/target"
+
+import { Signature } from "../../../../interface/algorithms/transformations/graphviz/high_level/graphviz_low_level"
 
 import { $$ as op_join } from "pareto-standard-operations/dist/implementation/algorithms/operations/impure/text/join_list_of_texts_with_separator"
 import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/implementation/algorithms/operations/impure/dictionary/to_list_sorted_by_insertion"
@@ -11,7 +13,6 @@ import { $$ as op_append_element } from "pareto-standard-operations/dist/impleme
 import { $$ as op_prepend_element } from "pareto-standard-operations/dist/implementation/algorithms/operations/pure/list/prepend_element"
 import { $$ as op_flatten } from "pareto-standard-operations/dist/implementation/algorithms/operations/pure/list/flatten"
 
-import { Signature } from "../../../../../interface/algorithms/transformations/graphviz/high_level/graphviz_low_level"
 
 
 export const Graph = ($: d_in.Graph): d_out.Graph => {

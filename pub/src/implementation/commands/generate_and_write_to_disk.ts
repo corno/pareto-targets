@@ -3,16 +3,16 @@ import * as _easync from 'exupery-core-async'
 import * as _et from 'exupery-core-types'
 
 import * as s_pm from "pareto/dist/interface/generated/pareto/schemas/module/data_types/target"
-import * as d_fp_temp from "../../../modules/pareto-fountain-pen-directory/interface/temp_types"
+import * as d_fp_temp from "../../modules/pareto-fountain-pen-directory/interface/temp_types"
 
 import * as r_pareto_module from "pareto/dist/temp/resolvers/module"
 
-import * as t_pareto_module_to_fountain_pen_block from "../transformations/pareto/module/fountain_pen_block"
+import * as t_pareto_module_to_fountain_pen_block from "../transformers/pareto/module/fountain_pen_block"
 
-import { $$ as p_write_to_directory } from "../../../modules/pareto-fountain-pen-directory/implementation/commands/write_to_directory"
+import { $$ as p_write_to_directory } from "../../modules/pareto-fountain-pen-directory/implementation/commands/write_to_directory"
 
 
-import { Signature } from "../../../interface/algorithms/procedures/unguaranteed/generate_and_write_to_disk"
+import { Signature } from "../../interface/algorithms/procedures/unguaranteed/generate_and_write_to_disk"
 
 
 import * as d_remove from "exupery-resources/dist/interface/generated/pareto/schemas/remove/data_types/source"

@@ -1,4 +1,4 @@
-import { Signature } from "../../../../../interface/algorithms/transformations/graphviz/high_level/fountain_pen_old"
+import { Signature } from "../../../../interface/algorithms/transformations/graphviz/high_level/fountain_pen_old"
 
 // import * as _ea from 'exupery-core-alg'
 // import * as _edev from 'exupery-core-dev'
