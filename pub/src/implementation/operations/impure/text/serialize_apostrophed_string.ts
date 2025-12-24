@@ -1,8 +1,6 @@
 import * as _et from 'exupery-core-types'
 import * as _ea from 'exupery-core-alg'
 
-import { Signature } from "../../../../interface/algorithms/operations/impure/text/serialize_apostrophed_string"
-
 import { $$ as op_escape_character } from "pareto-standard-operations/dist/implementation/operations/impure/text/escape_character"
 
 export const $$ = ($: string): string => "'"

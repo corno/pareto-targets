@@ -1,8 +1,6 @@
 import * as _et from 'exupery-core-types'
 import * as _ea from 'exupery-core-alg'
 
-import { Signature as x } from "../../../../interface/algorithms/operations/impure/text/serialize_quoted_string"
-
 export type Signature = ($: string) => string
 
 //dependencies
