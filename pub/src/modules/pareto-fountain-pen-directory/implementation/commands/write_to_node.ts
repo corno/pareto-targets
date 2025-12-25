@@ -16,15 +16,21 @@ import * as d_write_file from "exupery-resources/dist/interface/generated/pareto
 
 import * as t_path_to_path from "exupery-resources/dist/implementation/transformers/schemas/path/path"
 
-export type Query_Resources = null
+import * as resources_exupery from "exupery-resources/dist/interface/resources"
 
-export type Command_Resources = {
-    'remove': _et.Command<d_remove.Error, d_remove.Parameters>
-    'make directory': _et.Command<d_make_directory.Error, d_make_directory.Parameters>
-    'write file': _et.Command<d_write_file.Error, d_write_file.Parameters>
-}
+export type Command = _et.Command<D.Node_Error, D.Node_Parameters>
 
-export const $$: _et.Command_Procedure<_et.Command<D.Node_Error, D.Node_Parameters>, Command_Resources, Query_Resources> = _easync.create_command_procedure(
+export type Procedure = _et.Command_Procedure<
+    Command,
+    {
+        'remove': resources_exupery.commands.remove
+        'make directory': resources_exupery.commands.make_directory
+        'write file': resources_exupery.commands.write_file
+    },
+    null
+>
+
+export const $$: Procedure = _easync.create_command_procedure(
     ($p, $cr, $qr) => [
         _ea.cc($p.node, ($) => {
             switch ($[0]) {

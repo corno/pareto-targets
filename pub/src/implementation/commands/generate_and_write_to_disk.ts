@@ -16,14 +16,6 @@ import * as d_make_directory from "exupery-resources/dist/interface/generated/pa
 import * as d_write_file from "exupery-resources/dist/interface/generated/pareto/schemas/write_file/data_types/source"
 import * as d_path from "exupery-resources/dist/interface/generated/pareto/schemas/path/data_types/source"
 
-export type Query_Resources = null
-
-export type Command_Resources = {
-    'remove': _et.Command<d_remove.Error, d_remove.Parameters>
-    'make directory': _et.Command<d_make_directory.Error, d_make_directory.Parameters>
-    'write file': _et.Command<d_write_file.Error, d_write_file.Parameters>
-}
-
 export type Parameters = {
     'module': s_pm.Module<_ed.Source_Location>
     'path': d_path.Node_Path
@@ -34,7 +26,22 @@ export type Parameters = {
     | ['typescript', null]
 }
 
-export const $$: _et.Command_Procedure<_et.Command<d_fp_temp.Directory_Error, Parameters>, Command_Resources, Query_Resources> = _easync.create_command_procedure(
+
+import * as resources_exupery from "exupery-resources/dist/interface/resources"
+
+export type Command = _et.Command<d_fp_temp.Directory_Error, Parameters>
+
+export type Signature = _et.Command_Procedure<
+    Command,
+    {
+        'remove': resources_exupery.commands.remove
+        'make directory': resources_exupery.commands.make_directory
+        'write file': resources_exupery.commands.write_file
+    },
+    null
+>
+
+export const $$: Signature = _easync.create_command_procedure(
     ($p, $cr, $qr) => [
         p_write_to_directory($cr, $qr).execute(
             {
