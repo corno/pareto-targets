@@ -3,35 +3,17 @@ import * as _ea from 'exupery-core-alg'
 import * as _et from 'exupery-core-types'
 import * as _easync from 'exupery-core-async'
 
-import * as d_remove from "exupery-resources/dist/interface/generated/pareto/schemas/remove/data_types/source"
-import * as d_make_directory from "exupery-resources/dist/interface/generated/pareto/schemas/make_directory/data_types/source"
-import * as d_write_file from "exupery-resources/dist/interface/generated/pareto/schemas/write_file/data_types/source"
+import * as signatures from "../../interface/signatures"
 
-import * as D from "../../interface/temp_types"
+//data types
+import * as d_write_to_directory from "../../interface/to_be_generated/write_to_dictionary"
 
-import { $$ as p_write_to_node } from "./write_to_node"
-// import { Signature } from "../../../interface/algorithms/procedures/unguaranteed/write_to_directory"
+//dependencies
+import * as t_path_to_path from "exupery-resources/dist/implementation/transformers/schemas/path/path"
 
-import * as s_path from "exupery-resources/dist/implementation/serializers/schemas/path"
-
-
-import * as resources_exupery from "exupery-resources/dist/interface/resources"
-
-export type Command = _et.Command<D.Directory_Error, D.Directory_Parameters>
-
-export type Procedure = _et.Command_Procedure<
-    Command,
-    {
-        'remove': resources_exupery.commands.remove
-        'make directory': resources_exupery.commands.make_directory
-        'write file': resources_exupery.commands.write_file
-    },
-    null
->
-
-export const $$: Procedure = _easync.create_command_procedure(
-    ($p, $cr) => [
-        _easync.p.sequence<D.Directory_Error>([
+export const $$: signatures.commands.write_to_directory = _easync.create_command_procedure(
+    ($p, $cr, $qr) => [
+        _easync.p.sequence<d_write_to_directory.Error>([
             _easync.p.if_(
                 $p['remove before creating'],
                 [
@@ -47,26 +29,39 @@ export const $$: Procedure = _easync.create_command_procedure(
             _easync.p.dictionary.parallel(
                 $p.directory,
                 ($, key) => [
-                    p_write_to_node(
-                        {
-                            'remove': $cr.remove,
-                            'make directory': $cr['make directory'],
-                            'write file': $cr['write file'],
-                        },
-                        null,
-                    ).execute(
-                        {
-                            'node': $,
-                            'path': $p.path,
-                            'key': key,
-                            'indentation': $p.indentation,
-                            'newline': $p.newline,
-                            'remove before creating': false,
-                        },
-                        ($) => $,
-                    ),
+                    _ea.cc($, ($): _et.Command_Promise<d_write_to_directory.Error__nodes> => {
+                        switch ($[0]) {
+                            case 'file':
+                                return _ea.ss($, ($) => {
+                                    return $cr['write to_file'].execute(
+                                        {
+                                            'group': $,
+                                            'directory path': $p.path,
+                                            'filename': key,
+                                            'indentation': $p.indentation,
+                                            'newline': $p.newline
+                                        },
+                                        ($): d_write_to_directory.Error__nodes => ['file', $],
+                                    )
+                                })
+                            case 'directory':
+                                return _ea.ss($, ($) => {
+                                    return $$($cr, $qr).execute(
+                                        {
+                                            'directory': $,
+                                            'path': t_path_to_path.extend_node_path($p.path, { 'addition': key }),
+                                            'indentation': $p.indentation,
+                                            'newline': $p.newline,
+                                            'remove before creating': false,
+                                        },
+                                        ($): d_write_to_directory.Error__nodes => ['directory', $],
+                                    )
+                                })
+                            default: return _ea.au($[0])
+                        }
+                    }),
                 ],
-                ($): D.Directory_Error => ['nodes', $]
+                ($): d_write_to_directory.Error => ['nodes', $]
             )
         ])
     ]

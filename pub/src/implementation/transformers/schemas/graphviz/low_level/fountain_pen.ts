@@ -22,7 +22,7 @@ import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
 
 //dependencies
-import { $$ as op_serialize_with_quote_delimiter } from "../../../../operations/impure/text/serialize_quoted_string"
+import { $$ as op_serialize_with_quote_delimiter } from "../../../../serializers/primitives/text/quoted"
 import { $$ as op_is_empty } from "pareto-standard-operations/dist/implementation/operations/impure/list/is_empty"
 import { $$ as op_enrich_list_elements_with_position_information } from "pareto-standard-operations/dist/implementation/operations/impure/list/enrich_with_position_information"
 
