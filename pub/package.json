@@ -13,6 +13,6 @@
     "exupery-core-dev": "^0.3.3",
     "pareto": "^0.78.11",
     "pareto-fountain-pen": "^0.3.17",
-    "pareto-json": "^0.3.3"
+    "pareto-json": "^0.3.4"
   }
 }

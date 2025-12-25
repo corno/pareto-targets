@@ -6,7 +6,7 @@ import * as _in from "pareto/dist/interface/generated/pareto/schemas/module/data
 import * as _out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
 
 //transformations
-import * as t_exupery_library_to_typescript_light from "exupery/dist/implementation/algorithms/transformations/library/typescript_light"
+import * as t_exupery_library_to_typescript_light from "exupery/dist/implementation/transformers/schemas/library/typescript_light"
 import * as t_pareto_to_exupery_interface from "pareto/dist/implementation/transformations/module/exupery_interface"
 import * as t_pareto_to_exupery_implementation from "pareto/dist/implementation/transformations/module/exupery_implementation"
 
