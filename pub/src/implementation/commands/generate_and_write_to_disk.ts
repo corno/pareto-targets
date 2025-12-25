@@ -8,7 +8,7 @@ import * as signatures from "../../interface/signatures"
 import * as d_write_to_directory from "../../modules/pareto-fountain-pen-directory/interface/to_be_generated/write_to_dictionary"
 
 //dependencies
-import * as r_pareto_module from "pareto/dist/temp/resolvers/module"
+import * as r_pareto_module from "pareto/dist/implementation/temp/resolvers/module"
 import * as t_pareto_module_to_fountain_pen_block from "../transformers/schemas/pareto/module/fountain_pen_block"
 
 
