@@ -22,7 +22,7 @@ import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
 
 //dependencies
-import { $$ as op_serialize_with_quote_delimiter } from "../../../../serializers/primitives/text/quoted"
+import { $$ as s_quoted } from "../../../../serializers/primitives/text/quoted"
 import { $$ as op_is_empty } from "pareto-standard-operations/dist/implementation/operations/impure/list/is_empty"
 import { $$ as op_enrich_list_elements_with_position_information } from "pareto-fountain-pen/dist/implementation/temp/enrich_with_position_information"
 
@@ -133,7 +133,7 @@ export const ID: signatures.ID = ($) => {
     return _ea.cc($, ($) => {
         switch ($[0]) {
             case 'id': return _ea.ss($, ($) => sh.b.snippet($)) //FIX escaping
-            case 'string': return _ea.ss($, ($) => sh.b.snippet(op_serialize_with_quote_delimiter($)))
+            case 'string': return _ea.ss($, ($) => sh.b.snippet(s_quoted($)))
             case 'html': return _ea.ss($, ($) => sh.b.snippet($))
             case 'number': return _ea.ss($, ($) => sh.b.snippet("FIXME NUMBER"))
             default: return _ea.au($[0])

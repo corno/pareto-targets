@@ -5,7 +5,7 @@ import * as _out from "pareto-fountain-pen/dist/interface/generated/pareto/schem
 
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
-import { $$ as op_serialize_with_apostrophe_delimiter } from "../../../serializers/primitives/text/apostrophed"
+import { $$ as s_apostrophed } from "../../../serializers/primitives/text/apostrophed"
 import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/implementation/operations/impure/dictionary/to_list_sorted_by_insertion"
 import { $$ as op_dictionary_is_empty } from "pareto-standard-operations/dist/implementation/operations/impure/dictionary/is_empty"
 
@@ -40,7 +40,7 @@ export const Root = (
 
 export const Identifier = (
     $: _in.Identifier
-): _out.Block_Part => sh.b.snippet(op_serialize_with_apostrophe_delimiter($))
+): _out.Block_Part => sh.b.snippet(s_apostrophed($))
 
 export const Node = (
     $: _in.Node
