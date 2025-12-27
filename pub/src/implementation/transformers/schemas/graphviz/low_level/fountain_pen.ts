@@ -23,7 +23,6 @@ import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
 //dependencies
 import { $$ as s_quoted } from "../../../../serializers/primitives/text/quoted"
-import { $$ as op_is_empty } from "pareto-standard-operations/dist/implementation/operations/impure/list/is_empty"
 import { $$ as op_enrich_list_elements_with_position_information } from "pareto-fountain-pen/dist/implementation/temp/enrich_with_position_information"
 
 
@@ -113,7 +112,7 @@ export const Statement_List: signatures.Statement_List = ($, $p) => {
                             ]))
                             case 'node': return _ea.ss($, ($) => sh.b.sub([
                                 Node_ID($.node),
-                                op_is_empty($['attribute list'])
+                                $['attribute list'].is_empty()
                                     ? sh.b.nothing()
                                     : Attribute_List($['attribute list']),
                                 sh.b.snippet(";"),

@@ -6,7 +6,6 @@ import * as d_in from "../../../../../interface/generated/pareto/schemas/graphvi
 import * as d_out from "../../../../../interface/generated/pareto/schemas/graphviz_low_level/data_types/target"
 
 import { $$ as s_list_of_separated_texts } from "pareto-standard-operations/dist/implementation/serializers/schemas/list_of_separated_texts"
-import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/implementation/operations/impure/dictionary/to_list_sorted_by_insertion"
 import { $$ as op_append_element } from "pareto-standard-operations/dist/implementation/operations/pure/list/append_element"
 import { $$ as op_prepend_element } from "pareto-standard-operations/dist/implementation/operations/pure/list/prepend_element"
 import { $$ as op_flatten } from "pareto-standard-operations/dist/implementation/operations/pure/list/flatten"
@@ -123,10 +122,9 @@ export const Tree = (
         'path': _et.List<string>
     }
 ): d_out.Statement_List => {
-    return op_flatten(op_dictionary_to_list($.elements).map(($) => {
-        const path = op_append_element($p.path, { 'element': $.key })
-        const key = $.key
-        return _ea.cc($.value, ($) => {
+    return op_flatten($.elements.to_list(($, key) => {
+        const path = op_append_element($p.path, { 'element': key })
+        return _ea.cc($, ($) => {
             switch ($[0]) {
                 case 'node': return _ea.ss($, ($) => _ea.list_literal<d_out.Statement_List.L>([
                     ['node', {

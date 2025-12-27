@@ -8,7 +8,6 @@ import * as d_out from "../../../../../interface/generated/pareto/schemas/lionwe
 
 //dependencies
 
-import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/implementation/operations/impure/dictionary/to_list_sorted_by_insertion"
 import { $$ as op_flatten_list } from "pareto-standard-operations/dist/implementation/operations/pure/list/flatten"
 
 
@@ -151,13 +150,13 @@ export const Type_Node_2_Document_nodes = (
                     'containments': _ea.list_literal([
                         {
                             'containment': MetaPointer("states"),
-                            'children': op_dictionary_to_list($).map(($) => $p.path + "." + $.key),
+                            'children': $.to_list(($, key) => $p.path + "." + key),
                         },
                     ]),
                     'properties': _ea.list_literal([]),
                     'references': _ea.list_literal([])
                 }]),
-                op_dictionary_to_list($).map(($) => ({
+                $.to_list(($, key) => ({
                     'id': $p.path,
                     'parent': _ea.not_set(),
                     'annotations': _ea.list_literal([]),
@@ -165,21 +164,21 @@ export const Type_Node_2_Document_nodes = (
                     'containments': _ea.list_literal([
                         {
                             'containment': MetaPointer("states"),
-                            'children': _ea.list_literal([$p.path + "." + $.key]),
+                            'children': _ea.list_literal([$p.path + "." + key]),
                         },
                     ]),
                     'properties': _ea.list_literal([
                         {
-                            'value': $.key,
+                            'value': key,
                             'property': MetaPointer("state"),
                         }
                     ]),
                     'references': _ea.list_literal([])
                 })),
-                op_flatten_list(op_dictionary_to_list($).map(($) => Type_Node_2_Document_nodes(
-                    $.value.node,
+                op_flatten_list($.to_list(($, key) => Type_Node_2_Document_nodes(
+                    $.node,
                     {
-                        'path': $p.path + "." + $.key,
+                        'path': $p.path + "." + key,
                     }
                 ))),
             ])))

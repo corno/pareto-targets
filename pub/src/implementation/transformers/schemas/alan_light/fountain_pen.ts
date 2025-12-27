@@ -6,8 +6,6 @@ import * as _out from "pareto-fountain-pen/dist/interface/generated/pareto/schem
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
 import { $$ as s_apostrophed } from "../../../serializers/primitives/text/apostrophed"
-import { $$ as op_dictionary_to_list } from "pareto-standard-operations/dist/implementation/operations/impure/dictionary/to_list_sorted_by_insertion"
-import { $$ as op_dictionary_is_empty } from "pareto-standard-operations/dist/implementation/operations/impure/dictionary/is_empty"
 
 
 
@@ -48,11 +46,11 @@ export const Node = (
     return sh.b.sub([
         sh.b.snippet("{"),
         sh.b.indent([
-            sh.g.sub(op_dictionary_to_list($.properties).map(($) => {
+            sh.g.sub($.properties.to_list(($, key) => {
                 return sh.g.nested_block([
-                    Identifier($.key),
+                    Identifier(key),
                     sh.b.snippet(": "),
-                    _ea.cc($.value.type, ($) => {
+                    _ea.cc($.type, ($) => {
                         switch ($[0]) {
                             case 'collection': return _ea.ss($, ($) => sh.b.sub([
                                 sh.b.snippet("collection ["),
@@ -64,16 +62,16 @@ export const Node = (
                                 sh.b.snippet("group "),
                                 Node($.node)
                             ]))
-                            case 'state group': return _ea.ss($, ($) => op_dictionary_is_empty($.states)
+                            case 'state group': return _ea.ss($, ($) => $.states.is_empty()
                                 ? sh.b.snippet("group { }")
                                 : sh.b.sub([
                                     sh.b.snippet("stategroup ("),
                                     sh.b.indent([
-                                        sh.g.sub(op_dictionary_to_list($.states).map(($) => {
+                                        sh.g.sub($.states.to_list(($, key) => {
                                             return sh.g.nested_block([
-                                                Identifier($.key),
+                                                Identifier(key),
                                                 sh.b.snippet(" "),
-                                                Node($.value.node)
+                                                Node($.node)
                                             ])
                                         }))
                                     ]),
