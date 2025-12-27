@@ -8,9 +8,6 @@ import * as d_out from "../../../../../interface/generated/pareto/schemas/lionwe
 
 //dependencies
 
-import { $$ as op_flatten_list } from "pareto-standard-operations/dist/implementation/operations/pure/list/flatten"
-
-
 export const MetaPointer = (
     $: string,
 ): d_out.MetaPointer => ({
@@ -36,7 +33,7 @@ export const Type_Node_2_Document_nodes = (
 ): d_out.SerializationChunk.nodes => {
     return _ea.cc($, ($) => {
         switch ($[0]) {
-            case 'dictionary': return _ea.ss($, ($): d_out.SerializationChunk.nodes => op_flatten_list(_ea.list_literal([
+            case 'dictionary': return _ea.ss($, ($): d_out.SerializationChunk.nodes => _ea.list_literal<d_out.SerializationChunk.nodes>([
                 _ea.list_literal([
                     {
                         'id': $p.path,
@@ -73,8 +70,8 @@ export const Type_Node_2_Document_nodes = (
                         'path': $p.path + ".D",
                     }
                 ),
-            ])))
-            case 'group': return _ea.ss($, ($): d_out.SerializationChunk.nodes => op_flatten_list(_ea.list_literal([
+            ]).flatten(($) => $))
+            case 'group': return _ea.ss($, ($): d_out.SerializationChunk.nodes => _ea.list_literal<d_out.SerializationChunk.nodes>([
                 _ea.list_literal([
                     {
                         'id': $p.path,
@@ -89,15 +86,16 @@ export const Type_Node_2_Document_nodes = (
                         ]),
                         'properties': _ea.list_literal([]),
                         'references': _ea.list_literal([])
-                    }]),
-                op_flatten_list($['ordered list'].map(($) => Type_Node_2_Document_nodes(
+                    }
+                ]),
+                $['ordered list'].flatten(($) => Type_Node_2_Document_nodes(
                     $.value.node,
                     {
                         'path': $p.path + "." + $.key,
                     }
-                ))),
-            ])))
-            case 'list': return _ea.ss($, ($): d_out.SerializationChunk.nodes => op_flatten_list(_ea.list_literal([
+                )),
+            ]).flatten(($) => $))
+            case 'list': return _ea.ss($, ($): d_out.SerializationChunk.nodes => _ea.list_literal<d_out.SerializationChunk.nodes>([
                 _ea.list_literal([{
                     'id': $p.path,
                     'parent': _ea.not_set(),
@@ -118,8 +116,8 @@ export const Type_Node_2_Document_nodes = (
                         'path': $p.path + ".L",
                     }
                 ),
-            ])))
-            case 'optional': return _ea.ss($, ($): d_out.SerializationChunk.nodes => op_flatten_list(_ea.list_literal([
+            ]).flatten(($) => $))
+            case 'optional': return _ea.ss($, ($): d_out.SerializationChunk.nodes => _ea.list_literal<d_out.SerializationChunk.nodes>([
                 _ea.list_literal([{
                     'id': $p.path,
                     'parent': _ea.not_set(),
@@ -140,8 +138,8 @@ export const Type_Node_2_Document_nodes = (
                         'path': $p.path + ".O",
                     }
                 ),
-            ])))
-            case 'state group': return _ea.ss($, ($): d_out.SerializationChunk.nodes => op_flatten_list(_ea.list_literal([
+            ]).flatten(($) => $))
+            case 'state group': return _ea.ss($, ($): d_out.SerializationChunk.nodes => _ea.list_literal<d_out.SerializationChunk.nodes>([
                 _ea.list_literal([{
                     'id': $p.path,
                     'parent': _ea.not_set(),
@@ -175,13 +173,13 @@ export const Type_Node_2_Document_nodes = (
                     ]),
                     'references': _ea.list_literal([])
                 })),
-                op_flatten_list($.to_list(($, key) => Type_Node_2_Document_nodes(
+                $.to_list(($, key) => Type_Node_2_Document_nodes(
                     $.node,
                     {
                         'path': $p.path + "." + key,
                     }
-                ))),
-            ])))
+                )).flatten(($) => $),
+            ]).flatten(($) => $))
             default: return _ea.list_literal([])
         }
     })
@@ -203,11 +201,11 @@ export const Schema = (
                 'version': "2023.1",
             }
         ]),
-        'nodes': op_flatten_list($.types['ordered list'].map(($) => Type_Node_2_Document_nodes(
+        'nodes': $.types['ordered list'].flatten(($) => Type_Node_2_Document_nodes(
             $.value.node,
             {
                 'path': $.key,
             }
-        ))),
+        )),
     }
 }

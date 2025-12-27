@@ -6,9 +6,6 @@ import * as d_in from "../../../../../interface/generated/pareto/schemas/graphvi
 import * as d_out from "../../../../../interface/generated/pareto/schemas/graphviz_low_level/data_types/target"
 
 import { $$ as s_list_of_separated_texts } from "pareto-standard-operations/dist/implementation/serializers/schemas/list_of_separated_texts"
-import { $$ as op_append_element } from "pareto-standard-operations/dist/implementation/operations/pure/list/append_element"
-import { $$ as op_prepend_element } from "pareto-standard-operations/dist/implementation/operations/pure/list/prepend_element"
-import { $$ as op_flatten } from "pareto-standard-operations/dist/implementation/operations/pure/list/flatten"
 
 
 
@@ -23,7 +20,7 @@ export const Graph = ($: d_in.Graph): d_out.Graph => {
             }
         }),
         'name': $.name.map(($) => ['string', $]),
-        'statements': op_flatten(_ea.list_literal([
+        'statements': _ea.list_literal([
             Tree($.tree, { 'path': _ea.list_literal([]) }),
             _ea.cc($.type, ($): d_out.Graph.statements => {
                 switch ($[0]) {
@@ -111,7 +108,7 @@ export const Graph = ($: d_in.Graph): d_out.Graph => {
                     default: return _ea.au($[0])
                 }
             })
-        ]))
+        ]).flatten(($) => $)
 
     }
 }
@@ -122,8 +119,8 @@ export const Tree = (
         'path': _et.List<string>
     }
 ): d_out.Statement_List => {
-    return op_flatten($.elements.to_list(($, key) => {
-        const path = op_append_element($p.path, { 'element': key })
+    return $.elements.to_list<d_out.Statement_List>(($, key) => {
+        const path = $p.path.append_element(key)
         return _ea.cc($, ($) => {
             switch ($[0]) {
                 case 'node': return _ea.ss($, ($) => _ea.list_literal<d_out.Statement_List.L>([
@@ -132,25 +129,21 @@ export const Tree = (
                             'id': ['string', s_list_of_separated_texts(path, { 'separator': '>' })],
                             'port': _ea.not_set()
                         },
-                        'attribute list': op_prepend_element(
-                            $.attributes.map(($) => _ea.cc($, ($) => {
-                                switch ($[0]) {
-                                    case 'color': return _ea.ss($, ($) => ({ "name": ['id', "color"], "value": ['string', $] }))
-                                    default: return _ed.implement_me("xx")
-                                }
-                            })),
-                            {
-                                'element': {
-                                    'name': ['id', "label"],
-                                    'value': ['string', key],
-                                }
-                            },
-                        )
+                        'attribute list': $.attributes.map(($): d_out.Attribute_List.L => _ea.cc($, ($) => {
+                            switch ($[0]) {
+                                case 'color': return _ea.ss($, ($) => ({ "name": ['id', "color"], "value": ['string', $] }))
+                                default: return _ed.implement_me("xx")
+                            }
+                        })).prepend_element({
+                            'name': ['id', "label"],
+                            'value': ['string', key],
+                        }),
+
                     }]
                 ]))
                 case 'sub': return _ea.ss($, ($) => Tree($.tree, { 'path': path }))
                 default: return _ea.au($[0])
             }
         })
-    }))
+    }).flatten(($) => $)
 }
