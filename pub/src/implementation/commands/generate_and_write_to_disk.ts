@@ -1,6 +1,6 @@
-import * as _ed from 'exupery-core-data'
-import * as _easync from 'exupery-core-async'
-import * as _et from 'exupery-core-types'
+import * as _pc from 'pareto-core-command'
+import * as _pi from 'pareto-core-interface'
+import * as _pinternals from 'pareto-core-internals'
 
 import * as signatures from "../../interface/signatures"
 
@@ -12,10 +12,11 @@ import * as r_pareto_module from "pareto/dist/implementation/temp/resolvers/modu
 import * as t_pareto_module_to_fountain_pen_block from "../transformers/schemas/pareto/module/fountain_pen_block"
 
 
-export const $$: signatures.commands.generate_and_write_to_disk = _easync.create_command_procedure(
+export const $$: signatures.commands.generate_and_write_to_disk = _pc.create_command_procedure(
     ($p, $cr, $qr) => [
         $cr['write to directory'].execute(
             {
+                'escape spaces in path': true,
                 'directory': t_pareto_module_to_fountain_pen_block.Module(
                     r_pareto_module.Module(
                         $p.module,
@@ -24,7 +25,7 @@ export const $$: signatures.commands.generate_and_write_to_disk = _easync.create
                                 'lookups': null,
                                 'values': null,
                             },
-                            'location 2 string': _ed.location_to_string
+                            'location 2 string': _pinternals.location_to_string
                         }
                     ),
                     {

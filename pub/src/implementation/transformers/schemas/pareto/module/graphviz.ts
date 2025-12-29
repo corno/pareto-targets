@@ -1,4 +1,4 @@
-import * as _ea from 'exupery-core-alg'
+import * as _pt from 'pareto-core-transformer'
 
 import * as _in_s from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"
 import * as _in from "pareto/dist/interface/generated/pareto/schemas/module/data_types/source"
@@ -20,9 +20,9 @@ export const Schema_Tree = (
         'graph name': string
     }
 ): _out.Directory => {
-    return _ea.cc($, ($) => {
+    return _pt.cc($, ($) => {
         switch ($[0]) {
-            case 'schema': return _ea.ss($, ($) => _ea.dictionary_literal({
+            case 'schema': return _pt.ss($, ($) => _pt.dictionary_literal({
                 "graphviz.dot": sh.n.file(
                     t_graphviz_to_fountain_pen.Graph(
                         t_schema_to_graphviz.Schema($, {
@@ -31,8 +31,8 @@ export const Schema_Tree = (
                     ),
                 )
             }))
-            case 'set': return _ea.ss($, ($) => Schemas($))
-            default: return _ea.au($[0])
+            case 'set': return _pt.ss($, ($) => Schemas($))
+            default: return _pt.au($[0])
         }
     })
 }

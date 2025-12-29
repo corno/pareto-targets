@@ -1,4 +1,4 @@
-import * as _ea from 'exupery-core-alg'
+import * as _pt from 'pareto-core-transformer'
 
 import * as d_in from "pareto/dist/interface/generated/pareto/schemas/module/data_types/source"
 import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
@@ -23,13 +23,13 @@ export const Module = (
 
 ): d_out.Directory => {
     const module = $
-    return _ea.cc($p.target, ($): d_out.Directory => {
+    return _pt.cc($p.target, ($): d_out.Directory => {
         switch ($[0]) {
-            case 'documentation': return _ea.ss($, ($) => t_pareto_module_to_documentation.Module(module))
-            case 'graphviz': return _ea.ss($, ($) => t_pareto_module_to_graphvix.Module(module, { 'graph name': "schema" }))
-            case 'lionweb': return _ea.ss($, ($) => t_pareto_module_to_lionweb.Module(module))
-            case 'typescript': return _ea.ss($, ($) => t_pareto_module_to_typescript.Module(module))
-            default: return _ea.au($[0])
+            case 'documentation': return _pt.ss($, ($) => t_pareto_module_to_documentation.Module(module))
+            case 'graphviz': return _pt.ss($, ($) => t_pareto_module_to_graphvix.Module(module, { 'graph name': "schema" }))
+            case 'lionweb': return _pt.ss($, ($) => t_pareto_module_to_lionweb.Module(module))
+            case 'typescript': return _pt.ss($, ($) => t_pareto_module_to_typescript.Module(module))
+            default: return _pt.au($[0])
         }
     })
 }

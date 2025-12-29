@@ -1,5 +1,4 @@
-import * as _ed from 'exupery-core-data'
-import * as _ea from 'exupery-core-alg'
+import * as _pt from 'pareto-core-transformer'
 
 //interface
 
@@ -22,7 +21,7 @@ export const Type_Node_2_properties = (
         'path': string,
     }
 ): d_out.SerializationChunk.nodes.L.properties => {
-    return _ea.list_literal([])
+    return _pt.list_literal([])
 }
 
 export const Type_Node_2_Document_nodes = (
@@ -31,37 +30,37 @@ export const Type_Node_2_Document_nodes = (
         'path': string,
     }
 ): d_out.SerializationChunk.nodes => {
-    return _ea.cc($, ($) => {
+    return _pt.cc($, ($) => {
         switch ($[0]) {
-            case 'dictionary': return _ea.ss($, ($): d_out.SerializationChunk.nodes => _ea.list_literal<d_out.SerializationChunk.nodes>([
-                _ea.list_literal([
+            case 'dictionary': return _pt.ss($, ($): d_out.SerializationChunk.nodes => _pt.list_literal<d_out.SerializationChunk.nodes>([
+                _pt.list_literal([
                     {
                         'id': $p.path,
-                        'parent': _ea.not_set(),
-                        'annotations': _ea.list_literal([]),
+                        'parent': _pt.not_set(),
+                        'annotations': _pt.list_literal([]),
                         'classifier': MetaPointer("dictionary"),
-                        'containments': _ea.list_literal([
+                        'containments': _pt.list_literal([
                             {
                                 'containment': MetaPointer("entry"),
-                                'children': _ea.list_literal([$p.path + ".D"]),
+                                'children': _pt.list_literal([$p.path + ".D"]),
                             },
                         ]),
-                        'properties': _ea.list_literal([]),
-                        'references': _ea.list_literal([])
+                        'properties': _pt.list_literal([]),
+                        'references': _pt.list_literal([])
                     },
                     {
                         'id': $p.path + ".D",
-                        'parent': _ea.not_set(),
-                        'annotations': _ea.list_literal([]),
+                        'parent': _pt.not_set(),
+                        'annotations': _pt.list_literal([]),
                         'classifier': MetaPointer("entry"),
-                        'containments': _ea.list_literal([
+                        'containments': _pt.list_literal([
                             {
                                 'containment': MetaPointer("entries"),
-                                'children': _ea.list_literal([$p.path + ".D"]),
+                                'children': _pt.list_literal([$p.path + ".D"]),
                             },
                         ]),
-                        'properties': _ea.list_literal([]),
-                        'references': _ea.list_literal([])
+                        'properties': _pt.list_literal([]),
+                        'references': _pt.list_literal([])
                     }
                 ]),
                 Type_Node_2_Document_nodes(
@@ -71,21 +70,21 @@ export const Type_Node_2_Document_nodes = (
                     }
                 ),
             ]).flatten(($) => $))
-            case 'group': return _ea.ss($, ($): d_out.SerializationChunk.nodes => _ea.list_literal<d_out.SerializationChunk.nodes>([
-                _ea.list_literal([
+            case 'group': return _pt.ss($, ($): d_out.SerializationChunk.nodes => _pt.list_literal<d_out.SerializationChunk.nodes>([
+                _pt.list_literal([
                     {
                         'id': $p.path,
-                        'parent': _ea.not_set(),
-                        'annotations': _ea.list_literal([]),
+                        'parent': _pt.not_set(),
+                        'annotations': _pt.list_literal([]),
                         'classifier': MetaPointer("group"),
-                        'containments': _ea.list_literal([
+                        'containments': _pt.list_literal([
                             {
                                 'containment': MetaPointer("properties"),
                                 'children': $['ordered list'].map(($) => $p.path + "." + $.key),
                             },
                         ]),
-                        'properties': _ea.list_literal([]),
-                        'references': _ea.list_literal([])
+                        'properties': _pt.list_literal([]),
+                        'references': _pt.list_literal([])
                     }
                 ]),
                 $['ordered list'].flatten(($) => Type_Node_2_Document_nodes(
@@ -95,20 +94,20 @@ export const Type_Node_2_Document_nodes = (
                     }
                 )),
             ]).flatten(($) => $))
-            case 'list': return _ea.ss($, ($): d_out.SerializationChunk.nodes => _ea.list_literal<d_out.SerializationChunk.nodes>([
-                _ea.list_literal([{
+            case 'list': return _pt.ss($, ($): d_out.SerializationChunk.nodes => _pt.list_literal<d_out.SerializationChunk.nodes>([
+                _pt.list_literal([{
                     'id': $p.path,
-                    'parent': _ea.not_set(),
-                    'annotations': _ea.list_literal([]),
+                    'parent': _pt.not_set(),
+                    'annotations': _pt.list_literal([]),
                     'classifier': MetaPointer("list"),
-                    'containments': _ea.list_literal([
+                    'containments': _pt.list_literal([
                         {
                             'containment': MetaPointer("elements"),
-                            'children': _ea.list_literal([$p.path + ".L"]),
+                            'children': _pt.list_literal([$p.path + ".L"]),
                         },
                     ]),
-                    'properties': _ea.list_literal([]),
-                    'references': _ea.list_literal([])
+                    'properties': _pt.list_literal([]),
+                    'references': _pt.list_literal([])
                 }]),
                 Type_Node_2_Document_nodes(
                     $.node,
@@ -117,20 +116,20 @@ export const Type_Node_2_Document_nodes = (
                     }
                 ),
             ]).flatten(($) => $))
-            case 'optional': return _ea.ss($, ($): d_out.SerializationChunk.nodes => _ea.list_literal<d_out.SerializationChunk.nodes>([
-                _ea.list_literal([{
+            case 'optional': return _pt.ss($, ($): d_out.SerializationChunk.nodes => _pt.list_literal<d_out.SerializationChunk.nodes>([
+                _pt.list_literal([{
                     'id': $p.path,
-                    'parent': _ea.not_set(),
-                    'annotations': _ea.list_literal([]),
+                    'parent': _pt.not_set(),
+                    'annotations': _pt.list_literal([]),
                     'classifier': MetaPointer("list"),
-                    'containments': _ea.list_literal([
+                    'containments': _pt.list_literal([
                         {
                             'containment': MetaPointer("optional"),
-                            'children': _ea.list_literal([$p.path + ".O"]),
+                            'children': _pt.list_literal([$p.path + ".O"]),
                         },
                     ]),
-                    'properties': _ea.list_literal([]),
-                    'references': _ea.list_literal([])
+                    'properties': _pt.list_literal([]),
+                    'references': _pt.list_literal([])
                 }]),
                 Type_Node_2_Document_nodes(
                     $,
@@ -139,39 +138,39 @@ export const Type_Node_2_Document_nodes = (
                     }
                 ),
             ]).flatten(($) => $))
-            case 'state group': return _ea.ss($, ($): d_out.SerializationChunk.nodes => _ea.list_literal<d_out.SerializationChunk.nodes>([
-                _ea.list_literal([{
+            case 'state group': return _pt.ss($, ($): d_out.SerializationChunk.nodes => _pt.list_literal<d_out.SerializationChunk.nodes>([
+                _pt.list_literal([{
                     'id': $p.path,
-                    'parent': _ea.not_set(),
-                    'annotations': _ea.list_literal([]),
+                    'parent': _pt.not_set(),
+                    'annotations': _pt.list_literal([]),
                     'classifier': MetaPointer("state group"),
-                    'containments': _ea.list_literal([
+                    'containments': _pt.list_literal([
                         {
                             'containment': MetaPointer("states"),
                             'children': $.to_list(($, key) => $p.path + "." + key),
                         },
                     ]),
-                    'properties': _ea.list_literal([]),
-                    'references': _ea.list_literal([])
+                    'properties': _pt.list_literal([]),
+                    'references': _pt.list_literal([])
                 }]),
                 $.to_list(($, key) => ({
                     'id': $p.path,
-                    'parent': _ea.not_set(),
-                    'annotations': _ea.list_literal([]),
+                    'parent': _pt.not_set(),
+                    'annotations': _pt.list_literal([]),
                     'classifier': MetaPointer("state"),
-                    'containments': _ea.list_literal([
+                    'containments': _pt.list_literal([
                         {
                             'containment': MetaPointer("states"),
-                            'children': _ea.list_literal([$p.path + "." + key]),
+                            'children': _pt.list_literal([$p.path + "." + key]),
                         },
                     ]),
-                    'properties': _ea.list_literal([
+                    'properties': _pt.list_literal([
                         {
                             'value': key,
                             'property': MetaPointer("state"),
                         }
                     ]),
-                    'references': _ea.list_literal([])
+                    'references': _pt.list_literal([])
                 })),
                 $.to_list(($, key) => Type_Node_2_Document_nodes(
                     $.node,
@@ -180,7 +179,7 @@ export const Type_Node_2_Document_nodes = (
                     }
                 )).flatten(($) => $),
             ]).flatten(($) => $))
-            default: return _ea.list_literal([])
+            default: return _pt.list_literal([])
         }
     })
 }
@@ -191,7 +190,7 @@ export const Schema = (
 ): d_out.SerializationChunk => {
     return {
         'serializationFormatVersion': "2023.1",
-        'languages': _ed.a([
+        'languages': _pt.list_literal([
             {
                 'key': "LionCore-M3",
                 'version': "2023.1",

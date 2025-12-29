@@ -1,4 +1,4 @@
-import * as _ea from 'exupery-core-alg'
+import * as _pt from 'pareto-core-transformer'
 
 //interface
 
@@ -11,9 +11,9 @@ import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
 
 export const Schema_Tree = ($: _in.Schema_Tree): _out.Group_Part => {
-    return _ea.cc($, ($) => {
+    return _pt.cc($, ($) => {
         switch ($[0]) {
-            case 'schema': return _ea.ss($, ($) => sh.g.sub([
+            case 'schema': return _pt.ss($, ($) => sh.g.sub([
                 sh.g.simple_block(`types:`),
                 sh.g.nested_block([
                     sh.b.indent([
@@ -24,7 +24,7 @@ export const Schema_Tree = ($: _in.Schema_Tree): _out.Group_Part => {
                 ]),
                 sh.g.simple_block(``),
             ]))
-            case 'set': return _ea.ss($, ($) => sh.g.sub([
+            case 'set': return _pt.ss($, ($) => sh.g.sub([
                 sh.g.simple_block(`schemas:`),
                 sh.g.nested_block([
                     sh.b.indent([
@@ -33,7 +33,7 @@ export const Schema_Tree = ($: _in.Schema_Tree): _out.Group_Part => {
                 ]),
                 sh.g.simple_block(``),
             ]))
-            default: return _ea.au($[0])
+            default: return _pt.au($[0])
         }
     })
 }

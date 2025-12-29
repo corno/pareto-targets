@@ -1,7 +1,7 @@
 
-// import * as _ea from 'exupery-core-alg'
-// import * as _edev from 'exupery-core-dev'
-// import * as _et from 'exupery-core-types'
+// import * as _pt from 'pareto-core-transformer'
+// import * as _pdev from 'pareto-core-dev'
+// import * as _pi from 'pareto-core-interface'
 
 // import * as d_in from "../../../../../interface/generated/pareto/schemas/graphviz_high_level/resolved"
 // import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/unresolved"

@@ -1,4 +1,4 @@
-import * as _ea from 'exupery-core-alg'
+import * as _pt from 'pareto-core-transformer'
 
 import * as d_in_s from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"
 import * as d_in from "pareto/dist/interface/generated/pareto/schemas/module/data_types/source"
@@ -14,9 +14,9 @@ import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
 
 export const Schema_Tree = ($: d_in_s.Schema_Tree): d_out.Directory => {
-    return _ea.cc($, ($) => {
+    return _pt.cc($, ($) => {
         switch ($[0]) {
-            case 'schema': return _ea.ss($, ($) => _ea.dictionary_literal({
+            case 'schema': return _pt.ss($, ($) => _pt.dictionary_literal({
                 "lionweb.json": sh.n.file(
                     t_json_to_fountain_pen_block.Document(
                         t_lionweb_to_json.SerializationChunk(
@@ -25,8 +25,8 @@ export const Schema_Tree = ($: d_in_s.Schema_Tree): d_out.Directory => {
                     ),
                 )
             }))
-            case 'set': return _ea.ss($, ($) => Schemas($))
-            default: return _ea.au($[0])
+            case 'set': return _pt.ss($, ($) => Schemas($))
+            default: return _pt.au($[0])
         }
     })
 }

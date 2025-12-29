@@ -8,11 +8,8 @@
     "dist"
   ],
   "dependencies": {
-    "exupery-core-alg": "^0.5.19",
-    "exupery-core-data": "^0.3.3",
-    "exupery-core-dev": "^0.3.3",
-    "pareto": "^0.78.14",
-    "pareto-fountain-pen": "^0.3.18",
-    "pareto-json": "^0.3.5"
+    "pareto": "^0.78.15",
+    "pareto-fountain-pen": "^0.3.19",
+    "pareto-json": "^0.3.6"
   }
 }
