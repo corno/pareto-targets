@@ -1,16 +1,16 @@
 import * as _pt from 'pareto-core-transformer'
 
-import * as _in from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"
+import * as d_in from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"
 import * as _in_m from "pareto/dist/interface/generated/pareto/schemas/module/data_types/source"
-import * as _out from "../../../../../interface/generated/pareto/schemas/graphviz_high_level/data_types/target"
+import * as d_out from "../../../../../interface/generated/pareto/schemas/graphviz_high_level/data_types/target"
 
 
 export const Type_Node = (
-    $: _in.Type_Node,
+    $: d_in.Type_Node,
     $p: {
         'type name': string,
     },
-): _out.Graph._type.SG.directed.edges => {
+): d_out.Graph._type.SG.directed.edges => {
     return _pt.cc($, ($) => {
         switch ($[0]) {
             case 'number': return _pt.ss($, ($) => _pt.list_literal([]))
@@ -18,7 +18,7 @@ export const Type_Node = (
             case 'list': return _pt.ss($, ($) => Type_Node($.node, $p))
             case 'nothing': return _pt.ss($, ($) => _pt.list_literal([]))
             case 'reference': return _pt.ss($, ($) => _pt.list_literal([]))
-            case 'component': return _pt.ss($, ($) => _pt.list_literal<_out.Graph._type.SG.directed.edges.L>([
+            case 'component': return _pt.ss($, ($) => _pt.list_literal<d_out.Graph._type.SG.directed.edges.L>([
                 {
                     'from': {
                         'start': $p['type name'],
@@ -62,17 +62,17 @@ export const Type_Node = (
 }
 
 export const Schema = (
-    $: _in.Schema,
+    $: d_in.Schema,
     $p: {
         'graph name': string,
     }
 
-): _out.Graph => {
+): d_out.Graph => {
     return {
         'name': _pt.set($p['graph name']),
         'tree': {
             'attributes': _pt.list_literal([]),
-            'elements': $.types.dictionary.map<_out.Tree.elements.D>(($) => {
+            'elements': $.types.dictionary.map<d_out.Tree.elements.D>(($) => {
                 return ['node', {
 
                     'attributes': _pt.list_literal([]),

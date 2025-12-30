@@ -1,8 +1,8 @@
 import * as _pt from 'pareto-core-transformer'
 
 import * as _in_s from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"
-import * as _in from "pareto/dist/interface/generated/pareto/schemas/module/data_types/source"
-import * as _out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
+import * as d_in from "pareto/dist/interface/generated/pareto/schemas/module/data_types/source"
+import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
 
 //transformations
 
@@ -19,7 +19,7 @@ export const Schema_Tree = (
     $p: {
         'graph name': string
     }
-): _out.Directory => {
+): d_out.Directory => {
     return _pt.cc($, ($) => {
         switch ($[0]) {
             case 'schema': return _pt.ss($, ($) => _pt.dictionary_literal({
@@ -37,15 +37,15 @@ export const Schema_Tree = (
     })
 }
 
-export const Schemas = ($: _in_s.Schemas): _out.Directory => {
-    return $.dictionary.map<_out.Directory.D>(($, key) => sh.n.directory(Schema_Tree($, { 'graph name': key })))
+export const Schemas = ($: _in_s.Schemas): d_out.Directory => {
+    return $.dictionary.map<d_out.Directory.D>(($, key) => sh.n.directory(Schema_Tree($, { 'graph name': key })))
 }
 
 export const Module = (
-    $: _in.Module,
+    $: d_in.Module,
     $p: {
         'graph name': string
     }
-): _out.Directory => {
+): d_out.Directory => {
     return Schema_Tree($['schema tree'], { 'graph name': $p['graph name'] })
 }

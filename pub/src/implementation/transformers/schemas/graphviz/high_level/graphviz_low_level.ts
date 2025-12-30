@@ -1,5 +1,5 @@
 import * as _pt from 'pareto-core-transformer'
-import * as _ed from 'pareto-core-dev'
+import * as _pdev from 'pareto-core-dev'
 import * as _pi from 'pareto-core-interface'
 
 import * as d_in from "../../../../../interface/generated/pareto/schemas/graphviz_high_level/data_types/target"
@@ -132,7 +132,7 @@ export const Tree = (
                         'attribute list': $.attributes.map(($): d_out.Attribute_List.L => _pt.cc($, ($) => {
                             switch ($[0]) {
                                 case 'color': return _pt.ss($, ($) => ({ "name": ['id', "color"], "value": ['string', $] }))
-                                default: return _ed.implement_me("xx")
+                                default: return _pdev.implement_me("xx")
                             }
                         })).prepend_element({
                             'name': ['id', "label"],

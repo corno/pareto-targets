@@ -2,15 +2,15 @@ import * as _pt from 'pareto-core-transformer'
 
 //interface
 
-import * as _in from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"
+import * as d_in from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"
 import * as _in_m from "pareto/dist/interface/generated/pareto/schemas/module/data_types/source"
-import * as _out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
+import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
 
 //shorthands
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
 
-export const Schema_Tree = ($: _in.Schema_Tree): _out.Group_Part => {
+export const Schema_Tree = ($: d_in.Schema_Tree): d_out.Group_Part => {
     return _pt.cc($, ($) => {
         switch ($[0]) {
             case 'schema': return _pt.ss($, ($) => sh.g.sub([
@@ -38,7 +38,7 @@ export const Schema_Tree = ($: _in.Schema_Tree): _out.Group_Part => {
     })
 }
 
-export const Schemas = ($: _in.Schemas): _out.Group_Part => {
+export const Schemas = ($: d_in.Schemas): d_out.Group_Part => {
     return sh.g.sub($['ordered list'].map(($) => sh.g.sub([
         sh.g.simple_block($.key),
         sh.g.nested_block([

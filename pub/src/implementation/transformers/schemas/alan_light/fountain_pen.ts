@@ -1,7 +1,7 @@
 import * as _pt from 'pareto-core-transformer'
 
-import * as _in from "../../../../interface/generated/pareto/schemas/alan_light/data_types/target"
-import * as _out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
+import * as d_in from "../../../../interface/generated/pareto/schemas/alan_light/data_types/target"
+import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
 
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
@@ -10,8 +10,8 @@ import { $$ as s_apostrophed } from "../../../serializers/primitives/text/apostr
 
 
 export const Root = (
-    $: _in.Root
-): _out.Group => {
+    $: d_in.Root
+): d_out.Group => {
     return sh.group([
         sh.g.nested_block([
             sh.b.snippet("users"),
@@ -37,12 +37,12 @@ export const Root = (
 }
 
 export const Identifier = (
-    $: _in.Identifier
-): _out.Block_Part => sh.b.snippet(s_apostrophed($))
+    $: d_in.Identifier
+): d_out.Block_Part => sh.b.snippet(s_apostrophed($))
 
 export const Node = (
-    $: _in.Node
-): _out.Block_Part => {
+    $: d_in.Node
+): d_out.Block_Part => {
     return sh.b.sub([
         sh.b.snippet("{"),
         sh.b.indent([
