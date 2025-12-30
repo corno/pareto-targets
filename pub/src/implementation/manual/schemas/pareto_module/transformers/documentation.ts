@@ -5,7 +5,7 @@ import * as d_in from "pareto/dist/interface/generated/pareto/schemas/module/dat
 import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
 
 //dependecies
-import * as t_schema_to_documentation from "../schema/documentation"
+import * as t_schema_to_documentation from "../../pareto_schema/transformers/documentation"
 
 //shorthands
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"

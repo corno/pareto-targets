@@ -22,7 +22,7 @@ import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
 
 //dependencies
-import { $$ as s_quoted } from "../../../../serializers/primitives/text/quoted"
+import { $$ as s_quoted } from "../../../primitives/text/serializers/quoted"
 import { $$ as op_enrich_list_elements_with_position_information } from "pareto-fountain-pen/dist/implementation/temp/enrich_with_position_information"
 
 

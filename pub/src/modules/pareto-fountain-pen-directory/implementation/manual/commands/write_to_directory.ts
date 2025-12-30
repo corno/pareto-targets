@@ -3,14 +3,14 @@ import * as _pt from 'pareto-core-transformer'
 import * as _pi from 'pareto-core-interface'
 import * as _pc from 'pareto-core-command'
 
-import * as signatures from "../../interface/signatures"
+import * as signatures from "../../../interface/signatures"
 
 //data types
-import * as d_write_to_directory from "../../interface/to_be_generated/write_to_dictionary"
+import * as d_write_to_directory from "../../../interface/to_be_generated/write_to_dictionary"
 
 //dependencies
 import * as t_path_to_path from "exupery-resources/dist/implementation/transformers/schemas/path/path"
-import { replace_space_in_context_path } from "../transformers/schemas/path/path"
+import { replace_space_in_context_path } from "../schemas/path/transformers/path"
 
 
 export const $$: signatures.commands.write_to_directory = _pc.create_command_procedure(
@@ -34,6 +34,7 @@ export const $$: signatures.commands.write_to_directory = _pc.create_command_pro
                 $p.directory,
                 ($, key) => [
                     _pt.cc($, ($): _pi.Command_Promise<d_write_to_directory.Error__nodes> => {
+                        const node_path = t_path_to_path.extend_node_path($p.path, { 'addition': key })
                         switch ($[0]) {
                             case 'file':
                                 return _pt.ss($, ($) => {
@@ -56,8 +57,8 @@ export const $$: signatures.commands.write_to_directory = _pc.create_command_pro
                                             'escape spaces in path': $p['escape spaces in path'],
                                             'directory': $,
                                             'path': $p['escape spaces in path']
-                                                ? replace_space_in_context_path($p.path)
-                                                : $p.path,
+                                                ? replace_space_in_context_path(node_path)
+                                                : node_path,
                                             'indentation': $p.indentation,
                                             'newline': $p.newline,
                                             'remove before creating': false,

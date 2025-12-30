@@ -1,11 +1,11 @@
 import * as _pt from 'pareto-core-transformer'
 
-import * as d_in from "../../../../interface/generated/pareto/schemas/alan_light/data_types/target"
+import * as d_in from "../../../../../interface/generated/pareto/schemas/alan_light/data_types/target"
 import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
 
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
-import { $$ as s_apostrophed } from "../../../serializers/primitives/text/apostrophed"
+import { $$ as s_apostrophed } from "../../../primitives/text/serializers/apostrophed"
 
 
 

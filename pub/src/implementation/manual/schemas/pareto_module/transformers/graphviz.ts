@@ -6,8 +6,8 @@ import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/sche
 
 //transformations
 
-import * as t_schema_to_graphviz from "../schema/graphviz_high_level"
-import * as t_graphviz_to_fountain_pen from "../../graphviz/high_level/fountain_pen"
+import * as t_schema_to_graphviz from "../../pareto_schema/transformers/graphviz_high_level"
+import * as t_graphviz_to_fountain_pen from "../../graphviz_highlevel/transformers/fountain_pen"
 
 //shorthands
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
