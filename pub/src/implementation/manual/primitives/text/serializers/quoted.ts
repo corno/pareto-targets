@@ -5,7 +5,7 @@ export type Signature = ($: string) => string
 
 //dependencies
 
-import { $$ as s_escaped_character } from "pareto-standard-operations/dist/implementation/serializers/primitives/text/escaped_character"
+import { $$ as s_escaped_character } from "pareto-standard-operations/dist/implementation/manual/primitives/text/serializers/escaped_character"
 
 export const $$: Signature = ($) => '"'
     + s_escaped_character(

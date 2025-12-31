@@ -5,7 +5,7 @@ import * as _pi from 'pareto-core-interface'
 import * as d_in from "../../../../../interface/generated/pareto/schemas/graphviz_high_level/data_types/target"
 import * as d_out from "../../../../../interface/generated/pareto/schemas/graphviz_low_level/data_types/target"
 
-import { $$ as s_list_of_separated_texts } from "pareto-standard-operations/dist/implementation/serializers/schemas/list_of_separated_texts"
+import { $$ as s_list_of_separated_texts } from "pareto-standard-operations/dist/implementation/temp_serializers/schemas/list_of_separated_texts"
 
 
 
