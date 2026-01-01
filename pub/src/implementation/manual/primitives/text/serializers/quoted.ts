@@ -1,5 +1,5 @@
 import * as _pi from 'pareto-core-interface'
-import * as _pt from 'pareto-core-transformer'
+import * as _p from 'pareto-core-serializer'
 
 export type Signature = ($: string) => string
 
