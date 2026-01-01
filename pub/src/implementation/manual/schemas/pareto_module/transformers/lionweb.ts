@@ -1,4 +1,4 @@
-import * as _pt from 'pareto-core-transformer'
+import * as _p from 'pareto-core-transformer'
 
 import * as d_in_s from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"
 import * as d_in from "pareto/dist/interface/generated/pareto/schemas/module/data_types/source"
@@ -14,9 +14,9 @@ import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
 
 export const Schema_Tree = ($: d_in_s.Schema_Tree): d_out.Directory => {
-    return _pt.cc($, ($) => {
+    return _p.cc($, ($) => {
         switch ($[0]) {
-            case 'schema': return _pt.ss($, ($) => _pt.dictionary_literal({
+            case 'schema': return _p.ss($, ($) => _p.dictionary_literal({
                 "lionweb.json": sh.n.file(
                     t_json_to_fountain_pen_block.Document(
                         t_lionweb_to_json.SerializationChunk(
@@ -25,8 +25,8 @@ export const Schema_Tree = ($: d_in_s.Schema_Tree): d_out.Directory => {
                     ),
                 )
             }))
-            case 'set': return _pt.ss($, ($) => Schemas($))
-            default: return _pt.au($[0])
+            case 'set': return _p.ss($, ($) => Schemas($))
+            default: return _p.au($[0])
         }
     })
 }

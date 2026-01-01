@@ -1,4 +1,4 @@
-import * as _pt from 'pareto-core-transformer'
+import * as _p from 'pareto-core-transformer'
 
 import * as d_in from "../../../../../interface/generated/pareto/schemas/alan_light/data_types/target"
 import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
@@ -50,19 +50,19 @@ export const Node = (
                 return sh.g.nested_block([
                     Identifier(key),
                     sh.b.snippet(": "),
-                    _pt.cc($.type, ($) => {
+                    _p.cc($.type, ($) => {
                         switch ($[0]) {
-                            case 'collection': return _pt.ss($, ($) => sh.b.sub([
+                            case 'collection': return _p.ss($, ($) => sh.b.sub([
                                 sh.b.snippet("collection ["),
                                 Identifier($.key),
                                 sh.b.snippet("] "),
                                 Node($.node)
                             ]))
-                            case 'group': return _pt.ss($, ($) => sh.b.sub([
+                            case 'group': return _p.ss($, ($) => sh.b.sub([
                                 sh.b.snippet("group "),
                                 Node($.node)
                             ]))
-                            case 'state group': return _pt.ss($, ($) => $.states.is_empty()
+                            case 'state group': return _p.ss($, ($) => $.states.is_empty()
                                 ? sh.b.snippet("group { }")
                                 : sh.b.sub([
                                     sh.b.snippet("stategroup ("),
@@ -77,8 +77,8 @@ export const Node = (
                                     ]),
                                     sh.b.snippet(")")
                                 ]))
-                            case 'text': return _pt.ss($, ($) => sh.b.snippet("text"))
-                            default: return _pt.au($[0])
+                            case 'text': return _p.ss($, ($) => sh.b.snippet("text"))
+                            default: return _p.au($[0])
                         }
                     })
                 ])

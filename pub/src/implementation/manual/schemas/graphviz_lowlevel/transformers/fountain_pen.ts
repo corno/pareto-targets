@@ -1,4 +1,4 @@
-import * as _pt from 'pareto-core-transformer'
+import * as _p from 'pareto-core-transformer'
 import * as _pi from 'pareto-core-interface'
 
 import * as d_in from "../../../../../interface/generated/pareto/schemas/graphviz_low_level/data_types/target"
@@ -32,11 +32,11 @@ export const Graph: signatures.Graph = ($) => {
             $.strict
                 ? sh.b.snippet("strict ")
                 : sh.b.nothing(),
-            _pt.cc($.type, ($) => {
+            _p.cc($.type, ($) => {
                 switch ($[0]) {
-                    case 'digraph': return _pt.ss($, () => sh.b.snippet("digraph "))
-                    case 'graph': return _pt.ss($, () => sh.b.snippet("graph "))
-                    default: return _pt.au($[0])
+                    case 'digraph': return _p.ss($, () => sh.b.snippet("digraph "))
+                    case 'graph': return _p.ss($, () => sh.b.snippet("graph "))
+                    default: return _p.au($[0])
                 }
             }),
             $.name.transform(
@@ -59,48 +59,48 @@ export const Statement_List: signatures.Statement_List = ($, $p) => {
         sh.b.indent([
             sh.g.sub($.map(($) => {
                 return sh.g.nested_block([
-                    _pt.cc($, ($) => {
+                    _p.cc($, ($) => {
                         switch ($[0]) {
-                            case 'attribute assignment': return _pt.ss($, ($) => sh.b.sub([
+                            case 'attribute assignment': return _p.ss($, ($) => sh.b.sub([
                                 ID($.name),
                                 sh.b.snippet(" = "),
                                 ID($.value),
                                 sh.b.snippet(";"),
                             ]))
-                            case 'attribute list': return _pt.ss($, ($) => sh.b.sub([
-                                _pt.cc($.type, ($) => {
+                            case 'attribute list': return _p.ss($, ($) => sh.b.sub([
+                                _p.cc($.type, ($) => {
                                     switch ($[0]) {
-                                        case 'edge': return _pt.ss($, () => sh.b.snippet("edge "))
-                                        case 'node': return _pt.ss($, () => sh.b.snippet("node "))
-                                        case 'graph': return _pt.ss($, () => sh.b.snippet("graph "))
-                                        default: return _pt.au($[0])
+                                        case 'edge': return _p.ss($, () => sh.b.snippet("edge "))
+                                        case 'node': return _p.ss($, () => sh.b.snippet("node "))
+                                        case 'graph': return _p.ss($, () => sh.b.snippet("graph "))
+                                        default: return _p.au($[0])
                                     }
                                 }),
                                 Attribute_List($.attributes),
                                 sh.b.snippet(";"),
                             ]))
-                            case 'edge': return _pt.ss($, ($) => sh.b.sub([
-                                _pt.cc($.left, ($) => {
+                            case 'edge': return _p.ss($, ($) => sh.b.sub([
+                                _p.cc($.left, ($) => {
                                     switch ($[0]) {
-                                        case 'node': return _pt.ss($, ($) => Node_ID($))
-                                        case 'subgraph': return _pt.ss($, ($) => Subgraph($, $p))
-                                        default: return _pt.au($[0])
+                                        case 'node': return _p.ss($, ($) => Node_ID($))
+                                        case 'subgraph': return _p.ss($, ($) => Subgraph($, $p))
+                                        default: return _p.au($[0])
                                     }
                                 }),
-                                _pt.cc($p['graph type'], ($) => {
+                                _p.cc($p['graph type'], ($) => {
                                     switch ($[0]) {
-                                        case 'digraph': return _pt.ss($, () => sh.b.snippet(" -> "))
-                                        case 'graph': return _pt.ss($, () => sh.b.snippet(" -- "))
-                                        default: return _pt.au($[0])
+                                        case 'digraph': return _p.ss($, () => sh.b.snippet(" -> "))
+                                        case 'graph': return _p.ss($, () => sh.b.snippet(" -- "))
+                                        default: return _p.au($[0])
                                     }
                                 }),
                                 sh.b.sub(op_enrich_list_elements_with_position_information($.right).map(($) => {
                                     return sh.b.sub([
-                                        _pt.cc($.value, ($) => {
+                                        _p.cc($.value, ($) => {
                                             switch ($[0]) {
-                                                case 'node': return _pt.ss($, ($) => Node_ID($))
-                                                case 'subgraph': return _pt.ss($, ($) => Subgraph($, $p))
-                                                default: return _pt.au($[0])
+                                                case 'node': return _p.ss($, ($) => Node_ID($))
+                                                case 'subgraph': return _p.ss($, ($) => Subgraph($, $p))
+                                                default: return _p.au($[0])
                                             }
                                         }),
                                         $['is last']
@@ -110,15 +110,15 @@ export const Statement_List: signatures.Statement_List = ($, $p) => {
                                 })),
                                 Attribute_List($.attributes),
                             ]))
-                            case 'node': return _pt.ss($, ($) => sh.b.sub([
+                            case 'node': return _p.ss($, ($) => sh.b.sub([
                                 Node_ID($.node),
                                 $['attribute list'].is_empty()
                                     ? sh.b.nothing()
                                     : Attribute_List($['attribute list']),
                                 sh.b.snippet(";"),
                             ]))
-                            case 'subgraph': return _pt.ss($, ($) => Subgraph($, $p))
-                            default: return _pt.au($[0])
+                            case 'subgraph': return _p.ss($, ($) => Subgraph($, $p))
+                            default: return _p.au($[0])
                         }
                     })
                 ])
@@ -129,13 +129,13 @@ export const Statement_List: signatures.Statement_List = ($, $p) => {
 }
 
 export const ID: signatures.ID = ($) => {
-    return _pt.cc($, ($) => {
+    return _p.cc($, ($) => {
         switch ($[0]) {
-            case 'id': return _pt.ss($, ($) => sh.b.snippet($)) //FIX escaping
-            case 'string': return _pt.ss($, ($) => sh.b.snippet(s_quoted($)))
-            case 'html': return _pt.ss($, ($) => sh.b.snippet($))
-            case 'number': return _pt.ss($, ($) => sh.b.snippet("FIXME NUMBER"))
-            default: return _pt.au($[0])
+            case 'id': return _p.ss($, ($) => sh.b.snippet($)) //FIX escaping
+            case 'string': return _p.ss($, ($) => sh.b.snippet(s_quoted($)))
+            case 'html': return _p.ss($, ($) => sh.b.snippet($))
+            case 'number': return _p.ss($, ($) => sh.b.snippet("FIXME NUMBER"))
+            default: return _p.au($[0])
         }
     })
 }

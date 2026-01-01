@@ -1,4 +1,4 @@
-import * as _pc from 'pareto-core-command'
+import * as _p from 'pareto-core-command'
 import * as _pinternals from 'pareto-core-internals'
 
 import * as signatures from "../../../interface/signatures"
@@ -11,7 +11,7 @@ import * as r_pareto_module from "pareto/dist/implementation/temp/resolvers/modu
 import * as t_pareto_module_to_fountain_pen_block from "../schemas/pareto_module/transformers/fountain_pen_block"
 
 
-export const $$: signatures.commands.generate_and_write_to_disk = _pc.create_command_procedure(
+export const $$: signatures.commands.generate_and_write_to_disk = _p.create_command_procedure(
     ($p, $cr, $qr) => [
         $cr['write to directory'].execute(
             {

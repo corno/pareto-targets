@@ -1,5 +1,5 @@
 
-// import * as _pt from 'pareto-core-transformer'
+// import * as _p from 'pareto-core-transformer'
 // import * as _pdev from 'pareto-core-dev'
 // import * as _pi from 'pareto-core-interface'
 

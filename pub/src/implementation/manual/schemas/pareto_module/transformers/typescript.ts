@@ -1,4 +1,4 @@
-import * as _pt from 'pareto-core-transformer'
+import * as _p from 'pareto-core-transformer'
 import * as _pinternals from 'pareto-core-internals'
 
 import * as _in_s from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"

@@ -1,4 +1,4 @@
-import * as _pt from 'pareto-core-transformer'
+import * as _p from 'pareto-core-transformer'
 
 import * as _in_s from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"
 import * as d_in from "pareto/dist/interface/generated/pareto/schemas/module/data_types/source"
@@ -20,9 +20,9 @@ export const Schema_Tree = (
         'graph name': string
     }
 ): d_out.Directory => {
-    return _pt.cc($, ($) => {
+    return _p.cc($, ($) => {
         switch ($[0]) {
-            case 'schema': return _pt.ss($, ($) => _pt.dictionary_literal({
+            case 'schema': return _p.ss($, ($) => _p.dictionary_literal({
                 "graphviz.dot": sh.n.file(
                     t_graphviz_to_fountain_pen.Graph(
                         t_schema_to_graphviz.Schema($, {
@@ -31,8 +31,8 @@ export const Schema_Tree = (
                     ),
                 )
             }))
-            case 'set': return _pt.ss($, ($) => Schemas($))
-            default: return _pt.au($[0])
+            case 'set': return _p.ss($, ($) => Schemas($))
+            default: return _p.au($[0])
         }
     })
 }
