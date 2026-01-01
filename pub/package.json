@@ -8,7 +8,7 @@
     "dist"
   ],
   "dependencies": {
-    "pareto": "^0.78.16",
+    "pareto": "^0.78.17",
     "pareto-fountain-pen": "^0.3.23",
     "pareto-json": "^0.3.7"
   }
