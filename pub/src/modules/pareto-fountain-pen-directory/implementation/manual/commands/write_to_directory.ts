@@ -15,8 +15,7 @@ import { replace_space_in_context_path } from "../schemas/path/transformers/path
 
 export const $$: signatures.commands.write_to_directory = _p.create_command_procedure(
     ($p, $cr, $qr) => [
-        _p.sequence<d_write_to_directory.Error>([
-            _p.if_(
+            _p.if_.direct(
                 $p['remove before creating'],
                 [
                     $cr.remove.execute(
@@ -72,6 +71,5 @@ export const $$: signatures.commands.write_to_directory = _p.create_command_proc
                 ],
                 ($): d_write_to_directory.Error => ['nodes', $]
             )
-        ])
     ]
 )
