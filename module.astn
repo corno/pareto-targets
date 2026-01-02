@@ -1,0 +1,1694 @@
+(
+    'operations': {
+    }
+    'schema tree': | 'set' {
+        `alan light`: | 'schema' (
+            'complexity': | 'unconstrained' ~
+            'globals': (
+                'complexity': | 'unconstrained' ~
+                'number types': {
+                }
+                'text types': {
+                    `Pseudo Reference`: (
+                        'type': | 'single line' ~
+                    )
+                }
+            )
+            'imports': {
+            }
+            'types': {
+                `Identifier`: (
+                    'node': | 'text' | 'global' `Pseudo Reference`
+                    'type parameters': {
+                    }
+                )
+                `Path`: (
+                    'node': | 'group' {
+                        `up steps`: (
+                            'description': ~
+                            'node': | 'list' (
+                                'node': | 'group' {
+                                }
+                            )
+                        )
+                        `context`: (
+                            'description': ~
+                            'node': | 'group' {
+                                `sibling`: (
+                                    'description': ~
+                                    'node': | 'group' {
+                                    }
+                                )
+                                `state constraint`: (
+                                    'description': ~
+                                    'node': | 'group' {
+                                        `name`: (
+                                            'description': ~
+                                            'node': | 'component' | 'internal' `Identifier`
+                                        )
+                                    }
+                                )
+                            }
+                        )
+                        `selection steps`: (
+                            'description': ~
+                            'node': | 'list' (
+                                'node': | 'group' {
+                                    `group`: (
+                                        'description': ~
+                                        'node': | 'group' {
+                                            `name`: (
+                                                'description': ~
+                                                'node': | 'component' | 'internal' `Identifier`
+                                            )
+                                        }
+                                    )
+                                    `state constraint`: (
+                                        'description': ~
+                                        'node': | 'group' {
+                                            `name`: (
+                                                'description': ~
+                                                'node': | 'component' | 'internal' `Identifier`
+                                            )
+                                        }
+                                    )
+                                    `reference`: (
+                                        'description': ~
+                                        'node': | 'group' {
+                                            `name`: (
+                                                'description': ~
+                                                'node': | 'component' | 'internal' `Identifier`
+                                            )
+                                        }
+                                    )
+                                }
+                            )
+                        )
+                    }
+                    'type parameters': {
+                    }
+                )
+                `Node`: (
+                    'node': | 'group' {
+                        `properties`: (
+                            'description': ~
+                            'node': | 'dictionary' (
+                                'node': | 'group' {
+                                    `type`: (
+                                        'description': ~
+                                        'node': | 'state group' {
+                                            `collection`: (
+                                                'description': ~
+                                                'node': | 'group' {
+                                                    `node`: (
+                                                        'description': ~
+                                                        'node': | 'component' | 'internal cyclic' `Node`
+                                                    )
+                                                    `key`: (
+                                                        'description': ~
+                                                        'node': | 'component' | 'internal' `Identifier`
+                                                    )
+                                                }
+                                            )
+                                            `group`: (
+                                                'description': ~
+                                                'node': | 'group' {
+                                                    `node`: (
+                                                        'description': ~
+                                                        'node': | 'component' | 'internal cyclic' `Node`
+                                                    )
+                                                }
+                                            )
+                                            `text`: (
+                                                'description': ~
+                                                'node': | 'group' {
+                                                    `constraint`: (
+                                                        'description': ~
+                                                        'node': | 'optional' | 'group' {
+                                                            `path`: (
+                                                                'description': ~
+                                                                'node': | 'component' | 'internal' `Path`
+                                                            )
+                                                            `dictionary`: (
+                                                                'description': ~
+                                                                'node': | 'component' | 'internal' `Identifier`
+                                                            )
+                                                        }
+                                                    )
+                                                }
+                                            )
+                                            `state group`: (
+                                                'description': ~
+                                                'node': | 'group' {
+                                                    `states`: (
+                                                        'description': ~
+                                                        'node': | 'dictionary' (
+                                                            'node': | 'group' {
+                                                                `constraints`: (
+                                                                    'description': ~
+                                                                    'node': | 'dictionary' (
+                                                                        'node': | 'group' {
+                                                                            `path`: (
+                                                                                'description': ~
+                                                                                'node': | 'component' | 'internal' `Path`
+                                                                            )
+                                                                        }
+                                                                        'ordered': `false`
+                                                                    )
+                                                                )
+                                                                `node`: (
+                                                                    'description': ~
+                                                                    'node': | 'component' | 'internal cyclic' `Node`
+                                                                )
+                                                            }
+                                                            'ordered': `false`
+                                                        )
+                                                    )
+                                                }
+                                            )
+                                        }
+                                    )
+                                }
+                                'ordered': `false`
+                            )
+                        )
+                    }
+                    'type parameters': {
+                    }
+                )
+                `Root`: (
+                    'node': | 'group' {
+                        `numerical types`: (
+                            'description': ~
+                            'node': | 'dictionary' (
+                                'node': | 'group' {
+                                }
+                                'ordered': `false`
+                            )
+                        )
+                        `root`: (
+                            'description': ~
+                            'node': | 'component' | 'internal' `Node`
+                        )
+                    }
+                    'type parameters': {
+                    }
+                )
+            }
+        )
+        `graphviz high level`: | 'schema' (
+            'complexity': | 'unconstrained' ~
+            'globals': (
+                'complexity': | 'unconstrained' ~
+                'number types': {
+                }
+                'text types': {
+                    `Text Value`: (
+                        'type': | 'single line' ~
+                    )
+                }
+            )
+            'imports': {
+            }
+            'types': {
+                `Graph Attributes`: (
+                    'node': | 'list' (
+                        'node': | 'state group' {
+                            `concentrate`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `charset`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `clusterrank`: (
+                                'description': ~
+                                'node': | 'state group' {
+                                    `none`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `local`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `global`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                }
+                            )
+                            `color`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `color scheme`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `comment`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `compound`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `dpi`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `font color`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `font name`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `font path`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `font size`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `label`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `label distance`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `label scheme`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `label location`: (
+                                'description': ~
+                                'node': | 'state group' {
+                                    `top`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `bottom`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                }
+                            )
+                            `landscape`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `layer list`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `layer separator`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `layers`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `margin`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `max iteration`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `mclimit`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `mindist`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `mode`: (
+                                'description': ~
+                                'node': | 'state group' {
+                                    `no output`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `out`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `in`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `in out`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                }
+                            )
+                            `newrank`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `no loop`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `normalize`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `ordering`: (
+                                'description': ~
+                                'node': | 'state group' {
+                                    `out`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `in`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `in out`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                }
+                            )
+                            `orientation`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `output order`: (
+                                'description': ~
+                                'node': | 'state group' {
+                                    `breadth first`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `dfs`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                }
+                            )
+                            `overlap`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `output mode`: (
+                                'description': ~
+                                'node': | 'state group' {
+                                    `edges first`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `nodes first`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                }
+                            )
+                            `pack`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `pack mode`: (
+                                'description': ~
+                                'node': | 'state group' {
+                                    `node`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `graph`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                }
+                            )
+                            `pad`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `page`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `quadtree`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `quantum`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `rankdir`: (
+                                'description': ~
+                                'node': | 'state group' {
+                                    `top bottom`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `bottom top`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `left right`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `right left`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                }
+                            )
+                            `ranksep`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `ratio`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `remincross`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `rotate`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `scale`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `searchsize`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `sep`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `showboxes`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `size`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `smoothing`: (
+                                'description': ~
+                                'node': | 'state group' {
+                                    `none`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `spring`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `triangle`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                }
+                            )
+                            `sortv`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `splines`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `start`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `style`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `stylesheet`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `target`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `tooltip`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `truecolor`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `viewport`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `width`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `xdotversion`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `xlabel`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                        }
+                    )
+                    'type parameters': {
+                    }
+                )
+                `Node Attributes`: (
+                    'node': | 'list' (
+                        'node': | 'state group' {
+                            `color`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `colorscheme`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `comment`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `concentrate`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `fill color`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `fixed size`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `font color`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `font name`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `font size`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `group`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `height`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'approximation' (
+                                        'significant digits': `FIXME NUMBER`
+                                    )
+                                )
+                            )
+                            `image`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `label`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `labelloc`: (
+                                'description': ~
+                                'node': | 'state group' {
+                                    `top`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `center`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `bottom`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                }
+                            )
+                            `layers`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `margin`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `nojustify`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `orientation`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `pen width`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'approximation' (
+                                        'significant digits': `FIXME NUMBER`
+                                    )
+                                )
+                            )
+                            `peripheries`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `pos`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `rects`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `regular`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `root`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `shape`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `showboxes`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `sides`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `skew`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'approximation' (
+                                        'significant digits': `FIXME NUMBER`
+                                    )
+                                )
+                            )
+                            `style`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `target`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `tooltip`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `width`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'approximation' (
+                                        'significant digits': `FIXME NUMBER`
+                                    )
+                                )
+                            )
+                            `xlabel`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `xlp`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                        }
+                    )
+                    'type parameters': {
+                    }
+                )
+                `Tree`: (
+                    'node': | 'group' {
+                        `attributes`: (
+                            'description': ~
+                            'node': | 'component' | 'internal' `Graph Attributes`
+                        )
+                        `elements`: (
+                            'description': ~
+                            'node': | 'dictionary' (
+                                'node': | 'state group' {
+                                    `node`: (
+                                        'description': ~
+                                        'node': | 'group' {
+                                            `attributes`: (
+                                                'description': ~
+                                                'node': | 'component' | 'internal' `Node Attributes`
+                                            )
+                                        }
+                                    )
+                                    `sub`: (
+                                        'description': ~
+                                        'node': | 'group' {
+                                            `type`: (
+                                                'description': ~
+                                                'node': | 'state group' {
+                                                    `group`: (
+                                                        'description': ~
+                                                        'node': | 'nothing' ~
+                                                    )
+                                                    `cluster`: (
+                                                        'description': ~
+                                                        'node': | 'nothing' ~
+                                                    )
+                                                    `subgraph`: (
+                                                        'description': ~
+                                                        'node': | 'nothing' ~
+                                                    )
+                                                }
+                                            )
+                                            `tree`: (
+                                                'description': ~
+                                                'node': | 'component' | 'internal cyclic' `Tree`
+                                            )
+                                        }
+                                    )
+                                }
+                                'ordered': `false`
+                            )
+                        )
+                    }
+                    'type parameters': {
+                    }
+                )
+                `End Point Specification`: (
+                    'node': | 'group' {
+                        `start`: (
+                            'description': ~
+                            'node': | 'text' | 'global' `Text Value`
+                        )
+                        `tail`: (
+                            'description': ~
+                            'node': | 'list' (
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                        )
+                        `port data`: (
+                            'description': ~
+                            'node': | 'optional' | 'group' {
+                                `port`: (
+                                    'description': ~
+                                    'node': | 'text' | 'global' `Text Value`
+                                )
+                                `compass direction`: (
+                                    'description': ~
+                                    'node': | 'optional' | 'text' | 'global' `Text Value`
+                                )
+                            }
+                        )
+                    }
+                    'type parameters': {
+                    }
+                )
+                `Edge Attributes`: (
+                    'node': | 'list' (
+                        'node': | 'state group' {
+                            `arrowhead`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `arrowsize`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'approximation' (
+                                        'significant digits': `FIXME NUMBER`
+                                    )
+                                )
+                            )
+                            `arrowtail`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `bgcolor`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `color`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `colorscheme`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `comment`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `constraint`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `decorate`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `dir`: (
+                                'description': ~
+                                'node': | 'state group' {
+                                    `forward`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `back`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `both`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                    `none`: (
+                                        'description': ~
+                                        'node': | 'nothing' ~
+                                    )
+                                }
+                            )
+                            `edge url`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `edge lp`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `edge target`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `edge tooltip`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `head lp`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `headclip`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `headlabel`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `headport`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `height`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'approximation' (
+                                        'significant digits': `FIXME NUMBER`
+                                    )
+                                )
+                            )
+                            `id`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `label`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `label distance`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'approximation' (
+                                        'significant digits': `FIXME NUMBER`
+                                    )
+                                )
+                            )
+                            `label angle`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'approximation' (
+                                        'significant digits': `FIXME NUMBER`
+                                    )
+                                )
+                            )
+                            `label float`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `labelfloat`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `labelhref`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `label lp`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `layer`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `len`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'approximation' (
+                                        'significant digits': `FIXME NUMBER`
+                                    )
+                                )
+                            )
+                            `lhead`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `lp`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `ltail`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `minlen`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `pen width`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'approximation' (
+                                        'significant digits': `FIXME NUMBER`
+                                    )
+                                )
+                            )
+                            `pos`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `same head`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `same tail`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `showboxes`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `style`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `tail lp`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `tailclip`: (
+                                'description': ~
+                                'node': | 'boolean' ~
+                            )
+                            `taillabel`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `tailport`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `tooltip`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `weight`: (
+                                'description': ~
+                                'node': | 'number' | 'local' (
+                                    'precision': | 'exact' (
+                                        'decimal separator offset': ~
+                                        'type': | 'integer' ~
+                                    )
+                                )
+                            )
+                            `xlabel`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                            `xlp`: (
+                                'description': ~
+                                'node': | 'text' | 'global' `Text Value`
+                            )
+                        }
+                    )
+                    'type parameters': {
+                    }
+                )
+                `Graph`: (
+                    'node': | 'group' {
+                        `name`: (
+                            'description': ~
+                            'node': | 'optional' | 'text' | 'global' `Text Value`
+                        )
+                        `tree`: (
+                            'description': ~
+                            'node': | 'component' | 'internal' `Tree`
+                        )
+                        `type`: (
+                            'description': ~
+                            'node': | 'state group' {
+                                `undirected`: (
+                                    'description': ~
+                                    'node': | 'group' {
+                                        `edges`: (
+                                            'description': ~
+                                            'node': | 'list' (
+                                                'node': | 'group' {
+                                                    `yin`: (
+                                                        'description': ~
+                                                        'node': | 'component' | 'internal' `End Point Specification`
+                                                    )
+                                                    `yang`: (
+                                                        'description': ~
+                                                        'node': | 'component' | 'internal' `End Point Specification`
+                                                    )
+                                                    `attributes`: (
+                                                        'description': ~
+                                                        'node': | 'component' | 'internal' `Edge Attributes`
+                                                    )
+                                                }
+                                            )
+                                        )
+                                    }
+                                )
+                                `directed`: (
+                                    'description': ~
+                                    'node': | 'group' {
+                                        `edges`: (
+                                            'description': ~
+                                            'node': | 'list' (
+                                                'node': | 'group' {
+                                                    `from`: (
+                                                        'description': ~
+                                                        'node': | 'component' | 'internal' `End Point Specification`
+                                                    )
+                                                    `to`: (
+                                                        'description': ~
+                                                        'node': | 'component' | 'internal' `End Point Specification`
+                                                    )
+                                                    `attributes`: (
+                                                        'description': ~
+                                                        'node': | 'component' | 'internal' `Edge Attributes`
+                                                    )
+                                                }
+                                            )
+                                        )
+                                    }
+                                )
+                            }
+                        )
+                    }
+                    'type parameters': {
+                    }
+                )
+                `Attribute Value`: (
+                    'node': | 'state group' {
+                        `number`: (
+                            'description': ~
+                            'node': | 'text' | 'global' `Text Value`
+                        )
+                        `string`: (
+                            'description': ~
+                            'node': | 'text' | 'global' `Text Value`
+                        )
+                        `html string`: (
+                            'description': ~
+                            'node': | 'text' | 'global' `Text Value`
+                        )
+                    }
+                    'type parameters': {
+                    }
+                )
+            }
+        )
+        `pareto documentation`: | 'schema' (
+            'complexity': | 'unconstrained' ~
+            'globals': (
+                'complexity': | 'unconstrained' ~
+                'number types': {
+                }
+                'text types': {
+                    `Text Value`: (
+                        'type': | 'single line' ~
+                    )
+                }
+            )
+            'imports': {
+                `graphviz`: (
+                    'schema': ~
+                    'schema set child': `graphviz high level`
+                )
+            }
+            'types': {
+                `Graphviz Directory`: (
+                    'node': | 'dictionary' (
+                        'node': | 'state group' {
+                            `file`: (
+                                'description': ~
+                                'node': | 'component' | 'external' (
+                                    'import': `graphviz`
+                                    'type': `Graph`
+                                )
+                            )
+                            `directory`: (
+                                'description': ~
+                                'node': | 'component' | 'internal cyclic' `Graphviz Directory`
+                            )
+                        }
+                        'ordered': `false`
+                    )
+                    'type parameters': {
+                    }
+                )
+            }
+        )
+        `graphviz low level`: | 'schema' (
+            'complexity': | 'unconstrained' ~
+            'globals': (
+                'complexity': | 'unconstrained' ~
+                'number types': {
+                }
+                'text types': {
+                    `id`: (
+                        'type': | 'single line' ~
+                    )
+                    `Text Value`: (
+                        'type': | 'single line' ~
+                    )
+                    ``: (
+                        'type': | 'single line' ~
+                    )
+                }
+            )
+            'imports': {
+            }
+            'types': {
+                `ID`: (
+                    'node': | 'state group' {
+                        `id`: (
+                            'description': ~
+                            'node': | 'text' | 'global' `id`
+                        )
+                        `string`: (
+                            'description': ~
+                            'node': | 'text' | 'global' `Text Value`
+                        )
+                        `html`: (
+                            'description': ~
+                            'node': | 'text' | 'global' `Text Value`
+                        )
+                        `number`: (
+                            'description': ~
+                            'node': | 'number' | 'local' (
+                                'precision': | 'exact' (
+                                    'decimal separator offset': ~
+                                    'type': | 'integer' ~
+                                )
+                            )
+                        )
+                    }
+                    'type parameters': {
+                    }
+                )
+                `Node ID`: (
+                    'node': | 'group' {
+                        `id`: (
+                            'description': ~
+                            'node': | 'component' | 'internal' `ID`
+                        )
+                        `port`: (
+                            'description': ~
+                            'node': | 'optional' | 'group' {
+                                `port`: (
+                                    'description': ~
+                                    'node': | 'component' | 'internal' `ID`
+                                )
+                                `compass point`: (
+                                    'description': ~
+                                    'node': | 'optional' | 'component' | 'internal' `ID`
+                                )
+                            }
+                        )
+                    }
+                    'type parameters': {
+                    }
+                )
+                `Attribute List`: (
+                    'node': | 'list' (
+                        'node': | 'group' {
+                            `name`: (
+                                'description': ~
+                                'node': | 'component' | 'internal' `ID`
+                            )
+                            `value`: (
+                                'description': ~
+                                'node': | 'component' | 'internal' `ID`
+                            )
+                        }
+                    )
+                    'type parameters': {
+                    }
+                )
+                `Subgraph`: (
+                    'node': | 'group' {
+                        `subgraph`: (
+                            'description': ~
+                            'node': | 'optional' | 'optional' | 'component' | 'internal' `ID`
+                        )
+                        `statements`: (
+                            'description': ~
+                            'node': | 'component' | 'internal cyclic' `Statement List`
+                        )
+                    }
+                    'type parameters': {
+                    }
+                )
+                `Statement List`: (
+                    'node': | 'list' (
+                        'node': | 'state group' {
+                            `node`: (
+                                'description': ~
+                                'node': | 'group' {
+                                    `node`: (
+                                        'description': ~
+                                        'node': | 'component' | 'internal' `Node ID`
+                                    )
+                                    `attribute list`: (
+                                        'description': ~
+                                        'node': | 'component' | 'internal' `Attribute List`
+                                    )
+                                }
+                            )
+                            `edge`: (
+                                'description': ~
+                                'node': | 'group' {
+                                    `left`: (
+                                        'description': ~
+                                        'node': | 'state group' {
+                                            `node`: (
+                                                'description': ~
+                                                'node': | 'component' | 'internal' `Node ID`
+                                            )
+                                            `subgraph`: (
+                                                'description': ~
+                                                'node': | 'component' | 'internal' `Subgraph`
+                                            )
+                                        }
+                                    )
+                                    `right`: (
+                                        'description': ~
+                                        'node': | 'list' (
+                                            'node': | 'state group' {
+                                                `node`: (
+                                                    'description': ~
+                                                    'node': | 'component' | 'internal' `Node ID`
+                                                )
+                                                `subgraph`: (
+                                                    'description': ~
+                                                    'node': | 'component' | 'internal' `Subgraph`
+                                                )
+                                            }
+                                        )
+                                    )
+                                    `attributes`: (
+                                        'description': ~
+                                        'node': | 'component' | 'internal' `Attribute List`
+                                    )
+                                }
+                            )
+                            `attribute list`: (
+                                'description': ~
+                                'node': | 'group' {
+                                    `type`: (
+                                        'description': ~
+                                        'node': | 'state group' {
+                                            `graph`: (
+                                                'description': ~
+                                                'node': | 'nothing' ~
+                                            )
+                                            `node`: (
+                                                'description': ~
+                                                'node': | 'nothing' ~
+                                            )
+                                            `edge`: (
+                                                'description': ~
+                                                'node': | 'nothing' ~
+                                            )
+                                        }
+                                    )
+                                    `attributes`: (
+                                        'description': ~
+                                        'node': | 'component' | 'internal' `Attribute List`
+                                    )
+                                }
+                            )
+                            `attribute assignment`: (
+                                'description': ~
+                                'node': | 'group' {
+                                    `name`: (
+                                        'description': ~
+                                        'node': | 'component' | 'internal' `ID`
+                                    )
+                                    `value`: (
+                                        'description': ~
+                                        'node': | 'component' | 'internal' `ID`
+                                    )
+                                }
+                            )
+                            `subgraph`: (
+                                'description': ~
+                                'node': | 'component' | 'internal' `Subgraph`
+                            )
+                        }
+                    )
+                    'type parameters': {
+                    }
+                )
+                `Graph`: (
+                    'node': | 'group' {
+                        `strict`: (
+                            'description': ~
+                            'node': | 'boolean' ~
+                        )
+                        `type`: (
+                            'description': ~
+                            'node': | 'state group' {
+                                `graph`: (
+                                    'description': ~
+                                    'node': | 'nothing' ~
+                                )
+                                `digraph`: (
+                                    'description': ~
+                                    'node': | 'nothing' ~
+                                )
+                            }
+                        )
+                        `name`: (
+                            'description': ~
+                            'node': | 'optional' | 'component' | 'internal' `ID`
+                        )
+                        `statements`: (
+                            'description': ~
+                            'node': | 'component' | 'internal' `Statement List`
+                        )
+                    }
+                    'type parameters': {
+                    }
+                )
+            }
+        )
+        `lionweb`: | 'schema' (
+            'complexity': | 'unconstrained' ~
+            'globals': (
+                'complexity': | 'unconstrained' ~
+                'number types': {
+                }
+                'text types': {
+                    `String`: (
+                        'type': | 'single line' ~
+                    )
+                    `Id`: (
+                        'type': | 'single line' ~
+                    )
+                }
+            )
+            'imports': {
+            }
+            'types': {
+                `MetaPointer`: (
+                    'node': | 'group' {
+                        `language`: (
+                            'description': ~
+                            'node': | 'text' | 'global' `Id`
+                        )
+                        `version`: (
+                            'description': ~
+                            'node': | 'text' | 'global' `String`
+                        )
+                        `key`: (
+                            'description': ~
+                            'node': | 'text' | 'global' `Id`
+                        )
+                    }
+                    'type parameters': {
+                    }
+                )
+                `SerializationChunk`: (
+                    'node': | 'group' {
+                        `serializationFormatVersion`: (
+                            'description': ~
+                            'node': | 'text' | 'global' `String`
+                        )
+                        `languages`: (
+                            'description': ~
+                            'node': | 'list' (
+                                'node': | 'group' {
+                                    `key`: (
+                                        'description': ~
+                                        'node': | 'text' | 'global' `Id`
+                                    )
+                                    `version`: (
+                                        'description': ~
+                                        'node': | 'text' | 'global' `String`
+                                    )
+                                }
+                            )
+                        )
+                        `nodes`: (
+                            'description': ~
+                            'node': | 'list' (
+                                'node': | 'group' {
+                                    `id`: (
+                                        'description': ~
+                                        'node': | 'text' | 'global' `Id`
+                                    )
+                                    `parent`: (
+                                        'description': ~
+                                        'node': | 'optional' | 'text' | 'global' `String`
+                                    )
+                                    `annotations`: (
+                                        'description': ~
+                                        'node': | 'list' (
+                                            'node': | 'text' | 'global' `Id`
+                                        )
+                                    )
+                                    `classifier`: (
+                                        'description': ~
+                                        'node': | 'component' | 'internal' `MetaPointer`
+                                    )
+                                    `containments`: (
+                                        'description': ~
+                                        'node': | 'list' (
+                                            'node': | 'group' {
+                                                `containment`: (
+                                                    'description': ~
+                                                    'node': | 'component' | 'internal' `MetaPointer`
+                                                )
+                                                `children`: (
+                                                    'description': ~
+                                                    'node': | 'list' (
+                                                        'node': | 'text' | 'global' `Id`
+                                                    )
+                                                )
+                                            }
+                                        )
+                                    )
+                                    `properties`: (
+                                        'description': ~
+                                        'node': | 'list' (
+                                            'node': | 'group' {
+                                                `value`: (
+                                                    'description': ~
+                                                    'node': | 'text' | 'global' `Id`
+                                                )
+                                                `property`: (
+                                                    'description': ~
+                                                    'node': | 'component' | 'internal' `MetaPointer`
+                                                )
+                                            }
+                                        )
+                                    )
+                                    `references`: (
+                                        'description': ~
+                                        'node': | 'list' (
+                                            'node': | 'group' {
+                                                `targets`: (
+                                                    'description': ~
+                                                    'node': | 'list' (
+                                                        'node': | 'group' {
+                                                            `reference`: (
+                                                                'description': ~
+                                                                'node': | 'text' | 'global' `Id`
+                                                            )
+                                                            `resolveInfo`: (
+                                                                'description': ~
+                                                                'node': | 'text' | 'global' `String`
+                                                            )
+                                                        }
+                                                    )
+                                                )
+                                                `reference`: (
+                                                    'description': ~
+                                                    'node': | 'component' | 'internal' `MetaPointer`
+                                                )
+                                            }
+                                        )
+                                    )
+                                }
+                            )
+                        )
+                    }
+                    'type parameters': {
+                    }
+                )
+                `SerializationChunks`: (
+                    'node': | 'dictionary' (
+                        'node': | 'component' | 'internal' `SerializationChunk`
+                        'ordered': `false`
+                    )
+                    'type parameters': {
+                    }
+                )
+            }
+        )
+    }
+)
