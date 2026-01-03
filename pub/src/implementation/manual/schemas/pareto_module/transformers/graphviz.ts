@@ -22,7 +22,7 @@ export const Schema_Tree = (
 ): d_out.Directory => {
     return _p.cc($, ($) => {
         switch ($[0]) {
-            case 'schema': return _p.ss($, ($) => _p.dictionary_literal({
+            case 'schema': return _p.ss($, ($) => _p.dictionary.literal({
                 "graphviz.dot": sh.n.file(
                     t_graphviz_to_fountain_pen.Graph(
                         t_schema_to_graphviz.Schema($, {

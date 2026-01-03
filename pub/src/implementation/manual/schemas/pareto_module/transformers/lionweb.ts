@@ -16,7 +16,7 @@ import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 export const Schema_Tree = ($: d_in_s.Schema_Tree): d_out.Directory => {
     return _p.cc($, ($) => {
         switch ($[0]) {
-            case 'schema': return _p.ss($, ($) => _p.dictionary_literal({
+            case 'schema': return _p.ss($, ($) => _p.dictionary.literal({
                 "lionweb.json": sh.n.file(
                     t_json_to_fountain_pen_block.Document(
                         t_lionweb_to_json.SerializationChunk(

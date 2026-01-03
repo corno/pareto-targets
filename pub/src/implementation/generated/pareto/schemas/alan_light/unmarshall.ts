@@ -190,7 +190,7 @@ export const Node: _i_signatures._T_Node = ($, $p) => _i_generic.process_group(
                                 ), ($) => _i_generic.process_unconstrained_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary_literal({
+                                        'states': _pa.dictionary.literal({
                                             'collection': ($): _i_out._T_Node.properties.D._type.SG => ['collection', _i_generic.process_group(
                                                 $,
                                                 {

@@ -13,7 +13,7 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
         'value': ($) => _i_generic.process_unconstrained_state_group(
             $,
             {
-                'states': _pa.dictionary_literal({
+                'states': _pa.dictionary.literal({
                     'concentrate': ($): _i_out._T_Graph_Attributes.L.SG => ['concentrate', _i_generic.process_boolean(
                         $,
                         {
@@ -27,7 +27,7 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                     'clusterrank': ($): _i_out._T_Graph_Attributes.L.SG => ['clusterrank', _i_generic.process_unconstrained_state_group(
                         $,
                         {
-                            'states': _pa.dictionary_literal({
+                            'states': _pa.dictionary.literal({
                                 'none': ($): _i_out._T_Graph_Attributes.L.SG.clusterrank.SG => ['none', _i_generic.process_nothing(
                                     $,
                                     null
@@ -104,7 +104,7 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                     'label location': ($): _i_out._T_Graph_Attributes.L.SG => ['label location', _i_generic.process_unconstrained_state_group(
                         $,
                         {
-                            'states': _pa.dictionary_literal({
+                            'states': _pa.dictionary.literal({
                                 'top': ($): _i_out._T_Graph_Attributes.L.SG.label_location.SG => ['top', _i_generic.process_nothing(
                                     $,
                                     null
@@ -159,7 +159,7 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                     'mode': ($): _i_out._T_Graph_Attributes.L.SG => ['mode', _i_generic.process_unconstrained_state_group(
                         $,
                         {
-                            'states': _pa.dictionary_literal({
+                            'states': _pa.dictionary.literal({
                                 'no output': ($): _i_out._T_Graph_Attributes.L.SG.mode.SG => ['no output', _i_generic.process_nothing(
                                     $,
                                     null
@@ -200,7 +200,7 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                     'ordering': ($): _i_out._T_Graph_Attributes.L.SG => ['ordering', _i_generic.process_unconstrained_state_group(
                         $,
                         {
-                            'states': _pa.dictionary_literal({
+                            'states': _pa.dictionary.literal({
                                 'out': ($): _i_out._T_Graph_Attributes.L.SG.ordering.SG => ['out', _i_generic.process_nothing(
                                     $,
                                     null
@@ -225,7 +225,7 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                     'output order': ($): _i_out._T_Graph_Attributes.L.SG => ['output order', _i_generic.process_unconstrained_state_group(
                         $,
                         {
-                            'states': _pa.dictionary_literal({
+                            'states': _pa.dictionary.literal({
                                 'breadth first': ($): _i_out._T_Graph_Attributes.L.SG.output_order.SG => ['breadth first', _i_generic.process_nothing(
                                     $,
                                     null
@@ -244,7 +244,7 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                     'output mode': ($): _i_out._T_Graph_Attributes.L.SG => ['output mode', _i_generic.process_unconstrained_state_group(
                         $,
                         {
-                            'states': _pa.dictionary_literal({
+                            'states': _pa.dictionary.literal({
                                 'edges first': ($): _i_out._T_Graph_Attributes.L.SG.output_mode.SG => ['edges first', _i_generic.process_nothing(
                                     $,
                                     null
@@ -265,7 +265,7 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                     'pack mode': ($): _i_out._T_Graph_Attributes.L.SG => ['pack mode', _i_generic.process_unconstrained_state_group(
                         $,
                         {
-                            'states': _pa.dictionary_literal({
+                            'states': _pa.dictionary.literal({
                                 'node': ($): _i_out._T_Graph_Attributes.L.SG.pack_mode.SG => ['node', _i_generic.process_nothing(
                                     $,
                                     null
@@ -302,7 +302,7 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                     'rankdir': ($): _i_out._T_Graph_Attributes.L.SG => ['rankdir', _i_generic.process_unconstrained_state_group(
                         $,
                         {
-                            'states': _pa.dictionary_literal({
+                            'states': _pa.dictionary.literal({
                                 'top bottom': ($): _i_out._T_Graph_Attributes.L.SG.rankdir.SG => ['top bottom', _i_generic.process_nothing(
                                     $,
                                     null
@@ -369,7 +369,7 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => _i
                     'smoothing': ($): _i_out._T_Graph_Attributes.L.SG => ['smoothing', _i_generic.process_unconstrained_state_group(
                         $,
                         {
-                            'states': _pa.dictionary_literal({
+                            'states': _pa.dictionary.literal({
                                 'none': ($): _i_out._T_Graph_Attributes.L.SG.smoothing.SG => ['none', _i_generic.process_nothing(
                                     $,
                                     null
@@ -454,7 +454,7 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($, $p) => _i_g
         'value': ($) => _i_generic.process_unconstrained_state_group(
             $,
             {
-                'states': _pa.dictionary_literal({
+                'states': _pa.dictionary.literal({
                     'color': ($): _i_out._T_Node_Attributes.L.SG => ['color', _i_generic.process_text(
                         $,
                         null
@@ -518,7 +518,7 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($, $p) => _i_g
                     'labelloc': ($): _i_out._T_Node_Attributes.L.SG => ['labelloc', _i_generic.process_unconstrained_state_group(
                         $,
                         {
-                            'states': _pa.dictionary_literal({
+                            'states': _pa.dictionary.literal({
                                 'top': ($): _i_out._T_Node_Attributes.L.SG.labelloc.SG => ['top', _i_generic.process_nothing(
                                     $,
                                     null
@@ -665,7 +665,7 @@ export const Tree: _i_signatures._T_Tree = ($, $p) => _i_generic.process_group(
                     'value': ($) => _i_generic.process_unconstrained_state_group(
                         $,
                         {
-                            'states': _pa.dictionary_literal({
+                            'states': _pa.dictionary.literal({
                                 'node': ($): _i_out._T_Tree.elements.D.SG => ['node', _i_generic.process_group(
                                     $,
                                     {
@@ -696,7 +696,7 @@ export const Tree: _i_signatures._T_Tree = ($, $p) => _i_generic.process_group(
                                             ), ($) => _i_generic.process_unconstrained_state_group(
                                                 $,
                                                 {
-                                                    'states': _pa.dictionary_literal({
+                                                    'states': _pa.dictionary.literal({
                                                         'group': ($): _i_out._T_Tree.elements.D.SG.sub._type.SG => ['group', _i_generic.process_nothing(
                                                             $,
                                                             null
@@ -810,7 +810,7 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($, $p) => _i_g
         'value': ($) => _i_generic.process_unconstrained_state_group(
             $,
             {
-                'states': _pa.dictionary_literal({
+                'states': _pa.dictionary.literal({
                     'arrowhead': ($): _i_out._T_Edge_Attributes.L.SG => ['arrowhead', _i_generic.process_text(
                         $,
                         null
@@ -856,7 +856,7 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($, $p) => _i_g
                     'dir': ($): _i_out._T_Edge_Attributes.L.SG => ['dir', _i_generic.process_unconstrained_state_group(
                         $,
                         {
-                            'states': _pa.dictionary_literal({
+                            'states': _pa.dictionary.literal({
                                 'forward': ($): _i_out._T_Edge_Attributes.L.SG.dir.SG => ['forward', _i_generic.process_nothing(
                                     $,
                                     null
@@ -1094,7 +1094,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
             ), ($) => _i_generic.process_unconstrained_state_group(
                 $,
                 {
-                    'states': _pa.dictionary_literal({
+                    'states': _pa.dictionary.literal({
                         'undirected': ($): _i_out._T_Graph._type.SG => ['undirected', _i_generic.process_group(
                             $,
                             {
@@ -1218,7 +1218,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
 export const Attribute_Value: _i_signatures._T_Attribute_Value = ($, $p) => _i_generic.process_unconstrained_state_group(
     $,
     {
-        'states': _pa.dictionary_literal({
+        'states': _pa.dictionary.literal({
             'number': ($): _i_out._T_Attribute_Value.SG => ['number', _i_generic.process_text(
                 $,
                 null

@@ -14,7 +14,7 @@ export const Graphviz_Directory: _i_signatures._T_Graphviz_Directory = ($, $p) =
         'value': ($) => _i_generic.process_unconstrained_state_group(
             $,
             {
-                'states': _pa.dictionary_literal({
+                'states': _pa.dictionary.literal({
                     'file': ($): _i_out._T_Graphviz_Directory.D.SG => ['file', _i_r_graphviz.Graph(
                         $,
                         {

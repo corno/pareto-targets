@@ -10,7 +10,7 @@ import * as _i_out from "../../../../../interface/generated/pareto/schemas/graph
 export const ID: _i_signatures._T_ID = ($, $p) => _i_generic.process_unconstrained_state_group(
     $,
     {
-        'states': _pa.dictionary_literal({
+        'states': _pa.dictionary.literal({
             'id': ($): _i_out._T_ID.SG => ['id', _i_generic.process_text(
                 $,
                 null
@@ -173,7 +173,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => _i_gen
         'value': ($) => _i_generic.process_unconstrained_state_group(
             $,
             {
-                'states': _pa.dictionary_literal({
+                'states': _pa.dictionary.literal({
                     'node': ($): _i_out._T_Statement_List.L.SG => ['node', _i_generic.process_group(
                         $,
                         {
@@ -215,7 +215,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => _i_gen
                                 ), ($) => _i_generic.process_unconstrained_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary_literal({
+                                        'states': _pa.dictionary.literal({
                                             'node': ($): _i_out._T_Statement_List.L.SG.edge.left.SG => ['node', Node_ID(
                                                 $,
                                                 {
@@ -242,7 +242,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => _i_gen
                                         'value': ($) => _i_generic.process_unconstrained_state_group(
                                             $,
                                             {
-                                                'states': _pa.dictionary_literal({
+                                                'states': _pa.dictionary.literal({
                                                     'node': ($): _i_out._T_Statement_List.L.SG.edge.right.L.SG => ['node', Node_ID(
                                                         $,
                                                         {
@@ -286,7 +286,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => _i_gen
                                 ), ($) => _i_generic.process_unconstrained_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary_literal({
+                                        'states': _pa.dictionary.literal({
                                             'graph': ($): _i_out._T_Statement_List.L.SG.attribute_list._type.SG => ['graph', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -379,7 +379,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
             ), ($) => _i_generic.process_unconstrained_state_group(
                 $,
                 {
-                    'states': _pa.dictionary_literal({
+                    'states': _pa.dictionary.literal({
                         'graph': ($): _i_out._T_Graph._type.SG => ['graph', _i_generic.process_nothing(
                             $,
                             null

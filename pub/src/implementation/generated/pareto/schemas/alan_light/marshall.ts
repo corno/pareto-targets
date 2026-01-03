@@ -9,13 +9,13 @@ export const Identifier: _i_signatures._T_Identifier = ($, $p) => ['text', ({
     'delimiter': ['quote', null],
     'value': $,
 })]
-export const Path: _i_signatures._T_Path = ($, $p) => ['verbose group', _pa.dictionary_literal({
-    'up steps': _pa.cc($['up steps'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary_literal({
+export const Path: _i_signatures._T_Path = ($, $p) => ['verbose group', _pa.dictionary.literal({
+    'up steps': _pa.cc($['up steps'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
     })])]),
-    'context': _pa.cc($['context'], ($) => ['verbose group', _pa.dictionary_literal({
-        'sibling': _pa.cc($['sibling'], ($) => ['verbose group', _pa.dictionary_literal({
+    'context': _pa.cc($['context'], ($) => ['verbose group', _pa.dictionary.literal({
+        'sibling': _pa.cc($['sibling'], ($) => ['verbose group', _pa.dictionary.literal({
         })]),
-        'state constraint': _pa.cc($['state constraint'], ($) => ['verbose group', _pa.dictionary_literal({
+        'state constraint': _pa.cc($['state constraint'], ($) => ['verbose group', _pa.dictionary.literal({
             'name': _pa.cc($['name'], ($) => Identifier(
                 $,
                 {
@@ -24,8 +24,8 @@ export const Path: _i_signatures._T_Path = ($, $p) => ['verbose group', _pa.dict
             )),
         })]),
     })]),
-    'selection steps': _pa.cc($['selection steps'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary_literal({
-        'group': _pa.cc($['group'], ($) => ['verbose group', _pa.dictionary_literal({
+    'selection steps': _pa.cc($['selection steps'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
+        'group': _pa.cc($['group'], ($) => ['verbose group', _pa.dictionary.literal({
             'name': _pa.cc($['name'], ($) => Identifier(
                 $,
                 {
@@ -33,7 +33,7 @@ export const Path: _i_signatures._T_Path = ($, $p) => ['verbose group', _pa.dict
                 }
             )),
         })]),
-        'state constraint': _pa.cc($['state constraint'], ($) => ['verbose group', _pa.dictionary_literal({
+        'state constraint': _pa.cc($['state constraint'], ($) => ['verbose group', _pa.dictionary.literal({
             'name': _pa.cc($['name'], ($) => Identifier(
                 $,
                 {
@@ -41,7 +41,7 @@ export const Path: _i_signatures._T_Path = ($, $p) => ['verbose group', _pa.dict
                 }
             )),
         })]),
-        'reference': _pa.cc($['reference'], ($) => ['verbose group', _pa.dictionary_literal({
+        'reference': _pa.cc($['reference'], ($) => ['verbose group', _pa.dictionary.literal({
             'name': _pa.cc($['name'], ($) => Identifier(
                 $,
                 {
@@ -51,13 +51,13 @@ export const Path: _i_signatures._T_Path = ($, $p) => ['verbose group', _pa.dict
         })]),
     })])]),
 })]
-export const Node: _i_signatures._T_Node = ($, $p) => ['verbose group', _pa.dictionary_literal({
-    'properties': _pa.cc($['properties'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+export const Node: _i_signatures._T_Node = ($, $p) => ['verbose group', _pa.dictionary.literal({
+    'properties': _pa.cc($['properties'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
         'type': _pa.cc($['type'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
             switch ($[0]) {
                 case 'collection': return _pa.ss($, ($) => ({
                     'state': "collection",
-                    'value': ['verbose group', _pa.dictionary_literal({
+                    'value': ['verbose group', _pa.dictionary.literal({
                         'node': _pa.cc($['node'], ($) => Node(
                             $,
                             {
@@ -74,7 +74,7 @@ export const Node: _i_signatures._T_Node = ($, $p) => ['verbose group', _pa.dict
                 }))
                 case 'group': return _pa.ss($, ($) => ({
                     'state': "group",
-                    'value': ['verbose group', _pa.dictionary_literal({
+                    'value': ['verbose group', _pa.dictionary.literal({
                         'node': _pa.cc($['node'], ($) => Node(
                             $,
                             {
@@ -85,9 +85,9 @@ export const Node: _i_signatures._T_Node = ($, $p) => ['verbose group', _pa.dict
                 }))
                 case 'text': return _pa.ss($, ($) => ({
                     'state': "text",
-                    'value': ['verbose group', _pa.dictionary_literal({
+                    'value': ['verbose group', _pa.dictionary.literal({
                         'constraint': _pa.cc($['constraint'], ($) => ['optional', $.transform(
-                            ($): _i_out._T_Value.SG.optional => ['set', ['verbose group', _pa.dictionary_literal({
+                            ($): _i_out._T_Value.SG.optional => ['set', ['verbose group', _pa.dictionary.literal({
                                 'path': _pa.cc($['path'], ($) => Path(
                                     $,
                                     {
@@ -107,9 +107,9 @@ export const Node: _i_signatures._T_Node = ($, $p) => ['verbose group', _pa.dict
                 }))
                 case 'state group': return _pa.ss($, ($) => ({
                     'state': "state group",
-                    'value': ['verbose group', _pa.dictionary_literal({
-                        'states': _pa.cc($['states'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
-                            'constraints': _pa.cc($['constraints'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+                    'value': ['verbose group', _pa.dictionary.literal({
+                        'states': _pa.cc($['states'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
+                            'constraints': _pa.cc($['constraints'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                                 'path': _pa.cc($['path'], ($) => Path(
                                     $,
                                     {
@@ -131,8 +131,8 @@ export const Node: _i_signatures._T_Node = ($, $p) => ['verbose group', _pa.dict
         })]),
     })])]),
 })]
-export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dictionary_literal({
-    'numerical types': _pa.cc($['numerical types'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dictionary.literal({
+    'numerical types': _pa.cc($['numerical types'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
     })])]),
     'root': _pa.cc($['root'], ($) => Node(
         $,

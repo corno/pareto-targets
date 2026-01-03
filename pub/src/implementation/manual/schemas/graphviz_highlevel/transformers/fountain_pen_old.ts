@@ -44,7 +44,7 @@
 //             sh.b.indent([
 //                 Graph_Tree($['node tree'], {
 //                     'nodes': $.nodes,
-//                     'path': pa.list_literal([]),
+//                     'path': pa.list.literal([]),
 //                 }),
 //                 sh.g.sub(op['dictionary to list, sorted by code point']($.nodes).map(($) => {
 //                     return sh.g.nested_block([

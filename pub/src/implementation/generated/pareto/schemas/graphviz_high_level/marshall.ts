@@ -932,7 +932,7 @@ export const Node_Attributes: _i_signatures._T_Node_Attributes = ($, $p) => ['li
         default: return _pa.au($[0])
     }
 })])]
-export const Tree: _i_signatures._T_Tree = ($, $p) => ['verbose group', _pa.dictionary_literal({
+export const Tree: _i_signatures._T_Tree = ($, $p) => ['verbose group', _pa.dictionary.literal({
     'attributes': _pa.cc($['attributes'], ($) => Graph_Attributes(
         $,
         {
@@ -943,7 +943,7 @@ export const Tree: _i_signatures._T_Tree = ($, $p) => ['verbose group', _pa.dict
         switch ($[0]) {
             case 'node': return _pa.ss($, ($) => ({
                 'state': "node",
-                'value': ['verbose group', _pa.dictionary_literal({
+                'value': ['verbose group', _pa.dictionary.literal({
                     'attributes': _pa.cc($['attributes'], ($) => Node_Attributes(
                         $,
                         {
@@ -954,7 +954,7 @@ export const Tree: _i_signatures._T_Tree = ($, $p) => ['verbose group', _pa.dict
             }))
             case 'sub': return _pa.ss($, ($) => ({
                 'state': "sub",
-                'value': ['verbose group', _pa.dictionary_literal({
+                'value': ['verbose group', _pa.dictionary.literal({
                     'type': _pa.cc($['type'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
                         switch ($[0]) {
                             case 'group': return _pa.ss($, ($) => ({
@@ -984,7 +984,7 @@ export const Tree: _i_signatures._T_Tree = ($, $p) => ['verbose group', _pa.dict
         }
     })])]),
 })]
-export const End_Point_Specification: _i_signatures._T_End_Point_Specification = ($, $p) => ['verbose group', _pa.dictionary_literal({
+export const End_Point_Specification: _i_signatures._T_End_Point_Specification = ($, $p) => ['verbose group', _pa.dictionary.literal({
     'start': _pa.cc($['start'], ($) => ['text', ({
         'delimiter': ['quote', null],
         'value': $,
@@ -994,7 +994,7 @@ export const End_Point_Specification: _i_signatures._T_End_Point_Specification =
         'value': $,
     })])]),
     'port data': _pa.cc($['port data'], ($) => ['optional', $.transform(
-        ($): _i_out._T_Value.SG.optional => ['set', ['verbose group', _pa.dictionary_literal({
+        ($): _i_out._T_Value.SG.optional => ['set', ['verbose group', _pa.dictionary.literal({
             'port': _pa.cc($['port'], ($) => ['text', ({
                 'delimiter': ['quote', null],
                 'value': $,
@@ -1412,7 +1412,7 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($, $p) => ['li
         default: return _pa.au($[0])
     }
 })])]
-export const Graph: _i_signatures._T_Graph = ($, $p) => ['verbose group', _pa.dictionary_literal({
+export const Graph: _i_signatures._T_Graph = ($, $p) => ['verbose group', _pa.dictionary.literal({
     'name': _pa.cc($['name'], ($) => ['optional', $.transform(
         ($): _i_out._T_Value.SG.optional => ['set', ['text', ({
             'delimiter': ['quote', null],
@@ -1430,8 +1430,8 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => ['verbose group', _pa.di
         switch ($[0]) {
             case 'undirected': return _pa.ss($, ($) => ({
                 'state': "undirected",
-                'value': ['verbose group', _pa.dictionary_literal({
-                    'edges': _pa.cc($['edges'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary_literal({
+                'value': ['verbose group', _pa.dictionary.literal({
+                    'edges': _pa.cc($['edges'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
                         'yin': _pa.cc($['yin'], ($) => End_Point_Specification(
                             $,
                             {
@@ -1455,8 +1455,8 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => ['verbose group', _pa.di
             }))
             case 'directed': return _pa.ss($, ($) => ({
                 'state': "directed",
-                'value': ['verbose group', _pa.dictionary_literal({
-                    'edges': _pa.cc($['edges'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary_literal({
+                'value': ['verbose group', _pa.dictionary.literal({
+                    'edges': _pa.cc($['edges'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
                         'from': _pa.cc($['from'], ($) => End_Point_Specification(
                             $,
                             {

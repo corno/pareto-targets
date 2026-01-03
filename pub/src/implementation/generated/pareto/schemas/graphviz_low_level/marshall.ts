@@ -41,7 +41,7 @@ export const ID: _i_signatures._T_ID = ($, $p) => ['state', _pa.cc($, ($): _i_ou
         default: return _pa.au($[0])
     }
 })]
-export const Node_ID: _i_signatures._T_Node_ID = ($, $p) => ['verbose group', _pa.dictionary_literal({
+export const Node_ID: _i_signatures._T_Node_ID = ($, $p) => ['verbose group', _pa.dictionary.literal({
     'id': _pa.cc($['id'], ($) => ID(
         $,
         {
@@ -49,7 +49,7 @@ export const Node_ID: _i_signatures._T_Node_ID = ($, $p) => ['verbose group', _p
         }
     )),
     'port': _pa.cc($['port'], ($) => ['optional', $.transform(
-        ($): _i_out._T_Value.SG.optional => ['set', ['verbose group', _pa.dictionary_literal({
+        ($): _i_out._T_Value.SG.optional => ['set', ['verbose group', _pa.dictionary.literal({
             'port': _pa.cc($['port'], ($) => ID(
                 $,
                 {
@@ -69,7 +69,7 @@ export const Node_ID: _i_signatures._T_Node_ID = ($, $p) => ['verbose group', _p
         () => ['not set', null]
     )]),
 })]
-export const Attribute_List: _i_signatures._T_Attribute_List = ($, $p) => ['list', $.map(($) => ['verbose group', _pa.dictionary_literal({
+export const Attribute_List: _i_signatures._T_Attribute_List = ($, $p) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
     'name': _pa.cc($['name'], ($) => ID(
         $,
         {
@@ -83,7 +83,7 @@ export const Attribute_List: _i_signatures._T_Attribute_List = ($, $p) => ['list
         }
     )),
 })])]
-export const Subgraph: _i_signatures._T_Subgraph = ($, $p) => ['verbose group', _pa.dictionary_literal({
+export const Subgraph: _i_signatures._T_Subgraph = ($, $p) => ['verbose group', _pa.dictionary.literal({
     'subgraph': _pa.cc($['subgraph'], ($) => ['optional', $.transform(
         ($): _i_out._T_Value.SG.optional => ['set', ['optional', $.transform(
             ($): _i_out._T_Value.SG.optional => ['set', ID(
@@ -107,7 +107,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list
     switch ($[0]) {
         case 'node': return _pa.ss($, ($) => ({
             'state': "node",
-            'value': ['verbose group', _pa.dictionary_literal({
+            'value': ['verbose group', _pa.dictionary.literal({
                 'node': _pa.cc($['node'], ($) => Node_ID(
                     $,
                     {
@@ -124,7 +124,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list
         }))
         case 'edge': return _pa.ss($, ($) => ({
             'state': "edge",
-            'value': ['verbose group', _pa.dictionary_literal({
+            'value': ['verbose group', _pa.dictionary.literal({
                 'left': _pa.cc($['left'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
                     switch ($[0]) {
                         case 'node': return _pa.ss($, ($) => ({
@@ -181,7 +181,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list
         }))
         case 'attribute list': return _pa.ss($, ($) => ({
             'state': "attribute list",
-            'value': ['verbose group', _pa.dictionary_literal({
+            'value': ['verbose group', _pa.dictionary.literal({
                 'type': _pa.cc($['type'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
                     switch ($[0]) {
                         case 'graph': return _pa.ss($, ($) => ({
@@ -209,7 +209,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list
         }))
         case 'attribute assignment': return _pa.ss($, ($) => ({
             'state': "attribute assignment",
-            'value': ['verbose group', _pa.dictionary_literal({
+            'value': ['verbose group', _pa.dictionary.literal({
                 'name': _pa.cc($['name'], ($) => ID(
                     $,
                     {
@@ -236,7 +236,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list
         default: return _pa.au($[0])
     }
 })])]
-export const Graph: _i_signatures._T_Graph = ($, $p) => ['verbose group', _pa.dictionary_literal({
+export const Graph: _i_signatures._T_Graph = ($, $p) => ['verbose group', _pa.dictionary.literal({
     'strict': _pa.cc($['strict'], ($) => ['text', ({
         'delimiter': ['backtick', null],
         'value': $p['value serializers']['boolean'](

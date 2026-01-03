@@ -20,20 +20,20 @@ export const Graph = ($: d_in.Graph): d_out.Graph => {
             }
         }),
         'name': $.name.map(($) => ['string', $]),
-        'statements': _p.list_literal([
-            Tree($.tree, { 'path': _p.list_literal([]) }),
+        'statements': _p.list.literal([
+            Tree($.tree, { 'path': _p.list.literal([]) }),
             _p.cc($.type, ($): d_out.Graph.statements => {
                 switch ($[0]) {
                     case 'directed': return _p.ss($, ($) => $.edges.map(($): d_out.Statement_List.L => {
                         return ['edge', {
                             "left": ['node', {
                                 'id': ['string', $.from.start],
-                                'port': _p.not_set()
+                                'port': _p.optional.not_set()
                             }],
-                            "right": _p.list_literal<d_out.Statement_List.L.SG.edge.right.L>([
+                            "right": _p.list.literal<d_out.Statement_List.L.SG.edge.right.L>([
                                 ['node', {
                                     'id': ['string', $.to.start],
-                                    'port': _p.not_set()
+                                    'port': _p.optional.not_set()
                                 }]
                             ]),
                             "attributes": $.attributes.map(($) => _p.cc($, ($): d_out.Attribute_List.L => {
@@ -94,15 +94,15 @@ export const Graph = ($: d_in.Graph): d_out.Graph => {
                         return ['edge', {
                             "left": ['node', {
                                 'id': ['string', $.yin.start],
-                                'port': _p.not_set()
+                                'port': _p.optional.not_set()
                             }],
-                            "right": _p.list_literal<d_out.Statement_List.L.SG.edge.right.L>([
+                            "right": _p.list.literal<d_out.Statement_List.L.SG.edge.right.L>([
                                 ['node', {
                                     'id': ['string', $.yang.start],
-                                    'port': _p.not_set()
+                                    'port': _p.optional.not_set()
                                 }]
                             ]),
-                            "attributes": _p.list_literal([]), //FIXME: attributes
+                            "attributes": _p.list.literal([]), //FIXME: attributes
                         }]
                     }))
                     default: return _p.au($[0])
@@ -123,11 +123,11 @@ export const Tree = (
         const path = $p.path.append_element(key)
         return _p.cc($, ($) => {
             switch ($[0]) {
-                case 'node': return _p.ss($, ($) => _p.list_literal<d_out.Statement_List.L>([
+                case 'node': return _p.ss($, ($) => _p.list.literal<d_out.Statement_List.L>([
                     ['node', {
                         'node': {
                             'id': ['string', s_list_of_separated_texts(path, { 'separator': '>' })],
-                            'port': _p.not_set()
+                            'port': _p.optional.not_set()
                         },
                         'attribute list': $.attributes.map(($): d_out.Attribute_List.L => _p.cc($, ($) => {
                             switch ($[0]) {
