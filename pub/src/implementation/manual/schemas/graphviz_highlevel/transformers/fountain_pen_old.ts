@@ -102,7 +102,7 @@
 // export const Attribute_Value = ($: d_in.Attribute_Value): d_out.Block_Part => {
 //     return pa.cc($, ($) => {
 //         switch ($[0]) {
-//             case 'string':return pa.ss($, ($) => sh.b.snippet(op['serialize with quote delimiter']($)))
+//             case 'string': return pa.ss($, ($) => sh.b.snippet(op['serialize with quote delimiter']($)))
 //             case 'number': return pa.ss($, ($) => sh.b.snippet("FIXME NUMBER"))
 //             case 'html string': return pa.ss($, ($) => sh.b.snippet($))
 //             default: return pa.au($[0])
