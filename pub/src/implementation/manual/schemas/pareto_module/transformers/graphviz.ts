@@ -19,33 +19,27 @@ export const Schema_Tree = (
     $p: {
         'graph name': string
     }
-): d_out.Directory => {
-    return _p.cc($, ($) => {
-        switch ($[0]) {
-            case 'schema': return _p.ss($, ($) => _p.dictionary.literal({
-                "graphviz.dot": sh.n.file(
-                    t_graphviz_to_fountain_pen.Graph(
-                        t_schema_to_graphviz.Schema($, {
-                            'graph name': $p['graph name']
-                        })
-                    ),
-                )
-            }))
-            case 'set': return _p.ss($, ($) => Schemas($))
-            default: return _p.au($[0])
-        }
-    })
-}
+): d_out.Directory => _p.cc($, ($) => {
+    switch ($[0]) {
+        case 'schema': return _p.ss($, ($) => _p.dictionary.literal({
+            "graphviz.dot": sh.n.file(
+                t_graphviz_to_fountain_pen.Graph(
+                    t_schema_to_graphviz.Schema($, {
+                        'graph name': $p['graph name']
+                    })
+                ),
+            )
+        }))
+        case 'set': return _p.ss($, ($) => Schemas($))
+        default: return _p.au($[0])
+    }
+})
 
-export const Schemas = ($: d_in_s.Schemas): d_out.Directory => {
-    return $.dictionary.map<d_out.Directory.D>(($, key) => sh.n.directory(Schema_Tree($, { 'graph name': key })))
-}
+export const Schemas = ($: d_in_s.Schemas): d_out.Directory => $.dictionary.map<d_out.Directory.D>(($, key) => sh.n.directory(Schema_Tree($, { 'graph name': key })))
 
 export const Module = (
     $: d_in.Module,
     $p: {
         'graph name': string
     }
-): d_out.Directory => {
-    return Schema_Tree($['schema tree'], { 'graph name': $p['graph name'] })
-}
+): d_out.Directory => Schema_Tree($['schema tree'], { 'graph name': $p['graph name'] })

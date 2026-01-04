@@ -18,33 +18,30 @@ import * as r_exupery_implementation from "exupery/dist/implementation/generated
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
 
-export const Module = ($: d_in.Module): d_out.Directory => {
-
-    return t_exupery_library_to_typescript_light.Temp_Library(
-        {
-            'interface': r_exupery_interface.r_Module_Set(
-                t_pareto_to_exupery_interface.Module($),
-                {
-                    'parameters': {
-                        'lookups': null,
-                        'values': null,
-                    },
-                    'location 2 string': _pinternals.location_to_string
-                }
-            ),
-            'implementation': r_exupery_implementation.r_Module_Set(
-                t_pareto_to_exupery_implementation.Module($),
-                {
-                    'parameters': {
-                        'lookups': null,
-                        'values': null,
-                    },
-                    'location 2 string': _pinternals.location_to_string
-                }
-            ),
-        },
-        {
-            'phase': 'development',
-        },
-    )
-}
+export const Module = ($: d_in.Module): d_out.Directory => t_exupery_library_to_typescript_light.Temp_Library(
+    {
+        'interface': r_exupery_interface.r_Module_Set(
+            t_pareto_to_exupery_interface.Module($),
+            {
+                'parameters': {
+                    'lookups': null,
+                    'values': null,
+                },
+                'location 2 string': _pinternals.location_to_string
+            }
+        ),
+        'implementation': r_exupery_implementation.r_Module_Set(
+            t_pareto_to_exupery_implementation.Module($),
+            {
+                'parameters': {
+                    'lookups': null,
+                    'values': null,
+                },
+                'location 2 string': _pinternals.location_to_string
+            }
+        ),
+    },
+    {
+        'phase': 'development',
+    },
+)

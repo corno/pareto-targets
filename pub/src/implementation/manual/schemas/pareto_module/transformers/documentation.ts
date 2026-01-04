@@ -11,10 +11,8 @@ import * as t_schema_to_documentation from "../../pareto_schema/transformers/doc
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
 
-export const Module = ($: d_in.Module): d_out.Directory => {
-    return _p.dictionary.literal({
-        "doc.txt": sh.n.file( sh.group([
-            t_schema_to_documentation.Schema_Tree($['schema tree'])
-        ]))
-    })
-}
+export const Module = ($: d_in.Module): d_out.Directory => _p.dictionary.literal({
+    "doc.txt": sh.n.file(sh.group([
+        t_schema_to_documentation.Schema_Tree($['schema tree'])
+    ]))
+})

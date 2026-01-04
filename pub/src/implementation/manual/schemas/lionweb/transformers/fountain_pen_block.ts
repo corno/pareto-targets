@@ -6,6 +6,4 @@ import * as t_json_to_fountain_pen_block from "pareto-json/dist/implementation/m
 import * as t_lionweb_to_json from "./json"
 
 
-export const SerializationChunks = ($: d_in.SerializationChunks): d_out.Group => {
-    return t_json_to_fountain_pen_block.Document(t_lionweb_to_json.SerializationChunks($))
-}
+export const SerializationChunks = ($: d_in.SerializationChunks): d_out.Group => t_json_to_fountain_pen_block.Document(t_lionweb_to_json.SerializationChunks($))
