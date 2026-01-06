@@ -15,7 +15,7 @@ export const Path: _i_signatures._T_Path = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
-            'up steps': _pa.cc(_i_generic.get_entry(
+            'up steps': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "up steps",
@@ -31,7 +31,7 @@ export const Path: _i_signatures._T_Path = ($, $p) => _i_generic.process_group(
                     ),
                 }
             )),
-            'context': _pa.cc(_i_generic.get_entry(
+            'context': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "context",
@@ -40,7 +40,7 @@ export const Path: _i_signatures._T_Path = ($, $p) => _i_generic.process_group(
                 $,
                 {
                     'properties': ($) => ({
-                        'sibling': _pa.cc(_i_generic.get_entry(
+                        'sibling': _pa.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "sibling",
@@ -51,7 +51,7 @@ export const Path: _i_signatures._T_Path = ($, $p) => _i_generic.process_group(
                                 'properties': ($) => null,
                             }
                         )),
-                        'state constraint': _pa.cc(_i_generic.get_entry(
+                        'state constraint': _pa.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "state constraint",
@@ -60,7 +60,7 @@ export const Path: _i_signatures._T_Path = ($, $p) => _i_generic.process_group(
                             $,
                             {
                                 'properties': ($) => ({
-                                    'name': _pa.cc(_i_generic.get_entry(
+                                    'name': _pa.deprecated_cc(_i_generic.get_entry(
                                         $,
                                         {
                                             'key': "name",
@@ -77,7 +77,7 @@ export const Path: _i_signatures._T_Path = ($, $p) => _i_generic.process_group(
                     }),
                 }
             )),
-            'selection steps': _pa.cc(_i_generic.get_entry(
+            'selection steps': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "selection steps",
@@ -89,7 +89,7 @@ export const Path: _i_signatures._T_Path = ($, $p) => _i_generic.process_group(
                         $,
                         {
                             'properties': ($) => ({
-                                'group': _pa.cc(_i_generic.get_entry(
+                                'group': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "group",
@@ -98,7 +98,7 @@ export const Path: _i_signatures._T_Path = ($, $p) => _i_generic.process_group(
                                     $,
                                     {
                                         'properties': ($) => ({
-                                            'name': _pa.cc(_i_generic.get_entry(
+                                            'name': _pa.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "name",
@@ -112,7 +112,7 @@ export const Path: _i_signatures._T_Path = ($, $p) => _i_generic.process_group(
                                         }),
                                     }
                                 )),
-                                'state constraint': _pa.cc(_i_generic.get_entry(
+                                'state constraint': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "state constraint",
@@ -121,7 +121,7 @@ export const Path: _i_signatures._T_Path = ($, $p) => _i_generic.process_group(
                                     $,
                                     {
                                         'properties': ($) => ({
-                                            'name': _pa.cc(_i_generic.get_entry(
+                                            'name': _pa.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "name",
@@ -135,7 +135,7 @@ export const Path: _i_signatures._T_Path = ($, $p) => _i_generic.process_group(
                                         }),
                                     }
                                 )),
-                                'reference': _pa.cc(_i_generic.get_entry(
+                                'reference': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "reference",
@@ -144,7 +144,7 @@ export const Path: _i_signatures._T_Path = ($, $p) => _i_generic.process_group(
                                     $,
                                     {
                                         'properties': ($) => ({
-                                            'name': _pa.cc(_i_generic.get_entry(
+                                            'name': _pa.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "name",
@@ -170,7 +170,7 @@ export const Node: _i_signatures._T_Node = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
-            'properties': _pa.cc(_i_generic.get_entry(
+            'properties': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "properties",
@@ -182,7 +182,7 @@ export const Node: _i_signatures._T_Node = ($, $p) => _i_generic.process_group(
                         $,
                         {
                             'properties': ($) => ({
-                                'type': _pa.cc(_i_generic.get_entry(
+                                'type': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "type",
@@ -195,7 +195,7 @@ export const Node: _i_signatures._T_Node = ($, $p) => _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'node': _pa.cc(_i_generic.get_entry(
+                                                        'node': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "node",
@@ -206,7 +206,7 @@ export const Node: _i_signatures._T_Node = ($, $p) => _i_generic.process_group(
                                                                 'value deserializers': $p['value deserializers'],
                                                             }
                                                         )),
-                                                        'key': _pa.cc(_i_generic.get_entry(
+                                                        'key': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "key",
@@ -224,7 +224,7 @@ export const Node: _i_signatures._T_Node = ($, $p) => _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'node': _pa.cc(_i_generic.get_entry(
+                                                        'node': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "node",
@@ -242,7 +242,7 @@ export const Node: _i_signatures._T_Node = ($, $p) => _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'constraint': _pa.cc(_i_generic.get_entry(
+                                                        'constraint': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "constraint",
@@ -254,7 +254,7 @@ export const Node: _i_signatures._T_Node = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'path': _pa.cc(_i_generic.get_entry(
+                                                                            'path': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "path",
@@ -265,7 +265,7 @@ export const Node: _i_signatures._T_Node = ($, $p) => _i_generic.process_group(
                                                                                     'value deserializers': $p['value deserializers'],
                                                                                 }
                                                                             )),
-                                                                            'dictionary': _pa.cc(_i_generic.get_entry(
+                                                                            'dictionary': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "dictionary",
@@ -288,7 +288,7 @@ export const Node: _i_signatures._T_Node = ($, $p) => _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'states': _pa.cc(_i_generic.get_entry(
+                                                        'states': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "states",
@@ -300,7 +300,7 @@ export const Node: _i_signatures._T_Node = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'constraints': _pa.cc(_i_generic.get_entry(
+                                                                            'constraints': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "constraints",
@@ -312,7 +312,7 @@ export const Node: _i_signatures._T_Node = ($, $p) => _i_generic.process_group(
                                                                                         $,
                                                                                         {
                                                                                             'properties': ($) => ({
-                                                                                                'path': _pa.cc(_i_generic.get_entry(
+                                                                                                'path': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "path",
@@ -328,7 +328,7 @@ export const Node: _i_signatures._T_Node = ($, $p) => _i_generic.process_group(
                                                                                     ),
                                                                                 }
                                                                             )),
-                                                                            'node': _pa.cc(_i_generic.get_entry(
+                                                                            'node': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "node",
@@ -362,7 +362,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
-            'numerical types': _pa.cc(_i_generic.get_entry(
+            'numerical types': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "numerical types",
@@ -378,7 +378,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                     ),
                 }
             )),
-            'root': _pa.cc(_i_generic.get_entry(
+            'root': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "root",

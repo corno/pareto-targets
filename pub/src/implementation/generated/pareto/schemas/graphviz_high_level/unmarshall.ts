@@ -643,7 +643,7 @@ export const Tree: _i_signatures._T_Tree = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
-            'attributes': _pa.cc(_i_generic.get_entry(
+            'attributes': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "attributes",
@@ -654,7 +654,7 @@ export const Tree: _i_signatures._T_Tree = ($, $p) => _i_generic.process_group(
                     'value deserializers': $p['value deserializers'],
                 }
             )),
-            'elements': _pa.cc(_i_generic.get_entry(
+            'elements': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "elements",
@@ -670,7 +670,7 @@ export const Tree: _i_signatures._T_Tree = ($, $p) => _i_generic.process_group(
                                     $,
                                     {
                                         'properties': ($) => ({
-                                            'attributes': _pa.cc(_i_generic.get_entry(
+                                            'attributes': _pa.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "attributes",
@@ -688,7 +688,7 @@ export const Tree: _i_signatures._T_Tree = ($, $p) => _i_generic.process_group(
                                     $,
                                     {
                                         'properties': ($) => ({
-                                            'type': _pa.cc(_i_generic.get_entry(
+                                            'type': _pa.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "type",
@@ -712,7 +712,7 @@ export const Tree: _i_signatures._T_Tree = ($, $p) => _i_generic.process_group(
                                                     }),
                                                 }
                                             )),
-                                            'tree': _pa.cc(_i_generic.get_entry(
+                                            'tree': _pa.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "tree",
@@ -738,7 +738,7 @@ export const End_Point_Specification: _i_signatures._T_End_Point_Specification =
     $,
     {
         'properties': ($) => ({
-            'start': _pa.cc(_i_generic.get_entry(
+            'start': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "start",
@@ -747,7 +747,7 @@ export const End_Point_Specification: _i_signatures._T_End_Point_Specification =
                 $,
                 null
             )),
-            'tail': _pa.cc(_i_generic.get_entry(
+            'tail': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "tail",
@@ -761,7 +761,7 @@ export const End_Point_Specification: _i_signatures._T_End_Point_Specification =
                     ),
                 }
             )),
-            'port data': _pa.cc(_i_generic.get_entry(
+            'port data': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "port data",
@@ -773,7 +773,7 @@ export const End_Point_Specification: _i_signatures._T_End_Point_Specification =
                         $,
                         {
                             'properties': ($) => ({
-                                'port': _pa.cc(_i_generic.get_entry(
+                                'port': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "port",
@@ -782,7 +782,7 @@ export const End_Point_Specification: _i_signatures._T_End_Point_Specification =
                                     $,
                                     null
                                 )),
-                                'compass direction': _pa.cc(_i_generic.get_entry(
+                                'compass direction': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "compass direction",
@@ -1061,7 +1061,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
     $,
     {
         'properties': ($) => ({
-            'name': _pa.cc(_i_generic.get_entry(
+            'name': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "name",
@@ -1075,7 +1075,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
                     ),
                 }
             )),
-            'tree': _pa.cc(_i_generic.get_entry(
+            'tree': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "tree",
@@ -1086,7 +1086,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
                     'value deserializers': $p['value deserializers'],
                 }
             )),
-            'type': _pa.cc(_i_generic.get_entry(
+            'type': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "type",
@@ -1099,7 +1099,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
                             $,
                             {
                                 'properties': ($) => ({
-                                    'edges': _pa.cc(_i_generic.get_entry(
+                                    'edges': _pa.deprecated_cc(_i_generic.get_entry(
                                         $,
                                         {
                                             'key': "edges",
@@ -1111,7 +1111,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'yin': _pa.cc(_i_generic.get_entry(
+                                                        'yin': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "yin",
@@ -1122,7 +1122,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
                                                                 'value deserializers': $p['value deserializers'],
                                                             }
                                                         )),
-                                                        'yang': _pa.cc(_i_generic.get_entry(
+                                                        'yang': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "yang",
@@ -1133,7 +1133,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
                                                                 'value deserializers': $p['value deserializers'],
                                                             }
                                                         )),
-                                                        'attributes': _pa.cc(_i_generic.get_entry(
+                                                        'attributes': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "attributes",
@@ -1156,7 +1156,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
                             $,
                             {
                                 'properties': ($) => ({
-                                    'edges': _pa.cc(_i_generic.get_entry(
+                                    'edges': _pa.deprecated_cc(_i_generic.get_entry(
                                         $,
                                         {
                                             'key': "edges",
@@ -1168,7 +1168,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'from': _pa.cc(_i_generic.get_entry(
+                                                        'from': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "from",
@@ -1179,7 +1179,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
                                                                 'value deserializers': $p['value deserializers'],
                                                             }
                                                         )),
-                                                        'to': _pa.cc(_i_generic.get_entry(
+                                                        'to': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "to",
@@ -1190,7 +1190,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
                                                                 'value deserializers': $p['value deserializers'],
                                                             }
                                                         )),
-                                                        'attributes': _pa.cc(_i_generic.get_entry(
+                                                        'attributes': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "attributes",

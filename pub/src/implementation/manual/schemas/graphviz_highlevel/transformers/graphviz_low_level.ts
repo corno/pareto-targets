@@ -11,7 +11,7 @@ import { $$ as s_list_of_separated_texts } from "pareto-standard-operations/dist
 
 export const Graph = ($: d_in.Graph): d_out.Graph => ({
     'strict': true,
-    'type': _p.cc($.type, ($) => {
+    'type': _p.sg($.type, ($) => {
         switch ($[0]) {
             case 'directed': return _p.ss($, () => ['digraph', null])
             case 'undirected': return _p.ss($, () => ['graph', null])
@@ -21,7 +21,7 @@ export const Graph = ($: d_in.Graph): d_out.Graph => ({
     'name': $.name.map(($) => ['string', $]),
     'statements': _p.list.literal([
         Tree($.tree, { 'path': _p.list.literal([]) }),
-        _p.cc($.type, ($): d_out.Graph.statements => {
+        _p.sg($.type, ($): d_out.Graph.statements => {
             switch ($[0]) {
                 case 'directed': return _p.ss($, ($) => $.edges.map(($): d_out.Statement_List.L => ['edge', {
                     "left": ['node', {
@@ -34,7 +34,7 @@ export const Graph = ($: d_in.Graph): d_out.Graph => ({
                             'port': _p.optional.not_set()
                         }]
                     ]),
-                    "attributes": $.attributes.map(($) => _p.cc($, ($): d_out.Attribute_List.L => {
+                    "attributes": $.attributes.map(($) => _p.sg($, ($): d_out.Attribute_List.L => {
                         switch ($[0]) {
                             case 'arrowhead': return _p.ss($, ($) => ({ "name": ['id', "arrowhead"], "value": ['string', $] }))
                             case 'arrowsize': return _p.ss($, ($) => ({ "name": ['id', "arrowsize"], "value": ['number', $] }))
@@ -114,7 +114,7 @@ export const Tree = (
     }
 ): d_out.Statement_List => $.elements.to_list<d_out.Statement_List>(($, key) => {
     const path = $p.path.append_element(key)
-    return _p.cc($, ($) => {
+    return _p.sg($, ($) => {
         switch ($[0]) {
             case 'node': return _p.ss($, ($) => _p.list.literal<d_out.Statement_List.L>([
                 ['node', {
@@ -122,7 +122,7 @@ export const Tree = (
                         'id': ['string', s_list_of_separated_texts(path, { 'separator': '>' })],
                         'port': _p.optional.not_set()
                     },
-                    'attribute list': $.attributes.map(($): d_out.Attribute_List.L => _p.cc($, ($) => {
+                    'attribute list': $.attributes.map(($): d_out.Attribute_List.L => _p.sg($, ($) => {
                         switch ($[0]) {
                             case 'color': return _p.ss($, ($) => ({ "name": ['id', "color"], "value": ['string', $] }))
                             default: return _pdev.implement_me("xx")

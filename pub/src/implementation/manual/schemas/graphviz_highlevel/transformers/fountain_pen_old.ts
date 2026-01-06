@@ -26,7 +26,7 @@
 //     return block([
 //         sh.g.nested_block([
 //             sh.b.snippet("strict "),
-//             pa.cc($.type, ($) => {
+//             pa.sg($.type, ($) => {
 //                 switch ($[0]) {
 //                     case 'directed': return pa.ss($, () => sh.b.snippet("digraph "))
 //                     case 'undirected': return pa.ss($, () => sh.b.snippet("graph "))
@@ -51,7 +51,7 @@
 //                         sh.b.snippet(op['serialize with quote delimiter']($.key)),
 //                     ])
 //                 })),
-//                 pa.cc($.type, ($) => {
+//                 pa.sg($.type, ($) => {
 //                     switch ($[0]) {
 //                         case 'directed': return pa.ss($, ($) => sh.g.sub(op['dictionary to list, sorted by code point']($['edge specifications']['start nodes']).map(($) => {
 //                             const key = $.key
@@ -100,7 +100,7 @@
 // }
 
 // export const Attribute_Value = ($: d_in.Attribute_Value): d_out.Block_Part => {
-//     return pa.cc($, ($) => {
+//     return pa.sg($, ($) => {
 //         switch ($[0]) {
 //             case 'string': return pa.ss($, ($) => sh.b.snippet(op['serialize with quote delimiter']($)))
 //             case 'number': return pa.ss($, ($) => sh.b.snippet("FIXME NUMBER"))
@@ -112,7 +112,7 @@
 
 // export const End_Point_Specification = ($: d_in.End_Point_Specification): d_out.Block_Part => {
 //     return sh.b.sub([
-//         pa.cc($, ($) => {
+//         pa.sg($, ($) => {
 //             switch ($[0]) {
 //                 case 'node': return pa.ss($, ($) => {
 //                     return sh.b.sub([

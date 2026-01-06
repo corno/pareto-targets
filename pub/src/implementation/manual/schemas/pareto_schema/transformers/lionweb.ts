@@ -27,7 +27,7 @@ export const Type_Node_2_Document_nodes = (
     $p: {
         'path': string,
     }
-): d_out.SerializationChunk.nodes => _p.cc($, ($) => {
+): d_out.SerializationChunk.nodes => _p.sg($, ($) => {
     switch ($[0]) {
         case 'dictionary': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.literal<d_out.SerializationChunk.nodes>([
             _p.list.literal([
@@ -144,13 +144,13 @@ export const Type_Node_2_Document_nodes = (
                 'containments': _p.list.literal([
                     {
                         'containment': MetaPointer("states"),
-                        'children': $.to_list(($, key) => $p.path + "." + key),
+                        'children': _p.list.from_dictionary($, ($, key) => $p.path + "." + key),
                     },
                 ]),
                 'properties': _p.list.literal([]),
                 'references': _p.list.literal([])
             }]),
-            $.to_list(($, key) => ({
+            _p.list.from_dictionary($, ($, key) => ({
                 'id': $p.path,
                 'parent': _p.optional.not_set(),
                 'annotations': _p.list.literal([]),
@@ -169,7 +169,7 @@ export const Type_Node_2_Document_nodes = (
                 ]),
                 'references': _p.list.literal([])
             })),
-            $.to_list(($, key) => Type_Node_2_Document_nodes(
+            _p.list.from_dictionary($, ($, key) => Type_Node_2_Document_nodes(
                 $.node,
                 {
                     'path': $p.path + "." + key,

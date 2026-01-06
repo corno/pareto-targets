@@ -10,13 +10,13 @@ export const Identifier: _i_signatures._T_Identifier = ($, $p) => ['text', ({
     'value': $,
 })]
 export const Path: _i_signatures._T_Path = ($, $p) => ['verbose group', _pa.dictionary.literal({
-    'up steps': _pa.cc($['up steps'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
+    'up steps': _pa.deprecated_cc($['up steps'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
     })])]),
-    'context': _pa.cc($['context'], ($) => ['verbose group', _pa.dictionary.literal({
-        'sibling': _pa.cc($['sibling'], ($) => ['verbose group', _pa.dictionary.literal({
+    'context': _pa.deprecated_cc($['context'], ($) => ['verbose group', _pa.dictionary.literal({
+        'sibling': _pa.deprecated_cc($['sibling'], ($) => ['verbose group', _pa.dictionary.literal({
         })]),
-        'state constraint': _pa.cc($['state constraint'], ($) => ['verbose group', _pa.dictionary.literal({
-            'name': _pa.cc($['name'], ($) => Identifier(
+        'state constraint': _pa.deprecated_cc($['state constraint'], ($) => ['verbose group', _pa.dictionary.literal({
+            'name': _pa.deprecated_cc($['name'], ($) => Identifier(
                 $,
                 {
                     'value serializers': $p['value serializers'],
@@ -24,25 +24,25 @@ export const Path: _i_signatures._T_Path = ($, $p) => ['verbose group', _pa.dict
             )),
         })]),
     })]),
-    'selection steps': _pa.cc($['selection steps'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
-        'group': _pa.cc($['group'], ($) => ['verbose group', _pa.dictionary.literal({
-            'name': _pa.cc($['name'], ($) => Identifier(
+    'selection steps': _pa.deprecated_cc($['selection steps'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
+        'group': _pa.deprecated_cc($['group'], ($) => ['verbose group', _pa.dictionary.literal({
+            'name': _pa.deprecated_cc($['name'], ($) => Identifier(
                 $,
                 {
                     'value serializers': $p['value serializers'],
                 }
             )),
         })]),
-        'state constraint': _pa.cc($['state constraint'], ($) => ['verbose group', _pa.dictionary.literal({
-            'name': _pa.cc($['name'], ($) => Identifier(
+        'state constraint': _pa.deprecated_cc($['state constraint'], ($) => ['verbose group', _pa.dictionary.literal({
+            'name': _pa.deprecated_cc($['name'], ($) => Identifier(
                 $,
                 {
                     'value serializers': $p['value serializers'],
                 }
             )),
         })]),
-        'reference': _pa.cc($['reference'], ($) => ['verbose group', _pa.dictionary.literal({
-            'name': _pa.cc($['name'], ($) => Identifier(
+        'reference': _pa.deprecated_cc($['reference'], ($) => ['verbose group', _pa.dictionary.literal({
+            'name': _pa.deprecated_cc($['name'], ($) => Identifier(
                 $,
                 {
                     'value serializers': $p['value serializers'],
@@ -52,19 +52,19 @@ export const Path: _i_signatures._T_Path = ($, $p) => ['verbose group', _pa.dict
     })])]),
 })]
 export const Node: _i_signatures._T_Node = ($, $p) => ['verbose group', _pa.dictionary.literal({
-    'properties': _pa.cc($['properties'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
-        'type': _pa.cc($['type'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
+    'properties': _pa.deprecated_cc($['properties'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
+        'type': _pa.deprecated_cc($['type'], ($) => ['state', _pa.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
             switch ($[0]) {
                 case 'collection': return _pa.ss($, ($) => ({
                     'state': "collection",
                     'value': ['verbose group', _pa.dictionary.literal({
-                        'node': _pa.cc($['node'], ($) => Node(
+                        'node': _pa.deprecated_cc($['node'], ($) => Node(
                             $,
                             {
                                 'value serializers': $p['value serializers'],
                             }
                         )),
-                        'key': _pa.cc($['key'], ($) => Identifier(
+                        'key': _pa.deprecated_cc($['key'], ($) => Identifier(
                             $,
                             {
                                 'value serializers': $p['value serializers'],
@@ -75,7 +75,7 @@ export const Node: _i_signatures._T_Node = ($, $p) => ['verbose group', _pa.dict
                 case 'group': return _pa.ss($, ($) => ({
                     'state': "group",
                     'value': ['verbose group', _pa.dictionary.literal({
-                        'node': _pa.cc($['node'], ($) => Node(
+                        'node': _pa.deprecated_cc($['node'], ($) => Node(
                             $,
                             {
                                 'value serializers': $p['value serializers'],
@@ -86,15 +86,15 @@ export const Node: _i_signatures._T_Node = ($, $p) => ['verbose group', _pa.dict
                 case 'text': return _pa.ss($, ($) => ({
                     'state': "text",
                     'value': ['verbose group', _pa.dictionary.literal({
-                        'constraint': _pa.cc($['constraint'], ($) => ['optional', $.transform(
+                        'constraint': _pa.deprecated_cc($['constraint'], ($) => ['optional', $.transform(
                             ($): _i_out._T_Value.SG.optional => ['set', ['verbose group', _pa.dictionary.literal({
-                                'path': _pa.cc($['path'], ($) => Path(
+                                'path': _pa.deprecated_cc($['path'], ($) => Path(
                                     $,
                                     {
                                         'value serializers': $p['value serializers'],
                                     }
                                 )),
-                                'dictionary': _pa.cc($['dictionary'], ($) => Identifier(
+                                'dictionary': _pa.deprecated_cc($['dictionary'], ($) => Identifier(
                                     $,
                                     {
                                         'value serializers': $p['value serializers'],
@@ -108,16 +108,16 @@ export const Node: _i_signatures._T_Node = ($, $p) => ['verbose group', _pa.dict
                 case 'state group': return _pa.ss($, ($) => ({
                     'state': "state group",
                     'value': ['verbose group', _pa.dictionary.literal({
-                        'states': _pa.cc($['states'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
-                            'constraints': _pa.cc($['constraints'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
-                                'path': _pa.cc($['path'], ($) => Path(
+                        'states': _pa.deprecated_cc($['states'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
+                            'constraints': _pa.deprecated_cc($['constraints'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
+                                'path': _pa.deprecated_cc($['path'], ($) => Path(
                                     $,
                                     {
                                         'value serializers': $p['value serializers'],
                                     }
                                 )),
                             })])]),
-                            'node': _pa.cc($['node'], ($) => Node(
+                            'node': _pa.deprecated_cc($['node'], ($) => Node(
                                 $,
                                 {
                                     'value serializers': $p['value serializers'],
@@ -132,9 +132,9 @@ export const Node: _i_signatures._T_Node = ($, $p) => ['verbose group', _pa.dict
     })])]),
 })]
 export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dictionary.literal({
-    'numerical types': _pa.cc($['numerical types'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
+    'numerical types': _pa.deprecated_cc($['numerical types'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
     })])]),
-    'root': _pa.cc($['root'], ($) => Node(
+    'root': _pa.deprecated_cc($['root'], ($) => Node(
         $,
         {
             'value serializers': $p['value serializers'],

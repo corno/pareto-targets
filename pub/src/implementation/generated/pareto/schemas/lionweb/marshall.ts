@@ -6,92 +6,92 @@ import * as _i_out from "../../../../../interface/generated/pareto/core/astn_tar
 
 
 export const MetaPointer: _i_signatures._T_MetaPointer = ($, $p) => ['verbose group', _pa.dictionary.literal({
-    'language': _pa.cc($['language'], ($) => ['text', ({
+    'language': _pa.deprecated_cc($['language'], ($) => ['text', ({
         'delimiter': ['quote', null],
         'value': $,
     })]),
-    'version': _pa.cc($['version'], ($) => ['text', ({
+    'version': _pa.deprecated_cc($['version'], ($) => ['text', ({
         'delimiter': ['quote', null],
         'value': $,
     })]),
-    'key': _pa.cc($['key'], ($) => ['text', ({
+    'key': _pa.deprecated_cc($['key'], ($) => ['text', ({
         'delimiter': ['quote', null],
         'value': $,
     })]),
 })]
 export const SerializationChunk: _i_signatures._T_SerializationChunk = ($, $p) => ['verbose group', _pa.dictionary.literal({
-    'serializationFormatVersion': _pa.cc($['serializationFormatVersion'], ($) => ['text', ({
+    'serializationFormatVersion': _pa.deprecated_cc($['serializationFormatVersion'], ($) => ['text', ({
         'delimiter': ['quote', null],
         'value': $,
     })]),
-    'languages': _pa.cc($['languages'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
-        'key': _pa.cc($['key'], ($) => ['text', ({
+    'languages': _pa.deprecated_cc($['languages'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
+        'key': _pa.deprecated_cc($['key'], ($) => ['text', ({
             'delimiter': ['quote', null],
             'value': $,
         })]),
-        'version': _pa.cc($['version'], ($) => ['text', ({
+        'version': _pa.deprecated_cc($['version'], ($) => ['text', ({
             'delimiter': ['quote', null],
             'value': $,
         })]),
     })])]),
-    'nodes': _pa.cc($['nodes'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
-        'id': _pa.cc($['id'], ($) => ['text', ({
+    'nodes': _pa.deprecated_cc($['nodes'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
+        'id': _pa.deprecated_cc($['id'], ($) => ['text', ({
             'delimiter': ['quote', null],
             'value': $,
         })]),
-        'parent': _pa.cc($['parent'], ($) => ['optional', $.transform(
+        'parent': _pa.deprecated_cc($['parent'], ($) => ['optional', $.transform(
             ($): _i_out._T_Value.SG.optional => ['set', ['text', ({
                 'delimiter': ['quote', null],
                 'value': $,
             })]],
             () => ['not set', null]
         )]),
-        'annotations': _pa.cc($['annotations'], ($) => ['list', $.map(($) => ['text', ({
+        'annotations': _pa.deprecated_cc($['annotations'], ($) => ['list', $.map(($) => ['text', ({
             'delimiter': ['quote', null],
             'value': $,
         })])]),
-        'classifier': _pa.cc($['classifier'], ($) => MetaPointer(
+        'classifier': _pa.deprecated_cc($['classifier'], ($) => MetaPointer(
             $,
             {
                 'value serializers': $p['value serializers'],
             }
         )),
-        'containments': _pa.cc($['containments'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
-            'containment': _pa.cc($['containment'], ($) => MetaPointer(
+        'containments': _pa.deprecated_cc($['containments'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
+            'containment': _pa.deprecated_cc($['containment'], ($) => MetaPointer(
                 $,
                 {
                     'value serializers': $p['value serializers'],
                 }
             )),
-            'children': _pa.cc($['children'], ($) => ['list', $.map(($) => ['text', ({
+            'children': _pa.deprecated_cc($['children'], ($) => ['list', $.map(($) => ['text', ({
                 'delimiter': ['quote', null],
                 'value': $,
             })])]),
         })])]),
-        'properties': _pa.cc($['properties'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
-            'value': _pa.cc($['value'], ($) => ['text', ({
+        'properties': _pa.deprecated_cc($['properties'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
+            'value': _pa.deprecated_cc($['value'], ($) => ['text', ({
                 'delimiter': ['quote', null],
                 'value': $,
             })]),
-            'property': _pa.cc($['property'], ($) => MetaPointer(
+            'property': _pa.deprecated_cc($['property'], ($) => MetaPointer(
                 $,
                 {
                     'value serializers': $p['value serializers'],
                 }
             )),
         })])]),
-        'references': _pa.cc($['references'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
-            'targets': _pa.cc($['targets'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
-                'reference': _pa.cc($['reference'], ($) => ['text', ({
+        'references': _pa.deprecated_cc($['references'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
+            'targets': _pa.deprecated_cc($['targets'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
+                'reference': _pa.deprecated_cc($['reference'], ($) => ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
                 })]),
-                'resolveInfo': _pa.cc($['resolveInfo'], ($) => ['text', ({
+                'resolveInfo': _pa.deprecated_cc($['resolveInfo'], ($) => ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
                 })]),
             })])]),
-            'reference': _pa.cc($['reference'], ($) => MetaPointer(
+            'reference': _pa.deprecated_cc($['reference'], ($) => MetaPointer(
                 $,
                 {
                     'value serializers': $p['value serializers'],

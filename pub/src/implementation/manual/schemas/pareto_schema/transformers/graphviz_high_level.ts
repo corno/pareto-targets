@@ -9,7 +9,7 @@ export const Type_Node = (
     $p: {
         'type name': string,
     },
-): d_out.Graph._type.SG.directed.edges => _p.cc($, ($) => {
+): d_out.Graph._type.SG.directed.edges => _p.sg($, ($) => {
     switch ($[0]) {
         case 'number': return _p.ss($, ($) => _p.list.literal([]))
         case 'boolean': return _p.ss($, ($) => _p.list.literal([]))
@@ -24,7 +24,7 @@ export const Type_Node = (
                     'port data': _p.optional.not_set()
                 },
                 'to': {
-                    'start': _p.cc($, ($) => {
+                    'start': _p.sg($, ($) => {
                         switch ($[0]) {
                             case 'external': return _p.ss($, ($) => "FIXME")
                             case 'internal': return _p.ss($, ($) => $.key)
@@ -35,7 +35,7 @@ export const Type_Node = (
                     'tail': _p.list.literal([]),
                     'port data': _p.optional.not_set()
                 },
-                'attributes': _p.cc($, ($) => {
+                'attributes': _p.sg($, ($) => {
                     switch ($[0]) {
                         case 'external': return _p.ss($, ($) => _p.list.literal([]))
                         case 'internal': return _p.ss($, ($) => _p.list.literal([]))
@@ -51,7 +51,7 @@ export const Type_Node = (
         case 'dictionary': return _p.ss($, ($) => Type_Node($.node, $p))
         case 'group': return _p.ss($, ($) => $['ordered list'].flatten(($) => Type_Node($.value.node, $p)))
         case 'optional': return _p.ss($, ($) => Type_Node($, $p))
-        case 'state group': return _p.ss($, ($) => $.to_list(($) => Type_Node($.node, $p)).flatten(($) => $))
+        case 'state group': return _p.ss($, ($) => _p.list.from_dictionary($, ($) => Type_Node($.node, $p)).flatten(($) => $))
         case 'text': return _p.ss($, ($) => _p.list.literal([]))
         // case 'type parameter': return pa.ss($, ($) => pa.list.literal([]))
         default: return _p.au($[0])
