@@ -19,7 +19,7 @@ export const Graph = ($: d_in.Graph): d_out.Graph => ({
         }
     }),
     'name': $.name.map(($) => ['string', $]),
-    'statements': _p.list.literal([
+    'statements': _p.list.nested_literal([
         Tree($.tree, { 'path': _p.list.literal([]) }),
         _p.sg($.type, ($): d_out.Graph.statements => {
             switch ($[0]) {
@@ -103,7 +103,7 @@ export const Graph = ($: d_in.Graph): d_out.Graph => ({
                 default: return _p.au($[0])
             }
         })
-    ]).flatten(($) => $)
+    ])
 
 })
 
@@ -112,30 +112,46 @@ export const Tree = (
     $p: {
         'path': _pi.List<string>
     }
-): d_out.Statement_List => $.elements.to_list<d_out.Statement_List>(($, key) => {
-    const path = $p.path.append_element(key)
-    return _p.sg($, ($) => {
-        switch ($[0]) {
-            case 'node': return _p.ss($, ($) => _p.list.literal<d_out.Statement_List.L>([
-                ['node', {
-                    'node': {
-                        'id': ['string', s_list_of_separated_texts(path, { 'separator': '>' })],
-                        'port': _p.optional.not_set()
-                    },
-                    'attribute list': $.attributes.map(($): d_out.Attribute_List.L => _p.sg($, ($) => {
-                        switch ($[0]) {
-                            case 'color': return _p.ss($, ($) => ({ "name": ['id', "color"], "value": ['string', $] }))
-                            default: return _pdev.implement_me("xx")
-                        }
-                    })).prepend_element({
-                        'name': ['id', "label"],
-                        'value': ['string', key],
-                    }),
+): d_out.Statement_List => _p.list.flatten(
+    _p.list.from_dictionary(
+        $.elements,
+        ($, key): d_out.Statement_List => {
+            const path = _p.list.nested_literal([
+                $p.path,
+                [
+                    key
+                ]
+            ])
+            return _p.sg($, ($) => {
+                switch ($[0]) {
+                    case 'node': return _p.ss($, ($) => _p.list.literal([
+                        ['node', {
+                            'node': {
+                                'id': ['string', s_list_of_separated_texts(path, { 'separator': '>' })],
+                                'port': _p.optional.not_set()
+                            },
+                            'attribute list': _p.list.nested_literal([
+                                [
+                                    {
+                                        'name': ['id', "label"],
+                                        'value': ['string', key],
+                                    }
+                                ],
+                                $.attributes.map(($): d_out.Attribute_List.L => _p.sg($, ($) => {
+                                    switch ($[0]) {
+                                        case 'color': return _p.ss($, ($) => ({ "name": ['id', "color"], "value": ['string', $] }))
+                                        default: return _pdev.implement_me("xx")
+                                    }
+                                })),
+                            ]),
 
-                }]
-            ]))
-            case 'sub': return _p.ss($, ($) => Tree($.tree, { 'path': path }))
-            default: return _p.au($[0])
+                        }]
+                    ]))
+                    case 'sub': return _p.ss($, ($) => Tree($.tree, { 'path': path }))
+                    default: return _p.au($[0])
+                }
+            })
         }
-    })
-}).flatten(($) => $)
+    ),
+    ($) => $
+)

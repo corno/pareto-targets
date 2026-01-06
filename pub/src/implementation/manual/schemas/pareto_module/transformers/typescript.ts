@@ -1,5 +1,6 @@
 import * as _p from 'pareto-core-transformer'
-import * as _pinternals from 'pareto-core-internals'
+import { location_to_string } from 'pareto-core-internals/dist/misc/location_to_string'
+
 
 import * as d_in_s from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"
 import * as d_in from "pareto/dist/interface/generated/pareto/schemas/module/data_types/source"
@@ -27,7 +28,7 @@ export const Module = ($: d_in.Module): d_out.Directory => t_exupery_library_to_
                     'lookups': null,
                     'values': null,
                 },
-                'location 2 string': _pinternals.location_to_string
+                'location 2 string': location_to_string
             }
         ),
         'implementation': r_exupery_implementation.r_Module_Set(
@@ -37,7 +38,7 @@ export const Module = ($: d_in.Module): d_out.Directory => t_exupery_library_to_
                     'lookups': null,
                     'values': null,
                 },
-                'location 2 string': _pinternals.location_to_string
+                'location 2 string': location_to_string
             }
         ),
     },

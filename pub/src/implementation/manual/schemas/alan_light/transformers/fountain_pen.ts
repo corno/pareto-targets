@@ -42,39 +42,49 @@ export const Node = (
 ): d_out.Block_Part => sh.b.sub([
     sh.b.snippet("{"),
     sh.b.indent([
-        sh.g.sub($.properties.to_list(($, key) => sh.g.nested_block([
-            Identifier(key),
-            sh.b.snippet(": "),
-            _p.sg($.type, ($) => {
-                switch ($[0]) {
-                    case 'collection': return _p.ss($, ($) => sh.b.sub([
-                        sh.b.snippet("collection ["),
-                        Identifier($.key),
-                        sh.b.snippet("] "),
-                        Node($.node)
-                    ]))
-                    case 'group': return _p.ss($, ($) => sh.b.sub([
-                        sh.b.snippet("group "),
-                        Node($.node)
-                    ]))
-                    case 'state group': return _p.ss($, ($) => $.states.is_empty()
-                        ? sh.b.snippet("group { }")
-                        : sh.b.sub([
-                            sh.b.snippet("stategroup ("),
-                            sh.b.indent([
-                                sh.g.sub($.states.to_list(($, key) => sh.g.nested_block([
-                                    Identifier(key),
-                                    sh.b.snippet(" "),
-                                    Node($.node)
-                                ])))
-                            ]),
-                            sh.b.snippet(")")
-                        ]))
-                    case 'text': return _p.ss($, ($) => sh.b.snippet("text"))
-                    default: return _p.au($[0])
-                }
-            })
-        ]))),
+        sh.g.sub(
+            _p.list.from_dictionary(
+                $.properties,
+                ($, key) => sh.g.nested_block([
+                    Identifier(key),
+                    sh.b.snippet(": "),
+                    _p.sg($.type, ($) => {
+                        switch ($[0]) {
+                            case 'collection': return _p.ss($, ($) => sh.b.sub([
+                                sh.b.snippet("collection ["),
+                                Identifier($.key),
+                                sh.b.snippet("] "),
+                                Node($.node)
+                            ]))
+                            case 'group': return _p.ss($, ($) => sh.b.sub([
+                                sh.b.snippet("group "),
+                                Node($.node)
+                            ]))
+                            case 'state group': return _p.ss($, ($) => _p.boolean.dictionary_is_empty($.states)
+                                ? sh.b.snippet("group { }")
+                                : sh.b.sub([
+                                    sh.b.snippet("stategroup ("),
+                                    sh.b.indent([
+                                        sh.g.sub(
+                                            _p.list.from_dictionary(
+                                                $.states,
+                                                ($, key) => sh.g.nested_block([
+                                                    Identifier(key),
+                                                    sh.b.snippet(" "),
+                                                    Node($.node)
+                                                ])
+                                            )
+                                        )
+                                    ]),
+                                    sh.b.snippet(")")
+                                ]))
+                            case 'text': return _p.ss($, ($) => sh.b.snippet("text"))
+                            default: return _p.au($[0])
+                        }
+                    })
+                ])
+            )
+        ),
 
     ]),
     sh.b.snippet("}"),

@@ -106,7 +106,7 @@ export const Statement_List: signatures.Statement_List = ($, $p) => sh.b.sub([
                     ]))
                     case 'node': return _p.ss($, ($) => sh.b.sub([
                         Node_ID($.node),
-                        $['attribute list'].is_empty()
+                        _p.boolean.list_is_empty($['attribute list'])
                             ? sh.b.nothing()
                             : Attribute_List($['attribute list']),
                         sh.b.snippet(";"),

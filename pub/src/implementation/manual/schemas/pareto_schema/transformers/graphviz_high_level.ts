@@ -49,9 +49,18 @@ export const Type_Node = (
 
         ]))
         case 'dictionary': return _p.ss($, ($) => Type_Node($.node, $p))
-        case 'group': return _p.ss($, ($) => $['ordered list'].flatten(($) => Type_Node($.value.node, $p)))
+        case 'group': return _p.ss($, ($) => _p.list.flatten(
+            $['ordered list'],
+            ($) => Type_Node($.value.node, $p)
+        ))
         case 'optional': return _p.ss($, ($) => Type_Node($, $p))
-        case 'state group': return _p.ss($, ($) => _p.list.from_dictionary($, ($) => Type_Node($.node, $p)).flatten(($) => $))
+        case 'state group': return _p.ss($, ($) => _p.list.flatten(
+            _p.list.from_dictionary(
+                $,
+                ($) => Type_Node($.node, $p)
+            ),
+            ($) => $
+        ))
         case 'text': return _p.ss($, ($) => _p.list.literal([]))
         // case 'type parameter': return pa.ss($, ($) => pa.list.literal([]))
         default: return _p.au($[0])
@@ -73,6 +82,9 @@ export const Schema = (
         }]),
     },
     'type': ['directed', {
-        'edges': $.types['ordered list'].flatten(($) => Type_Node($.value.node, { 'type name': $.key })),
+        'edges': _p.list.flatten(
+            $.types['ordered list'],
+            ($) => Type_Node($.value.node, { 'type name': $.key })
+        ),
     }],
 })

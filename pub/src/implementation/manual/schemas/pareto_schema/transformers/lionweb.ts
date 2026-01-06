@@ -29,7 +29,7 @@ export const Type_Node_2_Document_nodes = (
     }
 ): d_out.SerializationChunk.nodes => _p.sg($, ($) => {
     switch ($[0]) {
-        case 'dictionary': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.literal<d_out.SerializationChunk.nodes>([
+        case 'dictionary': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.nested_literal<d_out.SerializationChunk.nodes.L>([
             _p.list.literal([
                 {
                     'id': $p.path,
@@ -66,9 +66,9 @@ export const Type_Node_2_Document_nodes = (
                     'path': $p.path + ".D",
                 }
             ),
-        ]).flatten(($) => $))
-        case 'group': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.literal<d_out.SerializationChunk.nodes>([
-            _p.list.literal([
+        ]))
+        case 'group': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.nested_literal<d_out.SerializationChunk.nodes.L>([
+            [
                 {
                     'id': $p.path,
                     'parent': _p.optional.not_set(),
@@ -83,73 +83,82 @@ export const Type_Node_2_Document_nodes = (
                     'properties': _p.list.literal([]),
                     'references': _p.list.literal([])
                 }
-            ]),
-            $['ordered list'].flatten(($) => Type_Node_2_Document_nodes(
-                $.value.node,
-                {
-                    'path': $p.path + "." + $.key,
-                }
-            )),
-        ]).flatten(($) => $))
-        case 'list': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.literal<d_out.SerializationChunk.nodes>([
-            _p.list.literal([{
-                'id': $p.path,
-                'parent': _p.optional.not_set(),
-                'annotations': _p.list.literal([]),
-                'classifier': MetaPointer("list"),
-                'containments': _p.list.literal([
+            ],
+            _p.list.flatten(
+                $['ordered list'],
+                ($) => Type_Node_2_Document_nodes(
+                    $.value.node,
                     {
-                        'containment': MetaPointer("elements"),
-                        'children': _p.list.literal([$p.path + ".L"]),
-                    },
-                ]),
-                'properties': _p.list.literal([]),
-                'references': _p.list.literal([])
-            }]),
+                        'path': $p.path + "." + $.key,
+                    }
+                ),
+            ),
+        ]))
+        case 'list': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.nested_literal<d_out.SerializationChunk.nodes.L>([
+            [
+                {
+                    'id': $p.path,
+                    'parent': _p.optional.not_set(),
+                    'annotations': _p.list.literal([]),
+                    'classifier': MetaPointer("list"),
+                    'containments': _p.list.literal([
+                        {
+                            'containment': MetaPointer("elements"),
+                            'children': _p.list.literal([$p.path + ".L"]),
+                        },
+                    ]),
+                    'properties': _p.list.literal([]),
+                    'references': _p.list.literal([])
+                }
+            ],
             Type_Node_2_Document_nodes(
                 $.node,
                 {
                     'path': $p.path + ".L",
                 }
             ),
-        ]).flatten(($) => $))
-        case 'optional': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.literal<d_out.SerializationChunk.nodes>([
-            _p.list.literal([{
-                'id': $p.path,
-                'parent': _p.optional.not_set(),
-                'annotations': _p.list.literal([]),
-                'classifier': MetaPointer("list"),
-                'containments': _p.list.literal([
-                    {
-                        'containment': MetaPointer("optional"),
-                        'children': _p.list.literal([$p.path + ".O"]),
-                    },
-                ]),
-                'properties': _p.list.literal([]),
-                'references': _p.list.literal([])
-            }]),
+        ]))
+        case 'optional': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.nested_literal<d_out.SerializationChunk.nodes.L>([
+            [
+                {
+                    'id': $p.path,
+                    'parent': _p.optional.not_set(),
+                    'annotations': _p.list.literal([]),
+                    'classifier': MetaPointer("list"),
+                    'containments': _p.list.literal([
+                        {
+                            'containment': MetaPointer("optional"),
+                            'children': _p.list.literal([$p.path + ".O"]),
+                        },
+                    ]),
+                    'properties': _p.list.literal([]),
+                    'references': _p.list.literal([])
+                }
+            ],
             Type_Node_2_Document_nodes(
                 $,
                 {
                     'path': $p.path + ".O",
                 }
             ),
-        ]).flatten(($) => $))
-        case 'state group': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.literal<d_out.SerializationChunk.nodes>([
-            _p.list.literal([{
-                'id': $p.path,
-                'parent': _p.optional.not_set(),
-                'annotations': _p.list.literal([]),
-                'classifier': MetaPointer("state group"),
-                'containments': _p.list.literal([
-                    {
-                        'containment': MetaPointer("states"),
-                        'children': _p.list.from_dictionary($, ($, key) => $p.path + "." + key),
-                    },
-                ]),
-                'properties': _p.list.literal([]),
-                'references': _p.list.literal([])
-            }]),
+        ]))
+        case 'state group': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.nested_literal<d_out.SerializationChunk.nodes.L>([
+            [
+                {
+                    'id': $p.path,
+                    'parent': _p.optional.not_set(),
+                    'annotations': _p.list.literal([]),
+                    'classifier': MetaPointer("state group"),
+                    'containments': _p.list.literal([
+                        {
+                            'containment': MetaPointer("states"),
+                            'children': _p.list.from_dictionary($, ($, key) => $p.path + "." + key),
+                        },
+                    ]),
+                    'properties': _p.list.literal([]),
+                    'references': _p.list.literal([])
+                }
+            ],
             _p.list.from_dictionary($, ($, key) => ({
                 'id': $p.path,
                 'parent': _p.optional.not_set(),
@@ -169,13 +178,16 @@ export const Type_Node_2_Document_nodes = (
                 ]),
                 'references': _p.list.literal([])
             })),
-            _p.list.from_dictionary($, ($, key) => Type_Node_2_Document_nodes(
-                $.node,
-                {
-                    'path': $p.path + "." + key,
-                }
-            )).flatten(($) => $),
-        ]).flatten(($) => $))
+            _p.list.flatten(
+                _p.list.from_dictionary($, ($, key) => Type_Node_2_Document_nodes(
+                    $.node,
+                    {
+                        'path': $p.path + "." + key,
+                    }
+                )),
+                ($) => $
+            ),
+        ]))
         default: return _p.list.literal([])
     }
 })
@@ -195,10 +207,13 @@ export const Schema = (
             'version': "2023.1",
         }
     ]),
-    'nodes': $.types['ordered list'].flatten(($) => Type_Node_2_Document_nodes(
-        $.value.node,
-        {
-            'path': $.key,
-        }
-    )),
+    'nodes': _p.list.flatten(
+        $.types['ordered list'],
+        ($) => Type_Node_2_Document_nodes(
+            $.value.node,
+            {
+                'path': $.key,
+            }
+        )
+    ),
 })
