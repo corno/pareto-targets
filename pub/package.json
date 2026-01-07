@@ -9,7 +9,7 @@
   ],
   "dependencies": {
     "pareto": "^0.78.17",
-    "pareto-fountain-pen": "^0.3.28",
+    "pareto-fountain-pen": "^0.3.29",
     "pareto-json": "^0.3.8"
   }
 }
