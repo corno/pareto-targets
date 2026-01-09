@@ -1,34 +1,34 @@
-import * as _pa from 'pareto-core-transformer'
-import * as _pd from 'pareto-core-dev'
+import * as _p from 'pareto-core-transformer'
+import * as _pdev from 'pareto-core-dev'
 
 import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/graphviz_low_level/marshall"
 import * as _i_out from "../../../../../interface/generated/pareto/core/astn_target"
 
 
-export const ID: _i_signatures._T_ID = ($, $p) => ['state', _pa.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
+export const ID: _i_signatures._T_ID = ($, $p) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
     switch ($[0]) {
-        case 'id': return _pa.ss($, ($) => ({
+        case 'id': return _p.ss($, ($) => ({
             'state': "id",
             'value': ['text', ({
                 'delimiter': ['quote', null],
                 'value': $,
             })],
         }))
-        case 'string': return _pa.ss($, ($) => ({
+        case 'string': return _p.ss($, ($) => ({
             'state': "string",
             'value': ['text', ({
                 'delimiter': ['quote', null],
                 'value': $,
             })],
         }))
-        case 'html': return _pa.ss($, ($) => ({
+        case 'html': return _p.ss($, ($) => ({
             'state': "html",
             'value': ['text', ({
                 'delimiter': ['quote', null],
                 'value': $,
             })],
         }))
-        case 'number': return _pa.ss($, ($) => ({
+        case 'number': return _p.ss($, ($) => ({
             'state': "number",
             'value': ['text', ({
                 'delimiter': ['backtick', null],
@@ -38,25 +38,25 @@ export const ID: _i_signatures._T_ID = ($, $p) => ['state', _pa.deprecated_cc($,
                 ),
             })],
         }))
-        default: return _pa.au($[0])
+        default: return _p.au($[0])
     }
 })]
-export const Node_ID: _i_signatures._T_Node_ID = ($, $p) => ['verbose group', _pa.dictionary.literal({
-    'id': _pa.deprecated_cc($['id'], ($) => ID(
+export const Node_ID: _i_signatures._T_Node_ID = ($, $p) => ['verbose group', _p.dictionary.literal({
+    'id': _p.deprecated_cc($['id'], ($) => ID(
         $,
         {
             'value serializers': $p['value serializers'],
         }
     )),
-    'port': _pa.deprecated_cc($['port'], ($) => ['optional', $.transform(
-        ($): _i_out._T_Value.SG.optional => ['set', ['verbose group', _pa.dictionary.literal({
-            'port': _pa.deprecated_cc($['port'], ($) => ID(
+    'port': _p.deprecated_cc($['port'], ($) => ['optional', $.transform(
+        ($): _i_out._T_Value.SG.optional => ['set', ['verbose group', _p.dictionary.literal({
+            'port': _p.deprecated_cc($['port'], ($) => ID(
                 $,
                 {
                     'value serializers': $p['value serializers'],
                 }
             )),
-            'compass point': _pa.deprecated_cc($['compass point'], ($) => ['optional', $.transform(
+            'compass point': _p.deprecated_cc($['compass point'], ($) => ['optional', $.transform(
                 ($): _i_out._T_Value.SG.optional => ['set', ID(
                     $,
                     {
@@ -69,22 +69,22 @@ export const Node_ID: _i_signatures._T_Node_ID = ($, $p) => ['verbose group', _p
         () => ['not set', null]
     )]),
 })]
-export const Attribute_List: _i_signatures._T_Attribute_List = ($, $p) => ['list', $.map(($) => ['verbose group', _pa.dictionary.literal({
-    'name': _pa.deprecated_cc($['name'], ($) => ID(
+export const Attribute_List: _i_signatures._T_Attribute_List = ($, $p) => ['list', $.map(($) => ['verbose group', _p.dictionary.literal({
+    'name': _p.deprecated_cc($['name'], ($) => ID(
         $,
         {
             'value serializers': $p['value serializers'],
         }
     )),
-    'value': _pa.deprecated_cc($['value'], ($) => ID(
+    'value': _p.deprecated_cc($['value'], ($) => ID(
         $,
         {
             'value serializers': $p['value serializers'],
         }
     )),
 })])]
-export const Subgraph: _i_signatures._T_Subgraph = ($, $p) => ['verbose group', _pa.dictionary.literal({
-    'subgraph': _pa.deprecated_cc($['subgraph'], ($) => ['optional', $.transform(
+export const Subgraph: _i_signatures._T_Subgraph = ($, $p) => ['verbose group', _p.dictionary.literal({
+    'subgraph': _p.deprecated_cc($['subgraph'], ($) => ['optional', $.transform(
         ($): _i_out._T_Value.SG.optional => ['set', ['optional', $.transform(
             ($): _i_out._T_Value.SG.optional => ['set', ID(
                 $,
@@ -96,25 +96,25 @@ export const Subgraph: _i_signatures._T_Subgraph = ($, $p) => ['verbose group', 
         )]],
         () => ['not set', null]
     )]),
-    'statements': _pa.deprecated_cc($['statements'], ($) => Statement_List(
+    'statements': _p.deprecated_cc($['statements'], ($) => Statement_List(
         $,
         {
             'value serializers': $p['value serializers'],
         }
     )),
 })]
-export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list', $.map(($) => ['state', _pa.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
+export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list', $.map(($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
     switch ($[0]) {
-        case 'node': return _pa.ss($, ($) => ({
+        case 'node': return _p.ss($, ($) => ({
             'state': "node",
-            'value': ['verbose group', _pa.dictionary.literal({
-                'node': _pa.deprecated_cc($['node'], ($) => Node_ID(
+            'value': ['verbose group', _p.dictionary.literal({
+                'node': _p.deprecated_cc($['node'], ($) => Node_ID(
                     $,
                     {
                         'value serializers': $p['value serializers'],
                     }
                 )),
-                'attribute list': _pa.deprecated_cc($['attribute list'], ($) => Attribute_List(
+                'attribute list': _p.deprecated_cc($['attribute list'], ($) => Attribute_List(
                     $,
                     {
                         'value serializers': $p['value serializers'],
@@ -122,12 +122,12 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list
                 )),
             })],
         }))
-        case 'edge': return _pa.ss($, ($) => ({
+        case 'edge': return _p.ss($, ($) => ({
             'state': "edge",
-            'value': ['verbose group', _pa.dictionary.literal({
-                'left': _pa.deprecated_cc($['left'], ($) => ['state', _pa.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
+            'value': ['verbose group', _p.dictionary.literal({
+                'left': _p.deprecated_cc($['left'], ($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
                     switch ($[0]) {
-                        case 'node': return _pa.ss($, ($) => ({
+                        case 'node': return _p.ss($, ($) => ({
                             'state': "node",
                             'value': Node_ID(
                                 $,
@@ -136,7 +136,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list
                                 }
                             ),
                         }))
-                        case 'subgraph': return _pa.ss($, ($) => ({
+                        case 'subgraph': return _p.ss($, ($) => ({
                             'state': "subgraph",
                             'value': Subgraph(
                                 $,
@@ -145,12 +145,12 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list
                                 }
                             ),
                         }))
-                        default: return _pa.au($[0])
+                        default: return _p.au($[0])
                     }
                 })]),
-                'right': _pa.deprecated_cc($['right'], ($) => ['list', $.map(($) => ['state', _pa.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
+                'right': _p.deprecated_cc($['right'], ($) => ['list', $.map(($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
                     switch ($[0]) {
-                        case 'node': return _pa.ss($, ($) => ({
+                        case 'node': return _p.ss($, ($) => ({
                             'state': "node",
                             'value': Node_ID(
                                 $,
@@ -159,7 +159,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list
                                 }
                             ),
                         }))
-                        case 'subgraph': return _pa.ss($, ($) => ({
+                        case 'subgraph': return _p.ss($, ($) => ({
                             'state': "subgraph",
                             'value': Subgraph(
                                 $,
@@ -168,10 +168,10 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list
                                 }
                             ),
                         }))
-                        default: return _pa.au($[0])
+                        default: return _p.au($[0])
                     }
                 })])]),
-                'attributes': _pa.deprecated_cc($['attributes'], ($) => Attribute_List(
+                'attributes': _p.deprecated_cc($['attributes'], ($) => Attribute_List(
                     $,
                     {
                         'value serializers': $p['value serializers'],
@@ -179,27 +179,27 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list
                 )),
             })],
         }))
-        case 'attribute list': return _pa.ss($, ($) => ({
+        case 'attribute list': return _p.ss($, ($) => ({
             'state': "attribute list",
-            'value': ['verbose group', _pa.dictionary.literal({
-                'type': _pa.deprecated_cc($['type'], ($) => ['state', _pa.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
+            'value': ['verbose group', _p.dictionary.literal({
+                'type': _p.deprecated_cc($['type'], ($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
                     switch ($[0]) {
-                        case 'graph': return _pa.ss($, ($) => ({
+                        case 'graph': return _p.ss($, ($) => ({
                             'state': "graph",
                             'value': ['nothing', null],
                         }))
-                        case 'node': return _pa.ss($, ($) => ({
+                        case 'node': return _p.ss($, ($) => ({
                             'state': "node",
                             'value': ['nothing', null],
                         }))
-                        case 'edge': return _pa.ss($, ($) => ({
+                        case 'edge': return _p.ss($, ($) => ({
                             'state': "edge",
                             'value': ['nothing', null],
                         }))
-                        default: return _pa.au($[0])
+                        default: return _p.au($[0])
                     }
                 })]),
-                'attributes': _pa.deprecated_cc($['attributes'], ($) => Attribute_List(
+                'attributes': _p.deprecated_cc($['attributes'], ($) => Attribute_List(
                     $,
                     {
                         'value serializers': $p['value serializers'],
@@ -207,16 +207,16 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list
                 )),
             })],
         }))
-        case 'attribute assignment': return _pa.ss($, ($) => ({
+        case 'attribute assignment': return _p.ss($, ($) => ({
             'state': "attribute assignment",
-            'value': ['verbose group', _pa.dictionary.literal({
-                'name': _pa.deprecated_cc($['name'], ($) => ID(
+            'value': ['verbose group', _p.dictionary.literal({
+                'name': _p.deprecated_cc($['name'], ($) => ID(
                     $,
                     {
                         'value serializers': $p['value serializers'],
                     }
                 )),
-                'value': _pa.deprecated_cc($['value'], ($) => ID(
+                'value': _p.deprecated_cc($['value'], ($) => ID(
                     $,
                     {
                         'value serializers': $p['value serializers'],
@@ -224,7 +224,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list
                 )),
             })],
         }))
-        case 'subgraph': return _pa.ss($, ($) => ({
+        case 'subgraph': return _p.ss($, ($) => ({
             'state': "subgraph",
             'value': Subgraph(
                 $,
@@ -233,31 +233,31 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list
                 }
             ),
         }))
-        default: return _pa.au($[0])
+        default: return _p.au($[0])
     }
 })])]
-export const Graph: _i_signatures._T_Graph = ($, $p) => ['verbose group', _pa.dictionary.literal({
-    'strict': _pa.deprecated_cc($['strict'], ($) => ['text', ({
+export const Graph: _i_signatures._T_Graph = ($, $p) => ['verbose group', _p.dictionary.literal({
+    'strict': _p.deprecated_cc($['strict'], ($) => ['text', ({
         'delimiter': ['backtick', null],
         'value': $p['value serializers']['boolean'](
             $,
             null
         ),
     })]),
-    'type': _pa.deprecated_cc($['type'], ($) => ['state', _pa.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
+    'type': _p.deprecated_cc($['type'], ($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
         switch ($[0]) {
-            case 'graph': return _pa.ss($, ($) => ({
+            case 'graph': return _p.ss($, ($) => ({
                 'state': "graph",
                 'value': ['nothing', null],
             }))
-            case 'digraph': return _pa.ss($, ($) => ({
+            case 'digraph': return _p.ss($, ($) => ({
                 'state': "digraph",
                 'value': ['nothing', null],
             }))
-            default: return _pa.au($[0])
+            default: return _p.au($[0])
         }
     })]),
-    'name': _pa.deprecated_cc($['name'], ($) => ['optional', $.transform(
+    'name': _p.deprecated_cc($['name'], ($) => ['optional', $.transform(
         ($): _i_out._T_Value.SG.optional => ['set', ID(
             $,
             {
@@ -266,7 +266,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => ['verbose group', _pa.di
         )],
         () => ['not set', null]
     )]),
-    'statements': _pa.deprecated_cc($['statements'], ($) => Statement_List(
+    'statements': _p.deprecated_cc($['statements'], ($) => Statement_List(
         $,
         {
             'value serializers': $p['value serializers'],

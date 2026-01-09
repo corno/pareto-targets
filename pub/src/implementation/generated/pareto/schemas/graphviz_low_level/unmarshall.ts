@@ -1,5 +1,5 @@
-import * as _pa from 'pareto-core-refiner'
-import * as _pd from 'pareto-core-dev'
+import * as _p from 'pareto-core-refiner'
+import * as _pdev from 'pareto-core-dev'
 
 import * as _i_generic from "../../generic/unmarshall"
 import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/graphviz_low_level/unmarshall"
@@ -10,7 +10,7 @@ import * as _i_out from "../../../../../interface/generated/pareto/schemas/graph
 export const ID: _i_signatures._T_ID = ($, $p) => _i_generic.process_unconstrained_state_group(
     $,
     {
-        'states': _pa.dictionary.literal({
+        'states': _p.dictionary.literal({
             'id': ($): _i_out._T_ID.SG => ['id', _i_generic.process_text(
                 $,
                 null
@@ -36,7 +36,7 @@ export const Node_ID: _i_signatures._T_Node_ID = ($, $p) => _i_generic.process_g
     $,
     {
         'properties': ($) => ({
-            'id': _pa.deprecated_cc(_i_generic.get_entry(
+            'id': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "id",
@@ -47,7 +47,7 @@ export const Node_ID: _i_signatures._T_Node_ID = ($, $p) => _i_generic.process_g
                     'value deserializers': $p['value deserializers'],
                 }
             )),
-            'port': _pa.deprecated_cc(_i_generic.get_entry(
+            'port': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "port",
@@ -59,7 +59,7 @@ export const Node_ID: _i_signatures._T_Node_ID = ($, $p) => _i_generic.process_g
                         $,
                         {
                             'properties': ($) => ({
-                                'port': _pa.deprecated_cc(_i_generic.get_entry(
+                                'port': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "port",
@@ -70,7 +70,7 @@ export const Node_ID: _i_signatures._T_Node_ID = ($, $p) => _i_generic.process_g
                                         'value deserializers': $p['value deserializers'],
                                     }
                                 )),
-                                'compass point': _pa.deprecated_cc(_i_generic.get_entry(
+                                'compass point': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "compass point",
@@ -101,7 +101,7 @@ export const Attribute_List: _i_signatures._T_Attribute_List = ($, $p) => _i_gen
             $,
             {
                 'properties': ($) => ({
-                    'name': _pa.deprecated_cc(_i_generic.get_entry(
+                    'name': _p.deprecated_cc(_i_generic.get_entry(
                         $,
                         {
                             'key': "name",
@@ -112,7 +112,7 @@ export const Attribute_List: _i_signatures._T_Attribute_List = ($, $p) => _i_gen
                             'value deserializers': $p['value deserializers'],
                         }
                     )),
-                    'value': _pa.deprecated_cc(_i_generic.get_entry(
+                    'value': _p.deprecated_cc(_i_generic.get_entry(
                         $,
                         {
                             'key': "value",
@@ -132,7 +132,7 @@ export const Subgraph: _i_signatures._T_Subgraph = ($, $p) => _i_generic.process
     $,
     {
         'properties': ($) => ({
-            'subgraph': _pa.deprecated_cc(_i_generic.get_entry(
+            'subgraph': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "subgraph",
@@ -153,7 +153,7 @@ export const Subgraph: _i_signatures._T_Subgraph = ($, $p) => _i_generic.process
                     ),
                 }
             )),
-            'statements': _pa.deprecated_cc(_i_generic.get_entry(
+            'statements': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "statements",
@@ -173,12 +173,12 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => _i_gen
         'value': ($) => _i_generic.process_unconstrained_state_group(
             $,
             {
-                'states': _pa.dictionary.literal({
+                'states': _p.dictionary.literal({
                     'node': ($): _i_out._T_Statement_List.L.SG => ['node', _i_generic.process_group(
                         $,
                         {
                             'properties': ($) => ({
-                                'node': _pa.deprecated_cc(_i_generic.get_entry(
+                                'node': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "node",
@@ -189,7 +189,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => _i_gen
                                         'value deserializers': $p['value deserializers'],
                                     }
                                 )),
-                                'attribute list': _pa.deprecated_cc(_i_generic.get_entry(
+                                'attribute list': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "attribute list",
@@ -207,7 +207,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => _i_gen
                         $,
                         {
                             'properties': ($) => ({
-                                'left': _pa.deprecated_cc(_i_generic.get_entry(
+                                'left': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "left",
@@ -215,7 +215,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => _i_gen
                                 ), ($) => _i_generic.process_unconstrained_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary.literal({
+                                        'states': _p.dictionary.literal({
                                             'node': ($): _i_out._T_Statement_List.L.SG.edge.left.SG => ['node', Node_ID(
                                                 $,
                                                 {
@@ -231,7 +231,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => _i_gen
                                         }),
                                     }
                                 )),
-                                'right': _pa.deprecated_cc(_i_generic.get_entry(
+                                'right': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "right",
@@ -242,7 +242,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => _i_gen
                                         'value': ($) => _i_generic.process_unconstrained_state_group(
                                             $,
                                             {
-                                                'states': _pa.dictionary.literal({
+                                                'states': _p.dictionary.literal({
                                                     'node': ($): _i_out._T_Statement_List.L.SG.edge.right.L.SG => ['node', Node_ID(
                                                         $,
                                                         {
@@ -260,7 +260,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => _i_gen
                                         ),
                                     }
                                 )),
-                                'attributes': _pa.deprecated_cc(_i_generic.get_entry(
+                                'attributes': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "attributes",
@@ -278,7 +278,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => _i_gen
                         $,
                         {
                             'properties': ($) => ({
-                                'type': _pa.deprecated_cc(_i_generic.get_entry(
+                                'type': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "type",
@@ -286,7 +286,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => _i_gen
                                 ), ($) => _i_generic.process_unconstrained_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary.literal({
+                                        'states': _p.dictionary.literal({
                                             'graph': ($): _i_out._T_Statement_List.L.SG.attribute_list._type.SG => ['graph', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -302,7 +302,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => _i_gen
                                         }),
                                     }
                                 )),
-                                'attributes': _pa.deprecated_cc(_i_generic.get_entry(
+                                'attributes': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "attributes",
@@ -320,7 +320,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => _i_gen
                         $,
                         {
                             'properties': ($) => ({
-                                'name': _pa.deprecated_cc(_i_generic.get_entry(
+                                'name': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "name",
@@ -331,7 +331,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => _i_gen
                                         'value deserializers': $p['value deserializers'],
                                     }
                                 )),
-                                'value': _pa.deprecated_cc(_i_generic.get_entry(
+                                'value': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "value",
@@ -360,7 +360,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
     $,
     {
         'properties': ($) => ({
-            'strict': _pa.deprecated_cc(_i_generic.get_entry(
+            'strict': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "strict",
@@ -371,7 +371,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
                     'deserializer': $p['value deserializers']['boolean'],
                 }
             )),
-            'type': _pa.deprecated_cc(_i_generic.get_entry(
+            'type': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "type",
@@ -379,7 +379,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
             ), ($) => _i_generic.process_unconstrained_state_group(
                 $,
                 {
-                    'states': _pa.dictionary.literal({
+                    'states': _p.dictionary.literal({
                         'graph': ($): _i_out._T_Graph._type.SG => ['graph', _i_generic.process_nothing(
                             $,
                             null
@@ -391,7 +391,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
                     }),
                 }
             )),
-            'name': _pa.deprecated_cc(_i_generic.get_entry(
+            'name': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "name",
@@ -407,7 +407,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => _i_generic.process_group
                     ),
                 }
             )),
-            'statements': _pa.deprecated_cc(_i_generic.get_entry(
+            'statements': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "statements",

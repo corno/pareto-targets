@@ -1,5 +1,5 @@
-import * as _pa from 'pareto-core-refiner'
-import * as _pd from 'pareto-core-dev'
+import * as _p from 'pareto-core-refiner'
+import * as _pdev from 'pareto-core-dev'
 
 import * as _i_generic from "../../generic/unmarshall"
 import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/pareto_documentation/unmarshall"
@@ -14,7 +14,7 @@ export const Graphviz_Directory: _i_signatures._T_Graphviz_Directory = ($, $p) =
         'value': ($) => _i_generic.process_unconstrained_state_group(
             $,
             {
-                'states': _pa.dictionary.literal({
+                'states': _p.dictionary.literal({
                     'file': ($): _i_out._T_Graphviz_Directory.D.SG => ['file', _i_r_graphviz.Graph(
                         $,
                         {
