@@ -1,4 +1,4 @@
-import * as _et from 'pareto-core-interface'
+import * as _pi from 'pareto-core-interface'
 
 import * as _i_core from "../../../core/resolved"
 
@@ -18,7 +18,7 @@ export type _T_SerializationChunk = {
     }>
     readonly 'nodes': _i_core._T_List<null, {
         readonly 'id': string
-        readonly 'parent': _et.Optional_Value<string>
+        readonly 'parent': _pi.Optional_Value<string>
         readonly 'annotations': _i_core._T_List<null, string>
         readonly 'classifier': _T_MetaPointer
         readonly 'containments': _i_core._T_List<null, {
@@ -84,7 +84,7 @@ export namespace _T_SerializationChunk {
             export namespace parent {
                 export type O = string
             }
-            export type parent = _et.Optional_Value<string>
+            export type parent = _pi.Optional_Value<string>
             
             export namespace annotations {
                 export type L = string
@@ -179,7 +179,7 @@ export namespace _T_SerializationChunk {
         }
         export type L = {
             readonly 'id': string
-            readonly 'parent': _et.Optional_Value<string>
+            readonly 'parent': _pi.Optional_Value<string>
             readonly 'annotations': _i_core._T_List<null, string>
             readonly 'classifier': _T_MetaPointer
             readonly 'containments': _i_core._T_List<null, {
@@ -201,7 +201,7 @@ export namespace _T_SerializationChunk {
     }
     export type nodes = _i_core._T_List<null, {
         readonly 'id': string
-        readonly 'parent': _et.Optional_Value<string>
+        readonly 'parent': _pi.Optional_Value<string>
         readonly 'annotations': _i_core._T_List<null, string>
         readonly 'classifier': _T_MetaPointer
         readonly 'containments': _i_core._T_List<null, {
@@ -264,7 +264,7 @@ export namespace SerializationChunk {
             export namespace parent {
                 export type O = string
             }
-            export type parent = _et.Optional_Value<string>
+            export type parent = _pi.Optional_Value<string>
             
             export namespace annotations {
                 export type L = string
@@ -359,7 +359,7 @@ export namespace SerializationChunk {
         }
         export type L = {
             readonly 'id': string
-            readonly 'parent': _et.Optional_Value<string>
+            readonly 'parent': _pi.Optional_Value<string>
             readonly 'annotations': _i_core._T_List<null, string>
             readonly 'classifier': _T_MetaPointer
             readonly 'containments': _i_core._T_List<null, {
@@ -381,7 +381,7 @@ export namespace SerializationChunk {
     }
     export type nodes = _i_core._T_List<null, {
         readonly 'id': string
-        readonly 'parent': _et.Optional_Value<string>
+        readonly 'parent': _pi.Optional_Value<string>
         readonly 'annotations': _i_core._T_List<null, string>
         readonly 'classifier': _T_MetaPointer
         readonly 'containments': _i_core._T_List<null, {

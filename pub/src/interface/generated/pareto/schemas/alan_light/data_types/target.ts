@@ -1,4 +1,4 @@
-import * as _et from 'pareto-core-interface'
+import * as _pi from 'pareto-core-interface'
 
 import * as _i_core from "../../../core/unconstrained"
 
@@ -38,7 +38,7 @@ export type _T_Node = {
                 readonly 'node': _T_Node
             }]
             | readonly ['text', {
-                readonly 'constraint': _et.Optional_Value<{
+                readonly 'constraint': _pi.Optional_Value<{
                     readonly 'path': _T_Path
                     readonly 'dictionary': _T_Identifier
                 }>
@@ -218,13 +218,13 @@ export namespace _T_Node {
                                 readonly 'dictionary': _T_Identifier
                             }
                         }
-                        export type constraint = _et.Optional_Value<{
+                        export type constraint = _pi.Optional_Value<{
                             readonly 'path': _T_Path
                             readonly 'dictionary': _T_Identifier
                         }>
                     }
                     export type text = {
-                        readonly 'constraint': _et.Optional_Value<{
+                        readonly 'constraint': _pi.Optional_Value<{
                             readonly 'path': _T_Path
                             readonly 'dictionary': _T_Identifier
                         }>
@@ -288,7 +288,7 @@ export namespace _T_Node {
                         readonly 'node': _T_Node
                     }]
                     | readonly ['text', {
-                        readonly 'constraint': _et.Optional_Value<{
+                        readonly 'constraint': _pi.Optional_Value<{
                             readonly 'path': _T_Path
                             readonly 'dictionary': _T_Identifier
                         }>
@@ -311,7 +311,7 @@ export namespace _T_Node {
                     readonly 'node': _T_Node
                 }]
                 | readonly ['text', {
-                    readonly 'constraint': _et.Optional_Value<{
+                    readonly 'constraint': _pi.Optional_Value<{
                         readonly 'path': _T_Path
                         readonly 'dictionary': _T_Identifier
                     }>
@@ -336,7 +336,7 @@ export namespace _T_Node {
                     readonly 'node': _T_Node
                 }]
                 | readonly ['text', {
-                    readonly 'constraint': _et.Optional_Value<{
+                    readonly 'constraint': _pi.Optional_Value<{
                         readonly 'path': _T_Path
                         readonly 'dictionary': _T_Identifier
                     }>
@@ -362,7 +362,7 @@ export namespace _T_Node {
                 readonly 'node': _T_Node
             }]
             | readonly ['text', {
-                readonly 'constraint': _et.Optional_Value<{
+                readonly 'constraint': _pi.Optional_Value<{
                     readonly 'path': _T_Path
                     readonly 'dictionary': _T_Identifier
                 }>
@@ -542,13 +542,13 @@ export namespace Node {
                                 readonly 'dictionary': _T_Identifier
                             }
                         }
-                        export type constraint = _et.Optional_Value<{
+                        export type constraint = _pi.Optional_Value<{
                             readonly 'path': _T_Path
                             readonly 'dictionary': _T_Identifier
                         }>
                     }
                     export type text = {
-                        readonly 'constraint': _et.Optional_Value<{
+                        readonly 'constraint': _pi.Optional_Value<{
                             readonly 'path': _T_Path
                             readonly 'dictionary': _T_Identifier
                         }>
@@ -612,7 +612,7 @@ export namespace Node {
                         readonly 'node': _T_Node
                     }]
                     | readonly ['text', {
-                        readonly 'constraint': _et.Optional_Value<{
+                        readonly 'constraint': _pi.Optional_Value<{
                             readonly 'path': _T_Path
                             readonly 'dictionary': _T_Identifier
                         }>
@@ -635,7 +635,7 @@ export namespace Node {
                     readonly 'node': _T_Node
                 }]
                 | readonly ['text', {
-                    readonly 'constraint': _et.Optional_Value<{
+                    readonly 'constraint': _pi.Optional_Value<{
                         readonly 'path': _T_Path
                         readonly 'dictionary': _T_Identifier
                     }>
@@ -660,7 +660,7 @@ export namespace Node {
                     readonly 'node': _T_Node
                 }]
                 | readonly ['text', {
-                    readonly 'constraint': _et.Optional_Value<{
+                    readonly 'constraint': _pi.Optional_Value<{
                         readonly 'path': _T_Path
                         readonly 'dictionary': _T_Identifier
                     }>
@@ -686,7 +686,7 @@ export namespace Node {
                 readonly 'node': _T_Node
             }]
             | readonly ['text', {
-                readonly 'constraint': _et.Optional_Value<{
+                readonly 'constraint': _pi.Optional_Value<{
                     readonly 'path': _T_Path
                     readonly 'dictionary': _T_Identifier
                 }>

@@ -1,4 +1,4 @@
-import * as _et from 'pareto-core-interface'
+import * as _pi from 'pareto-core-interface'
 
 import * as _i_core from "../../../core/resolved"
 
@@ -13,9 +13,9 @@ export type _T_ID = _i_core._T_State_Group<null,
 
 export type _T_Node_ID = {
     readonly 'id': _T_ID
-    readonly 'port': _et.Optional_Value<{
+    readonly 'port': _pi.Optional_Value<{
         readonly 'port': _T_ID
-        readonly 'compass point': _et.Optional_Value<_T_ID>
+        readonly 'compass point': _pi.Optional_Value<_T_ID>
     }>
 }
 
@@ -25,7 +25,7 @@ export type _T_Attribute_List = _i_core._T_List<null, {
 }>
 
 export type _T_Subgraph = {
-    readonly 'subgraph': _et.Optional_Value<_et.Optional_Value<_T_ID>>
+    readonly 'subgraph': _pi.Optional_Value<_pi.Optional_Value<_T_ID>>
     readonly 'statements': _T_Statement_List
 }
 
@@ -66,7 +66,7 @@ export type _T_Graph = {
         | readonly ['graph', null]
         | readonly ['digraph', null]
     >
-    readonly 'name': _et.Optional_Value<_T_ID>
+    readonly 'name': _pi.Optional_Value<_T_ID>
     readonly 'statements': _T_Statement_List
 }
 
@@ -121,16 +121,16 @@ export namespace _T_Node_ID {
                 }
                 export type O = _T_ID
             }
-            export type compass_point = _et.Optional_Value<_T_ID>
+            export type compass_point = _pi.Optional_Value<_T_ID>
         }
         export type O = {
             readonly 'port': _T_ID
-            readonly 'compass point': _et.Optional_Value<_T_ID>
+            readonly 'compass point': _pi.Optional_Value<_T_ID>
         }
     }
-    export type port = _et.Optional_Value<{
+    export type port = _pi.Optional_Value<{
         readonly 'port': _T_ID
-        readonly 'compass point': _et.Optional_Value<_T_ID>
+        readonly 'compass point': _pi.Optional_Value<_T_ID>
     }>
 }
 
@@ -162,9 +162,9 @@ export namespace _T_Subgraph {
             }
             export type O = _T_ID
         }
-        export type O = _et.Optional_Value<_T_ID>
+        export type O = _pi.Optional_Value<_T_ID>
     }
-    export type subgraph = _et.Optional_Value<_et.Optional_Value<_T_ID>>
+    export type subgraph = _pi.Optional_Value<_pi.Optional_Value<_T_ID>>
     
     export namespace statements {
     }
@@ -397,7 +397,7 @@ export namespace _T_Graph {
         }
         export type O = _T_ID
     }
-    export type name = _et.Optional_Value<_T_ID>
+    export type name = _pi.Optional_Value<_T_ID>
     
     export namespace statements {
     }
@@ -441,16 +441,16 @@ export namespace Node_ID {
                 }
                 export type O = _T_ID
             }
-            export type compass_point = _et.Optional_Value<_T_ID>
+            export type compass_point = _pi.Optional_Value<_T_ID>
         }
         export type O = {
             readonly 'port': _T_ID
-            readonly 'compass point': _et.Optional_Value<_T_ID>
+            readonly 'compass point': _pi.Optional_Value<_T_ID>
         }
     }
-    export type port = _et.Optional_Value<{
+    export type port = _pi.Optional_Value<{
         readonly 'port': _T_ID
-        readonly 'compass point': _et.Optional_Value<_T_ID>
+        readonly 'compass point': _pi.Optional_Value<_T_ID>
     }>
 }
 
@@ -482,9 +482,9 @@ export namespace Subgraph {
             }
             export type O = _T_ID
         }
-        export type O = _et.Optional_Value<_T_ID>
+        export type O = _pi.Optional_Value<_T_ID>
     }
-    export type subgraph = _et.Optional_Value<_et.Optional_Value<_T_ID>>
+    export type subgraph = _pi.Optional_Value<_pi.Optional_Value<_T_ID>>
     
     export namespace statements {
     }
@@ -717,7 +717,7 @@ export namespace Graph {
         }
         export type O = _T_ID
     }
-    export type name = _et.Optional_Value<_T_ID>
+    export type name = _pi.Optional_Value<_T_ID>
     
     export namespace statements {
     }

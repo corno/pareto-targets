@@ -1,4 +1,4 @@
-import * as _et from 'pareto-core-interface'
+import * as _pi from 'pareto-core-interface'
 
 import * as _i_core from "../../../core/resolved"
 
@@ -164,9 +164,9 @@ export type _T_Tree = {
 export type _T_End_Point_Specification = {
     readonly 'start': string
     readonly 'tail': _i_core._T_List<null, string>
-    readonly 'port data': _et.Optional_Value<{
+    readonly 'port data': _pi.Optional_Value<{
         readonly 'port': string
-        readonly 'compass direction': _et.Optional_Value<string>
+        readonly 'compass direction': _pi.Optional_Value<string>
     }>
 }
 
@@ -226,7 +226,7 @@ export type _T_Edge_Attributes = _i_core._T_List<null, _i_core._T_State_Group<nu
 >>
 
 export type _T_Graph = {
-    readonly 'name': _et.Optional_Value<string>
+    readonly 'name': _pi.Optional_Value<string>
     readonly 'tree': _T_Tree
     readonly 'type': _i_core._T_State_Group<null, 
         | readonly ['undirected', {
@@ -935,16 +935,16 @@ export namespace _T_End_Point_Specification {
             export namespace compass_direction {
                 export type O = string
             }
-            export type compass_direction = _et.Optional_Value<string>
+            export type compass_direction = _pi.Optional_Value<string>
         }
         export type O = {
             readonly 'port': string
-            readonly 'compass direction': _et.Optional_Value<string>
+            readonly 'compass direction': _pi.Optional_Value<string>
         }
     }
-    export type port_data = _et.Optional_Value<{
+    export type port_data = _pi.Optional_Value<{
         readonly 'port': string
-        readonly 'compass direction': _et.Optional_Value<string>
+        readonly 'compass direction': _pi.Optional_Value<string>
     }>
 }
 
@@ -1136,7 +1136,7 @@ export namespace _T_Graph {
     export namespace name {
         export type O = string
     }
-    export type name = _et.Optional_Value<string>
+    export type name = _pi.Optional_Value<string>
     
     export namespace tree {
     }
@@ -1936,16 +1936,16 @@ export namespace End_Point_Specification {
             export namespace compass_direction {
                 export type O = string
             }
-            export type compass_direction = _et.Optional_Value<string>
+            export type compass_direction = _pi.Optional_Value<string>
         }
         export type O = {
             readonly 'port': string
-            readonly 'compass direction': _et.Optional_Value<string>
+            readonly 'compass direction': _pi.Optional_Value<string>
         }
     }
-    export type port_data = _et.Optional_Value<{
+    export type port_data = _pi.Optional_Value<{
         readonly 'port': string
-        readonly 'compass direction': _et.Optional_Value<string>
+        readonly 'compass direction': _pi.Optional_Value<string>
     }>
 }
 
@@ -2137,7 +2137,7 @@ export namespace Graph {
     export namespace name {
         export type O = string
     }
-    export type name = _et.Optional_Value<string>
+    export type name = _pi.Optional_Value<string>
     
     export namespace tree {
     }
