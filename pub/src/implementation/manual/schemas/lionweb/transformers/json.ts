@@ -21,7 +21,7 @@ export const SerializationChunk = ($: d_in.SerializationChunk): d_out.Document =
     }))),
     "nodes": sh.v.array($.nodes.map(($) => sh.v.object({
         "id": sh.v.string($.id),
-        "parent": $.parent.transform(
+        "parent": $.parent.__decide(
             ($) => sh.v.string($),
             () => sh.v.null_()
         ),

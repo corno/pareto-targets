@@ -39,7 +39,7 @@ export const SerializationChunk: _i_signatures._T_SerializationChunk = ($, $p) =
             'delimiter': ['quote', null],
             'value': $,
         })]),
-        'parent': _p.deprecated_cc($['parent'], ($) => ['optional', $.transform(
+        'parent': _p.deprecated_cc($['parent'], ($) => ['optional', $.__decide(
             ($): _i_out._T_Value.SG.optional => ['set', ['text', ({
                 'delimiter': ['quote', null],
                 'value': $,

@@ -38,7 +38,7 @@ export const Graph: signatures.Graph = ($) => sh.group([
                 default: return _p.au($[0])
             }
         }),
-        $.name.transform(
+        $.name.__decide(
             ($) => sh.b.sub([
                 ID($),
                 sh.b.snippet(" "),
@@ -143,11 +143,11 @@ export const Attribute_List: signatures.Attribute_List = ($) => sh.b.sub([
 
 export const Node_ID: signatures.Node_ID = ($) => sh.b.sub([
     ID($.id),
-    $.port.transform(
+    $.port.__decide(
         ($) => sh.b.sub([
             sh.b.snippet(":"),
             ID($.port),
-            $['compass point'].transform(
+            $['compass point'].__decide(
                 ($) => sh.b.sub([
                     sh.b.snippet(":"),
                     ID($),
@@ -160,10 +160,10 @@ export const Node_ID: signatures.Node_ID = ($) => sh.b.sub([
 ])
 
 export const Subgraph: signatures.Subgraph = ($, $p) => sh.b.sub([
-    $.subgraph.transform(
+    $.subgraph.__decide(
         ($) => sh.b.sub([
             sh.b.snippet("subgraph "),
-            $.transform(
+            $.__decide(
                 ($) => sh.b.sub([
                     ID($),
                     sh.b.snippet(" "),

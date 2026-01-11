@@ -993,13 +993,13 @@ export const End_Point_Specification: _i_signatures._T_End_Point_Specification =
         'delimiter': ['quote', null],
         'value': $,
     })])]),
-    'port data': _p.deprecated_cc($['port data'], ($) => ['optional', $.transform(
+    'port data': _p.deprecated_cc($['port data'], ($) => ['optional', $.__decide(
         ($): _i_out._T_Value.SG.optional => ['set', ['verbose group', _p.dictionary.literal({
             'port': _p.deprecated_cc($['port'], ($) => ['text', ({
                 'delimiter': ['quote', null],
                 'value': $,
             })]),
-            'compass direction': _p.deprecated_cc($['compass direction'], ($) => ['optional', $.transform(
+            'compass direction': _p.deprecated_cc($['compass direction'], ($) => ['optional', $.__decide(
                 ($): _i_out._T_Value.SG.optional => ['set', ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1413,7 +1413,7 @@ export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($, $p) => ['li
     }
 })])]
 export const Graph: _i_signatures._T_Graph = ($, $p) => ['verbose group', _p.dictionary.literal({
-    'name': _p.deprecated_cc($['name'], ($) => ['optional', $.transform(
+    'name': _p.deprecated_cc($['name'], ($) => ['optional', $.__decide(
         ($): _i_out._T_Value.SG.optional => ['set', ['text', ({
             'delimiter': ['quote', null],
             'value': $,

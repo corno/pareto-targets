@@ -48,7 +48,7 @@ export const Node_ID: _i_signatures._T_Node_ID = ($, $p) => ['verbose group', _p
             'value serializers': $p['value serializers'],
         }
     )),
-    'port': _p.deprecated_cc($['port'], ($) => ['optional', $.transform(
+    'port': _p.deprecated_cc($['port'], ($) => ['optional', $.__decide(
         ($): _i_out._T_Value.SG.optional => ['set', ['verbose group', _p.dictionary.literal({
             'port': _p.deprecated_cc($['port'], ($) => ID(
                 $,
@@ -56,7 +56,7 @@ export const Node_ID: _i_signatures._T_Node_ID = ($, $p) => ['verbose group', _p
                     'value serializers': $p['value serializers'],
                 }
             )),
-            'compass point': _p.deprecated_cc($['compass point'], ($) => ['optional', $.transform(
+            'compass point': _p.deprecated_cc($['compass point'], ($) => ['optional', $.__decide(
                 ($): _i_out._T_Value.SG.optional => ['set', ID(
                     $,
                     {
@@ -84,8 +84,8 @@ export const Attribute_List: _i_signatures._T_Attribute_List = ($, $p) => ['list
     )),
 })])]
 export const Subgraph: _i_signatures._T_Subgraph = ($, $p) => ['verbose group', _p.dictionary.literal({
-    'subgraph': _p.deprecated_cc($['subgraph'], ($) => ['optional', $.transform(
-        ($): _i_out._T_Value.SG.optional => ['set', ['optional', $.transform(
+    'subgraph': _p.deprecated_cc($['subgraph'], ($) => ['optional', $.__decide(
+        ($): _i_out._T_Value.SG.optional => ['set', ['optional', $.__decide(
             ($): _i_out._T_Value.SG.optional => ['set', ID(
                 $,
                 {
@@ -257,7 +257,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => ['verbose group', _p.dic
             default: return _p.au($[0])
         }
     })]),
-    'name': _p.deprecated_cc($['name'], ($) => ['optional', $.transform(
+    'name': _p.deprecated_cc($['name'], ($) => ['optional', $.__decide(
         ($): _i_out._T_Value.SG.optional => ['set', ID(
             $,
             {

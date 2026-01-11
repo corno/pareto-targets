@@ -33,7 +33,7 @@
 //                     default: return pa.au($[0])
 //                 }
 //             }),
-//             $.name.transform(
+//             $.name.__decide(
 //                 ($) => sh.b.sub([
 //                     sh.b.snippet(op['serialize with quote delimiter']($)),
 //                     sh.b.snippet(" "),
@@ -117,7 +117,7 @@
 //                 case 'node': return pa.ss($, ($) => {
 //                     return sh.b.sub([
 //                         sh.b.snippet(op['serialize with quote delimiter']($.node)),
-//                         $['port data'].transform(
+//                         $['port data'].__decide(
 //                             ($) => sh.b.snippet("FIXME"),
 //                             () => sh.b.nothing()
 //                         )

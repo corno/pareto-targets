@@ -86,7 +86,7 @@ export const Node: _i_signatures._T_Node = ($, $p) => ['verbose group', _p.dicti
                 case 'text': return _p.ss($, ($) => ({
                     'state': "text",
                     'value': ['verbose group', _p.dictionary.literal({
-                        'constraint': _p.deprecated_cc($['constraint'], ($) => ['optional', $.transform(
+                        'constraint': _p.deprecated_cc($['constraint'], ($) => ['optional', $.__decide(
                             ($): _i_out._T_Value.SG.optional => ['set', ['verbose group', _p.dictionary.literal({
                                 'path': _p.deprecated_cc($['path'], ($) => Path(
                                     $,
