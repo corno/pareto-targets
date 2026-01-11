@@ -5,7 +5,7 @@ import * as _i_signatures from "../../../../../interface/generated/pareto/schema
 import * as _i_out from "../../../../../interface/generated/pareto/core/astn_target"
 
 
-export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => ['list', $.map(($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
+export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => ['list', $.__l_map(($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
     switch ($[0]) {
         case 'concentrate': return _p.ss($, ($) => ({
             'state': "concentrate",
@@ -634,7 +634,7 @@ export const Graph_Attributes: _i_signatures._T_Graph_Attributes = ($, $p) => ['
         default: return _p.au($[0])
     }
 })])]
-export const Node_Attributes: _i_signatures._T_Node_Attributes = ($, $p) => ['list', $.map(($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
+export const Node_Attributes: _i_signatures._T_Node_Attributes = ($, $p) => ['list', $.__l_map(($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
     switch ($[0]) {
         case 'color': return _p.ss($, ($) => ({
             'state': "color",
@@ -989,7 +989,7 @@ export const End_Point_Specification: _i_signatures._T_End_Point_Specification =
         'delimiter': ['quote', null],
         'value': $,
     })]),
-    'tail': _p.deprecated_cc($['tail'], ($) => ['list', $.map(($) => ['text', ({
+    'tail': _p.deprecated_cc($['tail'], ($) => ['list', $.__l_map(($) => ['text', ({
         'delimiter': ['quote', null],
         'value': $,
     })])]),
@@ -1010,7 +1010,7 @@ export const End_Point_Specification: _i_signatures._T_End_Point_Specification =
         () => ['not set', null]
     )]),
 })]
-export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($, $p) => ['list', $.map(($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
+export const Edge_Attributes: _i_signatures._T_Edge_Attributes = ($, $p) => ['list', $.__l_map(($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
     switch ($[0]) {
         case 'arrowhead': return _p.ss($, ($) => ({
             'state': "arrowhead",
@@ -1431,7 +1431,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => ['verbose group', _p.dic
             case 'undirected': return _p.ss($, ($) => ({
                 'state': "undirected",
                 'value': ['verbose group', _p.dictionary.literal({
-                    'edges': _p.deprecated_cc($['edges'], ($) => ['list', $.map(($) => ['verbose group', _p.dictionary.literal({
+                    'edges': _p.deprecated_cc($['edges'], ($) => ['list', $.__l_map(($) => ['verbose group', _p.dictionary.literal({
                         'yin': _p.deprecated_cc($['yin'], ($) => End_Point_Specification(
                             $,
                             {
@@ -1456,7 +1456,7 @@ export const Graph: _i_signatures._T_Graph = ($, $p) => ['verbose group', _p.dic
             case 'directed': return _p.ss($, ($) => ({
                 'state': "directed",
                 'value': ['verbose group', _p.dictionary.literal({
-                    'edges': _p.deprecated_cc($['edges'], ($) => ['list', $.map(($) => ['verbose group', _p.dictionary.literal({
+                    'edges': _p.deprecated_cc($['edges'], ($) => ['list', $.__l_map(($) => ['verbose group', _p.dictionary.literal({
                         'from': _p.deprecated_cc($['from'], ($) => End_Point_Specification(
                             $,
                             {

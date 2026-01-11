@@ -10,7 +10,7 @@ export const Identifier: _i_signatures._T_Identifier = ($, $p) => ['text', ({
     'value': $,
 })]
 export const Path: _i_signatures._T_Path = ($, $p) => ['verbose group', _p.dictionary.literal({
-    'up steps': _p.deprecated_cc($['up steps'], ($) => ['list', $.map(($) => ['verbose group', _p.dictionary.literal({
+    'up steps': _p.deprecated_cc($['up steps'], ($) => ['list', $.__l_map(($) => ['verbose group', _p.dictionary.literal({
     })])]),
     'context': _p.deprecated_cc($['context'], ($) => ['verbose group', _p.dictionary.literal({
         'sibling': _p.deprecated_cc($['sibling'], ($) => ['verbose group', _p.dictionary.literal({
@@ -24,7 +24,7 @@ export const Path: _i_signatures._T_Path = ($, $p) => ['verbose group', _p.dicti
             )),
         })]),
     })]),
-    'selection steps': _p.deprecated_cc($['selection steps'], ($) => ['list', $.map(($) => ['verbose group', _p.dictionary.literal({
+    'selection steps': _p.deprecated_cc($['selection steps'], ($) => ['list', $.__l_map(($) => ['verbose group', _p.dictionary.literal({
         'group': _p.deprecated_cc($['group'], ($) => ['verbose group', _p.dictionary.literal({
             'name': _p.deprecated_cc($['name'], ($) => Identifier(
                 $,

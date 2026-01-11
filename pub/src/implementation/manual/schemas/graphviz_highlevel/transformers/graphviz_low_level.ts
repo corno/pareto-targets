@@ -23,7 +23,7 @@ export const Graph = ($: d_in.Graph): d_out.Graph => ({
         Tree($.tree, { 'path': _p.list.literal([]) }),
         _p.sg($.type, ($): d_out.Graph.statements => {
             switch ($[0]) {
-                case 'directed': return _p.ss($, ($) => $.edges.map(($): d_out.Statement_List.L => ['edge', {
+                case 'directed': return _p.ss($, ($) => $.edges.__l_map(($): d_out.Statement_List.L => ['edge', {
                     "left": ['node', {
                         'id': ['string', $.from.start],
                         'port': _p.optional.not_set()
@@ -34,7 +34,7 @@ export const Graph = ($: d_in.Graph): d_out.Graph => ({
                             'port': _p.optional.not_set()
                         }]
                     ]),
-                    "attributes": $.attributes.map(($) => _p.sg($, ($): d_out.Attribute_List.L => {
+                    "attributes": $.attributes.__l_map(($) => _p.sg($, ($): d_out.Attribute_List.L => {
                         switch ($[0]) {
                             case 'arrowhead': return _p.ss($, ($) => ({ "name": ['id', "arrowhead"], "value": ['string', $] }))
                             case 'arrowsize': return _p.ss($, ($) => ({ "name": ['id', "arrowsize"], "value": ['number', $] }))
@@ -87,7 +87,7 @@ export const Graph = ($: d_in.Graph): d_out.Graph => ({
                         }
                     }))
                 }]))
-                case 'undirected': return _p.ss($, ($) => $.edges.map(($): d_out.Statement_List.L => ['edge', {
+                case 'undirected': return _p.ss($, ($) => $.edges.__l_map(($): d_out.Statement_List.L => ['edge', {
                     "left": ['node', {
                         'id': ['string', $.yin.start],
                         'port': _p.optional.not_set()
@@ -137,7 +137,7 @@ export const Tree = (
                                         'value': ['string', key],
                                     }
                                 ],
-                                $.attributes.map(($): d_out.Attribute_List.L => _p.sg($, ($) => {
+                                $.attributes.__l_map(($): d_out.Attribute_List.L => _p.sg($, ($) => {
                                     switch ($[0]) {
                                         case 'color': return _p.ss($, ($) => ({ "name": ['id', "color"], "value": ['string', $] }))
                                         default: return _pdev.implement_me("xx")

@@ -69,7 +69,7 @@ export const Node_ID: _i_signatures._T_Node_ID = ($, $p) => ['verbose group', _p
         () => ['not set', null]
     )]),
 })]
-export const Attribute_List: _i_signatures._T_Attribute_List = ($, $p) => ['list', $.map(($) => ['verbose group', _p.dictionary.literal({
+export const Attribute_List: _i_signatures._T_Attribute_List = ($, $p) => ['list', $.__l_map(($) => ['verbose group', _p.dictionary.literal({
     'name': _p.deprecated_cc($['name'], ($) => ID(
         $,
         {
@@ -103,7 +103,7 @@ export const Subgraph: _i_signatures._T_Subgraph = ($, $p) => ['verbose group', 
         }
     )),
 })]
-export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list', $.map(($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
+export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list', $.__l_map(($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
     switch ($[0]) {
         case 'node': return _p.ss($, ($) => ({
             'state': "node",
@@ -148,7 +148,7 @@ export const Statement_List: _i_signatures._T_Statement_List = ($, $p) => ['list
                         default: return _p.au($[0])
                     }
                 })]),
-                'right': _p.deprecated_cc($['right'], ($) => ['list', $.map(($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
+                'right': _p.deprecated_cc($['right'], ($) => ['list', $.__l_map(($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
                     switch ($[0]) {
                         case 'node': return _p.ss($, ($) => ({
                             'state': "node",

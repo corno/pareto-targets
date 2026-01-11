@@ -15,7 +15,7 @@ export const Schema_Tree = ($: d_in.Schema_Tree): d_out.Group_Part => _p.sg($, (
             sh.g.simple_block(`types:`),
             sh.g.nested_block([
                 sh.b.indent([
-                    sh.g.sub($.types['ordered list'].map(($) => sh.g.sub([
+                    sh.g.sub($.types['ordered list'].__l_map(($) => sh.g.sub([
                         sh.g.simple_block($.key)
                     ])))
                 ])
@@ -35,7 +35,7 @@ export const Schema_Tree = ($: d_in.Schema_Tree): d_out.Group_Part => _p.sg($, (
     }
 })
 
-export const Schemas = ($: d_in.Schemas): d_out.Group_Part => sh.g.sub($['ordered list'].map(($) => sh.g.sub([
+export const Schemas = ($: d_in.Schemas): d_out.Group_Part => sh.g.sub($['ordered list'].__l_map(($) => sh.g.sub([
     sh.g.simple_block($.key),
     sh.g.nested_block([
         sh.b.indent([

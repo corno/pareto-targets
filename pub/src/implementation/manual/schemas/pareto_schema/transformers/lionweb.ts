@@ -77,7 +77,7 @@ export const Type_Node_2_Document_nodes = (
                     'containments': _p.list.literal([
                         {
                             'containment': MetaPointer("properties"),
-                            'children': $['ordered list'].map(($) => $p.path + "." + $.key),
+                            'children': $['ordered list'].__l_map(($) => $p.path + "." + $.key),
                         },
                     ]),
                     'properties': _p.list.literal([]),

@@ -54,7 +54,7 @@ export const Graph: signatures.Graph = ($) => sh.group([
 export const Statement_List: signatures.Statement_List = ($, $p) => sh.b.sub([
     sh.b.snippet("{"),
     sh.b.indent([
-        sh.g.sub($.map(($) => sh.g.nested_block([
+        sh.g.sub($.__l_map(($) => sh.g.nested_block([
             _p.sg($, ($) => {
                 switch ($[0]) {
                     case 'attribute assignment': return _p.ss($, ($) => sh.b.sub([
@@ -90,7 +90,7 @@ export const Statement_List: signatures.Statement_List = ($, $p) => sh.b.sub([
                                 default: return _p.au($[0])
                             }
                         }),
-                        sh.b.sub(op_enrich_list_elements_with_position_information($.right).map(($) => sh.b.sub([
+                        sh.b.sub(op_enrich_list_elements_with_position_information($.right).__l_map(($) => sh.b.sub([
                             _p.sg($.value, ($) => {
                                 switch ($[0]) {
                                     case 'node': return _p.ss($, ($) => Node_ID($))
@@ -132,7 +132,7 @@ export const ID: signatures.ID = ($) => _p.sg($, ($) => {
 
 export const Attribute_List: signatures.Attribute_List = ($) => sh.b.sub([
     sh.b.snippet(" [ "),
-    sh.b.sub($.map(($) => sh.b.sub([
+    sh.b.sub($.__l_map(($) => sh.b.sub([
         ID($.name),
         sh.b.snippet("="),
         ID($.value),
