@@ -35,7 +35,7 @@ export const Schema_Tree = (
     }
 })
 
-export const Schemas = ($: d_in_s.Schemas): d_out.Directory => $.dictionary.map<d_out.Directory.D>(($, key) => sh.n.directory(Schema_Tree($, { 'graph name': key })))
+export const Schemas = ($: d_in_s.Schemas): d_out.Directory => $.dictionary.__d_map(($, key) => sh.n.directory(Schema_Tree($, { 'graph name': key })))
 
 export const Module = (
     $: d_in.Module,

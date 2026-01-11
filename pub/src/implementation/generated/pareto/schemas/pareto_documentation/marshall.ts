@@ -6,7 +6,7 @@ import * as _i_out from "../../../../../interface/generated/pareto/core/astn_tar
 import * as _i_r_graphviz from "../graphviz_high_level/marshall"
 
 
-export const Graphviz_Directory: _i_signatures._T_Graphviz_Directory = ($, $p) => ['dictionary', $.map(($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
+export const Graphviz_Directory: _i_signatures._T_Graphviz_Directory = ($, $p) => ['dictionary', $.__d_map(($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
     switch ($[0]) {
         case 'file': return _p.ss($, ($) => ({
             'state': "file",

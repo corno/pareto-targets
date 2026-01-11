@@ -77,7 +77,7 @@ export const Schema = (
     'name': _p.optional.set($p['graph name']),
     'tree': {
         'attributes': _p.list.literal([]),
-        'elements': $.types.dictionary.map<d_out.Tree.elements.D>(($) => ['node', {
+        'elements': $.types.dictionary.__d_map(($) => ['node', {
             'attributes': _p.list.literal([]),
         }]),
     },

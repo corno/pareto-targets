@@ -100,7 +100,7 @@ export const SerializationChunk: _i_signatures._T_SerializationChunk = ($, $p) =
         })])]),
     })])]),
 })]
-export const SerializationChunks: _i_signatures._T_SerializationChunks = ($, $p) => ['dictionary', $.map(($) => SerializationChunk(
+export const SerializationChunks: _i_signatures._T_SerializationChunks = ($, $p) => ['dictionary', $.__d_map(($) => SerializationChunk(
     $,
     {
         'value serializers': $p['value serializers'],

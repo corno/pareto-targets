@@ -52,7 +52,7 @@ export const Path: _i_signatures._T_Path = ($, $p) => ['verbose group', _p.dicti
     })])]),
 })]
 export const Node: _i_signatures._T_Node = ($, $p) => ['verbose group', _p.dictionary.literal({
-    'properties': _p.deprecated_cc($['properties'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+    'properties': _p.deprecated_cc($['properties'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
         'type': _p.deprecated_cc($['type'], ($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
             switch ($[0]) {
                 case 'collection': return _p.ss($, ($) => ({
@@ -108,8 +108,8 @@ export const Node: _i_signatures._T_Node = ($, $p) => ['verbose group', _p.dicti
                 case 'state group': return _p.ss($, ($) => ({
                     'state': "state group",
                     'value': ['verbose group', _p.dictionary.literal({
-                        'states': _p.deprecated_cc($['states'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
-                            'constraints': _p.deprecated_cc($['constraints'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+                        'states': _p.deprecated_cc($['states'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
+                            'constraints': _p.deprecated_cc($['constraints'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
                                 'path': _p.deprecated_cc($['path'], ($) => Path(
                                     $,
                                     {
@@ -132,7 +132,7 @@ export const Node: _i_signatures._T_Node = ($, $p) => ['verbose group', _p.dicti
     })])]),
 })]
 export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _p.dictionary.literal({
-    'numerical types': _p.deprecated_cc($['numerical types'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+    'numerical types': _p.deprecated_cc($['numerical types'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
     })])]),
     'root': _p.deprecated_cc($['root'], ($) => Node(
         $,

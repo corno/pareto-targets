@@ -939,7 +939,7 @@ export const Tree: _i_signatures._T_Tree = ($, $p) => ['verbose group', _p.dicti
             'value serializers': $p['value serializers'],
         }
     )),
-    'elements': _p.deprecated_cc($['elements'], ($) => ['dictionary', $.map(($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
+    'elements': _p.deprecated_cc($['elements'], ($) => ['dictionary', $.__d_map(($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
         switch ($[0]) {
             case 'node': return _p.ss($, ($) => ({
                 'state': "node",
