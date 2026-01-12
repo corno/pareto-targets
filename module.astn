@@ -1,28 +1,27 @@
 (
-    'operations': {
-    }
     'schema tree': | 'set' {
         `alan light`: | 'schema' (
-            'complexity': | 'unconstrained' ~
+            'imports': {
+            }
             'globals': (
                 'complexity': | 'unconstrained' ~
-                'number types': {
-                }
                 'text types': {
                     `Pseudo Reference`: (
                         'type': | 'single line' ~
                     )
                 }
+                'number types': {
+                }
             )
-            'imports': {
-            }
             'types': {
                 `Identifier`: (
-                    'node': | 'text' | 'global' `Pseudo Reference`
                     'type parameters': {
                     }
+                    'node': | 'text' | 'global' `Pseudo Reference`
                 )
                 `Path`: (
+                    'type parameters': {
+                    }
                     'node': | 'group' {
                         `up steps`: (
                             'description': ~
@@ -85,10 +84,10 @@
                             )
                         )
                     }
-                    'type parameters': {
-                    }
                 )
                 `Node`: (
+                    'type parameters': {
+                    }
                     'node': | 'group' {
                         `properties`: (
                             'description': ~
@@ -173,10 +172,10 @@
                             )
                         )
                     }
-                    'type parameters': {
-                    }
                 )
                 `Root`: (
+                    'type parameters': {
+                    }
                     'node': | 'group' {
                         `numerical types`: (
                             'description': ~
@@ -191,27 +190,27 @@
                             'node': | 'component' | 'internal' `Node`
                         )
                     }
-                    'type parameters': {
-                    }
                 )
             }
+            'complexity': | 'unconstrained' ~
         )
         `graphviz high level`: | 'schema' (
-            'complexity': | 'unconstrained' ~
+            'imports': {
+            }
             'globals': (
                 'complexity': | 'unconstrained' ~
-                'number types': {
-                }
                 'text types': {
                     `Text Value`: (
                         'type': | 'single line' ~
                     )
                 }
+                'number types': {
+                }
             )
-            'imports': {
-            }
             'types': {
                 `Graph Attributes`: (
+                    'type parameters': {
+                    }
                     'node': | 'list' (
                         'node': | 'state group' {
                             `concentrate`: (
@@ -648,10 +647,10 @@
                             )
                         }
                     )
-                    'type parameters': {
-                    }
                 )
                 `Node Attributes`: (
+                    'type parameters': {
+                    }
                     'node': | 'list' (
                         'node': | 'state group' {
                             `color`: (
@@ -841,10 +840,10 @@
                             )
                         }
                     )
-                    'type parameters': {
-                    }
                 )
                 `Tree`: (
+                    'type parameters': {
+                    }
                     'node': | 'group' {
                         `attributes`: (
                             'description': ~
@@ -894,10 +893,10 @@
                             )
                         )
                     }
-                    'type parameters': {
-                    }
                 )
                 `End Point Specification`: (
+                    'type parameters': {
+                    }
                     'node': | 'group' {
                         `start`: (
                             'description': ~
@@ -923,10 +922,10 @@
                             }
                         )
                     }
-                    'type parameters': {
-                    }
                 )
                 `Edge Attributes`: (
+                    'type parameters': {
+                    }
                     'node': | 'list' (
                         'node': | 'state group' {
                             `arrowhead`: (
@@ -1170,10 +1169,10 @@
                             )
                         }
                     )
-                    'type parameters': {
-                    }
                 )
                 `Graph`: (
+                    'type parameters': {
+                    }
                     'node': | 'group' {
                         `name`: (
                             'description': ~
@@ -1237,10 +1236,10 @@
                             }
                         )
                     }
-                    'type parameters': {
-                    }
                 )
                 `Attribute Value`: (
+                    'type parameters': {
+                    }
                     'node': | 'state group' {
                         `number`: (
                             'description': ~
@@ -1255,31 +1254,31 @@
                             'node': | 'text' | 'global' `Text Value`
                         )
                     }
-                    'type parameters': {
-                    }
                 )
             }
+            'complexity': | 'unconstrained' ~
         )
         `pareto documentation`: | 'schema' (
-            'complexity': | 'unconstrained' ~
+            'imports': {
+                `graphviz`: (
+                    'schema set child': `graphviz high level`
+                    'schema': ~
+                )
+            }
             'globals': (
                 'complexity': | 'unconstrained' ~
-                'number types': {
-                }
                 'text types': {
                     `Text Value`: (
                         'type': | 'single line' ~
                     )
                 }
+                'number types': {
+                }
             )
-            'imports': {
-                `graphviz`: (
-                    'schema': ~
-                    'schema set child': `graphviz high level`
-                )
-            }
             'types': {
                 `Graphviz Directory`: (
+                    'type parameters': {
+                    }
                     'node': | 'dictionary' (
                         'node': | 'state group' {
                             `file`: (
@@ -1296,17 +1295,15 @@
                         }
                         'ordered': `false`
                     )
-                    'type parameters': {
-                    }
                 )
             }
+            'complexity': | 'unconstrained' ~
         )
         `graphviz low level`: | 'schema' (
-            'complexity': | 'unconstrained' ~
+            'imports': {
+            }
             'globals': (
                 'complexity': | 'unconstrained' ~
-                'number types': {
-                }
                 'text types': {
                     `id`: (
                         'type': | 'single line' ~
@@ -1318,11 +1315,13 @@
                         'type': | 'single line' ~
                     )
                 }
+                'number types': {
+                }
             )
-            'imports': {
-            }
             'types': {
                 `ID`: (
+                    'type parameters': {
+                    }
                     'node': | 'state group' {
                         `id`: (
                             'description': ~
@@ -1346,10 +1345,10 @@
                             )
                         )
                     }
-                    'type parameters': {
-                    }
                 )
                 `Node ID`: (
+                    'type parameters': {
+                    }
                     'node': | 'group' {
                         `id`: (
                             'description': ~
@@ -1369,10 +1368,10 @@
                             }
                         )
                     }
-                    'type parameters': {
-                    }
                 )
                 `Attribute List`: (
+                    'type parameters': {
+                    }
                     'node': | 'list' (
                         'node': | 'group' {
                             `name`: (
@@ -1385,10 +1384,10 @@
                             )
                         }
                     )
-                    'type parameters': {
-                    }
                 )
                 `Subgraph`: (
+                    'type parameters': {
+                    }
                     'node': | 'group' {
                         `subgraph`: (
                             'description': ~
@@ -1399,10 +1398,10 @@
                             'node': | 'component' | 'internal cyclic' `Statement List`
                         )
                     }
-                    'type parameters': {
-                    }
                 )
                 `Statement List`: (
+                    'type parameters': {
+                    }
                     'node': | 'list' (
                         'node': | 'state group' {
                             `node`: (
@@ -1500,10 +1499,10 @@
                             )
                         }
                     )
-                    'type parameters': {
-                    }
                 )
                 `Graph`: (
+                    'type parameters': {
+                    }
                     'node': | 'group' {
                         `strict`: (
                             'description': ~
@@ -1531,17 +1530,15 @@
                             'node': | 'component' | 'internal' `Statement List`
                         )
                     }
-                    'type parameters': {
-                    }
                 )
             }
+            'complexity': | 'unconstrained' ~
         )
         `lionweb`: | 'schema' (
-            'complexity': | 'unconstrained' ~
+            'imports': {
+            }
             'globals': (
                 'complexity': | 'unconstrained' ~
-                'number types': {
-                }
                 'text types': {
                     `String`: (
                         'type': | 'single line' ~
@@ -1550,11 +1547,13 @@
                         'type': | 'single line' ~
                     )
                 }
+                'number types': {
+                }
             )
-            'imports': {
-            }
             'types': {
                 `MetaPointer`: (
+                    'type parameters': {
+                    }
                     'node': | 'group' {
                         `language`: (
                             'description': ~
@@ -1569,10 +1568,10 @@
                             'node': | 'text' | 'global' `Id`
                         )
                     }
-                    'type parameters': {
-                    }
                 )
                 `SerializationChunk`: (
+                    'type parameters': {
+                    }
                     'node': | 'group' {
                         `serializationFormatVersion`: (
                             'description': ~
@@ -1677,18 +1676,19 @@
                             )
                         )
                     }
-                    'type parameters': {
-                    }
                 )
                 `SerializationChunks`: (
+                    'type parameters': {
+                    }
                     'node': | 'dictionary' (
                         'node': | 'component' | 'internal' `SerializationChunk`
                         'ordered': `false`
                     )
-                    'type parameters': {
-                    }
                 )
             }
+            'complexity': | 'unconstrained' ~
         )
+    }
+    'operations': {
     }
 )
