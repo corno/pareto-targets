@@ -1,7 +1,7 @@
 import * as _pi from 'pareto-core-interface'
 
-import * as d_module from "pareto/dist/interface/generated/pareto/schemas/module/data_types/target"
-import * as d_path from "pareto-resources/dist/interface/generated/pareto/schemas/path/data_types/source"
+import * as d_module from "pareto/dist/interface/generated/pareto/schemas/module/data"
+import * as d_path from "pareto-resources/dist/interface/generated/pareto/schemas/path/data"
 import * as d_write_to_directory from "../../modules/pareto-fountain-pen-directory/interface/to_be_generated/write_to_dictionary"
 
 export type Error = d_write_to_directory.Error

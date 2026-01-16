@@ -1,7 +1,7 @@
 import * as _p from 'pareto-core-transformer'
 
-import * as d_in from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"
-import * as d_out from "../../../../../interface/generated/pareto/schemas/graphviz_high_level/data_types/target"
+import * as d_in from "pareto/dist/interface/generated/pareto/schemas/schema/data"
+import * as d_out from "../../../../../interface/generated/pareto/schemas/graphviz_high_level/data"
 
 
 export const Type_Node = (

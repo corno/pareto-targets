@@ -1,4 +1,4 @@
-import * as d_in from "../../../../../interface/generated/pareto/schemas/lionweb/data_types/target"
+import * as d_in from "../../../../../interface/generated/pareto/schemas/lionweb/data"
 import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data"
 
 //dependencies

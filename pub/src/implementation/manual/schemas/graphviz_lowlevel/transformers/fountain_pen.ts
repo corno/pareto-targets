@@ -1,7 +1,7 @@
 import * as _p from 'pareto-core-transformer'
 import * as _pi from 'pareto-core-interface'
 
-import * as d_in from "../../../../../interface/generated/pareto/schemas/graphviz_low_level/data_types/target"
+import * as d_in from "../../../../../interface/generated/pareto/schemas/graphviz_low_level/data"
 import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data"
 
 type Parameters = {

@@ -1,6 +1,6 @@
 
-import * as d_in from "../../../../../interface/generated/pareto/schemas/lionweb/data_types/target"
-import * as d_out from "pareto-json/dist/interface/generated/pareto/schemas/json/data_types/target"
+import * as d_in from "../../../../../interface/generated/pareto/schemas/lionweb/data"
+import * as d_out from "pareto-json/dist/interface/generated/pareto/schemas/json/data"
 
 import * as sh from "pareto-json/dist/shorthands/json"
 

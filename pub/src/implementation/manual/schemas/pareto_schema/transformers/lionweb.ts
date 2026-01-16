@@ -2,8 +2,8 @@ import * as _p from 'pareto-core-transformer'
 
 //interface
 
-import * as d_in from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"
-import * as d_out from "../../../../../interface/generated/pareto/schemas/lionweb/data_types/target"
+import * as d_in from "pareto/dist/interface/generated/pareto/schemas/schema/data"
+import * as d_out from "../../../../../interface/generated/pareto/schemas/lionweb/data"
 
 //dependencies
 
