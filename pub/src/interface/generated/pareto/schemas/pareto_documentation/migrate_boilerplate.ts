@@ -1,47 +1,26 @@
+
 import * as _pi from "pareto-core-interface"
+
+import * as i_out from "./data"
+
+import * as i_in from "./data"
+
+export namespace Graphviz_Directory_ {
     
-    import * as _i_out from "./data_types/target"
-    import * as _i_in from "./data_types/source"
+    export type I = i_in.Graphviz_Directory
     
-    // **** TYPES
+    export type O = i_out.Graphviz_Directory
     
-    export type _T_Graphviz_Directory = (
-        $$_: _i_in._T_Graphviz_Directory,
-        $$_p: null,
-    ) => _i_out._T_Graphviz_Directory
-    
-    // **** FRIENDLY NAMES FOR THE GLOBAL TYPES
-    
-    export type Graphviz_Directory = _T_Graphviz_Directory
-    
-    // **** ALIASES FOR NESTED TYPE WITH PREFIXED ROOT NAMES
-    
-    export namespace _T_Graphviz_Directory {
+    export namespace P {
         
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Graphviz_Directory
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Graphviz_Directory
     }
     
-    // *** ALIASES FOR NESTED TYPES
-    
-    export namespace Graphviz_Directory {
-        
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Graphviz_Directory
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Graphviz_Directory
-    }
+}
+
+export type Graphviz_Directory_ = (
+    $$_: Graphviz_Directory_.I,
+) => Graphviz_Directory_.O
+
+export { 
+    Graphviz_Directory_ as Graphviz_Directory, 
+}

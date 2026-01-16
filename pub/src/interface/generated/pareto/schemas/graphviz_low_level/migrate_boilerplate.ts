@@ -1,222 +1,111 @@
+
 import * as _pi from "pareto-core-interface"
+
+import * as i_out from "./data"
+
+import * as i_in from "./data"
+
+export namespace ID_ {
     
-    import * as _i_out from "./data_types/target"
-    import * as _i_in from "./data_types/source"
+    export type I = i_in.ID
     
-    // **** TYPES
+    export type O = i_out.ID
     
-    export type _T_ID = (
-        $$_: _i_in._T_ID,
-        $$_p: null,
-    ) => _i_out._T_ID
-    
-    export type _T_Node_ID = (
-        $$_: _i_in._T_Node_ID,
-        $$_p: null,
-    ) => _i_out._T_Node_ID
-    
-    export type _T_Attribute_List = (
-        $$_: _i_in._T_Attribute_List,
-        $$_p: null,
-    ) => _i_out._T_Attribute_List
-    
-    export type _T_Subgraph = (
-        $$_: _i_in._T_Subgraph,
-        $$_p: null,
-    ) => _i_out._T_Subgraph
-    
-    export type _T_Statement_List = (
-        $$_: _i_in._T_Statement_List,
-        $$_p: null,
-    ) => _i_out._T_Statement_List
-    
-    export type _T_Graph = (
-        $$_: _i_in._T_Graph,
-        $$_p: null,
-    ) => _i_out._T_Graph
-    
-    // **** FRIENDLY NAMES FOR THE GLOBAL TYPES
-    
-    export type ID = _T_ID
-    
-    export type Node_ID = _T_Node_ID
-    
-    export type Attribute_List = _T_Attribute_List
-    
-    export type Subgraph = _T_Subgraph
-    
-    export type Statement_List = _T_Statement_List
-    
-    export type Graph = _T_Graph
-    
-    // **** ALIASES FOR NESTED TYPE WITH PREFIXED ROOT NAMES
-    
-    export namespace _T_ID {
+    export namespace P {
         
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_ID
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_ID
     }
     
-    export namespace _T_Node_ID {
+}
+
+export type ID_ = (
+    $$_: ID_.I,
+) => ID_.O
+
+export namespace Node_ID_ {
+    
+    export type I = i_in.Node_ID
+    
+    export type O = i_out.Node_ID
+    
+    export namespace P {
         
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Node_ID
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Node_ID
     }
     
-    export namespace _T_Attribute_List {
+}
+
+export type Node_ID_ = (
+    $$_: Node_ID_.I,
+) => Node_ID_.O
+
+export namespace Attribute_List_ {
+    
+    export type I = i_in.Attribute_List
+    
+    export type O = i_out.Attribute_List
+    
+    export namespace P {
         
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Attribute_List
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Attribute_List
     }
     
-    export namespace _T_Subgraph {
+}
+
+export type Attribute_List_ = (
+    $$_: Attribute_List_.I,
+) => Attribute_List_.O
+
+export namespace Subgraph_ {
+    
+    export type I = i_in.Subgraph
+    
+    export type O = i_out.Subgraph
+    
+    export namespace P {
         
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Subgraph
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Subgraph
     }
     
-    export namespace _T_Statement_List {
+}
+
+export type Subgraph_ = (
+    $$_: Subgraph_.I,
+) => Subgraph_.O
+
+export namespace Statement_List_ {
+    
+    export type I = i_in.Statement_List
+    
+    export type O = i_out.Statement_List
+    
+    export namespace P {
         
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Statement_List
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Statement_List
     }
     
-    export namespace _T_Graph {
+}
+
+export type Statement_List_ = (
+    $$_: Statement_List_.I,
+) => Statement_List_.O
+
+export namespace Graph_ {
+    
+    export type I = i_in.Graph
+    
+    export type O = i_out.Graph
+    
+    export namespace P {
         
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Graph
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Graph
     }
     
-    // *** ALIASES FOR NESTED TYPES
-    
-    export namespace ID {
-        
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_ID
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_ID
-    }
-    
-    export namespace Node_ID {
-        
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Node_ID
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Node_ID
-    }
-    
-    export namespace Attribute_List {
-        
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Attribute_List
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Attribute_List
-    }
-    
-    export namespace Subgraph {
-        
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Subgraph
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Subgraph
-    }
-    
-    export namespace Statement_List {
-        
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Statement_List
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Statement_List
-    }
-    
-    export namespace Graph {
-        
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Graph
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Graph
-    }
+}
+
+export type Graph_ = (
+    $$_: Graph_.I,
+) => Graph_.O
+
+export { 
+    ID_ as ID, 
+    Node_ID_ as Node_ID, 
+    Attribute_List_ as Attribute_List, 
+    Subgraph_ as Subgraph, 
+    Statement_List_ as Statement_List, 
+    Graph_ as Graph, 
+}

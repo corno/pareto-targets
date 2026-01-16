@@ -1,257 +1,128 @@
+
 import * as _pi from "pareto-core-interface"
+
+import * as i_out from "./data"
+
+import * as i_in from "./data"
+
+export namespace Graph_Attributes_ {
     
-    import * as _i_out from "./data_types/target"
-    import * as _i_in from "./data_types/source"
+    export type I = i_in.Graph_Attributes
     
-    // **** TYPES
+    export type O = i_out.Graph_Attributes
     
-    export type _T_Graph_Attributes = (
-        $$_: _i_in._T_Graph_Attributes,
-        $$_p: null,
-    ) => _i_out._T_Graph_Attributes
-    
-    export type _T_Node_Attributes = (
-        $$_: _i_in._T_Node_Attributes,
-        $$_p: null,
-    ) => _i_out._T_Node_Attributes
-    
-    export type _T_Tree = (
-        $$_: _i_in._T_Tree,
-        $$_p: null,
-    ) => _i_out._T_Tree
-    
-    export type _T_End_Point_Specification = (
-        $$_: _i_in._T_End_Point_Specification,
-        $$_p: null,
-    ) => _i_out._T_End_Point_Specification
-    
-    export type _T_Edge_Attributes = (
-        $$_: _i_in._T_Edge_Attributes,
-        $$_p: null,
-    ) => _i_out._T_Edge_Attributes
-    
-    export type _T_Graph = (
-        $$_: _i_in._T_Graph,
-        $$_p: null,
-    ) => _i_out._T_Graph
-    
-    export type _T_Attribute_Value = (
-        $$_: _i_in._T_Attribute_Value,
-        $$_p: null,
-    ) => _i_out._T_Attribute_Value
-    
-    // **** FRIENDLY NAMES FOR THE GLOBAL TYPES
-    
-    export type Graph_Attributes = _T_Graph_Attributes
-    
-    export type Node_Attributes = _T_Node_Attributes
-    
-    export type Tree = _T_Tree
-    
-    export type End_Point_Specification = _T_End_Point_Specification
-    
-    export type Edge_Attributes = _T_Edge_Attributes
-    
-    export type Graph = _T_Graph
-    
-    export type Attribute_Value = _T_Attribute_Value
-    
-    // **** ALIASES FOR NESTED TYPE WITH PREFIXED ROOT NAMES
-    
-    export namespace _T_Graph_Attributes {
+    export namespace P {
         
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Graph_Attributes
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Graph_Attributes
     }
     
-    export namespace _T_Node_Attributes {
+}
+
+export type Graph_Attributes_ = (
+    $$_: Graph_Attributes_.I,
+) => Graph_Attributes_.O
+
+export namespace Node_Attributes_ {
+    
+    export type I = i_in.Node_Attributes
+    
+    export type O = i_out.Node_Attributes
+    
+    export namespace P {
         
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Node_Attributes
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Node_Attributes
     }
     
-    export namespace _T_Tree {
+}
+
+export type Node_Attributes_ = (
+    $$_: Node_Attributes_.I,
+) => Node_Attributes_.O
+
+export namespace Tree_ {
+    
+    export type I = i_in.Tree
+    
+    export type O = i_out.Tree
+    
+    export namespace P {
         
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Tree
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Tree
     }
     
-    export namespace _T_End_Point_Specification {
+}
+
+export type Tree_ = (
+    $$_: Tree_.I,
+) => Tree_.O
+
+export namespace End_Point_Specification_ {
+    
+    export type I = i_in.End_Point_Specification
+    
+    export type O = i_out.End_Point_Specification
+    
+    export namespace P {
         
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_End_Point_Specification
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_End_Point_Specification
     }
     
-    export namespace _T_Edge_Attributes {
+}
+
+export type End_Point_Specification_ = (
+    $$_: End_Point_Specification_.I,
+) => End_Point_Specification_.O
+
+export namespace Edge_Attributes_ {
+    
+    export type I = i_in.Edge_Attributes
+    
+    export type O = i_out.Edge_Attributes
+    
+    export namespace P {
         
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Edge_Attributes
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Edge_Attributes
     }
     
-    export namespace _T_Graph {
+}
+
+export type Edge_Attributes_ = (
+    $$_: Edge_Attributes_.I,
+) => Edge_Attributes_.O
+
+export namespace Graph_ {
+    
+    export type I = i_in.Graph
+    
+    export type O = i_out.Graph
+    
+    export namespace P {
         
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Graph
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Graph
     }
     
-    export namespace _T_Attribute_Value {
+}
+
+export type Graph_ = (
+    $$_: Graph_.I,
+) => Graph_.O
+
+export namespace Attribute_Value_ {
+    
+    export type I = i_in.Attribute_Value
+    
+    export type O = i_out.Attribute_Value
+    
+    export namespace P {
         
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Attribute_Value
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Attribute_Value
     }
     
-    // *** ALIASES FOR NESTED TYPES
-    
-    export namespace Graph_Attributes {
-        
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Graph_Attributes
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Graph_Attributes
-    }
-    
-    export namespace Node_Attributes {
-        
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Node_Attributes
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Node_Attributes
-    }
-    
-    export namespace Tree {
-        
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Tree
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Tree
-    }
-    
-    export namespace End_Point_Specification {
-        
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_End_Point_Specification
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_End_Point_Specification
-    }
-    
-    export namespace Edge_Attributes {
-        
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Edge_Attributes
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Edge_Attributes
-    }
-    
-    export namespace Graph {
-        
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Graph
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Graph
-    }
-    
-    export namespace Attribute_Value {
-        
-        export namespace CONTEXT {
-        }
-        export type CONTEXT = _i_in._T_Attribute_Value
-        
-        export namespace PARAMS {
-        }
-        
-        export namespace RESULT {
-        }
-        export type RESULT = _i_out._T_Attribute_Value
-    }
+}
+
+export type Attribute_Value_ = (
+    $$_: Attribute_Value_.I,
+) => Attribute_Value_.O
+
+export { 
+    Graph_Attributes_ as Graph_Attributes, 
+    Node_Attributes_ as Node_Attributes, 
+    Tree_ as Tree, 
+    End_Point_Specification_ as End_Point_Specification, 
+    Edge_Attributes_ as Edge_Attributes, 
+    Graph_ as Graph, 
+    Attribute_Value_ as Attribute_Value, 
+}
