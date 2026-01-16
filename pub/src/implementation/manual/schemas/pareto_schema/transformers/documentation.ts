@@ -3,7 +3,7 @@ import * as _p from 'pareto-core-transformer'
 //interface
 
 import * as d_in from "pareto/dist/interface/generated/pareto/schemas/schema/data_types/source"
-import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data_types/target"
+import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data"
 
 //shorthands
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
