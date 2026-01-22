@@ -2,7 +2,7 @@ import * as _p from 'pareto-core/dist/transformer'
 
 //interface
 
-import * as d_in from "pareto/dist/interface/generated/pareto/schemas/schema/data"
+import * as d_in from "pareto-liana/dist/interface/generated/pareto/schemas/schema/data/resolved"
 import * as d_out from "../../../../../interface/generated/pareto/schemas/lionweb/data"
 
 //dependencies
@@ -77,7 +77,7 @@ export const Type_Node_2_Document_nodes = (
                     'containments': _p.list.literal([
                         {
                             'containment': MetaPointer("properties"),
-                            'children': $['ordered list'].__l_map(($) => $p.path + "." + $.key),
+                            'children': $.__to_list(($, key) => $p.path + "." + key),
                         },
                     ]),
                     'properties': _p.list.literal([]),
@@ -85,13 +85,13 @@ export const Type_Node_2_Document_nodes = (
                 }
             ],
             _p.list.flatten(
-                $['ordered list'],
-                ($) => Type_Node_2_Document_nodes(
-                    $.value.node,
+                $.__to_list(($, key) => Type_Node_2_Document_nodes(
+                    $.node,
                     {
-                        'path': $p.path + "." + $.key,
+                        'path': $p.path + "." + key,
                     }
-                ),
+                )),
+                ($) => $,
             ),
         ]))
         case 'list': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.nested_literal_old<d_out.SerializationChunk.nodes.L>([
@@ -208,12 +208,14 @@ export const Schema = (
         }
     ]),
     'nodes': _p.list.flatten(
-        $.types['ordered list'],
-        ($) => Type_Node_2_Document_nodes(
-            $.value.node,
-            {
-                'path': $.key,
-            }
-        )
-    ),
+        $.types.__to_list(
+            ($, key) => Type_Node_2_Document_nodes(
+                $.node,
+                {
+                    'path': key,
+                }
+            )
+        ),
+        ($) => $,
+    )
 })

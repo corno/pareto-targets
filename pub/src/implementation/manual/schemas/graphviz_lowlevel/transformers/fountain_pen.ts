@@ -5,7 +5,7 @@ import * as d_in from "../../../../../interface/generated/pareto/schemas/graphvi
 import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data"
 
 type Parameters = {
-    'graph type': d_in.Graph._type
+    'graph type': d_in.Graph.type_
 }
 
 namespace signatures {

@@ -1,7 +1,7 @@
 import * as _p from 'pareto-core/dist/transformer'
 
-import * as d_in_s from "pareto/dist/interface/generated/pareto/schemas/schema/data"
-import * as d_in from "pareto/dist/interface/generated/pareto/schemas/module/data"
+import * as d_in_s from "pareto-liana/dist/interface/generated/pareto/schemas/schema/data/resolved"
+import * as d_in from "pareto-liana/dist/interface/generated/pareto/schemas/module/data/resolved"
 import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data"
 
 //dependencies
@@ -29,6 +29,6 @@ export const Schema_Tree = ($: d_in_s.Schema_Tree): d_out.Directory => _p.sg($, 
     }
 })
 
-export const Schemas = ($: d_in_s.Schemas): d_out.Directory => $.dictionary.__d_map(($, key) => sh.n.directory(Schema_Tree($)))
+export const Schemas = ($: d_in_s.Schemas): d_out.Directory => $.__d_map(($, key) => sh.n.directory(Schema_Tree($)))
 
 export const Module = ($: d_in.Module): d_out.Directory => Schema_Tree($['schema tree'])

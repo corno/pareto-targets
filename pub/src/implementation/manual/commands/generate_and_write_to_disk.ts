@@ -8,8 +8,8 @@ import * as signatures from "../../../interface/signatures"
 import * as d_write_to_directory from "../../../modules/pareto-fountain-pen-directory/interface/to_be_generated/write_to_dictionary"
 
 //dependencies
-import * as r_pareto_module from "pareto/dist/implementation/temp/resolvers/module"
-import * as t_pareto_module_to_fountain_pen_block from "../schemas/pareto_module/transformers/fountain_pen_block"
+import * as r_liana_module from "pareto-liana/dist/implementation/temp/resolvers/module"
+import * as t_liana_module_to_fountain_pen_block from "../schemas/liana_module/transformers/fountain_pen_block"
 
 
 export const $$: signatures.commands.generate_and_write_to_disk = _p.command_procedure(
@@ -17,8 +17,8 @@ export const $$: signatures.commands.generate_and_write_to_disk = _p.command_pro
         $cr['write to directory'].execute(
             {
                 'escape spaces in path': true,
-                'directory': t_pareto_module_to_fountain_pen_block.Module(
-                    r_pareto_module.Module(
+                'directory': t_liana_module_to_fountain_pen_block.Module(
+                    r_liana_module.Module(
                         $p.module,
                         {
                             'parameters': {

@@ -1,14 +1,14 @@
 import * as _p from 'pareto-core/dist/transformer'
 
-import * as d_in from "pareto/dist/interface/generated/pareto/schemas/module/data"
+import * as d_in from "pareto-liana/dist/interface/generated/pareto/schemas/module/data/resolved"
 import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data"
 
 //dependecies
 
-import * as t_pareto_module_to_documentation from "./documentation"
-import * as t_pareto_module_to_graphvix from "./graphviz"
-import * as t_pareto_module_to_lionweb from "./lionweb"
-import * as t_pareto_module_to_typescript from "./typescript"
+import * as t_liana_module_to_documentation from "./documentation"
+import * as t_liana_module_to_graphvix from "./graphviz"
+import * as t_liana_module_to_lionweb from "./lionweb"
+import * as t_liana_module_to_typescript from "./typescript"
 
 
 export const Module = (
@@ -25,10 +25,10 @@ export const Module = (
     const module = $
     return _p.sg($p.target, ($): d_out.Directory => {
         switch ($[0]) {
-            case 'documentation': return _p.ss($, ($) => t_pareto_module_to_documentation.Module(module))
-            case 'graphviz': return _p.ss($, ($) => t_pareto_module_to_graphvix.Module(module, { 'graph name': "schema" }))
-            case 'lionweb': return _p.ss($, ($) => t_pareto_module_to_lionweb.Module(module))
-            case 'typescript': return _p.ss($, ($) => t_pareto_module_to_typescript.Module(module))
+            case 'documentation': return _p.ss($, ($) => t_liana_module_to_documentation.Module(module))
+            case 'graphviz': return _p.ss($, ($) => t_liana_module_to_graphvix.Module(module, { 'graph name': "schema" }))
+            case 'lionweb': return _p.ss($, ($) => t_liana_module_to_lionweb.Module(module))
+            case 'typescript': return _p.ss($, ($) => t_liana_module_to_typescript.Module(module))
             default: return _p.au($[0])
         }
     })

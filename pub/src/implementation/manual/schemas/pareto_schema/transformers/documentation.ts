@@ -2,7 +2,7 @@ import * as _p from 'pareto-core/dist/transformer'
 
 //interface
 
-import * as d_in from "pareto/dist/interface/generated/pareto/schemas/schema/data"
+import * as d_in from "pareto-liana/dist/interface/generated/pareto/schemas/schema/data/resolved"
 import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data"
 
 //shorthands
@@ -15,9 +15,9 @@ export const Schema_Tree = ($: d_in.Schema_Tree): d_out.Group_Part => _p.sg($, (
             sh.g.simple_block(`types:`),
             sh.g.nested_block([
                 sh.b.indent([
-                    sh.g.sub($.types['ordered list'].__l_map(($) => sh.g.sub([
-                        sh.g.simple_block($.key)
-                    ])))
+                    sh.g.sub($.types.__to_list((($, key) => sh.g.sub([
+                        sh.g.simple_block(key)
+                    ]))))
                 ])
             ]),
             sh.g.simple_block(``),
@@ -35,11 +35,11 @@ export const Schema_Tree = ($: d_in.Schema_Tree): d_out.Group_Part => _p.sg($, (
     }
 })
 
-export const Schemas = ($: d_in.Schemas): d_out.Group_Part => sh.g.sub($['ordered list'].__l_map(($) => sh.g.sub([
-    sh.g.simple_block($.key),
+export const Schemas = ($: d_in.Schemas): d_out.Group_Part => sh.g.sub($.__to_list(($, key) => sh.g.sub([
+    sh.g.simple_block(key),
     sh.g.nested_block([
         sh.b.indent([
-            Schema_Tree($['value']),
+            Schema_Tree($),
         ]),
     ]),
 ])))
