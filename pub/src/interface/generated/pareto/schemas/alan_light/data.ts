@@ -104,7 +104,7 @@ export namespace Node_ {
         
         export namespace D {
             
-            export namespace _type {
+            export namespace type_ {
                 
                 export namespace collection {
                     
@@ -199,16 +199,16 @@ export namespace Node_ {
                 
             }
             
-            export type _type = 
-                | readonly ['collection', _type.collection]
-                | readonly ['group', _type.group]
-                | readonly ['text', _type.text]
-                | readonly ['state group', _type.state_group]
+            export type type_ = 
+                | readonly ['collection', type_.collection]
+                | readonly ['group', type_.group]
+                | readonly ['text', type_.text]
+                | readonly ['state group', type_.state_group]
             
         }
         
         export type D = {
-            readonly 'type': D._type
+            readonly 'type': D.type_
         }
         
     }

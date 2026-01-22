@@ -84,7 +84,7 @@ export namespace Graph_Attributes_ {
             
             export type out = null
             
-            export type _in = null
+            export type in_ = null
             
             export type in_out = null
             
@@ -93,7 +93,7 @@ export namespace Graph_Attributes_ {
         export type mode = 
             | readonly ['no output', mode.no_output]
             | readonly ['out', mode.out]
-            | readonly ['in', mode._in]
+            | readonly ['in', mode.in_]
             | readonly ['in out', mode.in_out]
         
         export type newrank = boolean
@@ -106,7 +106,7 @@ export namespace Graph_Attributes_ {
             
             export type out = null
             
-            export type _in = null
+            export type in_ = null
             
             export type in_out = null
             
@@ -114,7 +114,7 @@ export namespace Graph_Attributes_ {
         
         export type ordering = 
             | readonly ['out', ordering.out]
-            | readonly ['in', ordering._in]
+            | readonly ['in', ordering.in_]
             | readonly ['in out', ordering.in_out]
         
         export type orientation = number
@@ -459,7 +459,7 @@ export namespace Tree_ {
             
             export namespace sub {
                 
-                export namespace _type {
+                export namespace type_ {
                     
                     export type group = null
                     
@@ -469,17 +469,17 @@ export namespace Tree_ {
                     
                 }
                 
-                export type _type = 
-                    | readonly ['group', _type.group]
-                    | readonly ['cluster', _type.cluster]
-                    | readonly ['subgraph', _type.subgraph]
+                export type type_ = 
+                    | readonly ['group', type_.group]
+                    | readonly ['cluster', type_.cluster]
+                    | readonly ['subgraph', type_.subgraph]
                 
                 export type tree = Tree_
                 
             }
             
             export type sub = {
-                readonly 'type': sub._type
+                readonly 'type': sub.type_
                 readonly 'tree': sub.tree
             }
             
@@ -726,7 +726,7 @@ export namespace Graph_ {
     
     export type tree = Tree_
     
-    export namespace _type {
+    export namespace type_ {
         
         export namespace undirected {
             
@@ -764,7 +764,7 @@ export namespace Graph_ {
                 
                 export namespace L {
                     
-                    export type _from = End_Point_Specification_
+                    export type from_ = End_Point_Specification_
                     
                     export type to = End_Point_Specification_
                     
@@ -773,7 +773,7 @@ export namespace Graph_ {
                 }
                 
                 export type L = {
-                    readonly 'from': L._from
+                    readonly 'from': L.from_
                     readonly 'to': L.to
                     readonly 'attributes': L.attributes
                 }
@@ -790,31 +790,31 @@ export namespace Graph_ {
         
     }
     
-    export type _type = 
-        | readonly ['undirected', _type.undirected]
-        | readonly ['directed', _type.directed]
+    export type type_ = 
+        | readonly ['undirected', type_.undirected]
+        | readonly ['directed', type_.directed]
     
 }
 
 export type Graph_ = {
     readonly 'name': Graph_.name
     readonly 'tree': Graph_.tree
-    readonly 'type': Graph_._type
+    readonly 'type': Graph_.type_
 }
 
 export namespace Attribute_Value_ {
     
-    export type _number = string
+    export type number_ = string
     
-    export type _string = string
+    export type string_ = string
     
     export type html_string = string
     
 }
 
 export type Attribute_Value_ = 
-    | readonly ['number', Attribute_Value_._number]
-    | readonly ['string', Attribute_Value_._string]
+    | readonly ['number', Attribute_Value_.number_]
+    | readonly ['string', Attribute_Value_.string_]
     | readonly ['html string', Attribute_Value_.html_string]
 
 export { 

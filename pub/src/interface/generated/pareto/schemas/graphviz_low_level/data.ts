@@ -7,19 +7,19 @@ export namespace ID_ {
     
     export type id = string
     
-    export type _string = string
+    export type string_ = string
     
     export type html = string
     
-    export type _number = number
+    export type number_ = number
     
 }
 
 export type ID_ = 
     | readonly ['id', ID_.id]
-    | readonly ['string', ID_._string]
+    | readonly ['string', ID_.string_]
     | readonly ['html', ID_.html]
-    | readonly ['number', ID_._number]
+    | readonly ['number', ID_.number_]
 
 export namespace Node_ID_ {
     
@@ -162,7 +162,7 @@ export namespace Statement_List_ {
         
         export namespace attribute_list {
             
-            export namespace _type {
+            export namespace type_ {
                 
                 export type graph = null
                 
@@ -172,17 +172,17 @@ export namespace Statement_List_ {
                 
             }
             
-            export type _type = 
-                | readonly ['graph', _type.graph]
-                | readonly ['node', _type.node]
-                | readonly ['edge', _type.edge]
+            export type type_ = 
+                | readonly ['graph', type_.graph]
+                | readonly ['node', type_.node]
+                | readonly ['edge', type_.edge]
             
             export type attributes = Attribute_List_
             
         }
         
         export type attribute_list = {
-            readonly 'type': attribute_list._type
+            readonly 'type': attribute_list.type_
             readonly 'attributes': attribute_list.attributes
         }
         
@@ -218,7 +218,7 @@ export namespace Graph_ {
     
     export type strict = boolean
     
-    export namespace _type {
+    export namespace type_ {
         
         export type graph = null
         
@@ -226,9 +226,9 @@ export namespace Graph_ {
         
     }
     
-    export type _type = 
-        | readonly ['graph', _type.graph]
-        | readonly ['digraph', _type.digraph]
+    export type type_ = 
+        | readonly ['graph', type_.graph]
+        | readonly ['digraph', type_.digraph]
     
     export namespace name {
         
@@ -244,7 +244,7 @@ export namespace Graph_ {
 
 export type Graph_ = {
     readonly 'strict': Graph_.strict
-    readonly 'type': Graph_._type
+    readonly 'type': Graph_.type_
     readonly 'name': Graph_.name
     readonly 'statements': Graph_.statements
 }
