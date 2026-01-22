@@ -1,6 +1,6 @@
-import * as _p from 'pareto-core-command'
+import * as _p from 'pareto-core/dist/command'
 
-import { location_to_string } from 'pareto-core-internals/dist/misc/location_to_string'
+import { location_to_string } from 'pareto-core/dist/misc/location_to_string'
 
 import * as signatures from "../../../interface/signatures"
 

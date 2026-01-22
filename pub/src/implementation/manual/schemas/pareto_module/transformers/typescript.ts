@@ -1,5 +1,5 @@
-import * as _p from 'pareto-core-transformer'
-import { location_to_string } from 'pareto-core-internals/dist/misc/location_to_string'
+import * as _p from 'pareto-core/dist/transformer'
+import { location_to_string } from 'pareto-core/dist/misc/location_to_string'
 
 
 import * as d_in_s from "pareto/dist/interface/generated/pareto/schemas/schema/data"

@@ -1,4 +1,4 @@
-import * as _pi from 'pareto-core-interface'
+import * as _pi from 'pareto-core/dist/interface'
 
 import * as d_module from "pareto/dist/interface/generated/pareto/schemas/module/data"
 import * as d_path from "pareto-resources/dist/interface/generated/pareto/schemas/path/data"
