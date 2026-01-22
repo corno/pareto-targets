@@ -19,7 +19,7 @@ export const Graph = ($: d_in.Graph): d_out.Graph => ({
         }
     }),
     'name': $.name.__o_map(($) => ['string', $]),
-    'statements': _p.list.nested_literal([
+    'statements': _p.list.nested_literal_old([
         Tree($.tree, { 'path': _p.list.literal([]) }),
         _p.sg($.type, ($): d_out.Graph.statements => {
             switch ($[0]) {
@@ -116,7 +116,7 @@ export const Tree = (
     _p.list.from_dictionary(
         $.elements,
         ($, key): d_out.Statement_List => {
-            const path = _p.list.nested_literal([
+            const path = _p.list.nested_literal_old([
                 $p.path,
                 [
                     key
@@ -130,7 +130,7 @@ export const Tree = (
                                 'id': ['string', s_list_of_separated_texts(path, { 'separator': '>' })],
                                 'port': _p.optional.not_set()
                             },
-                            'attribute list': _p.list.nested_literal([
+                            'attribute list': _p.list.nested_literal_old([
                                 [
                                     {
                                         'name': ['id', "label"],

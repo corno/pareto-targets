@@ -29,7 +29,7 @@ export const Type_Node_2_Document_nodes = (
     }
 ): d_out.SerializationChunk.nodes => _p.sg($, ($) => {
     switch ($[0]) {
-        case 'dictionary': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.nested_literal<d_out.SerializationChunk.nodes.L>([
+        case 'dictionary': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.nested_literal_old<d_out.SerializationChunk.nodes.L>([
             _p.list.literal([
                 {
                     'id': $p.path,
@@ -67,7 +67,7 @@ export const Type_Node_2_Document_nodes = (
                 }
             ),
         ]))
-        case 'group': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.nested_literal<d_out.SerializationChunk.nodes.L>([
+        case 'group': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.nested_literal_old<d_out.SerializationChunk.nodes.L>([
             [
                 {
                     'id': $p.path,
@@ -94,7 +94,7 @@ export const Type_Node_2_Document_nodes = (
                 ),
             ),
         ]))
-        case 'list': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.nested_literal<d_out.SerializationChunk.nodes.L>([
+        case 'list': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.nested_literal_old<d_out.SerializationChunk.nodes.L>([
             [
                 {
                     'id': $p.path,
@@ -118,7 +118,7 @@ export const Type_Node_2_Document_nodes = (
                 }
             ),
         ]))
-        case 'optional': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.nested_literal<d_out.SerializationChunk.nodes.L>([
+        case 'optional': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.nested_literal_old<d_out.SerializationChunk.nodes.L>([
             [
                 {
                     'id': $p.path,
@@ -142,7 +142,7 @@ export const Type_Node_2_Document_nodes = (
                 }
             ),
         ]))
-        case 'state group': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.nested_literal<d_out.SerializationChunk.nodes.L>([
+        case 'state group': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.nested_literal_old<d_out.SerializationChunk.nodes.L>([
             [
                 {
                     'id': $p.path,
