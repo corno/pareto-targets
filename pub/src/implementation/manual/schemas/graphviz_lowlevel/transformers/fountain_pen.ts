@@ -1,8 +1,8 @@
 import * as _p from 'pareto-core/dist/transformer'
 import * as _pi from 'pareto-core/dist/interface'
 
-import * as d_in from "../../../../../interface/generated/pareto/schemas/graphviz_low_level/data"
-import * as d_out from "pareto-fountain-pen/dist/interface/generated/pareto/schemas/block/data"
+import * as d_in from "../../../../../interface/generated/liana/schemas/graphviz_low_level/data"
+import * as d_out from "pareto-fountain-pen/dist/interface/generated/liana/schemas/block/data"
 
 type Parameters = {
     'graph type': d_in.Graph.type_

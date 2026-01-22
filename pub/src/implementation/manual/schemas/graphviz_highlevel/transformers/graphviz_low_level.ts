@@ -2,8 +2,8 @@ import * as _p from 'pareto-core/dist/transformer'
 import * as _pdev from 'pareto-core-dev'
 import * as _pi from 'pareto-core/dist/interface'
 
-import * as d_in from "../../../../../interface/generated/pareto/schemas/graphviz_high_level/data"
-import * as d_out from "../../../../../interface/generated/pareto/schemas/graphviz_low_level/data"
+import * as d_in from "../../../../../interface/generated/liana/schemas/graphviz_high_level/data"
+import * as d_out from "../../../../../interface/generated/liana/schemas/graphviz_low_level/data"
 
 import { $$ as s_list_of_separated_texts } from "pareto-standard-operations/dist/implementation/temp_serializers/schemas/list_of_separated_texts"
 

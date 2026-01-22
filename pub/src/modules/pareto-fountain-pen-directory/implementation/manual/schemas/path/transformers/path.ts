@@ -2,7 +2,7 @@ import * as _p from 'pareto-core/dist/transformer'
 import * as _pds from 'pareto-core/dist/deserializer'
 
 
-import * as d_path from "pareto-resources/dist/interface/generated/pareto/schemas/path/data"
+import * as d_path from "pareto-resources/dist/interface/generated/liana/schemas/path/data"
 
 const replace = ($: string, search: number, replace: number): string => _pds.text.deprecated_build(($i) => {
     _pds.list.from_text($, ($) => $).__for_each(($) => {
