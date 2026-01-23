@@ -18,7 +18,7 @@ export namespace Identifier_ {
 }
 
 export type Identifier_ = (
-    $$_: Identifier_.I,
+    context: Identifier_.I,
 ) => Identifier_.O
 
 export namespace Path_ {
@@ -34,7 +34,7 @@ export namespace Path_ {
 }
 
 export type Path_ = (
-    $$_: Path_.I,
+    context: Path_.I,
 ) => Path_.O
 
 export namespace Node_ {
@@ -50,7 +50,7 @@ export namespace Node_ {
 }
 
 export type Node_ = (
-    $$_: Node_.I,
+    context: Node_.I,
 ) => Node_.O
 
 export namespace Root_ {
@@ -66,7 +66,7 @@ export namespace Root_ {
 }
 
 export type Root_ = (
-    $$_: Root_.I,
+    context: Root_.I,
 ) => Root_.O
 
 export { 

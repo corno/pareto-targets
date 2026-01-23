@@ -18,7 +18,7 @@ export namespace Graph_Attributes_ {
 }
 
 export type Graph_Attributes_ = (
-    $$_: Graph_Attributes_.I,
+    context: Graph_Attributes_.I,
 ) => Graph_Attributes_.O
 
 export namespace Node_Attributes_ {
@@ -34,7 +34,7 @@ export namespace Node_Attributes_ {
 }
 
 export type Node_Attributes_ = (
-    $$_: Node_Attributes_.I,
+    context: Node_Attributes_.I,
 ) => Node_Attributes_.O
 
 export namespace Tree_ {
@@ -50,7 +50,7 @@ export namespace Tree_ {
 }
 
 export type Tree_ = (
-    $$_: Tree_.I,
+    context: Tree_.I,
 ) => Tree_.O
 
 export namespace End_Point_Specification_ {
@@ -66,7 +66,7 @@ export namespace End_Point_Specification_ {
 }
 
 export type End_Point_Specification_ = (
-    $$_: End_Point_Specification_.I,
+    context: End_Point_Specification_.I,
 ) => End_Point_Specification_.O
 
 export namespace Edge_Attributes_ {
@@ -82,7 +82,7 @@ export namespace Edge_Attributes_ {
 }
 
 export type Edge_Attributes_ = (
-    $$_: Edge_Attributes_.I,
+    context: Edge_Attributes_.I,
 ) => Edge_Attributes_.O
 
 export namespace Graph_ {
@@ -98,7 +98,7 @@ export namespace Graph_ {
 }
 
 export type Graph_ = (
-    $$_: Graph_.I,
+    context: Graph_.I,
 ) => Graph_.O
 
 export namespace Attribute_Value_ {
@@ -114,7 +114,7 @@ export namespace Attribute_Value_ {
 }
 
 export type Attribute_Value_ = (
-    $$_: Attribute_Value_.I,
+    context: Attribute_Value_.I,
 ) => Attribute_Value_.O
 
 export { 

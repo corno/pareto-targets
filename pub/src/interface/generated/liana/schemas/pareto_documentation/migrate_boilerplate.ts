@@ -18,7 +18,7 @@ export namespace Graphviz_Directory_ {
 }
 
 export type Graphviz_Directory_ = (
-    $$_: Graphviz_Directory_.I,
+    context: Graphviz_Directory_.I,
 ) => Graphviz_Directory_.O
 
 export { 

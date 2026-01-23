@@ -18,7 +18,7 @@ export namespace ID_ {
 }
 
 export type ID_ = (
-    $$_: ID_.I,
+    context: ID_.I,
 ) => ID_.O
 
 export namespace Node_ID_ {
@@ -34,7 +34,7 @@ export namespace Node_ID_ {
 }
 
 export type Node_ID_ = (
-    $$_: Node_ID_.I,
+    context: Node_ID_.I,
 ) => Node_ID_.O
 
 export namespace Attribute_List_ {
@@ -50,7 +50,7 @@ export namespace Attribute_List_ {
 }
 
 export type Attribute_List_ = (
-    $$_: Attribute_List_.I,
+    context: Attribute_List_.I,
 ) => Attribute_List_.O
 
 export namespace Subgraph_ {
@@ -66,7 +66,7 @@ export namespace Subgraph_ {
 }
 
 export type Subgraph_ = (
-    $$_: Subgraph_.I,
+    context: Subgraph_.I,
 ) => Subgraph_.O
 
 export namespace Statement_List_ {
@@ -82,7 +82,7 @@ export namespace Statement_List_ {
 }
 
 export type Statement_List_ = (
-    $$_: Statement_List_.I,
+    context: Statement_List_.I,
 ) => Statement_List_.O
 
 export namespace Graph_ {
@@ -98,7 +98,7 @@ export namespace Graph_ {
 }
 
 export type Graph_ = (
-    $$_: Graph_.I,
+    context: Graph_.I,
 ) => Graph_.O
 
 export { 
