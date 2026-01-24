@@ -13,7 +13,7 @@ import * as t_json_to_fountain_pen_block from "pareto-json/dist/implementation/m
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
 
-export const Schema_Tree = ($: d_in_s.Schema_Tree): d_out.Directory => _p.sg($, ($) => {
+export const Schema_Tree = ($: d_in_s.Schema_Tree): d_out.Directory => _p.decide.state($, ($) => {
     switch ($[0]) {
         case 'schema': return _p.ss($, ($) => _p.dictionary.literal({
             "lionweb.json": sh.n.file(

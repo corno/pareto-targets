@@ -31,7 +31,7 @@ export const Graph: signatures.Graph = ($) => sh.group([
         $.strict
             ? sh.b.snippet("strict ")
             : sh.b.nothing(),
-        _p.sg($.type, ($) => {
+        _p.decide.state($.type, ($) => {
             switch ($[0]) {
                 case 'digraph': return _p.ss($, () => sh.b.snippet("digraph "))
                 case 'graph': return _p.ss($, () => sh.b.snippet("graph "))
@@ -55,7 +55,7 @@ export const Statement_List: signatures.Statement_List = ($, $p) => sh.b.sub([
     sh.b.snippet("{"),
     sh.b.indent([
         sh.g.sub($.__l_map(($) => sh.g.nested_block([
-            _p.sg($, ($) => {
+            _p.decide.state($, ($) => {
                 switch ($[0]) {
                     case 'attribute assignment': return _p.ss($, ($) => sh.b.sub([
                         ID($.name),
@@ -64,7 +64,7 @@ export const Statement_List: signatures.Statement_List = ($, $p) => sh.b.sub([
                         sh.b.snippet(";"),
                     ]))
                     case 'attribute list': return _p.ss($, ($) => sh.b.sub([
-                        _p.sg($.type, ($) => {
+                        _p.decide.state($.type, ($) => {
                             switch ($[0]) {
                                 case 'edge': return _p.ss($, () => sh.b.snippet("edge "))
                                 case 'node': return _p.ss($, () => sh.b.snippet("node "))
@@ -76,14 +76,14 @@ export const Statement_List: signatures.Statement_List = ($, $p) => sh.b.sub([
                         sh.b.snippet(";"),
                     ]))
                     case 'edge': return _p.ss($, ($) => sh.b.sub([
-                        _p.sg($.left, ($) => {
+                        _p.decide.state($.left, ($) => {
                             switch ($[0]) {
                                 case 'node': return _p.ss($, ($) => Node_ID($))
                                 case 'subgraph': return _p.ss($, ($) => Subgraph($, $p))
                                 default: return _p.au($[0])
                             }
                         }),
-                        _p.sg($p['graph type'], ($) => {
+                        _p.decide.state($p['graph type'], ($) => {
                             switch ($[0]) {
                                 case 'digraph': return _p.ss($, () => sh.b.snippet(" -> "))
                                 case 'graph': return _p.ss($, () => sh.b.snippet(" -- "))
@@ -91,7 +91,7 @@ export const Statement_List: signatures.Statement_List = ($, $p) => sh.b.sub([
                             }
                         }),
                         sh.b.sub(op_enrich_list_elements_with_position_information($.right).__l_map(($) => sh.b.sub([
-                            _p.sg($.value, ($) => {
+                            _p.decide.state($.value, ($) => {
                                 switch ($[0]) {
                                     case 'node': return _p.ss($, ($) => Node_ID($))
                                     case 'subgraph': return _p.ss($, ($) => Subgraph($, $p))
@@ -120,7 +120,7 @@ export const Statement_List: signatures.Statement_List = ($, $p) => sh.b.sub([
     sh.b.snippet("}"),
 ])
 
-export const ID: signatures.ID = ($) => _p.sg($, ($) => {
+export const ID: signatures.ID = ($) => _p.decide.state($, ($) => {
     switch ($[0]) {
         case 'id': return _p.ss($, ($) => sh.b.snippet($)) //FIX escaping
         case 'string': return _p.ss($, ($) => sh.b.snippet(s_quoted($)))

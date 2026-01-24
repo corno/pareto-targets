@@ -9,7 +9,7 @@ export const Type_Node = (
     $p: {
         'type name': string,
     },
-): d_out.Graph._type.SG.directed.edges => _p.sg($, ($) => {
+): d_out.Graph._type.SG.directed.edges => _p.decide.state($, ($) => {
     switch ($[0]) {
         case 'number': return _p.ss($, ($) => _p.list.literal([]))
         case 'boolean': return _p.ss($, ($) => _p.list.literal([]))
@@ -24,7 +24,7 @@ export const Type_Node = (
                     'port data': _p.optional.not_set()
                 },
                 'to': {
-                    'start': _p.sg($, ($) => {
+                    'start': _p.decide.state($, ($) => {
                         switch ($[0]) {
                             case 'external': return _p.ss($, ($) => "FIXME")
                             case 'internal': return _p.ss($, ($) => $.key)
@@ -35,7 +35,7 @@ export const Type_Node = (
                     'tail': _p.list.literal([]),
                     'port data': _p.optional.not_set()
                 },
-                'attributes': _p.sg($, ($) => {
+                'attributes': _p.decide.state($, ($) => {
                     switch ($[0]) {
                         case 'external': return _p.ss($, ($) => _p.list.literal([]))
                         case 'internal': return _p.ss($, ($) => _p.list.literal([]))

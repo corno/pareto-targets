@@ -11,7 +11,7 @@ import { $$ as s_list_of_separated_texts } from "pareto-standard-operations/dist
 
 export const Graph = ($: d_in.Graph): d_out.Graph => ({
     'strict': true,
-    'type': _p.sg($.type, ($) => {
+    'type': _p.decide.state($.type, ($) => {
         switch ($[0]) {
             case 'directed': return _p.ss($, () => ['digraph', null])
             case 'undirected': return _p.ss($, () => ['graph', null])
@@ -21,7 +21,7 @@ export const Graph = ($: d_in.Graph): d_out.Graph => ({
     'name': $.name.__o_map(($) => ['string', $]),
     'statements': _p.list.nested_literal_old([
         Tree($.tree, { 'path': _p.list.literal([]) }),
-        _p.sg($.type, ($): d_out.Graph.statements => {
+        _p.decide.state($.type, ($): d_out.Graph.statements => {
             switch ($[0]) {
                 case 'directed': return _p.ss($, ($) => $.edges.__l_map(($): d_out.Statement_List.L => ['edge', {
                     "left": ['node', {
@@ -34,7 +34,7 @@ export const Graph = ($: d_in.Graph): d_out.Graph => ({
                             'port': _p.optional.not_set()
                         }]
                     ]),
-                    "attributes": $.attributes.__l_map(($) => _p.sg($, ($): d_out.Attribute_List.L => {
+                    "attributes": $.attributes.__l_map(($) => _p.decide.state($, ($): d_out.Attribute_List.L => {
                         switch ($[0]) {
                             case 'arrowhead': return _p.ss($, ($) => ({ "name": ['id', "arrowhead"], "value": ['string', $] }))
                             case 'arrowsize': return _p.ss($, ($) => ({ "name": ['id', "arrowsize"], "value": ['number', $] }))
@@ -122,7 +122,7 @@ export const Tree = (
                     key
                 ]
             ])
-            return _p.sg($, ($) => {
+            return _p.decide.state($, ($) => {
                 switch ($[0]) {
                     case 'node': return _p.ss($, ($) => _p.list.literal([
                         ['node', {
@@ -137,7 +137,7 @@ export const Tree = (
                                         'value': ['string', key],
                                     }
                                 ],
-                                $.attributes.__l_map(($): d_out.Attribute_List.L => _p.sg($, ($) => {
+                                $.attributes.__l_map(($): d_out.Attribute_List.L => _p.decide.state($, ($) => {
                                     switch ($[0]) {
                                         case 'color': return _p.ss($, ($) => ({ "name": ['id', "color"], "value": ['string', $] }))
                                         default: return _pdev.implement_me("xx")

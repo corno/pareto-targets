@@ -23,7 +23,7 @@ export const Module = (
 
 ): d_out.Directory => {
     const module = $
-    return _p.sg($p.target, ($): d_out.Directory => {
+    return _p.decide.state($p.target, ($): d_out.Directory => {
         switch ($[0]) {
             case 'documentation': return _p.ss($, ($) => t_liana_module_to_documentation.Module(module))
             case 'graphviz': return _p.ss($, ($) => t_liana_module_to_graphvix.Module(module, { 'graph name': "schema" }))

@@ -19,7 +19,7 @@ export const Schema_Tree = (
     $p: {
         'graph name': string
     }
-): d_out.Directory => _p.sg($, ($) => {
+): d_out.Directory => _p.decide.state($, ($) => {
     switch ($[0]) {
         case 'schema': return _p.ss($, ($) => _p.dictionary.literal({
             "graphviz.dot": sh.n.file(

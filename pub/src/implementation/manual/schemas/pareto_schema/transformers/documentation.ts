@@ -9,7 +9,7 @@ import * as d_out from "pareto-fountain-pen/dist/interface/generated/liana/schem
 import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
 
-export const Schema_Tree = ($: d_in.Schema_Tree): d_out.Group_Part => _p.sg($, ($) => {
+export const Schema_Tree = ($: d_in.Schema_Tree): d_out.Group_Part => _p.decide.state($, ($) => {
     switch ($[0]) {
         case 'schema': return _p.ss($, ($) => sh.g.sub([
             sh.g.simple_block(`types:`),

@@ -27,7 +27,7 @@ export const Type_Node_2_Document_nodes = (
     $p: {
         'path': string,
     }
-): d_out.SerializationChunk.nodes => _p.sg($, ($) => {
+): d_out.SerializationChunk.nodes => _p.decide.state($, ($) => {
     switch ($[0]) {
         case 'dictionary': return _p.ss($, ($): d_out.SerializationChunk.nodes => _p.list.nested_literal_old<d_out.SerializationChunk.nodes.L>([
             _p.list.literal([

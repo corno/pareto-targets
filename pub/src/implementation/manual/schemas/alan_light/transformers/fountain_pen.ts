@@ -48,7 +48,7 @@ export const Node = (
                 ($, key) => sh.g.nested_block([
                     Identifier(key),
                     sh.b.snippet(": "),
-                    _p.sg($.type, ($) => {
+                    _p.decide.state($.type, ($) => {
                         switch ($[0]) {
                             case 'collection': return _p.ss($, ($) => sh.b.sub([
                                 sh.b.snippet("collection ["),
