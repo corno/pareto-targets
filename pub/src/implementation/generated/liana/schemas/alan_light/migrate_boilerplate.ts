@@ -6,11 +6,9 @@ import * as t_signatures from "../../../../../interface/generated/liana/schemas/
 import * as t_out from "../../../../../interface/generated/liana/schemas/alan_light/data"
 export const Identifier: t_signatures.Identifier = ($,) => $
 export const Path: t_signatures.Path = ($,) => ({
-    'up steps': _p.deprecated_cc($['up steps'], ($,) => $.__l_map(($,) => ({
-    }))),
+    'up steps': _p.deprecated_cc($['up steps'], ($,) => $.__l_map(($,) => null)),
     'context': _p.deprecated_cc($['context'], ($,) => ({
-        'sibling': _p.deprecated_cc($['sibling'], ($,) => ({
-        })),
+        'sibling': _p.deprecated_cc($['sibling'], ($,) => null),
         'state constraint': _p.deprecated_cc($['state constraint'], ($,) => ({
             'name': _p.deprecated_cc($['name'], ($,) => Identifier($)),
         })),
@@ -63,7 +61,6 @@ export const Node: t_signatures.Node = ($,) => ({
     }))),
 })
 export const Root: t_signatures.Root = ($,) => ({
-    'numerical types': _p.deprecated_cc($['numerical types'], ($,) => $.__d_map(($,key,) => ({
-    }))),
+    'numerical types': _p.deprecated_cc($['numerical types'], ($,) => $.__d_map(($,key,) => null)),
     'root': _p.deprecated_cc($['root'], ($,) => Node($)),
 })
