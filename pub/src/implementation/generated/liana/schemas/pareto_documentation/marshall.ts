@@ -14,12 +14,12 @@ export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($,) => ['dic
     switch ($[0]) {
         case 'file':
             return _p.ss($, ($,) => ({
-                'option': "file",
+                'option': 'file',
                 'value': v_external_graphviz.Graph($),
             }))
         case 'directory':
             return _p.ss($, ($,) => ({
-                'option': "directory",
+                'option': 'directory',
                 'value': Graphviz_Directory($),
             }))
         default:

@@ -40,7 +40,7 @@ export const Node: t_signatures.Node = ($,) => ['group', ['verbose', _p.dictiona
             switch ($[0]) {
                 case 'collection':
                     return _p.ss($, ($,) => ({
-                        'option': "collection",
+                        'option': 'collection',
                         'value': ['group', ['verbose', _p.dictionary.literal(({
                             'node': _p.deprecated_cc($['node'], ($,) => Node($)),
                             'key': _p.deprecated_cc($['key'], ($,) => Identifier($)),
@@ -48,14 +48,14 @@ export const Node: t_signatures.Node = ($,) => ['group', ['verbose', _p.dictiona
                     }))
                 case 'group':
                     return _p.ss($, ($,) => ({
-                        'option': "group",
+                        'option': 'group',
                         'value': ['group', ['verbose', _p.dictionary.literal(({
                             'node': _p.deprecated_cc($['node'], ($,) => Node($)),
                         }))]],
                     }))
                 case 'text':
                     return _p.ss($, ($,) => ({
-                        'option': "text",
+                        'option': 'text',
                         'value': ['group', ['verbose', _p.dictionary.literal(({
                             'constraint': _p.deprecated_cc($['constraint'], ($,) => ['optional', $.__decide(($,): t_out.Value.optional => ['set', ['group', ['verbose', _p.dictionary.literal(({
                                 'path': _p.deprecated_cc($['path'], ($,) => Path($)),
@@ -65,7 +65,7 @@ export const Node: t_signatures.Node = ($,) => ['group', ['verbose', _p.dictiona
                     }))
                 case 'state group':
                     return _p.ss($, ($,) => ({
-                        'option': "state group",
+                        'option': 'state group',
                         'value': ['group', ['verbose', _p.dictionary.literal(({
                             'states': _p.deprecated_cc($['states'], ($,) => ['dictionary', $.__d_map(($,key,) => ['group', ['verbose', _p.dictionary.literal(({
                                 'constraints': _p.deprecated_cc($['constraints'], ($,) => ['dictionary', $.__d_map(($,key,) => ['group', ['verbose', _p.dictionary.literal(({

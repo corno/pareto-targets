@@ -12,15 +12,15 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
     switch ($[0]) {
         case 'concentrate':
             return _p.ss($, ($,) => ({
-                'option': "concentrate",
+                'option': 'concentrate',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'charset':
             return _p.ss($, ($,) => ({
-                'option': "charset",
+                'option': 'charset',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -28,22 +28,22 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'clusterrank':
             return _p.ss($, ($,) => ({
-                'option': "clusterrank",
+                'option': 'clusterrank',
                 'value': ['state', _p.decide.state($, ($,): t_out.Value.state => {
                     switch ($[0]) {
                         case 'none':
                             return _p.ss($, ($,) => ({
-                                'option': "none",
+                                'option': 'none',
                                 'value': ['nothing', null],
                             }))
                         case 'local':
                             return _p.ss($, ($,) => ({
-                                'option': "local",
+                                'option': 'local',
                                 'value': ['nothing', null],
                             }))
                         case 'global':
                             return _p.ss($, ($,) => ({
-                                'option': "global",
+                                'option': 'global',
                                 'value': ['nothing', null],
                             }))
                         default:
@@ -53,7 +53,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'color':
             return _p.ss($, ($,) => ({
-                'option': "color",
+                'option': 'color',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -61,7 +61,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'color scheme':
             return _p.ss($, ($,) => ({
-                'option': "color scheme",
+                'option': 'color scheme',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -69,7 +69,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'comment':
             return _p.ss($, ($,) => ({
-                'option': "comment",
+                'option': 'comment',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -77,23 +77,23 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'compound':
             return _p.ss($, ($,) => ({
-                'option': "compound",
+                'option': 'compound',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'dpi':
             return _p.ss($, ($,) => ({
-                'option': "dpi",
+                'option': 'dpi',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'font color':
             return _p.ss($, ($,) => ({
-                'option': "font color",
+                'option': 'font color',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -101,7 +101,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'font name':
             return _p.ss($, ($,) => ({
-                'option': "font name",
+                'option': 'font name',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -109,7 +109,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'font path':
             return _p.ss($, ($,) => ({
-                'option': "font path",
+                'option': 'font path',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -117,15 +117,15 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'font size':
             return _p.ss($, ($,) => ({
-                'option': "font size",
+                'option': 'font size',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'label':
             return _p.ss($, ($,) => ({
-                'option': "label",
+                'option': 'label',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -133,33 +133,33 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'label distance':
             return _p.ss($, ($,) => ({
-                'option': "label distance",
+                'option': 'label distance',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'label scheme':
             return _p.ss($, ($,) => ({
-                'option': "label scheme",
+                'option': 'label scheme',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'label location':
             return _p.ss($, ($,) => ({
-                'option': "label location",
+                'option': 'label location',
                 'value': ['state', _p.decide.state($, ($,): t_out.Value.state => {
                     switch ($[0]) {
                         case 'top':
                             return _p.ss($, ($,) => ({
-                                'option': "top",
+                                'option': 'top',
                                 'value': ['nothing', null],
                             }))
                         case 'bottom':
                             return _p.ss($, ($,) => ({
-                                'option': "bottom",
+                                'option': 'bottom',
                                 'value': ['nothing', null],
                             }))
                         default:
@@ -169,15 +169,15 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'landscape':
             return _p.ss($, ($,) => ({
-                'option': "landscape",
+                'option': 'landscape',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'layer list':
             return _p.ss($, ($,) => ({
-                'option': "layer list",
+                'option': 'layer list',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -185,7 +185,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'layer separator':
             return _p.ss($, ($,) => ({
-                'option': "layer separator",
+                'option': 'layer separator',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -193,7 +193,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'layers':
             return _p.ss($, ($,) => ({
-                'option': "layers",
+                'option': 'layers',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -201,7 +201,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'margin':
             return _p.ss($, ($,) => ({
-                'option': "margin",
+                'option': 'margin',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -209,51 +209,51 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'max iteration':
             return _p.ss($, ($,) => ({
-                'option': "max iteration",
+                'option': 'max iteration',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'mclimit':
             return _p.ss($, ($,) => ({
-                'option': "mclimit",
+                'option': 'mclimit',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'mindist':
             return _p.ss($, ($,) => ({
-                'option': "mindist",
+                'option': 'mindist',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'mode':
             return _p.ss($, ($,) => ({
-                'option': "mode",
+                'option': 'mode',
                 'value': ['state', _p.decide.state($, ($,): t_out.Value.state => {
                     switch ($[0]) {
                         case 'no output':
                             return _p.ss($, ($,) => ({
-                                'option': "no output",
+                                'option': 'no output',
                                 'value': ['nothing', null],
                             }))
                         case 'out':
                             return _p.ss($, ($,) => ({
-                                'option': "out",
+                                'option': 'out',
                                 'value': ['nothing', null],
                             }))
                         case 'in':
                             return _p.ss($, ($,) => ({
-                                'option': "in",
+                                'option': 'in',
                                 'value': ['nothing', null],
                             }))
                         case 'in out':
                             return _p.ss($, ($,) => ({
-                                'option': "in out",
+                                'option': 'in out',
                                 'value': ['nothing', null],
                             }))
                         default:
@@ -263,46 +263,46 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'newrank':
             return _p.ss($, ($,) => ({
-                'option': "newrank",
+                'option': 'newrank',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'no loop':
             return _p.ss($, ($,) => ({
-                'option': "no loop",
+                'option': 'no loop',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'normalize':
             return _p.ss($, ($,) => ({
-                'option': "normalize",
+                'option': 'normalize',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'ordering':
             return _p.ss($, ($,) => ({
-                'option': "ordering",
+                'option': 'ordering',
                 'value': ['state', _p.decide.state($, ($,): t_out.Value.state => {
                     switch ($[0]) {
                         case 'out':
                             return _p.ss($, ($,) => ({
-                                'option': "out",
+                                'option': 'out',
                                 'value': ['nothing', null],
                             }))
                         case 'in':
                             return _p.ss($, ($,) => ({
-                                'option': "in",
+                                'option': 'in',
                                 'value': ['nothing', null],
                             }))
                         case 'in out':
                             return _p.ss($, ($,) => ({
-                                'option': "in out",
+                                'option': 'in out',
                                 'value': ['nothing', null],
                             }))
                         default:
@@ -312,25 +312,25 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'orientation':
             return _p.ss($, ($,) => ({
-                'option': "orientation",
+                'option': 'orientation',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'output order':
             return _p.ss($, ($,) => ({
-                'option': "output order",
+                'option': 'output order',
                 'value': ['state', _p.decide.state($, ($,): t_out.Value.state => {
                     switch ($[0]) {
                         case 'breadth first':
                             return _p.ss($, ($,) => ({
-                                'option': "breadth first",
+                                'option': 'breadth first',
                                 'value': ['nothing', null],
                             }))
                         case 'dfs':
                             return _p.ss($, ($,) => ({
-                                'option': "dfs",
+                                'option': 'dfs',
                                 'value': ['nothing', null],
                             }))
                         default:
@@ -340,7 +340,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'overlap':
             return _p.ss($, ($,) => ({
-                'option': "overlap",
+                'option': 'overlap',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -348,17 +348,17 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'output mode':
             return _p.ss($, ($,) => ({
-                'option': "output mode",
+                'option': 'output mode',
                 'value': ['state', _p.decide.state($, ($,): t_out.Value.state => {
                     switch ($[0]) {
                         case 'edges first':
                             return _p.ss($, ($,) => ({
-                                'option': "edges first",
+                                'option': 'edges first',
                                 'value': ['nothing', null],
                             }))
                         case 'nodes first':
                             return _p.ss($, ($,) => ({
-                                'option': "nodes first",
+                                'option': 'nodes first',
                                 'value': ['nothing', null],
                             }))
                         default:
@@ -368,25 +368,25 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'pack':
             return _p.ss($, ($,) => ({
-                'option': "pack",
+                'option': 'pack',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'pack mode':
             return _p.ss($, ($,) => ({
-                'option': "pack mode",
+                'option': 'pack mode',
                 'value': ['state', _p.decide.state($, ($,): t_out.Value.state => {
                     switch ($[0]) {
                         case 'node':
                             return _p.ss($, ($,) => ({
-                                'option': "node",
+                                'option': 'node',
                                 'value': ['nothing', null],
                             }))
                         case 'graph':
                             return _p.ss($, ($,) => ({
-                                'option': "graph",
+                                'option': 'graph',
                                 'value': ['nothing', null],
                             }))
                         default:
@@ -396,15 +396,15 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'pad':
             return _p.ss($, ($,) => ({
-                'option': "pad",
+                'option': 'pad',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'page':
             return _p.ss($, ($,) => ({
-                'option': "page",
+                'option': 'page',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -412,43 +412,43 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'quadtree':
             return _p.ss($, ($,) => ({
-                'option': "quadtree",
+                'option': 'quadtree',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'quantum':
             return _p.ss($, ($,) => ({
-                'option': "quantum",
+                'option': 'quantum',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'rankdir':
             return _p.ss($, ($,) => ({
-                'option': "rankdir",
+                'option': 'rankdir',
                 'value': ['state', _p.decide.state($, ($,): t_out.Value.state => {
                     switch ($[0]) {
                         case 'top bottom':
                             return _p.ss($, ($,) => ({
-                                'option': "top bottom",
+                                'option': 'top bottom',
                                 'value': ['nothing', null],
                             }))
                         case 'bottom top':
                             return _p.ss($, ($,) => ({
-                                'option': "bottom top",
+                                'option': 'bottom top',
                                 'value': ['nothing', null],
                             }))
                         case 'left right':
                             return _p.ss($, ($,) => ({
-                                'option': "left right",
+                                'option': 'left right',
                                 'value': ['nothing', null],
                             }))
                         case 'right left':
                             return _p.ss($, ($,) => ({
-                                'option': "right left",
+                                'option': 'right left',
                                 'value': ['nothing', null],
                             }))
                         default:
@@ -458,7 +458,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'ranksep':
             return _p.ss($, ($,) => ({
-                'option': "ranksep",
+                'option': 'ranksep',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -466,7 +466,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'ratio':
             return _p.ss($, ($,) => ({
-                'option': "ratio",
+                'option': 'ratio',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -474,23 +474,23 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'remincross':
             return _p.ss($, ($,) => ({
-                'option': "remincross",
+                'option': 'remincross',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'rotate':
             return _p.ss($, ($,) => ({
-                'option': "rotate",
+                'option': 'rotate',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'scale':
             return _p.ss($, ($,) => ({
-                'option': "scale",
+                'option': 'scale',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -498,15 +498,15 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'searchsize':
             return _p.ss($, ($,) => ({
-                'option': "searchsize",
+                'option': 'searchsize',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'sep':
             return _p.ss($, ($,) => ({
-                'option': "sep",
+                'option': 'sep',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -514,15 +514,15 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'showboxes':
             return _p.ss($, ($,) => ({
-                'option': "showboxes",
+                'option': 'showboxes',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'size':
             return _p.ss($, ($,) => ({
-                'option': "size",
+                'option': 'size',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -530,22 +530,22 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'smoothing':
             return _p.ss($, ($,) => ({
-                'option': "smoothing",
+                'option': 'smoothing',
                 'value': ['state', _p.decide.state($, ($,): t_out.Value.state => {
                     switch ($[0]) {
                         case 'none':
                             return _p.ss($, ($,) => ({
-                                'option': "none",
+                                'option': 'none',
                                 'value': ['nothing', null],
                             }))
                         case 'spring':
                             return _p.ss($, ($,) => ({
-                                'option': "spring",
+                                'option': 'spring',
                                 'value': ['nothing', null],
                             }))
                         case 'triangle':
                             return _p.ss($, ($,) => ({
-                                'option': "triangle",
+                                'option': 'triangle',
                                 'value': ['nothing', null],
                             }))
                         default:
@@ -555,15 +555,15 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'sortv':
             return _p.ss($, ($,) => ({
-                'option': "sortv",
+                'option': 'sortv',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'splines':
             return _p.ss($, ($,) => ({
-                'option': "splines",
+                'option': 'splines',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -571,15 +571,15 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'start':
             return _p.ss($, ($,) => ({
-                'option': "start",
+                'option': 'start',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'style':
             return _p.ss($, ($,) => ({
-                'option': "style",
+                'option': 'style',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -587,7 +587,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'stylesheet':
             return _p.ss($, ($,) => ({
-                'option': "stylesheet",
+                'option': 'stylesheet',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -595,7 +595,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'target':
             return _p.ss($, ($,) => ({
-                'option': "target",
+                'option': 'target',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -603,7 +603,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'tooltip':
             return _p.ss($, ($,) => ({
-                'option': "tooltip",
+                'option': 'tooltip',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -611,15 +611,15 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'truecolor':
             return _p.ss($, ($,) => ({
-                'option': "truecolor",
+                'option': 'truecolor',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'viewport':
             return _p.ss($, ($,) => ({
-                'option': "viewport",
+                'option': 'viewport',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -627,23 +627,23 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($,) => ['list', 
             }))
         case 'width':
             return _p.ss($, ($,) => ({
-                'option': "width",
+                'option': 'width',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'xdotversion':
             return _p.ss($, ($,) => ({
-                'option': "xdotversion",
+                'option': 'xdotversion',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'xlabel':
             return _p.ss($, ($,) => ({
-                'option': "xlabel",
+                'option': 'xlabel',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -657,7 +657,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
     switch ($[0]) {
         case 'color':
             return _p.ss($, ($,) => ({
-                'option': "color",
+                'option': 'color',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -665,7 +665,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'colorscheme':
             return _p.ss($, ($,) => ({
-                'option': "colorscheme",
+                'option': 'colorscheme',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -673,7 +673,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'comment':
             return _p.ss($, ($,) => ({
-                'option': "comment",
+                'option': 'comment',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -681,15 +681,15 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'concentrate':
             return _p.ss($, ($,) => ({
-                'option': "concentrate",
+                'option': 'concentrate',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'fill color':
             return _p.ss($, ($,) => ({
-                'option': "fill color",
+                'option': 'fill color',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -697,15 +697,15 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'fixed size':
             return _p.ss($, ($,) => ({
-                'option': "fixed size",
+                'option': 'fixed size',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'font color':
             return _p.ss($, ($,) => ({
-                'option': "font color",
+                'option': 'font color',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -713,7 +713,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'font name':
             return _p.ss($, ($,) => ({
-                'option': "font name",
+                'option': 'font name',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -721,15 +721,15 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'font size':
             return _p.ss($, ($,) => ({
-                'option': "font size",
+                'option': 'font size',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'group':
             return _p.ss($, ($,) => ({
-                'option': "group",
+                'option': 'group',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -737,15 +737,15 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'height':
             return _p.ss($, ($,) => ({
-                'option': "height",
+                'option': 'height',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'image':
             return _p.ss($, ($,) => ({
-                'option': "image",
+                'option': 'image',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -753,7 +753,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'label':
             return _p.ss($, ($,) => ({
-                'option': "label",
+                'option': 'label',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -761,22 +761,22 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'labelloc':
             return _p.ss($, ($,) => ({
-                'option': "labelloc",
+                'option': 'labelloc',
                 'value': ['state', _p.decide.state($, ($,): t_out.Value.state => {
                     switch ($[0]) {
                         case 'top':
                             return _p.ss($, ($,) => ({
-                                'option': "top",
+                                'option': 'top',
                                 'value': ['nothing', null],
                             }))
                         case 'center':
                             return _p.ss($, ($,) => ({
-                                'option': "center",
+                                'option': 'center',
                                 'value': ['nothing', null],
                             }))
                         case 'bottom':
                             return _p.ss($, ($,) => ({
-                                'option': "bottom",
+                                'option': 'bottom',
                                 'value': ['nothing', null],
                             }))
                         default:
@@ -786,7 +786,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'layers':
             return _p.ss($, ($,) => ({
-                'option': "layers",
+                'option': 'layers',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -794,7 +794,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'margin':
             return _p.ss($, ($,) => ({
-                'option': "margin",
+                'option': 'margin',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -802,39 +802,39 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'nojustify':
             return _p.ss($, ($,) => ({
-                'option': "nojustify",
+                'option': 'nojustify',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'orientation':
             return _p.ss($, ($,) => ({
-                'option': "orientation",
+                'option': 'orientation',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'pen width':
             return _p.ss($, ($,) => ({
-                'option': "pen width",
+                'option': 'pen width',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'peripheries':
             return _p.ss($, ($,) => ({
-                'option': "peripheries",
+                'option': 'peripheries',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'pos':
             return _p.ss($, ($,) => ({
-                'option': "pos",
+                'option': 'pos',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -842,7 +842,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'rects':
             return _p.ss($, ($,) => ({
-                'option': "rects",
+                'option': 'rects',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -850,23 +850,23 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'regular':
             return _p.ss($, ($,) => ({
-                'option': "regular",
+                'option': 'regular',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'root':
             return _p.ss($, ($,) => ({
-                'option': "root",
+                'option': 'root',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'shape':
             return _p.ss($, ($,) => ({
-                'option': "shape",
+                'option': 'shape',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -874,31 +874,31 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'showboxes':
             return _p.ss($, ($,) => ({
-                'option': "showboxes",
+                'option': 'showboxes',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'sides':
             return _p.ss($, ($,) => ({
-                'option': "sides",
+                'option': 'sides',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'skew':
             return _p.ss($, ($,) => ({
-                'option': "skew",
+                'option': 'skew',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'style':
             return _p.ss($, ($,) => ({
-                'option': "style",
+                'option': 'style',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -906,7 +906,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'target':
             return _p.ss($, ($,) => ({
-                'option': "target",
+                'option': 'target',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -914,7 +914,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'tooltip':
             return _p.ss($, ($,) => ({
-                'option': "tooltip",
+                'option': 'tooltip',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -922,15 +922,15 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'width':
             return _p.ss($, ($,) => ({
-                'option': "width",
+                'option': 'width',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'xlabel':
             return _p.ss($, ($,) => ({
-                'option': "xlabel",
+                'option': 'xlabel',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -938,7 +938,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => ['list', $.
             }))
         case 'xlp':
             return _p.ss($, ($,) => ({
-                'option': "xlp",
+                'option': 'xlp',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -954,30 +954,30 @@ export const Tree: t_signatures.Tree = ($,) => ['group', ['verbose', _p.dictiona
         switch ($[0]) {
             case 'node':
                 return _p.ss($, ($,) => ({
-                    'option': "node",
+                    'option': 'node',
                     'value': ['group', ['verbose', _p.dictionary.literal(({
                         'attributes': _p.deprecated_cc($['attributes'], ($,) => Node_Attributes($)),
                     }))]],
                 }))
             case 'sub':
                 return _p.ss($, ($,) => ({
-                    'option': "sub",
+                    'option': 'sub',
                     'value': ['group', ['verbose', _p.dictionary.literal(({
                         'type': _p.deprecated_cc($['type'], ($,) => ['state', _p.decide.state($, ($,): t_out.Value.state => {
                             switch ($[0]) {
                                 case 'group':
                                     return _p.ss($, ($,) => ({
-                                        'option': "group",
+                                        'option': 'group',
                                         'value': ['nothing', null],
                                     }))
                                 case 'cluster':
                                     return _p.ss($, ($,) => ({
-                                        'option': "cluster",
+                                        'option': 'cluster',
                                         'value': ['nothing', null],
                                     }))
                                 case 'subgraph':
                                     return _p.ss($, ($,) => ({
-                                        'option': "subgraph",
+                                        'option': 'subgraph',
                                         'value': ['nothing', null],
                                     }))
                                 default:
@@ -1016,7 +1016,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
     switch ($[0]) {
         case 'arrowhead':
             return _p.ss($, ($,) => ({
-                'option': "arrowhead",
+                'option': 'arrowhead',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1024,15 +1024,15 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'arrowsize':
             return _p.ss($, ($,) => ({
-                'option': "arrowsize",
+                'option': 'arrowsize',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'arrowtail':
             return _p.ss($, ($,) => ({
-                'option': "arrowtail",
+                'option': 'arrowtail',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1040,7 +1040,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'bgcolor':
             return _p.ss($, ($,) => ({
-                'option': "bgcolor",
+                'option': 'bgcolor',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1048,7 +1048,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'color':
             return _p.ss($, ($,) => ({
-                'option': "color",
+                'option': 'color',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1056,7 +1056,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'colorscheme':
             return _p.ss($, ($,) => ({
-                'option': "colorscheme",
+                'option': 'colorscheme',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1064,7 +1064,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'comment':
             return _p.ss($, ($,) => ({
-                'option': "comment",
+                'option': 'comment',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1072,43 +1072,43 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'constraint':
             return _p.ss($, ($,) => ({
-                'option': "constraint",
+                'option': 'constraint',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'decorate':
             return _p.ss($, ($,) => ({
-                'option': "decorate",
+                'option': 'decorate',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'dir':
             return _p.ss($, ($,) => ({
-                'option': "dir",
+                'option': 'dir',
                 'value': ['state', _p.decide.state($, ($,): t_out.Value.state => {
                     switch ($[0]) {
                         case 'forward':
                             return _p.ss($, ($,) => ({
-                                'option': "forward",
+                                'option': 'forward',
                                 'value': ['nothing', null],
                             }))
                         case 'back':
                             return _p.ss($, ($,) => ({
-                                'option': "back",
+                                'option': 'back',
                                 'value': ['nothing', null],
                             }))
                         case 'both':
                             return _p.ss($, ($,) => ({
-                                'option': "both",
+                                'option': 'both',
                                 'value': ['nothing', null],
                             }))
                         case 'none':
                             return _p.ss($, ($,) => ({
-                                'option': "none",
+                                'option': 'none',
                                 'value': ['nothing', null],
                             }))
                         default:
@@ -1118,7 +1118,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'edge url':
             return _p.ss($, ($,) => ({
-                'option': "edge url",
+                'option': 'edge url',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1126,7 +1126,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'edge lp':
             return _p.ss($, ($,) => ({
-                'option': "edge lp",
+                'option': 'edge lp',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1134,7 +1134,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'edge target':
             return _p.ss($, ($,) => ({
-                'option': "edge target",
+                'option': 'edge target',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1142,7 +1142,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'edge tooltip':
             return _p.ss($, ($,) => ({
-                'option': "edge tooltip",
+                'option': 'edge tooltip',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1150,7 +1150,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'head lp':
             return _p.ss($, ($,) => ({
-                'option': "head lp",
+                'option': 'head lp',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1158,15 +1158,15 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'headclip':
             return _p.ss($, ($,) => ({
-                'option': "headclip",
+                'option': 'headclip',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'headlabel':
             return _p.ss($, ($,) => ({
-                'option': "headlabel",
+                'option': 'headlabel',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1174,7 +1174,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'headport':
             return _p.ss($, ($,) => ({
-                'option': "headport",
+                'option': 'headport',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1182,15 +1182,15 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'height':
             return _p.ss($, ($,) => ({
-                'option': "height",
+                'option': 'height',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'id':
             return _p.ss($, ($,) => ({
-                'option': "id",
+                'option': 'id',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1198,7 +1198,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'label':
             return _p.ss($, ($,) => ({
-                'option': "label",
+                'option': 'label',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1206,39 +1206,39 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'label distance':
             return _p.ss($, ($,) => ({
-                'option': "label distance",
+                'option': 'label distance',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'label angle':
             return _p.ss($, ($,) => ({
-                'option': "label angle",
+                'option': 'label angle',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'label float':
             return _p.ss($, ($,) => ({
-                'option': "label float",
+                'option': 'label float',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'labelfloat':
             return _p.ss($, ($,) => ({
-                'option': "labelfloat",
+                'option': 'labelfloat',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'labelhref':
             return _p.ss($, ($,) => ({
-                'option': "labelhref",
+                'option': 'labelhref',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1246,7 +1246,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'label lp':
             return _p.ss($, ($,) => ({
-                'option': "label lp",
+                'option': 'label lp',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1254,7 +1254,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'layer':
             return _p.ss($, ($,) => ({
-                'option': "layer",
+                'option': 'layer',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1262,15 +1262,15 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'len':
             return _p.ss($, ($,) => ({
-                'option': "len",
+                'option': 'len',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'lhead':
             return _p.ss($, ($,) => ({
-                'option': "lhead",
+                'option': 'lhead',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1278,7 +1278,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'lp':
             return _p.ss($, ($,) => ({
-                'option': "lp",
+                'option': 'lp',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1286,7 +1286,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'ltail':
             return _p.ss($, ($,) => ({
-                'option': "ltail",
+                'option': 'ltail',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1294,23 +1294,23 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'minlen':
             return _p.ss($, ($,) => ({
-                'option': "minlen",
+                'option': 'minlen',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'pen width':
             return _p.ss($, ($,) => ({
-                'option': "pen width",
+                'option': 'pen width',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'pos':
             return _p.ss($, ($,) => ({
-                'option': "pos",
+                'option': 'pos',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1318,31 +1318,31 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'same head':
             return _p.ss($, ($,) => ({
-                'option': "same head",
+                'option': 'same head',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'same tail':
             return _p.ss($, ($,) => ({
-                'option': "same tail",
+                'option': 'same tail',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'showboxes':
             return _p.ss($, ($,) => ({
-                'option': "showboxes",
+                'option': 'showboxes',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'style':
             return _p.ss($, ($,) => ({
-                'option': "style",
+                'option': 'style',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1350,7 +1350,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'tail lp':
             return _p.ss($, ($,) => ({
-                'option': "tail lp",
+                'option': 'tail lp',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1358,15 +1358,15 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'tailclip':
             return _p.ss($, ($,) => ({
-                'option': "tailclip",
+                'option': 'tailclip',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_boolean.serialize($),
                 })],
             }))
         case 'taillabel':
             return _p.ss($, ($,) => ({
-                'option': "taillabel",
+                'option': 'taillabel',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1374,7 +1374,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'tailport':
             return _p.ss($, ($,) => ({
-                'option': "tailport",
+                'option': 'tailport',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1382,7 +1382,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'tooltip':
             return _p.ss($, ($,) => ({
-                'option': "tooltip",
+                'option': 'tooltip',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1390,15 +1390,15 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'weight':
             return _p.ss($, ($,) => ({
-                'option': "weight",
+                'option': 'weight',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
         case 'xlabel':
             return _p.ss($, ($,) => ({
-                'option': "xlabel",
+                'option': 'xlabel',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1406,7 +1406,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($,) => ['list', $.
             }))
         case 'xlp':
             return _p.ss($, ($,) => ({
-                'option': "xlp",
+                'option': 'xlp',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1426,7 +1426,7 @@ export const Graph: t_signatures.Graph = ($,) => ['group', ['verbose', _p.dictio
         switch ($[0]) {
             case 'undirected':
                 return _p.ss($, ($,) => ({
-                    'option': "undirected",
+                    'option': 'undirected',
                     'value': ['group', ['verbose', _p.dictionary.literal(({
                         'edges': _p.deprecated_cc($['edges'], ($,) => ['list', $.__l_map(($,) => ['group', ['verbose', _p.dictionary.literal(({
                             'yin': _p.deprecated_cc($['yin'], ($,) => End_Point_Specification($)),
@@ -1437,7 +1437,7 @@ export const Graph: t_signatures.Graph = ($,) => ['group', ['verbose', _p.dictio
                 }))
             case 'directed':
                 return _p.ss($, ($,) => ({
-                    'option': "directed",
+                    'option': 'directed',
                     'value': ['group', ['verbose', _p.dictionary.literal(({
                         'edges': _p.deprecated_cc($['edges'], ($,) => ['list', $.__l_map(($,) => ['group', ['verbose', _p.dictionary.literal(({
                             'from': _p.deprecated_cc($['from'], ($,) => End_Point_Specification($)),
@@ -1455,7 +1455,7 @@ export const Attribute_Value: t_signatures.Attribute_Value = ($,) => ['state', _
     switch ($[0]) {
         case 'number':
             return _p.ss($, ($,) => ({
-                'option': "number",
+                'option': 'number',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1463,7 +1463,7 @@ export const Attribute_Value: t_signatures.Attribute_Value = ($,) => ['state', _
             }))
         case 'string':
             return _p.ss($, ($,) => ({
-                'option': "string",
+                'option': 'string',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1471,7 +1471,7 @@ export const Attribute_Value: t_signatures.Attribute_Value = ($,) => ['state', _
             }))
         case 'html string':
             return _p.ss($, ($,) => ({
-                'option': "html string",
+                'option': 'html string',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,

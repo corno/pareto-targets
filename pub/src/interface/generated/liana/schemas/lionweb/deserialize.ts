@@ -1,6 +1,8 @@
 
 import * as _pi from "pareto-core/dist/interface"
 
+import * as i_generic from "../../generic/deserialize"
+
 import * as i_out from "./data"
 
 export namespace MetaPointer_ {
@@ -8,6 +10,8 @@ export namespace MetaPointer_ {
     export type I = string
     
     export type O = i_out.MetaPointer
+    
+    export type E = i_generic.Error
     
     export namespace P {
         
@@ -17,6 +21,7 @@ export namespace MetaPointer_ {
 
 export type MetaPointer_ = (
     context: MetaPointer_.I,
+    abort: _pi.Abort<MetaPointer_.E>,
 ) => MetaPointer_.O
 
 export namespace SerializationChunk_ {
@@ -24,6 +29,8 @@ export namespace SerializationChunk_ {
     export type I = string
     
     export type O = i_out.SerializationChunk
+    
+    export type E = i_generic.Error
     
     export namespace P {
         
@@ -33,6 +40,7 @@ export namespace SerializationChunk_ {
 
 export type SerializationChunk_ = (
     context: SerializationChunk_.I,
+    abort: _pi.Abort<SerializationChunk_.E>,
 ) => SerializationChunk_.O
 
 export namespace SerializationChunks_ {
@@ -40,6 +48,8 @@ export namespace SerializationChunks_ {
     export type I = string
     
     export type O = i_out.SerializationChunks
+    
+    export type E = i_generic.Error
     
     export namespace P {
         
@@ -49,6 +59,7 @@ export namespace SerializationChunks_ {
 
 export type SerializationChunks_ = (
     context: SerializationChunks_.I,
+    abort: _pi.Abort<SerializationChunks_.E>,
 ) => SerializationChunks_.O
 
 export { 

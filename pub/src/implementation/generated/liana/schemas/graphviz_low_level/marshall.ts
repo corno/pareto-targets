@@ -12,7 +12,7 @@ export const ID: t_signatures.ID = ($,) => ['state', _p.decide.state($, ($,): t_
     switch ($[0]) {
         case 'id':
             return _p.ss($, ($,) => ({
-                'option': "id",
+                'option': 'id',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -20,7 +20,7 @@ export const ID: t_signatures.ID = ($,) => ['state', _p.decide.state($, ($,): t_
             }))
         case 'string':
             return _p.ss($, ($,) => ({
-                'option': "string",
+                'option': 'string',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -28,7 +28,7 @@ export const ID: t_signatures.ID = ($,) => ['state', _p.decide.state($, ($,): t_
             }))
         case 'html':
             return _p.ss($, ($,) => ({
-                'option': "html",
+                'option': 'html',
                 'value': ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -36,9 +36,9 @@ export const ID: t_signatures.ID = ($,) => ['state', _p.decide.state($, ($,): t_
             }))
         case 'number':
             return _p.ss($, ($,) => ({
-                'option': "number",
+                'option': 'number',
                 'value': ['text', ({
-                    'delimiter': ['backtick', null],
+                    'delimiter': ['none', null],
                     'value': v_serialize_number.serialize($),
                 })],
             }))
@@ -65,7 +65,7 @@ export const Statement_List: t_signatures.Statement_List = ($,) => ['list', $.__
     switch ($[0]) {
         case 'node':
             return _p.ss($, ($,) => ({
-                'option': "node",
+                'option': 'node',
                 'value': ['group', ['verbose', _p.dictionary.literal(({
                     'node': _p.deprecated_cc($['node'], ($,) => Node_ID($)),
                     'attribute list': _p.deprecated_cc($['attribute list'], ($,) => Attribute_List($)),
@@ -73,18 +73,18 @@ export const Statement_List: t_signatures.Statement_List = ($,) => ['list', $.__
             }))
         case 'edge':
             return _p.ss($, ($,) => ({
-                'option': "edge",
+                'option': 'edge',
                 'value': ['group', ['verbose', _p.dictionary.literal(({
                     'left': _p.deprecated_cc($['left'], ($,) => ['state', _p.decide.state($, ($,): t_out.Value.state => {
                         switch ($[0]) {
                             case 'node':
                                 return _p.ss($, ($,) => ({
-                                    'option': "node",
+                                    'option': 'node',
                                     'value': Node_ID($),
                                 }))
                             case 'subgraph':
                                 return _p.ss($, ($,) => ({
-                                    'option': "subgraph",
+                                    'option': 'subgraph',
                                     'value': Subgraph($),
                                 }))
                             default:
@@ -95,12 +95,12 @@ export const Statement_List: t_signatures.Statement_List = ($,) => ['list', $.__
                         switch ($[0]) {
                             case 'node':
                                 return _p.ss($, ($,) => ({
-                                    'option': "node",
+                                    'option': 'node',
                                     'value': Node_ID($),
                                 }))
                             case 'subgraph':
                                 return _p.ss($, ($,) => ({
-                                    'option': "subgraph",
+                                    'option': 'subgraph',
                                     'value': Subgraph($),
                                 }))
                             default:
@@ -112,23 +112,23 @@ export const Statement_List: t_signatures.Statement_List = ($,) => ['list', $.__
             }))
         case 'attribute list':
             return _p.ss($, ($,) => ({
-                'option': "attribute list",
+                'option': 'attribute list',
                 'value': ['group', ['verbose', _p.dictionary.literal(({
                     'type': _p.deprecated_cc($['type'], ($,) => ['state', _p.decide.state($, ($,): t_out.Value.state => {
                         switch ($[0]) {
                             case 'graph':
                                 return _p.ss($, ($,) => ({
-                                    'option': "graph",
+                                    'option': 'graph',
                                     'value': ['nothing', null],
                                 }))
                             case 'node':
                                 return _p.ss($, ($,) => ({
-                                    'option': "node",
+                                    'option': 'node',
                                     'value': ['nothing', null],
                                 }))
                             case 'edge':
                                 return _p.ss($, ($,) => ({
-                                    'option': "edge",
+                                    'option': 'edge',
                                     'value': ['nothing', null],
                                 }))
                             default:
@@ -140,7 +140,7 @@ export const Statement_List: t_signatures.Statement_List = ($,) => ['list', $.__
             }))
         case 'attribute assignment':
             return _p.ss($, ($,) => ({
-                'option': "attribute assignment",
+                'option': 'attribute assignment',
                 'value': ['group', ['verbose', _p.dictionary.literal(({
                     'name': _p.deprecated_cc($['name'], ($,) => ID($)),
                     'value': _p.deprecated_cc($['value'], ($,) => ID($)),
@@ -148,7 +148,7 @@ export const Statement_List: t_signatures.Statement_List = ($,) => ['list', $.__
             }))
         case 'subgraph':
             return _p.ss($, ($,) => ({
-                'option': "subgraph",
+                'option': 'subgraph',
                 'value': Subgraph($),
             }))
         default:
@@ -157,19 +157,19 @@ export const Statement_List: t_signatures.Statement_List = ($,) => ['list', $.__
 })])]
 export const Graph: t_signatures.Graph = ($,) => ['group', ['verbose', _p.dictionary.literal(({
     'strict': _p.deprecated_cc($['strict'], ($,) => ['text', ({
-        'delimiter': ['backtick', null],
+        'delimiter': ['none', null],
         'value': v_serialize_boolean.serialize($),
     })]),
     'type': _p.deprecated_cc($['type'], ($,) => ['state', _p.decide.state($, ($,): t_out.Value.state => {
         switch ($[0]) {
             case 'graph':
                 return _p.ss($, ($,) => ({
-                    'option': "graph",
+                    'option': 'graph',
                     'value': ['nothing', null],
                 }))
             case 'digraph':
                 return _p.ss($, ($,) => ({
-                    'option': "digraph",
+                    'option': 'digraph',
                     'value': ['nothing', null],
                 }))
             default:
