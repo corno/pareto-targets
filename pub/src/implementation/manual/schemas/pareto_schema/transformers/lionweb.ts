@@ -77,7 +77,7 @@ export const Type_Node_2_Document_nodes = (
                     'containments': _p.list.literal([
                         {
                             'containment': MetaPointer("properties"),
-                            'children': $.__to_list(($, key) => $p.path + "." + key),
+                            'children': $.__to_list(($, id) => $p.path + "." + key),
                         },
                     ]),
                     'properties': _p.list.literal([]),
@@ -85,7 +85,7 @@ export const Type_Node_2_Document_nodes = (
                 }
             ],
             _p.list.flatten(
-                $.__to_list(($, key) => Type_Node_2_Document_nodes(
+                $.__to_list(($, id) => Type_Node_2_Document_nodes(
                     $.node,
                     {
                         'path': $p.path + "." + key,
@@ -152,14 +152,14 @@ export const Type_Node_2_Document_nodes = (
                     'containments': _p.list.literal([
                         {
                             'containment': MetaPointer("states"),
-                            'children': _p.list.from_dictionary($, ($, key) => $p.path + "." + key),
+                            'children': _p.list.from_dictionary($, ($, id) => $p.path + "." + key),
                         },
                     ]),
                     'properties': _p.list.literal([]),
                     'references': _p.list.literal([])
                 }
             ],
-            _p.list.from_dictionary($, ($, key) => ({
+            _p.list.from_dictionary($, ($, id) => ({
                 'id': $p.path,
                 'parent': _p.optional.not_set(),
                 'annotations': _p.list.literal([]),
@@ -179,7 +179,7 @@ export const Type_Node_2_Document_nodes = (
                 'references': _p.list.literal([])
             })),
             _p.list.flatten(
-                _p.list.from_dictionary($, ($, key) => Type_Node_2_Document_nodes(
+                _p.list.from_dictionary($, ($, id) => Type_Node_2_Document_nodes(
                     $.node,
                     {
                         'path': $p.path + "." + key,
@@ -209,7 +209,7 @@ export const Schema = (
     ]),
     'nodes': _p.list.flatten(
         $.types.__to_list(
-            ($, key) => Type_Node_2_Document_nodes(
+            ($, id) => Type_Node_2_Document_nodes(
                 $.node,
                 {
                     'path': key,

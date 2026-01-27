@@ -29,6 +29,6 @@ export const Schema_Tree = ($: d_in_s.Schema_Tree): d_out.Directory => _p.decide
     }
 })
 
-export const Schemas = ($: d_in_s.Schemas): d_out.Directory => $.__d_map(($, key) => sh.n.directory(Schema_Tree($)))
+export const Schemas = ($: d_in_s.Schemas): d_out.Directory => $.__d_map(($, id) => sh.n.directory(Schema_Tree($)))
 
 export const Module = ($: d_in.Module): d_out.Directory => Schema_Tree($['schema tree'])

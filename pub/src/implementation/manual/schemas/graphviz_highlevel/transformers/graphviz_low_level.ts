@@ -115,7 +115,7 @@ export const Tree = (
 ): d_out.Statement_List => _p.list.flatten(
     _p.list.from_dictionary(
         $.elements,
-        ($, key): d_out.Statement_List => {
+        ($, id): d_out.Statement_List => {
             const path = _p.list.nested_literal_old([
                 $p.path,
                 [

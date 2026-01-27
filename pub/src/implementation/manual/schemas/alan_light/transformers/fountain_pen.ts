@@ -45,7 +45,7 @@ export const Node = (
         sh.g.sub(
             _p.list.from_dictionary(
                 $.properties,
-                ($, key) => sh.g.nested_block([
+                ($, id) => sh.g.nested_block([
                     Identifier(key),
                     sh.b.snippet(": "),
                     _p.decide.state($.type, ($) => {
@@ -68,7 +68,7 @@ export const Node = (
                                         sh.g.sub(
                                             _p.list.from_dictionary(
                                                 $.states,
-                                                ($, key) => sh.g.nested_block([
+                                                ($, id) => sh.g.nested_block([
                                                     Identifier(key),
                                                     sh.b.snippet(" "),
                                                     Node($.node)
