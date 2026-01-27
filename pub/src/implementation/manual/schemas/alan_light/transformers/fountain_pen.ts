@@ -46,13 +46,13 @@ export const Node = (
             _p.list.from_dictionary(
                 $.properties,
                 ($, id) => sh.g.nested_block([
-                    Identifier(key),
+                    Identifier(id),
                     sh.b.snippet(": "),
                     _p.decide.state($.type, ($) => {
                         switch ($[0]) {
                             case 'collection': return _p.ss($, ($) => sh.b.sub([
                                 sh.b.snippet("collection ["),
-                                Identifier($.key),
+                                Identifier($.id),
                                 sh.b.snippet("] "),
                                 Node($.node)
                             ]))
@@ -69,7 +69,7 @@ export const Node = (
                                             _p.list.from_dictionary(
                                                 $.states,
                                                 ($, id) => sh.g.nested_block([
-                                                    Identifier(key),
+                                                    Identifier(id),
                                                     sh.b.snippet(" "),
                                                     Node($.node)
                                                 ])
