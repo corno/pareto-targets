@@ -35,7 +35,7 @@ export const Path: t_signatures.Path = ($,) => ['group', ['verbose', _p.dictiona
     }))]])]),
 }))]]
 export const Node: t_signatures.Node = ($,) => ['group', ['verbose', _p.dictionary.literal(({
-    'properties': _p.deprecated_cc($['properties'], ($,) => ['dictionary', $.__d_map(($,key,) => ['group', ['verbose', _p.dictionary.literal(({
+    'properties': _p.deprecated_cc($['properties'], ($,) => ['dictionary', $.__d_map(($,id,) => ['group', ['verbose', _p.dictionary.literal(({
         'type': _p.deprecated_cc($['type'], ($,) => ['state', _p.decide.state($, ($,): t_out.Value.state => {
             switch ($[0]) {
                 case 'collection':
@@ -67,8 +67,8 @@ export const Node: t_signatures.Node = ($,) => ['group', ['verbose', _p.dictiona
                     return _p.ss($, ($,) => ({
                         'option': 'state group',
                         'value': ['group', ['verbose', _p.dictionary.literal(({
-                            'states': _p.deprecated_cc($['states'], ($,) => ['dictionary', $.__d_map(($,key,) => ['group', ['verbose', _p.dictionary.literal(({
-                                'constraints': _p.deprecated_cc($['constraints'], ($,) => ['dictionary', $.__d_map(($,key,) => ['group', ['verbose', _p.dictionary.literal(({
+                            'states': _p.deprecated_cc($['states'], ($,) => ['dictionary', $.__d_map(($,id,) => ['group', ['verbose', _p.dictionary.literal(({
+                                'constraints': _p.deprecated_cc($['constraints'], ($,) => ['dictionary', $.__d_map(($,id,) => ['group', ['verbose', _p.dictionary.literal(({
                                     'path': _p.deprecated_cc($['path'], ($,) => Path($)),
                                 }))]])]),
                                 'node': _p.deprecated_cc($['node'], ($,) => Node($)),
@@ -82,7 +82,7 @@ export const Node: t_signatures.Node = ($,) => ['group', ['verbose', _p.dictiona
     }))]])]),
 }))]]
 export const Root: t_signatures.Root = ($,) => ['group', ['verbose', _p.dictionary.literal(({
-    'numerical types': _p.deprecated_cc($['numerical types'], ($,) => ['dictionary', $.__d_map(($,key,) => ['group', ['verbose', _p.dictionary.literal(({
+    'numerical types': _p.deprecated_cc($['numerical types'], ($,) => ['dictionary', $.__d_map(($,id,) => ['group', ['verbose', _p.dictionary.literal(({
     }))]])]),
     'root': _p.deprecated_cc($['root'], ($,) => Node($)),
 }))]]

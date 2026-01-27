@@ -6,7 +6,7 @@ import * as t_signatures from "../../../../../interface/generated/liana/schemas/
 import * as t_out from "../../../../../interface/generated/liana/schemas/pareto_documentation/data"
 
 import * as v_graphviz from "../graphviz_high_level/migrate_boilerplate"
-export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($,) => $.__d_map(($,key,) => _p.decide.state($, ($,): t_out.Graphviz_Directory.D => {
+export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($,) => $.__d_map(($,id,) => _p.decide.state($, ($,): t_out.Graphviz_Directory.D => {
     switch ($[0]) {
         case 'file':
             return _p.ss($, ($,) => ['file', v_graphviz.Graph($)])

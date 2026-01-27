@@ -10,7 +10,7 @@ import * as v_serialize_number from "liana-core/dist/implementation/manual/primi
 import * as v_serialize_boolean from "liana-core/dist/implementation/manual/primitives/boolean/serializers/true_false"
 
 import * as v_external_graphviz from "../graphviz_high_level/marshall"
-export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($,) => ['dictionary', $.__d_map(($,key,) => ['state', _p.decide.state($, ($,): t_out.Value.state => {
+export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($,) => ['dictionary', $.__d_map(($,id,) => ['state', _p.decide.state($, ($,): t_out.Value.state => {
     switch ($[0]) {
         case 'file':
             return _p.ss($, ($,) => ({

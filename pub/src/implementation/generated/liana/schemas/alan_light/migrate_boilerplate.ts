@@ -26,7 +26,7 @@ export const Path: t_signatures.Path = ($,) => ({
     }))),
 })
 export const Node: t_signatures.Node = ($,) => ({
-    'properties': _p.deprecated_cc($['properties'], ($,) => $.__d_map(($,key,) => ({
+    'properties': _p.deprecated_cc($['properties'], ($,) => $.__d_map(($,id,) => ({
         'type': _p.deprecated_cc($['type'], ($,) => _p.decide.state($, ($,): t_out.Node.properties.D.type_ => {
             switch ($[0]) {
                 case 'collection':
@@ -47,8 +47,8 @@ export const Node: t_signatures.Node = ($,) => ({
                     })])
                 case 'state group':
                     return _p.ss($, ($,) => ['state group', ({
-                        'states': _p.deprecated_cc($['states'], ($,) => $.__d_map(($,key,) => ({
-                            'constraints': _p.deprecated_cc($['constraints'], ($,) => $.__d_map(($,key,) => ({
+                        'states': _p.deprecated_cc($['states'], ($,) => $.__d_map(($,id,) => ({
+                            'constraints': _p.deprecated_cc($['constraints'], ($,) => $.__d_map(($,id,) => ({
                                 'path': _p.deprecated_cc($['path'], ($,) => Path($)),
                             }))),
                             'node': _p.deprecated_cc($['node'], ($,) => Node($)),
@@ -61,6 +61,6 @@ export const Node: t_signatures.Node = ($,) => ({
     }))),
 })
 export const Root: t_signatures.Root = ($,) => ({
-    'numerical types': _p.deprecated_cc($['numerical types'], ($,) => $.__d_map(($,key,) => null)),
+    'numerical types': _p.deprecated_cc($['numerical types'], ($,) => $.__d_map(($,id,) => null)),
     'root': _p.deprecated_cc($['root'], ($,) => Node($)),
 })

@@ -80,4 +80,4 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($,) => ['gro
         }))]])]),
     }))]])]),
 }))]]
-export const SerializationChunks: t_signatures.SerializationChunks = ($,) => ['dictionary', $.__d_map(($,key,) => SerializationChunk($))]
+export const SerializationChunks: t_signatures.SerializationChunks = ($,) => ['dictionary', $.__d_map(($,id,) => SerializationChunk($))]

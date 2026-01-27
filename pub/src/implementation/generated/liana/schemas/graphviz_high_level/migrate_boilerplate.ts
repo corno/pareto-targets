@@ -316,7 +316,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($,) => $.__l_map((
 }))
 export const Tree: t_signatures.Tree = ($,) => ({
     'attributes': _p.deprecated_cc($['attributes'], ($,) => Graph_Attributes($)),
-    'elements': _p.deprecated_cc($['elements'], ($,) => $.__d_map(($,key,) => _p.decide.state($, ($,): t_out.Tree.elements.D => {
+    'elements': _p.deprecated_cc($['elements'], ($,) => $.__d_map(($,id,) => _p.decide.state($, ($,): t_out.Tree.elements.D => {
         switch ($[0]) {
             case 'node':
                 return _p.ss($, ($,) => ['node', ({
