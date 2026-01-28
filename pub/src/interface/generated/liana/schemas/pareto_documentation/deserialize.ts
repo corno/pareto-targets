@@ -15,6 +15,10 @@ export namespace Graphviz_Directory_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -22,6 +26,10 @@ export namespace Graphviz_Directory_ {
 export type Graphviz_Directory_ = (
     context: Graphviz_Directory_.I,
     abort: _pi.Abort<Graphviz_Directory_.E>,
+    parameters: {
+        readonly 'document resource identifier': Graphviz_Directory_.P.document_resource_identifier
+        readonly 'indentation': Graphviz_Directory_.P.indentation
+    },
 ) => Graphviz_Directory_.O
 
 export { 

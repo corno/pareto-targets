@@ -15,6 +15,10 @@ export namespace Graph_Attributes_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -22,6 +26,10 @@ export namespace Graph_Attributes_ {
 export type Graph_Attributes_ = (
     context: Graph_Attributes_.I,
     abort: _pi.Abort<Graph_Attributes_.E>,
+    parameters: {
+        readonly 'document resource identifier': Graph_Attributes_.P.document_resource_identifier
+        readonly 'indentation': Graph_Attributes_.P.indentation
+    },
 ) => Graph_Attributes_.O
 
 export namespace Node_Attributes_ {
@@ -34,6 +42,10 @@ export namespace Node_Attributes_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -41,6 +53,10 @@ export namespace Node_Attributes_ {
 export type Node_Attributes_ = (
     context: Node_Attributes_.I,
     abort: _pi.Abort<Node_Attributes_.E>,
+    parameters: {
+        readonly 'document resource identifier': Node_Attributes_.P.document_resource_identifier
+        readonly 'indentation': Node_Attributes_.P.indentation
+    },
 ) => Node_Attributes_.O
 
 export namespace Tree_ {
@@ -53,6 +69,10 @@ export namespace Tree_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -60,6 +80,10 @@ export namespace Tree_ {
 export type Tree_ = (
     context: Tree_.I,
     abort: _pi.Abort<Tree_.E>,
+    parameters: {
+        readonly 'document resource identifier': Tree_.P.document_resource_identifier
+        readonly 'indentation': Tree_.P.indentation
+    },
 ) => Tree_.O
 
 export namespace End_Point_Specification_ {
@@ -72,6 +96,10 @@ export namespace End_Point_Specification_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -79,6 +107,10 @@ export namespace End_Point_Specification_ {
 export type End_Point_Specification_ = (
     context: End_Point_Specification_.I,
     abort: _pi.Abort<End_Point_Specification_.E>,
+    parameters: {
+        readonly 'document resource identifier': End_Point_Specification_.P.document_resource_identifier
+        readonly 'indentation': End_Point_Specification_.P.indentation
+    },
 ) => End_Point_Specification_.O
 
 export namespace Edge_Attributes_ {
@@ -91,6 +123,10 @@ export namespace Edge_Attributes_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -98,6 +134,10 @@ export namespace Edge_Attributes_ {
 export type Edge_Attributes_ = (
     context: Edge_Attributes_.I,
     abort: _pi.Abort<Edge_Attributes_.E>,
+    parameters: {
+        readonly 'document resource identifier': Edge_Attributes_.P.document_resource_identifier
+        readonly 'indentation': Edge_Attributes_.P.indentation
+    },
 ) => Edge_Attributes_.O
 
 export namespace Graph_ {
@@ -110,6 +150,10 @@ export namespace Graph_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -117,6 +161,10 @@ export namespace Graph_ {
 export type Graph_ = (
     context: Graph_.I,
     abort: _pi.Abort<Graph_.E>,
+    parameters: {
+        readonly 'document resource identifier': Graph_.P.document_resource_identifier
+        readonly 'indentation': Graph_.P.indentation
+    },
 ) => Graph_.O
 
 export namespace Attribute_Value_ {
@@ -129,6 +177,10 @@ export namespace Attribute_Value_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -136,6 +188,10 @@ export namespace Attribute_Value_ {
 export type Attribute_Value_ = (
     context: Attribute_Value_.I,
     abort: _pi.Abort<Attribute_Value_.E>,
+    parameters: {
+        readonly 'document resource identifier': Attribute_Value_.P.document_resource_identifier
+        readonly 'indentation': Attribute_Value_.P.indentation
+    },
 ) => Attribute_Value_.O
 
 export { 

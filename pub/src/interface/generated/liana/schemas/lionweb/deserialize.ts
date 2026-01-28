@@ -15,6 +15,10 @@ export namespace MetaPointer_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -22,6 +26,10 @@ export namespace MetaPointer_ {
 export type MetaPointer_ = (
     context: MetaPointer_.I,
     abort: _pi.Abort<MetaPointer_.E>,
+    parameters: {
+        readonly 'document resource identifier': MetaPointer_.P.document_resource_identifier
+        readonly 'indentation': MetaPointer_.P.indentation
+    },
 ) => MetaPointer_.O
 
 export namespace SerializationChunk_ {
@@ -34,6 +42,10 @@ export namespace SerializationChunk_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -41,6 +53,10 @@ export namespace SerializationChunk_ {
 export type SerializationChunk_ = (
     context: SerializationChunk_.I,
     abort: _pi.Abort<SerializationChunk_.E>,
+    parameters: {
+        readonly 'document resource identifier': SerializationChunk_.P.document_resource_identifier
+        readonly 'indentation': SerializationChunk_.P.indentation
+    },
 ) => SerializationChunk_.O
 
 export namespace SerializationChunks_ {
@@ -53,6 +69,10 @@ export namespace SerializationChunks_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -60,6 +80,10 @@ export namespace SerializationChunks_ {
 export type SerializationChunks_ = (
     context: SerializationChunks_.I,
     abort: _pi.Abort<SerializationChunks_.E>,
+    parameters: {
+        readonly 'document resource identifier': SerializationChunks_.P.document_resource_identifier
+        readonly 'indentation': SerializationChunks_.P.indentation
+    },
 ) => SerializationChunks_.O
 
 export { 

@@ -15,6 +15,10 @@ export namespace ID_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -22,6 +26,10 @@ export namespace ID_ {
 export type ID_ = (
     context: ID_.I,
     abort: _pi.Abort<ID_.E>,
+    parameters: {
+        readonly 'document resource identifier': ID_.P.document_resource_identifier
+        readonly 'indentation': ID_.P.indentation
+    },
 ) => ID_.O
 
 export namespace Node_ID_ {
@@ -34,6 +42,10 @@ export namespace Node_ID_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -41,6 +53,10 @@ export namespace Node_ID_ {
 export type Node_ID_ = (
     context: Node_ID_.I,
     abort: _pi.Abort<Node_ID_.E>,
+    parameters: {
+        readonly 'document resource identifier': Node_ID_.P.document_resource_identifier
+        readonly 'indentation': Node_ID_.P.indentation
+    },
 ) => Node_ID_.O
 
 export namespace Attribute_List_ {
@@ -53,6 +69,10 @@ export namespace Attribute_List_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -60,6 +80,10 @@ export namespace Attribute_List_ {
 export type Attribute_List_ = (
     context: Attribute_List_.I,
     abort: _pi.Abort<Attribute_List_.E>,
+    parameters: {
+        readonly 'document resource identifier': Attribute_List_.P.document_resource_identifier
+        readonly 'indentation': Attribute_List_.P.indentation
+    },
 ) => Attribute_List_.O
 
 export namespace Subgraph_ {
@@ -72,6 +96,10 @@ export namespace Subgraph_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -79,6 +107,10 @@ export namespace Subgraph_ {
 export type Subgraph_ = (
     context: Subgraph_.I,
     abort: _pi.Abort<Subgraph_.E>,
+    parameters: {
+        readonly 'document resource identifier': Subgraph_.P.document_resource_identifier
+        readonly 'indentation': Subgraph_.P.indentation
+    },
 ) => Subgraph_.O
 
 export namespace Statement_List_ {
@@ -91,6 +123,10 @@ export namespace Statement_List_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -98,6 +134,10 @@ export namespace Statement_List_ {
 export type Statement_List_ = (
     context: Statement_List_.I,
     abort: _pi.Abort<Statement_List_.E>,
+    parameters: {
+        readonly 'document resource identifier': Statement_List_.P.document_resource_identifier
+        readonly 'indentation': Statement_List_.P.indentation
+    },
 ) => Statement_List_.O
 
 export namespace Graph_ {
@@ -110,6 +150,10 @@ export namespace Graph_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -117,6 +161,10 @@ export namespace Graph_ {
 export type Graph_ = (
     context: Graph_.I,
     abort: _pi.Abort<Graph_.E>,
+    parameters: {
+        readonly 'document resource identifier': Graph_.P.document_resource_identifier
+        readonly 'indentation': Graph_.P.indentation
+    },
 ) => Graph_.O
 
 export { 
