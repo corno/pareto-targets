@@ -17,7 +17,7 @@ export namespace Identifier_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -28,7 +28,7 @@ export type Identifier_ = (
     abort: _pi.Abort<Identifier_.E>,
     parameters: {
         readonly 'document resource identifier': Identifier_.P.document_resource_identifier
-        readonly 'indentation': Identifier_.P.indentation
+        readonly 'tab size': Identifier_.P.tab_size
     },
 ) => Identifier_.O
 
@@ -44,7 +44,7 @@ export namespace Path_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -55,7 +55,7 @@ export type Path_ = (
     abort: _pi.Abort<Path_.E>,
     parameters: {
         readonly 'document resource identifier': Path_.P.document_resource_identifier
-        readonly 'indentation': Path_.P.indentation
+        readonly 'tab size': Path_.P.tab_size
     },
 ) => Path_.O
 
@@ -71,7 +71,7 @@ export namespace Node_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -82,7 +82,7 @@ export type Node_ = (
     abort: _pi.Abort<Node_.E>,
     parameters: {
         readonly 'document resource identifier': Node_.P.document_resource_identifier
-        readonly 'indentation': Node_.P.indentation
+        readonly 'tab size': Node_.P.tab_size
     },
 ) => Node_.O
 
@@ -98,7 +98,7 @@ export namespace Root_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -109,7 +109,7 @@ export type Root_ = (
     abort: _pi.Abort<Root_.E>,
     parameters: {
         readonly 'document resource identifier': Root_.P.document_resource_identifier
-        readonly 'indentation': Root_.P.indentation
+        readonly 'tab size': Root_.P.tab_size
     },
 ) => Root_.O
 

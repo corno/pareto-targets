@@ -1,66 +1,207 @@
 
 import * as _p from "pareto-core/dist/transformer"
 
+import { 
+    _p_unreachable_code_path, 
+} from "pareto-core/dist/unreachable_code_path"
+
+import { 
+    _p_cc, 
+} from "pareto-core/dist/change_context"
+
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/alan_light/migrate_boilerplate"
 
 import * as t_out from "../../../../../interface/generated/liana/schemas/alan_light/data"
-export const Identifier: t_signatures.Identifier = ($,) => $
-export const Path: t_signatures.Path = ($,) => ({
-    'up steps': _p.deprecated_cc($['up steps'], ($,) => $.__l_map(($,) => null)),
-    'context': _p.deprecated_cc($['context'], ($,) => ({
-        'sibling': _p.deprecated_cc($['sibling'], ($,) => null),
-        'state constraint': _p.deprecated_cc($['state constraint'], ($,) => ({
-            'name': _p.deprecated_cc($['name'], ($,) => Identifier($)),
-        })),
-    })),
-    'selection steps': _p.deprecated_cc($['selection steps'], ($,) => $.__l_map(($,) => ({
-        'group': _p.deprecated_cc($['group'], ($,) => ({
-            'name': _p.deprecated_cc($['name'], ($,) => Identifier($)),
-        })),
-        'state constraint': _p.deprecated_cc($['state constraint'], ($,) => ({
-            'name': _p.deprecated_cc($['name'], ($,) => Identifier($)),
-        })),
-        'reference': _p.deprecated_cc($['reference'], ($,) => ({
-            'name': _p.deprecated_cc($['name'], ($,) => Identifier($)),
-        })),
-    }))),
+export const Identifier: t_signatures.Identifier = ($) => $
+export const Path: t_signatures.Path = ($) => ({
+    'up steps': _p_cc(
+        $['up steps'], 
+        ($) => $.__l_map(
+            ($) => null
+        )
+    ),
+    'context': _p_cc(
+        $['context'], 
+        ($) => ({
+            'sibling': _p_cc(
+                $['sibling'], 
+                ($) => null
+            ),
+            'state constraint': _p_cc(
+                $['state constraint'], 
+                ($) => ({
+                    'name': _p_cc(
+                        $['name'], 
+                        ($) => Identifier(
+                            $
+                        )
+                    ),
+                })
+            ),
+        })
+    ),
+    'selection steps': _p_cc(
+        $['selection steps'], 
+        ($) => $.__l_map(
+            ($) => ({
+                'group': _p_cc(
+                    $['group'], 
+                    ($) => ({
+                        'name': _p_cc(
+                            $['name'], 
+                            ($) => Identifier(
+                                $
+                            )
+                        ),
+                    })
+                ),
+                'state constraint': _p_cc(
+                    $['state constraint'], 
+                    ($) => ({
+                        'name': _p_cc(
+                            $['name'], 
+                            ($) => Identifier(
+                                $
+                            )
+                        ),
+                    })
+                ),
+                'reference': _p_cc(
+                    $['reference'], 
+                    ($) => ({
+                        'name': _p_cc(
+                            $['name'], 
+                            ($) => Identifier(
+                                $
+                            )
+                        ),
+                    })
+                ),
+            })
+        )
+    ),
 })
-export const Node: t_signatures.Node = ($,) => ({
-    'properties': _p.deprecated_cc($['properties'], ($,) => $.__d_map(($,id,) => ({
-        'type': _p.deprecated_cc($['type'], ($,) => _p.decide.state($, ($,): t_out.Node.properties.D.type_ => {
-            switch ($[0]) {
-                case 'collection':
-                    return _p.ss($, ($,) => ['collection', ({
-                        'node': _p.deprecated_cc($['node'], ($,) => Node($)),
-                        'key': _p.deprecated_cc($['key'], ($,) => Identifier($)),
-                    })])
-                case 'group':
-                    return _p.ss($, ($,) => ['group', ({
-                        'node': _p.deprecated_cc($['node'], ($,) => Node($)),
-                    })])
-                case 'text':
-                    return _p.ss($, ($,) => ['text', ({
-                        'constraint': _p.deprecated_cc($['constraint'], ($,) => $.__o_map(($,) => ({
-                            'path': _p.deprecated_cc($['path'], ($,) => Path($)),
-                            'dictionary': _p.deprecated_cc($['dictionary'], ($,) => Identifier($)),
-                        }))),
-                    })])
-                case 'state group':
-                    return _p.ss($, ($,) => ['state group', ({
-                        'states': _p.deprecated_cc($['states'], ($,) => $.__d_map(($,id,) => ({
-                            'constraints': _p.deprecated_cc($['constraints'], ($,) => $.__d_map(($,id,) => ({
-                                'path': _p.deprecated_cc($['path'], ($,) => Path($)),
-                            }))),
-                            'node': _p.deprecated_cc($['node'], ($,) => Node($)),
-                        }))),
-                    })])
-                default:
-                    return _p.au($[0])
-            }
-        })),
-    }))),
+export const Node: t_signatures.Node = ($) => ({
+    'properties': _p_cc(
+        $['properties'], 
+        ($) => $.__d_map(
+            ($,id) => ({
+                'type': _p_cc(
+                    $['type'], 
+                    ($) => _p.decide.state(
+                        $, 
+                        ($): t_out.Node.properties.D.type_ => {
+                            switch ($[0]) {
+                                case 'collection':
+                                    return _p.ss(
+                                        $, 
+                                        ($) => ['collection', ({
+                                            'node': _p_cc(
+                                                $['node'], 
+                                                ($) => Node(
+                                                    $
+                                                )
+                                            ),
+                                            'key': _p_cc(
+                                                $['key'], 
+                                                ($) => Identifier(
+                                                    $
+                                                )
+                                            ),
+                                        })]
+                                    )
+                                case 'group':
+                                    return _p.ss(
+                                        $, 
+                                        ($) => ['group', ({
+                                            'node': _p_cc(
+                                                $['node'], 
+                                                ($) => Node(
+                                                    $
+                                                )
+                                            ),
+                                        })]
+                                    )
+                                case 'text':
+                                    return _p.ss(
+                                        $, 
+                                        ($) => ['text', ({
+                                            'constraint': _p_cc(
+                                                $['constraint'], 
+                                                ($) => $.__o_map(
+                                                    ($) => ({
+                                                        'path': _p_cc(
+                                                            $['path'], 
+                                                            ($) => Path(
+                                                                $
+                                                            )
+                                                        ),
+                                                        'dictionary': _p_cc(
+                                                            $['dictionary'], 
+                                                            ($) => Identifier(
+                                                                $
+                                                            )
+                                                        ),
+                                                    })
+                                                )
+                                            ),
+                                        })]
+                                    )
+                                case 'state group':
+                                    return _p.ss(
+                                        $, 
+                                        ($) => ['state group', ({
+                                            'states': _p_cc(
+                                                $['states'], 
+                                                ($) => $.__d_map(
+                                                    ($,id) => ({
+                                                        'constraints': _p_cc(
+                                                            $['constraints'], 
+                                                            ($) => $.__d_map(
+                                                                ($,id) => ({
+                                                                    'path': _p_cc(
+                                                                        $['path'], 
+                                                                        ($) => Path(
+                                                                            $
+                                                                        )
+                                                                    ),
+                                                                })
+                                                            )
+                                                        ),
+                                                        'node': _p_cc(
+                                                            $['node'], 
+                                                            ($) => Node(
+                                                                $
+                                                            )
+                                                        ),
+                                                    })
+                                                )
+                                            ),
+                                        })]
+                                    )
+                                default:
+                                    return _p.au(
+                                        $[0]
+                                    )
+                            }
+                        }
+                    )
+                ),
+            })
+        )
+    ),
 })
-export const Root: t_signatures.Root = ($,) => ({
-    'numerical types': _p.deprecated_cc($['numerical types'], ($,) => $.__d_map(($,id,) => null)),
-    'root': _p.deprecated_cc($['root'], ($,) => Node($)),
+export const Root: t_signatures.Root = ($) => ({
+    'numerical types': _p_cc(
+        $['numerical types'], 
+        ($) => $.__d_map(
+            ($,id) => null
+        )
+    ),
+    'root': _p_cc(
+        $['root'], 
+        ($) => Node(
+            $
+        )
+    ),
 })

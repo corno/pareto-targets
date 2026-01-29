@@ -17,7 +17,7 @@ export namespace ID_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -28,7 +28,7 @@ export type ID_ = (
     abort: _pi.Abort<ID_.E>,
     parameters: {
         readonly 'document resource identifier': ID_.P.document_resource_identifier
-        readonly 'indentation': ID_.P.indentation
+        readonly 'tab size': ID_.P.tab_size
     },
 ) => ID_.O
 
@@ -44,7 +44,7 @@ export namespace Node_ID_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -55,7 +55,7 @@ export type Node_ID_ = (
     abort: _pi.Abort<Node_ID_.E>,
     parameters: {
         readonly 'document resource identifier': Node_ID_.P.document_resource_identifier
-        readonly 'indentation': Node_ID_.P.indentation
+        readonly 'tab size': Node_ID_.P.tab_size
     },
 ) => Node_ID_.O
 
@@ -71,7 +71,7 @@ export namespace Attribute_List_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -82,7 +82,7 @@ export type Attribute_List_ = (
     abort: _pi.Abort<Attribute_List_.E>,
     parameters: {
         readonly 'document resource identifier': Attribute_List_.P.document_resource_identifier
-        readonly 'indentation': Attribute_List_.P.indentation
+        readonly 'tab size': Attribute_List_.P.tab_size
     },
 ) => Attribute_List_.O
 
@@ -98,7 +98,7 @@ export namespace Subgraph_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -109,7 +109,7 @@ export type Subgraph_ = (
     abort: _pi.Abort<Subgraph_.E>,
     parameters: {
         readonly 'document resource identifier': Subgraph_.P.document_resource_identifier
-        readonly 'indentation': Subgraph_.P.indentation
+        readonly 'tab size': Subgraph_.P.tab_size
     },
 ) => Subgraph_.O
 
@@ -125,7 +125,7 @@ export namespace Statement_List_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -136,7 +136,7 @@ export type Statement_List_ = (
     abort: _pi.Abort<Statement_List_.E>,
     parameters: {
         readonly 'document resource identifier': Statement_List_.P.document_resource_identifier
-        readonly 'indentation': Statement_List_.P.indentation
+        readonly 'tab size': Statement_List_.P.tab_size
     },
 ) => Statement_List_.O
 
@@ -152,7 +152,7 @@ export namespace Graph_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -163,7 +163,7 @@ export type Graph_ = (
     abort: _pi.Abort<Graph_.E>,
     parameters: {
         readonly 'document resource identifier': Graph_.P.document_resource_identifier
-        readonly 'indentation': Graph_.P.indentation
+        readonly 'tab size': Graph_.P.tab_size
     },
 ) => Graph_.O
 

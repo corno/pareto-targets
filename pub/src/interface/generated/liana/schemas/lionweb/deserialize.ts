@@ -17,7 +17,7 @@ export namespace MetaPointer_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -28,7 +28,7 @@ export type MetaPointer_ = (
     abort: _pi.Abort<MetaPointer_.E>,
     parameters: {
         readonly 'document resource identifier': MetaPointer_.P.document_resource_identifier
-        readonly 'indentation': MetaPointer_.P.indentation
+        readonly 'tab size': MetaPointer_.P.tab_size
     },
 ) => MetaPointer_.O
 
@@ -44,7 +44,7 @@ export namespace SerializationChunk_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -55,7 +55,7 @@ export type SerializationChunk_ = (
     abort: _pi.Abort<SerializationChunk_.E>,
     parameters: {
         readonly 'document resource identifier': SerializationChunk_.P.document_resource_identifier
-        readonly 'indentation': SerializationChunk_.P.indentation
+        readonly 'tab size': SerializationChunk_.P.tab_size
     },
 ) => SerializationChunk_.O
 
@@ -71,7 +71,7 @@ export namespace SerializationChunks_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -82,7 +82,7 @@ export type SerializationChunks_ = (
     abort: _pi.Abort<SerializationChunks_.E>,
     parameters: {
         readonly 'document resource identifier': SerializationChunks_.P.document_resource_identifier
-        readonly 'indentation': SerializationChunks_.P.indentation
+        readonly 'tab size': SerializationChunks_.P.tab_size
     },
 ) => SerializationChunks_.O
 

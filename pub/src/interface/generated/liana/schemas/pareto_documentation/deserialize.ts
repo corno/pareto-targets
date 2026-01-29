@@ -17,7 +17,7 @@ export namespace Graphviz_Directory_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -28,7 +28,7 @@ export type Graphviz_Directory_ = (
     abort: _pi.Abort<Graphviz_Directory_.E>,
     parameters: {
         readonly 'document resource identifier': Graphviz_Directory_.P.document_resource_identifier
-        readonly 'indentation': Graphviz_Directory_.P.indentation
+        readonly 'tab size': Graphviz_Directory_.P.tab_size
     },
 ) => Graphviz_Directory_.O
 

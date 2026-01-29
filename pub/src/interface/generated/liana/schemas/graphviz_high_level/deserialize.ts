@@ -17,7 +17,7 @@ export namespace Graph_Attributes_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -28,7 +28,7 @@ export type Graph_Attributes_ = (
     abort: _pi.Abort<Graph_Attributes_.E>,
     parameters: {
         readonly 'document resource identifier': Graph_Attributes_.P.document_resource_identifier
-        readonly 'indentation': Graph_Attributes_.P.indentation
+        readonly 'tab size': Graph_Attributes_.P.tab_size
     },
 ) => Graph_Attributes_.O
 
@@ -44,7 +44,7 @@ export namespace Node_Attributes_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -55,7 +55,7 @@ export type Node_Attributes_ = (
     abort: _pi.Abort<Node_Attributes_.E>,
     parameters: {
         readonly 'document resource identifier': Node_Attributes_.P.document_resource_identifier
-        readonly 'indentation': Node_Attributes_.P.indentation
+        readonly 'tab size': Node_Attributes_.P.tab_size
     },
 ) => Node_Attributes_.O
 
@@ -71,7 +71,7 @@ export namespace Tree_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -82,7 +82,7 @@ export type Tree_ = (
     abort: _pi.Abort<Tree_.E>,
     parameters: {
         readonly 'document resource identifier': Tree_.P.document_resource_identifier
-        readonly 'indentation': Tree_.P.indentation
+        readonly 'tab size': Tree_.P.tab_size
     },
 ) => Tree_.O
 
@@ -98,7 +98,7 @@ export namespace End_Point_Specification_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -109,7 +109,7 @@ export type End_Point_Specification_ = (
     abort: _pi.Abort<End_Point_Specification_.E>,
     parameters: {
         readonly 'document resource identifier': End_Point_Specification_.P.document_resource_identifier
-        readonly 'indentation': End_Point_Specification_.P.indentation
+        readonly 'tab size': End_Point_Specification_.P.tab_size
     },
 ) => End_Point_Specification_.O
 
@@ -125,7 +125,7 @@ export namespace Edge_Attributes_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -136,7 +136,7 @@ export type Edge_Attributes_ = (
     abort: _pi.Abort<Edge_Attributes_.E>,
     parameters: {
         readonly 'document resource identifier': Edge_Attributes_.P.document_resource_identifier
-        readonly 'indentation': Edge_Attributes_.P.indentation
+        readonly 'tab size': Edge_Attributes_.P.tab_size
     },
 ) => Edge_Attributes_.O
 
@@ -152,7 +152,7 @@ export namespace Graph_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -163,7 +163,7 @@ export type Graph_ = (
     abort: _pi.Abort<Graph_.E>,
     parameters: {
         readonly 'document resource identifier': Graph_.P.document_resource_identifier
-        readonly 'indentation': Graph_.P.indentation
+        readonly 'tab size': Graph_.P.tab_size
     },
 ) => Graph_.O
 
@@ -179,7 +179,7 @@ export namespace Attribute_Value_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -190,7 +190,7 @@ export type Attribute_Value_ = (
     abort: _pi.Abort<Attribute_Value_.E>,
     parameters: {
         readonly 'document resource identifier': Attribute_Value_.P.document_resource_identifier
-        readonly 'indentation': Attribute_Value_.P.indentation
+        readonly 'tab size': Attribute_Value_.P.tab_size
     },
 ) => Attribute_Value_.O
 
