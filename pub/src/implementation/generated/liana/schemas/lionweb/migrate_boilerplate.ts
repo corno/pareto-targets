@@ -1,89 +1,91 @@
 
 import * as _p from "pareto-core/dist/transformer"
 
-import { 
-    _p_unreachable_code_path, 
+import {
+    _p_unreachable_code_path,
 } from "pareto-core/dist/unreachable_code_path"
 
-import { 
-    _p_cc, 
+import {
+    _p_cc,
 } from "pareto-core/dist/change_context"
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/lionweb/migrate_boilerplate"
 
 import * as t_out from "../../../../../interface/generated/liana/schemas/lionweb/data"
+
 export const MetaPointer: t_signatures.MetaPointer = ($) => ({
     'language': _p_cc(
-        $['language'], 
+        $['language'],
         ($) => $
     ),
     'version': _p_cc(
-        $['version'], 
+        $['version'],
         ($) => $
     ),
     'key': _p_cc(
-        $['key'], 
+        $['key'],
         ($) => $
     ),
 })
+
 export const SerializationChunk: t_signatures.SerializationChunk = ($) => ({
     'serializationFormatVersion': _p_cc(
-        $['serializationFormatVersion'], 
+        $['serializationFormatVersion'],
         ($) => $
     ),
     'languages': _p_cc(
-        $['languages'], 
+        $['languages'],
         ($) => $.__l_map(
             ($) => ({
                 'key': _p_cc(
-                    $['key'], 
+                    $['key'],
                     ($) => $
                 ),
                 'version': _p_cc(
-                    $['version'], 
+                    $['version'],
                     ($) => $
                 ),
             })
         )
     ),
     'nodes': _p_cc(
-        $['nodes'], 
+        $['nodes'],
         ($) => $.__l_map(
             ($) => ({
                 'id': _p_cc(
-                    $['id'], 
+                    $['id'],
                     ($) => $
                 ),
                 'parent': _p_cc(
-                    $['parent'], 
+                    $['parent'],
                     ($) => $.__o_map(
                         ($) => $
                     )
                 ),
                 'annotations': _p_cc(
-                    $['annotations'], 
+                    $['annotations'],
                     ($) => $.__l_map(
                         ($) => $
                     )
                 ),
                 'classifier': _p_cc(
-                    $['classifier'], 
+                    $['classifier'],
                     ($) => MetaPointer(
                         $
                     )
                 ),
                 'containments': _p_cc(
-                    $['containments'], 
+                    $['containments'],
                     ($) => $.__l_map(
                         ($) => ({
                             'containment': _p_cc(
-                                $['containment'], 
+                                $['containment'],
                                 ($) => MetaPointer(
                                     $
                                 )
                             ),
                             'children': _p_cc(
-                                $['children'], 
+                                $['children'],
                                 ($) => $.__l_map(
                                     ($) => $
                                 )
@@ -92,15 +94,15 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ({
                     )
                 ),
                 'properties': _p_cc(
-                    $['properties'], 
+                    $['properties'],
                     ($) => $.__l_map(
                         ($) => ({
                             'value': _p_cc(
-                                $['value'], 
+                                $['value'],
                                 ($) => $
                             ),
                             'property': _p_cc(
-                                $['property'], 
+                                $['property'],
                                 ($) => MetaPointer(
                                     $
                                 )
@@ -109,26 +111,26 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ({
                     )
                 ),
                 'references': _p_cc(
-                    $['references'], 
+                    $['references'],
                     ($) => $.__l_map(
                         ($) => ({
                             'targets': _p_cc(
-                                $['targets'], 
+                                $['targets'],
                                 ($) => $.__l_map(
                                     ($) => ({
                                         'reference': _p_cc(
-                                            $['reference'], 
+                                            $['reference'],
                                             ($) => $
                                         ),
                                         'resolveInfo': _p_cc(
-                                            $['resolveInfo'], 
+                                            $['resolveInfo'],
                                             ($) => $
                                         ),
                                     })
                                 )
                             ),
                             'reference': _p_cc(
-                                $['reference'], 
+                                $['reference'],
                                 ($) => MetaPointer(
                                     $
                                 )
@@ -140,8 +142,9 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ({
         )
     ),
 })
+
 export const SerializationChunks: t_signatures.SerializationChunks = ($) => $.__d_map(
-    ($,id) => SerializationChunk(
+    ($, id) => SerializationChunk(
         $
     )
 )

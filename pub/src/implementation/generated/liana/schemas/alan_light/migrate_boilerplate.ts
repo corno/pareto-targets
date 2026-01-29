@@ -1,37 +1,39 @@
 
 import * as _p from "pareto-core/dist/transformer"
 
-import { 
-    _p_unreachable_code_path, 
+import {
+    _p_unreachable_code_path,
 } from "pareto-core/dist/unreachable_code_path"
 
-import { 
-    _p_cc, 
+import {
+    _p_cc,
 } from "pareto-core/dist/change_context"
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/alan_light/migrate_boilerplate"
 
 import * as t_out from "../../../../../interface/generated/liana/schemas/alan_light/data"
+
 export const Identifier: t_signatures.Identifier = ($) => $
+
 export const Path: t_signatures.Path = ($) => ({
     'up steps': _p_cc(
-        $['up steps'], 
+        $['up steps'],
         ($) => $.__l_map(
             ($) => null
         )
     ),
     'context': _p_cc(
-        $['context'], 
+        $['context'],
         ($) => ({
             'sibling': _p_cc(
-                $['sibling'], 
+                $['sibling'],
                 ($) => null
             ),
             'state constraint': _p_cc(
-                $['state constraint'], 
+                $['state constraint'],
                 ($) => ({
                     'name': _p_cc(
-                        $['name'], 
+                        $['name'],
                         ($) => Identifier(
                             $
                         )
@@ -41,14 +43,14 @@ export const Path: t_signatures.Path = ($) => ({
         })
     ),
     'selection steps': _p_cc(
-        $['selection steps'], 
+        $['selection steps'],
         ($) => $.__l_map(
             ($) => ({
                 'group': _p_cc(
-                    $['group'], 
+                    $['group'],
                     ($) => ({
                         'name': _p_cc(
-                            $['name'], 
+                            $['name'],
                             ($) => Identifier(
                                 $
                             )
@@ -56,10 +58,10 @@ export const Path: t_signatures.Path = ($) => ({
                     })
                 ),
                 'state constraint': _p_cc(
-                    $['state constraint'], 
+                    $['state constraint'],
                     ($) => ({
                         'name': _p_cc(
-                            $['name'], 
+                            $['name'],
                             ($) => Identifier(
                                 $
                             )
@@ -67,10 +69,10 @@ export const Path: t_signatures.Path = ($) => ({
                     })
                 ),
                 'reference': _p_cc(
-                    $['reference'], 
+                    $['reference'],
                     ($) => ({
                         'name': _p_cc(
-                            $['name'], 
+                            $['name'],
                             ($) => Identifier(
                                 $
                             )
@@ -81,29 +83,30 @@ export const Path: t_signatures.Path = ($) => ({
         )
     ),
 })
+
 export const Node: t_signatures.Node = ($) => ({
     'properties': _p_cc(
-        $['properties'], 
+        $['properties'],
         ($) => $.__d_map(
-            ($,id) => ({
+            ($, id) => ({
                 'type': _p_cc(
-                    $['type'], 
+                    $['type'],
                     ($) => _p.decide.state(
-                        $, 
+                        $,
                         ($): t_out.Node.properties.D.type_ => {
                             switch ($[0]) {
                                 case 'collection':
                                     return _p.ss(
-                                        $, 
+                                        $,
                                         ($) => ['collection', ({
                                             'node': _p_cc(
-                                                $['node'], 
+                                                $['node'],
                                                 ($) => Node(
                                                     $
                                                 )
                                             ),
                                             'key': _p_cc(
-                                                $['key'], 
+                                                $['key'],
                                                 ($) => Identifier(
                                                     $
                                                 )
@@ -112,10 +115,10 @@ export const Node: t_signatures.Node = ($) => ({
                                     )
                                 case 'group':
                                     return _p.ss(
-                                        $, 
+                                        $,
                                         ($) => ['group', ({
                                             'node': _p_cc(
-                                                $['node'], 
+                                                $['node'],
                                                 ($) => Node(
                                                     $
                                                 )
@@ -124,20 +127,20 @@ export const Node: t_signatures.Node = ($) => ({
                                     )
                                 case 'text':
                                     return _p.ss(
-                                        $, 
+                                        $,
                                         ($) => ['text', ({
                                             'constraint': _p_cc(
-                                                $['constraint'], 
+                                                $['constraint'],
                                                 ($) => $.__o_map(
                                                     ($) => ({
                                                         'path': _p_cc(
-                                                            $['path'], 
+                                                            $['path'],
                                                             ($) => Path(
                                                                 $
                                                             )
                                                         ),
                                                         'dictionary': _p_cc(
-                                                            $['dictionary'], 
+                                                            $['dictionary'],
                                                             ($) => Identifier(
                                                                 $
                                                             )
@@ -149,18 +152,18 @@ export const Node: t_signatures.Node = ($) => ({
                                     )
                                 case 'state group':
                                     return _p.ss(
-                                        $, 
+                                        $,
                                         ($) => ['state group', ({
                                             'states': _p_cc(
-                                                $['states'], 
+                                                $['states'],
                                                 ($) => $.__d_map(
-                                                    ($,id) => ({
+                                                    ($, id) => ({
                                                         'constraints': _p_cc(
-                                                            $['constraints'], 
+                                                            $['constraints'],
                                                             ($) => $.__d_map(
-                                                                ($,id) => ({
+                                                                ($, id) => ({
                                                                     'path': _p_cc(
-                                                                        $['path'], 
+                                                                        $['path'],
                                                                         ($) => Path(
                                                                             $
                                                                         )
@@ -169,7 +172,7 @@ export const Node: t_signatures.Node = ($) => ({
                                                             )
                                                         ),
                                                         'node': _p_cc(
-                                                            $['node'], 
+                                                            $['node'],
                                                             ($) => Node(
                                                                 $
                                                             )
@@ -191,15 +194,16 @@ export const Node: t_signatures.Node = ($) => ({
         )
     ),
 })
+
 export const Root: t_signatures.Root = ($) => ({
     'numerical types': _p_cc(
-        $['numerical types'], 
+        $['numerical types'],
         ($) => $.__d_map(
-            ($,id) => null
+            ($, id) => null
         )
     ),
     'root': _p_cc(
-        $['root'], 
+        $['root'],
         ($) => Node(
             $
         )
