@@ -11,6 +11,8 @@ import {
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/alan_light/unmarshall"
 
+import * as t_out from "../../../../../interface/generated/liana/schemas/alan_light/data"
+
 import * as v_deserialize_number from "liana-core/dist/implementation/manual/primitives/integer/deserializers/decimal"
 
 import * as v_deserialize_boolean from "liana-core/dist/implementation/manual/primitives/boolean/deserializers/true_false"
@@ -285,7 +287,253 @@ export const Node: t_signatures.Node = ($, abort) => _p_cc(
                                     ['no such entry', "type"]
                                 )
                             ),
-                            ($) => _p_unreachable_code_path(
+                            ($) => _p_cc(
+                                v_unmarshalled_from_parse_tree.State(
+                                    $,
+                                    ($) => abort(
+                                        ['expected a state', null]
+                                    )
+                                ),
+                                ($) => _p.decide.text(
+                                    $['option']['value'],
+                                    ($t): t_out.Node.properties.D.type_ => {
+                                        switch ($t) {
+                                            case 'collection':
+                                                return _p_cc(
+                                                    $['value'],
+                                                    ($) => ['collection', _p_cc(
+                                                        v_unmarshalled_from_parse_tree.Group(
+                                                            $,
+                                                            ($) => abort(
+                                                                ['expected a group', null]
+                                                            )
+                                                        ),
+                                                        ($) => ({
+                                                            'node': _p_cc(
+                                                                $.__get_entry(
+                                                                    'node',
+                                                                    ($) => abort(
+                                                                        ['no such entry', "node"]
+                                                                    )
+                                                                ),
+                                                                ($) => Node(
+                                                                    $,
+                                                                    ($) => abort(
+                                                                        $
+                                                                    )
+                                                                )
+                                                            ),
+                                                            'key': _p_cc(
+                                                                $.__get_entry(
+                                                                    'key',
+                                                                    ($) => abort(
+                                                                        ['no such entry', "key"]
+                                                                    )
+                                                                ),
+                                                                ($) => Identifier(
+                                                                    $,
+                                                                    ($) => abort(
+                                                                        $
+                                                                    )
+                                                                )
+                                                            ),
+                                                        })
+                                                    )]
+                                                )
+                                            case 'group':
+                                                return _p_cc(
+                                                    $['value'],
+                                                    ($) => ['group', _p_cc(
+                                                        v_unmarshalled_from_parse_tree.Group(
+                                                            $,
+                                                            ($) => abort(
+                                                                ['expected a group', null]
+                                                            )
+                                                        ),
+                                                        ($) => ({
+                                                            'node': _p_cc(
+                                                                $.__get_entry(
+                                                                    'node',
+                                                                    ($) => abort(
+                                                                        ['no such entry', "node"]
+                                                                    )
+                                                                ),
+                                                                ($) => Node(
+                                                                    $,
+                                                                    ($) => abort(
+                                                                        $
+                                                                    )
+                                                                )
+                                                            ),
+                                                        })
+                                                    )]
+                                                )
+                                            case 'text':
+                                                return _p_cc(
+                                                    $['value'],
+                                                    ($) => ['text', _p_cc(
+                                                        v_unmarshalled_from_parse_tree.Group(
+                                                            $,
+                                                            ($) => abort(
+                                                                ['expected a group', null]
+                                                            )
+                                                        ),
+                                                        ($) => ({
+                                                            'constraint': _p_cc(
+                                                                $.__get_entry(
+                                                                    'constraint',
+                                                                    ($) => abort(
+                                                                        ['no such entry', "constraint"]
+                                                                    )
+                                                                ),
+                                                                ($) => v_unmarshalled_from_parse_tree.Optional(
+                                                                    $,
+                                                                    ($) => abort(
+                                                                        ['expected an optional', null]
+                                                                    )
+                                                                ).__o_map(
+                                                                    ($) => _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => ({
+                                                                            'path': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'path',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "path"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => Path(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        $
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                            'dictionary': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'dictionary',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "dictionary"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => Identifier(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        $
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                        })
+                                                                    )
+                                                                )
+                                                            ),
+                                                        })
+                                                    )]
+                                                )
+                                            case 'state group':
+                                                return _p_cc(
+                                                    $['value'],
+                                                    ($) => ['state group', _p_cc(
+                                                        v_unmarshalled_from_parse_tree.Group(
+                                                            $,
+                                                            ($) => abort(
+                                                                ['expected a group', null]
+                                                            )
+                                                        ),
+                                                        ($) => ({
+                                                            'states': _p_cc(
+                                                                $.__get_entry(
+                                                                    'states',
+                                                                    ($) => abort(
+                                                                        ['no such entry', "states"]
+                                                                    )
+                                                                ),
+                                                                ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                                                    $,
+                                                                    ($) => abort(
+                                                                        ['expected a dictionary', null]
+                                                                    )
+                                                                ).__d_map(
+                                                                    ($, id) => _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => ({
+                                                                            'constraints': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'constraints',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "constraints"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a dictionary', null]
+                                                                                    )
+                                                                                ).__d_map(
+                                                                                    ($, id) => _p_cc(
+                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                ['expected a group', null]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => ({
+                                                                                            'path': _p_cc(
+                                                                                                $.__get_entry(
+                                                                                                    'path',
+                                                                                                    ($) => abort(
+                                                                                                        ['no such entry', "path"]
+                                                                                                    )
+                                                                                                ),
+                                                                                                ($) => Path(
+                                                                                                    $,
+                                                                                                    ($) => abort(
+                                                                                                        $
+                                                                                                    )
+                                                                                                )
+                                                                                            ),
+                                                                                        })
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                            'node': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'node',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "node"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => Node(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        $
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                        })
+                                                                    )
+                                                                )
+                                                            ),
+                                                        })
+                                                    )]
+                                                )
+                                            default:
+                                                return abort(
+                                                    ['unknown option', $['option']['value']]
+                                                )
+                                        }
+                                    }
+                                )
                             )
                         ),
                     })

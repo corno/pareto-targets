@@ -11,6 +11,8 @@ import {
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/pareto_documentation/unmarshall"
 
+import * as t_out from "../../../../../interface/generated/liana/schemas/pareto_documentation/data"
+
 import * as t_external_graphviz from "../graphviz_high_level/unmarshall"
 
 import * as v_deserialize_number from "liana-core/dist/implementation/manual/primitives/integer/deserializers/decimal"
@@ -29,6 +31,43 @@ export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($, abort) =>
         ['expected a dictionary', null]
     )
 ).__d_map(
-    ($, id) => _p_unreachable_code_path(
+    ($, id) => _p_cc(
+        v_unmarshalled_from_parse_tree.State(
+            $,
+            ($) => abort(
+                ['expected a state', null]
+            )
+        ),
+        ($) => _p.decide.text(
+            $['option']['value'],
+            ($t): t_out.Graphviz_Directory.D => {
+                switch ($t) {
+                    case 'file':
+                        return _p_cc(
+                            $['value'],
+                            ($) => ['file', v_external_graphviz.Graph(
+                                $,
+                                ($) => abort(
+                                    $
+                                )
+                            )]
+                        )
+                    case 'directory':
+                        return _p_cc(
+                            $['value'],
+                            ($) => ['directory', Graphviz_Directory(
+                                $,
+                                ($) => abort(
+                                    $
+                                )
+                            )]
+                        )
+                    default:
+                        return abort(
+                            ['unknown option', $['option']['value']]
+                        )
+                }
+            }
+        )
     )
 )
