@@ -115,7 +115,7 @@ export const Statement_List: t_signatures.Statement_List = ($) => $.__l_map(
                 case 'node':
                     return _p.ss(
                         $,
-                        ($) => ['node', ({
+                        ($) => ['node', {
                             'node': _p_cc(
                                 $['node'],
                                 ($) => Node_ID(
@@ -128,12 +128,12 @@ export const Statement_List: t_signatures.Statement_List = ($) => $.__l_map(
                                     $
                                 )
                             ),
-                        })]
+                        }]
                     )
                 case 'edge':
                     return _p.ss(
                         $,
-                        ($) => ['edge', ({
+                        ($) => ['edge', {
                             'left': _p_cc(
                                 $['left'],
                                 ($) => _p.decide.state(
@@ -198,12 +198,12 @@ export const Statement_List: t_signatures.Statement_List = ($) => $.__l_map(
                                     $
                                 )
                             ),
-                        })]
+                        }]
                     )
                 case 'attribute list':
                     return _p.ss(
                         $,
-                        ($) => ['attribute list', ({
+                        ($) => ['attribute list', {
                             'type': _p_cc(
                                 $['type'],
                                 ($) => _p.decide.state(
@@ -239,12 +239,12 @@ export const Statement_List: t_signatures.Statement_List = ($) => $.__l_map(
                                     $
                                 )
                             ),
-                        })]
+                        }]
                     )
                 case 'attribute assignment':
                     return _p.ss(
                         $,
-                        ($) => ['attribute assignment', ({
+                        ($) => ['attribute assignment', {
                             'name': _p_cc(
                                 $['name'],
                                 ($) => ID(
@@ -257,7 +257,7 @@ export const Statement_List: t_signatures.Statement_List = ($) => $.__l_map(
                                     $
                                 )
                             ),
-                        })]
+                        }]
                     )
                 case 'subgraph':
                     return _p.ss(

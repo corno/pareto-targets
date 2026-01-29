@@ -23,12 +23,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'concentrate',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'charset':
@@ -36,10 +36,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'charset',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'clusterrank':
@@ -89,10 +89,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'color',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'color scheme':
@@ -100,10 +100,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'color scheme',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'comment':
@@ -111,10 +111,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'comment',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'compound':
@@ -122,12 +122,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'compound',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'dpi':
@@ -135,12 +135,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'dpi',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'font color':
@@ -148,10 +148,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'font color',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'font name':
@@ -159,10 +159,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'font name',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'font path':
@@ -170,10 +170,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'font path',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'font size':
@@ -181,12 +181,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'font size',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'label':
@@ -194,10 +194,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'label',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'label distance':
@@ -205,12 +205,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'label distance',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'label scheme':
@@ -218,12 +218,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'label scheme',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'label location':
@@ -265,12 +265,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'landscape',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'layer list':
@@ -278,10 +278,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'layer list',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'layer separator':
@@ -289,10 +289,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'layer separator',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'layers':
@@ -300,10 +300,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'layers',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'margin':
@@ -311,10 +311,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'margin',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'max iteration':
@@ -322,12 +322,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'max iteration',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'mclimit':
@@ -335,12 +335,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'mclimit',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'mindist':
@@ -348,12 +348,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'mindist',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'mode':
@@ -411,12 +411,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'newrank',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'no loop':
@@ -424,12 +424,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'no loop',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'normalize':
@@ -437,12 +437,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'normalize',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'ordering':
@@ -492,12 +492,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'orientation',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'output order':
@@ -539,10 +539,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'overlap',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'output mode':
@@ -584,12 +584,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'pack',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'pack mode':
@@ -631,12 +631,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'pad',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'page':
@@ -644,10 +644,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'page',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'quadtree':
@@ -655,12 +655,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'quadtree',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'quantum':
@@ -668,12 +668,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'quantum',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'rankdir':
@@ -731,10 +731,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'ranksep',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'ratio':
@@ -742,10 +742,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'ratio',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'remincross':
@@ -753,12 +753,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'remincross',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'rotate':
@@ -766,12 +766,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'rotate',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'scale':
@@ -779,10 +779,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'scale',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'searchsize':
@@ -790,12 +790,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'searchsize',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'sep':
@@ -803,10 +803,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'sep',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'showboxes':
@@ -814,12 +814,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'showboxes',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'size':
@@ -827,10 +827,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'size',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'smoothing':
@@ -880,12 +880,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'sortv',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'splines':
@@ -893,10 +893,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'splines',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'start':
@@ -904,12 +904,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'start',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'style':
@@ -917,10 +917,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'style',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'stylesheet':
@@ -928,10 +928,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'stylesheet',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'target':
@@ -939,10 +939,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'target',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'tooltip':
@@ -950,10 +950,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'tooltip',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'truecolor':
@@ -961,12 +961,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'truecolor',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'viewport':
@@ -974,10 +974,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'viewport',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'width':
@@ -985,12 +985,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'width',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'xdotversion':
@@ -998,12 +998,12 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'xdotversion',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'xlabel':
@@ -1011,10 +1011,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
                         $,
                         ($) => ({
                             'option': 'xlabel',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 default:
@@ -1036,10 +1036,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'color',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'colorscheme':
@@ -1047,10 +1047,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'colorscheme',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'comment':
@@ -1058,10 +1058,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'comment',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'concentrate':
@@ -1069,12 +1069,12 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'concentrate',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'fill color':
@@ -1082,10 +1082,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'fill color',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'fixed size':
@@ -1093,12 +1093,12 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'fixed size',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'font color':
@@ -1106,10 +1106,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'font color',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'font name':
@@ -1117,10 +1117,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'font name',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'font size':
@@ -1128,12 +1128,12 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'font size',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'group':
@@ -1141,10 +1141,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'group',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'height':
@@ -1152,12 +1152,12 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'height',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'image':
@@ -1165,10 +1165,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'image',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'label':
@@ -1176,10 +1176,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'label',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'labelloc':
@@ -1229,10 +1229,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'layers',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'margin':
@@ -1240,10 +1240,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'margin',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'nojustify':
@@ -1251,12 +1251,12 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'nojustify',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'orientation':
@@ -1264,12 +1264,12 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'orientation',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'pen width':
@@ -1277,12 +1277,12 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'pen width',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'peripheries':
@@ -1290,12 +1290,12 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'peripheries',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'pos':
@@ -1303,10 +1303,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'pos',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'rects':
@@ -1314,10 +1314,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'rects',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'regular':
@@ -1325,12 +1325,12 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'regular',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'root':
@@ -1338,12 +1338,12 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'root',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'shape':
@@ -1351,10 +1351,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'shape',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'showboxes':
@@ -1362,12 +1362,12 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'showboxes',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'sides':
@@ -1375,12 +1375,12 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'sides',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'skew':
@@ -1388,12 +1388,12 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'skew',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'style':
@@ -1401,10 +1401,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'style',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'target':
@@ -1412,10 +1412,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'target',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'tooltip':
@@ -1423,10 +1423,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'tooltip',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'width':
@@ -1434,12 +1434,12 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'width',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'xlabel':
@@ -1447,10 +1447,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'xlabel',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'xlp':
@@ -1458,10 +1458,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'xlp',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 default:
@@ -1474,7 +1474,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $._
 )]
 
 export const Tree: t_signatures.Tree = ($) => ['group', ['verbose', _p.dictionary.literal(
-    ({
+    {
         'attributes': _p_cc(
             $['attributes'],
             ($) => Graph_Attributes(
@@ -1494,14 +1494,14 @@ export const Tree: t_signatures.Tree = ($) => ['group', ['verbose', _p.dictionar
                                     ($) => ({
                                         'option': 'node',
                                         'value': ['group', ['verbose', _p.dictionary.literal(
-                                            ({
+                                            {
                                                 'attributes': _p_cc(
                                                     $['attributes'],
                                                     ($) => Node_Attributes(
                                                         $
                                                     )
                                                 ),
-                                            })
+                                            }
                                         )]],
                                     })
                                 )
@@ -1511,7 +1511,7 @@ export const Tree: t_signatures.Tree = ($) => ['group', ['verbose', _p.dictionar
                                     ($) => ({
                                         'option': 'sub',
                                         'value': ['group', ['verbose', _p.dictionary.literal(
-                                            ({
+                                            {
                                                 'type': _p_cc(
                                                     $['type'],
                                                     ($) => ['state', _p.decide.state(
@@ -1556,7 +1556,7 @@ export const Tree: t_signatures.Tree = ($) => ['group', ['verbose', _p.dictionar
                                                         $
                                                     )
                                                 ),
-                                            })
+                                            }
                                         )]],
                                     })
                                 )
@@ -1569,55 +1569,55 @@ export const Tree: t_signatures.Tree = ($) => ['group', ['verbose', _p.dictionar
                 )]
             )]
         ),
-    })
+    }
 )]]
 
 export const End_Point_Specification: t_signatures.End_Point_Specification = ($) => ['group', ['verbose', _p.dictionary.literal(
-    ({
+    {
         'start': _p_cc(
             $['start'],
-            ($) => ['text', ({
+            ($) => ['text', {
                 'delimiter': ['quote', null],
                 'value': $,
-            })]
+            }]
         ),
         'tail': _p_cc(
             $['tail'],
             ($) => ['list', $.__l_map(
-                ($) => ['text', ({
+                ($) => ['text', {
                     'delimiter': ['quote', null],
                     'value': $,
-                })]
+                }]
             )]
         ),
         'port data': _p_cc(
             $['port data'],
             ($) => ['optional', $.__decide(
                 ($): t_out.Value.optional => ['set', ['group', ['verbose', _p.dictionary.literal(
-                    ({
+                    {
                         'port': _p_cc(
                             $['port'],
-                            ($) => ['text', ({
+                            ($) => ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })]
+                            }]
                         ),
                         'compass direction': _p_cc(
                             $['compass direction'],
                             ($) => ['optional', $.__decide(
-                                ($): t_out.Value.optional => ['set', ['text', ({
+                                ($): t_out.Value.optional => ['set', ['text', {
                                     'delimiter': ['quote', null],
                                     'value': $,
-                                })]],
+                                }]],
                                 () => ['not set', null]
                             )]
                         ),
-                    })
+                    }
                 )]]],
                 () => ['not set', null]
             )]
         ),
-    })
+    }
 )]]
 
 export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $.__l_map(
@@ -1630,10 +1630,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'arrowhead',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'arrowsize':
@@ -1641,12 +1641,12 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'arrowsize',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'arrowtail':
@@ -1654,10 +1654,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'arrowtail',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'bgcolor':
@@ -1665,10 +1665,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'bgcolor',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'color':
@@ -1676,10 +1676,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'color',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'colorscheme':
@@ -1687,10 +1687,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'colorscheme',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'comment':
@@ -1698,10 +1698,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'comment',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'constraint':
@@ -1709,12 +1709,12 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'constraint',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'decorate':
@@ -1722,12 +1722,12 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'decorate',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'dir':
@@ -1785,10 +1785,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'edge url',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'edge lp':
@@ -1796,10 +1796,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'edge lp',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'edge target':
@@ -1807,10 +1807,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'edge target',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'edge tooltip':
@@ -1818,10 +1818,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'edge tooltip',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'head lp':
@@ -1829,10 +1829,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'head lp',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'headclip':
@@ -1840,12 +1840,12 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'headclip',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'headlabel':
@@ -1853,10 +1853,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'headlabel',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'headport':
@@ -1864,10 +1864,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'headport',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'height':
@@ -1875,12 +1875,12 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'height',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'id':
@@ -1888,10 +1888,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'id',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'label':
@@ -1899,10 +1899,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'label',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'label distance':
@@ -1910,12 +1910,12 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'label distance',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'label angle':
@@ -1923,12 +1923,12 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'label angle',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'label float':
@@ -1936,12 +1936,12 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'label float',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'labelfloat':
@@ -1949,12 +1949,12 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'labelfloat',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'labelhref':
@@ -1962,10 +1962,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'labelhref',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'label lp':
@@ -1973,10 +1973,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'label lp',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'layer':
@@ -1984,10 +1984,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'layer',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'len':
@@ -1995,12 +1995,12 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'len',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'lhead':
@@ -2008,10 +2008,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'lhead',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'lp':
@@ -2019,10 +2019,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'lp',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'ltail':
@@ -2030,10 +2030,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'ltail',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'minlen':
@@ -2041,12 +2041,12 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'minlen',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'pen width':
@@ -2054,12 +2054,12 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'pen width',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'pos':
@@ -2067,10 +2067,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'pos',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'same head':
@@ -2078,12 +2078,12 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'same head',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'same tail':
@@ -2091,12 +2091,12 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'same tail',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'showboxes':
@@ -2104,12 +2104,12 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'showboxes',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'style':
@@ -2117,10 +2117,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'style',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'tail lp':
@@ -2128,10 +2128,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'tail lp',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'tailclip':
@@ -2139,12 +2139,12 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'tailclip',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_boolean.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'taillabel':
@@ -2152,10 +2152,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'taillabel',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'tailport':
@@ -2163,10 +2163,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'tailport',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'tooltip':
@@ -2174,10 +2174,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'tooltip',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'weight':
@@ -2185,12 +2185,12 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'weight',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })],
+                            }],
                         })
                     )
                 case 'xlabel':
@@ -2198,10 +2198,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'xlabel',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 case 'xlp':
@@ -2209,10 +2209,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
                         $,
                         ($) => ({
                             'option': 'xlp',
-                            'value': ['text', ({
+                            'value': ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })],
+                            }],
                         })
                     )
                 default:
@@ -2225,14 +2225,14 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $._
 )]
 
 export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.dictionary.literal(
-    ({
+    {
         'name': _p_cc(
             $['name'],
             ($) => ['optional', $.__decide(
-                ($): t_out.Value.optional => ['set', ['text', ({
+                ($): t_out.Value.optional => ['set', ['text', {
                     'delimiter': ['quote', null],
                     'value': $,
-                })]],
+                }]],
                 () => ['not set', null]
             )]
         ),
@@ -2254,12 +2254,12 @@ export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.diction
                                 ($) => ({
                                     'option': 'undirected',
                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                        ({
+                                        {
                                             'edges': _p_cc(
                                                 $['edges'],
                                                 ($) => ['list', $.__l_map(
                                                     ($) => ['group', ['verbose', _p.dictionary.literal(
-                                                        ({
+                                                        {
                                                             'yin': _p_cc(
                                                                 $['yin'],
                                                                 ($) => End_Point_Specification(
@@ -2278,11 +2278,11 @@ export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.diction
                                                                     $
                                                                 )
                                                             ),
-                                                        })
+                                                        }
                                                     )]]
                                                 )]
                                             ),
-                                        })
+                                        }
                                     )]],
                                 })
                             )
@@ -2292,12 +2292,12 @@ export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.diction
                                 ($) => ({
                                     'option': 'directed',
                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                        ({
+                                        {
                                             'edges': _p_cc(
                                                 $['edges'],
                                                 ($) => ['list', $.__l_map(
                                                     ($) => ['group', ['verbose', _p.dictionary.literal(
-                                                        ({
+                                                        {
                                                             'from': _p_cc(
                                                                 $['from'],
                                                                 ($) => End_Point_Specification(
@@ -2316,11 +2316,11 @@ export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.diction
                                                                     $
                                                                 )
                                                             ),
-                                                        })
+                                                        }
                                                     )]]
                                                 )]
                                             ),
-                                        })
+                                        }
                                     )]],
                                 })
                             )
@@ -2332,7 +2332,7 @@ export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.diction
                 }
             )]
         ),
-    })
+    }
 )]]
 
 export const Attribute_Value: t_signatures.Attribute_Value = ($) => ['state', _p.decide.state(
@@ -2344,10 +2344,10 @@ export const Attribute_Value: t_signatures.Attribute_Value = ($) => ['state', _p
                     $,
                     ($) => ({
                         'option': 'number',
-                        'value': ['text', ({
+                        'value': ['text', {
                             'delimiter': ['quote', null],
                             'value': $,
-                        })],
+                        }],
                     })
                 )
             case 'string':
@@ -2355,10 +2355,10 @@ export const Attribute_Value: t_signatures.Attribute_Value = ($) => ['state', _p
                     $,
                     ($) => ({
                         'option': 'string',
-                        'value': ['text', ({
+                        'value': ['text', {
                             'delimiter': ['quote', null],
                             'value': $,
-                        })],
+                        }],
                     })
                 )
             case 'html string':
@@ -2366,10 +2366,10 @@ export const Attribute_Value: t_signatures.Attribute_Value = ($) => ['state', _p
                     $,
                     ($) => ({
                         'option': 'html string',
-                        'value': ['text', ({
+                        'value': ['text', {
                             'delimiter': ['quote', null],
                             'value': $,
-                        })],
+                        }],
                     })
                 )
             default:

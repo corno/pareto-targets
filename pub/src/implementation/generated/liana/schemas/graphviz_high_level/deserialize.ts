@@ -13,10 +13,10 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort, $p) =>
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]
@@ -29,10 +29,10 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort, $p) => v
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]
@@ -45,10 +45,10 @@ export const Tree: t_signatures.Tree = ($, abort, $p) => v_unmarshall.Tree(
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]
@@ -61,10 +61,10 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($,
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]
@@ -77,10 +77,10 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort, $p) => v
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]
@@ -93,10 +93,10 @@ export const Graph: t_signatures.Graph = ($, abort, $p) => v_unmarshall.Graph(
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]
@@ -109,10 +109,10 @@ export const Attribute_Value: t_signatures.Attribute_Value = ($, abort, $p) => v
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]

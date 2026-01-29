@@ -94,7 +94,7 @@ export const Node: t_signatures.Node = ($) => ({
                                 case 'collection':
                                     return _p.ss(
                                         $,
-                                        ($) => ['collection', ({
+                                        ($) => ['collection', {
                                             'node': _p_cc(
                                                 $['node'],
                                                 ($) => Node(
@@ -107,24 +107,24 @@ export const Node: t_signatures.Node = ($) => ({
                                                     $
                                                 )
                                             ),
-                                        })]
+                                        }]
                                     )
                                 case 'group':
                                     return _p.ss(
                                         $,
-                                        ($) => ['group', ({
+                                        ($) => ['group', {
                                             'node': _p_cc(
                                                 $['node'],
                                                 ($) => Node(
                                                     $
                                                 )
                                             ),
-                                        })]
+                                        }]
                                     )
                                 case 'text':
                                     return _p.ss(
                                         $,
-                                        ($) => ['text', ({
+                                        ($) => ['text', {
                                             'constraint': _p_cc(
                                                 $['constraint'],
                                                 ($) => $.__o_map(
@@ -144,12 +144,12 @@ export const Node: t_signatures.Node = ($) => ({
                                                     })
                                                 )
                                             ),
-                                        })]
+                                        }]
                                     )
                                 case 'state group':
                                     return _p.ss(
                                         $,
-                                        ($) => ['state group', ({
+                                        ($) => ['state group', {
                                             'states': _p_cc(
                                                 $['states'],
                                                 ($) => $.__d_map(
@@ -176,7 +176,7 @@ export const Node: t_signatures.Node = ($) => ({
                                                     })
                                                 )
                                             ),
-                                        })]
+                                        }]
                                     )
                                 default:
                                     return _p.au(

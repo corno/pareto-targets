@@ -774,19 +774,19 @@ export const Tree: t_signatures.Tree = ($) => ({
                         case 'node':
                             return _p.ss(
                                 $,
-                                ($) => ['node', ({
+                                ($) => ['node', {
                                     'attributes': _p_cc(
                                         $['attributes'],
                                         ($) => Node_Attributes(
                                             $
                                         )
                                     ),
-                                })]
+                                }]
                             )
                         case 'sub':
                             return _p.ss(
                                 $,
-                                ($) => ['sub', ({
+                                ($) => ['sub', {
                                     'type': _p_cc(
                                         $['type'],
                                         ($) => _p.decide.state(
@@ -822,7 +822,7 @@ export const Tree: t_signatures.Tree = ($) => ({
                                             $
                                         )
                                     ),
-                                })]
+                                }]
                             )
                         default:
                             return _p.au(
@@ -1166,7 +1166,7 @@ export const Graph: t_signatures.Graph = ($) => ({
                     case 'undirected':
                         return _p.ss(
                             $,
-                            ($) => ['undirected', ({
+                            ($) => ['undirected', {
                                 'edges': _p_cc(
                                     $['edges'],
                                     ($) => $.__l_map(
@@ -1192,12 +1192,12 @@ export const Graph: t_signatures.Graph = ($) => ({
                                         })
                                     )
                                 ),
-                            })]
+                            }]
                         )
                     case 'directed':
                         return _p.ss(
                             $,
-                            ($) => ['directed', ({
+                            ($) => ['directed', {
                                 'edges': _p_cc(
                                     $['edges'],
                                     ($) => $.__l_map(
@@ -1223,7 +1223,7 @@ export const Graph: t_signatures.Graph = ($) => ({
                                         })
                                     )
                                 ),
-                            })]
+                            }]
                         )
                     default:
                         return _p.au(

@@ -13,10 +13,10 @@ export const MetaPointer: t_signatures.MetaPointer = ($, abort, $p) => v_unmarsh
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]
@@ -29,10 +29,10 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort, $p
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]
@@ -45,10 +45,10 @@ export const SerializationChunks: t_signatures.SerializationChunks = ($, abort, 
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]

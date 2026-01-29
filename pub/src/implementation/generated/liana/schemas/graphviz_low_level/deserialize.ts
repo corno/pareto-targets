@@ -13,10 +13,10 @@ export const ID: t_signatures.ID = ($, abort, $p) => v_unmarshall.ID(
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]
@@ -29,10 +29,10 @@ export const Node_ID: t_signatures.Node_ID = ($, abort, $p) => v_unmarshall.Node
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]
@@ -45,10 +45,10 @@ export const Attribute_List: t_signatures.Attribute_List = ($, abort, $p) => v_u
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]
@@ -61,10 +61,10 @@ export const Subgraph: t_signatures.Subgraph = ($, abort, $p) => v_unmarshall.Su
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]
@@ -77,10 +77,10 @@ export const Statement_List: t_signatures.Statement_List = ($, abort, $p) => v_u
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]
@@ -93,10 +93,10 @@ export const Graph: t_signatures.Graph = ($, abort, $p) => v_unmarshall.Graph(
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]

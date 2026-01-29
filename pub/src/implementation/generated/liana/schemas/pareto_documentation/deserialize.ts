@@ -15,10 +15,10 @@ export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($, abort, $p
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]

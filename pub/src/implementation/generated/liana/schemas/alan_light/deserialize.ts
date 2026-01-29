@@ -13,10 +13,10 @@ export const Identifier: t_signatures.Identifier = ($, abort, $p) => v_unmarshal
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]
@@ -29,10 +29,10 @@ export const Path: t_signatures.Path = ($, abort, $p) => v_unmarshall.Path(
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]
@@ -45,10 +45,10 @@ export const Node: t_signatures.Node = ($, abort, $p) => v_unmarshall.Node(
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]
@@ -61,10 +61,10 @@ export const Root: t_signatures.Root = ($, abort, $p) => v_unmarshall.Root(
         ($) => abort(
             ['tbd', null]
         ),
-        ({
+        {
             'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
-        })
+        }
     )['content'],
     ($) => abort(
         ['tbd', null]

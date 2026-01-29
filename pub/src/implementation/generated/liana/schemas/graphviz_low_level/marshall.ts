@@ -22,10 +22,10 @@ export const ID: t_signatures.ID = ($) => ['state', _p.decide.state(
                     $,
                     ($) => ({
                         'option': 'id',
-                        'value': ['text', ({
+                        'value': ['text', {
                             'delimiter': ['quote', null],
                             'value': $,
-                        })],
+                        }],
                     })
                 )
             case 'string':
@@ -33,10 +33,10 @@ export const ID: t_signatures.ID = ($) => ['state', _p.decide.state(
                     $,
                     ($) => ({
                         'option': 'string',
-                        'value': ['text', ({
+                        'value': ['text', {
                             'delimiter': ['quote', null],
                             'value': $,
-                        })],
+                        }],
                     })
                 )
             case 'html':
@@ -44,10 +44,10 @@ export const ID: t_signatures.ID = ($) => ['state', _p.decide.state(
                     $,
                     ($) => ({
                         'option': 'html',
-                        'value': ['text', ({
+                        'value': ['text', {
                             'delimiter': ['quote', null],
                             'value': $,
-                        })],
+                        }],
                     })
                 )
             case 'number':
@@ -55,12 +55,12 @@ export const ID: t_signatures.ID = ($) => ['state', _p.decide.state(
                     $,
                     ($) => ({
                         'option': 'number',
-                        'value': ['text', ({
+                        'value': ['text', {
                             'delimiter': ['none', null],
                             'value': v_serialize_number.serialize(
                                 $
                             ),
-                        })],
+                        }],
                     })
                 )
             default:
@@ -72,7 +72,7 @@ export const ID: t_signatures.ID = ($) => ['state', _p.decide.state(
 )]
 
 export const Node_ID: t_signatures.Node_ID = ($) => ['group', ['verbose', _p.dictionary.literal(
-    ({
+    {
         'id': _p_cc(
             $['id'],
             ($) => ID(
@@ -83,7 +83,7 @@ export const Node_ID: t_signatures.Node_ID = ($) => ['group', ['verbose', _p.dic
             $['port'],
             ($) => ['optional', $.__decide(
                 ($): t_out.Value.optional => ['set', ['group', ['verbose', _p.dictionary.literal(
-                    ({
+                    {
                         'port': _p_cc(
                             $['port'],
                             ($) => ID(
@@ -99,17 +99,17 @@ export const Node_ID: t_signatures.Node_ID = ($) => ['group', ['verbose', _p.dic
                                 () => ['not set', null]
                             )]
                         ),
-                    })
+                    }
                 )]]],
                 () => ['not set', null]
             )]
         ),
-    })
+    }
 )]]
 
 export const Attribute_List: t_signatures.Attribute_List = ($) => ['list', $.__l_map(
     ($) => ['group', ['verbose', _p.dictionary.literal(
-        ({
+        {
             'name': _p_cc(
                 $['name'],
                 ($) => ID(
@@ -122,12 +122,12 @@ export const Attribute_List: t_signatures.Attribute_List = ($) => ['list', $.__l
                     $
                 )
             ),
-        })
+        }
     )]]
 )]
 
 export const Subgraph: t_signatures.Subgraph = ($) => ['group', ['verbose', _p.dictionary.literal(
-    ({
+    {
         'subgraph': _p_cc(
             $['subgraph'],
             ($) => ['optional', $.__decide(
@@ -146,7 +146,7 @@ export const Subgraph: t_signatures.Subgraph = ($) => ['group', ['verbose', _p.d
                 $
             )
         ),
-    })
+    }
 )]]
 
 export const Statement_List: t_signatures.Statement_List = ($) => ['list', $.__l_map(
@@ -160,7 +160,7 @@ export const Statement_List: t_signatures.Statement_List = ($) => ['list', $.__l
                         ($) => ({
                             'option': 'node',
                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                ({
+                                {
                                     'node': _p_cc(
                                         $['node'],
                                         ($) => Node_ID(
@@ -173,7 +173,7 @@ export const Statement_List: t_signatures.Statement_List = ($) => ['list', $.__l
                                             $
                                         )
                                     ),
-                                })
+                                }
                             )]],
                         })
                     )
@@ -183,7 +183,7 @@ export const Statement_List: t_signatures.Statement_List = ($) => ['list', $.__l
                         ($) => ({
                             'option': 'edge',
                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                ({
+                                {
                                     'left': _p_cc(
                                         $['left'],
                                         ($) => ['state', _p.decide.state(
@@ -260,7 +260,7 @@ export const Statement_List: t_signatures.Statement_List = ($) => ['list', $.__l
                                             $
                                         )
                                     ),
-                                })
+                                }
                             )]],
                         })
                     )
@@ -270,7 +270,7 @@ export const Statement_List: t_signatures.Statement_List = ($) => ['list', $.__l
                         ($) => ({
                             'option': 'attribute list',
                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                ({
+                                {
                                     'type': _p_cc(
                                         $['type'],
                                         ($) => ['state', _p.decide.state(
@@ -315,7 +315,7 @@ export const Statement_List: t_signatures.Statement_List = ($) => ['list', $.__l
                                             $
                                         )
                                     ),
-                                })
+                                }
                             )]],
                         })
                     )
@@ -325,7 +325,7 @@ export const Statement_List: t_signatures.Statement_List = ($) => ['list', $.__l
                         ($) => ({
                             'option': 'attribute assignment',
                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                ({
+                                {
                                     'name': _p_cc(
                                         $['name'],
                                         ($) => ID(
@@ -338,7 +338,7 @@ export const Statement_List: t_signatures.Statement_List = ($) => ['list', $.__l
                                             $
                                         )
                                     ),
-                                })
+                                }
                             )]],
                         })
                     )
@@ -362,15 +362,15 @@ export const Statement_List: t_signatures.Statement_List = ($) => ['list', $.__l
 )]
 
 export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.dictionary.literal(
-    ({
+    {
         'strict': _p_cc(
             $['strict'],
-            ($) => ['text', ({
+            ($) => ['text', {
                 'delimiter': ['none', null],
                 'value': v_serialize_boolean.serialize(
                     $
                 ),
-            })]
+            }]
         ),
         'type': _p_cc(
             $['type'],
@@ -417,5 +417,5 @@ export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.diction
                 $
             )
         ),
-    })
+    }
 )]]

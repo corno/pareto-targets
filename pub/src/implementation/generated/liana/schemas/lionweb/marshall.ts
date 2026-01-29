@@ -14,60 +14,60 @@ import * as v_serialize_number from "liana-core/dist/implementation/manual/primi
 import * as v_serialize_boolean from "liana-core/dist/implementation/manual/primitives/boolean/serializers/true_false"
 
 export const MetaPointer: t_signatures.MetaPointer = ($) => ['group', ['verbose', _p.dictionary.literal(
-    ({
+    {
         'language': _p_cc(
             $['language'],
-            ($) => ['text', ({
+            ($) => ['text', {
                 'delimiter': ['quote', null],
                 'value': $,
-            })]
+            }]
         ),
         'version': _p_cc(
             $['version'],
-            ($) => ['text', ({
+            ($) => ['text', {
                 'delimiter': ['quote', null],
                 'value': $,
-            })]
+            }]
         ),
         'key': _p_cc(
             $['key'],
-            ($) => ['text', ({
+            ($) => ['text', {
                 'delimiter': ['quote', null],
                 'value': $,
-            })]
+            }]
         ),
-    })
+    }
 )]]
 
 export const SerializationChunk: t_signatures.SerializationChunk = ($) => ['group', ['verbose', _p.dictionary.literal(
-    ({
+    {
         'serializationFormatVersion': _p_cc(
             $['serializationFormatVersion'],
-            ($) => ['text', ({
+            ($) => ['text', {
                 'delimiter': ['quote', null],
                 'value': $,
-            })]
+            }]
         ),
         'languages': _p_cc(
             $['languages'],
             ($) => ['list', $.__l_map(
                 ($) => ['group', ['verbose', _p.dictionary.literal(
-                    ({
+                    {
                         'key': _p_cc(
                             $['key'],
-                            ($) => ['text', ({
+                            ($) => ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })]
+                            }]
                         ),
                         'version': _p_cc(
                             $['version'],
-                            ($) => ['text', ({
+                            ($) => ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })]
+                            }]
                         ),
-                    })
+                    }
                 )]]
             )]
         ),
@@ -75,31 +75,31 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ['grou
             $['nodes'],
             ($) => ['list', $.__l_map(
                 ($) => ['group', ['verbose', _p.dictionary.literal(
-                    ({
+                    {
                         'id': _p_cc(
                             $['id'],
-                            ($) => ['text', ({
+                            ($) => ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })]
+                            }]
                         ),
                         'parent': _p_cc(
                             $['parent'],
                             ($) => ['optional', $.__decide(
-                                ($): t_out.Value.optional => ['set', ['text', ({
+                                ($): t_out.Value.optional => ['set', ['text', {
                                     'delimiter': ['quote', null],
                                     'value': $,
-                                })]],
+                                }]],
                                 () => ['not set', null]
                             )]
                         ),
                         'annotations': _p_cc(
                             $['annotations'],
                             ($) => ['list', $.__l_map(
-                                ($) => ['text', ({
+                                ($) => ['text', {
                                     'delimiter': ['quote', null],
                                     'value': $,
-                                })]
+                                }]
                             )]
                         ),
                         'classifier': _p_cc(
@@ -112,7 +112,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ['grou
                             $['containments'],
                             ($) => ['list', $.__l_map(
                                 ($) => ['group', ['verbose', _p.dictionary.literal(
-                                    ({
+                                    {
                                         'containment': _p_cc(
                                             $['containment'],
                                             ($) => MetaPointer(
@@ -122,13 +122,13 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ['grou
                                         'children': _p_cc(
                                             $['children'],
                                             ($) => ['list', $.__l_map(
-                                                ($) => ['text', ({
+                                                ($) => ['text', {
                                                     'delimiter': ['quote', null],
                                                     'value': $,
-                                                })]
+                                                }]
                                             )]
                                         ),
-                                    })
+                                    }
                                 )]]
                             )]
                         ),
@@ -136,13 +136,13 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ['grou
                             $['properties'],
                             ($) => ['list', $.__l_map(
                                 ($) => ['group', ['verbose', _p.dictionary.literal(
-                                    ({
+                                    {
                                         'value': _p_cc(
                                             $['value'],
-                                            ($) => ['text', ({
+                                            ($) => ['text', {
                                                 'delimiter': ['quote', null],
                                                 'value': $,
-                                            })]
+                                            }]
                                         ),
                                         'property': _p_cc(
                                             $['property'],
@@ -150,7 +150,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ['grou
                                                 $
                                             )
                                         ),
-                                    })
+                                    }
                                 )]]
                             )]
                         ),
@@ -158,27 +158,27 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ['grou
                             $['references'],
                             ($) => ['list', $.__l_map(
                                 ($) => ['group', ['verbose', _p.dictionary.literal(
-                                    ({
+                                    {
                                         'targets': _p_cc(
                                             $['targets'],
                                             ($) => ['list', $.__l_map(
                                                 ($) => ['group', ['verbose', _p.dictionary.literal(
-                                                    ({
+                                                    {
                                                         'reference': _p_cc(
                                                             $['reference'],
-                                                            ($) => ['text', ({
+                                                            ($) => ['text', {
                                                                 'delimiter': ['quote', null],
                                                                 'value': $,
-                                                            })]
+                                                            }]
                                                         ),
                                                         'resolveInfo': _p_cc(
                                                             $['resolveInfo'],
-                                                            ($) => ['text', ({
+                                                            ($) => ['text', {
                                                                 'delimiter': ['quote', null],
                                                                 'value': $,
-                                                            })]
+                                                            }]
                                                         ),
-                                                    })
+                                                    }
                                                 )]]
                                             )]
                                         ),
@@ -188,15 +188,15 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ['grou
                                                 $
                                             )
                                         ),
-                                    })
+                                    }
                                 )]]
                             )]
                         ),
-                    })
+                    }
                 )]]
             )]
         ),
-    })
+    }
 )]]
 
 export const SerializationChunks: t_signatures.SerializationChunks = ($) => ['dictionary', $.__d_map(
