@@ -81,7 +81,8 @@ export const Node_ID: t_signatures.Node_ID = ($) => ['group', ['verbose', _p.dic
         ),
         'port': _p_cc(
             $['port'],
-            ($) => ['optional', $.__decide(
+            ($) => ['optional', _p.decide.optional(
+                $,
                 ($): t_out.Value.optional => ['set', ['group', ['verbose', _p.dictionary.literal(
                     {
                         'port': _p_cc(
@@ -92,7 +93,8 @@ export const Node_ID: t_signatures.Node_ID = ($) => ['group', ['verbose', _p.dic
                         ),
                         'compass point': _p_cc(
                             $['compass point'],
-                            ($) => ['optional', $.__decide(
+                            ($) => ['optional', _p.decide.optional(
+                                $,
                                 ($): t_out.Value.optional => ['set', ID(
                                     $
                                 )],
@@ -107,7 +109,8 @@ export const Node_ID: t_signatures.Node_ID = ($) => ['group', ['verbose', _p.dic
     }
 )]]
 
-export const Attribute_List: t_signatures.Attribute_List = ($) => ['list', $.__l_map(
+export const Attribute_List: t_signatures.Attribute_List = ($) => ['list', _p.list.map(
+    $,
     ($) => ['group', ['verbose', _p.dictionary.literal(
         {
             'name': _p_cc(
@@ -130,8 +133,10 @@ export const Subgraph: t_signatures.Subgraph = ($) => ['group', ['verbose', _p.d
     {
         'subgraph': _p_cc(
             $['subgraph'],
-            ($) => ['optional', $.__decide(
-                ($): t_out.Value.optional => ['set', ['optional', $.__decide(
+            ($) => ['optional', _p.decide.optional(
+                $,
+                ($): t_out.Value.optional => ['set', ['optional', _p.decide.optional(
+                    $,
                     ($): t_out.Value.optional => ['set', ID(
                         $
                     )],
@@ -149,7 +154,8 @@ export const Subgraph: t_signatures.Subgraph = ($) => ['group', ['verbose', _p.d
     }
 )]]
 
-export const Statement_List: t_signatures.Statement_List = ($) => ['list', $.__l_map(
+export const Statement_List: t_signatures.Statement_List = ($) => ['list', _p.list.map(
+    $,
     ($) => ['state', _p.decide.state(
         $,
         ($): t_out.Value.state => {
@@ -220,7 +226,8 @@ export const Statement_List: t_signatures.Statement_List = ($) => ['list', $.__l
                                     ),
                                     'right': _p_cc(
                                         $['right'],
-                                        ($) => ['list', $.__l_map(
+                                        ($) => ['list', _p.list.map(
+                                            $,
                                             ($) => ['state', _p.decide.state(
                                                 $,
                                                 ($): t_out.Value.state => {
@@ -404,7 +411,8 @@ export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.diction
         ),
         'name': _p_cc(
             $['name'],
-            ($) => ['optional', $.__decide(
+            ($) => ['optional', _p.decide.optional(
+                $,
                 ($): t_out.Value.optional => ['set', ID(
                     $
                 )],

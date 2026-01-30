@@ -99,12 +99,13 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                     ['no such entry', "languages"]
                 )
             ),
-            ($) => v_unmarshalled_from_parse_tree.List(
-                $,
-                ($) => abort(
-                    ['expected a list', null]
-                )
-            ).__l_map(
+            ($) => _p.list.map(
+                v_unmarshalled_from_parse_tree.List(
+                    $,
+                    ($) => abort(
+                        ['expected a list', null]
+                    )
+                ),
                 ($) => _p_cc(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
@@ -152,12 +153,13 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                     ['no such entry', "nodes"]
                 )
             ),
-            ($) => v_unmarshalled_from_parse_tree.List(
-                $,
-                ($) => abort(
-                    ['expected a list', null]
-                )
-            ).__l_map(
+            ($) => _p.list.map(
+                v_unmarshalled_from_parse_tree.List(
+                    $,
+                    ($) => abort(
+                        ['expected a list', null]
+                    )
+                ),
                 ($) => _p_cc(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
@@ -187,12 +189,13 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                     ['no such entry', "parent"]
                                 )
                             ),
-                            ($) => v_unmarshalled_from_parse_tree.Optional(
-                                $,
-                                ($) => abort(
-                                    ['expected an optional', null]
-                                )
-                            ).__o_map(
+                            ($) => _p.optional.map(
+                                v_unmarshalled_from_parse_tree.Optional(
+                                    $,
+                                    ($) => abort(
+                                        ['expected an optional', null]
+                                    )
+                                ),
                                 ($) => v_unmarshalled_from_parse_tree.Text(
                                     $,
                                     ($) => abort(
@@ -208,12 +211,13 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                     ['no such entry', "annotations"]
                                 )
                             ),
-                            ($) => v_unmarshalled_from_parse_tree.List(
-                                $,
-                                ($) => abort(
-                                    ['expected a list', null]
-                                )
-                            ).__l_map(
+                            ($) => _p.list.map(
+                                v_unmarshalled_from_parse_tree.List(
+                                    $,
+                                    ($) => abort(
+                                        ['expected a list', null]
+                                    )
+                                ),
                                 ($) => v_unmarshalled_from_parse_tree.Text(
                                     $,
                                     ($) => abort(
@@ -243,12 +247,13 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                     ['no such entry', "containments"]
                                 )
                             ),
-                            ($) => v_unmarshalled_from_parse_tree.List(
-                                $,
-                                ($) => abort(
-                                    ['expected a list', null]
-                                )
-                            ).__l_map(
+                            ($) => _p.list.map(
+                                v_unmarshalled_from_parse_tree.List(
+                                    $,
+                                    ($) => abort(
+                                        ['expected a list', null]
+                                    )
+                                ),
                                 ($) => _p_cc(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
@@ -278,12 +283,13 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                                     ['no such entry', "children"]
                                                 )
                                             ),
-                                            ($) => v_unmarshalled_from_parse_tree.List(
-                                                $,
-                                                ($) => abort(
-                                                    ['expected a list', null]
-                                                )
-                                            ).__l_map(
+                                            ($) => _p.list.map(
+                                                v_unmarshalled_from_parse_tree.List(
+                                                    $,
+                                                    ($) => abort(
+                                                        ['expected a list', null]
+                                                    )
+                                                ),
                                                 ($) => v_unmarshalled_from_parse_tree.Text(
                                                     $,
                                                     ($) => abort(
@@ -303,12 +309,13 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                     ['no such entry', "properties"]
                                 )
                             ),
-                            ($) => v_unmarshalled_from_parse_tree.List(
-                                $,
-                                ($) => abort(
-                                    ['expected a list', null]
-                                )
-                            ).__l_map(
+                            ($) => _p.list.map(
+                                v_unmarshalled_from_parse_tree.List(
+                                    $,
+                                    ($) => abort(
+                                        ['expected a list', null]
+                                    )
+                                ),
                                 ($) => _p_cc(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
@@ -356,12 +363,13 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                     ['no such entry', "references"]
                                 )
                             ),
-                            ($) => v_unmarshalled_from_parse_tree.List(
-                                $,
-                                ($) => abort(
-                                    ['expected a list', null]
-                                )
-                            ).__l_map(
+                            ($) => _p.list.map(
+                                v_unmarshalled_from_parse_tree.List(
+                                    $,
+                                    ($) => abort(
+                                        ['expected a list', null]
+                                    )
+                                ),
                                 ($) => _p_cc(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
@@ -377,12 +385,13 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                                     ['no such entry', "targets"]
                                                 )
                                             ),
-                                            ($) => v_unmarshalled_from_parse_tree.List(
-                                                $,
-                                                ($) => abort(
-                                                    ['expected a list', null]
-                                                )
-                                            ).__l_map(
+                                            ($) => _p.list.map(
+                                                v_unmarshalled_from_parse_tree.List(
+                                                    $,
+                                                    ($) => abort(
+                                                        ['expected a list', null]
+                                                    )
+                                                ),
                                                 ($) => _p_cc(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
@@ -448,12 +457,13 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
     })
 )
 
-export const SerializationChunks: t_signatures.SerializationChunks = ($, abort) => v_unmarshalled_from_parse_tree.Dictionary(
-    $,
-    ($) => abort(
-        ['expected a dictionary', null]
-    )
-).__d_map(
+export const SerializationChunks: t_signatures.SerializationChunks = ($, abort) => _p.dictionary.map(
+    v_unmarshalled_from_parse_tree.Dictionary(
+        $,
+        ($) => abort(
+            ['expected a dictionary', null]
+        )
+    ),
     ($, id) => SerializationChunk(
         $,
         ($) => abort(

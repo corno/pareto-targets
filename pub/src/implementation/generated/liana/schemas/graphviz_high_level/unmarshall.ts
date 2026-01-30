@@ -17,12 +17,13 @@ import * as v_unmarshalled_from_parse_tree from "astn-core/dist/implementation/m
 
 import * as v_parse_tree_to_location from "astn-core/dist/implementation/manual/schemas/parse_tree/transformers/location"
 
-export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => v_unmarshalled_from_parse_tree.List(
-    $,
-    ($) => abort(
-        ['expected a list', null]
-    )
-).__l_map(
+export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.list.map(
+    v_unmarshalled_from_parse_tree.List(
+        $,
+        ($) => abort(
+            ['expected a list', null]
+        )
+    ),
     ($) => _p_cc(
         v_unmarshalled_from_parse_tree.State(
             $,
@@ -1166,12 +1167,13 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => v_u
     )
 )
 
-export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => v_unmarshalled_from_parse_tree.List(
-    $,
-    ($) => abort(
-        ['expected a list', null]
-    )
-).__l_map(
+export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.list.map(
+    v_unmarshalled_from_parse_tree.List(
+        $,
+        ($) => abort(
+            ['expected a list', null]
+        )
+    ),
     ($) => _p_cc(
         v_unmarshalled_from_parse_tree.State(
             $,
@@ -1675,12 +1677,13 @@ export const Tree: t_signatures.Tree = ($, abort) => _p_cc(
                     ['no such entry', "elements"]
                 )
             ),
-            ($) => v_unmarshalled_from_parse_tree.Dictionary(
-                $,
-                ($) => abort(
-                    ['expected a dictionary', null]
-                )
-            ).__d_map(
+            ($) => _p.dictionary.map(
+                v_unmarshalled_from_parse_tree.Dictionary(
+                    $,
+                    ($) => abort(
+                        ['expected a dictionary', null]
+                    )
+                ),
                 ($, id) => _p_cc(
                     v_unmarshalled_from_parse_tree.State(
                         $,
@@ -1847,12 +1850,13 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($,
                     ['no such entry', "tail"]
                 )
             ),
-            ($) => v_unmarshalled_from_parse_tree.List(
-                $,
-                ($) => abort(
-                    ['expected a list', null]
-                )
-            ).__l_map(
+            ($) => _p.list.map(
+                v_unmarshalled_from_parse_tree.List(
+                    $,
+                    ($) => abort(
+                        ['expected a list', null]
+                    )
+                ),
                 ($) => v_unmarshalled_from_parse_tree.Text(
                     $,
                     ($) => abort(
@@ -1868,12 +1872,13 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($,
                     ['no such entry', "port data"]
                 )
             ),
-            ($) => v_unmarshalled_from_parse_tree.Optional(
-                $,
-                ($) => abort(
-                    ['expected an optional', null]
-                )
-            ).__o_map(
+            ($) => _p.optional.map(
+                v_unmarshalled_from_parse_tree.Optional(
+                    $,
+                    ($) => abort(
+                        ['expected an optional', null]
+                    )
+                ),
                 ($) => _p_cc(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
@@ -1903,12 +1908,13 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($,
                                     ['no such entry', "compass direction"]
                                 )
                             ),
-                            ($) => v_unmarshalled_from_parse_tree.Optional(
-                                $,
-                                ($) => abort(
-                                    ['expected an optional', null]
-                                )
-                            ).__o_map(
+                            ($) => _p.optional.map(
+                                v_unmarshalled_from_parse_tree.Optional(
+                                    $,
+                                    ($) => abort(
+                                        ['expected an optional', null]
+                                    )
+                                ),
                                 ($) => v_unmarshalled_from_parse_tree.Text(
                                     $,
                                     ($) => abort(
@@ -1924,12 +1930,13 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($,
     })
 )
 
-export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => v_unmarshalled_from_parse_tree.List(
-    $,
-    ($) => abort(
-        ['expected a list', null]
-    )
-).__l_map(
+export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.list.map(
+    v_unmarshalled_from_parse_tree.List(
+        $,
+        ($) => abort(
+            ['expected a list', null]
+        )
+    ),
     ($) => _p_cc(
         v_unmarshalled_from_parse_tree.State(
             $,
@@ -2574,12 +2581,13 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                     ['no such entry', "name"]
                 )
             ),
-            ($) => v_unmarshalled_from_parse_tree.Optional(
-                $,
-                ($) => abort(
-                    ['expected an optional', null]
-                )
-            ).__o_map(
+            ($) => _p.optional.map(
+                v_unmarshalled_from_parse_tree.Optional(
+                    $,
+                    ($) => abort(
+                        ['expected an optional', null]
+                    )
+                ),
                 ($) => v_unmarshalled_from_parse_tree.Text(
                     $,
                     ($) => abort(
@@ -2638,12 +2646,13 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                                                         ['no such entry', "edges"]
                                                     )
                                                 ),
-                                                ($) => v_unmarshalled_from_parse_tree.List(
-                                                    $,
-                                                    ($) => abort(
-                                                        ['expected a list', null]
-                                                    )
-                                                ).__l_map(
+                                                ($) => _p.list.map(
+                                                    v_unmarshalled_from_parse_tree.List(
+                                                        $,
+                                                        ($) => abort(
+                                                            ['expected a list', null]
+                                                        )
+                                                    ),
                                                     ($) => _p_cc(
                                                         v_unmarshalled_from_parse_tree.Group(
                                                             $,
@@ -2719,12 +2728,13 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                                                         ['no such entry', "edges"]
                                                     )
                                                 ),
-                                                ($) => v_unmarshalled_from_parse_tree.List(
-                                                    $,
-                                                    ($) => abort(
-                                                        ['expected a list', null]
-                                                    )
-                                                ).__l_map(
+                                                ($) => _p.list.map(
+                                                    v_unmarshalled_from_parse_tree.List(
+                                                        $,
+                                                        ($) => abort(
+                                                            ['expected a list', null]
+                                                        )
+                                                    ),
                                                     ($) => _p_cc(
                                                         v_unmarshalled_from_parse_tree.Group(
                                                             $,

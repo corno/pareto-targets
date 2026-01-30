@@ -13,7 +13,8 @@ import * as v_serialize_number from "liana-core/dist/implementation/manual/primi
 
 import * as v_serialize_boolean from "liana-core/dist/implementation/manual/primitives/boolean/serializers/true_false"
 
-export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $.__l_map(
+export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', _p.list.map(
+    $,
     ($) => ['state', _p.decide.state(
         $,
         ($): t_out.Value.state => {
@@ -1026,7 +1027,8 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', $
     )]
 )]
 
-export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', $.__l_map(
+export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', _p.list.map(
+    $,
     ($) => ['state', _p.decide.state(
         $,
         ($): t_out.Value.state => {
@@ -1483,7 +1485,8 @@ export const Tree: t_signatures.Tree = ($) => ['group', ['verbose', _p.dictionar
         ),
         'elements': _p_cc(
             $['elements'],
-            ($) => ['dictionary', $.__d_map(
+            ($) => ['dictionary', _p.dictionary.map(
+                $,
                 ($, id) => ['state', _p.decide.state(
                     $,
                     ($): t_out.Value.state => {
@@ -1583,7 +1586,8 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($)
         ),
         'tail': _p_cc(
             $['tail'],
-            ($) => ['list', $.__l_map(
+            ($) => ['list', _p.list.map(
+                $,
                 ($) => ['text', {
                     'delimiter': ['quote', null],
                     'value': $,
@@ -1592,7 +1596,8 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($)
         ),
         'port data': _p_cc(
             $['port data'],
-            ($) => ['optional', $.__decide(
+            ($) => ['optional', _p.decide.optional(
+                $,
                 ($): t_out.Value.optional => ['set', ['group', ['verbose', _p.dictionary.literal(
                     {
                         'port': _p_cc(
@@ -1604,7 +1609,8 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($)
                         ),
                         'compass direction': _p_cc(
                             $['compass direction'],
-                            ($) => ['optional', $.__decide(
+                            ($) => ['optional', _p.decide.optional(
+                                $,
                                 ($): t_out.Value.optional => ['set', ['text', {
                                     'delimiter': ['quote', null],
                                     'value': $,
@@ -1620,7 +1626,8 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($)
     }
 )]]
 
-export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', $.__l_map(
+export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', _p.list.map(
+    $,
     ($) => ['state', _p.decide.state(
         $,
         ($): t_out.Value.state => {
@@ -2228,7 +2235,8 @@ export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.diction
     {
         'name': _p_cc(
             $['name'],
-            ($) => ['optional', $.__decide(
+            ($) => ['optional', _p.decide.optional(
+                $,
                 ($): t_out.Value.optional => ['set', ['text', {
                     'delimiter': ['quote', null],
                     'value': $,
@@ -2257,7 +2265,8 @@ export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.diction
                                         {
                                             'edges': _p_cc(
                                                 $['edges'],
-                                                ($) => ['list', $.__l_map(
+                                                ($) => ['list', _p.list.map(
+                                                    $,
                                                     ($) => ['group', ['verbose', _p.dictionary.literal(
                                                         {
                                                             'yin': _p_cc(
@@ -2295,7 +2304,8 @@ export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.diction
                                         {
                                             'edges': _p_cc(
                                                 $['edges'],
-                                                ($) => ['list', $.__l_map(
+                                                ($) => ['list', _p.list.map(
+                                                    $,
                                                     ($) => ['group', ['verbose', _p.dictionary.literal(
                                                         {
                                                             'from': _p_cc(

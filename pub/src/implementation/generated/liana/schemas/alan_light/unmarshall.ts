@@ -39,12 +39,13 @@ export const Path: t_signatures.Path = ($, abort) => _p_cc(
                     ['no such entry', "up steps"]
                 )
             ),
-            ($) => v_unmarshalled_from_parse_tree.List(
-                $,
-                ($) => abort(
-                    ['expected a list', null]
-                )
-            ).__l_map(
+            ($) => _p.list.map(
+                v_unmarshalled_from_parse_tree.List(
+                    $,
+                    ($) => abort(
+                        ['expected a list', null]
+                    )
+                ),
                 ($) => _p_cc(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
@@ -130,12 +131,13 @@ export const Path: t_signatures.Path = ($, abort) => _p_cc(
                     ['no such entry', "selection steps"]
                 )
             ),
-            ($) => v_unmarshalled_from_parse_tree.List(
-                $,
-                ($) => abort(
-                    ['expected a list', null]
-                )
-            ).__l_map(
+            ($) => _p.list.map(
+                v_unmarshalled_from_parse_tree.List(
+                    $,
+                    ($) => abort(
+                        ['expected a list', null]
+                    )
+                ),
                 ($) => _p_cc(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
@@ -262,12 +264,13 @@ export const Node: t_signatures.Node = ($, abort) => _p_cc(
                     ['no such entry', "properties"]
                 )
             ),
-            ($) => v_unmarshalled_from_parse_tree.Dictionary(
-                $,
-                ($) => abort(
-                    ['expected a dictionary', null]
-                )
-            ).__d_map(
+            ($) => _p.dictionary.map(
+                v_unmarshalled_from_parse_tree.Dictionary(
+                    $,
+                    ($) => abort(
+                        ['expected a dictionary', null]
+                    )
+                ),
                 ($, id) => _p_cc(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
@@ -382,12 +385,13 @@ export const Node: t_signatures.Node = ($, abort) => _p_cc(
                                                                         ['no such entry', "constraint"]
                                                                     )
                                                                 ),
-                                                                ($) => v_unmarshalled_from_parse_tree.Optional(
-                                                                    $,
-                                                                    ($) => abort(
-                                                                        ['expected an optional', null]
-                                                                    )
-                                                                ).__o_map(
+                                                                ($) => _p.optional.map(
+                                                                    v_unmarshalled_from_parse_tree.Optional(
+                                                                        $,
+                                                                        ($) => abort(
+                                                                            ['expected an optional', null]
+                                                                        )
+                                                                    ),
                                                                     ($) => _p_cc(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
@@ -449,12 +453,13 @@ export const Node: t_signatures.Node = ($, abort) => _p_cc(
                                                                         ['no such entry', "states"]
                                                                     )
                                                                 ),
-                                                                ($) => v_unmarshalled_from_parse_tree.Dictionary(
-                                                                    $,
-                                                                    ($) => abort(
-                                                                        ['expected a dictionary', null]
-                                                                    )
-                                                                ).__d_map(
+                                                                ($) => _p.dictionary.map(
+                                                                    v_unmarshalled_from_parse_tree.Dictionary(
+                                                                        $,
+                                                                        ($) => abort(
+                                                                            ['expected a dictionary', null]
+                                                                        )
+                                                                    ),
                                                                     ($, id) => _p_cc(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
@@ -470,12 +475,13 @@ export const Node: t_signatures.Node = ($, abort) => _p_cc(
                                                                                         ['no such entry', "constraints"]
                                                                                     )
                                                                                 ),
-                                                                                ($) => v_unmarshalled_from_parse_tree.Dictionary(
-                                                                                    $,
-                                                                                    ($) => abort(
-                                                                                        ['expected a dictionary', null]
-                                                                                    )
-                                                                                ).__d_map(
+                                                                                ($) => _p.dictionary.map(
+                                                                                    v_unmarshalled_from_parse_tree.Dictionary(
+                                                                                        $,
+                                                                                        ($) => abort(
+                                                                                            ['expected a dictionary', null]
+                                                                                        )
+                                                                                    ),
                                                                                     ($, id) => _p_cc(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
@@ -554,12 +560,13 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                     ['no such entry', "numerical types"]
                 )
             ),
-            ($) => v_unmarshalled_from_parse_tree.Dictionary(
-                $,
-                ($) => abort(
-                    ['expected a dictionary', null]
-                )
-            ).__d_map(
+            ($) => _p.dictionary.map(
+                v_unmarshalled_from_parse_tree.Dictionary(
+                    $,
+                    ($) => abort(
+                        ['expected a dictionary', null]
+                    )
+                ),
                 ($, id) => _p_cc(
                     v_unmarshalled_from_parse_tree.Group(
                         $,

@@ -21,12 +21,13 @@ import * as v_parse_tree_to_location from "astn-core/dist/implementation/manual/
 
 import * as v_external_graphviz from "../graphviz_high_level/unmarshall"
 
-export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($, abort) => v_unmarshalled_from_parse_tree.Dictionary(
-    $,
-    ($) => abort(
-        ['expected a dictionary', null]
-    )
-).__d_map(
+export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($, abort) => _p.dictionary.map(
+    v_unmarshalled_from_parse_tree.Dictionary(
+        $,
+        ($) => abort(
+            ['expected a dictionary', null]
+        )
+    ),
     ($, id) => _p_cc(
         v_unmarshalled_from_parse_tree.State(
             $,

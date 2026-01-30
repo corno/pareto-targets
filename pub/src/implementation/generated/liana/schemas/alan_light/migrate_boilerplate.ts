@@ -14,7 +14,8 @@ export const Identifier: t_signatures.Identifier = ($) => $
 export const Path: t_signatures.Path = ($) => ({
     'up steps': _p_cc(
         $['up steps'],
-        ($) => $.__l_map(
+        ($) => _p.list.map(
+            $,
             ($) => null
         )
     ),
@@ -40,7 +41,8 @@ export const Path: t_signatures.Path = ($) => ({
     ),
     'selection steps': _p_cc(
         $['selection steps'],
-        ($) => $.__l_map(
+        ($) => _p.list.map(
+            $,
             ($) => ({
                 'group': _p_cc(
                     $['group'],
@@ -83,7 +85,8 @@ export const Path: t_signatures.Path = ($) => ({
 export const Node: t_signatures.Node = ($) => ({
     'properties': _p_cc(
         $['properties'],
-        ($) => $.__d_map(
+        ($) => _p.dictionary.map(
+            $,
             ($, id) => ({
                 'type': _p_cc(
                     $['type'],
@@ -127,7 +130,8 @@ export const Node: t_signatures.Node = ($) => ({
                                         ($) => ['text', {
                                             'constraint': _p_cc(
                                                 $['constraint'],
-                                                ($) => $.__o_map(
+                                                ($) => _p.optional.map(
+                                                    $,
                                                     ($) => ({
                                                         'path': _p_cc(
                                                             $['path'],
@@ -152,11 +156,13 @@ export const Node: t_signatures.Node = ($) => ({
                                         ($) => ['state group', {
                                             'states': _p_cc(
                                                 $['states'],
-                                                ($) => $.__d_map(
+                                                ($) => _p.dictionary.map(
+                                                    $,
                                                     ($, id) => ({
                                                         'constraints': _p_cc(
                                                             $['constraints'],
-                                                            ($) => $.__d_map(
+                                                            ($) => _p.dictionary.map(
+                                                                $,
                                                                 ($, id) => ({
                                                                     'path': _p_cc(
                                                                         $['path'],
@@ -194,7 +200,8 @@ export const Node: t_signatures.Node = ($) => ({
 export const Root: t_signatures.Root = ($) => ({
     'numerical types': _p_cc(
         $['numerical types'],
-        ($) => $.__d_map(
+        ($) => _p.dictionary.map(
+            $,
             ($, id) => null
         )
     ),

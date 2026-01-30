@@ -15,7 +15,8 @@ import * as v_serialize_boolean from "liana-core/dist/implementation/manual/prim
 
 import * as v_external_graphviz from "../graphviz_high_level/marshall"
 
-export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($) => ['dictionary', $.__d_map(
+export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($) => ['dictionary', _p.dictionary.map(
+    $,
     ($, id) => ['state', _p.decide.state(
         $,
         ($): t_out.Value.state => {

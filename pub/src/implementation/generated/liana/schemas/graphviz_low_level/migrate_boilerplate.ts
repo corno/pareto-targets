@@ -50,7 +50,8 @@ export const Node_ID: t_signatures.Node_ID = ($) => ({
     ),
     'port': _p_cc(
         $['port'],
-        ($) => $.__o_map(
+        ($) => _p.optional.map(
+            $,
             ($) => ({
                 'port': _p_cc(
                     $['port'],
@@ -60,7 +61,8 @@ export const Node_ID: t_signatures.Node_ID = ($) => ({
                 ),
                 'compass point': _p_cc(
                     $['compass point'],
-                    ($) => $.__o_map(
+                    ($) => _p.optional.map(
+                        $,
                         ($) => ID(
                             $
                         )
@@ -71,7 +73,8 @@ export const Node_ID: t_signatures.Node_ID = ($) => ({
     ),
 })
 
-export const Attribute_List: t_signatures.Attribute_List = ($) => $.__l_map(
+export const Attribute_List: t_signatures.Attribute_List = ($) => _p.list.map(
+    $,
     ($) => ({
         'name': _p_cc(
             $['name'],
@@ -91,8 +94,10 @@ export const Attribute_List: t_signatures.Attribute_List = ($) => $.__l_map(
 export const Subgraph: t_signatures.Subgraph = ($) => ({
     'subgraph': _p_cc(
         $['subgraph'],
-        ($) => $.__o_map(
-            ($) => $.__o_map(
+        ($) => _p.optional.map(
+            $,
+            ($) => _p.optional.map(
+                $,
                 ($) => ID(
                     $
                 )
@@ -107,7 +112,8 @@ export const Subgraph: t_signatures.Subgraph = ($) => ({
     ),
 })
 
-export const Statement_List: t_signatures.Statement_List = ($) => $.__l_map(
+export const Statement_List: t_signatures.Statement_List = ($) => _p.list.map(
+    $,
     ($) => _p.decide.state(
         $,
         ($): t_out.Statement_List.L => {
@@ -164,7 +170,8 @@ export const Statement_List: t_signatures.Statement_List = ($) => $.__l_map(
                             ),
                             'right': _p_cc(
                                 $['right'],
-                                ($) => $.__l_map(
+                                ($) => _p.list.map(
+                                    $,
                                     ($) => _p.decide.state(
                                         $,
                                         ($): t_out.Statement_List.L.edge.right.L => {
@@ -306,7 +313,8 @@ export const Graph: t_signatures.Graph = ($) => ({
     ),
     'name': _p_cc(
         $['name'],
-        ($) => $.__o_map(
+        ($) => _p.optional.map(
+            $,
             ($) => ID(
                 $
             )

@@ -9,7 +9,8 @@ import * as t_signatures from "../../../../../interface/generated/liana/schemas/
 
 import * as t_out from "../../../../../interface/generated/liana/schemas/graphviz_high_level/data"
 
-export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => $.__l_map(
+export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => _p.list.map(
+    $,
     ($) => _p.decide.state(
         $,
         ($): t_out.Graph_Attributes.L => {
@@ -548,7 +549,8 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => $.__l_map(
     )
 )
 
-export const Node_Attributes: t_signatures.Node_Attributes = ($) => $.__l_map(
+export const Node_Attributes: t_signatures.Node_Attributes = ($) => _p.list.map(
+    $,
     ($) => _p.decide.state(
         $,
         ($): t_out.Node_Attributes.L => {
@@ -766,7 +768,8 @@ export const Tree: t_signatures.Tree = ($) => ({
     ),
     'elements': _p_cc(
         $['elements'],
-        ($) => $.__d_map(
+        ($) => _p.dictionary.map(
+            $,
             ($, id) => _p.decide.state(
                 $,
                 ($): t_out.Tree.elements.D => {
@@ -842,13 +845,15 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($)
     ),
     'tail': _p_cc(
         $['tail'],
-        ($) => $.__l_map(
+        ($) => _p.list.map(
+            $,
             ($) => $
         )
     ),
     'port data': _p_cc(
         $['port data'],
-        ($) => $.__o_map(
+        ($) => _p.optional.map(
+            $,
             ($) => ({
                 'port': _p_cc(
                     $['port'],
@@ -856,7 +861,8 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($)
                 ),
                 'compass direction': _p_cc(
                     $['compass direction'],
-                    ($) => $.__o_map(
+                    ($) => _p.optional.map(
+                        $,
                         ($) => $
                     )
                 ),
@@ -865,7 +871,8 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($)
     ),
 })
 
-export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => $.__l_map(
+export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => _p.list.map(
+    $,
     ($) => _p.decide.state(
         $,
         ($): t_out.Edge_Attributes.L => {
@@ -1147,7 +1154,8 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => $.__l_map(
 export const Graph: t_signatures.Graph = ($) => ({
     'name': _p_cc(
         $['name'],
-        ($) => $.__o_map(
+        ($) => _p.optional.map(
+            $,
             ($) => $
         )
     ),
@@ -1169,7 +1177,8 @@ export const Graph: t_signatures.Graph = ($) => ({
                             ($) => ['undirected', {
                                 'edges': _p_cc(
                                     $['edges'],
-                                    ($) => $.__l_map(
+                                    ($) => _p.list.map(
+                                        $,
                                         ($) => ({
                                             'yin': _p_cc(
                                                 $['yin'],
@@ -1200,7 +1209,8 @@ export const Graph: t_signatures.Graph = ($) => ({
                             ($) => ['directed', {
                                 'edges': _p_cc(
                                     $['edges'],
-                                    ($) => $.__l_map(
+                                    ($) => _p.list.map(
+                                        $,
                                         ($) => ({
                                             'from': _p_cc(
                                                 $['from'],

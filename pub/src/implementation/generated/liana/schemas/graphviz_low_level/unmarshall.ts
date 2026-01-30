@@ -111,12 +111,13 @@ export const Node_ID: t_signatures.Node_ID = ($, abort) => _p_cc(
                     ['no such entry', "port"]
                 )
             ),
-            ($) => v_unmarshalled_from_parse_tree.Optional(
-                $,
-                ($) => abort(
-                    ['expected an optional', null]
-                )
-            ).__o_map(
+            ($) => _p.optional.map(
+                v_unmarshalled_from_parse_tree.Optional(
+                    $,
+                    ($) => abort(
+                        ['expected an optional', null]
+                    )
+                ),
                 ($) => _p_cc(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
@@ -146,12 +147,13 @@ export const Node_ID: t_signatures.Node_ID = ($, abort) => _p_cc(
                                     ['no such entry', "compass point"]
                                 )
                             ),
-                            ($) => v_unmarshalled_from_parse_tree.Optional(
-                                $,
-                                ($) => abort(
-                                    ['expected an optional', null]
-                                )
-                            ).__o_map(
+                            ($) => _p.optional.map(
+                                v_unmarshalled_from_parse_tree.Optional(
+                                    $,
+                                    ($) => abort(
+                                        ['expected an optional', null]
+                                    )
+                                ),
                                 ($) => ID(
                                     $,
                                     ($) => abort(
@@ -167,12 +169,13 @@ export const Node_ID: t_signatures.Node_ID = ($, abort) => _p_cc(
     })
 )
 
-export const Attribute_List: t_signatures.Attribute_List = ($, abort) => v_unmarshalled_from_parse_tree.List(
-    $,
-    ($) => abort(
-        ['expected a list', null]
-    )
-).__l_map(
+export const Attribute_List: t_signatures.Attribute_List = ($, abort) => _p.list.map(
+    v_unmarshalled_from_parse_tree.List(
+        $,
+        ($) => abort(
+            ['expected a list', null]
+        )
+    ),
     ($) => _p_cc(
         v_unmarshalled_from_parse_tree.Group(
             $,
@@ -228,18 +231,20 @@ export const Subgraph: t_signatures.Subgraph = ($, abort) => _p_cc(
                     ['no such entry', "subgraph"]
                 )
             ),
-            ($) => v_unmarshalled_from_parse_tree.Optional(
-                $,
-                ($) => abort(
-                    ['expected an optional', null]
-                )
-            ).__o_map(
-                ($) => v_unmarshalled_from_parse_tree.Optional(
+            ($) => _p.optional.map(
+                v_unmarshalled_from_parse_tree.Optional(
                     $,
                     ($) => abort(
                         ['expected an optional', null]
                     )
-                ).__o_map(
+                ),
+                ($) => _p.optional.map(
+                    v_unmarshalled_from_parse_tree.Optional(
+                        $,
+                        ($) => abort(
+                            ['expected an optional', null]
+                        )
+                    ),
                     ($) => ID(
                         $,
                         ($) => abort(
@@ -266,12 +271,13 @@ export const Subgraph: t_signatures.Subgraph = ($, abort) => _p_cc(
     })
 )
 
-export const Statement_List: t_signatures.Statement_List = ($, abort) => v_unmarshalled_from_parse_tree.List(
-    $,
-    ($) => abort(
-        ['expected a list', null]
-    )
-).__l_map(
+export const Statement_List: t_signatures.Statement_List = ($, abort) => _p.list.map(
+    v_unmarshalled_from_parse_tree.List(
+        $,
+        ($) => abort(
+            ['expected a list', null]
+        )
+    ),
     ($) => _p_cc(
         v_unmarshalled_from_parse_tree.State(
             $,
@@ -390,12 +396,13 @@ export const Statement_List: t_signatures.Statement_List = ($, abort) => v_unmar
                                                 ['no such entry', "right"]
                                             )
                                         ),
-                                        ($) => v_unmarshalled_from_parse_tree.List(
-                                            $,
-                                            ($) => abort(
-                                                ['expected a list', null]
-                                            )
-                                        ).__l_map(
+                                        ($) => _p.list.map(
+                                            v_unmarshalled_from_parse_tree.List(
+                                                $,
+                                                ($) => abort(
+                                                    ['expected a list', null]
+                                                )
+                                            ),
                                             ($) => _p_cc(
                                                 v_unmarshalled_from_parse_tree.State(
                                                     $,
@@ -682,12 +689,13 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                     ['no such entry', "name"]
                 )
             ),
-            ($) => v_unmarshalled_from_parse_tree.Optional(
-                $,
-                ($) => abort(
-                    ['expected an optional', null]
-                )
-            ).__o_map(
+            ($) => _p.optional.map(
+                v_unmarshalled_from_parse_tree.Optional(
+                    $,
+                    ($) => abort(
+                        ['expected an optional', null]
+                    )
+                ),
                 ($) => ID(
                     $,
                     ($) => abort(

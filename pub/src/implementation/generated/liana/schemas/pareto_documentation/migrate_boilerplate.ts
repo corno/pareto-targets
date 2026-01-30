@@ -11,7 +11,8 @@ import * as t_out from "../../../../../interface/generated/liana/schemas/pareto_
 
 import * as v_graphviz from "../graphviz_high_level/migrate_boilerplate"
 
-export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($) => $.__d_map(
+export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($) => _p.dictionary.map(
+    $,
     ($, id) => _p.decide.state(
         $,
         ($): t_out.Graphviz_Directory.D => {

@@ -18,7 +18,10 @@ export const Graph = ($: d_in.Graph): d_out.Graph => ({
             default: return _p.au($[0])
         }
     }),
-    'name': $.name.__o_map(($) => ['string', $]),
+    'name': _p.optional.map(
+        $.name,
+        ($) => ['string', $]
+    ),
     'statements': _p.list.nested_literal_old([
         Tree($.tree, { 'path': _p.list.literal([]) }),
         _p.decide.state($.type, ($): d_out.Graph.statements => {
