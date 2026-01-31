@@ -13,32 +13,6 @@ import * as v_serialize_number from "liana-core/dist/implementation/manual/primi
 
 import * as v_serialize_boolean from "liana-core/dist/implementation/manual/primitives/boolean/serializers/true_false"
 
-export const MetaPointer: t_signatures.MetaPointer = ($) => ['group', ['verbose', _p.dictionary.literal(
-    {
-        'language': _p_cc(
-            $['language'],
-            ($) => ['text', {
-                'delimiter': ['quote', null],
-                'value': $,
-            }]
-        ),
-        'version': _p_cc(
-            $['version'],
-            ($) => ['text', {
-                'delimiter': ['quote', null],
-                'value': $,
-            }]
-        ),
-        'key': _p_cc(
-            $['key'],
-            ($) => ['text', {
-                'delimiter': ['quote', null],
-                'value': $,
-            }]
-        ),
-    }
-)]]
-
 export const SerializationChunk: t_signatures.SerializationChunk = ($) => ['group', ['verbose', _p.dictionary.literal(
     {
         'serializationFormatVersion': _p_cc(
@@ -204,6 +178,32 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ['grou
                     }
                 )]]
             )]
+        ),
+    }
+)]]
+
+export const MetaPointer: t_signatures.MetaPointer = ($) => ['group', ['verbose', _p.dictionary.literal(
+    {
+        'language': _p_cc(
+            $['language'],
+            ($) => ['text', {
+                'delimiter': ['quote', null],
+                'value': $,
+            }]
+        ),
+        'version': _p_cc(
+            $['version'],
+            ($) => ['text', {
+                'delimiter': ['quote', null],
+                'value': $,
+            }]
+        ),
+        'key': _p_cc(
+            $['key'],
+            ($) => ['text', {
+                'delimiter': ['quote', null],
+                'value': $,
+            }]
         ),
     }
 )]]

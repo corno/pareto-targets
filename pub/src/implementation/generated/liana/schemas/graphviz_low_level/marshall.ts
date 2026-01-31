@@ -13,135 +13,54 @@ import * as v_serialize_number from "liana-core/dist/implementation/manual/primi
 
 import * as v_serialize_boolean from "liana-core/dist/implementation/manual/primitives/boolean/serializers/true_false"
 
-export const ID: t_signatures.ID = ($) => ['state', _p.decide.state(
-    $,
-    ($): t_out.Value.state => {
-        switch ($[0]) {
-            case 'id':
-                return _p.ss(
-                    $,
-                    ($) => ({
-                        'option': 'id',
-                        'value': ['text', {
-                            'delimiter': ['quote', null],
-                            'value': $,
-                        }],
-                    })
-                )
-            case 'string':
-                return _p.ss(
-                    $,
-                    ($) => ({
-                        'option': 'string',
-                        'value': ['text', {
-                            'delimiter': ['quote', null],
-                            'value': $,
-                        }],
-                    })
-                )
-            case 'html':
-                return _p.ss(
-                    $,
-                    ($) => ({
-                        'option': 'html',
-                        'value': ['text', {
-                            'delimiter': ['quote', null],
-                            'value': $,
-                        }],
-                    })
-                )
-            case 'number':
-                return _p.ss(
-                    $,
-                    ($) => ({
-                        'option': 'number',
-                        'value': ['text', {
-                            'delimiter': ['none', null],
-                            'value': v_serialize_number.serialize(
-                                $
-                            ),
-                        }],
-                    })
-                )
-            default:
-                return _p.au(
-                    $[0]
-                )
-        }
-    }
-)]
-
-export const Node_ID: t_signatures.Node_ID = ($) => ['group', ['verbose', _p.dictionary.literal(
+export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.dictionary.literal(
     {
-        'id': _p_cc(
-            $['id'],
-            ($) => ID(
-                $
-            )
+        'strict': _p_cc(
+            $['strict'],
+            ($) => ['text', {
+                'delimiter': ['none', null],
+                'value': v_serialize_boolean.serialize(
+                    $
+                ),
+            }]
         ),
-        'port': _p_cc(
-            $['port'],
-            ($) => ['optional', _p.decide.optional(
+        'type': _p_cc(
+            $['type'],
+            ($) => ['state', _p.decide.state(
                 $,
-                ($): t_out.Value.optional => ['set', ['group', ['verbose', _p.dictionary.literal(
-                    {
-                        'port': _p_cc(
-                            $['port'],
-                            ($) => ID(
-                                $
-                            )
-                        ),
-                        'compass point': _p_cc(
-                            $['compass point'],
-                            ($) => ['optional', _p.decide.optional(
+                ($): t_out.Value.state => {
+                    switch ($[0]) {
+                        case 'graph':
+                            return _p.ss(
                                 $,
-                                ($): t_out.Value.optional => ['set', ID(
-                                    $
-                                )],
-                                () => ['not set', null]
-                            )]
-                        ),
+                                ($) => ({
+                                    'option': 'graph',
+                                    'value': ['nothing', null],
+                                })
+                            )
+                        case 'digraph':
+                            return _p.ss(
+                                $,
+                                ($) => ({
+                                    'option': 'digraph',
+                                    'value': ['nothing', null],
+                                })
+                            )
+                        default:
+                            return _p.au(
+                                $[0]
+                            )
                     }
-                )]]],
-                () => ['not set', null]
+                }
             )]
         ),
-    }
-)]]
-
-export const Attribute_List: t_signatures.Attribute_List = ($) => ['list', _p.list.map(
-    $,
-    ($) => ['group', ['verbose', _p.dictionary.literal(
-        {
-            'name': _p_cc(
-                $['name'],
-                ($) => ID(
-                    $
-                )
-            ),
-            'value': _p_cc(
-                $['value'],
-                ($) => ID(
-                    $
-                )
-            ),
-        }
-    )]]
-)]
-
-export const Subgraph: t_signatures.Subgraph = ($) => ['group', ['verbose', _p.dictionary.literal(
-    {
-        'subgraph': _p_cc(
-            $['subgraph'],
+        'name': _p_cc(
+            $['name'],
             ($) => ['optional', _p.decide.optional(
                 $,
-                ($): t_out.Value.optional => ['set', ['optional', _p.decide.optional(
-                    $,
-                    ($): t_out.Value.optional => ['set', ID(
-                        $
-                    )],
-                    () => ['not set', null]
-                )]],
+                ($): t_out.Value.optional => ['set', ID(
+                    $
+                )],
                 () => ['not set', null]
             )]
         ),
@@ -368,54 +287,135 @@ export const Statement_List: t_signatures.Statement_List = ($) => ['list', _p.li
     )]
 )]
 
-export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.dictionary.literal(
-    {
-        'strict': _p_cc(
-            $['strict'],
-            ($) => ['text', {
-                'delimiter': ['none', null],
-                'value': v_serialize_boolean.serialize(
+export const Attribute_List: t_signatures.Attribute_List = ($) => ['list', _p.list.map(
+    $,
+    ($) => ['group', ['verbose', _p.dictionary.literal(
+        {
+            'name': _p_cc(
+                $['name'],
+                ($) => ID(
                     $
-                ),
-            }]
+                )
+            ),
+            'value': _p_cc(
+                $['value'],
+                ($) => ID(
+                    $
+                )
+            ),
+        }
+    )]]
+)]
+
+export const Node_ID: t_signatures.Node_ID = ($) => ['group', ['verbose', _p.dictionary.literal(
+    {
+        'id': _p_cc(
+            $['id'],
+            ($) => ID(
+                $
+            )
         ),
-        'type': _p_cc(
-            $['type'],
-            ($) => ['state', _p.decide.state(
-                $,
-                ($): t_out.Value.state => {
-                    switch ($[0]) {
-                        case 'graph':
-                            return _p.ss(
-                                $,
-                                ($) => ({
-                                    'option': 'graph',
-                                    'value': ['nothing', null],
-                                })
-                            )
-                        case 'digraph':
-                            return _p.ss(
-                                $,
-                                ($) => ({
-                                    'option': 'digraph',
-                                    'value': ['nothing', null],
-                                })
-                            )
-                        default:
-                            return _p.au(
-                                $[0]
-                            )
-                    }
-                }
-            )]
-        ),
-        'name': _p_cc(
-            $['name'],
+        'port': _p_cc(
+            $['port'],
             ($) => ['optional', _p.decide.optional(
                 $,
-                ($): t_out.Value.optional => ['set', ID(
-                    $
-                )],
+                ($): t_out.Value.optional => ['set', ['group', ['verbose', _p.dictionary.literal(
+                    {
+                        'port': _p_cc(
+                            $['port'],
+                            ($) => ID(
+                                $
+                            )
+                        ),
+                        'compass point': _p_cc(
+                            $['compass point'],
+                            ($) => ['optional', _p.decide.optional(
+                                $,
+                                ($): t_out.Value.optional => ['set', ID(
+                                    $
+                                )],
+                                () => ['not set', null]
+                            )]
+                        ),
+                    }
+                )]]],
+                () => ['not set', null]
+            )]
+        ),
+    }
+)]]
+
+export const ID: t_signatures.ID = ($) => ['state', _p.decide.state(
+    $,
+    ($): t_out.Value.state => {
+        switch ($[0]) {
+            case 'id':
+                return _p.ss(
+                    $,
+                    ($) => ({
+                        'option': 'id',
+                        'value': ['text', {
+                            'delimiter': ['quote', null],
+                            'value': $,
+                        }],
+                    })
+                )
+            case 'string':
+                return _p.ss(
+                    $,
+                    ($) => ({
+                        'option': 'string',
+                        'value': ['text', {
+                            'delimiter': ['quote', null],
+                            'value': $,
+                        }],
+                    })
+                )
+            case 'html':
+                return _p.ss(
+                    $,
+                    ($) => ({
+                        'option': 'html',
+                        'value': ['text', {
+                            'delimiter': ['quote', null],
+                            'value': $,
+                        }],
+                    })
+                )
+            case 'number':
+                return _p.ss(
+                    $,
+                    ($) => ({
+                        'option': 'number',
+                        'value': ['text', {
+                            'delimiter': ['none', null],
+                            'value': v_serialize_number.serialize(
+                                $
+                            ),
+                        }],
+                    })
+                )
+            default:
+                return _p.au(
+                    $[0]
+                )
+        }
+    }
+)]
+
+export const Subgraph: t_signatures.Subgraph = ($) => ['group', ['verbose', _p.dictionary.literal(
+    {
+        'subgraph': _p_cc(
+            $['subgraph'],
+            ($) => ['optional', _p.decide.optional(
+                $,
+                ($): t_out.Value.optional => ['set', ['optional', _p.decide.optional(
+                    $,
+                    ($): t_out.Value.optional => ['set', ID(
+                        $
+                    )],
+                    () => ['not set', null]
+                )]],
                 () => ['not set', null]
             )]
         ),

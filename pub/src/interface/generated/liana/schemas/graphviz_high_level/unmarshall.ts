@@ -7,11 +7,11 @@ import * as i_out from "./data"
 
 import * as i_in from "astn-core/dist/interface/generated/liana/schemas/parse_tree/data"
 
-export namespace Graph_Attributes_ {
+export namespace Graph_ {
     
     export type I = i_in.Value
     
-    export type O = i_out.Graph_Attributes
+    export type O = i_out.Graph
     
     export type E = i_generic.Error
     
@@ -21,29 +21,10 @@ export namespace Graph_Attributes_ {
     
 }
 
-export type Graph_Attributes_ = (
-    context: Graph_Attributes_.I,
-    abort: _pi.Abort<Graph_Attributes_.E>,
-) => Graph_Attributes_.O
-
-export namespace Node_Attributes_ {
-    
-    export type I = i_in.Value
-    
-    export type O = i_out.Node_Attributes
-    
-    export type E = i_generic.Error
-    
-    export namespace P {
-        
-    }
-    
-}
-
-export type Node_Attributes_ = (
-    context: Node_Attributes_.I,
-    abort: _pi.Abort<Node_Attributes_.E>,
-) => Node_Attributes_.O
+export type Graph_ = (
+    context: Graph_.I,
+    abort: _pi.Abort<Graph_.E>,
+) => Graph_.O
 
 export namespace Tree_ {
     
@@ -83,6 +64,44 @@ export type End_Point_Specification_ = (
     abort: _pi.Abort<End_Point_Specification_.E>,
 ) => End_Point_Specification_.O
 
+export namespace Graph_Attributes_ {
+    
+    export type I = i_in.Value
+    
+    export type O = i_out.Graph_Attributes
+    
+    export type E = i_generic.Error
+    
+    export namespace P {
+        
+    }
+    
+}
+
+export type Graph_Attributes_ = (
+    context: Graph_Attributes_.I,
+    abort: _pi.Abort<Graph_Attributes_.E>,
+) => Graph_Attributes_.O
+
+export namespace Node_Attributes_ {
+    
+    export type I = i_in.Value
+    
+    export type O = i_out.Node_Attributes
+    
+    export type E = i_generic.Error
+    
+    export namespace P {
+        
+    }
+    
+}
+
+export type Node_Attributes_ = (
+    context: Node_Attributes_.I,
+    abort: _pi.Abort<Node_Attributes_.E>,
+) => Node_Attributes_.O
+
 export namespace Edge_Attributes_ {
     
     export type I = i_in.Value
@@ -101,25 +120,6 @@ export type Edge_Attributes_ = (
     context: Edge_Attributes_.I,
     abort: _pi.Abort<Edge_Attributes_.E>,
 ) => Edge_Attributes_.O
-
-export namespace Graph_ {
-    
-    export type I = i_in.Value
-    
-    export type O = i_out.Graph
-    
-    export type E = i_generic.Error
-    
-    export namespace P {
-        
-    }
-    
-}
-
-export type Graph_ = (
-    context: Graph_.I,
-    abort: _pi.Abort<Graph_.E>,
-) => Graph_.O
 
 export namespace Attribute_Value_ {
     
@@ -141,11 +141,11 @@ export type Attribute_Value_ = (
 ) => Attribute_Value_.O
 
 export { 
-    Graph_Attributes_ as Graph_Attributes, 
-    Node_Attributes_ as Node_Attributes, 
+    Graph_ as Graph, 
     Tree_ as Tree, 
     End_Point_Specification_ as End_Point_Specification, 
+    Graph_Attributes_ as Graph_Attributes, 
+    Node_Attributes_ as Node_Attributes, 
     Edge_Attributes_ as Edge_Attributes, 
-    Graph_ as Graph, 
     Attribute_Value_ as Attribute_Value, 
 }

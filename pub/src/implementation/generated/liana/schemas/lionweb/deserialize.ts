@@ -7,7 +7,7 @@ import * as v_deserialize from "astn-core/dist/implementation/manual/schemas/par
 
 import * as v_unmarshall from "./unmarshall"
 
-export const MetaPointer: t_signatures.MetaPointer = ($, abort, $p) => v_unmarshall.MetaPointer(
+export const SerializationChunk: t_signatures.SerializationChunk = ($, abort, $p) => v_unmarshall.SerializationChunk(
     v_deserialize.Document(
         $,
         ($) => abort(
@@ -23,7 +23,7 @@ export const MetaPointer: t_signatures.MetaPointer = ($, abort, $p) => v_unmarsh
     )
 )
 
-export const SerializationChunk: t_signatures.SerializationChunk = ($, abort, $p) => v_unmarshall.SerializationChunk(
+export const MetaPointer: t_signatures.MetaPointer = ($, abort, $p) => v_unmarshall.MetaPointer(
     v_deserialize.Document(
         $,
         ($) => abort(

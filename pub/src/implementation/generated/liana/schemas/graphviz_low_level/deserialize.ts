@@ -7,55 +7,7 @@ import * as v_deserialize from "astn-core/dist/implementation/manual/schemas/par
 
 import * as v_unmarshall from "./unmarshall"
 
-export const ID: t_signatures.ID = ($, abort, $p) => v_unmarshall.ID(
-    v_deserialize.Document(
-        $,
-        ($) => abort(
-            ['tbd', null]
-        ),
-        {
-            'document resource identifier': $p['document resource identifier'],
-            'tab size': $p['tab size'],
-        }
-    )['content'],
-    ($) => abort(
-        ['tbd', null]
-    )
-)
-
-export const Node_ID: t_signatures.Node_ID = ($, abort, $p) => v_unmarshall.Node_ID(
-    v_deserialize.Document(
-        $,
-        ($) => abort(
-            ['tbd', null]
-        ),
-        {
-            'document resource identifier': $p['document resource identifier'],
-            'tab size': $p['tab size'],
-        }
-    )['content'],
-    ($) => abort(
-        ['tbd', null]
-    )
-)
-
-export const Attribute_List: t_signatures.Attribute_List = ($, abort, $p) => v_unmarshall.Attribute_List(
-    v_deserialize.Document(
-        $,
-        ($) => abort(
-            ['tbd', null]
-        ),
-        {
-            'document resource identifier': $p['document resource identifier'],
-            'tab size': $p['tab size'],
-        }
-    )['content'],
-    ($) => abort(
-        ['tbd', null]
-    )
-)
-
-export const Subgraph: t_signatures.Subgraph = ($, abort, $p) => v_unmarshall.Subgraph(
+export const Graph: t_signatures.Graph = ($, abort, $p) => v_unmarshall.Graph(
     v_deserialize.Document(
         $,
         ($) => abort(
@@ -87,7 +39,55 @@ export const Statement_List: t_signatures.Statement_List = ($, abort, $p) => v_u
     )
 )
 
-export const Graph: t_signatures.Graph = ($, abort, $p) => v_unmarshall.Graph(
+export const Attribute_List: t_signatures.Attribute_List = ($, abort, $p) => v_unmarshall.Attribute_List(
+    v_deserialize.Document(
+        $,
+        ($) => abort(
+            ['tbd', null]
+        ),
+        {
+            'document resource identifier': $p['document resource identifier'],
+            'tab size': $p['tab size'],
+        }
+    )['content'],
+    ($) => abort(
+        ['tbd', null]
+    )
+)
+
+export const Node_ID: t_signatures.Node_ID = ($, abort, $p) => v_unmarshall.Node_ID(
+    v_deserialize.Document(
+        $,
+        ($) => abort(
+            ['tbd', null]
+        ),
+        {
+            'document resource identifier': $p['document resource identifier'],
+            'tab size': $p['tab size'],
+        }
+    )['content'],
+    ($) => abort(
+        ['tbd', null]
+    )
+)
+
+export const ID: t_signatures.ID = ($, abort, $p) => v_unmarshall.ID(
+    v_deserialize.Document(
+        $,
+        ($) => abort(
+            ['tbd', null]
+        ),
+        {
+            'document resource identifier': $p['document resource identifier'],
+            'tab size': $p['tab size'],
+        }
+    )['content'],
+    ($) => abort(
+        ['tbd', null]
+    )
+)
+
+export const Subgraph: t_signatures.Subgraph = ($, abort, $p) => v_unmarshall.Subgraph(
     v_deserialize.Document(
         $,
         ($) => abort(

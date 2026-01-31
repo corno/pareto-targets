@@ -7,25 +7,6 @@ import * as i_out from "./data"
 
 import * as i_in from "astn-core/dist/interface/generated/liana/schemas/parse_tree/data"
 
-export namespace MetaPointer_ {
-    
-    export type I = i_in.Value
-    
-    export type O = i_out.MetaPointer
-    
-    export type E = i_generic.Error
-    
-    export namespace P {
-        
-    }
-    
-}
-
-export type MetaPointer_ = (
-    context: MetaPointer_.I,
-    abort: _pi.Abort<MetaPointer_.E>,
-) => MetaPointer_.O
-
 export namespace SerializationChunk_ {
     
     export type I = i_in.Value
@@ -44,6 +25,25 @@ export type SerializationChunk_ = (
     context: SerializationChunk_.I,
     abort: _pi.Abort<SerializationChunk_.E>,
 ) => SerializationChunk_.O
+
+export namespace MetaPointer_ {
+    
+    export type I = i_in.Value
+    
+    export type O = i_out.MetaPointer
+    
+    export type E = i_generic.Error
+    
+    export namespace P {
+        
+    }
+    
+}
+
+export type MetaPointer_ = (
+    context: MetaPointer_.I,
+    abort: _pi.Abort<MetaPointer_.E>,
+) => MetaPointer_.O
 
 export namespace SerializationChunks_ {
     
@@ -65,7 +65,7 @@ export type SerializationChunks_ = (
 ) => SerializationChunks_.O
 
 export { 
-    MetaPointer_ as MetaPointer, 
     SerializationChunk_ as SerializationChunk, 
+    MetaPointer_ as MetaPointer, 
     SerializationChunks_ as SerializationChunks, 
 }

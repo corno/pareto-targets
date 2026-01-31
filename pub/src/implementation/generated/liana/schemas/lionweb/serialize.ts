@@ -7,14 +7,14 @@ import * as v_serialize from "astn-core/dist/implementation/manual/schemas/seale
 
 import * as v_marshall from "./marshall"
 
-export const MetaPointer: t_signatures.MetaPointer = ($) => v_serialize.Document(
-    v_marshall.MetaPointer(
+export const SerializationChunk: t_signatures.SerializationChunk = ($) => v_serialize.Document(
+    v_marshall.SerializationChunk(
         $
     )
 )
 
-export const SerializationChunk: t_signatures.SerializationChunk = ($) => v_serialize.Document(
-    v_marshall.SerializationChunk(
+export const MetaPointer: t_signatures.MetaPointer = ($) => v_serialize.Document(
+    v_marshall.MetaPointer(
         $
     )
 )

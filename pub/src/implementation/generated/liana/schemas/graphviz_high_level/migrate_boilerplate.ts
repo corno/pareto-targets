@@ -9,6 +9,212 @@ import * as t_signatures from "../../../../../interface/generated/liana/schemas/
 
 import * as t_out from "../../../../../interface/generated/liana/schemas/graphviz_high_level/data"
 
+export const Graph: t_signatures.Graph = ($) => ({
+    'name': _p_cc(
+        $['name'],
+        ($) => _p.optional.map(
+            $,
+            ($) => $
+        )
+    ),
+    'tree': _p_cc(
+        $['tree'],
+        ($) => Tree(
+            $
+        )
+    ),
+    'type': _p_cc(
+        $['type'],
+        ($) => _p.decide.state(
+            $,
+            ($): t_out.Graph.type_ => {
+                switch ($[0]) {
+                    case 'undirected':
+                        return _p.ss(
+                            $,
+                            ($) => ['undirected', {
+                                'edges': _p_cc(
+                                    $['edges'],
+                                    ($) => _p.list.map(
+                                        $,
+                                        ($) => ({
+                                            'yin': _p_cc(
+                                                $['yin'],
+                                                ($) => End_Point_Specification(
+                                                    $
+                                                )
+                                            ),
+                                            'yang': _p_cc(
+                                                $['yang'],
+                                                ($) => End_Point_Specification(
+                                                    $
+                                                )
+                                            ),
+                                            'attributes': _p_cc(
+                                                $['attributes'],
+                                                ($) => Edge_Attributes(
+                                                    $
+                                                )
+                                            ),
+                                        })
+                                    )
+                                ),
+                            }]
+                        )
+                    case 'directed':
+                        return _p.ss(
+                            $,
+                            ($) => ['directed', {
+                                'edges': _p_cc(
+                                    $['edges'],
+                                    ($) => _p.list.map(
+                                        $,
+                                        ($) => ({
+                                            'from': _p_cc(
+                                                $['from'],
+                                                ($) => End_Point_Specification(
+                                                    $
+                                                )
+                                            ),
+                                            'to': _p_cc(
+                                                $['to'],
+                                                ($) => End_Point_Specification(
+                                                    $
+                                                )
+                                            ),
+                                            'attributes': _p_cc(
+                                                $['attributes'],
+                                                ($) => Edge_Attributes(
+                                                    $
+                                                )
+                                            ),
+                                        })
+                                    )
+                                ),
+                            }]
+                        )
+                    default:
+                        return _p.au(
+                            $[0]
+                        )
+                }
+            }
+        )
+    ),
+})
+
+export const Tree: t_signatures.Tree = ($) => ({
+    'attributes': _p_cc(
+        $['attributes'],
+        ($) => Graph_Attributes(
+            $
+        )
+    ),
+    'elements': _p_cc(
+        $['elements'],
+        ($) => _p.dictionary.map(
+            $,
+            ($, id) => _p.decide.state(
+                $,
+                ($): t_out.Tree.elements.D => {
+                    switch ($[0]) {
+                        case 'node':
+                            return _p.ss(
+                                $,
+                                ($) => ['node', {
+                                    'attributes': _p_cc(
+                                        $['attributes'],
+                                        ($) => Node_Attributes(
+                                            $
+                                        )
+                                    ),
+                                }]
+                            )
+                        case 'sub':
+                            return _p.ss(
+                                $,
+                                ($) => ['sub', {
+                                    'type': _p_cc(
+                                        $['type'],
+                                        ($) => _p.decide.state(
+                                            $,
+                                            ($): t_out.Tree.elements.D.sub.type_ => {
+                                                switch ($[0]) {
+                                                    case 'group':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['group', null]
+                                                        )
+                                                    case 'cluster':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['cluster', null]
+                                                        )
+                                                    case 'subgraph':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['subgraph', null]
+                                                        )
+                                                    default:
+                                                        return _p.au(
+                                                            $[0]
+                                                        )
+                                                }
+                                            }
+                                        )
+                                    ),
+                                    'tree': _p_cc(
+                                        $['tree'],
+                                        ($) => Tree(
+                                            $
+                                        )
+                                    ),
+                                }]
+                            )
+                        default:
+                            return _p.au(
+                                $[0]
+                            )
+                    }
+                }
+            )
+        )
+    ),
+})
+
+export const End_Point_Specification: t_signatures.End_Point_Specification = ($) => ({
+    'start': _p_cc(
+        $['start'],
+        ($) => $
+    ),
+    'tail': _p_cc(
+        $['tail'],
+        ($) => _p.list.map(
+            $,
+            ($) => $
+        )
+    ),
+    'port data': _p_cc(
+        $['port data'],
+        ($) => _p.optional.map(
+            $,
+            ($) => ({
+                'port': _p_cc(
+                    $['port'],
+                    ($) => $
+                ),
+                'compass direction': _p_cc(
+                    $['compass direction'],
+                    ($) => _p.optional.map(
+                        $,
+                        ($) => $
+                    )
+                ),
+            })
+        )
+    ),
+})
+
 export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => _p.list.map(
     $,
     ($) => _p.decide.state(
@@ -759,118 +965,6 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => _p.list.map(
     )
 )
 
-export const Tree: t_signatures.Tree = ($) => ({
-    'attributes': _p_cc(
-        $['attributes'],
-        ($) => Graph_Attributes(
-            $
-        )
-    ),
-    'elements': _p_cc(
-        $['elements'],
-        ($) => _p.dictionary.map(
-            $,
-            ($, id) => _p.decide.state(
-                $,
-                ($): t_out.Tree.elements.D => {
-                    switch ($[0]) {
-                        case 'node':
-                            return _p.ss(
-                                $,
-                                ($) => ['node', {
-                                    'attributes': _p_cc(
-                                        $['attributes'],
-                                        ($) => Node_Attributes(
-                                            $
-                                        )
-                                    ),
-                                }]
-                            )
-                        case 'sub':
-                            return _p.ss(
-                                $,
-                                ($) => ['sub', {
-                                    'type': _p_cc(
-                                        $['type'],
-                                        ($) => _p.decide.state(
-                                            $,
-                                            ($): t_out.Tree.elements.D.sub.type_ => {
-                                                switch ($[0]) {
-                                                    case 'group':
-                                                        return _p.ss(
-                                                            $,
-                                                            ($) => ['group', null]
-                                                        )
-                                                    case 'cluster':
-                                                        return _p.ss(
-                                                            $,
-                                                            ($) => ['cluster', null]
-                                                        )
-                                                    case 'subgraph':
-                                                        return _p.ss(
-                                                            $,
-                                                            ($) => ['subgraph', null]
-                                                        )
-                                                    default:
-                                                        return _p.au(
-                                                            $[0]
-                                                        )
-                                                }
-                                            }
-                                        )
-                                    ),
-                                    'tree': _p_cc(
-                                        $['tree'],
-                                        ($) => Tree(
-                                            $
-                                        )
-                                    ),
-                                }]
-                            )
-                        default:
-                            return _p.au(
-                                $[0]
-                            )
-                    }
-                }
-            )
-        )
-    ),
-})
-
-export const End_Point_Specification: t_signatures.End_Point_Specification = ($) => ({
-    'start': _p_cc(
-        $['start'],
-        ($) => $
-    ),
-    'tail': _p_cc(
-        $['tail'],
-        ($) => _p.list.map(
-            $,
-            ($) => $
-        )
-    ),
-    'port data': _p_cc(
-        $['port data'],
-        ($) => _p.optional.map(
-            $,
-            ($) => ({
-                'port': _p_cc(
-                    $['port'],
-                    ($) => $
-                ),
-                'compass direction': _p_cc(
-                    $['compass direction'],
-                    ($) => _p.optional.map(
-                        $,
-                        ($) => $
-                    )
-                ),
-            })
-        )
-    ),
-})
-
 export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => _p.list.map(
     $,
     ($) => _p.decide.state(
@@ -1150,100 +1244,6 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => _p.list.map(
         }
     )
 )
-
-export const Graph: t_signatures.Graph = ($) => ({
-    'name': _p_cc(
-        $['name'],
-        ($) => _p.optional.map(
-            $,
-            ($) => $
-        )
-    ),
-    'tree': _p_cc(
-        $['tree'],
-        ($) => Tree(
-            $
-        )
-    ),
-    'type': _p_cc(
-        $['type'],
-        ($) => _p.decide.state(
-            $,
-            ($): t_out.Graph.type_ => {
-                switch ($[0]) {
-                    case 'undirected':
-                        return _p.ss(
-                            $,
-                            ($) => ['undirected', {
-                                'edges': _p_cc(
-                                    $['edges'],
-                                    ($) => _p.list.map(
-                                        $,
-                                        ($) => ({
-                                            'yin': _p_cc(
-                                                $['yin'],
-                                                ($) => End_Point_Specification(
-                                                    $
-                                                )
-                                            ),
-                                            'yang': _p_cc(
-                                                $['yang'],
-                                                ($) => End_Point_Specification(
-                                                    $
-                                                )
-                                            ),
-                                            'attributes': _p_cc(
-                                                $['attributes'],
-                                                ($) => Edge_Attributes(
-                                                    $
-                                                )
-                                            ),
-                                        })
-                                    )
-                                ),
-                            }]
-                        )
-                    case 'directed':
-                        return _p.ss(
-                            $,
-                            ($) => ['directed', {
-                                'edges': _p_cc(
-                                    $['edges'],
-                                    ($) => _p.list.map(
-                                        $,
-                                        ($) => ({
-                                            'from': _p_cc(
-                                                $['from'],
-                                                ($) => End_Point_Specification(
-                                                    $
-                                                )
-                                            ),
-                                            'to': _p_cc(
-                                                $['to'],
-                                                ($) => End_Point_Specification(
-                                                    $
-                                                )
-                                            ),
-                                            'attributes': _p_cc(
-                                                $['attributes'],
-                                                ($) => Edge_Attributes(
-                                                    $
-                                                )
-                                            ),
-                                        })
-                                    )
-                                ),
-                            }]
-                        )
-                    default:
-                        return _p.au(
-                            $[0]
-                        )
-                }
-            }
-        )
-    ),
-})
 
 export const Attribute_Value: t_signatures.Attribute_Value = ($) => _p.decide.state(
     $,

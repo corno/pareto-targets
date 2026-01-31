@@ -5,22 +5,6 @@ import * as i_out from "./data"
 
 import * as i_in from "./data"
 
-export namespace MetaPointer_ {
-    
-    export type I = i_in.MetaPointer
-    
-    export type O = i_out.MetaPointer
-    
-    export namespace P {
-        
-    }
-    
-}
-
-export type MetaPointer_ = (
-    context: MetaPointer_.I,
-) => MetaPointer_.O
-
 export namespace SerializationChunk_ {
     
     export type I = i_in.SerializationChunk
@@ -36,6 +20,22 @@ export namespace SerializationChunk_ {
 export type SerializationChunk_ = (
     context: SerializationChunk_.I,
 ) => SerializationChunk_.O
+
+export namespace MetaPointer_ {
+    
+    export type I = i_in.MetaPointer
+    
+    export type O = i_out.MetaPointer
+    
+    export namespace P {
+        
+    }
+    
+}
+
+export type MetaPointer_ = (
+    context: MetaPointer_.I,
+) => MetaPointer_.O
 
 export namespace SerializationChunks_ {
     
@@ -54,7 +54,7 @@ export type SerializationChunks_ = (
 ) => SerializationChunks_.O
 
 export { 
-    MetaPointer_ as MetaPointer, 
     SerializationChunk_ as SerializationChunk, 
+    MetaPointer_ as MetaPointer, 
     SerializationChunks_ as SerializationChunks, 
 }

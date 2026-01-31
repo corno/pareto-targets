@@ -9,21 +9,6 @@ import * as t_signatures from "../../../../../interface/generated/liana/schemas/
 
 import * as t_out from "../../../../../interface/generated/liana/schemas/lionweb/data"
 
-export const MetaPointer: t_signatures.MetaPointer = ($) => ({
-    'language': _p_cc(
-        $['language'],
-        ($) => $
-    ),
-    'version': _p_cc(
-        $['version'],
-        ($) => $
-    ),
-    'key': _p_cc(
-        $['key'],
-        ($) => $
-    ),
-})
-
 export const SerializationChunk: t_signatures.SerializationChunk = ($) => ({
     'serializationFormatVersion': _p_cc(
         $['serializationFormatVersion'],
@@ -145,6 +130,21 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ({
                 ),
             })
         )
+    ),
+})
+
+export const MetaPointer: t_signatures.MetaPointer = ($) => ({
+    'language': _p_cc(
+        $['language'],
+        ($) => $
+    ),
+    'version': _p_cc(
+        $['version'],
+        ($) => $
+    ),
+    'key': _p_cc(
+        $['key'],
+        ($) => $
     ),
 })
 

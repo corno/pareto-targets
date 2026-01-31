@@ -1,22 +1,6 @@
 
 import * as _pi from "pareto-core/dist/interface"
 
-export namespace MetaPointer_ {
-    
-    export type language = string
-    
-    export type version = string
-    
-    export type key = string
-    
-}
-
-export type MetaPointer_ = {
-    readonly 'language': MetaPointer_.language
-    readonly 'version': MetaPointer_.version
-    readonly 'key': MetaPointer_.key
-}
-
 export namespace SerializationChunk_ {
     
     export type serializationFormatVersion = string
@@ -168,6 +152,22 @@ export type SerializationChunk_ = {
     readonly 'nodes': SerializationChunk_.nodes
 }
 
+export namespace MetaPointer_ {
+    
+    export type language = string
+    
+    export type version = string
+    
+    export type key = string
+    
+}
+
+export type MetaPointer_ = {
+    readonly 'language': MetaPointer_.language
+    readonly 'version': MetaPointer_.version
+    readonly 'key': MetaPointer_.key
+}
+
 export namespace SerializationChunks_ {
     
     export type D = SerializationChunk_
@@ -177,7 +177,7 @@ export namespace SerializationChunks_ {
 export type SerializationChunks_ = _pi.Dictionary<SerializationChunks_.D>
 
 export { 
-    MetaPointer_ as MetaPointer, 
     SerializationChunk_ as SerializationChunk, 
+    MetaPointer_ as MetaPointer, 
     SerializationChunks_ as SerializationChunks, 
 }

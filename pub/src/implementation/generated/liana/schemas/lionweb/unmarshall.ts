@@ -17,59 +17,6 @@ import * as v_unmarshalled_from_parse_tree from "astn-core/dist/implementation/m
 
 import * as v_parse_tree_to_location from "astn-core/dist/implementation/manual/schemas/parse_tree/transformers/location"
 
-export const MetaPointer: t_signatures.MetaPointer = ($, abort) => _p_cc(
-    v_unmarshalled_from_parse_tree.Group(
-        $,
-        ($) => abort(
-            ['expected a group', null]
-        )
-    ),
-    ($) => ({
-        'language': _p_cc(
-            $.__get_entry(
-                'language',
-                ($) => abort(
-                    ['no such entry', "language"]
-                )
-            ),
-            ($) => v_unmarshalled_from_parse_tree.Text(
-                $,
-                ($) => abort(
-                    ['expected a text', null]
-                )
-            )
-        ),
-        'version': _p_cc(
-            $.__get_entry(
-                'version',
-                ($) => abort(
-                    ['no such entry', "version"]
-                )
-            ),
-            ($) => v_unmarshalled_from_parse_tree.Text(
-                $,
-                ($) => abort(
-                    ['expected a text', null]
-                )
-            )
-        ),
-        'key': _p_cc(
-            $.__get_entry(
-                'key',
-                ($) => abort(
-                    ['no such entry', "key"]
-                )
-            ),
-            ($) => v_unmarshalled_from_parse_tree.Text(
-                $,
-                ($) => abort(
-                    ['expected a text', null]
-                )
-            )
-        ),
-    })
-)
-
 export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) => _p_cc(
     v_unmarshalled_from_parse_tree.Group(
         $,
@@ -451,6 +398,59 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                             )
                         ),
                     })
+                )
+            )
+        ),
+    })
+)
+
+export const MetaPointer: t_signatures.MetaPointer = ($, abort) => _p_cc(
+    v_unmarshalled_from_parse_tree.Group(
+        $,
+        ($) => abort(
+            ['expected a group', null]
+        )
+    ),
+    ($) => ({
+        'language': _p_cc(
+            $.__get_entry(
+                'language',
+                ($) => abort(
+                    ['no such entry', "language"]
+                )
+            ),
+            ($) => v_unmarshalled_from_parse_tree.Text(
+                $,
+                ($) => abort(
+                    ['expected a text', null]
+                )
+            )
+        ),
+        'version': _p_cc(
+            $.__get_entry(
+                'version',
+                ($) => abort(
+                    ['no such entry', "version"]
+                )
+            ),
+            ($) => v_unmarshalled_from_parse_tree.Text(
+                $,
+                ($) => abort(
+                    ['expected a text', null]
+                )
+            )
+        ),
+        'key': _p_cc(
+            $.__get_entry(
+                'key',
+                ($) => abort(
+                    ['no such entry', "key"]
+                )
+            ),
+            ($) => v_unmarshalled_from_parse_tree.Text(
+                $,
+                ($) => abort(
+                    ['expected a text', null]
                 )
             )
         ),

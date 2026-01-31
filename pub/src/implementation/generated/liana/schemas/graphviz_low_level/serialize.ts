@@ -7,26 +7,8 @@ import * as v_serialize from "astn-core/dist/implementation/manual/schemas/seale
 
 import * as v_marshall from "./marshall"
 
-export const ID: t_signatures.ID = ($) => v_serialize.Document(
-    v_marshall.ID(
-        $
-    )
-)
-
-export const Node_ID: t_signatures.Node_ID = ($) => v_serialize.Document(
-    v_marshall.Node_ID(
-        $
-    )
-)
-
-export const Attribute_List: t_signatures.Attribute_List = ($) => v_serialize.Document(
-    v_marshall.Attribute_List(
-        $
-    )
-)
-
-export const Subgraph: t_signatures.Subgraph = ($) => v_serialize.Document(
-    v_marshall.Subgraph(
+export const Graph: t_signatures.Graph = ($) => v_serialize.Document(
+    v_marshall.Graph(
         $
     )
 )
@@ -37,8 +19,26 @@ export const Statement_List: t_signatures.Statement_List = ($) => v_serialize.Do
     )
 )
 
-export const Graph: t_signatures.Graph = ($) => v_serialize.Document(
-    v_marshall.Graph(
+export const Attribute_List: t_signatures.Attribute_List = ($) => v_serialize.Document(
+    v_marshall.Attribute_List(
+        $
+    )
+)
+
+export const Node_ID: t_signatures.Node_ID = ($) => v_serialize.Document(
+    v_marshall.Node_ID(
+        $
+    )
+)
+
+export const ID: t_signatures.ID = ($) => v_serialize.Document(
+    v_marshall.ID(
+        $
+    )
+)
+
+export const Subgraph: t_signatures.Subgraph = ($) => v_serialize.Document(
+    v_marshall.Subgraph(
         $
     )
 )

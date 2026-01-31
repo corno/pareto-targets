@@ -17,72 +17,7 @@ import * as v_unmarshalled_from_parse_tree from "astn-core/dist/implementation/m
 
 import * as v_parse_tree_to_location from "astn-core/dist/implementation/manual/schemas/parse_tree/transformers/location"
 
-export const ID: t_signatures.ID = ($, abort) => _p_cc(
-    v_unmarshalled_from_parse_tree.State(
-        $,
-        ($) => abort(
-            ['expected a state', null]
-        )
-    ),
-    ($) => _p.decide.text(
-        $['option']['value'],
-        ($t): t_out.ID => {
-            switch ($t) {
-                case 'id':
-                    return _p_cc(
-                        $['value'],
-                        ($) => ['id', v_unmarshalled_from_parse_tree.Text(
-                            $,
-                            ($) => abort(
-                                ['expected a text', null]
-                            )
-                        )]
-                    )
-                case 'string':
-                    return _p_cc(
-                        $['value'],
-                        ($) => ['string', v_unmarshalled_from_parse_tree.Text(
-                            $,
-                            ($) => abort(
-                                ['expected a text', null]
-                            )
-                        )]
-                    )
-                case 'html':
-                    return _p_cc(
-                        $['value'],
-                        ($) => ['html', v_unmarshalled_from_parse_tree.Text(
-                            $,
-                            ($) => abort(
-                                ['expected a text', null]
-                            )
-                        )]
-                    )
-                case 'number':
-                    return _p_cc(
-                        $['value'],
-                        ($) => ['number', v_deserialize_number.deserialize(
-                            v_unmarshalled_from_parse_tree.Text(
-                                $,
-                                ($) => abort(
-                                    ['expected a text', null]
-                                )
-                            ),
-                            ($) => abort(
-                                ['not a valid number', null]
-                            )
-                        )]
-                    )
-                default:
-                    return abort(
-                        ['unknown option', $['option']['value']]
-                    )
-            }
-        }
-    )
-)
-
-export const Node_ID: t_signatures.Node_ID = ($, abort) => _p_cc(
+export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
     v_unmarshalled_from_parse_tree.Group(
         $,
         ($) => abort(
@@ -90,25 +25,77 @@ export const Node_ID: t_signatures.Node_ID = ($, abort) => _p_cc(
         )
     ),
     ($) => ({
-        'id': _p_cc(
+        'strict': _p_cc(
             $.__get_entry(
-                'id',
+                'strict',
                 ($) => abort(
-                    ['no such entry', "id"]
+                    ['no such entry', "strict"]
                 )
             ),
-            ($) => ID(
-                $,
+            ($) => v_deserialize_boolean.deserialize(
+                v_unmarshalled_from_parse_tree.Text(
+                    $,
+                    ($) => abort(
+                        ['expected a text', null]
+                    )
+                ),
                 ($) => abort(
-                    $
+                    ['not a valid boolean', null]
                 )
             )
         ),
-        'port': _p_cc(
+        'type': _p_cc(
             $.__get_entry(
-                'port',
+                'type',
                 ($) => abort(
-                    ['no such entry', "port"]
+                    ['no such entry', "type"]
+                )
+            ),
+            ($) => _p_cc(
+                v_unmarshalled_from_parse_tree.State(
+                    $,
+                    ($) => abort(
+                        ['expected a state', null]
+                    )
+                ),
+                ($) => _p.decide.text(
+                    $['option']['value'],
+                    ($t): t_out.Graph.type_ => {
+                        switch ($t) {
+                            case 'graph':
+                                return _p_cc(
+                                    $['value'],
+                                    ($) => ['graph', v_unmarshalled_from_parse_tree.Nothing(
+                                        $,
+                                        ($) => abort(
+                                            ['expected a nothing', null]
+                                        )
+                                    )]
+                                )
+                            case 'digraph':
+                                return _p_cc(
+                                    $['value'],
+                                    ($) => ['digraph', v_unmarshalled_from_parse_tree.Nothing(
+                                        $,
+                                        ($) => abort(
+                                            ['expected a nothing', null]
+                                        )
+                                    )]
+                                )
+                            default:
+                                return abort(
+                                    ['unknown option', $['option']['value']]
+                                )
+                        }
+                    }
+                )
+            )
+        ),
+        'name': _p_cc(
+            $.__get_entry(
+                'name',
+                ($) => abort(
+                    ['no such entry', "name"]
                 )
             ),
             ($) => _p.optional.map(
@@ -118,138 +105,10 @@ export const Node_ID: t_signatures.Node_ID = ($, abort) => _p_cc(
                         ['expected an optional', null]
                     )
                 ),
-                ($) => _p_cc(
-                    v_unmarshalled_from_parse_tree.Group(
-                        $,
-                        ($) => abort(
-                            ['expected a group', null]
-                        )
-                    ),
-                    ($) => ({
-                        'port': _p_cc(
-                            $.__get_entry(
-                                'port',
-                                ($) => abort(
-                                    ['no such entry', "port"]
-                                )
-                            ),
-                            ($) => ID(
-                                $,
-                                ($) => abort(
-                                    $
-                                )
-                            )
-                        ),
-                        'compass point': _p_cc(
-                            $.__get_entry(
-                                'compass point',
-                                ($) => abort(
-                                    ['no such entry', "compass point"]
-                                )
-                            ),
-                            ($) => _p.optional.map(
-                                v_unmarshalled_from_parse_tree.Optional(
-                                    $,
-                                    ($) => abort(
-                                        ['expected an optional', null]
-                                    )
-                                ),
-                                ($) => ID(
-                                    $,
-                                    ($) => abort(
-                                        $
-                                    )
-                                )
-                            )
-                        ),
-                    })
-                )
-            )
-        ),
-    })
-)
-
-export const Attribute_List: t_signatures.Attribute_List = ($, abort) => _p.list.map(
-    v_unmarshalled_from_parse_tree.List(
-        $,
-        ($) => abort(
-            ['expected a list', null]
-        )
-    ),
-    ($) => _p_cc(
-        v_unmarshalled_from_parse_tree.Group(
-            $,
-            ($) => abort(
-                ['expected a group', null]
-            )
-        ),
-        ($) => ({
-            'name': _p_cc(
-                $.__get_entry(
-                    'name',
-                    ($) => abort(
-                        ['no such entry', "name"]
-                    )
-                ),
                 ($) => ID(
                     $,
                     ($) => abort(
                         $
-                    )
-                )
-            ),
-            'value': _p_cc(
-                $.__get_entry(
-                    'value',
-                    ($) => abort(
-                        ['no such entry', "value"]
-                    )
-                ),
-                ($) => ID(
-                    $,
-                    ($) => abort(
-                        $
-                    )
-                )
-            ),
-        })
-    )
-)
-
-export const Subgraph: t_signatures.Subgraph = ($, abort) => _p_cc(
-    v_unmarshalled_from_parse_tree.Group(
-        $,
-        ($) => abort(
-            ['expected a group', null]
-        )
-    ),
-    ($) => ({
-        'subgraph': _p_cc(
-            $.__get_entry(
-                'subgraph',
-                ($) => abort(
-                    ['no such entry', "subgraph"]
-                )
-            ),
-            ($) => _p.optional.map(
-                v_unmarshalled_from_parse_tree.Optional(
-                    $,
-                    ($) => abort(
-                        ['expected an optional', null]
-                    )
-                ),
-                ($) => _p.optional.map(
-                    v_unmarshalled_from_parse_tree.Optional(
-                        $,
-                        ($) => abort(
-                            ['expected an optional', null]
-                        )
-                    ),
-                    ($) => ID(
-                        $,
-                        ($) => abort(
-                            $
-                        )
                     )
                 )
             )
@@ -608,7 +467,54 @@ export const Statement_List: t_signatures.Statement_List = ($, abort) => _p.list
     )
 )
 
-export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
+export const Attribute_List: t_signatures.Attribute_List = ($, abort) => _p.list.map(
+    v_unmarshalled_from_parse_tree.List(
+        $,
+        ($) => abort(
+            ['expected a list', null]
+        )
+    ),
+    ($) => _p_cc(
+        v_unmarshalled_from_parse_tree.Group(
+            $,
+            ($) => abort(
+                ['expected a group', null]
+            )
+        ),
+        ($) => ({
+            'name': _p_cc(
+                $.__get_entry(
+                    'name',
+                    ($) => abort(
+                        ['no such entry', "name"]
+                    )
+                ),
+                ($) => ID(
+                    $,
+                    ($) => abort(
+                        $
+                    )
+                )
+            ),
+            'value': _p_cc(
+                $.__get_entry(
+                    'value',
+                    ($) => abort(
+                        ['no such entry', "value"]
+                    )
+                ),
+                ($) => ID(
+                    $,
+                    ($) => abort(
+                        $
+                    )
+                )
+            ),
+        })
+    )
+)
+
+export const Node_ID: t_signatures.Node_ID = ($, abort) => _p_cc(
     v_unmarshalled_from_parse_tree.Group(
         $,
         ($) => abort(
@@ -616,77 +522,25 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
         )
     ),
     ($) => ({
-        'strict': _p_cc(
+        'id': _p_cc(
             $.__get_entry(
-                'strict',
+                'id',
                 ($) => abort(
-                    ['no such entry', "strict"]
+                    ['no such entry', "id"]
                 )
             ),
-            ($) => v_deserialize_boolean.deserialize(
-                v_unmarshalled_from_parse_tree.Text(
-                    $,
-                    ($) => abort(
-                        ['expected a text', null]
-                    )
-                ),
+            ($) => ID(
+                $,
                 ($) => abort(
-                    ['not a valid boolean', null]
+                    $
                 )
             )
         ),
-        'type': _p_cc(
+        'port': _p_cc(
             $.__get_entry(
-                'type',
+                'port',
                 ($) => abort(
-                    ['no such entry', "type"]
-                )
-            ),
-            ($) => _p_cc(
-                v_unmarshalled_from_parse_tree.State(
-                    $,
-                    ($) => abort(
-                        ['expected a state', null]
-                    )
-                ),
-                ($) => _p.decide.text(
-                    $['option']['value'],
-                    ($t): t_out.Graph.type_ => {
-                        switch ($t) {
-                            case 'graph':
-                                return _p_cc(
-                                    $['value'],
-                                    ($) => ['graph', v_unmarshalled_from_parse_tree.Nothing(
-                                        $,
-                                        ($) => abort(
-                                            ['expected a nothing', null]
-                                        )
-                                    )]
-                                )
-                            case 'digraph':
-                                return _p_cc(
-                                    $['value'],
-                                    ($) => ['digraph', v_unmarshalled_from_parse_tree.Nothing(
-                                        $,
-                                        ($) => abort(
-                                            ['expected a nothing', null]
-                                        )
-                                    )]
-                                )
-                            default:
-                                return abort(
-                                    ['unknown option', $['option']['value']]
-                                )
-                        }
-                    }
-                )
-            )
-        ),
-        'name': _p_cc(
-            $.__get_entry(
-                'name',
-                ($) => abort(
-                    ['no such entry', "name"]
+                    ['no such entry', "port"]
                 )
             ),
             ($) => _p.optional.map(
@@ -696,10 +550,156 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                         ['expected an optional', null]
                     )
                 ),
-                ($) => ID(
+                ($) => _p_cc(
+                    v_unmarshalled_from_parse_tree.Group(
+                        $,
+                        ($) => abort(
+                            ['expected a group', null]
+                        )
+                    ),
+                    ($) => ({
+                        'port': _p_cc(
+                            $.__get_entry(
+                                'port',
+                                ($) => abort(
+                                    ['no such entry', "port"]
+                                )
+                            ),
+                            ($) => ID(
+                                $,
+                                ($) => abort(
+                                    $
+                                )
+                            )
+                        ),
+                        'compass point': _p_cc(
+                            $.__get_entry(
+                                'compass point',
+                                ($) => abort(
+                                    ['no such entry', "compass point"]
+                                )
+                            ),
+                            ($) => _p.optional.map(
+                                v_unmarshalled_from_parse_tree.Optional(
+                                    $,
+                                    ($) => abort(
+                                        ['expected an optional', null]
+                                    )
+                                ),
+                                ($) => ID(
+                                    $,
+                                    ($) => abort(
+                                        $
+                                    )
+                                )
+                            )
+                        ),
+                    })
+                )
+            )
+        ),
+    })
+)
+
+export const ID: t_signatures.ID = ($, abort) => _p_cc(
+    v_unmarshalled_from_parse_tree.State(
+        $,
+        ($) => abort(
+            ['expected a state', null]
+        )
+    ),
+    ($) => _p.decide.text(
+        $['option']['value'],
+        ($t): t_out.ID => {
+            switch ($t) {
+                case 'id':
+                    return _p_cc(
+                        $['value'],
+                        ($) => ['id', v_unmarshalled_from_parse_tree.Text(
+                            $,
+                            ($) => abort(
+                                ['expected a text', null]
+                            )
+                        )]
+                    )
+                case 'string':
+                    return _p_cc(
+                        $['value'],
+                        ($) => ['string', v_unmarshalled_from_parse_tree.Text(
+                            $,
+                            ($) => abort(
+                                ['expected a text', null]
+                            )
+                        )]
+                    )
+                case 'html':
+                    return _p_cc(
+                        $['value'],
+                        ($) => ['html', v_unmarshalled_from_parse_tree.Text(
+                            $,
+                            ($) => abort(
+                                ['expected a text', null]
+                            )
+                        )]
+                    )
+                case 'number':
+                    return _p_cc(
+                        $['value'],
+                        ($) => ['number', v_deserialize_number.deserialize(
+                            v_unmarshalled_from_parse_tree.Text(
+                                $,
+                                ($) => abort(
+                                    ['expected a text', null]
+                                )
+                            ),
+                            ($) => abort(
+                                ['not a valid number', null]
+                            )
+                        )]
+                    )
+                default:
+                    return abort(
+                        ['unknown option', $['option']['value']]
+                    )
+            }
+        }
+    )
+)
+
+export const Subgraph: t_signatures.Subgraph = ($, abort) => _p_cc(
+    v_unmarshalled_from_parse_tree.Group(
+        $,
+        ($) => abort(
+            ['expected a group', null]
+        )
+    ),
+    ($) => ({
+        'subgraph': _p_cc(
+            $.__get_entry(
+                'subgraph',
+                ($) => abort(
+                    ['no such entry', "subgraph"]
+                )
+            ),
+            ($) => _p.optional.map(
+                v_unmarshalled_from_parse_tree.Optional(
                     $,
                     ($) => abort(
-                        $
+                        ['expected an optional', null]
+                    )
+                ),
+                ($) => _p.optional.map(
+                    v_unmarshalled_from_parse_tree.Optional(
+                        $,
+                        ($) => abort(
+                            ['expected an optional', null]
+                        )
+                    ),
+                    ($) => ID(
+                        $,
+                        ($) => abort(
+                            $
+                        )
                     )
                 )
             )

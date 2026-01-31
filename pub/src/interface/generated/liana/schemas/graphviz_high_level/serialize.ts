@@ -3,25 +3,9 @@ import * as _pi from "pareto-core/dist/interface"
 
 import * as i_in from "./data"
 
-export namespace Graph_Attributes_ {
+export namespace Graph_ {
     
-    export type I = i_in.Graph_Attributes
-    
-    export type O = string
-    
-    export namespace P {
-        
-    }
-    
-}
-
-export type Graph_Attributes_ = (
-    context: Graph_Attributes_.I,
-) => Graph_Attributes_.O
-
-export namespace Node_Attributes_ {
-    
-    export type I = i_in.Node_Attributes
+    export type I = i_in.Graph
     
     export type O = string
     
@@ -31,9 +15,9 @@ export namespace Node_Attributes_ {
     
 }
 
-export type Node_Attributes_ = (
-    context: Node_Attributes_.I,
-) => Node_Attributes_.O
+export type Graph_ = (
+    context: Graph_.I,
+) => Graph_.O
 
 export namespace Tree_ {
     
@@ -67,6 +51,38 @@ export type End_Point_Specification_ = (
     context: End_Point_Specification_.I,
 ) => End_Point_Specification_.O
 
+export namespace Graph_Attributes_ {
+    
+    export type I = i_in.Graph_Attributes
+    
+    export type O = string
+    
+    export namespace P {
+        
+    }
+    
+}
+
+export type Graph_Attributes_ = (
+    context: Graph_Attributes_.I,
+) => Graph_Attributes_.O
+
+export namespace Node_Attributes_ {
+    
+    export type I = i_in.Node_Attributes
+    
+    export type O = string
+    
+    export namespace P {
+        
+    }
+    
+}
+
+export type Node_Attributes_ = (
+    context: Node_Attributes_.I,
+) => Node_Attributes_.O
+
 export namespace Edge_Attributes_ {
     
     export type I = i_in.Edge_Attributes
@@ -82,22 +98,6 @@ export namespace Edge_Attributes_ {
 export type Edge_Attributes_ = (
     context: Edge_Attributes_.I,
 ) => Edge_Attributes_.O
-
-export namespace Graph_ {
-    
-    export type I = i_in.Graph
-    
-    export type O = string
-    
-    export namespace P {
-        
-    }
-    
-}
-
-export type Graph_ = (
-    context: Graph_.I,
-) => Graph_.O
 
 export namespace Attribute_Value_ {
     
@@ -116,11 +116,11 @@ export type Attribute_Value_ = (
 ) => Attribute_Value_.O
 
 export { 
-    Graph_Attributes_ as Graph_Attributes, 
-    Node_Attributes_ as Node_Attributes, 
+    Graph_ as Graph, 
     Tree_ as Tree, 
     End_Point_Specification_ as End_Point_Specification, 
+    Graph_Attributes_ as Graph_Attributes, 
+    Node_Attributes_ as Node_Attributes, 
     Edge_Attributes_ as Edge_Attributes, 
-    Graph_ as Graph, 
     Attribute_Value_ as Attribute_Value, 
 }

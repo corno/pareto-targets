@@ -7,23 +7,7 @@ import * as v_deserialize from "astn-core/dist/implementation/manual/schemas/par
 
 import * as v_unmarshall from "./unmarshall"
 
-export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort, $p) => v_unmarshall.Graph_Attributes(
-    v_deserialize.Document(
-        $,
-        ($) => abort(
-            ['tbd', null]
-        ),
-        {
-            'document resource identifier': $p['document resource identifier'],
-            'tab size': $p['tab size'],
-        }
-    )['content'],
-    ($) => abort(
-        ['tbd', null]
-    )
-)
-
-export const Node_Attributes: t_signatures.Node_Attributes = ($, abort, $p) => v_unmarshall.Node_Attributes(
+export const Graph: t_signatures.Graph = ($, abort, $p) => v_unmarshall.Graph(
     v_deserialize.Document(
         $,
         ($) => abort(
@@ -71,7 +55,7 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($,
     )
 )
 
-export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort, $p) => v_unmarshall.Edge_Attributes(
+export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort, $p) => v_unmarshall.Graph_Attributes(
     v_deserialize.Document(
         $,
         ($) => abort(
@@ -87,7 +71,23 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort, $p) => v
     )
 )
 
-export const Graph: t_signatures.Graph = ($, abort, $p) => v_unmarshall.Graph(
+export const Node_Attributes: t_signatures.Node_Attributes = ($, abort, $p) => v_unmarshall.Node_Attributes(
+    v_deserialize.Document(
+        $,
+        ($) => abort(
+            ['tbd', null]
+        ),
+        {
+            'document resource identifier': $p['document resource identifier'],
+            'tab size': $p['tab size'],
+        }
+    )['content'],
+    ($) => abort(
+        ['tbd', null]
+    )
+)
+
+export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort, $p) => v_unmarshall.Edge_Attributes(
     v_deserialize.Document(
         $,
         ($) => abort(

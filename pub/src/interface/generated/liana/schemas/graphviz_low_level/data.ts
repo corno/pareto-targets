@@ -1,102 +1,39 @@
 
 import * as _pi from "pareto-core/dist/interface"
 
-export namespace ID_ {
+export namespace Graph_ {
     
-    export type id = string
+    export type strict = boolean
     
-    export type string_ = string
-    
-    export type html = string
-    
-    export type number_ = number
-    
-}
-
-export type ID_ = 
-    | readonly ['id', ID_.id]
-    | readonly ['string', ID_.string_]
-    | readonly ['html', ID_.html]
-    | readonly ['number', ID_.number_]
-
-export namespace Node_ID_ {
-    
-    export type id = ID_
-    
-    export namespace port {
+    export namespace type_ {
         
-        export namespace O {
-            
-            export type port = ID_
-            
-            export namespace compass_point {
-                
-                export type O = ID_
-                
-            }
-            
-            export type compass_point = _pi.Optional_Value<compass_point.O>
-            
-        }
+        export type graph = null
         
-        export type O = {
-            readonly 'port': O.port
-            readonly 'compass point': O.compass_point
-        }
+        export type digraph = null
         
     }
     
-    export type port = _pi.Optional_Value<port.O>
+    export type type_ = 
+        | readonly ['graph', type_.graph]
+        | readonly ['digraph', type_.digraph]
     
-}
-
-export type Node_ID_ = {
-    readonly 'id': Node_ID_.id
-    readonly 'port': Node_ID_.port
-}
-
-export namespace Attribute_List_ {
-    
-    export namespace L {
+    export namespace name {
         
-        export type name = ID_
-        
-        export type value = ID_
+        export type O = ID_
         
     }
     
-    export type L = {
-        readonly 'name': L.name
-        readonly 'value': L.value
-    }
-    
-}
-
-export type Attribute_List_ = _pi.List<Attribute_List_.L>
-
-export namespace Subgraph_ {
-    
-    export namespace subgraph {
-        
-        export namespace O {
-            
-            export type O = ID_
-            
-        }
-        
-        export type O = _pi.Optional_Value<O.O>
-        
-    }
-    
-    export type subgraph = _pi.Optional_Value<subgraph.O>
+    export type name = _pi.Optional_Value<name.O>
     
     export type statements = Statement_List_
     
 }
 
-export type Subgraph_ = {
-    readonly 'subgraph': Subgraph_.subgraph
-    readonly 'statements': Subgraph_.statements
+export type Graph_ = {
+    readonly 'strict': Graph_.strict
+    readonly 'type': Graph_.type_
+    readonly 'name': Graph_.name
+    readonly 'statements': Graph_.statements
 }
 
 export namespace Statement_List_ {
@@ -212,46 +149,109 @@ export namespace Statement_List_ {
 
 export type Statement_List_ = _pi.List<Statement_List_.L>
 
-export namespace Graph_ {
+export namespace Attribute_List_ {
     
-    export type strict = boolean
-    
-    export namespace type_ {
+    export namespace L {
         
-        export type graph = null
+        export type name = ID_
         
-        export type digraph = null
+        export type value = ID_
         
     }
     
-    export type type_ = 
-        | readonly ['graph', type_.graph]
-        | readonly ['digraph', type_.digraph]
+    export type L = {
+        readonly 'name': L.name
+        readonly 'value': L.value
+    }
     
-    export namespace name {
+}
+
+export type Attribute_List_ = _pi.List<Attribute_List_.L>
+
+export namespace Node_ID_ {
+    
+    export type id = ID_
+    
+    export namespace port {
         
-        export type O = ID_
+        export namespace O {
+            
+            export type port = ID_
+            
+            export namespace compass_point {
+                
+                export type O = ID_
+                
+            }
+            
+            export type compass_point = _pi.Optional_Value<compass_point.O>
+            
+        }
+        
+        export type O = {
+            readonly 'port': O.port
+            readonly 'compass point': O.compass_point
+        }
         
     }
     
-    export type name = _pi.Optional_Value<name.O>
+    export type port = _pi.Optional_Value<port.O>
+    
+}
+
+export type Node_ID_ = {
+    readonly 'id': Node_ID_.id
+    readonly 'port': Node_ID_.port
+}
+
+export namespace ID_ {
+    
+    export type id = string
+    
+    export type string_ = string
+    
+    export type html = string
+    
+    export type number_ = number
+    
+}
+
+export type ID_ = 
+    | readonly ['id', ID_.id]
+    | readonly ['string', ID_.string_]
+    | readonly ['html', ID_.html]
+    | readonly ['number', ID_.number_]
+
+export namespace Subgraph_ {
+    
+    export namespace subgraph {
+        
+        export namespace O {
+            
+            export type O = ID_
+            
+        }
+        
+        export type O = _pi.Optional_Value<O.O>
+        
+    }
+    
+    export type subgraph = _pi.Optional_Value<subgraph.O>
     
     export type statements = Statement_List_
     
 }
 
-export type Graph_ = {
-    readonly 'strict': Graph_.strict
-    readonly 'type': Graph_.type_
-    readonly 'name': Graph_.name
-    readonly 'statements': Graph_.statements
+export type Subgraph_ = {
+    readonly 'subgraph': Subgraph_.subgraph
+    readonly 'statements': Subgraph_.statements
 }
 
 export { 
-    ID_ as ID, 
-    Node_ID_ as Node_ID, 
-    Attribute_List_ as Attribute_List, 
-    Subgraph_ as Subgraph, 
-    Statement_List_ as Statement_List, 
     Graph_ as Graph, 
+    Statement_List_ as Statement_List, 
+    Attribute_List_ as Attribute_List, 
+    Node_ID_ as Node_ID, 
+    ID_ as ID, 
+    Subgraph_ as Subgraph, 
 }

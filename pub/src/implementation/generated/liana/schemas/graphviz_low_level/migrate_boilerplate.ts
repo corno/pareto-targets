@@ -9,98 +9,41 @@ import * as t_signatures from "../../../../../interface/generated/liana/schemas/
 
 import * as t_out from "../../../../../interface/generated/liana/schemas/graphviz_low_level/data"
 
-export const ID: t_signatures.ID = ($) => _p.decide.state(
-    $,
-    ($): t_out.ID => {
-        switch ($[0]) {
-            case 'id':
-                return _p.ss(
-                    $,
-                    ($) => ['id', $]
-                )
-            case 'string':
-                return _p.ss(
-                    $,
-                    ($) => ['string', $]
-                )
-            case 'html':
-                return _p.ss(
-                    $,
-                    ($) => ['html', $]
-                )
-            case 'number':
-                return _p.ss(
-                    $,
-                    ($) => ['number', $]
-                )
-            default:
-                return _p.au(
-                    $[0]
-                )
-        }
-    }
-)
-
-export const Node_ID: t_signatures.Node_ID = ($) => ({
-    'id': _p_cc(
-        $['id'],
-        ($) => ID(
-            $
-        )
+export const Graph: t_signatures.Graph = ($) => ({
+    'strict': _p_cc(
+        $['strict'],
+        ($) => $
     ),
-    'port': _p_cc(
-        $['port'],
-        ($) => _p.optional.map(
+    'type': _p_cc(
+        $['type'],
+        ($) => _p.decide.state(
             $,
-            ($) => ({
-                'port': _p_cc(
-                    $['port'],
-                    ($) => ID(
-                        $
-                    )
-                ),
-                'compass point': _p_cc(
-                    $['compass point'],
-                    ($) => _p.optional.map(
-                        $,
-                        ($) => ID(
-                            $
+            ($): t_out.Graph.type_ => {
+                switch ($[0]) {
+                    case 'graph':
+                        return _p.ss(
+                            $,
+                            ($) => ['graph', null]
                         )
-                    )
-                ),
-            })
+                    case 'digraph':
+                        return _p.ss(
+                            $,
+                            ($) => ['digraph', null]
+                        )
+                    default:
+                        return _p.au(
+                            $[0]
+                        )
+                }
+            }
         )
     ),
-})
-
-export const Attribute_List: t_signatures.Attribute_List = ($) => _p.list.map(
-    $,
-    ($) => ({
-        'name': _p_cc(
-            $['name'],
-            ($) => ID(
-                $
-            )
-        ),
-        'value': _p_cc(
-            $['value'],
-            ($) => ID(
-                $
-            )
-        ),
-    })
-)
-
-export const Subgraph: t_signatures.Subgraph = ($) => ({
-    'subgraph': _p_cc(
-        $['subgraph'],
+    'name': _p_cc(
+        $['name'],
         ($) => _p.optional.map(
             $,
-            ($) => _p.optional.map(
-                $,
-                ($) => ID(
-                    $
-                )
+            ($) => ID(
+                $
             )
         )
     ),
@@ -282,41 +225,98 @@ export const Statement_List: t_signatures.Statement_List = ($) => _p.list.map(
     )
 )
 
-export const Graph: t_signatures.Graph = ($) => ({
-    'strict': _p_cc(
-        $['strict'],
-        ($) => $
-    ),
-    'type': _p_cc(
-        $['type'],
-        ($) => _p.decide.state(
-            $,
-            ($): t_out.Graph.type_ => {
-                switch ($[0]) {
-                    case 'graph':
-                        return _p.ss(
-                            $,
-                            ($) => ['graph', null]
-                        )
-                    case 'digraph':
-                        return _p.ss(
-                            $,
-                            ($) => ['digraph', null]
-                        )
-                    default:
-                        return _p.au(
-                            $[0]
-                        )
-                }
-            }
-        )
-    ),
-    'name': _p_cc(
-        $['name'],
-        ($) => _p.optional.map(
-            $,
+export const Attribute_List: t_signatures.Attribute_List = ($) => _p.list.map(
+    $,
+    ($) => ({
+        'name': _p_cc(
+            $['name'],
             ($) => ID(
                 $
+            )
+        ),
+        'value': _p_cc(
+            $['value'],
+            ($) => ID(
+                $
+            )
+        ),
+    })
+)
+
+export const Node_ID: t_signatures.Node_ID = ($) => ({
+    'id': _p_cc(
+        $['id'],
+        ($) => ID(
+            $
+        )
+    ),
+    'port': _p_cc(
+        $['port'],
+        ($) => _p.optional.map(
+            $,
+            ($) => ({
+                'port': _p_cc(
+                    $['port'],
+                    ($) => ID(
+                        $
+                    )
+                ),
+                'compass point': _p_cc(
+                    $['compass point'],
+                    ($) => _p.optional.map(
+                        $,
+                        ($) => ID(
+                            $
+                        )
+                    )
+                ),
+            })
+        )
+    ),
+})
+
+export const ID: t_signatures.ID = ($) => _p.decide.state(
+    $,
+    ($): t_out.ID => {
+        switch ($[0]) {
+            case 'id':
+                return _p.ss(
+                    $,
+                    ($) => ['id', $]
+                )
+            case 'string':
+                return _p.ss(
+                    $,
+                    ($) => ['string', $]
+                )
+            case 'html':
+                return _p.ss(
+                    $,
+                    ($) => ['html', $]
+                )
+            case 'number':
+                return _p.ss(
+                    $,
+                    ($) => ['number', $]
+                )
+            default:
+                return _p.au(
+                    $[0]
+                )
+        }
+    }
+)
+
+export const Subgraph: t_signatures.Subgraph = ($) => ({
+    'subgraph': _p_cc(
+        $['subgraph'],
+        ($) => _p.optional.map(
+            $,
+            ($) => _p.optional.map(
+                $,
+                ($) => ID(
+                    $
+                )
             )
         )
     ),

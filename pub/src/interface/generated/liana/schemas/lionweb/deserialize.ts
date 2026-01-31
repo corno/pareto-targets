@@ -5,33 +5,6 @@ import * as i_generic from "../../generic/deserialize"
 
 import * as i_out from "./data"
 
-export namespace MetaPointer_ {
-    
-    export type I = string
-    
-    export type O = i_out.MetaPointer
-    
-    export type E = i_generic.Error
-    
-    export namespace P {
-        
-        export type document_resource_identifier = string
-        
-        export type tab_size = number
-        
-    }
-    
-}
-
-export type MetaPointer_ = (
-    context: MetaPointer_.I,
-    abort: _pi.Abort<MetaPointer_.E>,
-    parameters: {
-        readonly 'document resource identifier': MetaPointer_.P.document_resource_identifier
-        readonly 'tab size': MetaPointer_.P.tab_size
-    },
-) => MetaPointer_.O
-
 export namespace SerializationChunk_ {
     
     export type I = string
@@ -58,6 +31,33 @@ export type SerializationChunk_ = (
         readonly 'tab size': SerializationChunk_.P.tab_size
     },
 ) => SerializationChunk_.O
+
+export namespace MetaPointer_ {
+    
+    export type I = string
+    
+    export type O = i_out.MetaPointer
+    
+    export type E = i_generic.Error
+    
+    export namespace P {
+        
+        export type document_resource_identifier = string
+        
+        export type tab_size = number
+        
+    }
+    
+}
+
+export type MetaPointer_ = (
+    context: MetaPointer_.I,
+    abort: _pi.Abort<MetaPointer_.E>,
+    parameters: {
+        readonly 'document resource identifier': MetaPointer_.P.document_resource_identifier
+        readonly 'tab size': MetaPointer_.P.tab_size
+    },
+) => MetaPointer_.O
 
 export namespace SerializationChunks_ {
     
@@ -87,7 +87,7 @@ export type SerializationChunks_ = (
 ) => SerializationChunks_.O
 
 export { 
-    MetaPointer_ as MetaPointer, 
     SerializationChunk_ as SerializationChunk, 
+    MetaPointer_ as MetaPointer, 
     SerializationChunks_ as SerializationChunks, 
 }
