@@ -1,11 +1,11 @@
-import * as _p from 'pareto-core/dist/transformer'
+import * as _p from 'pareto-core/dist/expression'
 import * as _pds from 'pareto-core/dist/deserializer'
 
 
 import * as d_path from "pareto-resources/dist/interface/generated/liana/schemas/path/data"
 
 const replace = ($: string, search: number, replace: number): string => _pds.text.deprecated_build(($i) => {
-    _pds.list.from_text($, ($) => $).__for_each(($) => {
+    _p_list_from_text($, ($) => $).__for_each(($) => {
         if ($ === search) {
             $i.add_character(replace)
         } else {

@@ -1,9 +1,7 @@
 
-import * as _p from "pareto-core/dist/transformer"
+import * as _p from "pareto-core/dist/expression"
 
-import {
-    _p_cc,
-} from "pareto-core/dist/change_context"
+import _p_change_context from "pareto-core/dist/_p_change_context"
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/graphviz_high_level/marshall"
 
@@ -15,7 +13,7 @@ import * as v_serialize_boolean from "liana-core/dist/implementation/manual/prim
 
 export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.dictionary.literal(
     {
-        'name': _p_cc(
+        'name': _p_change_context(
             $['name'],
             ($) => ['optional', _p.decide.optional(
                 $,
@@ -26,13 +24,13 @@ export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.diction
                 () => ['not set', null]
             )]
         ),
-        'tree': _p_cc(
+        'tree': _p_change_context(
             $['tree'],
             ($) => Tree(
                 $
             )
         ),
-        'type': _p_cc(
+        'type': _p_change_context(
             $['type'],
             ($) => ['state', _p.decide.state(
                 $,
@@ -45,25 +43,25 @@ export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.diction
                                     'option': 'undirected',
                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                         {
-                                            'edges': _p_cc(
+                                            'edges': _p_change_context(
                                                 $['edges'],
                                                 ($) => ['list', _p.list.map(
                                                     $,
                                                     ($) => ['group', ['verbose', _p.dictionary.literal(
                                                         {
-                                                            'yin': _p_cc(
+                                                            'yin': _p_change_context(
                                                                 $['yin'],
                                                                 ($) => End_Point_Specification(
                                                                     $
                                                                 )
                                                             ),
-                                                            'yang': _p_cc(
+                                                            'yang': _p_change_context(
                                                                 $['yang'],
                                                                 ($) => End_Point_Specification(
                                                                     $
                                                                 )
                                                             ),
-                                                            'attributes': _p_cc(
+                                                            'attributes': _p_change_context(
                                                                 $['attributes'],
                                                                 ($) => Edge_Attributes(
                                                                     $
@@ -84,25 +82,25 @@ export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.diction
                                     'option': 'directed',
                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                         {
-                                            'edges': _p_cc(
+                                            'edges': _p_change_context(
                                                 $['edges'],
                                                 ($) => ['list', _p.list.map(
                                                     $,
                                                     ($) => ['group', ['verbose', _p.dictionary.literal(
                                                         {
-                                                            'from': _p_cc(
+                                                            'from': _p_change_context(
                                                                 $['from'],
                                                                 ($) => End_Point_Specification(
                                                                     $
                                                                 )
                                                             ),
-                                                            'to': _p_cc(
+                                                            'to': _p_change_context(
                                                                 $['to'],
                                                                 ($) => End_Point_Specification(
                                                                     $
                                                                 )
                                                             ),
-                                                            'attributes': _p_cc(
+                                                            'attributes': _p_change_context(
                                                                 $['attributes'],
                                                                 ($) => Edge_Attributes(
                                                                     $
@@ -129,13 +127,13 @@ export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.diction
 
 export const Tree: t_signatures.Tree = ($) => ['group', ['verbose', _p.dictionary.literal(
     {
-        'attributes': _p_cc(
+        'attributes': _p_change_context(
             $['attributes'],
             ($) => Graph_Attributes(
                 $
             )
         ),
-        'elements': _p_cc(
+        'elements': _p_change_context(
             $['elements'],
             ($) => ['dictionary', _p.dictionary.map(
                 $,
@@ -150,7 +148,7 @@ export const Tree: t_signatures.Tree = ($) => ['group', ['verbose', _p.dictionar
                                         'option': 'node',
                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                             {
-                                                'attributes': _p_cc(
+                                                'attributes': _p_change_context(
                                                     $['attributes'],
                                                     ($) => Node_Attributes(
                                                         $
@@ -167,7 +165,7 @@ export const Tree: t_signatures.Tree = ($) => ['group', ['verbose', _p.dictionar
                                         'option': 'sub',
                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                             {
-                                                'type': _p_cc(
+                                                'type': _p_change_context(
                                                     $['type'],
                                                     ($) => ['state', _p.decide.state(
                                                         $,
@@ -205,7 +203,7 @@ export const Tree: t_signatures.Tree = ($) => ['group', ['verbose', _p.dictionar
                                                         }
                                                     )]
                                                 ),
-                                                'tree': _p_cc(
+                                                'tree': _p_change_context(
                                                     $['tree'],
                                                     ($) => Tree(
                                                         $
@@ -229,14 +227,14 @@ export const Tree: t_signatures.Tree = ($) => ['group', ['verbose', _p.dictionar
 
 export const End_Point_Specification: t_signatures.End_Point_Specification = ($) => ['group', ['verbose', _p.dictionary.literal(
     {
-        'start': _p_cc(
+        'start': _p_change_context(
             $['start'],
             ($) => ['text', {
                 'delimiter': ['quote', null],
                 'value': $,
             }]
         ),
-        'tail': _p_cc(
+        'tail': _p_change_context(
             $['tail'],
             ($) => ['list', _p.list.map(
                 $,
@@ -246,20 +244,20 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($)
                 }]
             )]
         ),
-        'port data': _p_cc(
+        'port data': _p_change_context(
             $['port data'],
             ($) => ['optional', _p.decide.optional(
                 $,
                 ($): t_out.Value.optional => ['set', ['group', ['verbose', _p.dictionary.literal(
                     {
-                        'port': _p_cc(
+                        'port': _p_change_context(
                             $['port'],
                             ($) => ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
                             }]
                         ),
-                        'compass direction': _p_cc(
+                        'compass direction': _p_change_context(
                             $['compass direction'],
                             ($) => ['optional', _p.decide.optional(
                                 $,

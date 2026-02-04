@@ -1,4 +1,4 @@
-import * as _p from 'pareto-core/dist/transformer'
+import * as _p from 'pareto-core/dist/expression'
 
 import * as d_in from "pareto-liana/dist/interface/generated/liana/schemas/module/data/resolved"
 import * as d_out from "pareto-fountain-pen/dist/interface/generated/liana/schemas/block/data"

@@ -1,9 +1,7 @@
 
 import * as _p from "pareto-core/dist/refiner"
 
-import {
-    _p_cc,
-} from "pareto-core/dist/change_context"
+import _p_change_context from "pareto-core/dist/_p_change_context"
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/lionweb/unmarshall"
 
@@ -17,7 +15,7 @@ import * as v_unmarshalled_from_parse_tree from "astn-core/dist/implementation/m
 
 import * as v_parse_tree_to_location from "astn-core/dist/implementation/manual/schemas/parse_tree/transformers/location"
 
-export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) => _p_cc(
+export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Group(
         $,
         ($) => abort(
@@ -25,7 +23,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
         )
     ),
     ($) => ({
-        'serializationFormatVersion': _p_cc(
+        'serializationFormatVersion': _p_change_context(
             $.__get_entry(
                 'serializationFormatVersion',
                 ($) => abort(
@@ -39,7 +37,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                 )
             )
         ),
-        'languages': _p_cc(
+        'languages': _p_change_context(
             $.__get_entry(
                 'languages',
                 ($) => abort(
@@ -53,7 +51,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                         ['expected a list', null]
                     )
                 ),
-                ($) => _p_cc(
+                ($) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
                         ($) => abort(
@@ -61,7 +59,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                         )
                     ),
                     ($) => ({
-                        'key': _p_cc(
+                        'key': _p_change_context(
                             $.__get_entry(
                                 'key',
                                 ($) => abort(
@@ -75,7 +73,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                 )
                             )
                         ),
-                        'version': _p_cc(
+                        'version': _p_change_context(
                             $.__get_entry(
                                 'version',
                                 ($) => abort(
@@ -93,7 +91,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                 )
             )
         ),
-        'nodes': _p_cc(
+        'nodes': _p_change_context(
             $.__get_entry(
                 'nodes',
                 ($) => abort(
@@ -107,7 +105,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                         ['expected a list', null]
                     )
                 ),
-                ($) => _p_cc(
+                ($) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
                         ($) => abort(
@@ -115,7 +113,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                         )
                     ),
                     ($) => ({
-                        'id': _p_cc(
+                        'id': _p_change_context(
                             $.__get_entry(
                                 'id',
                                 ($) => abort(
@@ -129,7 +127,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                 )
                             )
                         ),
-                        'parent': _p_cc(
+                        'parent': _p_change_context(
                             $.__get_entry(
                                 'parent',
                                 ($) => abort(
@@ -151,7 +149,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                 )
                             )
                         ),
-                        'annotations': _p_cc(
+                        'annotations': _p_change_context(
                             $.__get_entry(
                                 'annotations',
                                 ($) => abort(
@@ -173,7 +171,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                 )
                             )
                         ),
-                        'classifier': _p_cc(
+                        'classifier': _p_change_context(
                             $.__get_entry(
                                 'classifier',
                                 ($) => abort(
@@ -187,7 +185,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                 )
                             )
                         ),
-                        'containments': _p_cc(
+                        'containments': _p_change_context(
                             $.__get_entry(
                                 'containments',
                                 ($) => abort(
@@ -201,7 +199,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                         ['expected a list', null]
                                     )
                                 ),
-                                ($) => _p_cc(
+                                ($) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
                                         ($) => abort(
@@ -209,7 +207,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                         )
                                     ),
                                     ($) => ({
-                                        'containment': _p_cc(
+                                        'containment': _p_change_context(
                                             $.__get_entry(
                                                 'containment',
                                                 ($) => abort(
@@ -223,7 +221,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                                 )
                                             )
                                         ),
-                                        'children': _p_cc(
+                                        'children': _p_change_context(
                                             $.__get_entry(
                                                 'children',
                                                 ($) => abort(
@@ -249,7 +247,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                 )
                             )
                         ),
-                        'properties': _p_cc(
+                        'properties': _p_change_context(
                             $.__get_entry(
                                 'properties',
                                 ($) => abort(
@@ -263,7 +261,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                         ['expected a list', null]
                                     )
                                 ),
-                                ($) => _p_cc(
+                                ($) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
                                         ($) => abort(
@@ -271,7 +269,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                         )
                                     ),
                                     ($) => ({
-                                        'value': _p_cc(
+                                        'value': _p_change_context(
                                             $.__get_entry(
                                                 'value',
                                                 ($) => abort(
@@ -285,7 +283,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                                 )
                                             )
                                         ),
-                                        'property': _p_cc(
+                                        'property': _p_change_context(
                                             $.__get_entry(
                                                 'property',
                                                 ($) => abort(
@@ -303,7 +301,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                 )
                             )
                         ),
-                        'references': _p_cc(
+                        'references': _p_change_context(
                             $.__get_entry(
                                 'references',
                                 ($) => abort(
@@ -317,7 +315,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                         ['expected a list', null]
                                     )
                                 ),
-                                ($) => _p_cc(
+                                ($) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
                                         ($) => abort(
@@ -325,7 +323,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                         )
                                     ),
                                     ($) => ({
-                                        'targets': _p_cc(
+                                        'targets': _p_change_context(
                                             $.__get_entry(
                                                 'targets',
                                                 ($) => abort(
@@ -339,7 +337,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                                         ['expected a list', null]
                                                     )
                                                 ),
-                                                ($) => _p_cc(
+                                                ($) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -347,7 +345,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                                         )
                                                     ),
                                                     ($) => ({
-                                                        'reference': _p_cc(
+                                                        'reference': _p_change_context(
                                                             $.__get_entry(
                                                                 'reference',
                                                                 ($) => abort(
@@ -361,7 +359,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                                                 )
                                                             )
                                                         ),
-                                                        'resolveInfo': _p_cc(
+                                                        'resolveInfo': _p_change_context(
                                                             $.__get_entry(
                                                                 'resolveInfo',
                                                                 ($) => abort(
@@ -379,7 +377,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
                                                 )
                                             )
                                         ),
-                                        'reference': _p_cc(
+                                        'reference': _p_change_context(
                                             $.__get_entry(
                                                 'reference',
                                                 ($) => abort(
@@ -404,7 +402,7 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($, abort) =>
     })
 )
 
-export const MetaPointer: t_signatures.MetaPointer = ($, abort) => _p_cc(
+export const MetaPointer: t_signatures.MetaPointer = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Group(
         $,
         ($) => abort(
@@ -412,7 +410,7 @@ export const MetaPointer: t_signatures.MetaPointer = ($, abort) => _p_cc(
         )
     ),
     ($) => ({
-        'language': _p_cc(
+        'language': _p_change_context(
             $.__get_entry(
                 'language',
                 ($) => abort(
@@ -426,7 +424,7 @@ export const MetaPointer: t_signatures.MetaPointer = ($, abort) => _p_cc(
                 )
             )
         ),
-        'version': _p_cc(
+        'version': _p_change_context(
             $.__get_entry(
                 'version',
                 ($) => abort(
@@ -440,7 +438,7 @@ export const MetaPointer: t_signatures.MetaPointer = ($, abort) => _p_cc(
                 )
             )
         ),
-        'key': _p_cc(
+        'key': _p_change_context(
             $.__get_entry(
                 'key',
                 ($) => abort(

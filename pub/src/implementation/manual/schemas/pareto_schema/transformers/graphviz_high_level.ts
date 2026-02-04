@@ -1,4 +1,4 @@
-import * as _p from 'pareto-core/dist/transformer'
+import * as _p from 'pareto-core/dist/expression'
 
 import * as d_in from "pareto/dist/interface/generated/liana/schemas/schema/data"
 import * as d_out from "../../../../../interface/generated/liana/schemas/graphviz_high_level/data"

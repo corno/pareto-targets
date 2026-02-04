@@ -1,4 +1,4 @@
-import * as _p from 'pareto-core/dist/transformer'
+import * as _p from 'pareto-core/dist/expression'
 
 //interface
 
@@ -39,21 +39,21 @@ export const Type_Node_2_Document_nodes = (
                     'containments': _p.list.literal([
                         {
                             'containment': MetaPointer("entry"),
-                            'children': _p.list.literal([$p.path + ".D"]),
+                            'children': _p.list.literal([$p.path plus ".D"]),
                         },
                     ]),
                     'properties': _p.list.literal([]),
                     'references': _p.list.literal([])
                 },
                 {
-                    'id': $p.path + ".D",
+                    'id': $p.path plus ".D",
                     'parent': _p.optional.not_set(),
                     'annotations': _p.list.literal([]),
                     'classifier': MetaPointer("entry"),
                     'containments': _p.list.literal([
                         {
                             'containment': MetaPointer("entries"),
-                            'children': _p.list.literal([$p.path + ".D"]),
+                            'children': _p.list.literal([$p.path plus ".D"]),
                         },
                     ]),
                     'properties': _p.list.literal([]),
@@ -63,7 +63,7 @@ export const Type_Node_2_Document_nodes = (
             Type_Node_2_Document_nodes(
                 $.node,
                 {
-                    'path': $p.path + ".D",
+                    'path': $p.path plus ".D",
                 }
             ),
         ]))
@@ -77,7 +77,7 @@ export const Type_Node_2_Document_nodes = (
                     'containments': _p.list.literal([
                         {
                             'containment': MetaPointer("properties"),
-                            'children': $.__to_list(($, id) => $p.path + "." + key),
+                            'children': $.__to_list(($, id) => $p.path plus "." + key),
                         },
                     ]),
                     'properties': _p.list.literal([]),
@@ -88,7 +88,7 @@ export const Type_Node_2_Document_nodes = (
                 $.__to_list(($, id) => Type_Node_2_Document_nodes(
                     $.node,
                     {
-                        'path': $p.path + "." + key,
+                        'path': $p.path plus "." + key,
                     }
                 )),
                 ($) => $,
@@ -104,7 +104,7 @@ export const Type_Node_2_Document_nodes = (
                     'containments': _p.list.literal([
                         {
                             'containment': MetaPointer("elements"),
-                            'children': _p.list.literal([$p.path + ".L"]),
+                            'children': _p.list.literal([$p.path plus ".L"]),
                         },
                     ]),
                     'properties': _p.list.literal([]),
@@ -114,7 +114,7 @@ export const Type_Node_2_Document_nodes = (
             Type_Node_2_Document_nodes(
                 $.node,
                 {
-                    'path': $p.path + ".L",
+                    'path': $p.path plus ".L",
                 }
             ),
         ]))
@@ -128,7 +128,7 @@ export const Type_Node_2_Document_nodes = (
                     'containments': _p.list.literal([
                         {
                             'containment': MetaPointer("optional"),
-                            'children': _p.list.literal([$p.path + ".O"]),
+                            'children': _p.list.literal([$p.path plus ".O"]),
                         },
                     ]),
                     'properties': _p.list.literal([]),
@@ -138,7 +138,7 @@ export const Type_Node_2_Document_nodes = (
             Type_Node_2_Document_nodes(
                 $,
                 {
-                    'path': $p.path + ".O",
+                    'path': $p.path plus ".O",
                 }
             ),
         ]))
@@ -152,7 +152,7 @@ export const Type_Node_2_Document_nodes = (
                     'containments': _p.list.literal([
                         {
                             'containment': MetaPointer("states"),
-                            'children': _p.list.from_dictionary($, ($, id) => $p.path + "." + key),
+                            'children': _p.list.from_dictionary($, ($, id) => $p.path plus "." + key),
                         },
                     ]),
                     'properties': _p.list.literal([]),
@@ -167,7 +167,7 @@ export const Type_Node_2_Document_nodes = (
                 'containments': _p.list.literal([
                     {
                         'containment': MetaPointer("states"),
-                        'children': _p.list.literal([$p.path + "." + key]),
+                        'children': _p.list.literal([$p.path plus "." + key]),
                     },
                 ]),
                 'properties': _p.list.literal([
@@ -182,7 +182,7 @@ export const Type_Node_2_Document_nodes = (
                 _p.list.from_dictionary($, ($, id) => Type_Node_2_Document_nodes(
                     $.node,
                     {
-                        'path': $p.path + "." + key,
+                        'path': $p.path plus "." + key,
                     }
                 )),
                 ($) => $

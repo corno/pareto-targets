@@ -1,20 +1,18 @@
 
-import * as _p from "pareto-core/dist/transformer"
+import * as _p from "pareto-core/dist/expression"
 
-import {
-    _p_cc,
-} from "pareto-core/dist/change_context"
+import _p_change_context from "pareto-core/dist/_p_change_context"
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/graphviz_low_level/migrate_boilerplate"
 
 import * as t_out from "../../../../../interface/generated/liana/schemas/graphviz_low_level/data"
 
 export const Graph: t_signatures.Graph = ($) => ({
-    'strict': _p_cc(
+    'strict': _p_change_context(
         $['strict'],
         ($) => $
     ),
-    'type': _p_cc(
+    'type': _p_change_context(
         $['type'],
         ($) => _p.decide.state(
             $,
@@ -38,7 +36,7 @@ export const Graph: t_signatures.Graph = ($) => ({
             }
         )
     ),
-    'name': _p_cc(
+    'name': _p_change_context(
         $['name'],
         ($) => _p.optional.map(
             $,
@@ -47,7 +45,7 @@ export const Graph: t_signatures.Graph = ($) => ({
             )
         )
     ),
-    'statements': _p_cc(
+    'statements': _p_change_context(
         $['statements'],
         ($) => Statement_List(
             $
@@ -65,13 +63,13 @@ export const Statement_List: t_signatures.Statement_List = ($) => _p.list.map(
                     return _p.ss(
                         $,
                         ($) => ['node', {
-                            'node': _p_cc(
+                            'node': _p_change_context(
                                 $['node'],
                                 ($) => Node_ID(
                                     $
                                 )
                             ),
-                            'attribute list': _p_cc(
+                            'attribute list': _p_change_context(
                                 $['attribute list'],
                                 ($) => Attribute_List(
                                     $
@@ -83,7 +81,7 @@ export const Statement_List: t_signatures.Statement_List = ($) => _p.list.map(
                     return _p.ss(
                         $,
                         ($) => ['edge', {
-                            'left': _p_cc(
+                            'left': _p_change_context(
                                 $['left'],
                                 ($) => _p.decide.state(
                                     $,
@@ -111,7 +109,7 @@ export const Statement_List: t_signatures.Statement_List = ($) => _p.list.map(
                                     }
                                 )
                             ),
-                            'right': _p_cc(
+                            'right': _p_change_context(
                                 $['right'],
                                 ($) => _p.list.map(
                                     $,
@@ -142,7 +140,7 @@ export const Statement_List: t_signatures.Statement_List = ($) => _p.list.map(
                                     )
                                 )
                             ),
-                            'attributes': _p_cc(
+                            'attributes': _p_change_context(
                                 $['attributes'],
                                 ($) => Attribute_List(
                                     $
@@ -154,7 +152,7 @@ export const Statement_List: t_signatures.Statement_List = ($) => _p.list.map(
                     return _p.ss(
                         $,
                         ($) => ['attribute list', {
-                            'type': _p_cc(
+                            'type': _p_change_context(
                                 $['type'],
                                 ($) => _p.decide.state(
                                     $,
@@ -183,7 +181,7 @@ export const Statement_List: t_signatures.Statement_List = ($) => _p.list.map(
                                     }
                                 )
                             ),
-                            'attributes': _p_cc(
+                            'attributes': _p_change_context(
                                 $['attributes'],
                                 ($) => Attribute_List(
                                     $
@@ -195,13 +193,13 @@ export const Statement_List: t_signatures.Statement_List = ($) => _p.list.map(
                     return _p.ss(
                         $,
                         ($) => ['attribute assignment', {
-                            'name': _p_cc(
+                            'name': _p_change_context(
                                 $['name'],
                                 ($) => ID(
                                     $
                                 )
                             ),
-                            'value': _p_cc(
+                            'value': _p_change_context(
                                 $['value'],
                                 ($) => ID(
                                     $
@@ -228,13 +226,13 @@ export const Statement_List: t_signatures.Statement_List = ($) => _p.list.map(
 export const Attribute_List: t_signatures.Attribute_List = ($) => _p.list.map(
     $,
     ($) => ({
-        'name': _p_cc(
+        'name': _p_change_context(
             $['name'],
             ($) => ID(
                 $
             )
         ),
-        'value': _p_cc(
+        'value': _p_change_context(
             $['value'],
             ($) => ID(
                 $
@@ -244,24 +242,24 @@ export const Attribute_List: t_signatures.Attribute_List = ($) => _p.list.map(
 )
 
 export const Node_ID: t_signatures.Node_ID = ($) => ({
-    'id': _p_cc(
+    'id': _p_change_context(
         $['id'],
         ($) => ID(
             $
         )
     ),
-    'port': _p_cc(
+    'port': _p_change_context(
         $['port'],
         ($) => _p.optional.map(
             $,
             ($) => ({
-                'port': _p_cc(
+                'port': _p_change_context(
                     $['port'],
                     ($) => ID(
                         $
                     )
                 ),
-                'compass point': _p_cc(
+                'compass point': _p_change_context(
                     $['compass point'],
                     ($) => _p.optional.map(
                         $,
@@ -308,7 +306,7 @@ export const ID: t_signatures.ID = ($) => _p.decide.state(
 )
 
 export const Subgraph: t_signatures.Subgraph = ($) => ({
-    'subgraph': _p_cc(
+    'subgraph': _p_change_context(
         $['subgraph'],
         ($) => _p.optional.map(
             $,
@@ -320,7 +318,7 @@ export const Subgraph: t_signatures.Subgraph = ($) => ({
             )
         )
     ),
-    'statements': _p_cc(
+    'statements': _p_change_context(
         $['statements'],
         ($) => Statement_List(
             $

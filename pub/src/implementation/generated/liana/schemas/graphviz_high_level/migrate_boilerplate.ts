@@ -1,29 +1,27 @@
 
-import * as _p from "pareto-core/dist/transformer"
+import * as _p from "pareto-core/dist/expression"
 
-import {
-    _p_cc,
-} from "pareto-core/dist/change_context"
+import _p_change_context from "pareto-core/dist/_p_change_context"
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/graphviz_high_level/migrate_boilerplate"
 
 import * as t_out from "../../../../../interface/generated/liana/schemas/graphviz_high_level/data"
 
 export const Graph: t_signatures.Graph = ($) => ({
-    'name': _p_cc(
+    'name': _p_change_context(
         $['name'],
         ($) => _p.optional.map(
             $,
             ($) => $
         )
     ),
-    'tree': _p_cc(
+    'tree': _p_change_context(
         $['tree'],
         ($) => Tree(
             $
         )
     ),
-    'type': _p_cc(
+    'type': _p_change_context(
         $['type'],
         ($) => _p.decide.state(
             $,
@@ -33,24 +31,24 @@ export const Graph: t_signatures.Graph = ($) => ({
                         return _p.ss(
                             $,
                             ($) => ['undirected', {
-                                'edges': _p_cc(
+                                'edges': _p_change_context(
                                     $['edges'],
                                     ($) => _p.list.map(
                                         $,
                                         ($) => ({
-                                            'yin': _p_cc(
+                                            'yin': _p_change_context(
                                                 $['yin'],
                                                 ($) => End_Point_Specification(
                                                     $
                                                 )
                                             ),
-                                            'yang': _p_cc(
+                                            'yang': _p_change_context(
                                                 $['yang'],
                                                 ($) => End_Point_Specification(
                                                     $
                                                 )
                                             ),
-                                            'attributes': _p_cc(
+                                            'attributes': _p_change_context(
                                                 $['attributes'],
                                                 ($) => Edge_Attributes(
                                                     $
@@ -65,24 +63,24 @@ export const Graph: t_signatures.Graph = ($) => ({
                         return _p.ss(
                             $,
                             ($) => ['directed', {
-                                'edges': _p_cc(
+                                'edges': _p_change_context(
                                     $['edges'],
                                     ($) => _p.list.map(
                                         $,
                                         ($) => ({
-                                            'from': _p_cc(
+                                            'from': _p_change_context(
                                                 $['from'],
                                                 ($) => End_Point_Specification(
                                                     $
                                                 )
                                             ),
-                                            'to': _p_cc(
+                                            'to': _p_change_context(
                                                 $['to'],
                                                 ($) => End_Point_Specification(
                                                     $
                                                 )
                                             ),
-                                            'attributes': _p_cc(
+                                            'attributes': _p_change_context(
                                                 $['attributes'],
                                                 ($) => Edge_Attributes(
                                                     $
@@ -104,13 +102,13 @@ export const Graph: t_signatures.Graph = ($) => ({
 })
 
 export const Tree: t_signatures.Tree = ($) => ({
-    'attributes': _p_cc(
+    'attributes': _p_change_context(
         $['attributes'],
         ($) => Graph_Attributes(
             $
         )
     ),
-    'elements': _p_cc(
+    'elements': _p_change_context(
         $['elements'],
         ($) => _p.dictionary.map(
             $,
@@ -122,7 +120,7 @@ export const Tree: t_signatures.Tree = ($) => ({
                             return _p.ss(
                                 $,
                                 ($) => ['node', {
-                                    'attributes': _p_cc(
+                                    'attributes': _p_change_context(
                                         $['attributes'],
                                         ($) => Node_Attributes(
                                             $
@@ -134,7 +132,7 @@ export const Tree: t_signatures.Tree = ($) => ({
                             return _p.ss(
                                 $,
                                 ($) => ['sub', {
-                                    'type': _p_cc(
+                                    'type': _p_change_context(
                                         $['type'],
                                         ($) => _p.decide.state(
                                             $,
@@ -163,7 +161,7 @@ export const Tree: t_signatures.Tree = ($) => ({
                                             }
                                         )
                                     ),
-                                    'tree': _p_cc(
+                                    'tree': _p_change_context(
                                         $['tree'],
                                         ($) => Tree(
                                             $
@@ -183,27 +181,27 @@ export const Tree: t_signatures.Tree = ($) => ({
 })
 
 export const End_Point_Specification: t_signatures.End_Point_Specification = ($) => ({
-    'start': _p_cc(
+    'start': _p_change_context(
         $['start'],
         ($) => $
     ),
-    'tail': _p_cc(
+    'tail': _p_change_context(
         $['tail'],
         ($) => _p.list.map(
             $,
             ($) => $
         )
     ),
-    'port data': _p_cc(
+    'port data': _p_change_context(
         $['port data'],
         ($) => _p.optional.map(
             $,
             ($) => ({
-                'port': _p_cc(
+                'port': _p_change_context(
                     $['port'],
                     ($) => $
                 ),
-                'compass direction': _p_cc(
+                'compass direction': _p_change_context(
                     $['compass direction'],
                     ($) => _p.optional.map(
                         $,

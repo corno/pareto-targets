@@ -1,4 +1,4 @@
-import * as _p from 'pareto-core/dist/transformer'
+import * as _p from 'pareto-core/dist/expression'
 import { location_to_string } from 'pareto-core/dist/misc/location_to_string'
 
 

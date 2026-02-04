@@ -1,9 +1,7 @@
 
 import * as _p from "pareto-core/dist/refiner"
 
-import {
-    _p_cc,
-} from "pareto-core/dist/change_context"
+import _p_change_context from "pareto-core/dist/_p_change_context"
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/graphviz_high_level/unmarshall"
 
@@ -17,7 +15,7 @@ import * as v_unmarshalled_from_parse_tree from "astn-core/dist/implementation/m
 
 import * as v_parse_tree_to_location from "astn-core/dist/implementation/manual/schemas/parse_tree/transformers/location"
 
-export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
+export const Graph: t_signatures.Graph = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Group(
         $,
         ($) => abort(
@@ -25,7 +23,7 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
         )
     ),
     ($) => ({
-        'name': _p_cc(
+        'name': _p_change_context(
             $.__get_entry(
                 'name',
                 ($) => abort(
@@ -47,7 +45,7 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                 )
             )
         ),
-        'tree': _p_cc(
+        'tree': _p_change_context(
             $.__get_entry(
                 'tree',
                 ($) => abort(
@@ -61,14 +59,14 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                 )
             )
         ),
-        'type': _p_cc(
+        'type': _p_change_context(
             $.__get_entry(
                 'type',
                 ($) => abort(
                     ['no such entry', "type"]
                 )
             ),
-            ($) => _p_cc(
+            ($) => _p_change_context(
                 v_unmarshalled_from_parse_tree.State(
                     $,
                     ($) => abort(
@@ -80,9 +78,9 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                     ($t): t_out.Graph.type_ => {
                         switch ($t) {
                             case 'undirected':
-                                return _p_cc(
+                                return _p_change_context(
                                     $['value'],
-                                    ($) => ['undirected', _p_cc(
+                                    ($) => ['undirected', _p_change_context(
                                         v_unmarshalled_from_parse_tree.Group(
                                             $,
                                             ($) => abort(
@@ -90,7 +88,7 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                                             )
                                         ),
                                         ($) => ({
-                                            'edges': _p_cc(
+                                            'edges': _p_change_context(
                                                 $.__get_entry(
                                                     'edges',
                                                     ($) => abort(
@@ -104,7 +102,7 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                                                             ['expected a list', null]
                                                         )
                                                     ),
-                                                    ($) => _p_cc(
+                                                    ($) => _p_change_context(
                                                         v_unmarshalled_from_parse_tree.Group(
                                                             $,
                                                             ($) => abort(
@@ -112,7 +110,7 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                                                             )
                                                         ),
                                                         ($) => ({
-                                                            'yin': _p_cc(
+                                                            'yin': _p_change_context(
                                                                 $.__get_entry(
                                                                     'yin',
                                                                     ($) => abort(
@@ -126,7 +124,7 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                                                                     )
                                                                 )
                                                             ),
-                                                            'yang': _p_cc(
+                                                            'yang': _p_change_context(
                                                                 $.__get_entry(
                                                                     'yang',
                                                                     ($) => abort(
@@ -140,7 +138,7 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                                                                     )
                                                                 )
                                                             ),
-                                                            'attributes': _p_cc(
+                                                            'attributes': _p_change_context(
                                                                 $.__get_entry(
                                                                     'attributes',
                                                                     ($) => abort(
@@ -162,9 +160,9 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                                     )]
                                 )
                             case 'directed':
-                                return _p_cc(
+                                return _p_change_context(
                                     $['value'],
-                                    ($) => ['directed', _p_cc(
+                                    ($) => ['directed', _p_change_context(
                                         v_unmarshalled_from_parse_tree.Group(
                                             $,
                                             ($) => abort(
@@ -172,7 +170,7 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                                             )
                                         ),
                                         ($) => ({
-                                            'edges': _p_cc(
+                                            'edges': _p_change_context(
                                                 $.__get_entry(
                                                     'edges',
                                                     ($) => abort(
@@ -186,7 +184,7 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                                                             ['expected a list', null]
                                                         )
                                                     ),
-                                                    ($) => _p_cc(
+                                                    ($) => _p_change_context(
                                                         v_unmarshalled_from_parse_tree.Group(
                                                             $,
                                                             ($) => abort(
@@ -194,7 +192,7 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                                                             )
                                                         ),
                                                         ($) => ({
-                                                            'from': _p_cc(
+                                                            'from': _p_change_context(
                                                                 $.__get_entry(
                                                                     'from',
                                                                     ($) => abort(
@@ -208,7 +206,7 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                                                                     )
                                                                 )
                                                             ),
-                                                            'to': _p_cc(
+                                                            'to': _p_change_context(
                                                                 $.__get_entry(
                                                                     'to',
                                                                     ($) => abort(
@@ -222,7 +220,7 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
                                                                     )
                                                                 )
                                                             ),
-                                                            'attributes': _p_cc(
+                                                            'attributes': _p_change_context(
                                                                 $.__get_entry(
                                                                     'attributes',
                                                                     ($) => abort(
@@ -255,7 +253,7 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_cc(
     })
 )
 
-export const Tree: t_signatures.Tree = ($, abort) => _p_cc(
+export const Tree: t_signatures.Tree = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Group(
         $,
         ($) => abort(
@@ -263,7 +261,7 @@ export const Tree: t_signatures.Tree = ($, abort) => _p_cc(
         )
     ),
     ($) => ({
-        'attributes': _p_cc(
+        'attributes': _p_change_context(
             $.__get_entry(
                 'attributes',
                 ($) => abort(
@@ -277,7 +275,7 @@ export const Tree: t_signatures.Tree = ($, abort) => _p_cc(
                 )
             )
         ),
-        'elements': _p_cc(
+        'elements': _p_change_context(
             $.__get_entry(
                 'elements',
                 ($) => abort(
@@ -291,7 +289,7 @@ export const Tree: t_signatures.Tree = ($, abort) => _p_cc(
                         ['expected a dictionary', null]
                     )
                 ),
-                ($, id) => _p_cc(
+                ($, id) => _p_change_context(
                     v_unmarshalled_from_parse_tree.State(
                         $,
                         ($) => abort(
@@ -303,9 +301,9 @@ export const Tree: t_signatures.Tree = ($, abort) => _p_cc(
                         ($t): t_out.Tree.elements.D => {
                             switch ($t) {
                                 case 'node':
-                                    return _p_cc(
+                                    return _p_change_context(
                                         $['value'],
-                                        ($) => ['node', _p_cc(
+                                        ($) => ['node', _p_change_context(
                                             v_unmarshalled_from_parse_tree.Group(
                                                 $,
                                                 ($) => abort(
@@ -313,7 +311,7 @@ export const Tree: t_signatures.Tree = ($, abort) => _p_cc(
                                                 )
                                             ),
                                             ($) => ({
-                                                'attributes': _p_cc(
+                                                'attributes': _p_change_context(
                                                     $.__get_entry(
                                                         'attributes',
                                                         ($) => abort(
@@ -331,9 +329,9 @@ export const Tree: t_signatures.Tree = ($, abort) => _p_cc(
                                         )]
                                     )
                                 case 'sub':
-                                    return _p_cc(
+                                    return _p_change_context(
                                         $['value'],
-                                        ($) => ['sub', _p_cc(
+                                        ($) => ['sub', _p_change_context(
                                             v_unmarshalled_from_parse_tree.Group(
                                                 $,
                                                 ($) => abort(
@@ -341,14 +339,14 @@ export const Tree: t_signatures.Tree = ($, abort) => _p_cc(
                                                 )
                                             ),
                                             ($) => ({
-                                                'type': _p_cc(
+                                                'type': _p_change_context(
                                                     $.__get_entry(
                                                         'type',
                                                         ($) => abort(
                                                             ['no such entry', "type"]
                                                         )
                                                     ),
-                                                    ($) => _p_cc(
+                                                    ($) => _p_change_context(
                                                         v_unmarshalled_from_parse_tree.State(
                                                             $,
                                                             ($) => abort(
@@ -360,7 +358,7 @@ export const Tree: t_signatures.Tree = ($, abort) => _p_cc(
                                                             ($t): t_out.Tree.elements.D.sub.type_ => {
                                                                 switch ($t) {
                                                                     case 'group':
-                                                                        return _p_cc(
+                                                                        return _p_change_context(
                                                                             $['value'],
                                                                             ($) => ['group', v_unmarshalled_from_parse_tree.Nothing(
                                                                                 $,
@@ -370,7 +368,7 @@ export const Tree: t_signatures.Tree = ($, abort) => _p_cc(
                                                                             )]
                                                                         )
                                                                     case 'cluster':
-                                                                        return _p_cc(
+                                                                        return _p_change_context(
                                                                             $['value'],
                                                                             ($) => ['cluster', v_unmarshalled_from_parse_tree.Nothing(
                                                                                 $,
@@ -380,7 +378,7 @@ export const Tree: t_signatures.Tree = ($, abort) => _p_cc(
                                                                             )]
                                                                         )
                                                                     case 'subgraph':
-                                                                        return _p_cc(
+                                                                        return _p_change_context(
                                                                             $['value'],
                                                                             ($) => ['subgraph', v_unmarshalled_from_parse_tree.Nothing(
                                                                                 $,
@@ -398,7 +396,7 @@ export const Tree: t_signatures.Tree = ($, abort) => _p_cc(
                                                         )
                                                     )
                                                 ),
-                                                'tree': _p_cc(
+                                                'tree': _p_change_context(
                                                     $.__get_entry(
                                                         'tree',
                                                         ($) => abort(
@@ -428,7 +426,7 @@ export const Tree: t_signatures.Tree = ($, abort) => _p_cc(
     })
 )
 
-export const End_Point_Specification: t_signatures.End_Point_Specification = ($, abort) => _p_cc(
+export const End_Point_Specification: t_signatures.End_Point_Specification = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Group(
         $,
         ($) => abort(
@@ -436,7 +434,7 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($,
         )
     ),
     ($) => ({
-        'start': _p_cc(
+        'start': _p_change_context(
             $.__get_entry(
                 'start',
                 ($) => abort(
@@ -450,7 +448,7 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($,
                 )
             )
         ),
-        'tail': _p_cc(
+        'tail': _p_change_context(
             $.__get_entry(
                 'tail',
                 ($) => abort(
@@ -472,7 +470,7 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($,
                 )
             )
         ),
-        'port data': _p_cc(
+        'port data': _p_change_context(
             $.__get_entry(
                 'port data',
                 ($) => abort(
@@ -486,7 +484,7 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($,
                         ['expected an optional', null]
                     )
                 ),
-                ($) => _p_cc(
+                ($) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
                         ($) => abort(
@@ -494,7 +492,7 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($,
                         )
                     ),
                     ($) => ({
-                        'port': _p_cc(
+                        'port': _p_change_context(
                             $.__get_entry(
                                 'port',
                                 ($) => abort(
@@ -508,7 +506,7 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($,
                                 )
                             )
                         ),
-                        'compass direction': _p_cc(
+                        'compass direction': _p_change_context(
                             $.__get_entry(
                                 'compass direction',
                                 ($) => abort(
@@ -544,7 +542,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
             ['expected a list', null]
         )
     ),
-    ($) => _p_cc(
+    ($) => _p_change_context(
         v_unmarshalled_from_parse_tree.State(
             $,
             ($) => abort(
@@ -556,7 +554,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
             ($t): t_out.Graph_Attributes.L => {
                 switch ($t) {
                     case 'concentrate':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['concentrate', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -571,7 +569,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'charset':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['charset', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -581,9 +579,9 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'clusterrank':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
-                            ($) => ['clusterrank', _p_cc(
+                            ($) => ['clusterrank', _p_change_context(
                                 v_unmarshalled_from_parse_tree.State(
                                     $,
                                     ($) => abort(
@@ -595,7 +593,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                     ($t): t_out.Graph_Attributes.L.clusterrank => {
                                         switch ($t) {
                                             case 'none':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['none', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -605,7 +603,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                                     )]
                                                 )
                                             case 'local':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['local', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -615,7 +613,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                                     )]
                                                 )
                                             case 'global':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['global', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -634,7 +632,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'color':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['color', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -644,7 +642,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'color scheme':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['color scheme', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -654,7 +652,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'comment':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['comment', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -664,7 +662,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'compound':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['compound', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -679,7 +677,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'dpi':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['dpi', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -694,7 +692,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'font color':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['font color', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -704,7 +702,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'font name':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['font name', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -714,7 +712,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'font path':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['font path', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -724,7 +722,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'font size':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['font size', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -739,7 +737,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'label':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['label', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -749,7 +747,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'label distance':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['label distance', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -764,7 +762,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'label scheme':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['label scheme', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -779,9 +777,9 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'label location':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
-                            ($) => ['label location', _p_cc(
+                            ($) => ['label location', _p_change_context(
                                 v_unmarshalled_from_parse_tree.State(
                                     $,
                                     ($) => abort(
@@ -793,7 +791,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                     ($t): t_out.Graph_Attributes.L.label_location => {
                                         switch ($t) {
                                             case 'top':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['top', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -803,7 +801,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                                     )]
                                                 )
                                             case 'bottom':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['bottom', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -822,7 +820,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'landscape':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['landscape', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -837,7 +835,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'layer list':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['layer list', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -847,7 +845,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'layer separator':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['layer separator', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -857,7 +855,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'layers':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['layers', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -867,7 +865,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'margin':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['margin', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -877,7 +875,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'max iteration':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['max iteration', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -892,7 +890,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'mclimit':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['mclimit', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -907,7 +905,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'mindist':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['mindist', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -922,9 +920,9 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'mode':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
-                            ($) => ['mode', _p_cc(
+                            ($) => ['mode', _p_change_context(
                                 v_unmarshalled_from_parse_tree.State(
                                     $,
                                     ($) => abort(
@@ -936,7 +934,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                     ($t): t_out.Graph_Attributes.L.mode => {
                                         switch ($t) {
                                             case 'no output':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['no output', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -946,7 +944,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                                     )]
                                                 )
                                             case 'out':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['out', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -956,7 +954,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                                     )]
                                                 )
                                             case 'in':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['in', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -966,7 +964,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                                     )]
                                                 )
                                             case 'in out':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['in out', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -985,7 +983,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'newrank':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['newrank', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1000,7 +998,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'no loop':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['no loop', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1015,7 +1013,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'normalize':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['normalize', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1030,9 +1028,9 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'ordering':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
-                            ($) => ['ordering', _p_cc(
+                            ($) => ['ordering', _p_change_context(
                                 v_unmarshalled_from_parse_tree.State(
                                     $,
                                     ($) => abort(
@@ -1044,7 +1042,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                     ($t): t_out.Graph_Attributes.L.ordering => {
                                         switch ($t) {
                                             case 'out':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['out', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1054,7 +1052,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                                     )]
                                                 )
                                             case 'in':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['in', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1064,7 +1062,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                                     )]
                                                 )
                                             case 'in out':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['in out', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1083,7 +1081,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'orientation':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['orientation', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1098,9 +1096,9 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'output order':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
-                            ($) => ['output order', _p_cc(
+                            ($) => ['output order', _p_change_context(
                                 v_unmarshalled_from_parse_tree.State(
                                     $,
                                     ($) => abort(
@@ -1112,7 +1110,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                     ($t): t_out.Graph_Attributes.L.output_order => {
                                         switch ($t) {
                                             case 'breadth first':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['breadth first', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1122,7 +1120,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                                     )]
                                                 )
                                             case 'dfs':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['dfs', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1141,7 +1139,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'overlap':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['overlap', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1151,9 +1149,9 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'output mode':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
-                            ($) => ['output mode', _p_cc(
+                            ($) => ['output mode', _p_change_context(
                                 v_unmarshalled_from_parse_tree.State(
                                     $,
                                     ($) => abort(
@@ -1165,7 +1163,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                     ($t): t_out.Graph_Attributes.L.output_mode => {
                                         switch ($t) {
                                             case 'edges first':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['edges first', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1175,7 +1173,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                                     )]
                                                 )
                                             case 'nodes first':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['nodes first', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1194,7 +1192,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'pack':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['pack', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1209,9 +1207,9 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'pack mode':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
-                            ($) => ['pack mode', _p_cc(
+                            ($) => ['pack mode', _p_change_context(
                                 v_unmarshalled_from_parse_tree.State(
                                     $,
                                     ($) => abort(
@@ -1223,7 +1221,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                     ($t): t_out.Graph_Attributes.L.pack_mode => {
                                         switch ($t) {
                                             case 'node':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['node', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1233,7 +1231,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                                     )]
                                                 )
                                             case 'graph':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['graph', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1252,7 +1250,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'pad':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['pad', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1267,7 +1265,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'page':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['page', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1277,7 +1275,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'quadtree':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['quadtree', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1292,7 +1290,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'quantum':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['quantum', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1307,9 +1305,9 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'rankdir':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
-                            ($) => ['rankdir', _p_cc(
+                            ($) => ['rankdir', _p_change_context(
                                 v_unmarshalled_from_parse_tree.State(
                                     $,
                                     ($) => abort(
@@ -1321,7 +1319,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                     ($t): t_out.Graph_Attributes.L.rankdir => {
                                         switch ($t) {
                                             case 'top bottom':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['top bottom', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1331,7 +1329,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                                     )]
                                                 )
                                             case 'bottom top':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['bottom top', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1341,7 +1339,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                                     )]
                                                 )
                                             case 'left right':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['left right', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1351,7 +1349,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                                     )]
                                                 )
                                             case 'right left':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['right left', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1370,7 +1368,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'ranksep':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['ranksep', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1380,7 +1378,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'ratio':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['ratio', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1390,7 +1388,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'remincross':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['remincross', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1405,7 +1403,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'rotate':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['rotate', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1420,7 +1418,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'scale':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['scale', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1430,7 +1428,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'searchsize':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['searchsize', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1445,7 +1443,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'sep':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['sep', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1455,7 +1453,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'showboxes':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['showboxes', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1470,7 +1468,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'size':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['size', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1480,9 +1478,9 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'smoothing':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
-                            ($) => ['smoothing', _p_cc(
+                            ($) => ['smoothing', _p_change_context(
                                 v_unmarshalled_from_parse_tree.State(
                                     $,
                                     ($) => abort(
@@ -1494,7 +1492,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                     ($t): t_out.Graph_Attributes.L.smoothing => {
                                         switch ($t) {
                                             case 'none':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['none', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1504,7 +1502,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                                     )]
                                                 )
                                             case 'spring':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['spring', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1514,7 +1512,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                                                     )]
                                                 )
                                             case 'triangle':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['triangle', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1533,7 +1531,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'sortv':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['sortv', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1548,7 +1546,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'splines':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['splines', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1558,7 +1556,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'start':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['start', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1573,7 +1571,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'style':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['style', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1583,7 +1581,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'stylesheet':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['stylesheet', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1593,7 +1591,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'target':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['target', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1603,7 +1601,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'tooltip':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['tooltip', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1613,7 +1611,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'truecolor':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['truecolor', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1628,7 +1626,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'viewport':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['viewport', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1638,7 +1636,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'width':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['width', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1653,7 +1651,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'xdotversion':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['xdotversion', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1668,7 +1666,7 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
                             )]
                         )
                     case 'xlabel':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['xlabel', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1694,7 +1692,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
             ['expected a list', null]
         )
     ),
-    ($) => _p_cc(
+    ($) => _p_change_context(
         v_unmarshalled_from_parse_tree.State(
             $,
             ($) => abort(
@@ -1706,7 +1704,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
             ($t): t_out.Node_Attributes.L => {
                 switch ($t) {
                     case 'color':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['color', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1716,7 +1714,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'colorscheme':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['colorscheme', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1726,7 +1724,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'comment':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['comment', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1736,7 +1734,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'concentrate':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['concentrate', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1751,7 +1749,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'fill color':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['fill color', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1761,7 +1759,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'fixed size':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['fixed size', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1776,7 +1774,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'font color':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['font color', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1786,7 +1784,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'font name':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['font name', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1796,7 +1794,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'font size':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['font size', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1811,7 +1809,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'group':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['group', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1821,7 +1819,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'height':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['height', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1836,7 +1834,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'image':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['image', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1846,7 +1844,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'label':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['label', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1856,9 +1854,9 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'labelloc':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
-                            ($) => ['labelloc', _p_cc(
+                            ($) => ['labelloc', _p_change_context(
                                 v_unmarshalled_from_parse_tree.State(
                                     $,
                                     ($) => abort(
@@ -1870,7 +1868,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                                     ($t): t_out.Node_Attributes.L.labelloc => {
                                         switch ($t) {
                                             case 'top':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['top', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1880,7 +1878,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                                                     )]
                                                 )
                                             case 'center':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['center', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1890,7 +1888,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                                                     )]
                                                 )
                                             case 'bottom':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['bottom', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -1909,7 +1907,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'layers':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['layers', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1919,7 +1917,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'margin':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['margin', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1929,7 +1927,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'nojustify':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['nojustify', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1944,7 +1942,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'orientation':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['orientation', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1959,7 +1957,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'pen width':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['pen width', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1974,7 +1972,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'peripheries':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['peripheries', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -1989,7 +1987,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'pos':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['pos', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -1999,7 +1997,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'rects':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['rects', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2009,7 +2007,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'regular':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['regular', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2024,7 +2022,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'root':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['root', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2039,7 +2037,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'shape':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['shape', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2049,7 +2047,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'showboxes':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['showboxes', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2064,7 +2062,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'sides':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['sides', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2079,7 +2077,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'skew':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['skew', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2094,7 +2092,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'style':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['style', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2104,7 +2102,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'target':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['target', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2114,7 +2112,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'tooltip':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['tooltip', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2124,7 +2122,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'width':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['width', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2139,7 +2137,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'xlabel':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['xlabel', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2149,7 +2147,7 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'xlp':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['xlp', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2175,7 +2173,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
             ['expected a list', null]
         )
     ),
-    ($) => _p_cc(
+    ($) => _p_change_context(
         v_unmarshalled_from_parse_tree.State(
             $,
             ($) => abort(
@@ -2187,7 +2185,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
             ($t): t_out.Edge_Attributes.L => {
                 switch ($t) {
                     case 'arrowhead':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['arrowhead', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2197,7 +2195,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'arrowsize':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['arrowsize', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2212,7 +2210,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'arrowtail':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['arrowtail', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2222,7 +2220,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'bgcolor':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['bgcolor', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2232,7 +2230,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'color':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['color', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2242,7 +2240,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'colorscheme':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['colorscheme', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2252,7 +2250,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'comment':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['comment', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2262,7 +2260,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'constraint':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['constraint', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2277,7 +2275,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'decorate':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['decorate', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2292,9 +2290,9 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'dir':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
-                            ($) => ['dir', _p_cc(
+                            ($) => ['dir', _p_change_context(
                                 v_unmarshalled_from_parse_tree.State(
                                     $,
                                     ($) => abort(
@@ -2306,7 +2304,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                                     ($t): t_out.Edge_Attributes.L.dir => {
                                         switch ($t) {
                                             case 'forward':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['forward', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -2316,7 +2314,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                                                     )]
                                                 )
                                             case 'back':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['back', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -2326,7 +2324,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                                                     )]
                                                 )
                                             case 'both':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['both', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -2336,7 +2334,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                                                     )]
                                                 )
                                             case 'none':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
                                                     ($) => ['none', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
@@ -2355,7 +2353,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'edge url':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['edge url', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2365,7 +2363,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'edge lp':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['edge lp', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2375,7 +2373,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'edge target':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['edge target', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2385,7 +2383,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'edge tooltip':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['edge tooltip', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2395,7 +2393,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'head lp':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['head lp', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2405,7 +2403,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'headclip':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['headclip', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2420,7 +2418,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'headlabel':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['headlabel', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2430,7 +2428,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'headport':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['headport', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2440,7 +2438,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'height':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['height', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2455,7 +2453,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'id':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['id', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2465,7 +2463,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'label':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['label', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2475,7 +2473,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'label distance':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['label distance', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2490,7 +2488,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'label angle':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['label angle', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2505,7 +2503,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'label float':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['label float', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2520,7 +2518,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'labelfloat':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['labelfloat', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2535,7 +2533,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'labelhref':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['labelhref', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2545,7 +2543,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'label lp':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['label lp', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2555,7 +2553,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'layer':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['layer', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2565,7 +2563,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'len':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['len', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2580,7 +2578,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'lhead':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['lhead', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2590,7 +2588,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'lp':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['lp', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2600,7 +2598,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'ltail':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['ltail', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2610,7 +2608,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'minlen':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['minlen', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2625,7 +2623,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'pen width':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['pen width', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2640,7 +2638,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'pos':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['pos', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2650,7 +2648,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'same head':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['same head', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2665,7 +2663,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'same tail':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['same tail', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2680,7 +2678,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'showboxes':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['showboxes', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2695,7 +2693,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'style':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['style', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2705,7 +2703,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'tail lp':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['tail lp', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2715,7 +2713,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'tailclip':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['tailclip', v_deserialize_boolean.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2730,7 +2728,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'taillabel':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['taillabel', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2740,7 +2738,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'tailport':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['tailport', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2750,7 +2748,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'tooltip':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['tooltip', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2760,7 +2758,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'weight':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['weight', v_deserialize_number.deserialize(
                                 v_unmarshalled_from_parse_tree.Text(
@@ -2775,7 +2773,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'xlabel':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['xlabel', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2785,7 +2783,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
                             )]
                         )
                     case 'xlp':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['xlp', v_unmarshalled_from_parse_tree.Text(
                                 $,
@@ -2804,7 +2802,7 @@ export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.li
     )
 )
 
-export const Attribute_Value: t_signatures.Attribute_Value = ($, abort) => _p_cc(
+export const Attribute_Value: t_signatures.Attribute_Value = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.State(
         $,
         ($) => abort(
@@ -2816,7 +2814,7 @@ export const Attribute_Value: t_signatures.Attribute_Value = ($, abort) => _p_cc
         ($t): t_out.Attribute_Value => {
             switch ($t) {
                 case 'number':
-                    return _p_cc(
+                    return _p_change_context(
                         $['value'],
                         ($) => ['number', v_unmarshalled_from_parse_tree.Text(
                             $,
@@ -2826,7 +2824,7 @@ export const Attribute_Value: t_signatures.Attribute_Value = ($, abort) => _p_cc
                         )]
                     )
                 case 'string':
-                    return _p_cc(
+                    return _p_change_context(
                         $['value'],
                         ($) => ['string', v_unmarshalled_from_parse_tree.Text(
                             $,
@@ -2836,7 +2834,7 @@ export const Attribute_Value: t_signatures.Attribute_Value = ($, abort) => _p_cc
                         )]
                     )
                 case 'html string':
-                    return _p_cc(
+                    return _p_change_context(
                         $['value'],
                         ($) => ['html string', v_unmarshalled_from_parse_tree.Text(
                             $,

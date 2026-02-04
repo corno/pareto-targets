@@ -1,5 +1,5 @@
 
-// import * as _p from 'pareto-core/dist/transformer'
+// import * as _p from 'pareto-core/dist/expression'
 // import * as _pdev from 'pareto-core-dev'
 // import * as _pi from 'pareto-core/dist/interface'
 
@@ -25,22 +25,22 @@
 // export const Graph = ($: d_in.Graph): d_out.Block => {
 //     return block([
 //         sh.g.nested_block([
-//             sh.b.snippet("strict "),
+//             sh.b.literal("strict "),
 //             pa.sg($.type, ($) => {
 //                 switch ($[0]) {
-//                     case 'directed': return pa.ss($, () => sh.b.snippet("digraph "))
-//                     case 'undirected': return pa.ss($, () => sh.b.snippet("graph "))
+//                     case 'directed': return pa.ss($, () => sh.b.literal("digraph "))
+//                     case 'undirected': return pa.ss($, () => sh.b.literal("graph "))
 //                     default: return pa.au($[0])
 //                 }
 //             }),
 //             $.name.__decide(
 //                 ($) => sh.b.sub([
 //                     sh.b.snippet(op['serialize with quote delimiter']($)),
-//                     sh.b.snippet(" "),
+//                     sh.b.literal(" "),
 //                 ]),
 //                 () => sh.b.nothing()
 //             ),
-//             sh.b.snippet("{"),
+//             sh.b.literal("{"),
 //             sh.b.indent([
 //                 Graph_Tree($['node tree'], {
 //                     'nodes': $.nodes,
@@ -58,26 +58,26 @@
 //                             return sh.g.sub($.value.edges.__d_map(($) => {
 //                                 return sh.g.nested_block([
 //                                     sh.b.snippet(op['serialize with quote delimiter'](key)),
-//                                     sh.b.snippet(" -> "),
+//                                     sh.b.literal(" -> "),
 //                                     End_Point_Specification($.to),
 //                                     Edge_Attributes($.attributes),
-//                                     sh.b.snippet(";"),
+//                                     sh.b.literal(";"),
 //                                 ])
 //                             }))
 //                         })))
 //                         case 'undirected': return pa.ss($, ($) => sh.g.sub($.edges.__d_map(($) => {
 //                             return sh.g.nested_block([
 //                                 End_Point_Specification($.yin),
-//                                 sh.b.snippet(" -- "),
+//                                 sh.b.literal(" -- "),
 //                                 End_Point_Specification($.yang),
-//                                 sh.b.snippet(";"),
+//                                 sh.b.literal(";"),
 //                             ])
 //                         })),)
 //                         default: return pa.au($[0])
 //                     }
 //                 })
 //             ]),
-//             sh.b.snippet("}"),
+//             sh.b.literal("}"),
 //         ]),
 //     ])
 // }
@@ -86,16 +86,16 @@
 //     return op['is empty']($)
 //         ? sh.b.nothing()
 //         : sh.b.sub([
-//             sh.b.snippet(" ["),
+//             sh.b.literal(" ["),
 //            sh.b.sub(op['dictionary to list, sorted by code point']($).__d_map(($) => {
 //                 return sh.b.sub([
-//                     sh.b.snippet(" "),
+//                     sh.b.literal(" "),
 //                     sh.b.snippet(op['serialize with quote delimiter']($.key)),
-//                     sh.b.snippet("="),
+//                     sh.b.literal("="),
 //                     Attribute_Value($.value),
 //                 ])
 //             })),
-//             sh.b.snippet(" ]"),
+//             sh.b.literal(" ]"),
 //         ])
 // }
 
@@ -103,7 +103,7 @@
 //     return pa.sg($, ($) => {
 //         switch ($[0]) {
 //             case 'string': return pa.ss($, ($) => sh.b.snippet(op['serialize with quote delimiter']($)))
-//             case 'number': return pa.ss($, ($) => sh.b.snippet("FIXME NUMBER"))
+//             case 'number': return pa.ss($, ($) => sh.b.literal("FIXME NUMBER"))
 //             case 'html string': return pa.ss($, ($) => sh.b.snippet($))
 //             default: return pa.au($[0])
 //         }
@@ -118,12 +118,12 @@
 //                     return sh.b.sub([
 //                         sh.b.snippet(op['serialize with quote delimiter']($.node)),
 //                         $['port data'].__decide(
-//                             ($) => sh.b.snippet("FIXME"),
+//                             ($) => sh.b.literal("FIXME"),
 //                             () => sh.b.nothing()
 //                         )
 //                     ])
 //                 })
-//                 case 'subgraph': return pa.ss($, ($) => sh.b.snippet("subgraph " + "FIXME"))
+//                 case 'subgraph': return pa.ss($, ($) => sh.b.snippet("subgraph " plus "FIXME"))
 //                 default: return pa.au($[0])
 //             }
 //         })
@@ -139,9 +139,9 @@
 // ): d_out.Group_Part => {
 //     return sh.g.sub(op['dictionary to list, sorted by code point']($.subgraphs).__d_map(($) => {
 //         return sh.g.nested_block([
-//             sh.b.snippet("subgraph "),
+//             sh.b.literal("subgraph "),
 //             sh.b.snippet($.key),
-//             sh.b.snippet(" {"),
+//             sh.b.literal(" {"),
 //             sh.b.indent([
 //                 Graph_Tree($.value.tree, {
 //                     'nodes': $p.nodes,
@@ -154,13 +154,13 @@
 //                 }))).__d_map(($) => {
 //                     return sh.g.nested_block([
 //                         sh.b.snippet($.key),
-//                         sh.b.snippet(" ["),
-//                         sh.b.snippet("FIXME"), //FIXME: attributes
-//                         sh.b.snippet("];"),
+//                         sh.b.literal(" ["),
+//                         sh.b.literal("FIXME"), //FIXME: attributes
+//                         sh.b.literal("];"),
 //                     ])
 //                 })),
 //             ]),
-//             sh.b.snippet("}"),
+//             sh.b.literal("}"),
 //         ])
 //     }))
 // }

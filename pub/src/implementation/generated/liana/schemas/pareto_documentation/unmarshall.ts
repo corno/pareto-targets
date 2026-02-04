@@ -1,9 +1,7 @@
 
 import * as _p from "pareto-core/dist/refiner"
 
-import {
-    _p_cc,
-} from "pareto-core/dist/change_context"
+import _p_change_context from "pareto-core/dist/_p_change_context"
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/pareto_documentation/unmarshall"
 
@@ -28,7 +26,7 @@ export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($, abort) =>
             ['expected a dictionary', null]
         )
     ),
-    ($, id) => _p_cc(
+    ($, id) => _p_change_context(
         v_unmarshalled_from_parse_tree.State(
             $,
             ($) => abort(
@@ -40,7 +38,7 @@ export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($, abort) =>
             ($t): t_out.Graphviz_Directory.D => {
                 switch ($t) {
                     case 'file':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['file', v_external_graphviz.Graph(
                                 $,
@@ -50,7 +48,7 @@ export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($, abort) =>
                             )]
                         )
                     case 'directory':
-                        return _p_cc(
+                        return _p_change_context(
                             $['value'],
                             ($) => ['directory', Graphviz_Directory(
                                 $,

@@ -1,76 +1,74 @@
 
-import * as _p from "pareto-core/dist/transformer"
+import * as _p from "pareto-core/dist/expression"
 
-import {
-    _p_cc,
-} from "pareto-core/dist/change_context"
+import _p_change_context from "pareto-core/dist/_p_change_context"
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/lionweb/migrate_boilerplate"
 
 import * as t_out from "../../../../../interface/generated/liana/schemas/lionweb/data"
 
 export const SerializationChunk: t_signatures.SerializationChunk = ($) => ({
-    'serializationFormatVersion': _p_cc(
+    'serializationFormatVersion': _p_change_context(
         $['serializationFormatVersion'],
         ($) => $
     ),
-    'languages': _p_cc(
+    'languages': _p_change_context(
         $['languages'],
         ($) => _p.list.map(
             $,
             ($) => ({
-                'key': _p_cc(
+                'key': _p_change_context(
                     $['key'],
                     ($) => $
                 ),
-                'version': _p_cc(
+                'version': _p_change_context(
                     $['version'],
                     ($) => $
                 ),
             })
         )
     ),
-    'nodes': _p_cc(
+    'nodes': _p_change_context(
         $['nodes'],
         ($) => _p.list.map(
             $,
             ($) => ({
-                'id': _p_cc(
+                'id': _p_change_context(
                     $['id'],
                     ($) => $
                 ),
-                'parent': _p_cc(
+                'parent': _p_change_context(
                     $['parent'],
                     ($) => _p.optional.map(
                         $,
                         ($) => $
                     )
                 ),
-                'annotations': _p_cc(
+                'annotations': _p_change_context(
                     $['annotations'],
                     ($) => _p.list.map(
                         $,
                         ($) => $
                     )
                 ),
-                'classifier': _p_cc(
+                'classifier': _p_change_context(
                     $['classifier'],
                     ($) => MetaPointer(
                         $
                     )
                 ),
-                'containments': _p_cc(
+                'containments': _p_change_context(
                     $['containments'],
                     ($) => _p.list.map(
                         $,
                         ($) => ({
-                            'containment': _p_cc(
+                            'containment': _p_change_context(
                                 $['containment'],
                                 ($) => MetaPointer(
                                     $
                                 )
                             ),
-                            'children': _p_cc(
+                            'children': _p_change_context(
                                 $['children'],
                                 ($) => _p.list.map(
                                     $,
@@ -80,16 +78,16 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ({
                         })
                     )
                 ),
-                'properties': _p_cc(
+                'properties': _p_change_context(
                     $['properties'],
                     ($) => _p.list.map(
                         $,
                         ($) => ({
-                            'value': _p_cc(
+                            'value': _p_change_context(
                                 $['value'],
                                 ($) => $
                             ),
-                            'property': _p_cc(
+                            'property': _p_change_context(
                                 $['property'],
                                 ($) => MetaPointer(
                                     $
@@ -98,28 +96,28 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ({
                         })
                     )
                 ),
-                'references': _p_cc(
+                'references': _p_change_context(
                     $['references'],
                     ($) => _p.list.map(
                         $,
                         ($) => ({
-                            'targets': _p_cc(
+                            'targets': _p_change_context(
                                 $['targets'],
                                 ($) => _p.list.map(
                                     $,
                                     ($) => ({
-                                        'reference': _p_cc(
+                                        'reference': _p_change_context(
                                             $['reference'],
                                             ($) => $
                                         ),
-                                        'resolveInfo': _p_cc(
+                                        'resolveInfo': _p_change_context(
                                             $['resolveInfo'],
                                             ($) => $
                                         ),
                                     })
                                 )
                             ),
-                            'reference': _p_cc(
+                            'reference': _p_change_context(
                                 $['reference'],
                                 ($) => MetaPointer(
                                     $
@@ -134,15 +132,15 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ({
 })
 
 export const MetaPointer: t_signatures.MetaPointer = ($) => ({
-    'language': _p_cc(
+    'language': _p_change_context(
         $['language'],
         ($) => $
     ),
-    'version': _p_cc(
+    'version': _p_change_context(
         $['version'],
         ($) => $
     ),
-    'key': _p_cc(
+    'key': _p_change_context(
         $['key'],
         ($) => $
     ),
