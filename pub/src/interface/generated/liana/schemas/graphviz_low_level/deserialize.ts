@@ -3,11 +3,13 @@
     
     import * as i_generic from "astn-core/dist/interface/to_be_generated/deserialize"
     
+    import * as i_in from "pareto-fountain-pen/dist/interface/to_be_generated/list_of_characters"
+    
     import * as i_out from "./data"
     
     export namespace Graph_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Graph
         
@@ -34,7 +36,7 @@
     
     export namespace Statement_List_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Statement_List
         
@@ -61,7 +63,7 @@
     
     export namespace Attribute_List_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Attribute_List
         
@@ -88,7 +90,7 @@
     
     export namespace Node_ID_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Node_ID
         
@@ -115,7 +117,7 @@
     
     export namespace ID_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.ID
         
@@ -142,7 +144,7 @@
     
     export namespace Subgraph_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Subgraph
         
