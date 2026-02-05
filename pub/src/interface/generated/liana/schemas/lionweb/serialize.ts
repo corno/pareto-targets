@@ -1,58 +1,58 @@
-
-import * as _pi from "pareto-core/dist/interface"
-
-import * as i_in from "./data"
-
-export namespace SerializationChunk_ {
     
-    export type I = i_in.SerializationChunk
+    import * as _pi from "pareto-core/dist/interface"
     
-    export type O = string
+    import * as i_in from "./data"
     
-    export namespace P {
+    export namespace SerializationChunk_ {
+        
+        export type I = i_in.SerializationChunk
+        
+        export type O = string
+        
+        export namespace P {
+            
+        }
         
     }
     
-}
-
-export type SerializationChunk_ = (
-    context: SerializationChunk_.I,
-) => SerializationChunk_.O
-
-export namespace MetaPointer_ {
+    export type SerializationChunk_ = (
+        context: SerializationChunk_.I,
+    ) => SerializationChunk_.O
     
-    export type I = i_in.MetaPointer
-    
-    export type O = string
-    
-    export namespace P {
+    export namespace MetaPointer_ {
+        
+        export type I = i_in.MetaPointer
+        
+        export type O = string
+        
+        export namespace P {
+            
+        }
         
     }
     
-}
-
-export type MetaPointer_ = (
-    context: MetaPointer_.I,
-) => MetaPointer_.O
-
-export namespace SerializationChunks_ {
+    export type MetaPointer_ = (
+        context: MetaPointer_.I,
+    ) => MetaPointer_.O
     
-    export type I = i_in.SerializationChunks
-    
-    export type O = string
-    
-    export namespace P {
+    export namespace SerializationChunks_ {
+        
+        export type I = i_in.SerializationChunks
+        
+        export type O = string
+        
+        export namespace P {
+            
+        }
         
     }
     
-}
-
-export type SerializationChunks_ = (
-    context: SerializationChunks_.I,
-) => SerializationChunks_.O
-
-export { 
-    SerializationChunk_ as SerializationChunk, 
-    MetaPointer_ as MetaPointer, 
-    SerializationChunks_ as SerializationChunks, 
-}
+    export type SerializationChunks_ = (
+        context: SerializationChunks_.I,
+    ) => SerializationChunks_.O
+    
+    export { 
+        SerializationChunk_ as SerializationChunk, 
+        MetaPointer_ as MetaPointer, 
+        SerializationChunks_ as SerializationChunks, 
+    }
