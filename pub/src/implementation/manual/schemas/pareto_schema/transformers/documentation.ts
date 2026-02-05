@@ -12,33 +12,33 @@ import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 export const Schema_Tree = ($: d_in.Schema_Tree): d_out.Group_Part => _p.decide.state($, ($) => {
     switch ($[0]) {
         case 'schema': return _p.ss($, ($) => sh.g.sub([
-            sh.g.simple_block(`types:`),
+            sh.pg.single_line(`types:`),
             sh.g.nested_block([
-                sh.b.indent([
+                sh.ph.indent([
                     sh.g.sub($.types.__to_list((($, id) => sh.g.sub([
-                        sh.g.simple_block(key)
+                        sh.pg.single_line(key)
                     ]))))
                 ])
             ]),
-            sh.g.simple_block(``),
+            sh.pg.single_line(``),
         ]))
         case 'set': return _p.ss($, ($) => sh.g.sub([
-            sh.g.simple_block(`schemas:`),
+            sh.pg.single_line(`schemas:`),
             sh.g.nested_block([
-                sh.b.indent([
+                sh.ph.indent([
                     Schemas($)
                 ])
             ]),
-            sh.g.simple_block(``),
+            sh.pg.single_line(``),
         ]))
         default: return _p.au($[0])
     }
 })
 
 export const Schemas = ($: d_in.Schemas): d_out.Group_Part => sh.g.sub($.__to_list(($, id) => sh.g.sub([
-    sh.g.simple_block(key),
+    sh.pg.single_line(key),
     sh.g.nested_block([
-        sh.b.indent([
+        sh.ph.indent([
             Schema_Tree($),
         ]),
     ]),

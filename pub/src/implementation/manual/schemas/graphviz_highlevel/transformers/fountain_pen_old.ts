@@ -25,23 +25,23 @@
 // export const Graph = ($: d_in.Graph): d_out.Block => {
 //     return block([
 //         sh.g.nested_block([
-//             sh.b.literal("strict "),
+//             sh.ph.literal("strict "),
 //             pa.sg($.type, ($) => {
 //                 switch ($[0]) {
-//                     case 'directed': return pa.ss($, () => sh.b.literal("digraph "))
-//                     case 'undirected': return pa.ss($, () => sh.b.literal("graph "))
+//                     case 'directed': return pa.ss($, () => sh.ph.literal("digraph "))
+//                     case 'undirected': return pa.ss($, () => sh.ph.literal("graph "))
 //                     default: return pa.au($[0])
 //                 }
 //             }),
 //             $.name.__decide(
-//                 ($) => sh.b.sub([
+//                 ($) => sh.ph.composed([
 //                     sh.b.snippet(op['serialize with quote delimiter']($)),
-//                     sh.b.literal(" "),
+//                     sh.ph.literal(" "),
 //                 ]),
-//                 () => sh.b.nothing()
+//                 () => sh.ph.nothing()
 //             ),
-//             sh.b.literal("{"),
-//             sh.b.indent([
+//             sh.ph.literal("{"),
+//             sh.ph.indent([
 //                 Graph_Tree($['node tree'], {
 //                     'nodes': $.nodes,
 //                     'path': pa.list.literal([]),
@@ -58,68 +58,68 @@
 //                             return sh.g.sub($.value.edges.__d_map(($) => {
 //                                 return sh.g.nested_block([
 //                                     sh.b.snippet(op['serialize with quote delimiter'](key)),
-//                                     sh.b.literal(" -> "),
+//                                     sh.ph.literal(" -> "),
 //                                     End_Point_Specification($.to),
 //                                     Edge_Attributes($.attributes),
-//                                     sh.b.literal(";"),
+//                                     sh.ph.literal(";"),
 //                                 ])
 //                             }))
 //                         })))
 //                         case 'undirected': return pa.ss($, ($) => sh.g.sub($.edges.__d_map(($) => {
 //                             return sh.g.nested_block([
 //                                 End_Point_Specification($.yin),
-//                                 sh.b.literal(" -- "),
+//                                 sh.ph.literal(" -- "),
 //                                 End_Point_Specification($.yang),
-//                                 sh.b.literal(";"),
+//                                 sh.ph.literal(";"),
 //                             ])
 //                         })),)
 //                         default: return pa.au($[0])
 //                     }
 //                 })
 //             ]),
-//             sh.b.literal("}"),
+//             sh.ph.literal("}"),
 //         ]),
 //     ])
 // }
 
-// export const Edge_Attributes = ($: d_in.Edge_Attributes): d_out.Block_Part => {
+// export const Edge_Attributes = ($: d_in.Edge_Attributes): d_out.Phrase => {
 //     return op['is empty']($)
-//         ? sh.b.nothing()
-//         : sh.b.sub([
-//             sh.b.literal(" ["),
-//            sh.b.sub(op['dictionary to list, sorted by code point']($).__d_map(($) => {
-//                 return sh.b.sub([
-//                     sh.b.literal(" "),
+//         ? sh.ph.nothing()
+//         : sh.ph.composed([
+//             sh.ph.literal(" ["),
+//            sh.ph.composed(op['dictionary to list, sorted by code point']($).__d_map(($) => {
+//                 return sh.ph.composed([
+//                     sh.ph.literal(" "),
 //                     sh.b.snippet(op['serialize with quote delimiter']($.key)),
-//                     sh.b.literal("="),
+//                     sh.ph.literal("="),
 //                     Attribute_Value($.value),
 //                 ])
 //             })),
-//             sh.b.literal(" ]"),
+//             sh.ph.literal(" ]"),
 //         ])
 // }
 
-// export const Attribute_Value = ($: d_in.Attribute_Value): d_out.Block_Part => {
+// export const Attribute_Value = ($: d_in.Attribute_Value): d_out.Phrase => {
 //     return pa.sg($, ($) => {
 //         switch ($[0]) {
 //             case 'string': return pa.ss($, ($) => sh.b.snippet(op['serialize with quote delimiter']($)))
-//             case 'number': return pa.ss($, ($) => sh.b.literal("FIXME NUMBER"))
+//             case 'number': return pa.ss($, ($) => sh.ph.literal("FIXME NUMBER"))
 //             case 'html string': return pa.ss($, ($) => sh.b.snippet($))
 //             default: return pa.au($[0])
 //         }
 //     })
 // }
 
-// export const End_Point_Specification = ($: d_in.End_Point_Specification): d_out.Block_Part => {
-//     return sh.b.sub([
+// export const End_Point_Specification = ($: d_in.End_Point_Specification): d_out.Phrase => {
+//     return sh.ph.composed([
 //         pa.sg($, ($) => {
 //             switch ($[0]) {
 //                 case 'node': return pa.ss($, ($) => {
-//                     return sh.b.sub([
+//                     return sh.ph.composed([
 //                         sh.b.snippet(op['serialize with quote delimiter']($.node)),
 //                         $['port data'].__decide(
-//                             ($) => sh.b.literal("FIXME"),
-//                             () => sh.b.nothing()
+//                             ($) => sh.ph.literal("FIXME"),
+//                             () => sh.ph.nothing()
 //                         )
 //                     ])
 //                 })
@@ -139,10 +139,10 @@
 // ): d_out.Group_Part => {
 //     return sh.g.sub(op['dictionary to list, sorted by code point']($.subgraphs).__d_map(($) => {
 //         return sh.g.nested_block([
-//             sh.b.literal("subgraph "),
+//             sh.ph.literal("subgraph "),
 //             sh.b.snippet($.key),
-//             sh.b.literal(" {"),
-//             sh.b.indent([
+//             sh.ph.literal(" {"),
+//             sh.ph.indent([
 //                 Graph_Tree($.value.tree, {
 //                     'nodes': $p.nodes,
 //                     'path': op['add element']($p.path, { element: $.key, where: ['end', null] }),
@@ -154,13 +154,13 @@
 //                 }))).__d_map(($) => {
 //                     return sh.g.nested_block([
 //                         sh.b.snippet($.key),
-//                         sh.b.literal(" ["),
-//                         sh.b.literal("FIXME"), //FIXME: attributes
-//                         sh.b.literal("];"),
+//                         sh.ph.literal(" ["),
+//                         sh.ph.literal("FIXME"), //FIXME: attributes
+//                         sh.ph.literal("];"),
 //                     ])
 //                 })),
 //             ]),
-//             sh.b.literal("}"),
+//             sh.ph.literal("}"),
 //         ])
 //     }))
 // }

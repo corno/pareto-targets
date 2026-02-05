@@ -9,12 +9,12 @@ type Parameters = {
 }
 
 namespace signatures {
-    export type Graph = _pi.Transformer<d_in.Graph, d_out.Group>
-    export type Statement_List = _pi.Transformer_With_Parameters<d_in.Statement_List, d_out.Block_Part, Parameters>
-    export type ID = _pi.Transformer<d_in.ID, d_out.Block_Part>
-    export type Attribute_List = _pi.Transformer<d_in.Attribute_List, d_out.Block_Part>
-    export type Node_ID = _pi.Transformer<d_in.Node_ID, d_out.Block_Part>
-    export type Subgraph = _pi.Transformer_With_Parameters<d_in.Subgraph, d_out.Block_Part, Parameters>
+    export type Graph = _pi.Transformer<d_in.Graph, d_out.Paragraph>
+    export type Statement_List = _pi.Transformer_With_Parameters<d_in.Statement_List, d_out.Phrase, Parameters>
+    export type ID = _pi.Transformer<d_in.ID, d_out.Phrase>
+    export type Attribute_List = _pi.Transformer<d_in.Attribute_List, d_out.Phrase>
+    export type Node_ID = _pi.Transformer<d_in.Node_ID, d_out.Phrase>
+    export type Subgraph = _pi.Transformer_With_Parameters<d_in.Subgraph, d_out.Phrase, Parameters>
 }
 
 //shorthands
@@ -29,21 +29,21 @@ import { $$ as op_enrich_list_elements_with_position_information } from "pareto-
 export const Graph: signatures.Graph = ($) => sh.group([
     sh.g.nested_block([
         $.strict
-            ? sh.b.literal("strict ")
-            : sh.b.nothing(),
+            ? sh.ph.literal("strict ")
+            : sh.ph.nothing(),
         _p.decide.state($.type, ($) => {
             switch ($[0]) {
-                case 'digraph': return _p.ss($, () => sh.b.literal("digraph "))
-                case 'graph': return _p.ss($, () => sh.b.literal("graph "))
+                case 'digraph': return _p.ss($, () => sh.ph.literal("digraph "))
+                case 'graph': return _p.ss($, () => sh.ph.literal("graph "))
                 default: return _p.au($[0])
             }
         }),
         $.name.__decide(
-            ($) => sh.b.sub([
+            ($) => sh.ph.composed([
                 ID($),
-                sh.b.literal(" "),
+                sh.ph.literal(" "),
             ]),
-            () => sh.b.nothing()
+            () => sh.ph.nothing()
         ),
         Statement_List($.statements, {
             'graph type': $.type
@@ -51,31 +51,31 @@ export const Graph: signatures.Graph = ($) => sh.group([
     ]),
 ])
 
-export const Statement_List: signatures.Statement_List = ($, $p) => sh.b.sub([
-    sh.b.literal("{"),
-    sh.b.indent([
+export const Statement_List: signatures.Statement_List = ($, $p) => sh.ph.composed([
+    sh.ph.literal("{"),
+    sh.ph.indent([
         sh.g.sub($.__l_map(($) => sh.g.nested_block([
             _p.decide.state($, ($) => {
                 switch ($[0]) {
-                    case 'attribute assignment': return _p.ss($, ($) => sh.b.sub([
+                    case 'attribute assignment': return _p.ss($, ($) => sh.ph.composed([
                         ID($.name),
-                        sh.b.literal(" = "),
+                        sh.ph.literal(" = "),
                         ID($.value),
-                        sh.b.literal(";"),
+                        sh.ph.literal(";"),
                     ]))
-                    case 'attribute list': return _p.ss($, ($) => sh.b.sub([
+                    case 'attribute list': return _p.ss($, ($) => sh.ph.composed([
                         _p.decide.state($.type, ($) => {
                             switch ($[0]) {
-                                case 'edge': return _p.ss($, () => sh.b.literal("edge "))
-                                case 'node': return _p.ss($, () => sh.b.literal("node "))
-                                case 'graph': return _p.ss($, () => sh.b.literal("graph "))
+                                case 'edge': return _p.ss($, () => sh.ph.literal("edge "))
+                                case 'node': return _p.ss($, () => sh.ph.literal("node "))
+                                case 'graph': return _p.ss($, () => sh.ph.literal("graph "))
                                 default: return _p.au($[0])
                             }
                         }),
                         Attribute_List($.attributes),
-                        sh.b.literal(";"),
+                        sh.ph.literal(";"),
                     ]))
-                    case 'edge': return _p.ss($, ($) => sh.b.sub([
+                    case 'edge': return _p.ss($, ($) => sh.ph.composed([
                         _p.decide.state($.left, ($) => {
                             switch ($[0]) {
                                 case 'node': return _p.ss($, ($) => Node_ID($))
@@ -85,12 +85,12 @@ export const Statement_List: signatures.Statement_List = ($, $p) => sh.b.sub([
                         }),
                         _p.decide.state($p['graph type'], ($) => {
                             switch ($[0]) {
-                                case 'digraph': return _p.ss($, () => sh.b.literal(" -> "))
-                                case 'graph': return _p.ss($, () => sh.b.literal(" -- "))
+                                case 'digraph': return _p.ss($, () => sh.ph.literal(" -> "))
+                                case 'graph': return _p.ss($, () => sh.ph.literal(" -- "))
                                 default: return _p.au($[0])
                             }
                         }),
-                        sh.b.sub(op_enrich_list_elements_with_position_information($.right).__l_map(($) => sh.b.sub([
+                        sh.ph.composed(op_enrich_list_elements_with_position_information($.right).__l_map(($) => sh.ph.composed([
                             _p.decide.state($.value, ($) => {
                                 switch ($[0]) {
                                     case 'node': return _p.ss($, ($) => Node_ID($))
@@ -99,17 +99,17 @@ export const Statement_List: signatures.Statement_List = ($, $p) => sh.b.sub([
                                 }
                             }),
                             $['is last']
-                                ? sh.b.nothing()
-                                : sh.b.literal(", "),
+                                ? sh.ph.nothing()
+                                : sh.ph.literal(", "),
                         ]))),
                         Attribute_List($.attributes),
                     ]))
-                    case 'node': return _p.ss($, ($) => sh.b.sub([
+                    case 'node': return _p.ss($, ($) => sh.ph.composed([
                         Node_ID($.node),
                         _p.boolean.list_is_empty($['attribute list'])
-                            ? sh.b.nothing()
+                            ? sh.ph.nothing()
                             : Attribute_List($['attribute list']),
-                        sh.b.literal(";"),
+                        sh.ph.literal(";"),
                     ]))
                     case 'subgraph': return _p.ss($, ($) => Subgraph($, $p))
                     default: return _p.au($[0])
@@ -117,7 +117,7 @@ export const Statement_List: signatures.Statement_List = ($, $p) => sh.b.sub([
             })
         ]))),
     ]),
-    sh.b.literal("}"),
+    sh.ph.literal("}"),
 ])
 
 export const ID: signatures.ID = ($) => _p.decide.state($, ($) => {
@@ -125,53 +125,53 @@ export const ID: signatures.ID = ($) => _p.decide.state($, ($) => {
         case 'id': return _p.ss($, ($) => sh.b.snippet($)) //FIX escaping
         case 'string': return _p.ss($, ($) => sh.b.snippet(s_quoted($)))
         case 'html': return _p.ss($, ($) => sh.b.snippet($))
-        case 'number': return _p.ss($, ($) => sh.b.literal("FIXME NUMBER"))
+        case 'number': return _p.ss($, ($) => sh.ph.literal("FIXME NUMBER"))
         default: return _p.au($[0])
     }
 })
 
-export const Attribute_List: signatures.Attribute_List = ($) => sh.b.sub([
-    sh.b.literal(" [ "),
-    sh.b.sub($.__l_map(($) => sh.b.sub([
+export const Attribute_List: signatures.Attribute_List = ($) => sh.ph.composed([
+    sh.ph.literal(" [ "),
+    sh.ph.composed($.__l_map(($) => sh.ph.composed([
         ID($.name),
-        sh.b.literal("="),
+        sh.ph.literal("="),
         ID($.value),
-        sh.b.literal(" "),
+        sh.ph.literal(" "),
     ]))),
-    sh.b.literal("]"),
+    sh.ph.literal("]"),
 ])
 
-export const Node_ID: signatures.Node_ID = ($) => sh.b.sub([
+export const Node_ID: signatures.Node_ID = ($) => sh.ph.composed([
     ID($.id),
     $.port.__decide(
-        ($) => sh.b.sub([
-            sh.b.literal(":"),
+        ($) => sh.ph.composed([
+            sh.ph.literal(":"),
             ID($.port),
             $['compass point'].__decide(
-                ($) => sh.b.sub([
-                    sh.b.literal(":"),
+                ($) => sh.ph.composed([
+                    sh.ph.literal(":"),
                     ID($),
                 ]),
-                () => sh.b.nothing()
+                () => sh.ph.nothing()
             ),
         ]),
-        () => sh.b.nothing()
+        () => sh.ph.nothing()
     ),
 ])
 
-export const Subgraph: signatures.Subgraph = ($, $p) => sh.b.sub([
+export const Subgraph: signatures.Subgraph = ($, $p) => sh.ph.composed([
     $.subgraph.__decide(
-        ($) => sh.b.sub([
-            sh.b.literal("subgraph "),
+        ($) => sh.ph.composed([
+            sh.ph.literal("subgraph "),
             $.__decide(
-                ($) => sh.b.sub([
+                ($) => sh.ph.composed([
                     ID($),
-                    sh.b.literal(" "),
+                    sh.ph.literal(" "),
                 ]),
-                () => sh.b.nothing()
+                () => sh.ph.nothing()
             ),
         ]),
-        () => sh.b.nothing()
+        () => sh.ph.nothing()
     ),
     Statement_List($.statements, {
         'graph type': $p['graph type']
