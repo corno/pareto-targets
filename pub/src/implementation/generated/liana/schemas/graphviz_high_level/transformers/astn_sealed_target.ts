@@ -1,9 +1,9 @@
     
-    import * as _p from "pareto-core/dist/expression"
+    import * as _p from 'pareto-core/dist/expression'
     
-    import _p_change_context from "pareto-core/dist/_p_change_context"
+    import _p_change_context from 'pareto-core/dist/_p_change_context'
     
-    import _p_text_from_list from "pareto-core/dist/_p_text_from_list"
+    import _p_text_from_list from 'pareto-core/dist/_p_text_from_list'
     
     import * as t_signatures from "../../../../../../interface/generated/liana/schemas/graphviz_high_level/marshall"
     
@@ -15,7 +15,7 @@
     
     export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.dictionary.literal(
         {
-            'name': _p_change_context(
+            "name": _p_change_context(
                 $['name'],
                 ($) => ['optional', _p.decide.optional(
                     $,
@@ -26,13 +26,13 @@
                     () => ['not set', null],
                 )],
             ),
-            'tree': _p_change_context(
+            "tree": _p_change_context(
                 $['tree'],
                 ($) => Tree(
                     $,
                 ),
             ),
-            'type': _p_change_context(
+            "type": _p_change_context(
                 $['type'],
                 ($) => ['state', _p.decide.state(
                     $,
@@ -45,25 +45,25 @@
                                         'option': 'undirected',
                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                             {
-                                                'edges': _p_change_context(
+                                                "edges": _p_change_context(
                                                     $['edges'],
                                                     ($) => ['list', _p.list.map(
                                                         $,
                                                         ($) => ['group', ['verbose', _p.dictionary.literal(
                                                             {
-                                                                'yin': _p_change_context(
+                                                                "yin": _p_change_context(
                                                                     $['yin'],
                                                                     ($) => End_Point_Specification(
                                                                         $,
                                                                     ),
                                                                 ),
-                                                                'yang': _p_change_context(
+                                                                "yang": _p_change_context(
                                                                     $['yang'],
                                                                     ($) => End_Point_Specification(
                                                                         $,
                                                                     ),
                                                                 ),
-                                                                'attributes': _p_change_context(
+                                                                "attributes": _p_change_context(
                                                                     $['attributes'],
                                                                     ($) => Edge_Attributes(
                                                                         $,
@@ -84,25 +84,25 @@
                                         'option': 'directed',
                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                             {
-                                                'edges': _p_change_context(
+                                                "edges": _p_change_context(
                                                     $['edges'],
                                                     ($) => ['list', _p.list.map(
                                                         $,
                                                         ($) => ['group', ['verbose', _p.dictionary.literal(
                                                             {
-                                                                'from': _p_change_context(
+                                                                "from": _p_change_context(
                                                                     $['from'],
                                                                     ($) => End_Point_Specification(
                                                                         $,
                                                                     ),
                                                                 ),
-                                                                'to': _p_change_context(
+                                                                "to": _p_change_context(
                                                                     $['to'],
                                                                     ($) => End_Point_Specification(
                                                                         $,
                                                                     ),
                                                                 ),
-                                                                'attributes': _p_change_context(
+                                                                "attributes": _p_change_context(
                                                                     $['attributes'],
                                                                     ($) => Edge_Attributes(
                                                                         $,
@@ -129,13 +129,13 @@
     
     export const Tree: t_signatures.Tree = ($) => ['group', ['verbose', _p.dictionary.literal(
         {
-            'attributes': _p_change_context(
+            "attributes": _p_change_context(
                 $['attributes'],
                 ($) => Graph_Attributes(
                     $,
                 ),
             ),
-            'elements': _p_change_context(
+            "elements": _p_change_context(
                 $['elements'],
                 ($) => ['dictionary', _p.dictionary.map(
                     $,
@@ -150,7 +150,7 @@
                                             'option': 'node',
                                             'value': ['group', ['verbose', _p.dictionary.literal(
                                                 {
-                                                    'attributes': _p_change_context(
+                                                    "attributes": _p_change_context(
                                                         $['attributes'],
                                                         ($) => Node_Attributes(
                                                             $,
@@ -167,7 +167,7 @@
                                             'option': 'sub',
                                             'value': ['group', ['verbose', _p.dictionary.literal(
                                                 {
-                                                    'type': _p_change_context(
+                                                    "type": _p_change_context(
                                                         $['type'],
                                                         ($) => ['state', _p.decide.state(
                                                             $,
@@ -205,7 +205,7 @@
                                                             },
                                                         )],
                                                     ),
-                                                    'tree': _p_change_context(
+                                                    "tree": _p_change_context(
                                                         $['tree'],
                                                         ($) => Tree(
                                                             $,
@@ -229,14 +229,14 @@
     
     export const End_Point_Specification: t_signatures.End_Point_Specification = ($) => ['group', ['verbose', _p.dictionary.literal(
         {
-            'start': _p_change_context(
+            "start": _p_change_context(
                 $['start'],
                 ($) => ['text', {
                     'delimiter': ['quote', null],
                     'value': $,
                 }],
             ),
-            'tail': _p_change_context(
+            "tail": _p_change_context(
                 $['tail'],
                 ($) => ['list', _p.list.map(
                     $,
@@ -246,20 +246,20 @@
                     }],
                 )],
             ),
-            'port data': _p_change_context(
+            "port data": _p_change_context(
                 $['port data'],
                 ($) => ['optional', _p.decide.optional(
                     $,
                     ($): t_out.Value.optional => ['set', ['group', ['verbose', _p.dictionary.literal(
                         {
-                            'port': _p_change_context(
+                            "port": _p_change_context(
                                 $['port'],
                                 ($) => ['text', {
                                     'delimiter': ['quote', null],
                                     'value': $,
                                 }],
                             ),
-                            'compass direction': _p_change_context(
+                            "compass direction": _p_change_context(
                                 $['compass direction'],
                                 ($) => ['optional', _p.decide.optional(
                                     $,

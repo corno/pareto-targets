@@ -1,9 +1,9 @@
     
-    import * as _p from "pareto-core/dist/expression"
+    import * as _p from 'pareto-core/dist/expression'
     
-    import _p_change_context from "pareto-core/dist/_p_change_context"
+    import _p_change_context from 'pareto-core/dist/_p_change_context'
     
-    import _p_text_from_list from "pareto-core/dist/_p_text_from_list"
+    import _p_text_from_list from 'pareto-core/dist/_p_text_from_list'
     
     import * as t_signatures from "../../../../../../interface/generated/liana/schemas/graphviz_low_level/marshall"
     
@@ -15,7 +15,7 @@
     
     export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.dictionary.literal(
         {
-            'strict': _p_change_context(
+            "strict": _p_change_context(
                 $['strict'],
                 ($) => ['text', {
                     'delimiter': ['none', null],
@@ -27,7 +27,7 @@
                     ),
                 }],
             ),
-            'type': _p_change_context(
+            "type": _p_change_context(
                 $['type'],
                 ($) => ['state', _p.decide.state(
                     $,
@@ -57,7 +57,7 @@
                     },
                 )],
             ),
-            'name': _p_change_context(
+            "name": _p_change_context(
                 $['name'],
                 ($) => ['optional', _p.decide.optional(
                     $,
@@ -67,7 +67,7 @@
                     () => ['not set', null],
                 )],
             ),
-            'statements': _p_change_context(
+            "statements": _p_change_context(
                 $['statements'],
                 ($) => Statement_List(
                     $,
@@ -89,13 +89,13 @@
                                 'option': 'node',
                                 'value': ['group', ['verbose', _p.dictionary.literal(
                                     {
-                                        'node': _p_change_context(
+                                        "node": _p_change_context(
                                             $['node'],
                                             ($) => Node_ID(
                                                 $,
                                             ),
                                         ),
-                                        'attribute list': _p_change_context(
+                                        "attribute list": _p_change_context(
                                             $['attribute list'],
                                             ($) => Attribute_List(
                                                 $,
@@ -112,7 +112,7 @@
                                 'option': 'edge',
                                 'value': ['group', ['verbose', _p.dictionary.literal(
                                     {
-                                        'left': _p_change_context(
+                                        "left": _p_change_context(
                                             $['left'],
                                             ($) => ['state', _p.decide.state(
                                                 $,
@@ -146,7 +146,7 @@
                                                 },
                                             )],
                                         ),
-                                        'right': _p_change_context(
+                                        "right": _p_change_context(
                                             $['right'],
                                             ($) => ['list', _p.list.map(
                                                 $,
@@ -183,7 +183,7 @@
                                                 )],
                                             )],
                                         ),
-                                        'attributes': _p_change_context(
+                                        "attributes": _p_change_context(
                                             $['attributes'],
                                             ($) => Attribute_List(
                                                 $,
@@ -200,7 +200,7 @@
                                 'option': 'attribute list',
                                 'value': ['group', ['verbose', _p.dictionary.literal(
                                     {
-                                        'type': _p_change_context(
+                                        "type": _p_change_context(
                                             $['type'],
                                             ($) => ['state', _p.decide.state(
                                                 $,
@@ -238,7 +238,7 @@
                                                 },
                                             )],
                                         ),
-                                        'attributes': _p_change_context(
+                                        "attributes": _p_change_context(
                                             $['attributes'],
                                             ($) => Attribute_List(
                                                 $,
@@ -255,13 +255,13 @@
                                 'option': 'attribute assignment',
                                 'value': ['group', ['verbose', _p.dictionary.literal(
                                     {
-                                        'name': _p_change_context(
+                                        "name": _p_change_context(
                                             $['name'],
                                             ($) => ID(
                                                 $,
                                             ),
                                         ),
-                                        'value': _p_change_context(
+                                        "value": _p_change_context(
                                             $['value'],
                                             ($) => ID(
                                                 $,
@@ -294,13 +294,13 @@
         $,
         ($) => ['group', ['verbose', _p.dictionary.literal(
             {
-                'name': _p_change_context(
+                "name": _p_change_context(
                     $['name'],
                     ($) => ID(
                         $,
                     ),
                 ),
-                'value': _p_change_context(
+                "value": _p_change_context(
                     $['value'],
                     ($) => ID(
                         $,
@@ -312,25 +312,25 @@
     
     export const Node_ID: t_signatures.Node_ID = ($) => ['group', ['verbose', _p.dictionary.literal(
         {
-            'id': _p_change_context(
+            "id": _p_change_context(
                 $['id'],
                 ($) => ID(
                     $,
                 ),
             ),
-            'port': _p_change_context(
+            "port": _p_change_context(
                 $['port'],
                 ($) => ['optional', _p.decide.optional(
                     $,
                     ($): t_out.Value.optional => ['set', ['group', ['verbose', _p.dictionary.literal(
                         {
-                            'port': _p_change_context(
+                            "port": _p_change_context(
                                 $['port'],
                                 ($) => ID(
                                     $,
                                 ),
                             ),
-                            'compass point': _p_change_context(
+                            "compass point": _p_change_context(
                                 $['compass point'],
                                 ($) => ['optional', _p.decide.optional(
                                     $,
@@ -411,7 +411,7 @@
     
     export const Subgraph: t_signatures.Subgraph = ($) => ['group', ['verbose', _p.dictionary.literal(
         {
-            'subgraph': _p_change_context(
+            "subgraph": _p_change_context(
                 $['subgraph'],
                 ($) => ['optional', _p.decide.optional(
                     $,
@@ -425,7 +425,7 @@
                     () => ['not set', null],
                 )],
             ),
-            'statements': _p_change_context(
+            "statements": _p_change_context(
                 $['statements'],
                 ($) => Statement_List(
                     $,
