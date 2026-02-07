@@ -1,4 +1,4 @@
-import * as _p from 'pareto-core/dist/expression'
+import * as _p from 'pareto-core/dist/assign'
 
 import * as d_in from "pareto/dist/interface/generated/liana/schemas/schema/data"
 import * as d_out from "../../../../../interface/generated/liana/schemas/graphviz_high_level/data"
@@ -21,7 +21,7 @@ export const Type_Node = (
                 'from': {
                     'start': $p['type name'],
                     'tail': _p.list.literal([]),
-                    'port data': _p.optional.not_set()
+                    'port data': _p.optional.literal.not_set()
                 },
                 'to': {
                     'start': _p.decide.state($, ($) => {
@@ -33,7 +33,7 @@ export const Type_Node = (
                         }
                     }),
                     'tail': _p.list.literal([]),
-                    'port data': _p.optional.not_set()
+                    'port data': _p.optional.literal.not_set()
                 },
                 'attributes': _p.decide.state($, ($) => {
                     switch ($[0]) {
@@ -74,7 +74,7 @@ export const Schema = (
     }
 
 ): d_out.Graph => ({
-    'name': _p.optional.set($p['graph name']),
+    'name': _p.optional.literal.set($p['graph name']),
     'tree': {
         'attributes': _p.list.literal([]),
         'elements': $.types.dictionary.__d_map(($) => ['node', {

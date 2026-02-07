@@ -1,5 +1,5 @@
 
-import * as _p from 'pareto-core/dist/expression'
+import * as _p from 'pareto-core/dist/assign'
 
 import _p_change_context from 'pareto-core/dist/_p_change_context'
 
@@ -39,13 +39,14 @@ export const Path: t_signatures.Path = ($, abort) => _p_change_context(
                     ['no such entry', "up steps"],
                 ),
             ),
-            ($) => _p.list.map(
+            ($) => _p.list.from.list(
                 v_unmarshalled_from_parse_tree.List(
                     $,
                     ($) => abort(
                         ['expected a list', null],
                     ),
                 ),
+            ).map(
                 ($) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
@@ -131,13 +132,14 @@ export const Path: t_signatures.Path = ($, abort) => _p_change_context(
                     ['no such entry', "selection steps"],
                 ),
             ),
-            ($) => _p.list.map(
+            ($) => _p.list.from.list(
                 v_unmarshalled_from_parse_tree.List(
                     $,
                     ($) => abort(
                         ['expected a list', null],
                     ),
                 ),
+            ).map(
                 ($) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
@@ -264,13 +266,14 @@ export const Node: t_signatures.Node = ($, abort) => _p_change_context(
                     ['no such entry', "properties"],
                 ),
             ),
-            ($) => _p.dictionary.map(
+            ($) => _p.dictionary.from.dictionary(
                 v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null],
                     ),
                 ),
+            ).map(
                 ($, id) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
@@ -385,13 +388,14 @@ export const Node: t_signatures.Node = ($, abort) => _p_change_context(
                                                                         ['no such entry', "constraint"],
                                                                     ),
                                                                 ),
-                                                                ($) => _p.optional.map(
+                                                                ($) => _p.optional.from.optional(
                                                                     v_unmarshalled_from_parse_tree.Optional(
                                                                         $,
                                                                         ($) => abort(
                                                                             ['expected an optional', null],
                                                                         ),
                                                                     ),
+                                                                ).map(
                                                                     ($) => _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
@@ -453,13 +457,14 @@ export const Node: t_signatures.Node = ($, abort) => _p_change_context(
                                                                         ['no such entry', "states"],
                                                                     ),
                                                                 ),
-                                                                ($) => _p.dictionary.map(
+                                                                ($) => _p.dictionary.from.dictionary(
                                                                     v_unmarshalled_from_parse_tree.Dictionary(
                                                                         $,
                                                                         ($) => abort(
                                                                             ['expected a dictionary', null],
                                                                         ),
                                                                     ),
+                                                                ).map(
                                                                     ($, id) => _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
@@ -475,13 +480,14 @@ export const Node: t_signatures.Node = ($, abort) => _p_change_context(
                                                                                         ['no such entry', "constraints"],
                                                                                     ),
                                                                                 ),
-                                                                                ($) => _p.dictionary.map(
+                                                                                ($) => _p.dictionary.from.dictionary(
                                                                                     v_unmarshalled_from_parse_tree.Dictionary(
                                                                                         $,
                                                                                         ($) => abort(
                                                                                             ['expected a dictionary', null],
                                                                                         ),
                                                                                     ),
+                                                                                ).map(
                                                                                     ($, id) => _p_change_context(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
@@ -560,13 +566,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                     ['no such entry', "numerical types"],
                 ),
             ),
-            ($) => _p.dictionary.map(
+            ($) => _p.dictionary.from.dictionary(
                 v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null],
                     ),
                 ),
+            ).map(
                 ($, id) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,

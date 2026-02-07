@@ -1,5 +1,5 @@
 
-import * as _p from 'pareto-core/dist/expression'
+import * as _p from 'pareto-core/dist/assign'
 
 import _p_change_context from 'pareto-core/dist/_p_change_context'
 
@@ -47,8 +47,9 @@ export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.diction
                                         {
                                             "edges": _p_change_context(
                                                 $['edges'],
-                                                ($) => ['list', _p.list.map(
+                                                ($) => ['list', _p.list.from.list(
                                                     $,
+                                                ).map(
                                                     ($) => ['group', ['verbose', _p.dictionary.literal(
                                                         {
                                                             "yin": _p_change_context(
@@ -86,8 +87,9 @@ export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.diction
                                         {
                                             "edges": _p_change_context(
                                                 $['edges'],
-                                                ($) => ['list', _p.list.map(
+                                                ($) => ['list', _p.list.from.list(
                                                     $,
+                                                ).map(
                                                     ($) => ['group', ['verbose', _p.dictionary.literal(
                                                         {
                                                             "from": _p_change_context(
@@ -137,8 +139,9 @@ export const Tree: t_signatures.Tree = ($) => ['group', ['verbose', _p.dictionar
         ),
         "elements": _p_change_context(
             $['elements'],
-            ($) => ['dictionary', _p.dictionary.map(
+            ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
+            ).map(
                 ($, id) => ['state', _p.decide.state(
                     $,
                     ($): t_out.Value.state => {
@@ -238,8 +241,9 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($)
         ),
         "tail": _p_change_context(
             $['tail'],
-            ($) => ['list', _p.list.map(
+            ($) => ['list', _p.list.from.list(
                 $,
+            ).map(
                 ($) => ['text', {
                     'delimiter': ['quote', null],
                     'value': $,
@@ -278,8 +282,9 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($)
     },
 )]]
 
-export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', _p.list.map(
+export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', _p.list.from.list(
     $,
+).map(
     ($) => ['state', _p.decide.state(
         $,
         ($): t_out.Value.state => {
@@ -1373,8 +1378,9 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => ['list', _
     )],
 )]
 
-export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', _p.list.map(
+export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', _p.list.from.list(
     $,
+).map(
     ($) => ['state', _p.decide.state(
         $,
         ($): t_out.Value.state => {
@@ -1863,8 +1869,9 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => ['list', _p.
     )],
 )]
 
-export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', _p.list.map(
+export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => ['list', _p.list.from.list(
     $,
+).map(
     ($) => ['state', _p.decide.state(
         $,
         ($): t_out.Value.state => {

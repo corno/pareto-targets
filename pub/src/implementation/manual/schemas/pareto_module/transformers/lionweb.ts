@@ -1,4 +1,4 @@
-import * as _p from 'pareto-core/dist/expression'
+import * as _p from 'pareto-core/dist/assign'
 
 import * as d_in_s from "pareto-liana/dist/interface/generated/liana/schemas/schema/data/resolved"
 import * as d_in from "pareto-liana/dist/interface/generated/liana/schemas/module/data/resolved"

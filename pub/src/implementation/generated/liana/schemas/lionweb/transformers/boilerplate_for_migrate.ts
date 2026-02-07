@@ -1,5 +1,5 @@
 
-import * as _p from 'pareto-core/dist/expression'
+import * as _p from 'pareto-core/dist/assign'
 
 import _p_change_context from 'pareto-core/dist/_p_change_context'
 
@@ -14,8 +14,9 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ({
     ),
     'languages': _p_change_context(
         $['languages'],
-        ($) => _p.list.map(
+        ($) => _p.list.from.list(
             $,
+        ).map(
             ($) => ({
                 'key': _p_change_context(
                     $['key'],
@@ -30,8 +31,9 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ({
     ),
     'nodes': _p_change_context(
         $['nodes'],
-        ($) => _p.list.map(
+        ($) => _p.list.from.list(
             $,
+        ).map(
             ($) => ({
                 'id': _p_change_context(
                     $['id'],
@@ -39,15 +41,17 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ({
                 ),
                 'parent': _p_change_context(
                     $['parent'],
-                    ($) => _p.optional.map(
+                    ($) => _p.optional.from.optional(
                         $,
+                    ).map(
                         ($) => $,
                     ),
                 ),
                 'annotations': _p_change_context(
                     $['annotations'],
-                    ($) => _p.list.map(
+                    ($) => _p.list.from.list(
                         $,
+                    ).map(
                         ($) => $,
                     ),
                 ),
@@ -59,8 +63,9 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ({
                 ),
                 'containments': _p_change_context(
                     $['containments'],
-                    ($) => _p.list.map(
+                    ($) => _p.list.from.list(
                         $,
+                    ).map(
                         ($) => ({
                             'containment': _p_change_context(
                                 $['containment'],
@@ -70,8 +75,9 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ({
                             ),
                             'children': _p_change_context(
                                 $['children'],
-                                ($) => _p.list.map(
+                                ($) => _p.list.from.list(
                                     $,
+                                ).map(
                                     ($) => $,
                                 ),
                             ),
@@ -80,8 +86,9 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ({
                 ),
                 'properties': _p_change_context(
                     $['properties'],
-                    ($) => _p.list.map(
+                    ($) => _p.list.from.list(
                         $,
+                    ).map(
                         ($) => ({
                             'value': _p_change_context(
                                 $['value'],
@@ -98,13 +105,15 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ({
                 ),
                 'references': _p_change_context(
                     $['references'],
-                    ($) => _p.list.map(
+                    ($) => _p.list.from.list(
                         $,
+                    ).map(
                         ($) => ({
                             'targets': _p_change_context(
                                 $['targets'],
-                                ($) => _p.list.map(
+                                ($) => _p.list.from.list(
                                     $,
+                                ).map(
                                     ($) => ({
                                         'reference': _p_change_context(
                                             $['reference'],
@@ -146,8 +155,9 @@ export const MetaPointer: t_signatures.MetaPointer = ($) => ({
     ),
 })
 
-export const SerializationChunks: t_signatures.SerializationChunks = ($) => _p.dictionary.map(
+export const SerializationChunks: t_signatures.SerializationChunks = ($) => _p.dictionary.from.dictionary(
     $,
+).map(
     ($, id) => SerializationChunk(
         $,
     ),

@@ -1,5 +1,5 @@
 
-import * as _p from 'pareto-core/dist/expression'
+import * as _p from 'pareto-core/dist/assign'
 
 import _p_change_context from 'pareto-core/dist/_p_change_context'
 
@@ -38,8 +38,9 @@ export const Graph: t_signatures.Graph = ($) => ({
     ),
     'name': _p_change_context(
         $['name'],
-        ($) => _p.optional.map(
+        ($) => _p.optional.from.optional(
             $,
+        ).map(
             ($) => ID(
                 $,
             ),
@@ -53,8 +54,9 @@ export const Graph: t_signatures.Graph = ($) => ({
     ),
 })
 
-export const Statement_List: t_signatures.Statement_List = ($) => _p.list.map(
+export const Statement_List: t_signatures.Statement_List = ($) => _p.list.from.list(
     $,
+).map(
     ($) => _p.decide.state(
         $,
         ($): t_out.Statement_List.L => {
@@ -111,8 +113,9 @@ export const Statement_List: t_signatures.Statement_List = ($) => _p.list.map(
                             ),
                             'right': _p_change_context(
                                 $['right'],
-                                ($) => _p.list.map(
+                                ($) => _p.list.from.list(
                                     $,
+                                ).map(
                                     ($) => _p.decide.state(
                                         $,
                                         ($): t_out.Statement_List.L.edge.right.L => {
@@ -223,8 +226,9 @@ export const Statement_List: t_signatures.Statement_List = ($) => _p.list.map(
     ),
 )
 
-export const Attribute_List: t_signatures.Attribute_List = ($) => _p.list.map(
+export const Attribute_List: t_signatures.Attribute_List = ($) => _p.list.from.list(
     $,
+).map(
     ($) => ({
         'name': _p_change_context(
             $['name'],
@@ -250,8 +254,9 @@ export const Node_ID: t_signatures.Node_ID = ($) => ({
     ),
     'port': _p_change_context(
         $['port'],
-        ($) => _p.optional.map(
+        ($) => _p.optional.from.optional(
             $,
+        ).map(
             ($) => ({
                 'port': _p_change_context(
                     $['port'],
@@ -261,8 +266,9 @@ export const Node_ID: t_signatures.Node_ID = ($) => ({
                 ),
                 'compass point': _p_change_context(
                     $['compass point'],
-                    ($) => _p.optional.map(
+                    ($) => _p.optional.from.optional(
                         $,
+                    ).map(
                         ($) => ID(
                             $,
                         ),
@@ -308,10 +314,12 @@ export const ID: t_signatures.ID = ($) => _p.decide.state(
 export const Subgraph: t_signatures.Subgraph = ($) => ({
     'subgraph': _p_change_context(
         $['subgraph'],
-        ($) => _p.optional.map(
+        ($) => _p.optional.from.optional(
             $,
-            ($) => _p.optional.map(
+        ).map(
+            ($) => _p.optional.from.optional(
                 $,
+            ).map(
                 ($) => ID(
                     $,
                 ),

@@ -1,5 +1,5 @@
 
-import * as _p from 'pareto-core/dist/expression'
+import * as _p from 'pareto-core/dist/assign'
 
 import _p_change_context from 'pareto-core/dist/_p_change_context'
 
@@ -15,8 +15,9 @@ import * as v_serialize_boolean from "liana-core/dist/implementation/manual/prim
 
 import * as v_external_graphviz from "../../graphviz_high_level/transformers/astn_sealed_target"
 
-export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($) => ['dictionary', _p.dictionary.map(
+export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($) => ['dictionary', _p.dictionary.from.dictionary(
     $,
+).map(
     ($, id) => ['state', _p.decide.state(
         $,
         ($): t_out.Value.state => {

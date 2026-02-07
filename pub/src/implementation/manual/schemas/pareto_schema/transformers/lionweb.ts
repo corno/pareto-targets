@@ -1,4 +1,4 @@
-import * as _p from 'pareto-core/dist/expression'
+import * as _p from 'pareto-core/dist/assign'
 
 //interface
 
@@ -33,7 +33,7 @@ export const Type_Node_2_Document_nodes = (
             _p.list.literal([
                 {
                     'id': $p.path,
-                    'parent': _p.optional.not_set(),
+                    'parent': _p.optional.literal.not_set(),
                     'annotations': _p.list.literal([]),
                     'classifier': MetaPointer("dictionary"),
                     'containments': _p.list.literal([
@@ -47,7 +47,7 @@ export const Type_Node_2_Document_nodes = (
                 },
                 {
                     'id': $p.path plus ".D",
-                    'parent': _p.optional.not_set(),
+                    'parent': _p.optional.literal.not_set(),
                     'annotations': _p.list.literal([]),
                     'classifier': MetaPointer("entry"),
                     'containments': _p.list.literal([
@@ -71,7 +71,7 @@ export const Type_Node_2_Document_nodes = (
             [
                 {
                     'id': $p.path,
-                    'parent': _p.optional.not_set(),
+                    'parent': _p.optional.literal.not_set(),
                     'annotations': _p.list.literal([]),
                     'classifier': MetaPointer("group"),
                     'containments': _p.list.literal([
@@ -98,7 +98,7 @@ export const Type_Node_2_Document_nodes = (
             [
                 {
                     'id': $p.path,
-                    'parent': _p.optional.not_set(),
+                    'parent': _p.optional.literal.not_set(),
                     'annotations': _p.list.literal([]),
                     'classifier': MetaPointer("list"),
                     'containments': _p.list.literal([
@@ -122,7 +122,7 @@ export const Type_Node_2_Document_nodes = (
             [
                 {
                     'id': $p.path,
-                    'parent': _p.optional.not_set(),
+                    'parent': _p.optional.literal.not_set(),
                     'annotations': _p.list.literal([]),
                     'classifier': MetaPointer("list"),
                     'containments': _p.list.literal([
@@ -146,7 +146,7 @@ export const Type_Node_2_Document_nodes = (
             [
                 {
                     'id': $p.path,
-                    'parent': _p.optional.not_set(),
+                    'parent': _p.optional.literal.not_set(),
                     'annotations': _p.list.literal([]),
                     'classifier': MetaPointer("state group"),
                     'containments': _p.list.literal([
@@ -161,7 +161,7 @@ export const Type_Node_2_Document_nodes = (
             ],
             _p.list.from_dictionary($, ($, id) => ({
                 'id': $p.path,
-                'parent': _p.optional.not_set(),
+                'parent': _p.optional.literal.not_set(),
                 'annotations': _p.list.literal([]),
                 'classifier': MetaPointer("state"),
                 'containments': _p.list.literal([

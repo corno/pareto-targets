@@ -1,5 +1,5 @@
 
-import * as _p from 'pareto-core/dist/expression'
+import * as _p from 'pareto-core/dist/assign'
 
 import _p_change_context from 'pareto-core/dist/_p_change_context'
 
@@ -24,8 +24,9 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ['grou
         ),
         "languages": _p_change_context(
             $['languages'],
-            ($) => ['list', _p.list.map(
+            ($) => ['list', _p.list.from.list(
                 $,
+            ).map(
                 ($) => ['group', ['verbose', _p.dictionary.literal(
                     {
                         "key": _p_change_context(
@@ -48,8 +49,9 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ['grou
         ),
         "nodes": _p_change_context(
             $['nodes'],
-            ($) => ['list', _p.list.map(
+            ($) => ['list', _p.list.from.list(
                 $,
+            ).map(
                 ($) => ['group', ['verbose', _p.dictionary.literal(
                     {
                         "id": _p_change_context(
@@ -72,8 +74,9 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ['grou
                         ),
                         "annotations": _p_change_context(
                             $['annotations'],
-                            ($) => ['list', _p.list.map(
+                            ($) => ['list', _p.list.from.list(
                                 $,
+                            ).map(
                                 ($) => ['text', {
                                     'delimiter': ['quote', null],
                                     'value': $,
@@ -88,8 +91,9 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ['grou
                         ),
                         "containments": _p_change_context(
                             $['containments'],
-                            ($) => ['list', _p.list.map(
+                            ($) => ['list', _p.list.from.list(
                                 $,
+                            ).map(
                                 ($) => ['group', ['verbose', _p.dictionary.literal(
                                     {
                                         "containment": _p_change_context(
@@ -100,8 +104,9 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ['grou
                                         ),
                                         "children": _p_change_context(
                                             $['children'],
-                                            ($) => ['list', _p.list.map(
+                                            ($) => ['list', _p.list.from.list(
                                                 $,
+                                            ).map(
                                                 ($) => ['text', {
                                                     'delimiter': ['quote', null],
                                                     'value': $,
@@ -114,8 +119,9 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ['grou
                         ),
                         "properties": _p_change_context(
                             $['properties'],
-                            ($) => ['list', _p.list.map(
+                            ($) => ['list', _p.list.from.list(
                                 $,
+                            ).map(
                                 ($) => ['group', ['verbose', _p.dictionary.literal(
                                     {
                                         "value": _p_change_context(
@@ -137,14 +143,16 @@ export const SerializationChunk: t_signatures.SerializationChunk = ($) => ['grou
                         ),
                         "references": _p_change_context(
                             $['references'],
-                            ($) => ['list', _p.list.map(
+                            ($) => ['list', _p.list.from.list(
                                 $,
+                            ).map(
                                 ($) => ['group', ['verbose', _p.dictionary.literal(
                                     {
                                         "targets": _p_change_context(
                                             $['targets'],
-                                            ($) => ['list', _p.list.map(
+                                            ($) => ['list', _p.list.from.list(
                                                 $,
+                                            ).map(
                                                 ($) => ['group', ['verbose', _p.dictionary.literal(
                                                     {
                                                         "reference": _p_change_context(
@@ -208,8 +216,9 @@ export const MetaPointer: t_signatures.MetaPointer = ($) => ['group', ['verbose'
     },
 )]]
 
-export const SerializationChunks: t_signatures.SerializationChunks = ($) => ['dictionary', _p.dictionary.map(
+export const SerializationChunks: t_signatures.SerializationChunks = ($) => ['dictionary', _p.dictionary.from.dictionary(
     $,
+).map(
     ($, id) => SerializationChunk(
         $,
     ),

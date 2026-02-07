@@ -1,5 +1,5 @@
 
-import * as _p from 'pareto-core/dist/expression'
+import * as _p from 'pareto-core/dist/assign'
 
 import _p_change_context from 'pareto-core/dist/_p_change_context'
 
@@ -10,8 +10,9 @@ import * as t_out from "../../../../../../interface/generated/liana/schemas/grap
 export const Graph: t_signatures.Graph = ($) => ({
     'name': _p_change_context(
         $['name'],
-        ($) => _p.optional.map(
+        ($) => _p.optional.from.optional(
             $,
+        ).map(
             ($) => $,
         ),
     ),
@@ -33,8 +34,9 @@ export const Graph: t_signatures.Graph = ($) => ({
                             ($) => ['undirected', {
                                 'edges': _p_change_context(
                                     $['edges'],
-                                    ($) => _p.list.map(
+                                    ($) => _p.list.from.list(
                                         $,
+                                    ).map(
                                         ($) => ({
                                             'yin': _p_change_context(
                                                 $['yin'],
@@ -65,8 +67,9 @@ export const Graph: t_signatures.Graph = ($) => ({
                             ($) => ['directed', {
                                 'edges': _p_change_context(
                                     $['edges'],
-                                    ($) => _p.list.map(
+                                    ($) => _p.list.from.list(
                                         $,
+                                    ).map(
                                         ($) => ({
                                             'from': _p_change_context(
                                                 $['from'],
@@ -110,8 +113,9 @@ export const Tree: t_signatures.Tree = ($) => ({
     ),
     'elements': _p_change_context(
         $['elements'],
-        ($) => _p.dictionary.map(
+        ($) => _p.dictionary.from.dictionary(
             $,
+        ).map(
             ($, id) => _p.decide.state(
                 $,
                 ($): t_out.Tree.elements.D => {
@@ -187,15 +191,17 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($)
     ),
     'tail': _p_change_context(
         $['tail'],
-        ($) => _p.list.map(
+        ($) => _p.list.from.list(
             $,
+        ).map(
             ($) => $,
         ),
     ),
     'port data': _p_change_context(
         $['port data'],
-        ($) => _p.optional.map(
+        ($) => _p.optional.from.optional(
             $,
+        ).map(
             ($) => ({
                 'port': _p_change_context(
                     $['port'],
@@ -203,8 +209,9 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($)
                 ),
                 'compass direction': _p_change_context(
                     $['compass direction'],
-                    ($) => _p.optional.map(
+                    ($) => _p.optional.from.optional(
                         $,
+                    ).map(
                         ($) => $,
                     ),
                 ),
@@ -213,8 +220,9 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($)
     ),
 })
 
-export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => _p.list.map(
+export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => _p.list.from.list(
     $,
+).map(
     ($) => _p.decide.state(
         $,
         ($): t_out.Graph_Attributes.L => {
@@ -753,8 +761,9 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($) => _p.list.ma
     ),
 )
 
-export const Node_Attributes: t_signatures.Node_Attributes = ($) => _p.list.map(
+export const Node_Attributes: t_signatures.Node_Attributes = ($) => _p.list.from.list(
     $,
+).map(
     ($) => _p.decide.state(
         $,
         ($): t_out.Node_Attributes.L => {
@@ -963,8 +972,9 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($) => _p.list.map(
     ),
 )
 
-export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => _p.list.map(
+export const Edge_Attributes: t_signatures.Edge_Attributes = ($) => _p.list.from.list(
     $,
+).map(
     ($) => _p.decide.state(
         $,
         ($): t_out.Edge_Attributes.L => {

@@ -1,5 +1,5 @@
 
-import * as _p from 'pareto-core/dist/expression'
+import * as _p from 'pareto-core/dist/assign'
 
 import _p_change_context from 'pareto-core/dist/_p_change_context'
 
@@ -19,13 +19,14 @@ import * as v_parse_tree_to_location from "astn-core/dist/implementation/manual/
 
 import * as v_external_graphviz from "../../graphviz_high_level/refiners/astn_parse_tree"
 
-export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($, abort) => _p.dictionary.map(
+export const Graphviz_Directory: t_signatures.Graphviz_Directory = ($, abort) => _p.dictionary.from.dictionary(
     v_unmarshalled_from_parse_tree.Dictionary(
         $,
         ($) => abort(
             ['expected a dictionary', null],
         ),
     ),
+).map(
     ($, id) => _p_change_context(
         v_unmarshalled_from_parse_tree.State(
             $,

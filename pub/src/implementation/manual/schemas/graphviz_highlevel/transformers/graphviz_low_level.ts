@@ -1,4 +1,4 @@
-import * as _p from 'pareto-core/dist/expression'
+import * as _p from 'pareto-core/dist/assign'
 import * as _pdev from 'pareto-core-dev'
 import * as _pi from 'pareto-core/dist/interface'
 
@@ -29,12 +29,12 @@ export const Graph = ($: d_in.Graph): d_out.Graph => ({
                 case 'directed': return _p.ss($, ($) => $.edges.__l_map(($): d_out.Statement_List.L => ['edge', {
                     "left": ['node', {
                         'id': ['string', $.from.start],
-                        'port': _p.optional.not_set()
+                        'port': _p.optional.literal.not_set()
                     }],
                     "right": _p.list.literal<d_out.Statement_List.L.SG.edge.right.L>([
                         ['node', {
                             'id': ['string', $.to.start],
-                            'port': _p.optional.not_set()
+                            'port': _p.optional.literal.not_set()
                         }]
                     ]),
                     "attributes": $.attributes.__l_map(($) => _p.decide.state($, ($): d_out.Attribute_List.L => {
@@ -93,12 +93,12 @@ export const Graph = ($: d_in.Graph): d_out.Graph => ({
                 case 'undirected': return _p.ss($, ($) => $.edges.__l_map(($): d_out.Statement_List.L => ['edge', {
                     "left": ['node', {
                         'id': ['string', $.yin.start],
-                        'port': _p.optional.not_set()
+                        'port': _p.optional.literal.not_set()
                     }],
                     "right": _p.list.literal<d_out.Statement_List.L.SG.edge.right.L>([
                         ['node', {
                             'id': ['string', $.yang.start],
-                            'port': _p.optional.not_set()
+                            'port': _p.optional.literal.not_set()
                         }]
                     ]),
                     "attributes": _p.list.literal([]), //FIXME: attributes
@@ -131,7 +131,7 @@ export const Tree = (
                         ['node', {
                             'node': {
                                 'id': ['string', s_list_of_separated_texts(path, { 'separator': '>' })],
-                                'port': _p.optional.not_set()
+                                'port': _p.optional.literal.not_set()
                             },
                             'attribute list': _p.list.nested_literal_old([
                                 [

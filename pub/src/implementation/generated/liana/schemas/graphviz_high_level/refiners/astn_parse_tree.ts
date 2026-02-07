@@ -1,5 +1,5 @@
 
-import * as _p from 'pareto-core/dist/expression'
+import * as _p from 'pareto-core/dist/assign'
 
 import _p_change_context from 'pareto-core/dist/_p_change_context'
 
@@ -32,13 +32,14 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_change_context(
                     ['no such entry', "name"],
                 ),
             ),
-            ($) => _p.optional.map(
+            ($) => _p.optional.from.optional(
                 v_unmarshalled_from_parse_tree.Optional(
                     $,
                     ($) => abort(
                         ['expected an optional', null],
                     ),
                 ),
+            ).map(
                 ($) => v_unmarshalled_from_parse_tree.Text(
                     $,
                     ($) => abort(
@@ -97,13 +98,14 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_change_context(
                                                         ['no such entry', "edges"],
                                                     ),
                                                 ),
-                                                ($) => _p.list.map(
+                                                ($) => _p.list.from.list(
                                                     v_unmarshalled_from_parse_tree.List(
                                                         $,
                                                         ($) => abort(
                                                             ['expected a list', null],
                                                         ),
                                                     ),
+                                                ).map(
                                                     ($) => _p_change_context(
                                                         v_unmarshalled_from_parse_tree.Group(
                                                             $,
@@ -179,13 +181,14 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_change_context(
                                                         ['no such entry', "edges"],
                                                     ),
                                                 ),
-                                                ($) => _p.list.map(
+                                                ($) => _p.list.from.list(
                                                     v_unmarshalled_from_parse_tree.List(
                                                         $,
                                                         ($) => abort(
                                                             ['expected a list', null],
                                                         ),
                                                     ),
+                                                ).map(
                                                     ($) => _p_change_context(
                                                         v_unmarshalled_from_parse_tree.Group(
                                                             $,
@@ -284,13 +287,14 @@ export const Tree: t_signatures.Tree = ($, abort) => _p_change_context(
                     ['no such entry', "elements"],
                 ),
             ),
-            ($) => _p.dictionary.map(
+            ($) => _p.dictionary.from.dictionary(
                 v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null],
                     ),
                 ),
+            ).map(
                 ($, id) => _p_change_context(
                     v_unmarshalled_from_parse_tree.State(
                         $,
@@ -457,13 +461,14 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($,
                     ['no such entry', "tail"],
                 ),
             ),
-            ($) => _p.list.map(
+            ($) => _p.list.from.list(
                 v_unmarshalled_from_parse_tree.List(
                     $,
                     ($) => abort(
                         ['expected a list', null],
                     ),
                 ),
+            ).map(
                 ($) => v_unmarshalled_from_parse_tree.Text(
                     $,
                     ($) => abort(
@@ -479,13 +484,14 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($,
                     ['no such entry', "port data"],
                 ),
             ),
-            ($) => _p.optional.map(
+            ($) => _p.optional.from.optional(
                 v_unmarshalled_from_parse_tree.Optional(
                     $,
                     ($) => abort(
                         ['expected an optional', null],
                     ),
                 ),
+            ).map(
                 ($) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
@@ -515,13 +521,14 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($,
                                     ['no such entry', "compass direction"],
                                 ),
                             ),
-                            ($) => _p.optional.map(
+                            ($) => _p.optional.from.optional(
                                 v_unmarshalled_from_parse_tree.Optional(
                                     $,
                                     ($) => abort(
                                         ['expected an optional', null],
                                     ),
                                 ),
+                            ).map(
                                 ($) => v_unmarshalled_from_parse_tree.Text(
                                     $,
                                     ($) => abort(
@@ -537,13 +544,14 @@ export const End_Point_Specification: t_signatures.End_Point_Specification = ($,
     }),
 )
 
-export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.list.map(
+export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.list.from.list(
     v_unmarshalled_from_parse_tree.List(
         $,
         ($) => abort(
             ['expected a list', null],
         ),
     ),
+).map(
     ($) => _p_change_context(
         v_unmarshalled_from_parse_tree.State(
             $,
@@ -1768,13 +1776,14 @@ export const Graph_Attributes: t_signatures.Graph_Attributes = ($, abort) => _p.
     ),
 )
 
-export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.list.map(
+export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.list.from.list(
     v_unmarshalled_from_parse_tree.List(
         $,
         ($) => abort(
             ['expected a list', null],
         ),
     ),
+).map(
     ($) => _p_change_context(
         v_unmarshalled_from_parse_tree.State(
             $,
@@ -2291,13 +2300,14 @@ export const Node_Attributes: t_signatures.Node_Attributes = ($, abort) => _p.li
     ),
 )
 
-export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.list.map(
+export const Edge_Attributes: t_signatures.Edge_Attributes = ($, abort) => _p.list.from.list(
     v_unmarshalled_from_parse_tree.List(
         $,
         ($) => abort(
             ['expected a list', null],
         ),
     ),
+).map(
     ($) => _p_change_context(
         v_unmarshalled_from_parse_tree.State(
             $,

@@ -1,5 +1,5 @@
 
-// import * as _p from 'pareto-core/dist/expression'
+// import * as _p from 'pareto-core/dist/assign'
 // import * as _pdev from 'pareto-core-dev'
 // import * as _pi from 'pareto-core/dist/interface'
 

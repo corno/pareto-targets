@@ -1,5 +1,5 @@
 
-import * as _p from 'pareto-core/dist/expression'
+import * as _p from 'pareto-core/dist/assign'
 
 import _p_change_context from 'pareto-core/dist/_p_change_context'
 
@@ -76,8 +76,9 @@ export const Graph: t_signatures.Graph = ($) => ['group', ['verbose', _p.diction
     },
 )]]
 
-export const Statement_List: t_signatures.Statement_List = ($) => ['list', _p.list.map(
+export const Statement_List: t_signatures.Statement_List = ($) => ['list', _p.list.from.list(
     $,
+).map(
     ($) => ['state', _p.decide.state(
         $,
         ($): t_out.Value.state => {
@@ -148,8 +149,9 @@ export const Statement_List: t_signatures.Statement_List = ($) => ['list', _p.li
                                     ),
                                     "right": _p_change_context(
                                         $['right'],
-                                        ($) => ['list', _p.list.map(
+                                        ($) => ['list', _p.list.from.list(
                                             $,
+                                        ).map(
                                             ($) => ['state', _p.decide.state(
                                                 $,
                                                 ($): t_out.Value.state => {
@@ -290,8 +292,9 @@ export const Statement_List: t_signatures.Statement_List = ($) => ['list', _p.li
     )],
 )]
 
-export const Attribute_List: t_signatures.Attribute_List = ($) => ['list', _p.list.map(
+export const Attribute_List: t_signatures.Attribute_List = ($) => ['list', _p.list.from.list(
     $,
+).map(
     ($) => ['group', ['verbose', _p.dictionary.literal(
         {
             "name": _p_change_context(
