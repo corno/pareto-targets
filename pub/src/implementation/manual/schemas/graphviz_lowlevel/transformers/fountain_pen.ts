@@ -10,11 +10,11 @@ type Parameters = {
 
 namespace signatures {
     export type Graph = _pi.Transformer<d_in.Graph, d_out.Paragraph>
-    export type Statement_List = _pi.Transformer_With_Parameters<d_in.Statement_List, d_out.Phrase, Parameters>
+    export type Statement_List = _pi.Transformer_With_Parameter<d_in.Statement_List, d_out.Phrase, Parameters>
     export type ID = _pi.Transformer<d_in.ID, d_out.Phrase>
     export type Attribute_List = _pi.Transformer<d_in.Attribute_List, d_out.Phrase>
     export type Node_ID = _pi.Transformer<d_in.Node_ID, d_out.Phrase>
-    export type Subgraph = _pi.Transformer_With_Parameters<d_in.Subgraph, d_out.Phrase, Parameters>
+    export type Subgraph = _pi.Transformer_With_Parameter<d_in.Subgraph, d_out.Phrase, Parameters>
 }
 
 //shorthands

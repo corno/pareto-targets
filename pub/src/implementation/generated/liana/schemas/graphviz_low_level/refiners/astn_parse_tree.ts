@@ -26,7 +26,7 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_change_context(
     ),
     ($) => ({
         'strict': _p_change_context(
-            $.__get_entry(
+            $.__get_entry_deprecated(
                 'strict',
                 ($) => abort(
                     ['no such entry', "strict"],
@@ -48,7 +48,7 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_change_context(
             ),
         ),
         'type': _p_change_context(
-            $.__get_entry(
+            $.__get_entry_deprecated(
                 'type',
                 ($) => abort(
                     ['no such entry', "type"],
@@ -95,7 +95,7 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_change_context(
             ),
         ),
         'name': _p_change_context(
-            $.__get_entry(
+            $.__get_entry_deprecated(
                 'name',
                 ($) => abort(
                     ['no such entry', "name"],
@@ -117,7 +117,7 @@ export const Graph: t_signatures.Graph = ($, abort) => _p_change_context(
             ),
         ),
         'statements': _p_change_context(
-            $.__get_entry(
+            $.__get_entry_deprecated(
                 'statements',
                 ($) => abort(
                     ['no such entry', "statements"],
@@ -163,7 +163,7 @@ export const Statement_List: t_signatures.Statement_List = ($, abort) => _p.list
                                 ),
                                 ($) => ({
                                     'node': _p_change_context(
-                                        $.__get_entry(
+                                        $.__get_entry_deprecated(
                                             'node',
                                             ($) => abort(
                                                 ['no such entry', "node"],
@@ -177,7 +177,7 @@ export const Statement_List: t_signatures.Statement_List = ($, abort) => _p.list
                                         ),
                                     ),
                                     'attribute list': _p_change_context(
-                                        $.__get_entry(
+                                        $.__get_entry_deprecated(
                                             'attribute list',
                                             ($) => abort(
                                                 ['no such entry', "attribute list"],
@@ -205,7 +205,7 @@ export const Statement_List: t_signatures.Statement_List = ($, abort) => _p.list
                                 ),
                                 ($) => ({
                                     'left': _p_change_context(
-                                        $.__get_entry(
+                                        $.__get_entry_deprecated(
                                             'left',
                                             ($) => abort(
                                                 ['no such entry', "left"],
@@ -252,7 +252,7 @@ export const Statement_List: t_signatures.Statement_List = ($, abort) => _p.list
                                         ),
                                     ),
                                     'right': _p_change_context(
-                                        $.__get_entry(
+                                        $.__get_entry_deprecated(
                                             'right',
                                             ($) => abort(
                                                 ['no such entry', "right"],
@@ -307,7 +307,7 @@ export const Statement_List: t_signatures.Statement_List = ($, abort) => _p.list
                                         ),
                                     ),
                                     'attributes': _p_change_context(
-                                        $.__get_entry(
+                                        $.__get_entry_deprecated(
                                             'attributes',
                                             ($) => abort(
                                                 ['no such entry', "attributes"],
@@ -335,7 +335,7 @@ export const Statement_List: t_signatures.Statement_List = ($, abort) => _p.list
                                 ),
                                 ($) => ({
                                     'type': _p_change_context(
-                                        $.__get_entry(
+                                        $.__get_entry_deprecated(
                                             'type',
                                             ($) => abort(
                                                 ['no such entry', "type"],
@@ -392,7 +392,7 @@ export const Statement_List: t_signatures.Statement_List = ($, abort) => _p.list
                                         ),
                                     ),
                                     'attributes': _p_change_context(
-                                        $.__get_entry(
+                                        $.__get_entry_deprecated(
                                             'attributes',
                                             ($) => abort(
                                                 ['no such entry', "attributes"],
@@ -420,7 +420,7 @@ export const Statement_List: t_signatures.Statement_List = ($, abort) => _p.list
                                 ),
                                 ($) => ({
                                     'name': _p_change_context(
-                                        $.__get_entry(
+                                        $.__get_entry_deprecated(
                                             'name',
                                             ($) => abort(
                                                 ['no such entry', "name"],
@@ -434,7 +434,7 @@ export const Statement_List: t_signatures.Statement_List = ($, abort) => _p.list
                                         ),
                                     ),
                                     'value': _p_change_context(
-                                        $.__get_entry(
+                                        $.__get_entry_deprecated(
                                             'value',
                                             ($) => abort(
                                                 ['no such entry', "value"],
@@ -486,7 +486,7 @@ export const Attribute_List: t_signatures.Attribute_List = ($, abort) => _p.list
         ),
         ($) => ({
             'name': _p_change_context(
-                $.__get_entry(
+                $.__get_entry_deprecated(
                     'name',
                     ($) => abort(
                         ['no such entry', "name"],
@@ -500,7 +500,7 @@ export const Attribute_List: t_signatures.Attribute_List = ($, abort) => _p.list
                 ),
             ),
             'value': _p_change_context(
-                $.__get_entry(
+                $.__get_entry_deprecated(
                     'value',
                     ($) => abort(
                         ['no such entry', "value"],
@@ -526,7 +526,7 @@ export const Node_ID: t_signatures.Node_ID = ($, abort) => _p_change_context(
     ),
     ($) => ({
         'id': _p_change_context(
-            $.__get_entry(
+            $.__get_entry_deprecated(
                 'id',
                 ($) => abort(
                     ['no such entry', "id"],
@@ -540,7 +540,7 @@ export const Node_ID: t_signatures.Node_ID = ($, abort) => _p_change_context(
             ),
         ),
         'port': _p_change_context(
-            $.__get_entry(
+            $.__get_entry_deprecated(
                 'port',
                 ($) => abort(
                     ['no such entry', "port"],
@@ -562,7 +562,7 @@ export const Node_ID: t_signatures.Node_ID = ($, abort) => _p_change_context(
                     ),
                     ($) => ({
                         'port': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'port',
                                 ($) => abort(
                                     ['no such entry', "port"],
@@ -576,7 +576,7 @@ export const Node_ID: t_signatures.Node_ID = ($, abort) => _p_change_context(
                             ),
                         ),
                         'compass point': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'compass point',
                                 ($) => abort(
                                     ['no such entry', "compass point"],
@@ -681,7 +681,7 @@ export const Subgraph: t_signatures.Subgraph = ($, abort) => _p_change_context(
     ),
     ($) => ({
         'subgraph': _p_change_context(
-            $.__get_entry(
+            $.__get_entry_deprecated(
                 'subgraph',
                 ($) => abort(
                     ['no such entry', "subgraph"],
@@ -711,7 +711,7 @@ export const Subgraph: t_signatures.Subgraph = ($, abort) => _p_change_context(
             ),
         ),
         'statements': _p_change_context(
-            $.__get_entry(
+            $.__get_entry_deprecated(
                 'statements',
                 ($) => abort(
                     ['no such entry', "statements"],
