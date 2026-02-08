@@ -26,8 +26,7 @@ export const Path: t_signatures.Path = ($) => ['group', ['verbose', _p.dictionar
                 $,
             ).map(
                 ($) => ['group', ['verbose', _p.dictionary.literal(
-                    {
-                    },
+                    {},
                 )]],
             )],
         ),
@@ -38,8 +37,7 @@ export const Path: t_signatures.Path = ($) => ['group', ['verbose', _p.dictionar
                     "sibling": _p_change_context(
                         $['sibling'],
                         ($) => ['group', ['verbose', _p.dictionary.literal(
-                            {
-                            },
+                            {},
                         )]],
                     ),
                     "state constraint": _p_change_context(
@@ -268,8 +266,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                 $,
             ).map(
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                    {
-                    },
+                    {},
                 )]],
             )],
         ),
